@@ -1,4 +1,4 @@
-import TopCard from "./TopCard";
+import TopCard from "./TopCard.jsx";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -23,7 +23,7 @@ const settings = {
       settings: { slidesToShow: 2 },
     },
     {
-      breakpoint: 950,
+      breakpoint: 1000,
       settings: { slidesToShow: 1.5 },
     },
     {
@@ -35,8 +35,18 @@ const settings = {
       settings: {
         arrows: false,
         slidesToShow: 1,
-        vertical: true, // Enable vertical mode
-        verticalSwiping: true, // Allow vertical swiping
+        vertical: true,
+        verticalSwiping: true,
+      },
+    },
+    {
+      breakpoint: 250,
+      settings: {
+        dots: false,
+        arrows: false,
+        slidesToShow: 1,
+        vertical: true,
+        verticalSwiping: true,
       },
     },
   ],
@@ -44,7 +54,7 @@ const settings = {
 
 export default function Hero() {
   return (
-    <div className="HeroHome box flex overflow-visible text-white items-center justify-center w-[95%] h-59 p-12 rounded-md m-10 border border-slate-500 shadow-sm shadow-cyan-500/50">
+    <div className="HeroHome box flex text-white items-center justify-center w-[95%] h-59 p-12 rounded-md m-10 border border-slate-500 shadow-sm shadow-cyan-500/50">
       <div className="w-full">
         <Slider {...settings}>
           <TopCard
