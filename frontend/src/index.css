@@ -29,3 +29,24 @@
 .slick-dots li.slick-active button:before {
   color: #fbbf24 !important; /* yellow-400 (active) */
 }
+
+@media (max-width: 570px) {
+  .TopCard {
+    width: 100%;
+    padding: 0;
+    margin: 0;
+  }
+
+  .TopCard img {
+    height: 75%;
+    width: 30%;
+  }
+
+  .TopCard h1 {
+    font-size: 1.5rem;
+  }
+
+  .HeroHome {
+    padding: 1rem;
+  }
+}

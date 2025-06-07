@@ -23,19 +23,28 @@ const settings = {
       settings: { slidesToShow: 2 },
     },
     {
-      breakpoint: 900,
+      breakpoint: 950,
       settings: { slidesToShow: 1.5 },
     },
     {
       breakpoint: 820,
       settings: { slidesToShow: 1 },
     },
+    {
+      breakpoint: 570,
+      settings: {
+        arrows: false,
+        slidesToShow: 1,
+        vertical: true, // Enable vertical mode
+        verticalSwiping: true, // Allow vertical swiping
+      },
+    },
   ],
 };
 
 export default function Hero() {
   return (
-    <div className="box flex overflow-visible text-white items-center justify-center w-[95%] h-59 p-12 rounded-md m-10 border border-slate-500 shadow-sm shadow-cyan-500/50">
+    <div className="HeroHome box flex overflow-visible text-white items-center justify-center w-[95%] h-59 p-12 rounded-md m-10 border border-slate-500 shadow-sm shadow-cyan-500/50">
       <div className="w-full">
         <Slider {...settings}>
           <TopCard
