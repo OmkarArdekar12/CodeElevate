@@ -3,10 +3,9 @@ import Search from "./Search.jsx";
 
 export default function SearchSection() {
   return (
-    <>
-      <h1>SearchSection</h1>
+    <div className="SearchSection w-[95%] flex justify-center items-center">
       <Search />
       <FilterSection />
-    </>
+    </div>
   );
 }
