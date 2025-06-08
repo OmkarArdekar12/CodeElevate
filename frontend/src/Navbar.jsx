@@ -11,7 +11,9 @@ export default function Navbar() {
           <Link to="/">
             <div className="flex-shrink-0 flex items-center">
               <img src="/images/logo.png" alt="CodeElevate" className="h-18" />
-              <h1 className="LogoText ml-1 text-white text-3xl">CodeElevate</h1>
+              <h1 className="LogoText ml-1 text-white text-3xl hover:text-yellow-300">
+                CodeElevate
+              </h1>
             </div>
           </Link>
 

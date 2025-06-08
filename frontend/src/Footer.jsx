@@ -1,4 +1,5 @@
 import { FaGithub, FaLinkedin, FaTwitter, FaEnvelope } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 export default function Footer() {
   return (
@@ -17,19 +18,19 @@ export default function Footer() {
           <h2 className="text-white text-lg font-semibold mb-4">Quick Links</h2>
           <ul className="space-y-2 text-sm">
             <li>
-              <a href="#home" className="hover:text-white">
+              <Link to="/" className="hover:text-white">
                 Home
-              </a>
+              </Link>
             </li>
             <li>
-              <a href="#about" className="hover:text-white">
+              <Link to="/about" className="hover:text-white">
                 About
-              </a>
+              </Link>
             </li>
             <li>
-              <a href="#explore" className="hover:text-white">
+              <Link to="/posts" className="hover:text-white">
                 Explore
-              </a>
+              </Link>
             </li>
           </ul>
         </div>
@@ -39,16 +40,31 @@ export default function Footer() {
             Connect with Us
           </h2>
           <div className="flex space-x-4 text-xl">
-            <a href="#" target="_blank" className="hover:text-white">
+            <a
+              href="https://www.linkedin.com/in/omkarardekar09"
+              target="_blank"
+              className="hover:text-white"
+            >
               <FaGithub />
             </a>
-            <a href="#" target="_blank" className="hover:text-white">
+            <a
+              href="https://www.linkedin.com/in/omkarardekar09"
+              target="_blank"
+              className="hover:text-white"
+            >
               <FaLinkedin />
             </a>
-            <a href="#" target="_blank" className="hover:text-white">
+            <a
+              href="https://www.linkedin.com/in/omkarardekar09"
+              target="_blank"
+              className="hover:text-white"
+            >
               <FaTwitter />
             </a>
-            <a href="#" className="hover:text-white">
+            <a
+              href="https://www.linkedin.com/in/omkarardekar09"
+              className="hover:text-white"
+            >
               <FaEnvelope />
             </a>
           </div>
