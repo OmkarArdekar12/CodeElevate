@@ -1,11 +1,14 @@
+import Navbar from "../Navbar.jsx";
 import Hero from "./Hero.jsx";
 import ProfileSection from "./ProfileSection.jsx";
+import SearchSection from "./SearchSection.jsx";
 
 export default function HomePage() {
   return (
     <>
+      <Navbar />
       <Hero />
-      {/* <SearchSection /> */}
+      <SearchSection />
       <ProfileSection />
     </>
   );

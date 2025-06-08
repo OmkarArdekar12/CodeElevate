@@ -2,7 +2,7 @@ import Profile from "./Profile.jsx";
 
 export default function ProfileSection() {
   return (
-    <div className="box flex flex-col text-white items-center justify-center w-[95%] p-12 rounded-md m-10 border border-slate-500 shadow-sm shadow-gray-500/50">
+    <div className="ProfileSection box flex flex-col text-white items-center justify-center w-[95%] p-12 rounded-md m-10 border border-slate-500 shadow-sm shadow-gray-500/50">
       {users.map((user) => (
         <Profile user={user} />
       ))}

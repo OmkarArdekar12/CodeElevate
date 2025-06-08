@@ -1,6 +1,6 @@
 export default function Profile({ user }) {
   return (
-    <div className="flex flex-wrap w-[99%] text-xl items-center justify-between bg-gradient-to-r from-gray-950 to-blue-900 rounded-xl px-10 py-2 my-4 shadow-sm shadow-slate-500/50 hover:border hover:border-yellow-500 hover:shadow-yellow-500/50">
+    <div className="Profile flex flex-wrap w-[99%] text-xl items-center justify-between bg-gradient-to-r from-gray-950 to-blue-900 rounded-xl px-10 py-2 my-4 shadow-sm shadow-slate-500/50 hover:border hover:border-yellow-500 hover:shadow-yellow-500/50">
       <div className="flex flex-wrap items-center justify-evenly">
         <img src={user.image} alt={user.name} className="w-[5rem]" />
         <p className="my-1 mx-5 mr-10">{user.name}</p>
@@ -12,7 +12,7 @@ export default function Profile({ user }) {
         <p className="my-1 mx-2 bg-gray-600 p-2 px-4 rounded-2xl">
           {user.domain}
         </p>
-        <button className="my-1 ml-8 bg-blue-700 px-6 py-2 rounded-full border border-white">
+        <button className="my-1 ml-8 bg-blue-700 px-6 py-2 rounded-full border border-white hover:bg-green-700 hover:border-green-700">
           Visit
         </button>
       </div>
