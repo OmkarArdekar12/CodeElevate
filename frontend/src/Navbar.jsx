@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -7,38 +8,39 @@ export default function Navbar() {
     <nav className="bg-gray-800 shadow-lg w-[100%] py-3">
       <div className="px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-18">
-          {/* Logo */}
-          <div className="flex-shrink-0 flex items-center">
-            <img src="/images/logo.png" alt="CodeElevate" className="h-18" />
-            <h1 className="LogoText ml-1 text-white text-3xl">CodeElevate</h1>
-          </div>
+          <Link to="/">
+            <div className="flex-shrink-0 flex items-center">
+              <img src="/images/logo.png" alt="CodeElevate" className="h-18" />
+              <h1 className="LogoText ml-1 text-white text-3xl">CodeElevate</h1>
+            </div>
+          </Link>
 
           <div className="flex items-center">
             <div className="hidden md:flex items-center space-x-4">
-              <a
-                href="#"
+              <Link
+                to="/"
                 className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-md font-medium transition duration-150"
               >
                 Home
-              </a>
-              <a
-                href="#"
+              </Link>
+              <Link
+                to="/posts"
                 className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-md font-medium transition duration-150"
               >
                 Posts
-              </a>
-              <a
-                href="#"
+              </Link>
+              <Link
+                to="/rankings"
                 className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-md font-medium transition duration-150"
               >
-                Ranking
-              </a>
-              <a
-                href="#"
+                Rankings
+              </Link>
+              <Link
+                to="/about"
                 className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-md font-medium transition duration-150"
               >
                 About
-              </a>
+              </Link>
             </div>
 
             <div className="flex items-center ml-4">
@@ -109,30 +111,30 @@ export default function Navbar() {
             >
               Profile
             </a>
-            <a
-              href="#"
+            <Link
+              to="/"
               className="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-700 transition duration-150"
             >
               Home
-            </a>
-            <a
-              href="#"
+            </Link>
+            <Link
+              to="/posts"
               className="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-700 transition duration-150"
             >
               Posts
-            </a>
-            <a
-              href="#"
+            </Link>
+            <Link
+              to="/rankings"
               className="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-700 transition duration-150"
             >
-              Ranking
-            </a>
-            <a
-              href="#"
+              Rankings
+            </Link>
+            <Link
+              to="/about"
               className="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-700 transition duration-150"
             >
               About
-            </a>
+            </Link>
           </div>
         </div>
       )}
