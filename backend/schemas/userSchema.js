@@ -32,8 +32,8 @@ const userSchema = new Schema({
     institution: String,
   },
 
-  followers: [ObjectId],
-  following: [ObjectId],
+  // followers: [ObjectId],
+  // following: [ObjectId],
 
   createdAt: Date,
   updatedAt: Date,
