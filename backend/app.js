@@ -7,22 +7,18 @@ const localStrategy = require("passport-local");
 const User = require("./models/user.js");
 const PORT = 8080;
 
+async function main() {
+  await mongoose.connect(MONGODB_URL);
+}
+
 main()
   .then(() => {
-    console.log("Connected to Database(DB)");
+    console.log("Connected to MongoDB Database(DB)");
   })
   .catch((err) => {
     console.log(err);
   });
 
-async function main() {
-  await mongoose.connect(MONGODB_URL);
-}
-
 app.listen(PORT, () => {
   console.log(`Server is listening to port ${PORT}`);
-});
-
-app.get("/", (req, res) => {
-  res.send("done!");
 });
