@@ -1,5 +1,12 @@
-const mongoose = require("mongoose");
-const userSchema = require("../schemas/userSchema.js");
+import mongoose from "mongoose";
+import passport from "passport";
+import userSchema from "../schemas/userSchema.js";
+
 const User = mongoose.model("User", userSchema);
 
-module.exports = User;
+passport.use(new LocalStrategy(User.authenticate()));
+
+passport.serializeUser(User.serializeUser());
+passport.deserializeUser(User.deserializeUser());
+
+export default User;

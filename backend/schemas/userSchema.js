@@ -1,6 +1,7 @@
-const mongoose = require("mongoose");
+import mongoose from "mongoose";
+import passportLocalMongoose from "passport-local-mongoose";
+
 const Schema = mongoose.Schema;
-const passortLocalMongoose = require("passport-local-mongoose");
 
 const userSchema = new Schema({
   email: {
@@ -8,9 +9,25 @@ const userSchema = new Schema({
     required: true,
   },
 
-  profilePicture: String,
-  backgroundBanner: String,
-  bio: String,
+  profilePicture: {
+    type: String,
+    default: "",
+  },
+  backgroundBanner: {
+    type: String,
+    default: "",
+  },
+  headLine: {
+    type: String,
+    default: "",
+  },
+
+  tags: [String],
+
+  about: {
+    type: String,
+    default: "",
+  },
 
   developmentProfiles: {
     github: String,
@@ -32,13 +49,21 @@ const userSchema = new Schema({
     institution: String,
   },
 
-  // followers: [ObjectId],
-  // following: [ObjectId],
+  followers: {
+    type: Schema.Types.ObjectId,
+    ref: "User",
+  },
+  following: {
+    type: Schema.Types.ObjectId,
+    ref: "User",
+  },
 
-  createdAt: Date,
-  updatedAt: Date,
+  createdAt: {
+    type: Date,
+    default: Date.now,
+  },
 });
 
-userSchema.plugin(passortLocalMongoose);
+userSchema.plugin(passportLocalMongoose);
 
-module.exports = userSchema;
+export default userSchema;
