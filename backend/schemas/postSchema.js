@@ -1,19 +1,37 @@
-// const mongoose = require("mongoose");
-// const Schema = mongoose.Schema;
+import mongoose from "mongoose";
 
-// const postSchema = new Schema({
-//   author: ObjectId,
-//   content: String,
-//   image: String,
-//   likes: [ObjectId],
-//   comments: [
-//     {
-//       userId: ObjectId,
-//       comment: String,
-//       createdAt: Date,
-//     },
-//   ],
-//   createdAt: Date,
-// });
+const Schema = mongoose.Schema;
 
-// module.exports = postSchema;
+const postSchema = new Schema({
+  author: {
+    type: Schema.Types.ObjectId,
+    ref: "User",
+  },
+  content: String,
+  image: String,
+  likes: [
+    {
+      userId: Schema.Types.ObjectId,
+      createdAt: {
+        type: Date,
+        default: Date.now,
+      },
+    },
+  ],
+  comments: [
+    {
+      userId: Schema.Types.ObjectId,
+      comment: String,
+      createdAt: {
+        type: Date,
+        default: Date.now,
+      },
+    },
+  ],
+  createdAt: {
+    type: Date,
+    default: Date.now,
+  },
+});
+
+export default postSchema;

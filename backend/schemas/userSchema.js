@@ -21,9 +21,7 @@ const userSchema = new Schema({
     type: String,
     default: "",
   },
-
   tags: [String],
-
   about: {
     type: String,
     default: "",
@@ -34,7 +32,6 @@ const userSchema = new Schema({
     gitlab: String,
     portfolio: String,
   },
-
   competitiveProfile: {
     leetCode: String,
     codeforces: String,
@@ -42,7 +39,6 @@ const userSchema = new Schema({
     geekforgeeks: String,
     codeshef: String,
   },
-
   education: {
     degree: String,
     cgpa: Number,
