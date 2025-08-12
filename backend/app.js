@@ -9,16 +9,7 @@ import dotenv from "dotenv";
 import cors from "cors";
 import dbConnect from "./config/dbConnect.js";
 
-// import User from "./models/user.js";
-
 dotenv.config();
-// const express = require("express");
-// const mongoose = require("mongoose");
-// const path = require("path");
-// const methodOverride = require("method-override");
-// const passport = require("passport");
-// const localStrategy = require("passport-local");
-// const User = require("./models/user.js");
 
 const app = express();
 const MONGODB_URL = "mongodb://127.0.0.1:27017/codelevate";
