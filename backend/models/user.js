@@ -5,7 +5,6 @@ import userSchema from "../schemas/userSchema.js";
 const User = mongoose.model("User", userSchema);
 
 passport.use(new LocalStrategy(User.authenticate()));
-
 passport.serializeUser(User.serializeUser());
 passport.deserializeUser(User.deserializeUser());
 

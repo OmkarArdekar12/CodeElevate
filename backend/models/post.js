@@ -1,5 +1,6 @@
-// const mongoose = require("mongoose");
-// const postSchema = require("../schemas/postSchema.js");
-// const Post = mongoose.model("Post", postSchema);
+import mongoose from "mongoose";
+import postSchema from "../schemas/postSchema.js";
 
-// module.exports = Post;
+const Post = mongoose.model("Post", postSchema);
+
+export default Post;
