@@ -9,6 +9,7 @@ import dotenv from "dotenv";
 import cors from "cors";
 import dbConnect from "./config/dbConnect.js";
 import authRoutes from "./routes/authRoutes.js";
+import "./config/passportConfig.js";
 
 dotenv.config();
 
