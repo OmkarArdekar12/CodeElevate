@@ -9,6 +9,7 @@ import {
   verify2FA,
   reset2FA,
 } from "../controllers/authControllers.js";
+import auth from "../middlewares/auth.js";
 
 const router = Router();
 
@@ -25,12 +26,12 @@ router.get("/status", authStatus);
 router.post("/logout", logout);
 
 //2FA Setup Route
-router.post("/2fa/setup", setup2FA);
+router.post("/2fa/setup", auth, setup2FA);
 
 //2FA Verify Route
-router.post("/2fa/verify", verify2FA);
+router.post("/2fa/verify", auth, verify2FA);
 
 //2FA Reset Route
-router.post("/2fa/reset", reset2FA);
+router.post("/2fa/reset", auth, reset2FA);
 
 export default router;
