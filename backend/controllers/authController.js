@@ -11,6 +11,9 @@ export const register = async (req, res) => {
       isMfaActive: false,
     });
     console.log("New User: ", user);
+    await user.save();
+
+    res.status(201).json({ message: "User registered successfully" });
   } catch (err) {
     res.status(500).json({
       error: "Error: User Registration Failed!",
@@ -19,7 +22,14 @@ export const register = async (req, res) => {
   }
 };
 
-export const login = async () => {};
+export const login = async (req, res) => {
+  console.log("The authenticate user is: ", req.user);
+  res.status(200).json({
+    message: "User logged in successfully",
+    username: req.user.username,
+    isMfaActive: req.user.isMfaActive,
+  });
+};
 
 export const authStatus = async () => {};
 
