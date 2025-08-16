@@ -60,7 +60,10 @@ export const logout = async (req, res) => {
 };
 
 //Setup2FA Controller
-export const setup2FA = async () => {};
+export const setup2FA = async (req, res) => {
+  try {
+  } catch (err) {}
+};
 
 //Verify2FA Controller
 export const verify2FA = async () => {};
