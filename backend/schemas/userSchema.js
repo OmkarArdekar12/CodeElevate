@@ -1,65 +1,148 @@
+// import mongoose from "mongoose";
+// import passportLocalMongoose from "passport-local-mongoose";
+
+// const Schema = mongoose.Schema;
+
+// const userSchema = new Schema({
+//   email: {
+//     type: String,
+//     required: true,
+//   },
+
+//   profilePicture: {
+//     type: String,
+//     default: "",
+//   },
+//   backgroundBanner: {
+//     type: String,
+//     default: "",
+//   },
+//   headLine: {
+//     type: String,
+//     default: "",
+//   },
+//   tags: [String],
+//   about: {
+//     type: String,
+//     default: "",
+//   },
+
+//   developmentProfiles: {
+//     github: String,
+//     gitlab: String,
+//     portfolio: String,
+//   },
+//   competitiveProfile: {
+//     leetCode: String,
+//     codeforces: String,
+//     hackerrank: String,
+//     geekforgeeks: String,
+//     codeshef: String,
+//   },
+//   education: {
+//     degree: String,
+//     cgpa: Number,
+//     institution: String,
+//   },
+
+//   followers: {
+//     type: Schema.Types.ObjectId,
+//     ref: "User",
+//   },
+//   following: {
+//     type: Schema.Types.ObjectId,
+//     ref: "User",
+//   },
+
+//   createdAt: {
+//     type: Date,
+//     default: Date.now,
+//   },
+// });
+
+// userSchema.plugin(passportLocalMongoose);
+
+// export default userSchema;
+
 import mongoose from "mongoose";
-import passportLocalMongoose from "passport-local-mongoose";
 
 const Schema = mongoose.Schema;
 
-const userSchema = new Schema({
-  email: {
-    type: String,
-    required: true,
-  },
+const userSchema = new Schema(
+  {
+    username: {
+      type: String,
+      required: true,
+    },
+    password: {
+      type: String,
+      required: true,
+    },
 
-  profilePicture: {
-    type: String,
-    default: "",
-  },
-  backgroundBanner: {
-    type: String,
-    default: "",
-  },
-  headLine: {
-    type: String,
-    default: "",
-  },
-  tags: [String],
-  about: {
-    type: String,
-    default: "",
-  },
+    isMfaActive: {
+      type: Boolean,
+      required: false,
+    },
+    twoFactorSecret: {
+      type: String,
+    },
 
-  developmentProfiles: {
-    github: String,
-    gitlab: String,
-    portfolio: String,
-  },
-  competitiveProfile: {
-    leetCode: String,
-    codeforces: String,
-    hackerrank: String,
-    geekforgeeks: String,
-    codeshef: String,
-  },
-  education: {
-    degree: String,
-    cgpa: Number,
-    institution: String,
-  },
+    email: {
+      type: String,
+    },
+    profilePicture: {
+      type: String,
+      default: "",
+    },
+    backgroundBanner: {
+      type: String,
+      default: "",
+    },
+    headLine: {
+      type: String,
+      default: "",
+    },
+    tags: [String],
+    about: {
+      type: String,
+      default: "",
+    },
 
-  followers: {
-    type: Schema.Types.ObjectId,
-    ref: "User",
-  },
-  following: {
-    type: Schema.Types.ObjectId,
-    ref: "User",
-  },
+    developmentProfiles: {
+      github: String,
+      gitlab: String,
+      portfolio: String,
+    },
+    competitiveProfile: {
+      leetCode: String,
+      codeforces: String,
+      hackerrank: String,
+      geekforgeeks: String,
+      codeshef: String,
+    },
+    education: {
+      degree: String,
+      cgpa: Number,
+      institution: String,
+    },
 
-  createdAt: {
-    type: Date,
-    default: Date.now,
-  },
-});
+    followers: {
+      type: Schema.Types.ObjectId,
+      ref: "User",
+    },
+    following: {
+      type: Schema.Types.ObjectId,
+      ref: "User",
+    },
 
-userSchema.plugin(passportLocalMongoose);
+    createdAt: {
+      type: Date,
+      default: Date.now,
+    },
+  },
+  {
+    timestamps: true,
+  }
+);
 
 export default userSchema;
