@@ -19,6 +19,7 @@ const PORT = process.env.PORT || 8080;
 
 dbConnect();
 
+//Middlewares
 const corsOptions = {
   origin: ["http://localhost:3000"],
   credentials: true,
