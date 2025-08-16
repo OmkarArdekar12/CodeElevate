@@ -81,7 +81,6 @@ const userSchema = new Schema(
 
     isMfaActive: {
       type: Boolean,
-      required: false,
     },
     twoFactorSecret: {
       type: String,
