@@ -8,6 +8,7 @@ import localStrategy from "passport-local";
 import dotenv from "dotenv";
 import cors from "cors";
 import dbConnect from "./config/dbConnect.js";
+import authRoutes from "./routes/authRoutes.js";
 
 dotenv.config();
 
@@ -38,6 +39,9 @@ app.use(session(sessionOptions));
 
 app.use(passport.initialize());
 app.use(passport.session());
+
+//Routes
+app.use("/api/auth", authRoutes);
 
 //Listen App
 app.listen(PORT, () => {
