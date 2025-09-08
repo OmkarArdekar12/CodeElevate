@@ -38,7 +38,8 @@ export const authStatus = async (req, res) => {
   if (req.user) {
     res.status(200).json({
       message: "User logged in successfully",
-      username: req.user.username,
+      // username: req.user.username,
+      user: req.user,
       isMfaActive: req.user.isMfaActive,
     });
   } else {
