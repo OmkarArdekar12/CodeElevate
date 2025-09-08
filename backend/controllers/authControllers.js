@@ -1,4 +1,7 @@
 import bcrypt from "bcryptjs";
+import speakeasy from "speakeasy";
+import qrCode from "qrcode";
+import jwt from "jsonwebtoken";
 import User from "../models/user.js";
 
 //Register Controller
@@ -62,7 +65,30 @@ export const logout = async (req, res) => {
 //Setup2FA Controller
 export const setup2FA = async (req, res) => {
   try {
-  } catch (err) {}
+    console.log("The req.user is: ", req.user);
+    const user = req.user;
+    var secret = speakeasy.generateSecret();
+    console.log("The secret object is: ", secret); //secret object
+    user.twoFactorSecret = secret.base32;
+    user.isMfaActive = true;
+    await user.save();
+    const url = speakeasy.otpauthURL({
+      secret: secret.base32,
+      label: `${req.user.username}`,
+      // issuer: "www.omkarardekar.com",
+      encoding: "base32",
+    });
+    const qrImageUrl = await qrCode.toDataURL(url);
+    res.status(200).json({
+      secret: secret.base32,
+      qrCode: qrImageUrl,
+    });
+  } catch (err) {
+    res.status(500).json({
+      error: "Error in setting up two-factor-authentication-(2FA)",
+      message: err,
+    });
+  }
 };
 
 //Verify2FA Controller
