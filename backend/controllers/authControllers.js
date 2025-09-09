@@ -76,6 +76,7 @@ export const setup2FA = async (req, res) => {
       secret: secret.base32,
       label: `${req.user.username}`,
       // issuer: "www.omkarardekar.com", //issuerName: projectLink
+      issuer: "codeelevate",
       encoding: "base32",
     });
     const qrImageUrl = await qrCode.toDataURL(url);
@@ -92,7 +93,48 @@ export const setup2FA = async (req, res) => {
 };
 
 //Verify2FA Controller
-export const verify2FA = async () => {};
+export const verify2FA = async (req, res) => {
+  const { token } = req.body;
+  console.log(token);
+  const user = req.user;
+
+  const verified = speakeasy.totp.verify({
+    secret: user.twoFactorSecret,
+    encoding: "base32",
+    token,
+  });
+
+  if (verified) {
+    const jwtToken = jwt.sign(
+      { username: user.username },
+      process.env.JWT_SECRET,
+      { expiresIn: "1hr" }
+    );
+    res.status(200).json({
+      message: "two-factor-authentication-(2FA) successful",
+      token: jwtToken,
+    });
+  } else {
+    res
+      .status(400)
+      .json({ message: "Invalid two-factor-authentication-(2FA) token" });
+  }
+};
 
 //Reset2FA Controller
-export const reset2FA = async () => {};
+export const reset2FA = async (req, res) => {
+  try {
+    const user = req.user;
+    user.twoFactorSecret = "";
+    user.isMfaActive = false;
+    await user.save();
+    res
+      .status(200)
+      .json({ message: "two-factor-authentication-(2FA) reset successful" });
+  } catch (err) {
+    res.status(500).json({
+      error: "Error resetting two-factor-authentication-(2FA)",
+      message: err,
+    });
+  }
+};
