@@ -1,5 +1,4 @@
 import mongoose from "mongoose";
-import passport from "passport";
 import userSchema from "../schemas/userSchema.js";
 
 const User = mongoose.model("User", userSchema);
