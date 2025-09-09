@@ -3,21 +3,34 @@ import speakeasy from "speakeasy";
 import qrCode from "qrcode";
 import jwt from "jsonwebtoken";
 import User from "../models/user.js";
+import Profile from "../models/profile.js";
 
 //Register Controller
 export const register = async (req, res) => {
   try {
     const { username, password } = req.body;
     const hashedPassword = await bcrypt.hash(password, 10);
-    const user = new User({
+    // const user = new User({
+    //   username,
+    //   password: hashedPassword,
+    //   isMfaActive: false,
+    // });
+    // await user.save();
+    // console.log("New User: ", user);
+    const user = await User.create({
       username,
       password: hashedPassword,
       isMfaActive: false,
     });
-    console.log("New User: ", user);
-    await user.save();
+    const profile = await Profile.create({ user: user._id });
 
-    res.status(201).json({ message: "User registered successfully" });
+    res
+      .status(201)
+      .json({
+        username: user.username,
+        profile,
+        message: "User registered successfully",
+      });
   } catch (err) {
     res.status(500).json({
       error: "Error: User Registration Failed!",

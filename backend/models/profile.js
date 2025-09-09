@@ -1,5 +1,5 @@
 import mongoose from "mongoose";
-import profileSchema from "../schemas/profileSchema";
+import profileSchema from "../schemas/profileSchema.js";
 
 const Profile = mongoose.model("Profile", profileSchema);
 
