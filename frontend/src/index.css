@@ -94,18 +94,18 @@
   animation: spin3D 2s ease-in-out forwards;
   transform-style: preserve-3d; /* enable 3D feel */
 }
-.text {
+.logo-text {
   display: inline-block;
   animation: flip 3s ease-in-out forwards;
   -webkit-text-stroke: 1px white;
 }
 
 /* Hover effects of Logo and Logo-Text */
-.container:hover .logo {
+.logo-container:hover .logo {
   animation: none;
   animation: spin3D 0s ease-in-out 1 linear;
 }
-.container:hover .text {
+.logo-container:hover .logo-text {
   animation: none;
   animation: flip 0s ease-in-out 1 linear;
 }
