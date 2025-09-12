@@ -3,13 +3,15 @@ import LoginPage from "./pages/LoginPage.jsx";
 import Setup2FA from "./pages/Setup2FA.jsx";
 import Verify2FA from "./pages/Verify2FA.jsx";
 import Error from "./components/Error.jsx";
-import HomePage from "./home/HomePage.jsx";
+import HomePage from "./pages/HomePages.jsx";
+import Home from "./home/Home.jsx";
 import PostPage from "./posts/PostPage.jsx";
 import RankingPage from "./rankings/RankingPage.jsx";
 import AboutPage from "./about/AboutPage.jsx";
 import NotFound from "./components/NotFound.jsx";
+import ProtectedRoute from "./components/ProtectedRoute.jsx";
 
-export const router = createBrowserRouter([
+const router = createBrowserRouter([
   {
     path: "/login",
     element: <LoginPage />,
@@ -36,28 +38,29 @@ export const router = createBrowserRouter([
     path: "/",
     element: <HomePage />,
     errorElement: <Error />,
-  },
-
-  {
-    path: "/posts",
-    element: <PostPage />,
-    errorElement: <Error />,
-  },
-
-  {
-    path: "/rankings",
-    element: <RankingPage />,
-    errorElement: <Error />,
-  },
-
-  {
-    path: "/about",
-    element: <AboutPage />,
-    errorElement: <Error />,
-  },
-
-  {
-    path: "*",
-    element: <NotFound />,
+    children: [
+      {
+        index: true,
+        element: <Home />, //default route "/"
+      },
+      {
+        path: "/posts",
+        element: <PostPage />,
+      },
+      {
+        path: "/rankings",
+        element: <RankingPage />,
+      },
+      {
+        path: "/about",
+        element: <AboutPage />,
+      },
+      {
+        path: "*",
+        element: <NotFound />,
+      },
+    ],
   },
 ]);
+
+export default router;
