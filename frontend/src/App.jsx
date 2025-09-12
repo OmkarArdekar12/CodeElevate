@@ -1,12 +1,12 @@
 import "./App.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Navbar from "./Navbar.jsx";
-import Footer from "./Footer.jsx";
+import Navbar from "./components/Navbar.jsx";
+import Footer from "./components/Footer.jsx";
 import HomePage from "./home/HomePage.jsx";
 import PostPage from "./posts/PostPage.jsx";
 import RankingPage from "./rankings/RankingPage.jsx";
 import AboutPage from "./about/AboutPage.jsx";
-import NotFound from "./NotFound.jsx";
+import NotFound from "./components/NotFound.jsx";
 
 function App() {
   return (
