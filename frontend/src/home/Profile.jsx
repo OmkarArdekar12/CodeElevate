@@ -1,6 +1,6 @@
 export default function Profile({ user }) {
   return (
-    <div className="Profile flex flex-wrap w-[99%] text-xl items-center justify-between bg-gradient-to-r from-gray-950 to-blue-900 rounded-xl px-10 py-2 my-4 shadow-sm shadow-slate-500/50 hover:border hover:border-yellow-500 hover:shadow-yellow-500/50">
+    <div className="Profile flex flex-wrap w-[100%] text-xl items-center justify-between bg-gradient-to-r from-gray-950 to-blue-900 rounded-xl px-10 py-2 my-4 shadow-sm shadow-slate-500/50">
       <div className="flex flex-wrap items-center justify-evenly">
         <img src={user.image} alt={user.name} className="w-[5rem]" />
         <p className="my-1 mx-5 mr-10">{user.name}</p>

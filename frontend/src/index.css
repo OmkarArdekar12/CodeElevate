@@ -46,6 +46,55 @@
   color: #fbbf24 !important;
 }
 
+@property --angle {
+  syntax: "<angle>";
+  initial-value: 0deg;
+  inherits: false;
+}
+
+.Profile {
+  position: relative;
+  z-index: 1;
+}
+
+/* Profile border effect animation */
+.Profile::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 0.75rem;
+  padding: 3px; /* Border thickness */
+  background: conic-gradient(
+    from var(--angle),
+    #fd004c,
+    #fe9000,
+    #fff020,
+    #3edf4b,
+    #3363ff,
+    #b102b7,
+    #fd004c
+  );
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask-composite: exclude;
+  -webkit-mask-composite: destination-out;
+  opacity: 0;
+  transition: opacity 0.35s;
+  z-index: -1;
+  pointer-events: none;
+  box-sizing: border-box;
+}
+
+.Profile:hover::before {
+  opacity: 1;
+  animation: spin-border 0.9s linear infinite;
+}
+
+@keyframes spin-border {
+  to {
+    --angle: 360deg;
+  }
+}
+
 @media (max-width: 570px) {
   .TopCard {
     width: 100%;
