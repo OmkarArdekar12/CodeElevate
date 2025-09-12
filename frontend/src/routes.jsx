@@ -1,8 +1,8 @@
 import { createBrowserRouter } from "react-router-dom";
 import LoginPage from "./pages/LoginPage.jsx";
+import Setup2FA from "./pages/Setup2FA.jsx";
+import Verify2FA from "./pages/Verify2FA.jsx";
 import Error from "./components/Error.jsx";
-import Navbar from "./components/Navbar.jsx";
-import Footer from "./components/Footer.jsx";
 import HomePage from "./home/HomePage.jsx";
 import PostPage from "./posts/PostPage.jsx";
 import RankingPage from "./rankings/RankingPage.jsx";
@@ -15,10 +15,49 @@ export const router = createBrowserRouter([
     element: <LoginPage />,
     errorElement: <Error />,
   },
-]);
 
-// <Route path="/" element={<HomePage />} />
-// <Route path="/posts" element={<PostPage />} />
-// <Route path="/rankings" element={<RankingPage />} />
-// <Route path="/about" element={<AboutPage />} />
-// <Route path="*" element={<NotFound />} />
+  {
+    element: <ProtectedRoute />,
+    children: [
+      {
+        path: "/setup-2fa",
+        element: <Setup2FA />,
+        errorElement: <Error />,
+      },
+      {
+        path: "/verify-2fa",
+        element: <Verify2FA />,
+        errorElement: <Error />,
+      },
+    ],
+  },
+
+  {
+    path: "/",
+    element: <HomePage />,
+    errorElement: <Error />,
+  },
+
+  {
+    path: "/posts",
+    element: <PostPage />,
+    errorElement: <Error />,
+  },
+
+  {
+    path: "/rankings",
+    element: <RankingPage />,
+    errorElement: <Error />,
+  },
+
+  {
+    path: "/about",
+    element: <AboutPage />,
+    errorElement: <Error />,
+  },
+
+  {
+    path: "*",
+    element: <NotFound />,
+  },
+]);
