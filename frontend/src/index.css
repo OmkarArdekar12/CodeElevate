@@ -46,18 +46,90 @@
   color: #fbbf24 !important;
 }
 
+/* Logo and Logo-Text Animation */
+@keyframes spin3D {
+  /* Logo complex spin animation on load */
+  0% {
+    transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg) scale(0.5);
+  }
+  25% {
+    transform: rotateX(90deg) rotateY(45deg) rotateZ(90deg) scale(1.2);
+  }
+  50% {
+    transform: rotateX(180deg) rotateY(90deg) rotateZ(180deg) scale(1.5);
+    filter: drop-shadow(0 0 9px orange);
+  }
+  75% {
+    transform: rotateX(270deg) rotateY(135deg) rotateZ(270deg) scale(1.2);
+    filter: drop-shadow(0 0 12px orange);
+  }
+  90% {
+    transform: rotateX(360deg) rotateY(180deg) rotateZ(360deg) scale(1);
+    filter: drop-shadow(0 0 19px orange);
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes flip {
+  /* Text flip animation on load */
+  0% {
+    transform: rotateY(90deg);
+    -webkit-text-stroke: 1.5px orange;
+    opacity: 0;
+  }
+  90% {
+    transform: rotateY(0deg);
+    -webkit-text-stroke: 1.5px orange;
+    color: gold;
+    opacity: 1;
+  }
+  100% {
+    color: white;
+  }
+}
+
+.logo {
+  display: inline-block;
+  animation: spin3D 2s ease-in-out forwards;
+  transform-style: preserve-3d; /* enable 3D feel */
+}
+.text {
+  display: inline-block;
+  animation: flip 3s ease-in-out forwards;
+  -webkit-text-stroke: 1px white;
+}
+
+/* Hover effects of Logo and Logo-Text */
+.container:hover .logo {
+  animation: none;
+  animation: spin3D 0s ease-in-out 1 linear;
+}
+.container:hover .text {
+  animation: none;
+  animation: flip 0s ease-in-out 1 linear;
+}
+
+/* Border to the text */
+.text-border {
+  color: white;
+  -webkit-text-stroke: 1px white; /* border thickness + color */
+}
+.hover-text-border:hover {
+  color: white;
+  -webkit-text-stroke: 1px white;
+}
+
+/* Profile border effect animation */
 @property --angle {
   syntax: "<angle>";
   initial-value: 0deg;
   inherits: false;
 }
-
 .Profile {
   position: relative;
   z-index: 1;
 }
-
-/* Profile border effect animation */
 .Profile::before {
   content: "";
   position: absolute;
@@ -83,18 +155,17 @@
   pointer-events: none;
   box-sizing: border-box;
 }
-
 .Profile:hover::before {
   opacity: 1;
   animation: spin-border 0.9s linear infinite;
 }
-
 @keyframes spin-border {
   to {
     --angle: 360deg;
   }
 }
 
+/* Responsiveness */
 @media (max-width: 570px) {
   .TopCard {
     width: 100%;
