@@ -109,6 +109,14 @@
   animation: none;
   animation: flip 0s ease-in-out 1 linear;
 }
+.logo-text-container:hover .logo {
+  animation: none;
+  animation: spin3D 0s ease-in-out 1 linear;
+}
+.logo-text-container:hover .logo-text {
+  animation: none;
+  animation: flip 0s ease-in-out 1 linear;
+}
 
 /* Border to the text */
 .text-border {
@@ -245,5 +253,8 @@
 
   .logo-container {
     flex-direction: column;
+  }
+  .logo-text-container {
+    display: none;
   }
 }
