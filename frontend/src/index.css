@@ -242,4 +242,8 @@
     font-size: 1rem;
     flex-direction: column;
   }
+
+  .logo-container {
+    flex-direction: column;
+  }
 }
