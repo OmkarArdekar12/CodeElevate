@@ -1,9 +1,14 @@
 import React from "react";
 import { useState } from "react";
+import { Eye, EyeOff } from "lucide-react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faEye, faEyeSlash } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
 import { register, loginUser } from "../service/authApi";
 
 const LoginForm = () => {
+  const [isPasswordVisible, setIsPasswordVisible] = useState(false);
+  const [confirmPasswordVisible, setConfirmPasswordVisible] = useState(false);
   const [isRegister, setIsRegister] = useState(false);
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
@@ -11,10 +16,23 @@ const LoginForm = () => {
   const [error, setError] = useState("");
   const [message, setMessage] = useState("");
 
+  const togglePasswordVisibility = () => {
+    setIsPasswordVisible(!isPasswordVisible);
+  };
+
+  const toggleConfirmPasswordVisibility = () => {
+    setConfirmPasswordVisible(!confirmPasswordVisible);
+  };
+
   const handleRegisterToggle = () => {
     setIsRegister(!isRegister);
     setError("");
     setMessage("");
+    setUsername("");
+    setPassword("");
+    setConfirmPassword("");
+    setIsPasswordVisible(false);
+    setConfirmPasswordVisible(false);
   };
 
   const handleRegister = async (event) => {
@@ -43,7 +61,20 @@ const LoginForm = () => {
     }
   };
 
-  const handleLogin = () => {};
+  const handleLogin = async (e) => {
+    e.preventDefault();
+    try {
+      const { data } = await loginUser(username, password);
+      setMessage(data.message);
+      setUsername("");
+      setPassword("");
+    } catch (error) {
+      console.log("The erros is: ", error.message);
+      setUsername("");
+      setPassword("");
+      setMessage("Invalid login credentials");
+    }
+  };
 
   return (
     <form
@@ -77,36 +108,52 @@ const LoginForm = () => {
             required
           />
         </div>
-        <div className="mb-4">
+        <div className="mb-4 relative">
           <label htmlFor="password" className="text-gray-600 text-sm">
             Password
           </label>
           <input
             id="password"
             label="Password"
-            type="password"
+            type={isPasswordVisible ? "text" : "password"}
             value={password}
             onChange={(e) => setPassword(e.target.value)}
-            className="w-full p-2 border rounded mt-2"
+            className="w-full p-2 pr-10 border rounded mt-2"
             placeholder="Enter Your Password"
             required
           />
+          <button
+            type="button"
+            onClick={togglePasswordVisibility}
+            className="absolute inset-y-0 right-3 flex items-center text-gray-400 hover:text-gray-700 mt-8"
+          >
+            <FontAwesomeIcon icon={isPasswordVisible ? faEyeSlash : faEye} />
+          </button>
         </div>
         {isRegister && (
-          <div className="mb-4">
+          <div className="mb-4 relative">
             <label htmlFor="confirm-password" className="text-gray-600 text-sm">
               Confirm Password
             </label>
             <input
               id="confirm-password"
               label="Confirm Password"
-              type="password"
+              type={confirmPasswordVisible ? "text" : "password"}
               value={confirmPassword}
               onChange={(e) => setConfirmPassword(e.target.value)}
-              className="w-full p-2 border rounded mt-2"
+              className="w-full p-2 pr-10 border rounded mt-2"
               placeholder="Enter Password Again"
               required
             />
+            <button
+              type="button"
+              onClick={toggleConfirmPasswordVisibility}
+              className="absolute inset-y-0 right-3 flex items-center text-gray-400 hover:text-gray-700 mt-8"
+            >
+              <FontAwesomeIcon
+                icon={confirmPasswordVisible ? faEyeSlash : faEye}
+              />
+            </button>
           </div>
         )}
         {error && <p className="text-red-500 text-sm mb-3">{error}</p>}
