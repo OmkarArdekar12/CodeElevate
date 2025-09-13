@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { setup2FA } from "../service/authApi";
 
 const TwoFASetup = ({ onSetupComplete }) => {
-  const [response, setResponse] = useState({});
+  const [response, setResponse] = useState({ secret: "", qrCode: "" });
   const [message, setMessage] = useState("");
 
   const fetchORCode = async () => {
@@ -34,11 +34,13 @@ const TwoFASetup = ({ onSetupComplete }) => {
       </p>
       <div className="p-6">
         <div className="flex justify-center">
-          <img
-            src={response.qrCode}
-            alt="2FA QR Code"
-            className="mb-4 border rounded-md"
-          />
+          {response.qrCode && (
+            <img
+              src={response.qrCode}
+              alt="2FA QR Code"
+              className="mb-4 border rounded-md"
+            />
+          )}
         </div>
         <div className="flex items-center mt-3 mb-3">
           <div className="border-t border-1 border-gray-200 flex-grow"></div>
@@ -55,8 +57,7 @@ const TwoFASetup = ({ onSetupComplete }) => {
           )}
           <input
             readOnly
-            defaultValue=""
-            value={response.secret}
+            value={response.secret || ""}
             className="w-full border rounded mt-2 text-xs text-gray-600 p-4"
             placeholder="Enter the Code"
             onClick={copyClipBoard}
@@ -64,7 +65,7 @@ const TwoFASetup = ({ onSetupComplete }) => {
         </div>
         <button
           onClick={onSetupComplete}
-          className="w-full bg-blue-500 text-white py-2 rounded-md"
+          className="w-full bg-blue-500 text-white py-2 rounded-md hover:bg-blue-600 hover-text-border"
         >
           Continue to Verification
         </button>
