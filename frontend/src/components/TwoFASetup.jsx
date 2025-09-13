@@ -58,6 +58,7 @@ const TwoFASetup = ({ onSetupComplete }) => {
             defaultValue=""
             value={response.secret}
             className="w-full border rounded mt-2 text-xs text-gray-600 p-4"
+            placeholder="Enter the Code"
             onClick={copyClipBoard}
           />
         </div>

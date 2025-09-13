@@ -1,7 +1,30 @@
 import React from "react";
+import TwoFAVerification from "../components/TwoFAVerification";
+import { useNavigate } from "react-router-dom";
 
 const Verify2FA = () => {
-  return <div>Verify2FA</div>;
+  const navigate = useNavigate();
+
+  const handleVerification = async (data) => {
+    if (data) {
+      navigate("/");
+    }
+  };
+
+  const handle2FAReset = async (data) => {
+    if (data) {
+      navigate("/setup-2fa");
+    }
+  };
+
+  return (
+    <div className="w-[100%] h-[100%] text-white bg-slate-900 flex flex-col justify-center items-center px-10 py-9">
+      <TwoFAVerification
+        onVerifySuccess={handleVerification}
+        onResetSuccess={handle2FAReset}
+      />
+    </div>
+  );
 };
 
 export default Verify2FA;
