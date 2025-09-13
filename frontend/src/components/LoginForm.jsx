@@ -6,7 +6,7 @@ import { faEye, faEyeSlash } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
 import { register, loginUser } from "../service/authApi";
 
-const LoginForm = () => {
+const LoginForm = ({ onLoginSuccess }) => {
   const [isPasswordVisible, setIsPasswordVisible] = useState(false);
   const [confirmPasswordVisible, setConfirmPasswordVisible] = useState(false);
   const [isRegister, setIsRegister] = useState(false);
@@ -52,10 +52,12 @@ const LoginForm = () => {
       setUsername("");
       setPassword("");
       setConfirmPassword("");
+      setError("");
     } catch (error) {
       setUsername("");
       setPassword("");
       setConfirmPassword("");
+      setMessage("");
       console.log("The error is: ", error.message);
       setError(error.message);
     }
@@ -63,16 +65,21 @@ const LoginForm = () => {
 
   const handleLogin = async (e) => {
     e.preventDefault();
+    setMessage("");
+    setError("");
     try {
       const { data } = await loginUser(username, password);
       setMessage(data.message);
       setUsername("");
       setPassword("");
+      setError("");
+      onLoginSuccess(data);
     } catch (error) {
       console.log("The erros is: ", error.message);
       setUsername("");
       setPassword("");
-      setMessage("Invalid login credentials");
+      setMessage("");
+      setError("Invalid login credentials");
     }
   };
 
