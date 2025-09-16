@@ -4,7 +4,7 @@ import Profile from "../models/profile.js";
 import {
   getAllProfiles,
   showProfile,
-  createProfile,
+  // createProfile,
   updateProfile,
   destroyProfile,
 } from "../controllers/profileControllers.js";
