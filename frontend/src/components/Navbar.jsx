@@ -37,12 +37,14 @@ export default function Navbar() {
               >
                 Posts
               </Link>
-              <Link
-                to="/messages"
-                className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-md font-medium transition duration-150"
-              >
-                Messages
-              </Link>
+              {isLoggedIn && (
+                <Link
+                  to="/messages"
+                  className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-md font-medium transition duration-150"
+                >
+                  Messages
+                </Link>
+              )}
               <Link
                 to="/rankings"
                 className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-md font-medium transition duration-150"
@@ -161,6 +163,14 @@ export default function Navbar() {
             >
               Posts
             </Link>
+            {isLoggedIn && (
+              <Link
+                to="/messages"
+                className="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-700 transition duration-150"
+              >
+                Messages
+              </Link>
+            )}
             <Link
               to="/rankings"
               className="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-700 transition duration-150"
