@@ -23,6 +23,10 @@ const profileSchema = Schema({
     type: String,
     default: "",
   },
+  role: {
+    type: String,
+    default: "Explorer",
+  },
   tags: [String],
   about: {
     type: String,
