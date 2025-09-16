@@ -1,8 +1,10 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import { useSession } from "../context/SessionContext";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
+  const { isLoggedIn } = useSession();
 
   return (
     <nav className="bg-gray-800 shadow-lg w-[100%] py-3">
@@ -45,20 +47,35 @@ export default function Navbar() {
               </Link>
             </div>
 
-            <div className="flex items-center ml-4">
-              <a
-                href="#"
-                className="flex items-center text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-md font-medium transition duration-150"
-              >
-                <div className="hidden md:block">
-                  <img
-                    src="/images/userImage.png"
-                    alt="Profile"
-                    className="h-12 w-12 rounded-full object-cover"
-                  />
-                </div>
-              </a>
-            </div>
+            {isLoggedIn ? (
+              <div className="flex items-center ml-4">
+                <a
+                  href="#"
+                  className="flex items-center text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-md font-medium transition duration-150"
+                >
+                  <div className="hidden md:block">
+                    <img
+                      src="/images/userImage.png"
+                      alt="Profile"
+                      className="h-12 w-12 rounded-full object-cover"
+                    />
+                  </div>
+                </a>
+              </div>
+            ) : (
+              <div className="flex items-center ml-4">
+                <a
+                  href="#"
+                  className="flex items-center text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-md font-medium transition duration-150"
+                >
+                  <div className="hidden md:block">
+                    <button className="text-white bg-green-700 hover:bg-green-600 p-2 rounded-md">
+                      <Link to="/login">Login / SignUp</Link>
+                    </button>
+                  </div>
+                </a>
+              </div>
+            )}
 
             <div className="md:hidden flex items-center ml-2">
               <button
@@ -107,12 +124,21 @@ export default function Navbar() {
       {isOpen && (
         <div className="md:hidden bg-gray-800">
           <div className="px-2 pt-2 pb-3 space-y-1">
-            <a
-              href="#"
-              className="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-700 transition duration-150 md:hidden"
-            >
-              Profile
-            </a>
+            {isLoggedIn ? (
+              <Link
+                to="#"
+                className="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-700 transition duration-150 md:hidden"
+              >
+                Profile
+              </Link>
+            ) : (
+              <Link
+                to="/login"
+                className="block px-3 py-2 rounded-md text-base font-medium text-green-500 hover:underline hover:bg-gray-700 transition duration-150 md:hidden"
+              >
+                Login / Signup
+              </Link>
+            )}
             <Link
               to="/"
               className="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-700 transition duration-150"
