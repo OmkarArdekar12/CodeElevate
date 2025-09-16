@@ -19,6 +19,7 @@ export const register = async (req, res) => {
 
     res.status(201).json({
       username: user.username,
+      userId: user._id,
       profile,
       message: "User registered successfully",
     });
@@ -44,6 +45,7 @@ export const login = async (req, res) => {
   res.status(200).json({
     message: "User logged in successfully",
     username: req.user.username,
+    userId: req.user._id,
     isMfaActive: req.user.isMfaActive,
   });
 };
@@ -54,6 +56,7 @@ export const authStatus = async (req, res) => {
     res.status(200).json({
       message: "User logged in successfully",
       username: req.user.username,
+      userId: req.user._id,
       isMfaActive: req.user.isMfaActive,
     });
   } else {
