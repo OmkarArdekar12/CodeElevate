@@ -11,9 +11,13 @@ export default function Navbar() {
       <div className="px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-18">
           <Link to="/">
-            <div className="flex-shrink-0 flex items-center">
-              <img src="/images/logo.png" alt="CodeElevate" className="h-18" />
-              <h1 className="LogoText ml-1 text-white text-3xl hover:text-yellow-300">
+            <div className="logo-container flex-shrink-0 flex items-center">
+              <img
+                src="/images/logo.png"
+                alt="CodeElevate"
+                className="logo h-18"
+              />
+              <h1 className="LogoText logo-text ml-1 text-white text-3xl hover:text-yellow-300">
                 CodeElevate
               </h1>
             </div>
@@ -32,6 +36,12 @@ export default function Navbar() {
                 className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-md font-medium transition duration-150"
               >
                 Posts
+              </Link>
+              <Link
+                to="/messages"
+                className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-md font-medium transition duration-150"
+              >
+                Messages
               </Link>
               <Link
                 to="/rankings"

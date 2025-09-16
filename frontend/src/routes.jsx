@@ -6,6 +6,7 @@ import Error from "./components/Error.jsx";
 import HomePage from "./pages/HomePages.jsx";
 import Home from "./home/Home.jsx";
 import PostPage from "./posts/PostPage.jsx";
+import MessagePage from "./messages/MessagePage.jsx";
 import RankingPage from "./rankings/RankingPage.jsx";
 import AboutPage from "./about/AboutPage.jsx";
 import NotFound from "./components/NotFound.jsx";
@@ -46,6 +47,10 @@ const router = createBrowserRouter([
       {
         path: "/posts",
         element: <PostPage />,
+      },
+      {
+        path: "/messages",
+        element: <MessagePage />,
       },
       {
         path: "/rankings",
