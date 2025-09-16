@@ -17,10 +17,10 @@ router.get("/", getAllProfiles);
 //Show Profile Route
 router.get("/:userId", showProfile);
 
-// Create Profile Route
-router.post("/", auth, createProfile);
+//Create Profile Route
+// router.post("/", auth, createProfile);
 
-// Update Profile Route
+//Update Profile Route
 router.put("/:userId", auth, updateProfile);
 
 //Delete Profile Route

@@ -27,25 +27,25 @@ export const showProfile = async (req, res) => {
   }
 };
 
-export const createProfile = async (req, res) => {
-  try {
-    const userId = req.user._id;
-    let profile = await Profile.findOne({ user: userId });
-    if (profile) {
-      profile = Object.assign(profile, req.body);
-      await profile.save();
-      return res.status(200).json(profile);
-    }
+// export const createProfile = async (req, res) => {
+//   try {
+//     const userId = req.user._id;
+//     let profile = await Profile.findOne({ user: userId });
+//     if (profile) {
+//       profile = Object.assign(profile, req.body);
+//       await profile.save();
+//       return res.status(200).json(profile);
+//     }
 
-    profile = new Profile({ user: userId, ...req.body });
-    await profile.save();
-    res.status(200).json(profile);
-  } catch (err) {
-    res
-      .status(500)
-      .json({ message: "Error in creating/updating profile", error: err });
-  }
-};
+//     profile = new Profile({ user: userId, ...req.body });
+//     await profile.save();
+//     res.status(200).json(profile);
+//   } catch (err) {
+//     res
+//       .status(500)
+//       .json({ message: "Error in creating/updating profile", error: err });
+//   }
+// };
 
 export const updateProfile = async (req, res) => {
   try {
