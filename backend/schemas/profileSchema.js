@@ -27,6 +27,10 @@ const profileSchema = Schema({
     type: String,
     default: "Explorer",
   },
+  domain: {
+    type: String,
+    default: "General",
+  }
   tags: [String],
   about: {
     type: String,
