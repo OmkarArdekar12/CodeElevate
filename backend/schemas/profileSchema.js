@@ -30,7 +30,7 @@ const profileSchema = Schema({
   domain: {
     type: String,
     default: "General",
-  }
+  },
   tags: [String],
   about: {
     type: String,
