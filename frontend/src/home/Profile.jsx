@@ -1,10 +1,10 @@
-export default function Profile({ user }) {
-  const userImage = user.image ? user.image : "/images/userImage.png";
-  const headLine = user.headLine ? user.headLine : "Hello! Everyone";
-  const username = user.name;
-  const role = user.role;
-  const domain = user.domain;
-  const tags = ["Coder", "Learner", "Speed"];
+export default function Profile({ profile }) {
+  const userImage = profile.profilePicture || "/images/userImage.png";
+  const headLine = profile.headLine ? profile.headLine : "Hello! Everyone";
+  const username = profile.user.username;
+  const role = profile.role ? profile.role : "Explorer";
+  const domain = profile.domain ? profile.domain : "General";
+  const tags = profile.tags;
   return (
     <div className="Profile flex flex-wrap w-[100%] text-xl items-center justify-between bg-gradient-to-r from-gray-950 to-blue-900 rounded-xl px-10 py-2 my-4 shadow-sm shadow-slate-500/50">
       <div className="profile-image flex flex-wrap items-center justify-evenly">
@@ -23,7 +23,7 @@ export default function Profile({ user }) {
             {domain}
           </p>
         </div>
-        {tags && (
+        {tags && tags.length !== 0 && (
           <div className="m-1 flex flex-wrap flex-row justify-center">
             {tags.map((tag, index) => (
               <p
