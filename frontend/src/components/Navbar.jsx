@@ -61,8 +61,8 @@ export default function Navbar() {
 
             {isLoggedIn ? (
               <div className="flex items-center ml-4">
-                <a
-                  href="#"
+                <Link
+                  to="#"
                   className="flex items-center text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-md font-medium transition duration-150"
                 >
                   <div className="hidden md:block">
@@ -72,20 +72,20 @@ export default function Navbar() {
                       className="h-12 w-12 rounded-full object-cover"
                     />
                   </div>
-                </a>
+                </Link>
               </div>
             ) : (
               <div className="flex items-center ml-4">
-                <a
-                  href="#"
+                <Link
+                  to="/login"
                   className="flex items-center text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-md font-medium transition duration-150"
                 >
                   <div className="hidden md:block">
                     <button className="text-white bg-green-700 hover:bg-green-600 p-2 rounded-md">
-                      <Link to="/login">Login / SignUp</Link>
+                      Login / SignUp
                     </button>
                   </div>
-                </a>
+                </Link>
               </div>
             )}
 
