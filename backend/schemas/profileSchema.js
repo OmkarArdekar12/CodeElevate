@@ -6,14 +6,13 @@ const profileSchema = Schema({
   fullName: {
     type: String,
   },
+
   user: {
     type: Schema.Types.ObjectId,
     ref: "User",
     required: true,
   },
-  email: {
-    type: String,
-  },
+
   profilePicture: {
     type: String,
     default: "",
@@ -22,10 +21,12 @@ const profileSchema = Schema({
     type: String,
     default: "",
   },
+
   headLine: {
     type: String,
     default: "",
   },
+
   role: {
     type: String,
     default: "Explorer",
@@ -34,7 +35,9 @@ const profileSchema = Schema({
     type: String,
     default: "General",
   },
+
   tags: [String],
+
   about: {
     type: String,
     default: "",
@@ -45,13 +48,23 @@ const profileSchema = Schema({
     gitlab: String,
     portfolio: String,
   },
-  competitiveProfile: {
+  competitiveProfiles: {
     leetCode: String,
     codeforces: String,
     hackerrank: String,
     geekforgeeks: String,
     codeshef: String,
   },
+  socials: {
+    linkedin: String,
+    email: String,
+    youtube: String,
+    facebook: String,
+    instagram: String,
+    twitter: String,
+    thread: String,
+  },
+
   education: {
     degree: String,
     cgpa: Number,
