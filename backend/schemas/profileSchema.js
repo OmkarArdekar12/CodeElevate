@@ -3,6 +3,9 @@ import mongoose from "mongoose";
 const Schema = mongoose.Schema;
 
 const profileSchema = Schema({
+  fullName: {
+    type: String,
+  },
   user: {
     type: Schema.Types.ObjectId,
     ref: "User",
@@ -55,14 +58,18 @@ const profileSchema = Schema({
     institution: String,
   },
 
-  followers: {
-    type: Schema.Types.ObjectId,
-    ref: "User",
-  },
-  following: {
-    type: Schema.Types.ObjectId,
-    ref: "User",
-  },
+  followers: [
+    {
+      type: Schema.Types.ObjectId,
+      ref: "User",
+    },
+  ],
+  following: [
+    {
+      type: Schema.Types.ObjectId,
+      ref: "User",
+    },
+  ],
 });
 
 export default profileSchema;

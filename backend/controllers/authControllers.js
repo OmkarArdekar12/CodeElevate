@@ -15,7 +15,10 @@ export const register = async (req, res) => {
       password: hashedPassword,
       isMfaActive: false,
     });
-    const profile = await Profile.create({ user: user._id });
+    const profile = await Profile.create({
+      user: user._id,
+      fullName: username,
+    });
 
     res.status(201).json({
       username: user.username,
