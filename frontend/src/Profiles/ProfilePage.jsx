@@ -3,11 +3,13 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCircleRight } from "@fortawesome/free-solid-svg-icons";
 import {
   SiLeetcode,
-  SiHackerrank,
-  SiGeeksforgeeks,
-  SiCodechef,
   SiCodeforces,
+  SiGeeksforgeeks,
+  SiHackerrank,
+  SiCodechef,
+  SiTopcoder,
 } from "react-icons/si";
+import { GiHorseHead } from "react-icons/gi";
 
 const ProfilePage = () => {
   const tags = ["Coder", "Dominator", "TeamPlayer"];
@@ -78,8 +80,11 @@ const ProfilePage = () => {
         <div className="w-full flex flex-col justify-center p-4">
           <h2 className="text-3xl mb-3">Tags</h2>
           <div className="w-full flex items-center flex-wrap">
-            {tags.map((tag) => (
-              <span className="bg-gradient-to-r from-gray-500 via-gray-600 to-gray-700 shadow-cyan-300 text-white inline m-1 py-1 px-2 rounded-md">
+            {tags.map((tag, index) => (
+              <span
+                key={index}
+                className="bg-gradient-to-r from-gray-500 via-gray-600 to-gray-700 shadow-cyan-300 text-white inline m-1 py-1 px-2 rounded-md"
+              >
                 {tag}
               </span>
             ))}
@@ -92,10 +97,12 @@ const ProfilePage = () => {
             Competitive Programming / Data Structures & Algorithms
           </h2>
           <div>
-            <SiCodechef />
-            <SiLeetcode />
-            <SiGeeksforgeeks />
-            <SiHackerrank />
+            <div>LeetCode</div>
+            <div>Codeforces</div>
+            <div>AtCoder</div>
+            <div>CodeChef</div>
+            <div>GeeksForGeeks</div>
+            <div>HackerRank</div>
           </div>
         </div>
         <div>DevelopmentProfile</div>

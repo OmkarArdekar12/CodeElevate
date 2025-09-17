@@ -52,9 +52,9 @@ const profileSchema = Schema({
     leetCode: String,
     codeforces: String,
     atCoder: String,
-    hackerrank: String,
-    geekforgeeks: String,
     codechef: String,
+    geekforgeeks: String,
+    hackerrank: String,
   },
   socials: {
     linkedin: String,
