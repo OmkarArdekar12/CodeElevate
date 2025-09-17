@@ -1,6 +1,13 @@
 import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCircleRight } from "@fortawesome/free-solid-svg-icons";
+import {
+  SiLeetcode,
+  SiHackerrank,
+  SiGeeksforgeeks,
+  SiCodechef,
+  SiCodeforces,
+} from "react-icons/si";
 
 const ProfilePage = () => {
   const tags = ["Coder", "Dominator", "TeamPlayer"];
@@ -84,7 +91,12 @@ const ProfilePage = () => {
           <h2 className="text-3xl mb-1">
             Competitive Programming / Data Structures & Algorithms
           </h2>
-          <div></div>
+          <div>
+            <SiCodechef />
+            <SiLeetcode />
+            <SiGeeksforgeeks />
+            <SiHackerrank />
+          </div>
         </div>
         <div>DevelopmentProfile</div>
         <div>Education</div>

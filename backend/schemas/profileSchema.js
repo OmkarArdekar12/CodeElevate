@@ -51,9 +51,10 @@ const profileSchema = Schema({
   competitiveProfiles: {
     leetCode: String,
     codeforces: String,
+    atCoder: String,
     hackerrank: String,
     geekforgeeks: String,
-    codeshef: String,
+    codechef: String,
   },
   socials: {
     linkedin: String,
