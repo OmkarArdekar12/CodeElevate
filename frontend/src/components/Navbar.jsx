@@ -17,14 +17,15 @@ export default function Navbar() {
                 alt="CodeElevate"
                 className="logo h-18"
               />
-              <h1 className="LogoText logo-text ml-1 text-white text-3xl hover:text-yellow-300">
+              <h1 className="LogoText logo-text ml-1 text-white text-3xl hover-logo-text-border">
                 CodeElevate
               </h1>
             </div>
           </Link>
 
+          {/* Desktop Nav Links */}
           <div className="flex items-center">
-            <div className="hidden md:flex items-center space-x-4">
+            <div className="hidden lg:flex items-center space-x-4">
               <Link
                 to="/"
                 className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-md font-medium transition duration-150"
@@ -37,6 +38,14 @@ export default function Navbar() {
               >
                 Posts
               </Link>
+              {isLoggedIn && (
+                <Link
+                  to="/notifications"
+                  className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-md font-medium transition duration-150"
+                >
+                  Notifications
+                </Link>
+              )}
               {isLoggedIn && (
                 <Link
                   to="/messages"
@@ -89,7 +98,8 @@ export default function Navbar() {
               </div>
             )}
 
-            <div className="md:hidden flex items-center ml-2">
+            {/* Menu button Navbar */}
+            <div className="lg:hidden flex items-center ml-2">
               <button
                 onClick={() => setIsOpen(!isOpen)}
                 className="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none transition duration-150"
@@ -134,7 +144,7 @@ export default function Navbar() {
       </div>
 
       {isOpen && (
-        <div className="md:hidden bg-gray-800">
+        <div className="lg:hidden bg-gray-800">
           <div className="px-2 pt-2 pb-3 space-y-1">
             {isLoggedIn ? (
               <Link
@@ -163,6 +173,14 @@ export default function Navbar() {
             >
               Posts
             </Link>
+            {isLoggedIn && (
+              <Link
+                to="/notifications"
+                className="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-700 transition duration-150"
+              >
+                Notifications
+              </Link>
+            )}
             {isLoggedIn && (
               <Link
                 to="/messages"

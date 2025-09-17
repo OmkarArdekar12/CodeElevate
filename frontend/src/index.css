@@ -135,6 +135,10 @@ main {
   color: white;
   -webkit-text-stroke: 1px white;
 }
+.hover-logo-text-border:hover {
+  color: "yellow";
+  -webkit-text-stroke: 2px yellow;
+}
 
 /* Profile border effect animation */
 @property --angle {

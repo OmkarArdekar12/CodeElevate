@@ -15,7 +15,7 @@ const router = express.Router();
 router.get("/", getAllProfiles);
 
 //Show Profile Route
-router.get("/:userId", showProfile);
+router.get("/:id", showProfile);
 
 //Create Profile Route
 // router.post("/", auth, createProfile);

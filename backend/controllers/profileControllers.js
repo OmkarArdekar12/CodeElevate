@@ -13,8 +13,8 @@ export const getAllProfiles = async (req, res) => {
 
 export const showProfile = async (req, res) => {
   try {
-    const id = req.params.userId;
-    const profile = await Profile.findOne({ user: id }).populate(
+    const id = req.params.id;
+    const profile = await Profile.findOne({ _id: id }).populate(
       "user",
       "username"
     );

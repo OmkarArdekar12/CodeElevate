@@ -6,6 +6,8 @@ import Error from "./components/Error.jsx";
 import HomePage from "./pages/HomePages.jsx";
 import Home from "./home/Home.jsx";
 import PostPage from "./posts/PostPage.jsx";
+import ProfilePage from "./Profiles/ProfilePage.jsx";
+import NotificationPage from "./notifications/NotificationPage.jsx";
 import MessagePage from "./messages/MessagePage.jsx";
 import RankingPage from "./rankings/RankingPage.jsx";
 import AboutPage from "./about/AboutPage.jsx";
@@ -45,8 +47,16 @@ const router = createBrowserRouter([
         element: <Home />, //default route "/"
       },
       {
+        path: "/profiles/:id",
+        element: <ProfilePage />,
+      },
+      {
         path: "/posts",
         element: <PostPage />,
+      },
+      {
+        path: "/notifications",
+        element: <NotificationPage />,
       },
       {
         path: "/messages",
