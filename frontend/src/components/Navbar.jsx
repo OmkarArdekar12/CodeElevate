@@ -1,10 +1,8 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import { useSession } from "../context/SessionContext";
 
-export default function Navbar() {
+export default function Navbar({ isLoggedIn }) {
   const [isOpen, setIsOpen] = useState(false);
-  const { isLoggedIn } = useSession();
 
   return (
     <nav className="bg-gray-800 shadow-lg w-[100%] py-3">
@@ -90,7 +88,7 @@ export default function Navbar() {
                   className="flex items-center text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-md font-medium transition duration-150"
                 >
                   <div className="hidden md:block">
-                    <button className="text-white bg-green-700 hover:bg-green-600 p-2 rounded-md">
+                    <button className="text-white bg-green-700 hover:bg-green-600 p-2 rounded-md cursor-pointer">
                       Login / SignUp
                     </button>
                   </div>
