@@ -194,7 +194,9 @@ const ProfilePage = () => {
         <hr className="w-full text-gray-600 my-10" />
         <div>DevelopmentProfile</div>
         {/* Edu */}
+        <hr className="w-full text-gray-600 my-10" />
         <div>Education</div>
+        <hr className="w-full text-gray-600 my-10" />
         {/* Posts */}
         <div>Posts</div>
       </div>
