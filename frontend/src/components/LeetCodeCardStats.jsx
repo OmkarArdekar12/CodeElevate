@@ -11,14 +11,14 @@ export default function LeetCodeCardStats({ leetCodeData }) {
   };
 
   return (
-    <div className="w-[90%] md:w-[34%] mt-8 p-6 text-white bg-gray-900 rounded-2xl shadow-xl border border-gray-100">
+    <div className="w-[90%] md:w-[34%] m-1 p-6 text-white bg-gray-900 rounded-2xl shadow-xl border border-gray-100">
       <div className="flex flex-wrap items-center justify-center">
         <img
           src="/images/LeetCodeLogo.png"
           alt="LeetCode"
           className="w-9 h-9 mr-2"
         />
-        <span className="text-white text-2xl text-borde">
+        <span className="text-white text-2xl text-border">
           {leetCodeData.username}
         </span>
       </div>

@@ -27,11 +27,18 @@ router.get("/codeforces/:username", async (req, res) => {
     });
 
     const codeforcesData = {
+      handle: user.handle,
       rating: user.rating || 0,
       contribution: user.contribution || 0,
       rank: user.rank || "unrated",
       maxRating: user.maxRating || 0,
       maxRank: user.maxRank || "unrated",
+      friendOfCount: user.friendOfCount || 0,
+      organization: user.organization || "N/A",
+      lastOnlineTimeSeconds: user.lastOnlineTimeSeconds || 0,
+      registrationTimeSeconds: user.registrationTimeSeconds || 0,
+      city: user.city || "N/A",
+      country: user.country || "N/A",
       totalProblemsSolved: problemSolvedSet.size,
     };
 

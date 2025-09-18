@@ -5,6 +5,7 @@ import ProfilePage from "../Profiles/ProfilePage.jsx";
 import LeetCodeCardStats from "../components/LeetCodeCardStats.jsx";
 import { useSession } from "../context/SessionContext.jsx";
 import Loading from "../components/Loading.jsx";
+import CodeforcesCard from "../components/CodeforcesCardStats.jsx";
 
 function HomePage() {
   const { isLoggedIn, loading } = useSession();
@@ -23,10 +24,27 @@ function HomePage() {
       </main> */}
       <ProfilePage />
       <LeetCodeCardStats leetCodeData={data} />
+      <CodeforcesCard codeforcesData={cf} />
       <Footer />
     </>
   );
 }
+
+const cf = {
+  handle: "Omkar_01",
+  rating: 371,
+  contribution: 0,
+  rank: "newbie",
+  maxRating: 371,
+  maxRank: "newbie",
+  friendOfCount: 0,
+  organization: "N/A",
+  lastOnlineTimeSeconds: 1746061580,
+  registrationTimeSeconds: 1722165897,
+  city: "N/A",
+  country: "N/A",
+  totalProblemsSolved: 6,
+};
 
 const data = {
   username: "Omkaarr_01",
