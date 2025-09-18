@@ -28,6 +28,12 @@ main {
   align-items: center;
 }
 
+.title-font {
+  font-family: "Zen Dots", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
 .box {
   background-color: #181818;
 }

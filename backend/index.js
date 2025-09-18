@@ -14,6 +14,7 @@ import "./config/passportConfig.js";
 import authRoutes from "./routes/authRoutes.js";
 import profileRoutes from "./routes/profileRoutes.js";
 import competitiveProgrammingStatsRoutes from "./routes/competitiveProgrammingStatsRoutes.js";
+import developmentProfilesStatsRoutes from "./routes/developmentProfilesStatsRoutes.js";
 import {
   pageNotFoundMiddleware,
   errorHandlerMiddleware,
@@ -57,6 +58,7 @@ app.use(
   "/api/stats/competitive-programming",
   competitiveProgrammingStatsRoutes
 );
+app.use("/api/stats/development-profiles", developmentProfilesStatsRoutes);
 
 //Error handlers
 app.use((req, res, next) => {

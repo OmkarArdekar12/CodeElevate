@@ -19,7 +19,8 @@ import {
 } from "../service/competitiveProgrammingStatsApi";
 import LeetCodeCardStats from "../components/LeetCodeCardStats.jsx";
 import CodeforcesCardStats from "../components/CodeforcesCardStats.jsx";
-import { FaGithub } from "react-icons/fa";
+import { FaGithub, FaGitlab, FaLaptopCode } from "react-icons/fa";
+import { FiBriefcase } from "react-icons/fi";
 
 const ProfilePage = () => {
   const tags = ["Coder", "Dominator", "TeamPlayer"];
@@ -83,13 +84,13 @@ const ProfilePage = () => {
         {/* about */}
         <hr className="w-full text-gray-600 mt-25 mb-10" />
         <div className="w-full flex flex-col justify-center p-4">
-          <h2 className="text-3xl mb-3">About</h2>
+          <h2 className="text-3xl mb-3 title-font">About</h2>
           <h3 className="text-lg">Here the about section</h3>
         </div>
         {/* domain & role */}
         <hr className="w-full text-gray-600 my-10" />
         <div className="w-full flex flex-col justify-center p-4">
-          <h2 className="text-3xl mb-3">Domain & Role</h2>
+          <h2 className="text-3xl mb-3 title-font">Domain & Role</h2>
           <div className="w-full flex items-center flex-wrap">
             <h3 className="bg-indigo-500 inline px-4 py-2 rounded-lg text-lg mx-2 my-1 hover-text-border text-center">
               <FontAwesomeIcon
@@ -110,7 +111,7 @@ const ProfilePage = () => {
         {/* Tags */}
         <hr className="w-full text-gray-600 my-10" />
         <div className="w-full flex flex-col justify-center p-4">
-          <h2 className="text-3xl mb-3">Tags</h2>
+          <h2 className="text-3xl mb-3 title-font">Tags</h2>
           <div className="w-full flex items-center flex-wrap">
             {tags.map((tag, index) => (
               <span
@@ -125,7 +126,7 @@ const ProfilePage = () => {
         {/* CP */}
         <hr className="w-full text-gray-600 my-10" />
         <div className="w-full flex flex-col justify-center p-4">
-          <h2 className="text-3xl mb-1">
+          <h2 className="text-3xl mb-1 title-font">
             Competitive Programming / Data Structures & Algorithms
           </h2>
           <div className="mt-4 p-4 md:px-25">
@@ -220,7 +221,7 @@ const ProfilePage = () => {
         {/* CP Stats */}
         <hr className="w-full text-gray-600 my-10" />
         <div className="w-full flex flex-col justify-center p-4">
-          <h2 className="text-3xl mb-1">Coding Profiles Stats</h2>
+          <h2 className="text-3xl mb-1 title-font">Coding Profiles Stats</h2>
           <div className="flex justify-center flex-col lg:flex-row lg:justify-evenly items-center flex-wrap mt-4 p-4 md:px-25">
             {Object.keys(userLeetCodeData).length !== 0 && (
               <LeetCodeCardStats leetCodeData={userLeetCodeData} />
@@ -233,19 +234,33 @@ const ProfilePage = () => {
         {/* Devs */}
         <hr className="w-full text-gray-600 my-10" />
         <div className="w-full flex flex-col justify-center p-4">
-          <h2 className="text-3xl mb-1">Development Profiles</h2>
+          <h2 className="text-3xl mb-1 title-font">Development Profiles</h2>
           <div className="mt-4 p-4 md:px-25">
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
               <div className="flex items-center space-x-2 flex-wrap">
                 <FaCheckCircle className="text-blue-500 w-5 h-5 inline" />
                 <div className="flex items-center space-x-1 flex-wrap group">
-                  <SiLeetcode className="text-[#FFA116] w-9 h-9" />
+                  <FaGithub className="text-white w-9 h-9" />
                   <a
                     href="#"
                     target="_blank"
                     className="text-2xl hover-text-border hover:underline hover:decoration-[#FFA116] hover:decoration-2"
                   >
-                    LeetCode
+                    GitHub
+                  </a>
+                  <FiExternalLink className="w-4 h-4 opacity-0 group-hover:opacity-100 transition-opacity duration-200" />
+                </div>
+              </div>
+              <div className="flex items-center space-x-2 flex-wrap">
+                <FaCheckCircle className="text-blue-500 w-5 h-5 inline" />
+                <div className="flex items-center space-x-1 flex-wrap group">
+                  <FaGitlab className="text-[#FC6D26] w-9 h-9" />
+                  <a
+                    href="#"
+                    target="_blank"
+                    className="text-2xl hover-text-border hover:underline hover:decoration-[#FFA116] hover:decoration-2"
+                  >
+                    GitLab
                   </a>
                   <FiExternalLink className="w-4 h-4 opacity-0 group-hover:opacity-100 transition-opacity duration-200" />
                 </div>
@@ -253,13 +268,13 @@ const ProfilePage = () => {
               <div className="flex items-center space-x-2 flex-wrap">
                 <FaCheckCircle className="text-blue-500 w-5 h-5" />
                 <div className="flex items-center space-x-1 flex-wrap group">
-                  <SiCodeforces className="text-[#1F8ACB] w-9 h-9" />
+                  <FaLaptopCode className="text-[#2563EB] w-9 h-9" />
                   <a
                     href="#"
                     target="_blank"
                     className="text-2xl hover-text-border hover:underline hover:decoration-[#1F8ACB] hover:decoration-2"
                   >
-                    Codeforces
+                    Portfolio
                   </a>
                   <FiExternalLink className="w-4 h-4 opacity-0 group-hover:opacity-100 transition-opacity duration-200" />
                 </div>
