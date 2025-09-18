@@ -17,10 +17,10 @@ function HomePage() {
   return (
     <>
       <Navbar isLoggedIn={isLoggedIn} />
-      {/* <main>
+      <main>
         <Outlet />
-      </main> */}
-      <ProfilePage />
+      </main>
+      {/* <ProfilePage /> */}
       <Footer />
     </>
   );
@@ -37,7 +37,6 @@ export default HomePage;
 // import RankingPage from "../rankings/RankingPage.jsx";
 // import AboutPage from "../about/AboutPage.jsx";
 // import NotFound from "../components/NotFound.jsx";
-
 // function HomePage() {
 //   return (
 //     <BrowserRouter>
@@ -53,5 +52,4 @@ export default HomePage;
 //     </BrowserRouter>
 //   );
 // }
-
 // export default HomePage;

@@ -3,7 +3,7 @@ import LoginPage from "./pages/LoginPage.jsx";
 import Setup2FA from "./pages/Setup2FA.jsx";
 import Verify2FA from "./pages/Verify2FA.jsx";
 import Error from "./components/Error.jsx";
-import HomePage from "./pages/HomePages.jsx";
+import HomePage from "./pages/HomePage.jsx";
 import Home from "./home/Home.jsx";
 import PostPage from "./posts/PostPage.jsx";
 import ProfilePage from "./Profiles/ProfilePage.jsx";
