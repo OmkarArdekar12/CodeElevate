@@ -10,7 +10,7 @@ export default function CodeforcesCard({ codeforcesData }) {
   }
 
   return (
-    <div className="w-[90%] md:w-[34%] m-1 text-white bg-gray-900 p-6 rounded-xl shadow-md border border-gray-100">
+    <div className="w-[90%] lg:w-[37%] m-1 my-4 text-white bg-gray-900 p-6 rounded-xl shadow-md border border-gray-100">
       <div className="flex flex-wrap items-center justify-center">
         <img
           src="/images/CodeforcesLogo.png"

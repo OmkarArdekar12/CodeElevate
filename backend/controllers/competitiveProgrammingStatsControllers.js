@@ -37,7 +37,7 @@ export const codeforcesStats = async (req, res) => {
       country: user.country || "N/A",
       totalProblemsSolved: problemSolvedSet.size,
     };
-
+    console.log(codeforcesData);
     res.json(codeforcesData);
   } catch (err) {
     res
@@ -138,12 +138,12 @@ export const leetCodeStats = async (req, res) => {
       totalContestParticipants: contest?.totalParticipants || null,
       topPercentage: contest?.topPercentage || null,
       topGlobalPercentage: user.profile.ranking
-        ? user.profile.ranking / leetCodeTotalUser
+        ? Number(user.profile.ranking / leetCodeTotalUser)
         : null,
       contestBadge: contest?.badge?.name || null,
       contestsAttended: contest?.attendedContestsCount || 0,
     };
-
+    console.log(leetCodeData);
     res.status(200).json(leetCodeData);
   } catch (err) {
     res

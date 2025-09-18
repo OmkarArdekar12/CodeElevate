@@ -11,7 +11,7 @@ export default function LeetCodeCardStats({ leetCodeData }) {
   };
 
   return (
-    <div className="w-[90%] md:w-[34%] m-1 p-6 text-white bg-gray-900 rounded-2xl shadow-xl border border-gray-100">
+    <div className="w-[90%] lg:w-[37%] m-1 my-4 p-6 text-white bg-gray-900 rounded-2xl shadow-xl border border-gray-100">
       <div className="flex flex-wrap items-center justify-center">
         <img
           src="/images/LeetCodeLogo.png"
@@ -56,14 +56,16 @@ export default function LeetCodeCardStats({ leetCodeData }) {
         </div>
       </div>
       <div className="flex flex-wrap items-center gap-2 mb-3">
-        <span className="text-xl font-semibold">Ranking:</span>
-        <span className="text-2xl text-white rounded-md font-bold">
-          {leetCodeData.ranking
-            ? leetCodeData.ranking.toLocaleString() +
-              " / " +
-              leetCodeData.totalLeetCodeUsers.toLocaleString()
-            : ""}
-        </span>
+        {leetCodeData.ranking && (
+          <>
+            <span className="text-xl font-semibold">Ranking:</span>
+            <span className="text-2xl text-white rounded-md font-bold">
+              {leetCodeData.ranking.toLocaleString() +
+                " / " +
+                leetCodeData.totalLeetCodeUsers.toLocaleString()}
+            </span>
+          </>
+        )}
         <span className="ml-auto text-white">
           <span className="text-xl">Badges: {leetCodeData.numberOfBadges}</span>
         </span>
@@ -113,40 +115,48 @@ export default function LeetCodeCardStats({ leetCodeData }) {
         </div>
       </div>
       <div className="grid grid-cols-2 gap-4 mb-3">
-        <div className="p-2 shadow shadow-amber-50 rounded-md">
-          <div className="font-semibold text-sm text-gray-100">
-            Global Top Percentage
+        {leetCodeData.topGlobalPercentage && (
+          <div className="p-2 shadow shadow-amber-50 rounded-md">
+            <div className="font-semibold text-sm text-gray-100">
+              Global Top Percentage
+            </div>
+            <div className="text-lg text-amber-300 font-bold">
+              {leetCodeData.topGlobalPercentage.toFixed(2)}%
+            </div>
           </div>
-          <div className="text-lg text-amber-300 font-bold">
-            {leetCodeData.topGlobalPercentage.toFixed(2)}%
+        )}
+        {leetCodeData.topPercentage && (
+          <div className="p-2 shadow shadow-amber-50 rounded-md">
+            <div className="font-semibold text-sm text-gray-100">
+              Contest Top Percentage
+            </div>
+            <div className="text-lg font-bold text-green-600">
+              {leetCodeData.topPercentage.toFixed(2)}%
+            </div>
           </div>
-        </div>
-        <div className="p-2 shadow shadow-amber-50 rounded-md">
-          <div className="font-semibold text-sm text-gray-100">
-            Contest Top Percentage
+        )}
+        {leetCodeData.contestRating && (
+          <div className="p-2 shadow shadow-amber-50 rounded-md">
+            <div className="font-semibold text-sm text-gray-100">
+              Contest Rating
+            </div>
+            <div className="text-lg font-bold text-blue-600">
+              {Math.round(leetCodeData.contestRating)}
+            </div>
           </div>
-          <div className="text-lg font-bold text-green-600">
-            {leetCodeData.topPercentage.toFixed(2)}%
+        )}
+        {leetCodeData.contestRank && (
+          <div className="p-2 shadow shadow-amber-50 rounded-md">
+            <div className="font-semibold text-sm text-gray-100">
+              Contest Rank
+            </div>
+            <div className="text-lg">
+              {leetCodeData.contestRank +
+                " / " +
+                leetCodeData.totalContestParticipants.toLocaleString()}
+            </div>
           </div>
-        </div>
-        <div className="p-2 shadow shadow-amber-50 rounded-md">
-          <div className="font-semibold text-sm text-gray-100">
-            Contest Rating
-          </div>
-          <div className="text-lg font-bold text-blue-600">
-            {Math.round(leetCodeData.contestRating)}
-          </div>
-        </div>
-        <div className="p-2 shadow shadow-amber-50 rounded-md">
-          <div className="font-semibold text-sm text-gray-100">
-            Contest Rank
-          </div>
-          <div className="text-lg">
-            {leetCodeData.contestRank +
-              " / " +
-              leetCodeData.totalContestParticipants.toLocaleString()}
-          </div>
-        </div>
+        )}
       </div>
     </div>
   );

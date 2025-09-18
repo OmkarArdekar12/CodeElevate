@@ -12,9 +12,35 @@ import {
 } from "react-icons/si";
 import { GiHorseHead } from "react-icons/gi";
 import { FiExternalLink } from "react-icons/fi";
+import { useState, useEffect } from "react";
+import {
+  leetCodeStats,
+  codeforcesStats,
+} from "../service/competitiveProgrammingStatsApi";
+import LeetCodeCardStats from "../components/LeetCodeCardStats.jsx";
+import CodeforcesCardStats from "../components/CodeforcesCardStats.jsx";
 
 const ProfilePage = () => {
   const tags = ["Coder", "Dominator", "TeamPlayer"];
+  const [userLeetCodeData, setUserLeetCodeData] = useState({});
+  const [userCodeforcesData, setUserCodeforcesData] = useState({});
+
+  // const fetchCompetitiveProgrammingStats = async (
+  //   leetcodeUsername,
+  //   codeforcesUsername
+  // ) => {
+  //   const leetcodeData = await leetCodeStats(leetcodeUsername);
+  //   setUserLeetCodeData(leetcodeData.data);
+  //   const codeforcesData = await codeforcesStats(codeforcesUsername);
+  //   setUserCodeforcesData(codeforcesData.data);
+  //   console.log(leetcodeData);
+  //   console.log(codeforcesData);
+  // };
+
+  // useEffect(() => {
+  //   fetchCompetitiveProgrammingStats("", "");
+  // }, []);
+
   return (
     <div className="w-full flex items-center justify-center md:px-10 text-white">
       <div className="w-full flex flex-col items-center justify-center pb-5 bg-[#181818]">
@@ -190,9 +216,25 @@ const ProfilePage = () => {
             </div>
           </div>
         </div>
+        {/* CP Stats */}
+        <hr className="w-full text-gray-600 my-10" />
+        <div className="w-full flex flex-col justify-center p-4">
+          <h2 className="text-3xl mb-1">Coding Profiles Stats</h2>
+          <div className="flex justify-center flex-col lg:flex-row lg:justify-evenly items-center flex-wrap mt-4 p-4 md:px-25">
+            {Object.keys(userLeetCodeData).length !== 0 && (
+              <LeetCodeCardStats leetCodeData={userLeetCodeData} />
+            )}
+            {JSON.stringify(userCodeforcesData) !== "{}" && (
+              <CodeforcesCardStats codeforcesData={userCodeforcesData} />
+            )}
+          </div>
+        </div>
         {/* Devs */}
         <hr className="w-full text-gray-600 my-10" />
         <div>DevelopmentProfile</div>
+        {/* DP stats */}
+        <hr className="w-full text-gray-600 my-10" />
+        <div>DevelopmentProfileStats</div>
         {/* Edu */}
         <hr className="w-full text-gray-600 my-10" />
         <div>Education</div>
