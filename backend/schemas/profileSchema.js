@@ -66,6 +66,11 @@ const profileSchema = Schema({
     thread: String,
   },
 
+  showStats: {
+    type: Boolean,
+    default: false,
+  },
+
   education: {
     degree: String,
     cgpa: Number,
