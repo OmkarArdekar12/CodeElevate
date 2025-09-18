@@ -54,7 +54,7 @@ app.use(passport.session());
 app.use("/api/auth", authRoutes);
 app.use("/api/profiles", profileRoutes);
 app.use(
-  "/api/competitive-programming/stats",
+  "/api/stats/competitive-programming",
   competitiveProgrammingStatsRoutes
 );
 
