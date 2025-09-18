@@ -45,7 +45,6 @@ const profileSchema = Schema({
 
   developmentProfiles: {
     github: String,
-    gitlab: String,
     portfolio: String,
   },
   competitiveProfiles: {
