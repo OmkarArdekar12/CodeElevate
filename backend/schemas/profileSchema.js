@@ -45,6 +45,7 @@ const profileSchema = Schema({
 
   developmentProfiles: {
     github: String,
+    gitlab: String,
     portfolio: String,
   },
   competitiveProfiles: {
@@ -59,6 +60,8 @@ const profileSchema = Schema({
     linkedin: String,
     email: String,
     youtube: String,
+    discord: String,
+    stackoverflow: String,
     facebook: String,
     instagram: String,
     twitter: String,

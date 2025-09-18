@@ -19,6 +19,7 @@ import {
 } from "../service/competitiveProgrammingStatsApi";
 import LeetCodeCardStats from "../components/LeetCodeCardStats.jsx";
 import CodeforcesCardStats from "../components/CodeforcesCardStats.jsx";
+import { FaGithub } from "react-icons/fa";
 
 const ProfilePage = () => {
   const tags = ["Coder", "Dominator", "TeamPlayer"];
@@ -231,7 +232,41 @@ const ProfilePage = () => {
         </div>
         {/* Devs */}
         <hr className="w-full text-gray-600 my-10" />
-        <div>DevelopmentProfile</div>
+        <div className="w-full flex flex-col justify-center p-4">
+          <h2 className="text-3xl mb-1">Development Profiles</h2>
+          <div className="mt-4 p-4 md:px-25">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+              <div className="flex items-center space-x-2 flex-wrap">
+                <FaCheckCircle className="text-blue-500 w-5 h-5 inline" />
+                <div className="flex items-center space-x-1 flex-wrap group">
+                  <SiLeetcode className="text-[#FFA116] w-9 h-9" />
+                  <a
+                    href="#"
+                    target="_blank"
+                    className="text-2xl hover-text-border hover:underline hover:decoration-[#FFA116] hover:decoration-2"
+                  >
+                    LeetCode
+                  </a>
+                  <FiExternalLink className="w-4 h-4 opacity-0 group-hover:opacity-100 transition-opacity duration-200" />
+                </div>
+              </div>
+              <div className="flex items-center space-x-2 flex-wrap">
+                <FaCheckCircle className="text-blue-500 w-5 h-5" />
+                <div className="flex items-center space-x-1 flex-wrap group">
+                  <SiCodeforces className="text-[#1F8ACB] w-9 h-9" />
+                  <a
+                    href="#"
+                    target="_blank"
+                    className="text-2xl hover-text-border hover:underline hover:decoration-[#1F8ACB] hover:decoration-2"
+                  >
+                    Codeforces
+                  </a>
+                  <FiExternalLink className="w-4 h-4 opacity-0 group-hover:opacity-100 transition-opacity duration-200" />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
         {/* DP stats */}
         <hr className="w-full text-gray-600 my-10" />
         <div>DevelopmentProfileStats</div>
