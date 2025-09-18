@@ -3,14 +3,21 @@ import session from "express-session";
 import mongoose from "mongoose";
 import path from "path";
 import methodOverride from "method-override";
-import passport from "passport";
 import localStrategy from "passport-local";
+import { ExpressError } from "./utils/ExpressError.js";
+import axios from "axios";
+import passport from "passport";
 import dotenv from "dotenv";
 import cors from "cors";
 import dbConnect from "./config/dbConnect.js";
 import "./config/passportConfig.js";
 import authRoutes from "./routes/authRoutes.js";
 import profileRoutes from "./routes/profileRoutes.js";
+import competitiveProgrammingStatsRoutes from "./routes/competitiveProgrammingStatsRoutes.js";
+import {
+  pageNotFoundMiddleware,
+  errorHandlerMiddleware,
+} from "./middlewares/errorHandlers.js";
 
 dotenv.config();
 
@@ -46,21 +53,18 @@ app.use(passport.session());
 //Routes
 app.use("/api/auth", authRoutes);
 app.use("/api/profiles", profileRoutes);
+app.use(
+  "/api/competitive-programming/stats",
+  competitiveProgrammingStatsRoutes
+);
+
+//Error handlers
+app.use((req, res, next) => {
+  pageNotFoundMiddleware(req, res, next);
+});
+app.use(errorHandlerMiddleware);
 
 //Listen App
 app.listen(PORT, () => {
   console.log(`Server is listening to port ${PORT}`);
 });
-
-// //Index Route - User Profiles
-// app.get("/profiles", async (req, res) => {
-//   const allProfiles = await User.find({});
-//   res.send(allProfiles);
-// });
-
-// //Show Route - User Profile
-// app.get("/profiles/:id", async (req, res) => {
-//   let { id } = req.params;
-//   const profile = await User.findById(id);
-//   res.send(profile);
-// });
