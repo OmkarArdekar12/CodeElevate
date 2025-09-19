@@ -17,10 +17,10 @@ function HomePage() {
   return (
     <>
       <Navbar isLoggedIn={isLoggedIn} />
-      <main>
+      {/* <main>
         <Outlet />
-      </main>
-      {/* <ProfilePage /> */}
+      </main> */}
+      <ProfilePage />
       <Footer />
     </>
   );
