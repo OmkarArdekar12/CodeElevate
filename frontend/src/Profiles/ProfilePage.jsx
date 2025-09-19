@@ -21,6 +21,7 @@ import LeetCodeCardStats from "../components/LeetCodeCardStats.jsx";
 import CodeforcesCardStats from "../components/CodeforcesCardStats.jsx";
 import { FaGithub, FaGitlab, FaLaptopCode } from "react-icons/fa";
 import { FiBriefcase } from "react-icons/fi";
+import GitHubCardStats from "../components/GitHubCardStats.jsx";
 
 const ProfilePage = () => {
   const tags = ["Coder", "Dominator", "TeamPlayer"];
@@ -284,7 +285,14 @@ const ProfilePage = () => {
         </div>
         {/* DP stats */}
         <hr className="w-full text-gray-600 my-10" />
-        <div>DevelopmentProfileStats</div>
+        <div className="w-full flex flex-col justify-center p-4">
+          <h2 className="text-3xl mb-1 title-font">
+            Development Profiles Stats
+          </h2>
+          <div className="flex justify-center flex-col lg:flex-row lg:justify-evenly items-center flex-wrap mt-4 p-4 md:px-25">
+            <GitHubCardStats />
+          </div>
+        </div>
         {/* Edu */}
         <hr className="w-full text-gray-600 my-10" />
         <div>Education</div>
