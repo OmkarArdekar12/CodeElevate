@@ -14,23 +14,33 @@ const gitHubData = {
 
 const GitHubCardStats = () => {
   return (
-    <div className="w-[90%] lg:w-[37%] m-1 my-4 p-6 text-white bg-gray-900 rounded-2xl shadow-xl border border-gray-100">
+    <div className="w-[90%] md:w-[60%] m-1 my-4 p-6 text-white bg-gray-900 rounded-2xl shadow-xl border border-gray-100">
       <div className="flex flex-wrap items-center justify-center">
-        <FaGithub />
+        <FaGithub className="w-9 h-9 mr-2" />
         <span className="text-white text-2xl text-border">
           {gitHubData.userId}
         </span>
       </div>
       <hr className="text-gray-500 my-4" />
-      <div className="flex flex-wrap justify-center items-center mb-3">
+      <div className="flex flex-wrap justify-center items-center mb-3 px-10">
         {gitHubData.avatarUrl && (
-          <div className="flex items-center flex-wrap">
-            <img src={gitHubData.avatarUrl} alt="githubProfileImage" />
+          <div className="inline-flex items-center flex-wrap flex-1/2">
+            <img
+              src={gitHubData.avatarUrl}
+              alt="githubProfileImage"
+              className="w-50 rounded-full object-cover border-2 border-gray-50"
+            />
           </div>
         )}
-        <div className="flex flex-col justify-center items-center flex-wrap">
-          {gitHubData.name && <h3 className="text-xl">{gitHubData.name}</h3>}
-          {gitHubData.bio && <h5 className="text-sm">{gitHubData.bio}</h5>}
+        <div className="inline-flex flex-col justify-center items-center flex-wrap flex-1/2">
+          {gitHubData.name && (
+            <h3 className="inline-flex flex-wrap items-center justify-center text-3xl mb-3">
+              {gitHubData.name}
+            </h3>
+          )}
+          {gitHubData.bio && (
+            <h5 className="inline-flex flex-wrap text-sm">{gitHubData.bio}</h5>
+          )}
         </div>
       </div>
       <div className="flex flex-wrap items-center gap-2 mb-3">
