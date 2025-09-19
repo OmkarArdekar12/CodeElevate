@@ -25,8 +25,82 @@ import GitHubCardStats from "../components/GitHubCardStats.jsx";
 
 const ProfilePage = () => {
   const tags = ["Coder", "Dominator", "TeamPlayer"];
-  const [userLeetCodeData, setUserLeetCodeData] = useState({});
-  const [userCodeforcesData, setUserCodeforcesData] = useState({});
+  const [userLeetCodeData, setUserLeetCodeData] = useState({
+    username: "Omkaarr_01",
+    totalLeetCodeUsers: 5000001,
+    ranking: 1,
+    easySolved: 300,
+    mediumSolved: 900,
+    hardSolved: 600,
+    totalSolved: 300 + 900 + 600,
+    numberOfBadges: 100,
+    badgeNames: [
+      "Submission Badge",
+      "Submission Badge",
+      "Annual Badge",
+      "Annual Badge",
+      "Annual Badge",
+      "Annual Badge",
+      "Annual Badge",
+      "Annual Badge",
+      "Daily Coding Challenge",
+      "Daily Coding Challenge",
+      "Daily Coding Challenge",
+      "Daily Coding Challenge",
+      "Daily Coding Challenge",
+      "Daily Coding Challenge",
+      "Daily Coding Challenge",
+      "Daily Coding Challenge",
+      "Daily Coding Challenge",
+      "Daily Coding Challenge",
+      "Daily Coding Challenge",
+      "Daily Coding Challenge",
+      "Daily Coding Challenge",
+      "Daily Coding Challenge",
+      "Daily Coding Challenge",
+      "Daily Coding Challenge",
+      "Study Plan V2 Award",
+      "Study Plan V2 Award",
+      "Study Plan V2 Award",
+      "Study Plan V2 Award",
+    ],
+    hasKnight: true,
+    hasGuardian: true,
+    maxStreak: 365,
+    totalActiveDays: 365,
+    contestRating: 3912,
+    contestRank: 1,
+    totalContestParticipants: 760696,
+    topPercentage: 0.1,
+    topGlobalPercentage: 0.005111998977600204,
+    contestBadge: null,
+    contestsAttended: 39,
+  });
+  const [userCodeforcesData, setUserCodeforcesData] = useState({
+    handle: "Omkaarr",
+    rating: 3912,
+    contribution: 1000,
+    rank: "Grand Master",
+    maxRating: 3912,
+    maxRank: "Grand Master",
+    friendOfCount: 0,
+    organization: "N/A",
+    lastOnlineTimeSeconds: 1758305442,
+    registrationTimeSeconds: 1748916816,
+    city: "N/A",
+    country: "N/A",
+    totalProblemsSolved: 2993,
+  });
+  const [userGitHubData, setUserGitHubData] = useState({
+    userId: "OmkarArdekar12",
+    name: "Omkar Prakash Ardekar",
+    avatarUrl: "https://avatars.githubusercontent.com/u/178113083?v=4",
+    bio: "Mastering core fundamentals concepts to advanced concepts through continuous learning",
+    publicRepos: 910,
+    followers: 100000000000000,
+    following: 0,
+    totalStars: 1000000000000,
+  });
 
   // const fetchCompetitiveProgrammingStats = async (
   //   leetcodeUsername,
@@ -290,7 +364,7 @@ const ProfilePage = () => {
             Development Profiles Stats
           </h2>
           <div className="flex justify-center flex-col lg:flex-row lg:justify-evenly items-center flex-wrap mt-4 p-4 md:px-25">
-            {/* <GitHubCardStats /> */}
+            {userGitHubData && <GitHubCardStats gitHubData={userGitHubData} />}
           </div>
         </div>
         {/* Edu */}

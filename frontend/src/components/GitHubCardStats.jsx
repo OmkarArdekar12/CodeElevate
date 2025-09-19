@@ -1,30 +1,39 @@
 import React from "react";
 import { FaGithub } from "react-icons/fa";
 
-const gitHubData = {
-  userId: "OmkarArdekar12",
-  name: "Omkar Prakash Ardekar",
-  avatarUrl: "https://avatars.githubusercontent.com/u/178113083?v=4",
-  bio: "Mastering core fundamentals concepts to advanced concepts through continuous learning",
-  publicRepos: 9,
-  followers: 0,
-  following: 0,
-  totalStars: 0,
-};
+function formatNumber(num) {
+  if (num >= 1000000000) {
+    let n = num / 1000000000;
+    return Math.round(n * 10) / 10 + "B";
+  }
+  if (num >= 1000000) {
+    let n = num / 1000000;
+    return Math.round(n * 10) / 10 + "M";
+  }
+  if (num >= 1000) {
+    let n = num / 1000;
+    return Math.round(n * 10) / 10 + "K";
+  }
+  return num.toString();
+}
 
-const GitHubCardStats = () => {
+const GitHubCardStats = ({ gitHubData }) => {
+  if (!gitHubData) {
+    return null;
+  }
+
   return (
-    <div className="w-[90%] md:w-[60%] m-1 my-4 p-6 text-white bg-gray-900 rounded-2xl shadow-xl border border-gray-100">
-      <div className="flex flex-wrap items-center justify-center">
-        <FaGithub className="w-9 h-9 mr-2" />
-        <span className="text-white text-2xl text-border">
-          {gitHubData.userId}
-        </span>
-      </div>
-      <hr className="text-gray-500 my-4" />
-      <div className="flex flex-wrap justify-center items-center mb-3 px-10">
+    <div className="w-[90%] lg:w-[60%] m-1 my-4 p-6 text-white from-black via-gray-950 to-gray-900 bg-gradient-to-r rounded-2xl border border-gray-100 text-center">
+      <div className="flex flex-col flex-wrap items-center justify-center">
+        <div className="flex items-center justify-center">
+          <FaGithub className="w-9 h-9 mr-2" />
+          <span className="text-white text-2xl text-border">
+            {gitHubData.userId}
+          </span>
+        </div>
+        <hr className="text-gray-500 my-4 w-full" />
         {gitHubData.avatarUrl && (
-          <div className="inline-flex items-center flex-wrap flex-1/2">
+          <div className="flex justify-center items-center flex-wrap mb-3">
             <img
               src={gitHubData.avatarUrl}
               alt="githubProfileImage"
@@ -32,34 +41,62 @@ const GitHubCardStats = () => {
             />
           </div>
         )}
-        <div className="inline-flex flex-col justify-center items-center flex-wrap flex-1/2">
-          {gitHubData.name && (
-            <h3 className="inline-flex flex-wrap items-center justify-center text-3xl mb-3">
-              {gitHubData.name}
-            </h3>
+        <div className="flex flex-col flex-wrap justify-center items-center mb-5">
+          <div className="inline-flex flex-col justify-center items-center flex-wrap text-center">
+            {gitHubData.name && (
+              <h3 className="inline-flex flex-wrap items-center justify-center text-3xl mb-2">
+                {gitHubData.name}
+              </h3>
+            )}
+            {gitHubData.bio && (
+              <h5 className="w-[80%] lg:w-[75%] inline-flex items-center justify-center text-lg italic">
+                {gitHubData.bio}
+              </h5>
+            )}
+          </div>
+        </div>
+        <div className="grid grid-cols-2 gap-4 mb-3">
+          {gitHubData.publicRepos && (
+            <div className="p-2 shadow shadow-amber-50 rounded-md">
+              <div className="font-semibold text-sm text-gray-100">
+                Total Public Repositories
+              </div>
+              <div className="text-lg text-amber-300 font-bold text-center">
+                {gitHubData.publicRepos}
+              </div>
+            </div>
           )}
-          {gitHubData.bio && (
-            <h5 className="inline-flex flex-wrap text-sm">{gitHubData.bio}</h5>
+          {gitHubData.totalStars >= 0 && (
+            <div className="p-2 shadow shadow-amber-50 rounded-md">
+              <div className="font-semibold text-sm text-gray-100">
+                Total Stars
+              </div>
+              <div className="text-lg text-amber-300 font-bold text-center">
+                {formatNumber(gitHubData.totalStars)}
+              </div>
+            </div>
+          )}
+          {gitHubData.followers >= 0 && (
+            <div className="p-2 shadow shadow-amber-50 rounded-md">
+              <div className="font-semibold text-sm text-gray-100">
+                Followers
+              </div>
+              <div className="text-lg text-amber-300 font-bold text-center">
+                {formatNumber(gitHubData.followers)}
+              </div>
+            </div>
+          )}
+          {gitHubData.following >= 0 && (
+            <div className="p-2 shadow shadow-amber-50 rounded-md">
+              <div className="font-semibold text-sm text-gray-100">
+                Following
+              </div>
+              <div className="text-lg text-amber-300 font-bold text-center">
+                {formatNumber(gitHubData.following)}
+              </div>
+            </div>
           )}
         </div>
-      </div>
-      <div className="flex flex-wrap items-center gap-2 mb-3">
-        <span className="ml-auto text-white">
-          <span className="text-xl">
-            Total Public Repositories: {gitHubData.publicRepos}
-          </span>
-        </span>
-        <span className="ml-auto text-white">
-          <span className="text-xl">Total Stars: {gitHubData.totalStars}</span>
-        </span>
-      </div>
-      <div className="flex flex-wrap items-center gap-2 mb-3">
-        <span className="ml-auto text-white">
-          <span className="text-xl">Follower: {gitHubData.followers}</span>
-        </span>
-        <span className="ml-auto text-white">
-          <span className="text-xl">Follwing: {gitHubData.following}</span>
-        </span>
       </div>
     </div>
   );

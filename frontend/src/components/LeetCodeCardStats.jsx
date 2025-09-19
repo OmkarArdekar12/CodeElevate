@@ -11,7 +11,7 @@ export default function LeetCodeCardStats({ leetCodeData }) {
   };
 
   return (
-    <div className="w-[90%] lg:w-[37%] m-1 my-4 p-6 text-white bg-gray-900 rounded-2xl shadow-xl border border-gray-100">
+    <div className="w-[90%] lg:w-[37%] m-1 my-4 p-6 text-white bg-gray-900 rounded-2xl shadow-xl border border-gray-100 stats-card">
       <div className="flex flex-wrap items-center justify-center">
         <img
           src="/images/LeetCodeLogo.png"
@@ -66,23 +66,31 @@ export default function LeetCodeCardStats({ leetCodeData }) {
             </span>
           </>
         )}
-        <span className="ml-auto text-white">
-          <span className="text-xl">Badges: {leetCodeData.numberOfBadges}</span>
-        </span>
+        {leetCodeData.numberOfBadges >= 0 && (
+          <span className="ml-auto text-white">
+            <span className="text-xl">
+              Badges: {leetCodeData.numberOfBadges}
+            </span>
+          </span>
+        )}
       </div>
       <div className="flex justify-between my-2 px-6">
-        <div className="text-center">
-          <div className="font-bold text-orange-400">
-            {leetCodeData.maxStreak}
+        {leetCodeData.maxStreak >= 0 && (
+          <div className="text-center">
+            <div className="font-bold text-orange-400">
+              {leetCodeData.maxStreak}
+            </div>
+            <div className="text-sm text-gray-200">Max Streak</div>
           </div>
-          <div className="text-sm text-gray-200">Max Streak</div>
-        </div>
-        <div className="text-center">
-          <div className="font-bold text-indigo-700">
-            {leetCodeData.totalActiveDays}
+        )}
+        {leetCodeData.totalActiveDays >= 0 && (
+          <div className="text-center">
+            <div className="font-bold text-indigo-700">
+              {leetCodeData.totalActiveDays}
+            </div>
+            <div className="text-sm text-gray-200">Active Days</div>
           </div>
-          <div className="text-sm text-gray-200">Active Days</div>
-        </div>
+        )}
       </div>
       <div className="bg-gray-50 rounded-lg p-4 mb-3">
         <div className="text-gray-600 mb-1 font-semibold text-md">
