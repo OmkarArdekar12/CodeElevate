@@ -290,7 +290,7 @@ const ProfilePage = () => {
             Development Profiles Stats
           </h2>
           <div className="flex justify-center flex-col lg:flex-row lg:justify-evenly items-center flex-wrap mt-4 p-4 md:px-25">
-            <GitHubCardStats />
+            {/* <GitHubCardStats /> */}
           </div>
         </div>
         {/* Edu */}
