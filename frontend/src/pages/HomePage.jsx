@@ -1,7 +1,7 @@
 import { Outlet } from "react-router-dom";
 import Navbar from "../components/Navbar.jsx";
 import Footer from "../components/Footer.jsx";
-import ProfilePage from "../Profiles/ProfilePage.jsx";
+import ProfilePage from "../profiles/ProfilePage.jsx";
 import { useSession } from "../context/SessionContext.jsx";
 import Loading from "../components/Loading.jsx";
 
