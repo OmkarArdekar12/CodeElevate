@@ -10,7 +10,7 @@ export default function CodeforcesCard({ codeforcesData }) {
   }
 
   return (
-    <div className="w-[90%] lg:w-[37%] m-1 my-4 text-white bg-gray-900 p-6 rounded-xl shadow-md border border-gray-100">
+    <div className="w-[90%] lg:w-[37%] m-1 my-4 text-white bg-gray-900 p-6 rounded-xl shadow-md border border-gray-100 stats-card">
       <div className="flex flex-wrap items-center justify-center">
         <img
           src="/images/CodeforcesLogo.png"
@@ -21,7 +21,7 @@ export default function CodeforcesCard({ codeforcesData }) {
           {codeforcesData.handle}
         </span>
       </div>
-      <hr className="text-gray-500 my-4" />
+      <hr className="w-full text-gray-500 my-4" />
       <div className="grid grid-cols-2 gap-4 mb-6">
         <div className="p-2 shadow shadow-amber-50 rounded-md">
           <p className="text-sm text-gray-100">Rating</p>

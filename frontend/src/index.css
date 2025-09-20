@@ -193,19 +193,10 @@ main {
   }
 }
 
-@keyframes card-stats-animation {
-  0%,
-  100% {
-    transform: scale(1) rotate(0deg) skew(0deg, 0deg);
-  }
-  50% {
-    transform: scale(1.05) rotate(3deg) skew(3deg, 1deg);
-  }
-}
-
 .stats-card:hover {
-  animation: card-stats-animation 2s ease-in-out;
-  transform-style: preserve-3d;
+  transform: scale(1.01);
+  box-shadow: 0 0 50px rgba(248, 0, 0, 0.4);
+  transition: transform 0.5s ease-in-out, box-shadow 0.5s ease-in-out;
 }
 
 /* Responsiveness */

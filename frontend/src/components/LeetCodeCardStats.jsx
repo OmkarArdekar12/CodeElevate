@@ -22,7 +22,7 @@ export default function LeetCodeCardStats({ leetCodeData }) {
           {leetCodeData.username}
         </span>
       </div>
-      <hr className="text-gray-500 my-4" />
+      <hr className="w-full text-gray-500 my-4" />
       <div className="flex items-center mb-3">
         <div className="flex gap-2">
           {leetCodeData.hasGuardian && (
