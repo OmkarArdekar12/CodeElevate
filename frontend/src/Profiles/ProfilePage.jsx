@@ -28,7 +28,7 @@ const ProfilePage = ({ profileId }) => {
           headLine={userData.headLine}
         />
         <ButtonSection />
-        <AboutSection />
+        <AboutSection about={userData.about} />
         <DomainRoleSection />
         <hr className="w-full text-gray-600 my-10" />
         <TagsSection />
