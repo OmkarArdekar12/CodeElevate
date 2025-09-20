@@ -27,9 +27,11 @@ const UserProfileSection = ({
             <h3 className="text-white text-md italic mt-3">@{username}</h3>
           )}
         </div>
-        <div className="flex flex-col justify-center items-center md:items-start mt-10 md:ml-4 text-white text-5xl font-semibold">
+        <div className="flex flex-col justify-center text-2xl items-center md:items-start mt-10 md:ml-4 text-white md:text-5xl font-semibold">
           {fullName && <h1>{fullName}</h1>}
-          {headLine && <h2 className="mt-1 text-3xl font-sans">{headLine}</h2>}
+          {headLine && (
+            <h2 className="mt-1 text-xl md:text-3xl font-sans">{headLine}</h2>
+          )}
         </div>
       </div>
     </>
