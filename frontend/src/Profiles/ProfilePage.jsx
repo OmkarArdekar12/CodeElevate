@@ -20,14 +20,20 @@ const ProfilePage = ({ profileId }) => {
   return (
     <div className="w-full flex items-center justify-center md:px-10 text-white">
       <div className="w-full flex flex-col items-center justify-center pb-5 bg-[#181818]">
-        <UserProfileSection />
+        <UserProfileSection
+          fullName={userData.fullName}
+          username={userData.user.username}
+          profilePicture={userData.profilePicture}
+          bgBanner={userData.backgroundBanner}
+          headLine={userData.headLine}
+        />
         <ButtonSection />
         <hr className="w-full text-gray-600 mt-25 mb-10" />
         <AboutSection />
         <hr className="w-full text-gray-600 my-10" />
         <DomainRoleSection />
         <hr className="w-full text-gray-600 my-10" />
-        <TagsSection tags={tags} />
+        <TagsSection />
         <hr className="w-full text-gray-600 my-10" />
         <CompetitiveProgrammingSection />
         <hr className="w-full text-gray-600 my-10" />
