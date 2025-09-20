@@ -73,13 +73,11 @@ const profileSchema = Schema({
     default: false,
   },
 
-  education: [
-    {
-      degree: String,
-      cgpa: Number,
-      institution: String,
-    },
-  ],
+  education: {
+    degree: String,
+    cgpa: Number,
+    institution: String,
+  },
 
   followers: [
     {
