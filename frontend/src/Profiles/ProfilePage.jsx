@@ -29,7 +29,6 @@ const ProfilePage = ({ profileId }) => {
         />
         <ButtonSection />
         <AboutSection />
-        <hr className="w-full text-gray-600 my-10" />
         <DomainRoleSection />
         <hr className="w-full text-gray-600 my-10" />
         <TagsSection />
