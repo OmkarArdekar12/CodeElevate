@@ -17,7 +17,8 @@ const UserProfileSection = () => {
           className="w-39 h-39 flex items-center justify-center md:w-70 md:h-70 rounded-full border-3 border-white object-cover"
         />
         <div className="flex flex-col justify-center items-center md:items-start mt-10 md:ml-4 text-white text-5xl font-semibold">
-          <h1>Username</h1>
+          <h1>FullName</h1>
+          <h1>@Username</h1>
           <h2 className="mt-1 text-4xl">Headline</h2>
         </div>
       </div>

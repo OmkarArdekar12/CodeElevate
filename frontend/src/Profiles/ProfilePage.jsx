@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import UserProfileSection from "./UserProfileSection.jsx";
 import ButtonSection from "./ButtonSection.jsx";
 import AboutSection from "./AboutSection.jsx";
@@ -11,9 +11,11 @@ import DevelopmentStatsSection from "./DevelopmentStatsSection.jsx";
 import EducationSection from "./EducationSection.jsx";
 import SocialsSection from "./SocialsSection.jsx";
 import PostsSection from "./PostsSection.jsx";
+import { profile } from "./sampleData.js"; //sample data for testing
 
-const ProfilePage = () => {
-  const tags = ["Coder", "Dominator", "TeamPlayer"];
+const ProfilePage = ({ profileId }) => {
+  // const [userData, setUserData] = useState({});
+  const [userData, setUserData] = useState(profile);
 
   return (
     <div className="w-full flex items-center justify-center md:px-10 text-white">
