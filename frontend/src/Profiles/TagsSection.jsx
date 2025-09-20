@@ -1,6 +1,7 @@
 import React from "react";
 
-const TagsSection = ({ tags }) => {
+const TagsSection = () => {
+  const tags = ["Coder", "Learner", "Pro"];
   return (
     <div className="w-full flex flex-col justify-center p-4">
       <h2 className="text-3xl mb-3 title-font">Tags</h2>
