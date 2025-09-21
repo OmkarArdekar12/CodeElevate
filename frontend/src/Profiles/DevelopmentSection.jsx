@@ -6,7 +6,10 @@ import { FiBriefcase } from "react-icons/fi";
 import GitHubCardStats from "../components/GitHubCardStats.jsx";
 import { FaDotCircle } from "react-icons/fa";
 
-const DevelopmentSection = () => {
+const DevelopmentSection = ({ versionControlProfiles }) => {
+  const github = versionControlProfiles.github;
+  const gitlab = versionControlProfiles.gitlab;
+  const portfolio = versionControlProfiles.portfolio;
   return (
     <>
       <div className="w-full flex flex-col justify-center p-4">
@@ -18,7 +21,7 @@ const DevelopmentSection = () => {
               <div className="flex items-center space-x-1 flex-wrap group">
                 <FaGithub className="text-white w-9 h-9" />
                 <a
-                  href="#"
+                  href={`https://github.com/${github}`}
                   target="_blank"
                   className="text-2xl hover-text-border hover:underline hover:decoration-[#FFA116] hover:decoration-2"
                 >
@@ -32,7 +35,7 @@ const DevelopmentSection = () => {
               <div className="flex items-center space-x-1 flex-wrap group">
                 <FaGitlab className="text-[#FC6D26] w-9 h-9" />
                 <a
-                  href="#"
+                  href={`https://gitlab.com/${gitlab}`}
                   target="_blank"
                   className="text-2xl hover-text-border hover:underline hover:decoration-[#FFA116] hover:decoration-2"
                 >
@@ -46,7 +49,7 @@ const DevelopmentSection = () => {
               <div className="flex items-center space-x-1 flex-wrap group">
                 <FaLaptopCode className="text-[#2563EB] w-9 h-9" />
                 <a
-                  href="#"
+                  href={`${portfolio}`}
                   target="_blank"
                   className="text-2xl hover-text-border hover:underline hover:decoration-[#1F8ACB] hover:decoration-2"
                 >
