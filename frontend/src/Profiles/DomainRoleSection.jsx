@@ -10,13 +10,15 @@ const DomainRoleSection = ({ domain, role }) => {
         {role && (
           <h3 className="bg-indigo-500 inline px-4 py-2 rounded-lg text-lg mx-2 my-1 hover-text-border text-center">
             <FontAwesomeIcon icon={faCircleRight} className="text-black mr-1" />
-            Role: {role.toUpperCase()}
+            <span className="italic">Role</span>:{" "}
+            <span className="font-bold">{role.toUpperCase()}</span>
           </h3>
         )}
         {domain && (
           <h3 className="bg-teal-500 inline px-4 py-2 rounded-lg text-lg mx-2 my-1 hover-text-border text-center align-middle">
             <FontAwesomeIcon icon={faCircleRight} className="text-black mr-1" />
-            Domain: {domain.toUpperCase()}
+            <span className="italic">Domain:</span>{" "}
+            <span className="font-bold">{domain.toUpperCase()}</span>
           </h3>
         )}
       </div>
