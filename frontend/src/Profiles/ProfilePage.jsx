@@ -29,7 +29,7 @@ const ProfilePage = ({ profileId }) => {
         />
         <ButtonSection />
         <AboutSection about={userData.about} />
-        <DomainRoleSection />
+        <DomainRoleSection domain={userData.domain} role={userData.role} />
         <hr className="w-full text-gray-600 my-10" />
         <TagsSection />
         <hr className="w-full text-gray-600 my-10" />
