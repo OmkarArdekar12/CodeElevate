@@ -37,7 +37,7 @@ const ProfilePage = ({ profileId }) => {
         <CompetitiveProgrammingStatsSection />
         <hr className="w-full text-gray-600 my-10" />
         <DevelopmentSection />
-        <hr className="w-full text-gray-600 my-10" />
+
         <DevelopmentStatsSection />
         <hr className="w-full text-gray-600 my-10" />
         <EducationSection />
