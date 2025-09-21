@@ -1,6 +1,9 @@
 import React from "react";
 
 const TagsSection = ({ tags }) => {
+  if (!tags) {
+    return null;
+  }
   return (
     <>
       {tags && tags.length != 0 && (
