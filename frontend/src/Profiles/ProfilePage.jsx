@@ -41,8 +41,8 @@ const ProfilePage = ({ profileId }) => {
         />
         <DevelopmentStatsSection />
         <hr className="w-full text-gray-600 my-10" />
-        <EducationSection />
-        <hr className="w-full text-gray-600 my-10" />
+        <EducationSection education={userData.education} />
+
         <SocialsSection />
         <hr className="w-full text-gray-600 my-10" />
         <PostsSection />
