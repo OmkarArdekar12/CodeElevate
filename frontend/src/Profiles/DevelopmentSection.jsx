@@ -7,6 +7,9 @@ import GitHubCardStats from "../components/GitHubCardStats.jsx";
 import { FaDotCircle } from "react-icons/fa";
 
 const DevelopmentSection = ({ versionControlProfiles }) => {
+  if (!versionControlProfiles) {
+    return null;
+  }
   const github = versionControlProfiles.github;
   const gitlab = versionControlProfiles.gitlab;
   const portfolio = versionControlProfiles.portfolio;
