@@ -3,6 +3,9 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCircleRight } from "@fortawesome/free-solid-svg-icons";
 
 const DomainRoleSection = ({ domain, role }) => {
+  if (!domain && !role) {
+    return null;
+  }
   return (
     <>
       <div className="w-full flex flex-col justify-center p-4">
