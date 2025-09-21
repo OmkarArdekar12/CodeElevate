@@ -16,9 +16,10 @@ async function main() {
 const dbConnect = () => {
   main()
     .then((mongodbConnection) => {
-      console.log(
-        `Successfully connected to MongoDB Database(DB): ${mongodbConnection.connection.host}`
-      );
+      console.log("Successfully connected to MongoDB Database(DB)");
+      // console.log(
+      //   `Successfully connected to MongoDB Database(DB): ${mongodbConnection.connection.host}`
+      // );
     })
     .catch((err) => {
       console.log(`Connection to MongoDB Database failed: ${err}`);
