@@ -7,6 +7,9 @@ const MONGODB_URL = process.env.MONGODB_URL;
 async function main() {
   try {
     const connection = await mongoose.connect(MONGODB_URL);
+    // const connection = await mongoose.connect(MONGODB_URL, {
+    //   dbName: "codelevate",
+    // });
     return connection;
   } catch (err) {
     throw err;

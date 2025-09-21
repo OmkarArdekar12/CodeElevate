@@ -58,8 +58,9 @@ const LoginForm = ({ onLoginSuccess }) => {
       setPassword("");
       setConfirmPassword("");
       setMessage("");
-      console.log("The error is: ", error.message);
+      // console.log("The error is: ", error);
       setError(error.message);
+      // setError(error.response.data.message);
     }
   };
 
