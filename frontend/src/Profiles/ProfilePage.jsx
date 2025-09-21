@@ -31,7 +31,6 @@ const ProfilePage = ({ profileId }) => {
         <AboutSection about={userData.about} />
         <DomainRoleSection domain={userData.domain} role={userData.role} />
         <TagsSection tags={userData.tags} />
-        <hr className="w-full text-gray-600 my-10" />
         <CompetitiveProgrammingSection />
         <hr className="w-full text-gray-600 my-10" />
         <CompetitiveProgrammingStatsSection />
