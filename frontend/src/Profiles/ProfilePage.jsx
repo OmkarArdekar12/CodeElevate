@@ -36,8 +36,9 @@ const ProfilePage = ({ profileId }) => {
         />
         <CompetitiveProgrammingStatsSection />
         <hr className="w-full text-gray-600 my-10" />
-        <DevelopmentSection />
-
+        <DevelopmentSection
+          versionControlProfile={userData.developmentProfiles}
+        />
         <DevelopmentStatsSection />
         <hr className="w-full text-gray-600 my-10" />
         <EducationSection />
