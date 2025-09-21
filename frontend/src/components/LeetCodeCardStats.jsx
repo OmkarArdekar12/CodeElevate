@@ -18,9 +18,11 @@ export default function LeetCodeCardStats({ leetCodeData }) {
           alt="LeetCode"
           className="w-9 h-9 mr-2"
         />
-        <span className="text-white text-2xl text-border">
-          {leetCodeData.username}
-        </span>
+        {leetCodeData.username && (
+          <span className="text-white text-2xl text-border">
+            {leetCodeData.username}
+          </span>
+        )}
       </div>
       <hr className="w-full text-gray-500 my-4" />
       <div className="flex items-center mb-3">

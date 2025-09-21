@@ -48,6 +48,7 @@ export const codeforcesStats = async (req, res) => {
 
 export const leetCodeStats = async (req, res) => {
   const { username } = req.params;
+  console.log(username);
   try {
     const statsQuery = `
       query userProfile($username: String!) {

@@ -37,7 +37,7 @@ const ProfilePage = ({ profileId }) => {
         <CompetitiveProgrammingStatsSection
           leetcode={
             userData.competitiveProfiles
-              ? userData.competitiveProfiles.leetcode
+              ? userData.competitiveProfiles.leetCode
               : ""
           }
           codeforces={

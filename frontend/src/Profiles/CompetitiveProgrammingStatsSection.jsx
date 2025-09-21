@@ -1,6 +1,10 @@
 import React, { useState, useEffect } from "react";
 import LeetCodeCardStats from "../components/LeetCodeCardStats.jsx";
 import CodeforcesCardStats from "../components/CodeforcesCardStats.jsx";
+import {
+  leetCodeStats,
+  codeforcesStats,
+} from "../service/competitiveProgrammingStatsApi.js";
 
 const CompetitiveProgrammingStatsSection = ({ leetcode, codeforces }) => {
   if (!leetcode && !codeforces) {
@@ -79,15 +83,15 @@ const CompetitiveProgrammingStatsSection = ({ leetcode, codeforces }) => {
   //   codeforcesUsername
   // ) => {
   //   const leetcodeData = await leetCodeStats(leetcodeUsername);
-  //   setUserLeetCodeData(leetcodeData.data);
+  //   setUserLeetCodeData(leetcodeData);
   //   const codeforcesData = await codeforcesStats(codeforcesUsername);
-  //   setUserCodeforcesData(codeforcesData.data);
+  //   setUserCodeforcesData(codeforcesData);
   //   // console.log(leetcodeData);
   //   // console.log(codeforcesData);
   // };
 
   // useEffect(() => {
-  //   fetchCompetitiveProgrammingStats({ leetcode }, { codeforces });
+  //   fetchCompetitiveProgrammingStats(leetcode, codeforces);
   // }, []);
 
   return (
