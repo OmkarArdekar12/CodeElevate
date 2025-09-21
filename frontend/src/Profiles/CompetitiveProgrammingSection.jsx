@@ -12,6 +12,9 @@ import { GiHorseHead } from "react-icons/gi";
 import { FiExternalLink } from "react-icons/fi";
 
 const CompetitiveProgrammingSection = ({ codingProfiles }) => {
+  if (!codingProfiles) {
+    return null;
+  }
   const leetCode = codingProfiles.leetCode;
   const codeforces = codingProfiles.codeforces;
   const atCoder = codingProfiles.atCoder;
