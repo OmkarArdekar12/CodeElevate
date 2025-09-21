@@ -34,8 +34,19 @@ const ProfilePage = ({ profileId }) => {
         <CompetitiveProgrammingSection
           codingProfiles={userData.competitiveProfiles}
         />
-        <CompetitiveProgrammingStatsSection />
-        <hr className="w-full text-gray-600 my-10" />
+        <CompetitiveProgrammingStatsSection
+          leetcode={
+            userData.competitiveProfiles
+              ? userData.competitiveProfiles.leetcode
+              : ""
+          }
+          codeforces={
+            userData.competitiveProfiles
+              ? userData.competitiveProfiles.codeforces
+              : ""
+          }
+        />
+
         <DevelopmentSection
           versionControlProfiles={userData.developmentProfiles}
         />
