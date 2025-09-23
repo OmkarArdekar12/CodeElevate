@@ -18,7 +18,7 @@ const DomainRoleSection = ({ domain, role }) => {
                 className="text-black mr-1"
               />
               <span className="italic">Role</span>:{" "}
-              <span className="font-bold">{role.toUpperCase()}</span>
+              <span className="font-semibold">{role.toUpperCase()}</span>
             </h3>
           )}
           {domain && (
@@ -28,7 +28,7 @@ const DomainRoleSection = ({ domain, role }) => {
                 className="text-black mr-1"
               />
               <span className="italic">Domain:</span>{" "}
-              <span className="font-bold">{domain.toUpperCase()}</span>
+              <span className="font-semibold">{domain.toUpperCase()}</span>
             </h3>
           )}
         </div>

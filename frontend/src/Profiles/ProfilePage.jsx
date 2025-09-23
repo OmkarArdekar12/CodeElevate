@@ -27,13 +27,19 @@ const ProfilePage = ({ profileId }) => {
           bgBanner={userData.backgroundBanner}
           headLine={userData.headLine}
         />
+
         <ButtonSection />
+
         <AboutSection about={userData.about} />
+
         <DomainRoleSection domain={userData.domain} role={userData.role} />
+
         <TagsSection tags={userData.tags} />
+
         <CompetitiveProgrammingSection
           codingProfiles={userData.competitiveProfiles}
         />
+
         <CompetitiveProgrammingStatsSection
           leetcode={
             userData.competitiveProfiles
@@ -50,12 +56,20 @@ const ProfilePage = ({ profileId }) => {
         <DevelopmentSection
           versionControlProfiles={userData.developmentProfiles}
         />
-        <DevelopmentStatsSection />
-        <hr className="w-full text-gray-600 my-10" />
+
+        <DevelopmentStatsSection
+          github={
+            userData.developmentProfiles
+              ? userData.developmentProfiles.github
+              : ""
+          }
+        />
+
         <EducationSection education={userData.education} />
 
         <SocialsSection />
         <hr className="w-full text-gray-600 my-10" />
+
         <PostsSection />
       </div>
     </div>
