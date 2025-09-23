@@ -11,17 +11,19 @@ const UserProfileSection = ({
     <>
       <div className="w-full flex items-center justify-center relative">
         <img
-          src={bgBanner ? bgBanner : "/images/bgBannerImage.png"}
+          src={bgBanner ? bgBanner : "/images/defaultBgBannerImage.png"}
           alt="backgroundBannerImage"
           className="w-full h-45 md:h-70 rounded-b-2xl object-fill"
         />
       </div>
-      <div className="w-full flex flex-col items-center relative -mt-20 z-1 md:flex-row md:pl-20">
+      <div className="w-full flex flex-wrap flex-col items-center relative -mt-20 z-1 md:flex-row md:pl-20">
         <div className="flex flex-col items-center">
           <img
-            src={profilePicture ? profilePicture : "/images/userImage.png"}
+            src={
+              profilePicture ? profilePicture : "/images/defaultUserImage.png"
+            }
             alt="userImage"
-            className="w-39 h-39 flex items-center justify-center md:w-70 md:h-70 rounded-full border-3 border-white object-cover"
+            className="w-55 h-55 flex items-center justify-center md:w-86 md:h-86 rounded-full border-3 border-white object-cover"
           />
           {username && (
             <h3 className="text-white text-md italic mt-3">@{username}</h3>
