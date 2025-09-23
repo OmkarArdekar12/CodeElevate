@@ -6,7 +6,7 @@ import Error from "./components/Error.jsx";
 import HomePage from "./pages/HomePage.jsx";
 import Home from "./home/Home.jsx";
 import PostPage from "./posts/PostPage.jsx";
-import ProfilePage from "./Profiles/ProfilePage.jsx";
+import ProfilePage from "./profiles/ProfilePage.jsx";
 import NotificationPage from "./notifications/NotificationPage.jsx";
 import MessagePage from "./messages/MessagePage.jsx";
 import RankingPage from "./rankings/RankingPage.jsx";
