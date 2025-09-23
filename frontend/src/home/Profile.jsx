@@ -2,7 +2,7 @@ import { Link, useNavigate } from "react-router-dom";
 
 export default function Profile({ profile }) {
   const navigate = useNavigate();
-  const profileId = profile._id;
+  const userId = profile.user._id;
   const userImage = profile.profilePicture || "/images/userImage.png";
   const headLine = profile.headLine ? profile.headLine : "Hello! Everyone";
   const username = profile.user.username;
@@ -41,7 +41,7 @@ export default function Profile({ profile }) {
         )}
         <button
           className="m-2 bg-blue-700 px-6 py-2 rounded-full hover:bg-green-700 hover:border-green-700 hover-text-border"
-          onClick={() => navigate(`/profiles/${profileId}`)}
+          onClick={() => navigate(`/profiles/${userId}`)}
         >
           Visit
         </button>

@@ -3,7 +3,9 @@ import { Link } from "react-router-dom";
 
 export default function Navbar({ isLoggedIn, userData }) {
   const [isOpen, setIsOpen] = useState(false);
-  const userId = userData.userId;
+  // const userId = userData.userId ? userData.userId : "";
+  const userId = "abc";
+  console.log(userData);
 
   return (
     <nav className="bg-gray-800 shadow-lg w-[100%] py-3">
