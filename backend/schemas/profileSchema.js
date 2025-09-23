@@ -66,6 +66,7 @@ const profileSchema = Schema({
     instagram: String,
     twitterx: String,
     telegram: String,
+    others: String,
   },
 
   showStats: {
