@@ -65,7 +65,6 @@ const profileSchema = Schema({
     facebook: String,
     instagram: String,
     twitterx: String,
-    thread: String,
     telegram: String,
   },
 
