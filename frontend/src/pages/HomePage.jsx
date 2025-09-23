@@ -5,7 +5,7 @@ import { useSession } from "../context/SessionContext.jsx";
 import Loading from "../components/Loading.jsx";
 
 function HomePage() {
-  const { isLoggedIn, loading } = useSession();
+  const { isLoggedIn, loading, user } = useSession();
   if (loading) {
     return (
       <>
@@ -15,7 +15,7 @@ function HomePage() {
   }
   return (
     <>
-      <Navbar isLoggedIn={isLoggedIn} />
+      <Navbar isLoggedIn={isLoggedIn} userData={user} />
       <main>
         <Outlet />
       </main>

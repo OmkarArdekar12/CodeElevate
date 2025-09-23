@@ -1,8 +1,9 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 
-export default function Navbar({ isLoggedIn }) {
+export default function Navbar({ isLoggedIn, userData }) {
   const [isOpen, setIsOpen] = useState(false);
+  const userId = userData.userId;
 
   return (
     <nav className="bg-gray-800 shadow-lg w-[100%] py-3">
@@ -69,7 +70,7 @@ export default function Navbar({ isLoggedIn }) {
             {isLoggedIn ? (
               <div className="flex items-center ml-4">
                 <Link
-                  to="#"
+                  to={`/profile/${userId}`}
                   className="flex items-center text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-md font-medium transition duration-150"
                 >
                   <div className="hidden md:block">
@@ -146,7 +147,7 @@ export default function Navbar({ isLoggedIn }) {
           <div className="px-2 pt-2 pb-3 space-y-1">
             {isLoggedIn ? (
               <Link
-                to="#"
+                to={`/profile/${userId}`}
                 className="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-700 transition duration-150 md:hidden"
               >
                 Profile

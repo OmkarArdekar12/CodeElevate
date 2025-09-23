@@ -23,14 +23,20 @@ const ProfilePage = () => {
   const [loading, setLoading] = useState(true);
 
   const fetchUserData = async (id) => {
-    const profileData = await showProfile(profileId);
-    setUserData(profileData);
-    setLoading(false);
+    try {
+      const profileData = await showProfile(profileId);
+      setUserData(profileData);
+      setLoading(false);
+    } catch (err) {
+      console.error("Failed to fetch profile", err);
+    } finally {
+      setLoading(false);
+    }
   };
 
   useEffect(() => {
     fetchUserData(profileId);
-  }, []);
+  }, [profileId]);
 
   if (loading) {
     return <Loading />;
