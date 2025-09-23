@@ -55,12 +55,17 @@ const router = createBrowserRouter([
         element: <PostPage />,
       },
       {
-        path: "/notifications",
-        element: <NotificationPage />,
-      },
-      {
-        path: "/messages",
-        element: <MessagePage />,
+        element: <ProtectedRoute />,
+        children: [
+          {
+            path: "/notifications",
+            element: <NotificationPage />,
+          },
+          {
+            path: "/messages",
+            element: <MessagePage />,
+          },
+        ],
       },
       {
         path: "/rankings",

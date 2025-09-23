@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import UserProfileSection from "./UserProfileSection.jsx";
 import ButtonSection from "./ButtonSection.jsx";
 import AboutSection from "./AboutSection.jsx";
@@ -12,10 +12,33 @@ import EducationSection from "./EducationSection.jsx";
 import SocialsSection from "./SocialsSection.jsx";
 import PostsSection from "./PostsSection.jsx";
 import { profile } from "./sampleData.js"; //sample data for testing
+import { useParams } from "react-router-dom";
+import { showProfile } from "../service/profileApi.js";
+import Loading from "../components/Loading.jsx";
 
-const ProfilePage = ({ profileId }) => {
-  // const [userData, setUserData] = useState({});
-  const [userData, setUserData] = useState(profile);
+const ProfilePage = () => {
+  // const [userData, setUserData] = useState(profile);
+  const { id: profileId } = useParams();
+  const [userData, setUserData] = useState({});
+  const [loading, setLoading] = useState(true);
+
+  const fetchUserData = async (id) => {
+    const profileData = await showProfile(profileId);
+    setUserData(profileData);
+    setLoading(false);
+  };
+
+  useEffect(() => {
+    fetchUserData(profileId);
+  }, []);
+
+  if (loading) {
+    return <Loading />;
+  }
+
+  if (!userData) {
+    return <p className="text-center mt-10">Profile not found.</p>;
+  }
 
   return (
     <div className="w-full flex items-center justify-center md:px-10 text-white">

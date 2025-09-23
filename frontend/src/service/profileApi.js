@@ -7,5 +7,5 @@ export const allProfiles = async () => {
 
 export const showProfile = async (id) => {
   const profile = await api.get(`/profiles/${id}`);
-  return profile;
+  return profile.data;
 };
