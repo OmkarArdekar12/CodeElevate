@@ -68,7 +68,6 @@ const ProfilePage = ({ profileId }) => {
         <EducationSection education={userData.education} />
 
         <SocialsSection />
-        <hr className="w-full text-gray-600 my-10" />
 
         <PostsSection />
       </div>

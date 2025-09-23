@@ -64,8 +64,9 @@ const profileSchema = Schema({
     stackoverflow: String,
     facebook: String,
     instagram: String,
-    twitter: String,
+    twitterx: String,
     thread: String,
+    telegram: String,
   },
 
   showStats: {
