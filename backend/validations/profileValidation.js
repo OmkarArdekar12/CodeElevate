@@ -13,7 +13,7 @@ export const profileValidationSchema = Joi.object({
   role: Joi.string().default("Explorer"),
   domain: Joi.string().default("General"),
 
-  tags: Joi.array().items(Joi.string().max(50)),
+  tags: Joi.array().items(Joi.string().max(5)),
 
   about: Joi.string().max(1000).allow(""),
 

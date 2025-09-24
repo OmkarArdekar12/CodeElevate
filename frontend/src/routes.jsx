@@ -51,14 +51,6 @@ const router = createBrowserRouter([
         path: "/profiles/:id",
         element: <ProfilePage />,
       },
-      // {
-      //   path: "/profiles/:id/edit",
-      //   element: (
-      //     <ProtectedRoute>
-      //       <EditProfilePage />
-      //     </ProtectedRoute>
-      //   ),
-      // },
       {
         path: "/posts",
         element: <PostPage />,
@@ -73,6 +65,10 @@ const router = createBrowserRouter([
           {
             path: "/messages",
             element: <MessagePage />,
+          },
+          {
+            path: "/profiles/:id/edit",
+            element: <EditProfilePage />,
           },
         ],
       },

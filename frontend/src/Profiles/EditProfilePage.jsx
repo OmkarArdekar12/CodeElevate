@@ -1,60 +1,95 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import { useNavigate, useParams } from "react-router-dom";
+import { showProfile } from "../service/profileApi";
+import Loading from "../components/Loading.jsx";
 
 const EditProfilePage = () => {
-  const [profile, setProfile] = useState({
-    fullName: "Omkar Prakash Ardekar",
-    user: {
-      username: "Omkar",
-    },
-    profilePicture: "",
-    backgroundBanner: "",
+  //   const [profile, setProfile] = useState({
+  //     fullName: "Omkar Prakash Ardekar",
+  //     user: {
+  //       username: "Omkar",
+  //     },
+  //     profilePicture: "",
+  //     backgroundBanner: "",
 
-    headLine: "Greatest of All Time",
+  //     headLine: "Greatest of All Time",
 
-    role: "Software Engineer",
-    domain: "Java",
+  //     role: "Software Engineer",
+  //     domain: "Java",
 
-    tags: ["CP", "Coder", "Developer"],
+  //     tags: ["CP", "Coder", "Developer"],
 
-    about: "I am SDE at Google.",
+  //     about: "I am SDE at Google.",
 
-    developmentProfiles: {
-      github: "username",
-      gitlab: "username",
-      portfolio: "username",
-    },
-    competitiveProfiles: {
-      leetCode: "username",
-      codeforces: "username",
-      atCoder: "username",
-      codechef: "username",
-      geeksforgeeks: "username",
-      hackerrank: "username",
-    },
-    socials: {
-      linkedin: "username",
-      email: "username",
-      youtube: "username",
-      discord: "username",
-      stackoverflow: "username",
-      facebook: "username",
-      instagram: "username",
-      twitterx: "username",
-      telegram: "username",
-      others: "username",
-    },
+  //     developmentProfiles: {
+  //       github: "username",
+  //       gitlab: "username",
+  //       portfolio: "username",
+  //     },
+  //     competitiveProfiles: {
+  //       leetCode: "username",
+  //       codeforces: "username",
+  //       atCoder: "username",
+  //       codechef: "username",
+  //       geeksforgeeks: "username",
+  //       hackerrank: "username",
+  //     },
+  //     socials: {
+  //       linkedin: "username",
+  //       email: "username",
+  //       youtube: "username",
+  //       discord: "username",
+  //       stackoverflow: "username",
+  //       facebook: "username",
+  //       instagram: "username",
+  //       twitterx: "username",
+  //       telegram: "username",
+  //       others: "username",
+  //     },
 
-    showStats: true,
+  //     showStats: true,
 
-    education: {
-      degree: "B.Tech",
-      cgpa: 9.99,
-      institution: "IIT Bombay",
-    },
+  //     education: {
+  //       degree: "B.Tech",
+  //       cgpa: 9.99,
+  //       institution: "IIT Bombay",
+  //     },
 
-    followers: [],
-    following: [],
-  });
+  //     followers: [],
+  //     following: [],
+  //   });
+
+  const { id } = useParams();
+  console.log(id);
+  const navigate = useNavigate();
+
+  const [profile, setProfile] = useState({});
+  const [loading, setLoading] = useState(true);
+  const [saving, setSaving] = useState(false);
+
+  const fetchProfile = async () => {
+    try {
+      const res = await showProfile(id);
+      setProfile(res);
+    } catch (err) {
+      console.error("Failed to fetch profile", err);
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  useEffect(() => {
+    fetchProfile();
+  }, [id]);
+
+  console.log(profile);
+
+  if (loading) {
+    return <Loading />;
+  }
+  if (!profile) {
+    return <p className="text-center mt-10 text-white">Profile not found.</p>;
+  }
 
   const [profilePreview, setProfilePreview] = useState(
     profile.profilePicture || "/images/defaultUserImage.png"

@@ -1,10 +1,12 @@
 import React from "react";
 import { FaUserEdit } from "react-icons/fa";
 import { useSession } from "../context/SessionContext";
+import { useNavigate } from "react-router-dom";
 
 const ButtonSection = ({ profileUserId }) => {
   const { isLoggedIn, user } = useSession();
   const userId = user && user.userId ? user.userId : "";
+  const navigate = useNavigate();
 
   return (
     <>
@@ -23,7 +25,10 @@ const ButtonSection = ({ profileUserId }) => {
         </button>
         {isLoggedIn && userId === profileUserId && (
           <div className="ml-auto mr-2 md:mr-10">
-            <button className="group text-black bg-teal-500 hover:bg-indigo-700 px-8 py-2 text-xl rounded-2xl flex items-center justify-center hover-text-border">
+            <button
+              className="group text-black bg-teal-500 hover:bg-indigo-700 px-8 py-2 text-xl rounded-2xl flex items-center justify-center hover-text-border"
+              onClick={() => navigate(`/profiles/${profileUserId}/edit`)}
+            >
               <FaUserEdit
                 className="inline text-black mr-1 group-hover:text-white"
                 size={25}
