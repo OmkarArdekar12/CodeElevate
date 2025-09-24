@@ -56,6 +56,13 @@ const EditProfilePage = () => {
     following: [],
   });
 
+  const [profilePreview, setProfilePreview] = useState(
+    profile.profilePicture || "/images/defaultUserImage.png"
+  );
+  const [bannerPreview, setBannerPreview] = useState(
+    profile.backgroundBanner || "/images/defaultBgBannerImage.png"
+  );
+
   const handleChange = (e) => {
     const { name, value } = e.target;
     setProfile((prev) => ({ ...prev, [name]: value }));
@@ -71,13 +78,101 @@ const EditProfilePage = () => {
     }));
   };
 
+  const handleFileChange = (e) => {
+    const { name, files } = e.target;
+    if (files && files[0]) {
+      const previewURL = URL.createObjectURL(files[0]);
+      if (name === "profilePicture") {
+        setProfilePreview(previewURL);
+        setProfile((prev) => ({ ...prev, profilePicture: files[0] }));
+      } else if (name === "backgroundBanner") {
+        setBannerPreview(previewURL);
+        setProfile((prev) => ({ ...prev, backgroundBanner: files[0] }));
+      }
+    }
+  };
+
+  console.log(profile);
+
   return (
     <div className="w-full flex items-center justify-center md:px-10 text-white">
       <div className="w-full flex flex-col items-center justify-center py-5 px-1 bg-[#181818]">
         <form className="w-[95%] bg-gradient-to-r from-gray-800 via-black-900 to-purple-900 rounded-2xl shadow-lg p-6">
           <h1 className="text-2xl font-bold mb-3">Edit Profile</h1>
-          {/* <hr className="w-full text-gray-900 mb-5" /> */}
           <hr className="w-full text-white my-5 mb-10" />
+          {/* 
+          <div className="relative mb-10 flex items-center justify-center">
+            <img
+              src={bannerPreview}
+              alt="Banner"
+              className="w-full h-48 object-cover rounded-lg"
+            />
+            <label className="absolute top-2 right-2 bg-black/60 px-3 py-1 rounded cursor-pointer text-sm">
+              Change Banner
+              <input
+                type="file"
+                name="backgroundBanner"
+                accept="image/*"
+                onChange={handleFileChange}
+                className="hidden"
+              />
+            </label>
+            <div className="absolute -bottom-25 md:-bottom-39 left-5">
+              <img
+                src={profilePreview}
+                alt="Profile"
+                className="w-39 h-39 md:w-50 md:h-50 rounded-full border-4 border-gray-900"
+              />
+              <label className="absolute bottom-0 right-0 bg-black/60 px-2 py-1 rounded cursor-pointer text-xs">
+                Edit
+                <input
+                  type="file"
+                  name="profilePicture"
+                  accept="image/*"
+                  onChange={handleFileChange}
+                  className="hidden"
+                />
+              </label>
+            </div>
+          </div> */}
+
+          <div className="w-full flex items-center justify-center relative">
+            <img
+              src={bannerPreview}
+              alt="backgroundBannerImage"
+              className="w-full h-45 md:h-70 rounded-b-2xl object-fill"
+            />
+            <label className="absolute top-2 right-2 bg-black/60 px-3 py-1 rounded cursor-pointer text-sm">
+              Change Banner
+              <input
+                type="file"
+                name="backgroundBanner"
+                accept="image/*"
+                onChange={handleFileChange}
+                className="hidden"
+              />
+            </label>
+          </div>
+          <div className="w-full flex flex-wrap flex-col items-center relative -mt-20 z-1 md:flex-row md:pl-20">
+            <div className="flex flex-col items-center">
+              <img
+                src={profilePreview}
+                alt="userImage"
+                className="w-34 h-34 flex items-center justify-center md:w-50 md:h-50 rounded-full border-3 border-white object-cover"
+              />
+              <label className="absolute bottom-1 right-auto bg-black/60 px-2 py-1 rounded cursor-pointer text-xs">
+                Edit
+                <input
+                  type="file"
+                  name="profilePicture"
+                  accept="image/*"
+                  onChange={handleFileChange}
+                  className="hidden"
+                />
+              </label>
+            </div>
+          </div>
+          <hr className="w-full text-white mt-10 mb-10" />
 
           {/* Basic Info */}
           <div className="w-full flex flex-wrap items-center mb-2">
@@ -102,7 +197,6 @@ const EditProfilePage = () => {
                 placeholder="Enter your Username"
                 name="username"
                 value={"@ " + profile.user.username || ""}
-                onChange={handleChange}
                 className="w-full p-2 rounded bg-gray-900 text-gray-300 italic"
               />
             </div>
@@ -157,7 +251,6 @@ const EditProfilePage = () => {
             </div>
           </div>
           <hr className="w-full text-white my-5 mb-10" />
-
           {/* Socials */}
           <div className="m-1 mb-5">
             <h2 className="text-xl font-semibold">Social Links</h2>
@@ -169,7 +262,9 @@ const EditProfilePage = () => {
                   type="text"
                   placeholder="Enter your Linkedin URL"
                   value={profile.socials.linkedin || ""}
-                  //   onChange={}
+                  onChange={(e) =>
+                    handleNestedChange("socials", "linkedin", e.target.value)
+                  }
                   className="w-full p-2 rounded bg-gray-900 text-white"
                 />
               </div>
@@ -180,7 +275,9 @@ const EditProfilePage = () => {
                   type="text"
                   placeholder="Enter your Email ID"
                   value={profile.socials.email || ""}
-                  //   onChange={}
+                  onChange={(e) =>
+                    handleNestedChange("socials", "email", e.target.value)
+                  }
                   className="w-full p-2 rounded bg-gray-900 text-white"
                 />
               </div>
@@ -191,7 +288,9 @@ const EditProfilePage = () => {
                   type="text"
                   placeholder="Enter your YouTube URL"
                   value={profile.socials.youtube || ""}
-                  //   onChange={}
+                  onChange={(e) =>
+                    handleNestedChange("socials", "youtube", e.target.value)
+                  }
                   className="w-full p-2 rounded bg-gray-900 text-white"
                 />
               </div>
@@ -202,7 +301,9 @@ const EditProfilePage = () => {
                   type="text"
                   placeholder="Enter your Discord URL"
                   value={profile.socials.discord || ""}
-                  //   onChange={}
+                  onChange={(e) =>
+                    handleNestedChange("socials", "discord", e.target.value)
+                  }
                   className="w-full p-2 rounded bg-gray-900 text-white"
                 />
               </div>
@@ -213,7 +314,13 @@ const EditProfilePage = () => {
                   placeholder="Enter your StackOverFlow URL"
                   type="text"
                   value={profile.socials.stackoverflow || ""}
-                  //   onChange={}
+                  onChange={(e) =>
+                    handleNestedChange(
+                      "socials",
+                      "stackoverflow",
+                      e.target.value
+                    )
+                  }
                   className="w-full p-2 rounded bg-gray-900 text-white"
                 />
               </div>
@@ -224,7 +331,9 @@ const EditProfilePage = () => {
                   type="text"
                   placeholder="Enter your Facebook URL"
                   value={profile.socials.facebook || ""}
-                  //   onChange={}
+                  onChange={(e) =>
+                    handleNestedChange("socials", "facebook", e.target.value)
+                  }
                   className="w-full p-2 rounded bg-gray-900 text-white"
                 />
               </div>
@@ -235,7 +344,9 @@ const EditProfilePage = () => {
                   type="text"
                   placeholder="Enter your Instagram URL"
                   value={profile.socials.instagram || ""}
-                  //   onChange={}
+                  onChange={(e) =>
+                    handleNestedChange("socials", "instagram", e.target.value)
+                  }
                   className="w-full p-2 rounded bg-gray-900 text-white"
                 />
               </div>
@@ -246,7 +357,9 @@ const EditProfilePage = () => {
                   type="text"
                   placeholder="Enter your X or Twitter URL"
                   value={profile.socials.twitterx || ""}
-                  //   onChange={}
+                  onChange={(e) =>
+                    handleNestedChange("socials", "twitterx", e.target.value)
+                  }
                   className="w-full p-2 rounded bg-gray-900 text-white"
                 />
               </div>
@@ -257,7 +370,9 @@ const EditProfilePage = () => {
                   type="text"
                   placeholder="Enter your Telegram URL"
                   value={profile.socials.telegram || ""}
-                  //   onChange={}
+                  onChange={(e) =>
+                    handleNestedChange("socials", "telegram", e.target.value)
+                  }
                   className="w-full p-2 rounded bg-gray-900 text-white"
                 />
               </div>
@@ -268,14 +383,15 @@ const EditProfilePage = () => {
                   type="text"
                   placeholder="Enter your Others/Website URL"
                   value={profile.socials.others || ""}
-                  //   onChange={}
+                  onChange={(e) =>
+                    handleNestedChange("socials", "others", e.target.value)
+                  }
                   className="w-full p-2 rounded bg-gray-900 text-white"
                 />
               </div>
             </div>
           </div>
           <hr className="w-full text-white my-5 mb-10" />
-
           {/* Development Profiles */}
           <div className="m-1 mb-5">
             <h2 className="text-xl font-semibold">Development Profiles</h2>
@@ -287,7 +403,13 @@ const EditProfilePage = () => {
                   type="text"
                   placeholder="Enter your GitHub Username"
                   value={profile.developmentProfiles.github || ""}
-                  //   onChange={}
+                  onChange={(e) =>
+                    handleNestedChange(
+                      "developmentProfiles",
+                      "github",
+                      e.target.value
+                    )
+                  }
                   className="w-full p-2 rounded bg-gray-900 text-white"
                 />
               </div>
@@ -298,7 +420,13 @@ const EditProfilePage = () => {
                   type="text"
                   placeholder="Enter your GitLab Username"
                   value={profile.developmentProfiles.gitlab || ""}
-                  //   onChange={}
+                  onChange={(e) =>
+                    handleNestedChange(
+                      "developmentProfiles",
+                      "gitlab",
+                      e.target.value
+                    )
+                  }
                   className="w-full p-2 rounded bg-gray-900 text-white"
                 />
               </div>
@@ -309,14 +437,19 @@ const EditProfilePage = () => {
                   type="text"
                   placeholder="Enter your Portfolio URL"
                   value={profile.developmentProfiles.portfolio || ""}
-                  //   onChange={}
+                  onChange={(e) =>
+                    handleNestedChange(
+                      "developmentProfiles",
+                      "portfolio",
+                      e.target.value
+                    )
+                  }
                   className="w-full p-2 rounded bg-gray-900 text-white"
                 />
               </div>
             </div>
           </div>
           <hr className="w-full text-white my-5 mb-10" />
-
           {/* Competitive Profiles */}
           <div className="m-1 mb-5">
             <h2 className="text-xl font-semibold">Competitive Profiles</h2>
@@ -328,7 +461,13 @@ const EditProfilePage = () => {
                   type="text"
                   placeholder="Enter your LeetCode Username"
                   value={profile.competitiveProfiles.leetCode || ""}
-                  //   onChange={}
+                  onChange={(e) =>
+                    handleNestedChange(
+                      "competitiveProfiles",
+                      "leetCode",
+                      e.target.value
+                    )
+                  }
                   className="w-full p-2 rounded bg-gray-900 text-white"
                 />
               </div>
@@ -339,7 +478,13 @@ const EditProfilePage = () => {
                   type="text"
                   placeholder="Enter your Codeforces Username"
                   value={profile.competitiveProfiles.codeforces || ""}
-                  //   onChange={}
+                  onChange={(e) =>
+                    handleNestedChange(
+                      "competitiveProfiles",
+                      "codeforces",
+                      e.target.value
+                    )
+                  }
                   className="w-full p-2 rounded bg-gray-900 text-white"
                 />
               </div>
@@ -350,7 +495,13 @@ const EditProfilePage = () => {
                   type="text"
                   placeholder="Enter your AtCoder Username"
                   value={profile.competitiveProfiles.atCoder || ""}
-                  //   onChange={}
+                  onChange={(e) =>
+                    handleNestedChange(
+                      "competitiveProfiles",
+                      "atCoder",
+                      e.target.value
+                    )
+                  }
                   className="w-full p-2 rounded bg-gray-900 text-white"
                 />
               </div>
@@ -361,7 +512,13 @@ const EditProfilePage = () => {
                   type="text"
                   placeholder="Enter your CodeChef Username"
                   value={profile.competitiveProfiles.codechef || ""}
-                  //   onChange={}
+                  onChange={(e) =>
+                    handleNestedChange(
+                      "competitiveProfiles",
+                      "codechef",
+                      e.target.value
+                    )
+                  }
                   className="w-full p-2 rounded bg-gray-900 text-white"
                 />
               </div>
@@ -372,26 +529,38 @@ const EditProfilePage = () => {
                   type="text"
                   placeholder="Enter your GeeksforGeeks Username"
                   value={profile.competitiveProfiles.geeksforgeeks || ""}
-                  //   onChange={}
+                  onChange={(e) =>
+                    handleNestedChange(
+                      "competitiveProfiles",
+                      "geeksforgeeks",
+                      e.target.value
+                    )
+                  }
                   className="w-full p-2 rounded bg-gray-900 text-white"
                 />
               </div>
               <div>
-                <label htmlFor="hackerrank">Hackerrank</label>
+                <label htmlFor="hackerrank">HackerRank</label>
                 <input
                   id="hackerrank"
                   type="text"
-                  placeholder="Enter your Hackerrank Username"
+                  placeholder="Enter your HackerRank Username"
                   value={profile.competitiveProfiles.hackerrank || ""}
-                  //   onChange={}
+                  onChange={(e) =>
+                    handleNestedChange(
+                      "competitiveProfiles",
+                      "hackerrank",
+                      e.target.value
+                    )
+                  }
                   className="w-full p-2 rounded bg-gray-900 text-white"
                 />
               </div>
             </div>
           </div>
-
+          <hr className="w-full text-white my-5 mb-10" />
           {/* Education */}
-          <div>
+          <div className="m-1 mb-5">
             <h2 className="text-xl font-semibold">Education</h2>
             <div>
               <label className="block">Degree</label>
@@ -404,10 +573,10 @@ const EditProfilePage = () => {
                 className="w-full p-2 rounded bg-gray-900 text-white"
               />
             </div>
-
             <div>
               <label className="block">CGPA</label>
               <input
+                step="any"
                 type="number"
                 value={profile.education?.cgpa || ""}
                 onChange={(e) =>
@@ -416,7 +585,6 @@ const EditProfilePage = () => {
                 className="w-full p-2 rounded bg-gray-900 text-white"
               />
             </div>
-
             <div>
               <label className="block">Institution</label>
               <input
@@ -429,7 +597,7 @@ const EditProfilePage = () => {
               />
             </div>
           </div>
-
+          <hr className="w-full text-white my-5 mb-10" />
           <button
             type="submit"
             // disabled={saving}
@@ -439,25 +607,6 @@ const EditProfilePage = () => {
             Save
           </button>
         </form>
-
-        {/* <UserProfileSection
-          fullName={userData.fullName}
-          username={userData.user.username}
-          profilePicture={userData.profilePicture}
-          bgBanner={userData.backgroundBanner}
-          headLine={userData.headLine}
-        />
-        <AboutSection about={userData.about} />
-        <DomainRoleSection domain={userData.domain} role={userData.role} />
-        <TagsSection tags={userData.tags} />
-        <CompetitiveProgrammingSection
-          codingProfiles={userData.competitiveProfiles}
-        />
-        <DevelopmentSection
-          versionControlProfiles={userData.developmentProfiles}
-        />
-        <EducationSection education={userData.education} />
-        <SocialsSection socials={userData.socials} /> */}
       </div>
     </div>
   );

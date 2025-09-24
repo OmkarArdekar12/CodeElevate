@@ -23,7 +23,7 @@ const UserProfileSection = ({
               profilePicture ? profilePicture : "/images/defaultUserImage.png"
             }
             alt="userImage"
-            className="w-55 h-55 flex items-center justify-center md:w-86 md:h-86 rounded-full border-3 border-white object-cover"
+            className="w-39 h-39 flex items-center justify-center md:w-55 md:h-55 rounded-full border-3 border-white object-cover"
           />
           {username && (
             <h3 className="text-white text-xl italic mt-3">@{username}</h3>

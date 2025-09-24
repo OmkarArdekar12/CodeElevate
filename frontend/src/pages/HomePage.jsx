@@ -17,9 +17,9 @@ function HomePage() {
   return (
     <>
       <Navbar isLoggedIn={isLoggedIn} userData={user} />
-      {/* <main>
+      <main>
         <Outlet />
-      </main> */}
+      </main>
       <EditProfilePage />
       <Footer />
     </>
