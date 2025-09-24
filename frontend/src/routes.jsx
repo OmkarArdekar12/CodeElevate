@@ -7,6 +7,7 @@ import HomePage from "./pages/HomePage.jsx";
 import Home from "./home/Home.jsx";
 import PostPage from "./posts/PostPage.jsx";
 import ProfilePage from "./profiles/ProfilePage.jsx";
+import EditProfilePage from "./profiles/EditProfilePage.jsx";
 import NotificationPage from "./notifications/NotificationPage.jsx";
 import MessagePage from "./messages/MessagePage.jsx";
 import RankingPage from "./rankings/RankingPage.jsx";
@@ -50,6 +51,14 @@ const router = createBrowserRouter([
         path: "/profiles/:id",
         element: <ProfilePage />,
       },
+      // {
+      //   path: "/profiles/:id/edit",
+      //   element: (
+      //     <ProtectedRoute>
+      //       <EditProfilePage />
+      //     </ProtectedRoute>
+      //   ),
+      // },
       {
         path: "/posts",
         element: <PostPage />,

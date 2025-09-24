@@ -11,13 +11,11 @@ import DevelopmentStatsSection from "./DevelopmentStatsSection.jsx";
 import EducationSection from "./EducationSection.jsx";
 import SocialsSection from "./SocialsSection.jsx";
 import PostsSection from "./PostsSection.jsx";
-import { profile } from "./sampleData.js"; //sample data for testing
 import { useParams } from "react-router-dom";
 import { showProfile } from "../service/profileApi.js";
 import Loading from "../components/Loading.jsx";
 
 const ProfilePage = () => {
-  // const [userData, setUserData] = useState(profile);
   const { id: profileId } = useParams();
   const [userData, setUserData] = useState({});
   const [loading, setLoading] = useState(true);

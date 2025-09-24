@@ -19,10 +19,15 @@ const CompetitiveProgrammingSection = ({ codingProfiles }) => {
   const codeforces = codingProfiles.codeforces;
   const atCoder = codingProfiles.atCoder;
   const codechef = codingProfiles.codechef;
-  const geekforgeeks = codingProfiles.geekforgeeks;
+  const geeksforgeeks = codingProfiles.geeksforgeeks;
   const hackerrank = codingProfiles.hackerrank;
   const isEmpty =
-    leetCode || codeforces || atCoder || codechef || geekforgeeks || hackerrank;
+    leetCode ||
+    codeforces ||
+    atCoder ||
+    codechef ||
+    geeksforgeeks ||
+    hackerrank;
   return (
     <>
       {isEmpty && (
@@ -97,13 +102,13 @@ const CompetitiveProgrammingSection = ({ codingProfiles }) => {
                     </div>
                   </div>
                 )}
-                {geekforgeeks && (
+                {geeksforgeeks && (
                   <div className="flex items-center space-x-2 flex-wrap">
                     <FaCheckCircle className="text-blue-500 w-5 h-5" />
                     <div className="flex items-center space-x-1 flex-wrap group">
                       <SiGeeksforgeeks className="text-[#2F8D46] w-9 h-9" />
                       <a
-                        href={`https://auth.geeksforgeeks.org/user/${geekforgeeks}/`}
+                        href={`https://auth.geeksforgeeks.org/user/${geeksforgeeks}/`}
                         target="_blank"
                         className="text-2xl hover-text-border hover:underline hover:decoration-[#2F8D46] hover:decoration-2"
                       >

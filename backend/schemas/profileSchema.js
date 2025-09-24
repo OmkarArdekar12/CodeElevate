@@ -53,7 +53,7 @@ const profileSchema = Schema({
     codeforces: String,
     atCoder: String,
     codechef: String,
-    geekforgeeks: String,
+    geeksforgeeks: String,
     hackerrank: String,
   },
   socials: {

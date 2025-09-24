@@ -28,7 +28,7 @@ export const profileValidationSchema = Joi.object({
     codeforces: Joi.string().allow(""),
     atCoder: Joi.string().allow(""),
     codechef: Joi.string().allow(""),
-    geekforgeeks: Joi.string().allow(""),
+    geeksforgeeks: Joi.string().allow(""),
     hackerrank: Joi.string().allow(""),
   }),
 
