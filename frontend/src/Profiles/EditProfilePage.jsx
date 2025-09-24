@@ -610,6 +610,7 @@ const EditProfilePage = () => {
               <input
                 id="degree"
                 name="degree"
+                placeholder="Enter your Highest Degree Name"
                 type="text"
                 value={profile.education?.degree || ""}
                 onChange={(e) =>
@@ -623,6 +624,7 @@ const EditProfilePage = () => {
               <input
                 id="cgpa"
                 name="cgpa"
+                placeholder="Enter the CGPA"
                 step="any"
                 type="number"
                 value={profile.education?.cgpa || ""}
@@ -637,6 +639,7 @@ const EditProfilePage = () => {
               <input
                 id="institution"
                 name="institution"
+                placeholder="Enter the Institution Name"
                 type="text"
                 value={profile.education?.institution || ""}
                 onChange={(e) =>
