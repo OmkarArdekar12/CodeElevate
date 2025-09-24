@@ -57,7 +57,7 @@ const ProfilePage = () => {
           headLine={userData.headLine}
         />
 
-        <ButtonSection />
+        <ButtonSection profileUserId={userData.user._id} />
 
         <AboutSection about={userData.about} />
 

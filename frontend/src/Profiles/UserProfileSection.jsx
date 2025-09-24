@@ -26,7 +26,7 @@ const UserProfileSection = ({
             className="w-55 h-55 flex items-center justify-center md:w-86 md:h-86 rounded-full border-3 border-white object-cover"
           />
           {username && (
-            <h3 className="text-white text-md italic mt-3">@{username}</h3>
+            <h3 className="text-white text-xl italic mt-3">@{username}</h3>
           )}
         </div>
         <div className="flex flex-col justify-center text-2xl items-center md:items-start mt-10 md:ml-4 text-white md:text-5xl font-semibold">
