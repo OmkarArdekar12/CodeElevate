@@ -289,7 +289,7 @@ const EditProfilePage = () => {
                 <label htmlFor="linkedin">Linkedin</label>
                 <input
                   id="linkedin"
-                  name="linkedin"
+                  name="socials[linkedin]"
                   type="url"
                   placeholder="Enter your Linkedin URL"
                   value={profile.socials.linkedin || ""}
@@ -303,7 +303,7 @@ const EditProfilePage = () => {
                 <label htmlFor="email">Email</label>
                 <input
                   id="email"
-                  name="email"
+                  name="socials[email]"
                   type="email"
                   placeholder="Enter your Email ID"
                   value={profile.socials.email || ""}
@@ -317,7 +317,7 @@ const EditProfilePage = () => {
                 <label htmlFor="youtube">YouTube</label>
                 <input
                   id="youtube"
-                  name="youtube"
+                  name="socials[youtube]"
                   type="url"
                   placeholder="Enter your YouTube URL"
                   value={profile.socials.youtube || ""}
@@ -331,7 +331,7 @@ const EditProfilePage = () => {
                 <label htmlFor="discord">Discord</label>
                 <input
                   id="discord"
-                  name="discord"
+                  name="socials[discord]"
                   type="url"
                   placeholder="Enter your Discord URL"
                   value={profile.socials.discord || ""}
@@ -345,7 +345,7 @@ const EditProfilePage = () => {
                 <label htmlFor="stackoverflow">StackOverFlow</label>
                 <input
                   id="stackoverflow"
-                  name="stackoverflow"
+                  name="socials[stackoverflow]"
                   type="url"
                   placeholder="Enter your StackOverFlow URL"
                   value={profile.socials.stackoverflow || ""}
@@ -363,7 +363,7 @@ const EditProfilePage = () => {
                 <label htmlFor="facebook">Facebook</label>
                 <input
                   id="facebook"
-                  name="facebook"
+                  name="socials[facebook]"
                   type="url"
                   placeholder="Enter your Facebook URL"
                   value={profile.socials.facebook || ""}
@@ -377,7 +377,7 @@ const EditProfilePage = () => {
                 <label htmlFor="instagram">Instagram</label>
                 <input
                   id="instagram"
-                  name="instagram"
+                  name="socials[instagram]"
                   type="url"
                   placeholder="Enter your Instagram URL"
                   value={profile.socials.instagram || ""}
@@ -391,7 +391,7 @@ const EditProfilePage = () => {
                 <label htmlFor="twitterx">X / Twitter</label>
                 <input
                   id="twitterx"
-                  name="twitterx"
+                  name="socials[twitterx]"
                   type="url"
                   placeholder="Enter your X or Twitter URL"
                   value={profile.socials.twitterx || ""}
@@ -405,7 +405,7 @@ const EditProfilePage = () => {
                 <label htmlFor="telegram">Telegram</label>
                 <input
                   id="telegram"
-                  name="telegram"
+                  name="socials[telegram]"
                   type="url"
                   placeholder="Enter your Telegram URL"
                   value={profile.socials.telegram || ""}
@@ -419,7 +419,7 @@ const EditProfilePage = () => {
                 <label htmlFor="others">Others</label>
                 <input
                   id="others"
-                  name="others"
+                  name="socials[others]"
                   type="url"
                   placeholder="Enter your Others/Website URL"
                   value={profile.socials.others || ""}
@@ -440,7 +440,7 @@ const EditProfilePage = () => {
                 <label htmlFor="github">GitHub</label>
                 <input
                   id="github"
-                  name="github"
+                  name="developmentProfiles[github]"
                   type="text"
                   placeholder="Enter your GitHub Username"
                   value={profile.developmentProfiles.github || ""}
@@ -458,7 +458,7 @@ const EditProfilePage = () => {
                 <label htmlFor="gitlab">GitLab</label>
                 <input
                   id="gitlab"
-                  name="gitlab"
+                  name="developmentProfiles[gitlab]"
                   type="text"
                   placeholder="Enter your GitLab Username"
                   value={profile.developmentProfiles.gitlab || ""}
@@ -476,7 +476,7 @@ const EditProfilePage = () => {
                 <label htmlFor="portfolio">Portfolio</label>
                 <input
                   id="portfolio"
-                  name="portfolio"
+                  name="developmentProfiles[portfolio]"
                   type="url"
                   placeholder="Enter your Portfolio URL"
                   value={profile.developmentProfiles.portfolio || ""}
@@ -501,7 +501,7 @@ const EditProfilePage = () => {
                 <label htmlFor="leetCode">LeetCode</label>
                 <input
                   id="leetCode"
-                  name="leetCode"
+                  name="competitiveProfiles[leetCode]"
                   type="text"
                   placeholder="Enter your LeetCode Username"
                   value={profile.competitiveProfiles.leetCode || ""}
@@ -519,7 +519,7 @@ const EditProfilePage = () => {
                 <label htmlFor="codeforces">Codeforces</label>
                 <input
                   id="codeforces"
-                  name="codeforces"
+                  name="competitiveProfiles[codeforces]"
                   type="text"
                   placeholder="Enter your Codeforces Username"
                   value={profile.competitiveProfiles.codeforces || ""}
@@ -537,7 +537,7 @@ const EditProfilePage = () => {
                 <label htmlFor="atCoder">AtCoder</label>
                 <input
                   id="atCoder"
-                  name="atCoder"
+                  name="competitiveProfiles[atCoder]"
                   type="text"
                   placeholder="Enter your AtCoder Username"
                   value={profile.competitiveProfiles.atCoder || ""}
@@ -555,7 +555,7 @@ const EditProfilePage = () => {
                 <label htmlFor="codechef">CodeChef</label>
                 <input
                   id="codechef"
-                  name="codechef"
+                  name="competitiveProfiles[codechef]"
                   type="text"
                   placeholder="Enter your CodeChef Username"
                   value={profile.competitiveProfiles.codechef || ""}
@@ -573,7 +573,7 @@ const EditProfilePage = () => {
                 <label htmlFor="geeksforgeeks">GeeksforGeeks</label>
                 <input
                   id="geeksforgeeks"
-                  name="geeksforgeeks"
+                  name="competitiveProfiles[geeksforgeeks]"
                   type="text"
                   placeholder="Enter your GeeksforGeeks Username"
                   value={profile.competitiveProfiles.geeksforgeeks || ""}
@@ -591,7 +591,7 @@ const EditProfilePage = () => {
                 <label htmlFor="hackerrank">HackerRank</label>
                 <input
                   id="hackerrank"
-                  name="hackerrank"
+                  name="competitiveProfiles[hackerrank]"
                   type="text"
                   placeholder="Enter your HackerRank Username"
                   value={profile.competitiveProfiles.hackerrank || ""}
@@ -615,7 +615,7 @@ const EditProfilePage = () => {
               <label htmlFor="degree">Degree</label>
               <input
                 id="degree"
-                name="degree"
+                name="education[degree]"
                 placeholder="Enter your Highest Degree Name"
                 type="text"
                 value={profile.education?.degree || ""}
@@ -629,7 +629,7 @@ const EditProfilePage = () => {
               <label htmlFor="cgpa">CGPA</label>
               <input
                 id="cgpa"
-                name="cgpa"
+                name="education[cgpa]"
                 placeholder="Enter the CGPA"
                 step="any"
                 type="number"
@@ -644,7 +644,7 @@ const EditProfilePage = () => {
               <label htmlFor="institution">Institution</label>
               <input
                 id="institution"
-                name="institution"
+                name="education[institution]"
                 placeholder="Enter the Institution Name"
                 type="text"
                 value={profile.education?.institution || ""}
