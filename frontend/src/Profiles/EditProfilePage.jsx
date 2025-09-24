@@ -1,11 +1,17 @@
 import React, { useState, useEffect } from "react";
-import { useNavigate, useParams } from "react-router-dom";
+import { Navigate, useNavigate, useParams } from "react-router-dom";
 import { showProfile } from "../service/profileApi";
+import { useSession } from "../context/SessionContext.jsx";
 import Loading from "../components/Loading.jsx";
 
 const EditProfilePage = () => {
   const { id } = useParams();
   const navigate = useNavigate();
+  const { user } = useSession();
+
+  if (user.userId !== id) {
+    return <Navigate to={`/profiles/${id}`} replace />;
+  }
 
   const [profile, setProfile] = useState({
     fullName: "",
