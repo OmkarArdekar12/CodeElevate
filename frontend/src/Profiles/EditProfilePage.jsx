@@ -159,6 +159,7 @@ const EditProfilePage = () => {
         <form
           onSubmit={handleSubmit}
           className="w-[95%] bg-gradient-to-r from-gray-800 via-black-900 to-purple-900 rounded-2xl shadow-lg p-6"
+          encType="multipart/form-data"
         >
           <h1 className="text-2xl font-bold mb-3">Edit Profile</h1>
           <hr className="w-full text-white my-5 mb-10" />
