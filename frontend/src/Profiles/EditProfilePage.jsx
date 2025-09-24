@@ -92,50 +92,22 @@ const EditProfilePage = () => {
     }
   };
 
-  console.log(profile);
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    console.log(profile);
+  };
 
   return (
     <div className="w-full flex items-center justify-center md:px-10 text-white">
       <div className="w-full flex flex-col items-center justify-center py-5 px-1 bg-[#181818]">
-        <form className="w-[95%] bg-gradient-to-r from-gray-800 via-black-900 to-purple-900 rounded-2xl shadow-lg p-6">
+        <form
+          onSubmit={handleSubmit}
+          className="w-[95%] bg-gradient-to-r from-gray-800 via-black-900 to-purple-900 rounded-2xl shadow-lg p-6"
+        >
           <h1 className="text-2xl font-bold mb-3">Edit Profile</h1>
           <hr className="w-full text-white my-5 mb-10" />
-          {/* 
-          <div className="relative mb-10 flex items-center justify-center">
-            <img
-              src={bannerPreview}
-              alt="Banner"
-              className="w-full h-48 object-cover rounded-lg"
-            />
-            <label className="absolute top-2 right-2 bg-black/60 px-3 py-1 rounded cursor-pointer text-sm">
-              Change Banner
-              <input
-                type="file"
-                name="backgroundBanner"
-                accept="image/*"
-                onChange={handleFileChange}
-                className="hidden"
-              />
-            </label>
-            <div className="absolute -bottom-25 md:-bottom-39 left-5">
-              <img
-                src={profilePreview}
-                alt="Profile"
-                className="w-39 h-39 md:w-50 md:h-50 rounded-full border-4 border-gray-900"
-              />
-              <label className="absolute bottom-0 right-0 bg-black/60 px-2 py-1 rounded cursor-pointer text-xs">
-                Edit
-                <input
-                  type="file"
-                  name="profilePicture"
-                  accept="image/*"
-                  onChange={handleFileChange}
-                  className="hidden"
-                />
-              </label>
-            </div>
-          </div> */}
 
+          {/* User Profile Picture and Background Banner Images */}
           <div className="w-full flex items-center justify-center relative">
             <img
               src={bannerPreview}
@@ -186,6 +158,7 @@ const EditProfilePage = () => {
                 value={profile.fullName || ""}
                 onChange={handleChange}
                 className="w-full p-2 rounded bg-gray-900 text-white"
+                required
               />
             </div>
             <div className="m-1">
@@ -198,6 +171,7 @@ const EditProfilePage = () => {
                 name="username"
                 value={"@ " + profile.user.username || ""}
                 className="w-full p-2 rounded bg-gray-900 text-gray-300 italic"
+                required
               />
             </div>
           </div>
@@ -259,7 +233,8 @@ const EditProfilePage = () => {
                 <label htmlFor="linkedin">Linkedin</label>
                 <input
                   id="linkedin"
-                  type="text"
+                  name="linkedin"
+                  type="url"
                   placeholder="Enter your Linkedin URL"
                   value={profile.socials.linkedin || ""}
                   onChange={(e) =>
@@ -272,7 +247,8 @@ const EditProfilePage = () => {
                 <label htmlFor="email">Email</label>
                 <input
                   id="email"
-                  type="text"
+                  name="email"
+                  type="email"
                   placeholder="Enter your Email ID"
                   value={profile.socials.email || ""}
                   onChange={(e) =>
@@ -285,7 +261,8 @@ const EditProfilePage = () => {
                 <label htmlFor="youtube">YouTube</label>
                 <input
                   id="youtube"
-                  type="text"
+                  name="youtube"
+                  type="url"
                   placeholder="Enter your YouTube URL"
                   value={profile.socials.youtube || ""}
                   onChange={(e) =>
@@ -298,7 +275,8 @@ const EditProfilePage = () => {
                 <label htmlFor="discord">Discord</label>
                 <input
                   id="discord"
-                  type="text"
+                  name="discord"
+                  type="url"
                   placeholder="Enter your Discord URL"
                   value={profile.socials.discord || ""}
                   onChange={(e) =>
@@ -311,8 +289,9 @@ const EditProfilePage = () => {
                 <label htmlFor="stackoverflow">StackOverFlow</label>
                 <input
                   id="stackoverflow"
+                  name="stackoverflow"
+                  type="url"
                   placeholder="Enter your StackOverFlow URL"
-                  type="text"
                   value={profile.socials.stackoverflow || ""}
                   onChange={(e) =>
                     handleNestedChange(
@@ -328,7 +307,8 @@ const EditProfilePage = () => {
                 <label htmlFor="facebook">Facebook</label>
                 <input
                   id="facebook"
-                  type="text"
+                  name="facebook"
+                  type="url"
                   placeholder="Enter your Facebook URL"
                   value={profile.socials.facebook || ""}
                   onChange={(e) =>
@@ -341,7 +321,8 @@ const EditProfilePage = () => {
                 <label htmlFor="instagram">Instagram</label>
                 <input
                   id="instagram"
-                  type="text"
+                  name="instagram"
+                  type="url"
                   placeholder="Enter your Instagram URL"
                   value={profile.socials.instagram || ""}
                   onChange={(e) =>
@@ -354,7 +335,8 @@ const EditProfilePage = () => {
                 <label htmlFor="twitterx">X / Twitter</label>
                 <input
                   id="twitterx"
-                  type="text"
+                  name="twitterx"
+                  type="url"
                   placeholder="Enter your X or Twitter URL"
                   value={profile.socials.twitterx || ""}
                   onChange={(e) =>
@@ -367,7 +349,8 @@ const EditProfilePage = () => {
                 <label htmlFor="telegram">Telegram</label>
                 <input
                   id="telegram"
-                  type="text"
+                  name="telegram"
+                  type="url"
                   placeholder="Enter your Telegram URL"
                   value={profile.socials.telegram || ""}
                   onChange={(e) =>
@@ -380,7 +363,8 @@ const EditProfilePage = () => {
                 <label htmlFor="others">Others</label>
                 <input
                   id="others"
-                  type="text"
+                  name="others"
+                  type="url"
                   placeholder="Enter your Others/Website URL"
                   value={profile.socials.others || ""}
                   onChange={(e) =>
@@ -400,6 +384,7 @@ const EditProfilePage = () => {
                 <label htmlFor="github">GitHub</label>
                 <input
                   id="github"
+                  name="github"
                   type="text"
                   placeholder="Enter your GitHub Username"
                   value={profile.developmentProfiles.github || ""}
@@ -417,6 +402,7 @@ const EditProfilePage = () => {
                 <label htmlFor="gitlab">GitLab</label>
                 <input
                   id="gitlab"
+                  name="gitlab"
                   type="text"
                   placeholder="Enter your GitLab Username"
                   value={profile.developmentProfiles.gitlab || ""}
@@ -434,7 +420,8 @@ const EditProfilePage = () => {
                 <label htmlFor="portfolio">Portfolio</label>
                 <input
                   id="portfolio"
-                  type="text"
+                  name="portfolio"
+                  type="url"
                   placeholder="Enter your Portfolio URL"
                   value={profile.developmentProfiles.portfolio || ""}
                   onChange={(e) =>
@@ -458,6 +445,7 @@ const EditProfilePage = () => {
                 <label htmlFor="leetCode">LeetCode</label>
                 <input
                   id="leetCode"
+                  name="leetCode"
                   type="text"
                   placeholder="Enter your LeetCode Username"
                   value={profile.competitiveProfiles.leetCode || ""}
@@ -475,6 +463,7 @@ const EditProfilePage = () => {
                 <label htmlFor="codeforces">Codeforces</label>
                 <input
                   id="codeforces"
+                  name="codeforces"
                   type="text"
                   placeholder="Enter your Codeforces Username"
                   value={profile.competitiveProfiles.codeforces || ""}
@@ -492,6 +481,7 @@ const EditProfilePage = () => {
                 <label htmlFor="atCoder">AtCoder</label>
                 <input
                   id="atCoder"
+                  name="atCoder"
                   type="text"
                   placeholder="Enter your AtCoder Username"
                   value={profile.competitiveProfiles.atCoder || ""}
@@ -509,6 +499,7 @@ const EditProfilePage = () => {
                 <label htmlFor="codechef">CodeChef</label>
                 <input
                   id="codechef"
+                  name="codechef"
                   type="text"
                   placeholder="Enter your CodeChef Username"
                   value={profile.competitiveProfiles.codechef || ""}
@@ -526,6 +517,7 @@ const EditProfilePage = () => {
                 <label htmlFor="geeksforgeeks">GeeksforGeeks</label>
                 <input
                   id="geeksforgeeks"
+                  name="geeksforgeeks"
                   type="text"
                   placeholder="Enter your GeeksforGeeks Username"
                   value={profile.competitiveProfiles.geeksforgeeks || ""}
@@ -543,6 +535,7 @@ const EditProfilePage = () => {
                 <label htmlFor="hackerrank">HackerRank</label>
                 <input
                   id="hackerrank"
+                  name="hackerrank"
                   type="text"
                   placeholder="Enter your HackerRank Username"
                   value={profile.competitiveProfiles.hackerrank || ""}
@@ -562,9 +555,11 @@ const EditProfilePage = () => {
           {/* Education */}
           <div className="m-1 mb-5">
             <h2 className="text-xl font-semibold">Education</h2>
-            <div>
-              <label className="block">Degree</label>
+            <div className="m-1">
+              <label htmlFor="degree">Degree</label>
               <input
+                id="degree"
+                name="degree"
                 type="text"
                 value={profile.education?.degree || ""}
                 onChange={(e) =>
@@ -573,9 +568,11 @@ const EditProfilePage = () => {
                 className="w-full p-2 rounded bg-gray-900 text-white"
               />
             </div>
-            <div>
-              <label className="block">CGPA</label>
+            <div className="m-1">
+              <label htmlFor="cgpa">CGPA</label>
               <input
+                id="cgpa"
+                name="cgpa"
                 step="any"
                 type="number"
                 value={profile.education?.cgpa || ""}
@@ -585,9 +582,11 @@ const EditProfilePage = () => {
                 className="w-full p-2 rounded bg-gray-900 text-white"
               />
             </div>
-            <div>
-              <label className="block">Institution</label>
+            <div className="m-1">
+              <label htmlFor="institution">Institution</label>
               <input
+                id="institution"
+                name="institution"
                 type="text"
                 value={profile.education?.institution || ""}
                 onChange={(e) =>
