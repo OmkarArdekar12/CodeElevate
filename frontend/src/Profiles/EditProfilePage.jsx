@@ -4,73 +4,79 @@ import { showProfile } from "../service/profileApi";
 import Loading from "../components/Loading.jsx";
 
 const EditProfilePage = () => {
-  //   const [profile, setProfile] = useState({
-  //     fullName: "Omkar Prakash Ardekar",
-  //     user: {
-  //       username: "Omkar",
-  //     },
-  //     profilePicture: "",
-  //     backgroundBanner: "",
-
-  //     headLine: "Greatest of All Time",
-
-  //     role: "Software Engineer",
-  //     domain: "Java",
-
-  //     tags: ["CP", "Coder", "Developer"],
-
-  //     about: "I am SDE at Google.",
-
-  //     developmentProfiles: {
-  //       github: "username",
-  //       gitlab: "username",
-  //       portfolio: "username",
-  //     },
-  //     competitiveProfiles: {
-  //       leetCode: "username",
-  //       codeforces: "username",
-  //       atCoder: "username",
-  //       codechef: "username",
-  //       geeksforgeeks: "username",
-  //       hackerrank: "username",
-  //     },
-  //     socials: {
-  //       linkedin: "username",
-  //       email: "username",
-  //       youtube: "username",
-  //       discord: "username",
-  //       stackoverflow: "username",
-  //       facebook: "username",
-  //       instagram: "username",
-  //       twitterx: "username",
-  //       telegram: "username",
-  //       others: "username",
-  //     },
-
-  //     showStats: true,
-
-  //     education: {
-  //       degree: "B.Tech",
-  //       cgpa: 9.99,
-  //       institution: "IIT Bombay",
-  //     },
-
-  //     followers: [],
-  //     following: [],
-  //   });
-
   const { id } = useParams();
-  console.log(id);
   const navigate = useNavigate();
 
-  const [profile, setProfile] = useState({});
+  const [profile, setProfile] = useState({
+    fullName: "",
+    user: {
+      username: "",
+    },
+    profilePicture: "",
+    backgroundBanner: "",
+    headLine: "",
+    role: "Explorer",
+    domain: "General",
+    tags: ["", "", "", "", "", ""],
+    about: "",
+    developmentProfiles: {
+      github: "",
+      gitlab: "",
+      portfolio: "",
+    },
+    competitiveProfiles: {
+      leetCode: "",
+      codeforces: "",
+      atCoder: "",
+      codechef: "",
+      geeksforgeeks: "",
+      hackerrank: "",
+    },
+    socials: {
+      linkedin: "",
+      email: "",
+      youtube: "",
+      discord: "",
+      stackoverflow: "",
+      facebook: "",
+      instagram: "",
+      twitterx: "",
+      telegram: "",
+      others: "",
+    },
+    showStats: false,
+    education: {
+      degree: "",
+      cgpa: "",
+      institution: "",
+    },
+    followers: [],
+    following: [],
+  });
+
   const [loading, setLoading] = useState(true);
   const [saving, setSaving] = useState(false);
 
   const fetchProfile = async () => {
     try {
-      const res = await showProfile(id);
-      setProfile(res);
+      const profileData = await showProfile(id);
+      setProfile((prev) => ({
+        ...prev,
+        ...profileData,
+        socials: { ...prev.socials, ...profileData.socials },
+        competitiveProfiles: {
+          ...prev.competitiveProfiles,
+          ...profileData.competitiveProfiles,
+        },
+        developmentProfiles: {
+          ...prev.developmentProfiles,
+          ...profileData.developmentProfiles,
+        },
+        education: {
+          ...prev.education,
+          ...profileData.education,
+        },
+      }));
     } catch (err) {
       console.error("Failed to fetch profile", err);
     } finally {
@@ -78,11 +84,27 @@ const EditProfilePage = () => {
     }
   };
 
+  const [profilePreview, setProfilePreview] = useState(
+    profile.profilePicture || "/images/defaultUserImage.png"
+  );
+  const [bannerPreview, setBannerPreview] = useState(
+    profile.backgroundBanner || "/images/defaultBgBannerImage.png"
+  );
+
   useEffect(() => {
     fetchProfile();
   }, [id]);
 
-  console.log(profile);
+  useEffect(() => {
+    if (profile) {
+      setProfilePreview(
+        profile.profilePicture || "/images/defaultUserImage.png"
+      );
+      setBannerPreview(
+        profile.backgroundBanner || "/images/defaultBgBannerImage.png"
+      );
+    }
+  }, [profile]);
 
   if (loading) {
     return <Loading />;
@@ -90,13 +112,6 @@ const EditProfilePage = () => {
   if (!profile) {
     return <p className="text-center mt-10 text-white">Profile not found.</p>;
   }
-
-  const [profilePreview, setProfilePreview] = useState(
-    profile.profilePicture || "/images/defaultUserImage.png"
-  );
-  const [bannerPreview, setBannerPreview] = useState(
-    profile.backgroundBanner || "/images/defaultBgBannerImage.png"
-  );
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -204,7 +219,7 @@ const EditProfilePage = () => {
                 type="text"
                 placeholder="Enter your Username"
                 name="username"
-                value={"@ " + profile.user.username || ""}
+                value={profile.user ? "@ " + profile.user.username : ""}
                 className="w-full p-2 rounded bg-gray-900 text-gray-300 italic"
                 required
               />
