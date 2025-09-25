@@ -1,4 +1,4 @@
-import { profileValidationSchema } from "../validations/profileValidation";
+import { profileValidationSchema } from "../validations/profileValidations.js";
 import Profile from "../models/profile.js";
 
 export const validateProfile = (req, res, next) => {
@@ -27,7 +27,7 @@ export const isOwner = async (req, res, next) => {
       return res.status(404).json({ message: "Profile not found" });
     }
 
-    if (profile.user.toString() !== userId.toString()) {
+    if (profileId.toString() !== userId.toString()) {
       return res
         .status(403)
         .json({ message: "You are not authorized to edit this profile" });

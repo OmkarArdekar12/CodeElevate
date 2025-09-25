@@ -7,6 +7,7 @@ import localStrategy from "passport-local";
 import { ExpressError } from "./utils/ExpressError.js";
 import axios from "axios";
 import passport from "passport";
+import multer from "multer";
 import dotenv from "dotenv";
 import cors from "cors";
 import dbConnect from "./config/dbConnect.js";

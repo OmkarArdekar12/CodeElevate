@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Navigate, useNavigate, useParams } from "react-router-dom";
-import { showProfile } from "../service/profileApi";
+import { showProfile, editProfile } from "../service/profileApi";
 import { useSession } from "../context/SessionContext.jsx";
 import Loading from "../components/Loading.jsx";
 
@@ -101,17 +101,6 @@ const EditProfilePage = () => {
     fetchProfile();
   }, [id]);
 
-  useEffect(() => {
-    if (profile) {
-      setProfilePreview(
-        profile.profilePicture || "/images/defaultUserImage.png"
-      );
-      setBannerPreview(
-        profile.backgroundBanner || "/images/defaultBgBannerImage.png"
-      );
-    }
-  }, [profile]);
-
   if (loading) {
     return <Loading />;
   }
@@ -151,6 +140,15 @@ const EditProfilePage = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     console.log(profile);
+    setSaving(true);
+    try {
+      await editProfile(id, profile);
+      navigate(`/profiles/${id}`);
+    } catch (err) {
+      console.error("Failed to update profile", err);
+    } finally {
+      setSaving(false);
+    }
   };
 
   return (
@@ -659,11 +657,10 @@ const EditProfilePage = () => {
           <hr className="w-full text-white my-5 mb-10" />
           <button
             type="submit"
-            // disabled={saving}
+            disabled={saving}
             className="bg-green-600 hover:bg-green-700 px-6 py-2 rounded-full"
           >
-            {/* {saving ? "Saving..." : "Save Changes"} */}
-            Save
+            {saving ? "Saving..." : "Save Changes"}
           </button>
         </form>
       </div>
