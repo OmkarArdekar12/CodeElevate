@@ -14,9 +14,14 @@ import PostsSection from "./PostsSection.jsx";
 import { useParams } from "react-router-dom";
 import { showProfile } from "../service/profileApi.js";
 import Loading from "../components/Loading.jsx";
+import { useSession } from "../context/SessionContext";
 
 const ProfilePage = () => {
   const { id: profileId } = useParams();
+  const { isLoggedIn, user } = useSession();
+  const userId = user && user.userId ? user.userId : "";
+  const isOwner = profileId === userId;
+
   const [userData, setUserData] = useState({});
   const [loading, setLoading] = useState(true);
 
@@ -55,7 +60,11 @@ const ProfilePage = () => {
           headLine={userData.headLine}
         />
 
-        <ButtonSection profileUserId={userData.user._id} />
+        <ButtonSection
+          profileUserId={profileId}
+          isLoggedIn={isLoggedIn}
+          isOwner={isOwner}
+        />
 
         <AboutSection about={userData.about} />
 
