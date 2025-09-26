@@ -7,7 +7,7 @@ import {
   getAllProfiles,
   showProfile,
   // createProfile,
-  // updateProfile,
+  updateProfile,
   // destroyProfile,
 } from "../controllers/profileControllers.js";
 
@@ -35,11 +35,7 @@ router.put(
     { name: "backgroundBanner", maxCount: 1 },
   ]),
   validateProfile,
-  async (req, res) => {
-    console.log(req.body);
-    console.log(req.files);
-    res.send("done");
-  }
+  updateProfile
 );
 
 //Delete Profile Route

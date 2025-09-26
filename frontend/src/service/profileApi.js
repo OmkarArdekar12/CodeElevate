@@ -10,7 +10,7 @@ export const showProfile = async (id) => {
   return profile.data;
 };
 
-export const editProfile = async (userId, profileData, token) => {
+export const editProfile = async (userId, profileData) => {
   console.log(profileData);
   const response = await api.put(`/profiles/${userId}`, profileData, {
     withCredentials: true,

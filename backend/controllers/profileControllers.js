@@ -27,6 +27,48 @@ export const showProfile = async (req, res) => {
   }
 };
 
+export const updateProfile = async (req, res) => {
+  try {
+    console.log("Req.user in updateProfile:", req.user); // Debug log
+
+    const clientUserId = req.params.userId;
+    const ownerUserId = req.user._id.toString();
+
+    if (clientUserId !== ownerUserId) {
+      return res
+        .status(403)
+        .json({ message: "Unauthorized to update this profile" });
+    }
+
+    const profile = await Profile.findOne({ user: clientUserId });
+
+    if (!profile) {
+      return res.status(404).json({ message: "Profile not found" });
+    }
+
+    // Handle file uploads if present
+    if (req.files) {
+      if (req.files.profilePicture) {
+        profile.profilePicture = req.files.profilePicture[0].path;
+      }
+      if (req.files.backgroundBanner) {
+        profile.backgroundBanner = req.files.backgroundBanner[0].path;
+      }
+    }
+
+    // Update other fields
+    Object.assign(profile, req.body);
+    await profile.save();
+
+    res.status(200).json(profile);
+  } catch (err) {
+    console.error("Error updating profile:", err);
+    res
+      .status(500)
+      .json({ message: "Error in updating profile", error: err.message });
+  }
+};
+
 // export const updateProfile = async (req, res) => {
 //   try {
 //     const clientUserId = req.params.userId;

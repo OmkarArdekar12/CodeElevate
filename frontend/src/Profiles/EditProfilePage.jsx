@@ -142,7 +142,8 @@ const EditProfilePage = () => {
     console.log(profile);
     setSaving(true);
     try {
-      await editProfile(id, profile);
+      const res = await editProfile(id, profile);
+      console.log(res);
       navigate(`/profiles/${id}`);
     } catch (err) {
       console.error("Failed to update profile", err);
