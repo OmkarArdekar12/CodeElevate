@@ -37,7 +37,10 @@ const profileSchema = Schema({
     default: "General",
   },
 
-  tags: [String],
+  tags: {
+    type: [String],
+    default: ["", "", "", "", ""],
+  },
 
   about: {
     type: String,
