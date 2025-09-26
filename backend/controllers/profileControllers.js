@@ -27,30 +27,30 @@ export const showProfile = async (req, res) => {
   }
 };
 
-export const updateProfile = async (req, res) => {
-  try {
-    const clientUserId = req.params.userId;
-    const ownerUserId = req.user._id.toString();
+// export const updateProfile = async (req, res) => {
+//   try {
+//     const clientUserId = req.params.userId;
+//     const ownerUserId = req.user._id.toString();
 
-    if (clientUserId !== ownerUserId) {
-      return res
-        .status(403)
-        .json({ message: "Unauthorized to update this profile" });
-    }
+//     if (clientUserId !== ownerUserId) {
+//       return res
+//         .status(403)
+//         .json({ message: "Unauthorized to update this profile" });
+//     }
 
-    const profile = await Profile.findOne({ user: clientUserId });
+//     const profile = await Profile.findOne({ user: clientUserId });
 
-    if (!profile) {
-      return res.status(404).json({ message: "Profile not found" });
-    }
+//     if (!profile) {
+//       return res.status(404).json({ message: "Profile not found" });
+//     }
 
-    Object.assign(profile, req.body);
-    await profile.save();
-    res.status(200).json(profile);
-  } catch (err) {
-    res.status(500).json({ message: "Error in updating profile", error: err });
-  }
-};
+//     Object.assign(profile, req.body);
+//     await profile.save();
+//     res.status(200).json(profile);
+//   } catch (err) {
+//     res.status(500).json({ message: "Error in updating profile", error: err });
+//   }
+// };
 
 export const destroyProfile = async (req, res) => {
   try {

@@ -10,16 +10,10 @@ export const showProfile = async (id) => {
   return profile.data;
 };
 
-export const editProfile = async (userId, profileData) => {
+export const editProfile = async (userId, profileData, token) => {
   console.log(profileData);
-  const response = await api.put(
-    `/profiles/${userId}`,
-    {
-      ...profileData,
-    },
-    {
-      withCredentials: true,
-    }
-  );
+  const response = await api.put(`/profiles/${userId}`, profileData, {
+    withCredentials: true,
+  });
   return response.data;
 };

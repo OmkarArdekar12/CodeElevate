@@ -7,8 +7,8 @@ import {
   getAllProfiles,
   showProfile,
   // createProfile,
-  updateProfile,
-  destroyProfile,
+  // updateProfile,
+  // destroyProfile,
 } from "../controllers/profileControllers.js";
 
 const upload = multer({ dest: "uploads/" });
@@ -43,6 +43,6 @@ router.put(
 );
 
 //Delete Profile Route
-router.delete("/:userId", auth, destroyProfile);
+// router.delete("/:userId", auth, destroyProfile);
 
 export default router;
