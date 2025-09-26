@@ -6,9 +6,9 @@ import { validateProfile, isOwner } from "../middlewares/profileValidations.js";
 import {
   getAllProfiles,
   showProfile,
-  createProfile,
-  updateProfile,
-  destroyProfile,
+  // createProfile,
+  // updateProfile,
+  // destroyProfile,
 } from "../controllers/profileControllers.js";
 
 const upload = multer({ dest: "uploads/" });
@@ -22,10 +22,10 @@ router.get("/", getAllProfiles);
 router.get("/:id", showProfile);
 
 //Create Profile Route
-router.post("/", auth, createProfile);
+// router.post("/", auth, createProfile);
 
 //Update Profile Route
-router.put("/:userId", auth, updateProfile);
+// router.put("/:userId", auth, updateProfile);
 router.put(
   "/:id",
   auth,
@@ -43,6 +43,6 @@ router.put(
 );
 
 //Delete Profile Route
-router.delete("/:userId", auth, destroyProfile);
+// router.delete("/:userId", auth, destroyProfile);
 
 export default router;
