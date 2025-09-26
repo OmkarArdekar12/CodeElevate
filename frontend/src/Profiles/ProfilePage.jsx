@@ -11,19 +11,31 @@ import DevelopmentStatsSection from "./DevelopmentStatsSection.jsx";
 import EducationSection from "./EducationSection.jsx";
 import SocialsSection from "./SocialsSection.jsx";
 import PostsSection from "./PostsSection.jsx";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { showProfile } from "../service/profileApi.js";
 import Loading from "../components/Loading.jsx";
 import { useSession } from "../context/SessionContext";
+import { logoutUser } from "../service/authApi.js";
 
 const ProfilePage = () => {
   const { id: profileId } = useParams();
-  const { isLoggedIn, user } = useSession();
+  const { isLoggedIn, user, logout } = useSession();
   const userId = user && user.userId ? user.userId : "";
   const isOwner = profileId === userId;
 
+  const navigate = useNavigate();
   const [userData, setUserData] = useState({});
   const [loading, setLoading] = useState(true);
+
+  const handleLogout = async () => {
+    try {
+      const { data } = await logoutUser();
+      logout(data);
+      navigate("/login");
+    } catch (err) {
+      console.log("Error: ", err.message);
+    }
+  };
 
   const fetchUserData = async (id) => {
     try {
@@ -52,6 +64,16 @@ const ProfilePage = () => {
   return (
     <div className="w-full flex items-center justify-center md:px-10 text-white">
       <div className="w-full flex flex-col items-center justify-center pb-5 bg-[#181818]">
+        {isLoggedIn && isOwner && (
+          <div className="mr-2 ml-auto my-2">
+            <button
+              className="bg-red-500 text-center rounded-md px-4 py-2 hover-text-border"
+              onClick={handleLogout}
+            >
+              Logout
+            </button>
+          </div>
+        )}
         <UserProfileSection
           fullName={userData.fullName}
           username={userData.user.username}

@@ -150,7 +150,11 @@ export default function Navbar({ isLoggedIn, userData }) {
           <div className="px-2 pt-2 pb-3 space-y-1">
             {isLoggedIn ? (
               <Link
-                to={`/profile/${userId}`}
+                to={
+                  userData && userData.userId
+                    ? `/profiles/${userData.userId}`
+                    : "/"
+                }
                 className="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-700 transition duration-150 md:hidden"
               >
                 Profile

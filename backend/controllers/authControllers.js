@@ -68,15 +68,22 @@ export const authStatus = async (req, res) => {
 };
 
 //Logout Controller
-export const logout = async (req, res) => {
+export const logout = async (req, res, next) => {
   if (!req.user) {
     return res.status(401).json({ message: "Unauthorized user!" });
   }
   req.logout((err) => {
     if (err) {
-      return res.status(400).json({ message: "User not logged in" });
+      return next(err);
     }
-    res.status(200).json({ message: "User Logout successfully" });
+    req.session.destroy((err) => {
+      if (err) {
+        return next(err);
+      }
+      //Clear cookie
+      res.clearCookie("connect.sid"); //default sessionId
+      res.status(200).json({ message: "Logged out successfully" });
+    });
   });
 };
 

@@ -35,6 +35,10 @@ const router = createBrowserRouter([
         element: <Verify2FA />,
         errorElement: <Error />,
       },
+      {
+        path: "/logout",
+        errorElement: <Error />,
+      },
     ],
   },
 
