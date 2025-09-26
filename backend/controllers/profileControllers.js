@@ -29,24 +29,14 @@ export const showProfile = async (req, res) => {
 
 export const updateProfile = async (req, res) => {
   try {
-    console.log("Req.user in updateProfile:", req.user); // Debug log
+    const { id } = req.params;
 
-    const clientUserId = req.params.userId;
-    const ownerUserId = req.user._id.toString();
-
-    if (clientUserId !== ownerUserId) {
-      return res
-        .status(403)
-        .json({ message: "Unauthorized to update this profile" });
-    }
-
-    const profile = await Profile.findOne({ user: clientUserId });
+    const profile = await Profile.findOne({ user: id });
 
     if (!profile) {
       return res.status(404).json({ message: "Profile not found" });
     }
 
-    // Handle file uploads if present
     if (req.files) {
       if (req.files.profilePicture) {
         profile.profilePicture = req.files.profilePicture[0].path;
@@ -56,43 +46,59 @@ export const updateProfile = async (req, res) => {
       }
     }
 
-    // Update other fields
-    Object.assign(profile, req.body);
+    const updatableFields = [
+      "fullName",
+      "headLine",
+      "role",
+      "domain",
+      "tags",
+      "about",
+      "showStats",
+      "developmentProfiles",
+      "competitiveProfiles",
+      "socials",
+      "education",
+    ];
+
+    updatableFields.forEach((field) => {
+      if (req.body[field] !== undefined) {
+        if (
+          typeof req.body[field] === "object" &&
+          !Array.isArray(req.body[field])
+        ) {
+          profile[field] = { ...profile[field], ...req.body[field] };
+        } else {
+          profile[field] = req.body[field];
+        }
+      }
+    });
+
+    if (req.body.tags !== undefined) {
+      profile.tags = Array.isArray(req.body.tags)
+        ? req.body.tags.map((tag) => tag || "")
+        : ["", "", "", "", ""];
+      while (profile.tags.length < 5) {
+        profile.tags.push("");
+      }
+      profile.tags = profile.tags.slice(0, 5);
+    }
+
+    if (req.body.education && req.body.education.cgpa !== undefined) {
+      profile.education.cgpa =
+        req.body.education.cgpa === "" ? null : Number(req.body.education.cgpa);
+    }
+
     await profile.save();
 
-    res.status(200).json(profile);
+    res.status(200).json({ message: "Profile Updated Successfull" });
   } catch (err) {
     console.error("Error updating profile:", err);
-    res
-      .status(500)
-      .json({ message: "Error in updating profile", error: err.message });
+    res.status(500).json({
+      message: "Error in updating profile",
+      error: err.message,
+    });
   }
 };
-
-// export const updateProfile = async (req, res) => {
-//   try {
-//     const clientUserId = req.params.userId;
-//     const ownerUserId = req.user._id.toString();
-
-//     if (clientUserId !== ownerUserId) {
-//       return res
-//         .status(403)
-//         .json({ message: "Unauthorized to update this profile" });
-//     }
-
-//     const profile = await Profile.findOne({ user: clientUserId });
-
-//     if (!profile) {
-//       return res.status(404).json({ message: "Profile not found" });
-//     }
-
-//     Object.assign(profile, req.body);
-//     await profile.save();
-//     res.status(200).json(profile);
-//   } catch (err) {
-//     res.status(500).json({ message: "Error in updating profile", error: err });
-//   }
-// };
 
 export const destroyProfile = async (req, res) => {
   try {

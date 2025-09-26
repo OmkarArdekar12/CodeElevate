@@ -130,14 +130,10 @@ export const verify2FA = async (req, res) => {
   });
 
   if (verified) {
-    const jwtToken = jwt.sign(
-      { username: user.username },
-      process.env.JWT_SECRET,
-      { expiresIn: "1hr" }
-    );
     res.status(200).json({
       message: "two-factor-authentication-(2FA) successful",
-      token: jwtToken,
+      success: true,
+      user: req.user,
     });
   } else {
     res
@@ -145,6 +141,35 @@ export const verify2FA = async (req, res) => {
       .json({ message: "Invalid two-factor-authentication-(2FA) token" });
   }
 };
+
+// //Verify2FA Controller
+// export const verify2FA = async (req, res) => {
+//   const { token } = req.body;
+//   console.log(token);
+//   const user = req.user;
+
+//   const verified = speakeasy.totp.verify({
+//     secret: user.twoFactorSecret,
+//     encoding: "base32",
+//     token,
+//   });
+
+//   if (verified) {
+//     const jwtToken = jwt.sign(
+//       { username: user.username },
+//       process.env.JWT_SECRET,
+//       { expiresIn: "1hr" }
+//     );
+//     res.status(200).json({
+//       message: "two-factor-authentication-(2FA) successful",
+//       token: jwtToken,
+//     });
+//   } else {
+//     res
+//       .status(400)
+//       .json({ message: "Invalid two-factor-authentication-(2FA) token" });
+//   }
+// };
 
 //Reset2FA Controller
 export const reset2FA = async (req, res) => {

@@ -21,7 +21,9 @@ import {
   errorHandlerMiddleware,
 } from "./middlewares/errorHandlers.js";
 
-dotenv.config();
+if (process.env.NODE_ENV != "production") {
+  dotenv.config();
+}
 
 const app = express();
 const PORT = process.env.PORT || 8080;
@@ -33,6 +35,8 @@ dbConnect();
 const corsOptions = {
   origin: ["http://localhost:3001"],
   credentials: true,
+  methods: ["GET", "POST", "PUT", "PATCH", "DELETE"],
+  allowedHeaders: ["Content-Type", "Authorization", "Cookie"],
 };
 app.use(cors(corsOptions));
 app.use(express.json({ limit: "100mb" }));
@@ -46,7 +50,8 @@ const sessionOptions = {
     expires: Date.now() + 7 * 24 * 60 * 60 * 1000,
     maxAge: 7 * 24 * 60 * 60 * 1000,
     httpOnly: true,
-    // secure: true,
+    sameSite: "lax",
+    secure: process.env.NODE_ENV === "production" ? true : false,
   },
 };
 app.use(session(sessionOptions));

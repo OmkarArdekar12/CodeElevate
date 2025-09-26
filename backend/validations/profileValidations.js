@@ -10,10 +10,10 @@ export const profileValidationSchema = Joi.object({
 
   headLine: Joi.string().max(150).allow(""),
 
-  role: Joi.string().default("Explorer"),
-  domain: Joi.string().default("General"),
+  role: Joi.string(),
+  domain: Joi.string(),
 
-  tags: Joi.array().items(Joi.string().max(5)),
+  tags: Joi.array().items(Joi.string().allow("").max(5)),
 
   about: Joi.string().max(1000).allow(""),
 
@@ -49,7 +49,7 @@ export const profileValidationSchema = Joi.object({
 
   education: Joi.object({
     degree: Joi.string().max(100).allow(""),
-    cgpa: Joi.number().min(0).max(10).allow(null),
+    cgpa: Joi.string().allow(""),
     institution: Joi.string().max(150).allow(""),
   }),
 

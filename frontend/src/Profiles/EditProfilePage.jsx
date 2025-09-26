@@ -16,6 +16,7 @@ const EditProfilePage = () => {
   const [profile, setProfile] = useState({
     fullName: "",
     user: {
+      _id: user.userId,
       username: "",
     },
     profilePicture: "",
@@ -53,7 +54,7 @@ const EditProfilePage = () => {
     showStats: false,
     education: {
       degree: "",
-      cgpa: "",
+      cgpa: null,
       institution: "",
     },
     followers: [],
@@ -66,6 +67,7 @@ const EditProfilePage = () => {
   const fetchProfile = async () => {
     try {
       const profileData = await showProfile(id);
+      console.log(profileData);
       setProfile((prev) => ({
         ...prev,
         ...profileData,
@@ -148,11 +150,62 @@ const EditProfilePage = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log(profile);
     setSaving(true);
     try {
-      const res = await editProfile(id, profile);
-      console.log(res);
+      const formData = new FormData();
+
+      // Append simple fields
+      formData.append("fullName", profile.fullName || "");
+      formData.append("headLine", profile.headLine || "");
+      formData.append("role", profile.role || "");
+      formData.append("domain", profile.domain || "");
+      formData.append("about", profile.about || "");
+      formData.append("showStats", profile.showStats.toString());
+
+      formData.append("user", profile.user || "");
+
+      // Append tags as individual fields
+      profile.tags.forEach((tag, index) => {
+        formData.append(`tags[${index}]`, tag || "");
+      });
+
+      // Append developmentProfiles as individual fields
+      Object.keys(profile.developmentProfiles).forEach((key) => {
+        formData.append(
+          `developmentProfiles[${key}]`,
+          profile.developmentProfiles[key] || ""
+        );
+      });
+
+      // Append competitiveProfiles as individual fields
+      Object.keys(profile.competitiveProfiles).forEach((key) => {
+        formData.append(
+          `competitiveProfiles[${key}]`,
+          profile.competitiveProfiles[key] || ""
+        );
+      });
+
+      // Append socials as individual fields
+      Object.keys(profile.socials).forEach((key) => {
+        formData.append(`socials[${key}]`, profile.socials[key] || "");
+      });
+
+      // Append education as individual fields
+      Object.keys(profile.education).forEach((key) => {
+        formData.append(`education[${key}]`, profile.education[key] || "");
+      });
+
+      // Append files only if they're new (File objects)
+      if (profile.profilePicture instanceof File) {
+        formData.append("profilePicture", profile.profilePicture);
+      }
+      if (profile.backgroundBanner instanceof File) {
+        formData.append("backgroundBanner", profile.backgroundBanner);
+      }
+
+      console.log(profile);
+
+      const res = await editProfile(id, formData);
       navigate(`/profiles/${id}`);
     } catch (err) {
       console.error("Failed to update profile", err);
@@ -160,8 +213,6 @@ const EditProfilePage = () => {
       setSaving(false);
     }
   };
-
-  console.log(profile);
 
   return (
     <div className="w-full flex items-center justify-center md:px-10 text-white">

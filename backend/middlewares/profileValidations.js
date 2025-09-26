@@ -18,16 +18,16 @@ export const validateProfile = (req, res, next) => {
 
 export const isOwner = async (req, res, next) => {
   try {
-    const profileId = req.params.id;
-    const userId = req.user._id;
+    const profileUserId = req.params.id;
+    const clientUserId = req.user._id;
 
-    const profile = await Profile.findById({ user: profileId });
+    const profile = await Profile.findOne({ user: profileUserId });
 
     if (!profile) {
       return res.status(404).json({ message: "Profile not found" });
     }
 
-    if (profileId.toString() !== userId.toString()) {
+    if (profile.user.toString() !== clientUserId.toString()) {
       return res
         .status(403)
         .json({ message: "You are not authorized to edit this profile" });
@@ -38,3 +38,22 @@ export const isOwner = async (req, res, next) => {
     res.status(500).json({ message: "Server error", error: err });
   }
 };
+
+// export const isOwner = async (req, res, next) => {
+//   try {
+//     const profileId = req.params.id;
+//     const userId = req.user._id;
+//     const profile = await Profile.findById({ user: profileId });
+//     if (!profile) {
+//       return res.status(404).json({ message: "Profile not found" });
+//     }
+//     if (profileId.toString() !== userId.toString()) {
+//       return res
+//         .status(403)
+//         .json({ message: "You are not authorized to edit this profile" });
+//     }
+//     next();
+//   } catch (err) {
+//     res.status(500).json({ message: "Server error", error: err });
+//   }
+// };

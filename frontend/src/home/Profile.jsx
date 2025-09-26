@@ -5,6 +5,7 @@ export default function Profile({ profile }) {
   const userId = profile.user._id;
   const userImage = profile.profilePicture || "/images/userImage.png";
   const headLine = profile.headLine ? profile.headLine : "Hello! Everyone";
+  const fullName = profile.fullName;
   const username = profile.user.username;
   const role = profile.role ? profile.role : "Explorer";
   const domain = profile.domain ? profile.domain : "General";
@@ -14,7 +15,8 @@ export default function Profile({ profile }) {
       <div className="profile-image flex flex-wrap items-center justify-evenly">
         <img src={userImage} alt={username} className="w-[5rem]" />
         <div className="flex flex-col justify-center">
-          <p className="mx-2 hover-text-border">{username}</p>
+          {fullName && <p className="mx-2 hover-text-border">{fullName}</p>}
+          <p className="mx-2 hover-text-border text-xs italic">@{username}</p>
           {headLine && <p className="mx-2 text-xs">{headLine}</p>}
         </div>
       </div>
@@ -29,14 +31,16 @@ export default function Profile({ profile }) {
         </div>
         {tags && tags.length !== 0 && (
           <div className="m-1 flex flex-wrap flex-row justify-center">
-            {tags.map((tag, index) => (
-              <p
-                key={index}
-                className="m-[1px] bg-gray-700 px-4 py-2 rounded-3xl text-sm hover-text-border"
-              >
-                {tag}
-              </p>
-            ))}
+            {tags.map((tag, index) =>
+              tag ? (
+                <p
+                  key={index}
+                  className="m-[1px] bg-gray-700 px-4 py-2 rounded-3xl text-sm hover-text-border"
+                >
+                  {tag}
+                </p>
+              ) : null
+            )}
           </div>
         )}
         <button
