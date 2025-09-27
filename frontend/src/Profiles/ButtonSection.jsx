@@ -29,7 +29,7 @@ const ButtonSection = ({ profileUserId, isLoggedIn, isOwner }) => {
             >
               <FaEdit
                 className="inline text-black mr-1 group-hover:text-white"
-                size={25}
+                size={20}
               />
               Edit
             </button>
@@ -39,10 +39,29 @@ const ButtonSection = ({ profileUserId, isLoggedIn, isOwner }) => {
             >
               <SettingsIcon
                 className="inline text-black mr-1 group-hover:text-white"
-                size={25}
+                size={20}
               />
               Settings
             </button>
+            {/* <button
+              className="group text-black bg-teal-500 hover:bg-teal-700 px-6 py-2 text-xl rounded-2xl flex items-center hover-text-border cursor-pointer border-1"
+              onClick={() =>
+                navigate(`/profiles/${profileUserId}/settings`, {
+                  state: {
+                    profileUserId,
+                    from: "profile",
+                    isAuthorized: isLoggedIn && isOwner,
+                  },
+                  replace: false,
+                })
+              }
+            >
+              <SettingsIcon
+                className="inline text-black mr-1 group-hover:text-white"
+                size={20}
+              />
+              Settings
+            </button> */}
           </div>
         )}
       </div>

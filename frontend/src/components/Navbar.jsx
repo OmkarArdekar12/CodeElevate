@@ -26,11 +26,11 @@ export default function Navbar({ isLoggedIn, userData }) {
     }
   };
 
-  if (isLoggedIn) {
-    useEffect(() => {
-      fetchCurrentUser(userData.userId);
-    }, []);
-  }
+  useEffect(() => {
+    if (isLoggedIn && userData && userData.userId) {
+      fetchCurrentUser();
+    }
+  }, [isLoggedIn, userData]);
 
   return (
     <nav className="bg-gray-800 shadow-lg w-[100%] py-3">

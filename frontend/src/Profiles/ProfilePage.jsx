@@ -15,27 +15,16 @@ import { useNavigate, useParams } from "react-router-dom";
 import { showProfile } from "../service/profileApi.js";
 import Loading from "../components/Loading.jsx";
 import { useSession } from "../context/SessionContext";
-import { logoutUser } from "../service/authApi.js";
 
 const ProfilePage = () => {
   const { id: profileId } = useParams();
-  const { isLoggedIn, user, logout } = useSession();
+  const { isLoggedIn, user } = useSession();
   const userId = user && user.userId ? user.userId : "";
   const isOwner = profileId === userId;
 
   const navigate = useNavigate();
   const [userData, setUserData] = useState({});
   const [loading, setLoading] = useState(true);
-
-  const handleLogout = async () => {
-    try {
-      const { data } = await logoutUser();
-      logout(data);
-      navigate("/login");
-    } catch (err) {
-      console.log("Error: ", err.message);
-    }
-  };
 
   const fetchUserData = async (id) => {
     try {
