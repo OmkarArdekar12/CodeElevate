@@ -66,16 +66,6 @@ const ProfilePage = () => {
   return (
     <div className="w-full flex items-center justify-center md:px-10 text-white">
       <div className="w-full flex flex-col items-center justify-center pb-5 bg-[#181818]">
-        {isLoggedIn && isOwner && (
-          <div className="mr-2 ml-auto my-2">
-            <button
-              className="bg-red-500 text-center rounded-md px-4 py-2 hover-text-border"
-              onClick={handleLogout}
-            >
-              Logout
-            </button>
-          </div>
-        )}
         <UserProfileSection
           fullName={userData.fullName}
           username={userData.user.username}
