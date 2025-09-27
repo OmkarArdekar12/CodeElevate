@@ -1,8 +1,36 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import { showProfile } from "../service/profileApi";
+import { useEffect } from "react";
+import { FaHome as HomeIcon } from "react-icons/fa";
+import { IoMdPhotos as PostsIcon } from "react-icons/io";
+import { FaBell as NotificationsIcon } from "react-icons/fa";
+import { BiSolidMessageSquareDetail as MessagesIcon } from "react-icons/bi";
+import { FaTrophy as RankingsIcon } from "react-icons/fa";
+import { FaInfoCircle as AboutIcon } from "react-icons/fa";
+import { FaUser as UserIcon } from "react-icons/fa";
+import { FaSignInAlt as LoginIcon } from "react-icons/fa";
 
 export default function Navbar({ isLoggedIn, userData }) {
   const [isOpen, setIsOpen] = useState(false);
+  const [userImage, setUserImage] = useState("/images/defaultUserImage.png");
+
+  const fetchCurrentUser = async () => {
+    try {
+      const currUser = await showProfile(userData.userId);
+      if (currUser.profilePicture) {
+        setUserImage(currUser.profilePicture);
+      }
+    } catch (err) {
+      setUserImage("/images/defaultUserImage.png");
+    }
+  };
+
+  if (isLoggedIn) {
+    useEffect(() => {
+      fetchCurrentUser(userData.userId);
+    }, []);
+  }
 
   return (
     <nav className="bg-gray-800 shadow-lg w-[100%] py-3">
@@ -26,42 +54,48 @@ export default function Navbar({ isLoggedIn, userData }) {
             <div className="hidden lg:flex items-center space-x-4">
               <Link
                 to="/"
-                className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-md font-medium transition duration-150"
+                className="flex flex-col items-center text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-md font-medium transition duration-150"
               >
+                <HomeIcon className="text-2xl" />
                 Home
               </Link>
               <Link
                 to="/posts"
-                className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-md font-medium transition duration-150"
+                className="flex flex-col items-center text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-md font-medium transition duration-150"
               >
+                <PostsIcon className="text-xl" />
                 Posts
               </Link>
               {isLoggedIn && (
                 <Link
                   to="/notifications"
-                  className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-md font-medium transition duration-150"
+                  className="flex flex-col items-center text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-md font-medium transition duration-150"
                 >
+                  <NotificationsIcon className="text-xl" />
                   Notifications
                 </Link>
               )}
               {isLoggedIn && (
                 <Link
                   to="/messages"
-                  className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-md font-medium transition duration-150"
+                  className="flex flex-col items-center text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-md font-medium transition duration-150"
                 >
+                  <MessagesIcon className="text-xl" />
                   Messages
                 </Link>
               )}
               <Link
                 to="/rankings"
-                className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-md font-medium transition duration-150"
+                className="flex flex-col items-center text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-md font-medium transition duration-150"
               >
+                <RankingsIcon className="text-xl" />
                 Rankings
               </Link>
               <Link
                 to="/about"
-                className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-md font-medium transition duration-150"
+                className="flex flex-col items-center text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-md font-medium transition duration-150"
               >
+                <AboutIcon className="text-xl" />
                 About
               </Link>
             </div>
@@ -78,9 +112,9 @@ export default function Navbar({ isLoggedIn, userData }) {
                 >
                   <div className="hidden md:block">
                     <img
-                      src="/images/userImage.png"
-                      alt="Profile"
-                      className="h-12 w-12 rounded-full object-cover"
+                      src={userImage}
+                      alt="ProfileImage"
+                      className="h-14 w-14 rounded-full object-cover border-1"
                     />
                   </div>
                 </Link>
@@ -92,7 +126,8 @@ export default function Navbar({ isLoggedIn, userData }) {
                   className="flex items-center text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-md font-medium transition duration-150"
                 >
                   <div className="hidden md:block">
-                    <button className="text-white bg-green-700 hover:bg-green-600 p-2 rounded-md cursor-pointer">
+                    <button className="flex items-center text-white bg-green-700 hover:bg-green-600 p-2 rounded-md cursor-pointer">
+                      <LoginIcon className="inline mr-2" />
                       Login / SignUp
                     </button>
                   </div>
@@ -155,56 +190,64 @@ export default function Navbar({ isLoggedIn, userData }) {
                     ? `/profiles/${userData.userId}`
                     : "/"
                 }
-                className="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-700 transition duration-150 md:hidden"
+                className="flex items-center px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-700 transition duration-150 md:hidden"
               >
+                <UserIcon className="mr-2" />
                 Profile
               </Link>
             ) : (
               <Link
                 to="/login"
-                className="block px-3 py-2 rounded-md text-base font-medium text-green-500 hover:underline hover:bg-gray-700 transition duration-150 md:hidden"
+                className="flex items-center px-3 py-2 rounded-md text-base font-medium text-green-500 hover:underline hover:bg-gray-700 transition duration-150 md:hidden"
               >
+                <LoginIcon className="inline mr-2" />
                 Login / Signup
               </Link>
             )}
             <Link
               to="/"
-              className="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-700 transition duration-150"
+              className="flex items-center px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-700 transition duration-150"
             >
+              <HomeIcon className="mr-2" />
               Home
             </Link>
             <Link
               to="/posts"
-              className="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-700 transition duration-150"
+              className="flex items-center px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-700 transition duration-150"
             >
+              <PostsIcon className="mr-2" />
               Posts
             </Link>
             {isLoggedIn && (
               <Link
                 to="/notifications"
-                className="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-700 transition duration-150"
+                className="flex items-center px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-700 transition duration-150"
               >
+                <NotificationsIcon className="mr-2" />
                 Notifications
               </Link>
             )}
             {isLoggedIn && (
               <Link
                 to="/messages"
-                className="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-700 transition duration-150"
+                className="flex items-center px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-700 transition duration-150"
               >
+                <MessagesIcon className="mr-2" />
                 Messages
               </Link>
             )}
             <Link
               to="/rankings"
-              className="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-700 transition duration-150"
+              className="flex items-center px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-700 transition duration-150"
             >
+              <RankingsIcon className="mr-2" />
               Rankings
             </Link>
             <Link
               to="/about"
-              className="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-700 transition duration-150"
+              className="flex items-center px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-700 transition duration-150"
             >
+              <AboutIcon className="mr-2" />
               About
             </Link>
           </div>
