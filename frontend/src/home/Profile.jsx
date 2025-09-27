@@ -44,7 +44,7 @@ export default function Profile({ profile }) {
           </div>
         )}
         <button
-          className="m-2 bg-blue-700 px-6 py-2 rounded-full hover:bg-green-700 hover:border-green-700 hover-text-border"
+          className="m-2 bg-blue-700 px-6 py-2 rounded-full hover:bg-green-700 hover:border-green-700 hover-text-border cursor-pointer"
           onClick={() => navigate(`/profiles/${userId}`)}
         >
           Visit
