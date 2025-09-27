@@ -142,7 +142,26 @@ export const verify2FA = async (req, res) => {
   }
 };
 
+//Reset2FA Controller
+export const reset2FA = async (req, res) => {
+  try {
+    const user = req.user;
+    user.twoFactorSecret = "";
+    user.isMfaActive = false;
+    await user.save();
+    res
+      .status(200)
+      .json({ message: "two-factor-authentication-(2FA) reset successful" });
+  } catch (err) {
+    res.status(500).json({
+      error: "Error resetting two-factor-authentication-(2FA)",
+      message: err,
+    });
+  }
+};
+
 // //Verify2FA Controller
+// //-JWT Auth verify
 // export const verify2FA = async (req, res) => {
 //   const { token } = req.body;
 //   console.log(token);
@@ -170,21 +189,3 @@ export const verify2FA = async (req, res) => {
 //       .json({ message: "Invalid two-factor-authentication-(2FA) token" });
 //   }
 // };
-
-//Reset2FA Controller
-export const reset2FA = async (req, res) => {
-  try {
-    const user = req.user;
-    user.twoFactorSecret = "";
-    user.isMfaActive = false;
-    await user.save();
-    res
-      .status(200)
-      .json({ message: "two-factor-authentication-(2FA) reset successful" });
-  } catch (err) {
-    res.status(500).json({
-      error: "Error resetting two-factor-authentication-(2FA)",
-      message: err,
-    });
-  }
-};

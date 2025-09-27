@@ -7,7 +7,6 @@ const DevelopmentStatsSection = ({ github }) => {
     return null;
   }
 
-  // const [userGitHubData, setUserGitHubData] = useState({});
   const [userGitHubData, setUserGitHubData] = useState({});
 
   const fetchDevelopmentProfilesStats = async (gitHubUsername) => {
@@ -16,10 +15,8 @@ const DevelopmentStatsSection = ({ github }) => {
       setUserGitHubData(gitHubData);
     } catch (err) {
       console.log("Invalid GitHub Username");
-    } finally {
       setUserGitHubData({});
     }
-    // console.log(gitHubData);
   };
 
   useEffect(() => {

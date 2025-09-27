@@ -2,23 +2,20 @@ import axios from "axios";
 
 export const githubStats = async (req, res) => {
   const { username } = req.params;
-
   try {
     const userResponse = await axios.get(
       `https://api.github.com/users/${username}`
     );
-
     const reposResponse = await axios.get(
       `https://api.github.com/users/${username}/repos?per_page=100`
     );
-
     const user = userResponse.data;
     const repos = reposResponse.data;
 
     const totalStars = repos.reduce(
-      (sum, repo) => (sum + repo.stargazers_count, 0)
+      (sum, repo) => sum + repo.stargazers_count,
+      0
     );
-
     const githubData = {
       userId: user.login,
       name: user.name,
@@ -29,7 +26,7 @@ export const githubStats = async (req, res) => {
       following: user.following,
       totalStars,
     };
-
+    // console.log(githubData);
     res.json(githubData);
   } catch (error) {
     console.error(error);
