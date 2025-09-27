@@ -11,87 +11,54 @@ const CompetitiveProgrammingStatsSection = ({ leetcode, codeforces }) => {
     return null;
   }
 
-  const [userLeetCodeData, setUserLeetCodeData] = useState({
-    username: "Omkaarr_01",
-    totalLeetCodeUsers: 5000001,
-    ranking: 1,
-    easySolved: 300,
-    mediumSolved: 900,
-    hardSolved: 600,
-    totalSolved: 300 + 900 + 600,
-    numberOfBadges: 100,
-    badgeNames: [
-      "Submission Badge",
-      "Submission Badge",
-      "Annual Badge",
-      "Annual Badge",
-      "Annual Badge",
-      "Annual Badge",
-      "Annual Badge",
-      "Annual Badge",
-      "Daily Coding Challenge",
-      "Daily Coding Challenge",
-      "Daily Coding Challenge",
-      "Daily Coding Challenge",
-      "Daily Coding Challenge",
-      "Daily Coding Challenge",
-      "Daily Coding Challenge",
-      "Daily Coding Challenge",
-      "Daily Coding Challenge",
-      "Daily Coding Challenge",
-      "Daily Coding Challenge",
-      "Daily Coding Challenge",
-      "Daily Coding Challenge",
-      "Daily Coding Challenge",
-      "Daily Coding Challenge",
-      "Daily Coding Challenge",
-      "Study Plan V2 Award",
-      "Study Plan V2 Award",
-      "Study Plan V2 Award",
-      "Study Plan V2 Award",
-    ],
-    hasKnight: true,
-    hasGuardian: true,
-    maxStreak: 365,
-    totalActiveDays: 365,
-    contestRating: 3912,
-    contestRank: 1,
-    totalContestParticipants: 760696,
-    topPercentage: 0.1,
-    topGlobalPercentage: 0.005111998977600204,
-    contestBadge: null,
-    contestsAttended: 39,
-  });
-  const [userCodeforcesData, setUserCodeforcesData] = useState({
-    handle: "Omkaarr",
-    rating: 3912,
-    contribution: 1000,
-    rank: "Grand Master",
-    maxRating: 3912,
-    maxRank: "Grand Master",
-    friendOfCount: 0,
-    organization: "N/A",
-    lastOnlineTimeSeconds: 1758305442,
-    registrationTimeSeconds: 1748916816,
-    city: "N/A",
-    country: "N/A",
-    totalProblemsSolved: 2993,
-  });
+  const [userLeetCodeData, setUserLeetCodeData] = useState({});
+  const [userCodeforcesData, setUserCodeforcesData] = useState({});
 
-  // const fetchCompetitiveProgrammingStats = async (
-  //   leetcodeUsername,
-  //   codeforcesUsername
-  // ) => {
-  //   const leetcodeData = await leetCodeStats(leetcodeUsername);
-  //   setUserLeetCodeData(leetcodeData);
-  //   const codeforcesData = await codeforcesStats(codeforcesUsername);
-  //   setUserCodeforcesData(codeforcesData);
-  //   // console.log(leetcodeData);
-  //   // console.log(codeforcesData);
+  const fetchCompetitiveProgrammingStats = async (
+    leetcodeUsername,
+    codeforcesUsername
+  ) => {
+    try {
+      const leetcodeData = await leetCodeStats(leetcodeUsername);
+      setUserLeetCodeData(leetcodeData);
+    } catch (err) {
+      console.log("Invalid LeetCode Username");
+      setUserLeetCodeData({});
+    }
+    try {
+      const codeforcesData = await codeforcesStats(codeforcesUsername);
+      setUserCodeforcesData(codeforcesData);
+    } catch (err) {
+      console.log("Invalid Codeforces Username");
+      setUserCodeforcesData({});
+    }
+    // console.log(leetcodeData);
+    // console.log(codeforcesData);
+  };
+  useEffect(() => {
+    fetchCompetitiveProgrammingStats(leetcode, codeforces);
+  }, []);
+  // const fetchLeetCodeStats = async (leetcodeUsername) => {
+  //   try {
+  //     const leetcodeData = await leetCodeStats(leetcodeUsername);
+  //     setUserLeetCodeData(leetcodeData);
+  //   } catch (err) {
+  //     console.log("Invalid LeetCode Username");
+  //     setUserLeetCodeData({});
+  //   }
   // };
-
+  // const fetchCodeforcesStats = async (codeforcesUsername) => {
+  //   try {
+  //     const codeforcesData = await codeforcesStats(codeforcesUsername);
+  //     setUserCodeforcesData(codeforcesData);
+  //   } catch (err) {
+  //     console.log("Invalid Codeforces Username");
+  //     setUserCodeforcesData({});
+  //   }
+  // };
   // useEffect(() => {
-  //   fetchCompetitiveProgrammingStats(leetcode, codeforces);
+  //   fetchLeetCodeStats(leetcode);
+  //   fetchCodeforcesStats(codeforces);
   // }, []);
 
   return (

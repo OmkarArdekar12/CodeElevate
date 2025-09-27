@@ -101,6 +101,18 @@ const EditProfilePage = () => {
   );
 
   useEffect(() => {
+    if (profile.profilePicture && typeof profile.profilePicture === "string") {
+      setProfilePreview(profile.profilePicture);
+    }
+    if (
+      profile.backgroundBanner &&
+      typeof profile.backgroundBanner === "string"
+    ) {
+      setBannerPreview(profile.backgroundBanner);
+    }
+  }, [profile.profilePicture, profile.backgroundBanner]);
+
+  useEffect(() => {
     fetchProfile();
   }, [id]);
 
@@ -162,14 +174,14 @@ const EditProfilePage = () => {
       formData.append("about", profile.about || "");
       formData.append("showStats", profile.showStats.toString());
 
-      formData.append("user", profile.user || "");
+      formData.append("user", profile.user._id || user.userId || "");
 
-      // Append tags as individual fields
+      //append tags as individual fields
       profile.tags.forEach((tag, index) => {
         formData.append(`tags[${index}]`, tag || "");
       });
 
-      // Append developmentProfiles as individual fields
+      //append developmentProfiles as individual fields
       Object.keys(profile.developmentProfiles).forEach((key) => {
         formData.append(
           `developmentProfiles[${key}]`,
@@ -177,7 +189,7 @@ const EditProfilePage = () => {
         );
       });
 
-      // Append competitiveProfiles as individual fields
+      //append competitiveProfiles as individual fields
       Object.keys(profile.competitiveProfiles).forEach((key) => {
         formData.append(
           `competitiveProfiles[${key}]`,
@@ -185,25 +197,30 @@ const EditProfilePage = () => {
         );
       });
 
-      // Append socials as individual fields
+      //append socials as individual fields
       Object.keys(profile.socials).forEach((key) => {
         formData.append(`socials[${key}]`, profile.socials[key] || "");
       });
 
-      // Append education as individual fields
+      //append education as individual fields
       Object.keys(profile.education).forEach((key) => {
-        formData.append(`education[${key}]`, profile.education[key] || "");
+        if (key === "cgpa") {
+          formData.append(
+            `education[${key}]`,
+            Number(profile.education[key]) || null
+          );
+        } else {
+          formData.append(`education[${key}]`, profile.education[key] || "");
+        }
       });
 
-      // Append files only if they're new (File objects)
+      //append files only if they're new (File objects)
       if (profile.profilePicture instanceof File) {
         formData.append("profilePicture", profile.profilePicture);
       }
       if (profile.backgroundBanner instanceof File) {
         formData.append("backgroundBanner", profile.backgroundBanner);
       }
-
-      console.log(profile);
 
       const res = await editProfile(id, formData);
       navigate(`/profiles/${id}`);
@@ -597,9 +614,14 @@ const EditProfilePage = () => {
                 step="any"
                 type="number"
                 value={profile.education?.cgpa || ""}
-                onChange={(e) =>
-                  handleNestedChange("education", "cgpa", e.target.value)
-                }
+                onChange={(e) => {
+                  const value = e.target.value;
+                  handleNestedChange(
+                    "education",
+                    "cgpa",
+                    value === "" ? null : parseFloat(value)
+                  );
+                }}
                 className="w-full p-2 rounded bg-gray-900 text-white"
               />
             </div>
@@ -775,7 +797,9 @@ const EditProfilePage = () => {
           <button
             type="submit"
             disabled={saving}
-            className="bg-green-600 hover:bg-green-700 px-6 py-2 rounded-full"
+            className={`hover:bg-green-700 px-6 py-2 rounded-full ${
+              saving ? "bg-gray-700" : "bg-green-600"
+            }`}
           >
             {saving ? "Saving..." : "Save Changes"}
           </button>

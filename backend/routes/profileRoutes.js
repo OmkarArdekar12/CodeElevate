@@ -1,6 +1,5 @@
 import express from "express";
 import auth from "../middlewares/auth.js";
-import multer from "multer";
 import Profile from "../models/profile.js";
 import { validateProfile, isOwner } from "../middlewares/profileValidations.js";
 import {
@@ -10,8 +9,10 @@ import {
   updateProfile,
   // destroyProfile,
 } from "../controllers/profileControllers.js";
+import multer from "multer";
+import { storage } from "../config/cloudConfig.js";
 
-const upload = multer({ dest: "uploads/" });
+const upload = multer({ storage });
 
 const router = express.Router();
 

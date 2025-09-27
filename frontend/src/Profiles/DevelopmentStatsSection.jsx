@@ -8,26 +8,23 @@ const DevelopmentStatsSection = ({ github }) => {
   }
 
   // const [userGitHubData, setUserGitHubData] = useState({});
-  const [userGitHubData, setUserGitHubData] = useState({
-    userId: "OmkarArdekar12",
-    name: "Omkar Prakash Ardekar",
-    avatarUrl: "https://avatars.githubusercontent.com/u/178113083?v=4",
-    bio: "Mastering core fundamentals concepts to advanced concepts through continuous learning",
-    publicRepos: 910,
-    followers: 100000000000000,
-    following: 0,
-    totalStars: 1000000000000,
-  });
+  const [userGitHubData, setUserGitHubData] = useState({});
 
-  // const fetchDevelopmentProfilesStats = async (gitHubUsername) => {
-  //   const gitHubData = await gitHubStats(gitHubUsername);
-  //   setUserGitHubData(gitHubData);
-  //   console.log(gitHubData);
-  // };
+  const fetchDevelopmentProfilesStats = async (gitHubUsername) => {
+    try {
+      const gitHubData = await gitHubStats(gitHubUsername);
+      setUserGitHubData(gitHubData);
+    } catch (err) {
+      console.log("Invalid GitHub Username");
+    } finally {
+      setUserGitHubData({});
+    }
+    // console.log(gitHubData);
+  };
 
-  // useEffect(() => {
-  //   fetchDevelopmentProfilesStats(github);
-  // }, []);
+  useEffect(() => {
+    fetchDevelopmentProfilesStats(github);
+  }, []);
 
   return (
     <>

@@ -61,6 +61,8 @@ const ProfilePage = () => {
     return <p className="text-center mt-10">Profile not found.</p>;
   }
 
+  const showStats = userData.showStats;
+
   return (
     <div className="w-full flex items-center justify-center md:px-10 text-white">
       <div className="w-full flex flex-col items-center justify-center pb-5 bg-[#181818]">
@@ -98,30 +100,34 @@ const ProfilePage = () => {
           codingProfiles={userData.competitiveProfiles}
         />
 
-        <CompetitiveProgrammingStatsSection
-          leetcode={
-            userData.competitiveProfiles
-              ? userData.competitiveProfiles.leetCode
-              : ""
-          }
-          codeforces={
-            userData.competitiveProfiles
-              ? userData.competitiveProfiles.codeforces
-              : ""
-          }
-        />
+        {showStats && (
+          <CompetitiveProgrammingStatsSection
+            leetcode={
+              userData.competitiveProfiles
+                ? userData.competitiveProfiles.leetCode
+                : ""
+            }
+            codeforces={
+              userData.competitiveProfiles
+                ? userData.competitiveProfiles.codeforces
+                : ""
+            }
+          />
+        )}
 
         <DevelopmentSection
           versionControlProfiles={userData.developmentProfiles}
         />
 
-        <DevelopmentStatsSection
-          github={
-            userData.developmentProfiles
-              ? userData.developmentProfiles.github
-              : ""
-          }
-        />
+        {showStats && (
+          <DevelopmentStatsSection
+            github={
+              userData.developmentProfiles
+                ? userData.developmentProfiles.github
+                : ""
+            }
+          />
+        )}
 
         <EducationSection education={userData.education} />
 
