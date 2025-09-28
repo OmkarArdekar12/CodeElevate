@@ -7,28 +7,29 @@ const postSchema = new Schema(
     author: {
       type: Schema.Types.ObjectId,
       ref: "User",
+      required: true,
     },
-    content: String,
-    image: String,
+    title: {
+      type: String,
+      required: true,
+    },
+    description: {
+      type: String,
+    },
+    image: {
+      type: String,
+    },
     likes: [
       {
-        userId: Schema.Types.ObjectId,
+        type: Schema.Types.ObjectId,
         ref: "User",
-        createdAt: {
-          type: Date,
-          default: Date.now,
-        },
       },
     ],
     comments: [
       {
-        userId: Schema.Types.ObjectId,
-        ref: "User",
-        comment: String,
-        createdAt: {
-          type: Date,
-          default: Date.now,
-        },
+        user: { type: Schema.Types.ObjectId, ref: "User" },
+        text: { type: String, required: true },
+        createdAt: { type: Date, default: Date.now },
       },
     ],
   },
