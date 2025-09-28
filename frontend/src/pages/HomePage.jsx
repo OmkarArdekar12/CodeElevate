@@ -3,7 +3,6 @@ import Navbar from "../components/Navbar.jsx";
 import Footer from "../components/Footer.jsx";
 import { useSession } from "../context/SessionContext.jsx";
 import Loading from "../components/Loading.jsx";
-import Error from "../components/Error.jsx";
 
 function HomePage() {
   const { isLoggedIn, loading, user } = useSession();
