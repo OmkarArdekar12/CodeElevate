@@ -20,7 +20,6 @@ function HomePage() {
       <main>
         <Outlet />
       </main>
-      <Error />
       <Footer />
     </>
   );
