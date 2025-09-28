@@ -147,6 +147,18 @@ main {
   color: "yellow";
   -webkit-text-stroke: 2px yellow;
 }
+.text-border-error {
+  color: var(--color-red-600);
+  -webkit-text-stroke: 3px var(--color-red-600);
+}
+.text-border-link {
+  color: var(--color-blue-600);
+  -webkit-text-stroke: 1px var(--color-blue-600);
+}
+.hover-border-link:hover {
+  color: var(--color-blue-600);
+  -webkit-text-stroke: 1px var(--color-blue-600);
+}
 
 /* Profile border effect animation */
 @property --angle {
