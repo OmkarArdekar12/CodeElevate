@@ -6,7 +6,6 @@ const PostCard = () => {
       <div>Title</div>
       <div>Description</div>
       <div>Image</div>
-      <button>Like</button>
     </div>
   );
 };
