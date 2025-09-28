@@ -3,7 +3,7 @@ import PostCard from "./PostCard";
 
 const PostsList = () => {
   return (
-    <div className="flex flex-col">
+    <div className="flex flex-wrap items-center justify-around">
       <PostCard />
     </div>
   );
