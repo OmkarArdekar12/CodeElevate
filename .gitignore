@@ -45,4 +45,3 @@ dist-ssr
 .json
 .js
 */src/*/sampleData.js
-*.gitignore
