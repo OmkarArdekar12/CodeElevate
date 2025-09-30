@@ -13,7 +13,11 @@ export default function Profile({ profile }) {
   return (
     <div className="Profile flex flex-wrap w-[100%] text-xl items-center justify-between bg-gradient-to-r from-gray-950 to-blue-900 rounded-xl px-10 py-2 my-4 shadow-sm shadow-slate-500/50">
       <div className="profile-image flex flex-wrap items-center justify-evenly">
-        <img src={userImage} alt={username} className="w-[5rem] rounded-full" />
+        <img
+          src={userImage}
+          alt={username}
+          className="w-[10rem] h-[10rem] md:w-[5rem] md:h-[5rem] rounded-full"
+        />
         <div className="flex flex-col justify-center">
           {fullName && <p className="mx-2 hover-text-border">{fullName}</p>}
           <p className="mx-2 hover-text-border text-xs italic">@{username}</p>

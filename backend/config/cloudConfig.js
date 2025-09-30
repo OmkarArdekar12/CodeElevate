@@ -10,7 +10,7 @@ cloudinary.config({
 const storage = new CloudinaryStorage({
   cloudinary: cloudinary,
   params: {
-    folder: "codeElevate",
+    folder: "CodeElevate_Project",
     allowedFormats: ["png", "jpg", "jpeg"],
   },
 });
