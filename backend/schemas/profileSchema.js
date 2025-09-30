@@ -80,7 +80,10 @@ const profileSchema = Schema({
 
   education: {
     degree: String,
-    cgpa: Number,
+    cgpa: {
+      type: Number,
+      default: null,
+    },
     institution: String,
   },
 

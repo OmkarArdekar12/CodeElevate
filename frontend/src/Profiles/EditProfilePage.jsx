@@ -207,7 +207,9 @@ const EditProfilePage = () => {
         if (key === "cgpa") {
           formData.append(
             `education[${key}]`,
-            Number(profile.education[key]) || null
+            profile.education[key]
+              ? Number(profile.education[key]) || null
+              : null
           );
         } else {
           formData.append(`education[${key}]`, profile.education[key] || "");
@@ -613,6 +615,8 @@ const EditProfilePage = () => {
                 placeholder="Enter the CGPA"
                 step="any"
                 type="number"
+                min={1}
+                max={10}
                 value={profile.education?.cgpa || ""}
                 onChange={(e) => {
                   const value = e.target.value;

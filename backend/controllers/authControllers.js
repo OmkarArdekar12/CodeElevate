@@ -9,6 +9,26 @@ import Profile from "../models/profile.js";
 export const register = async (req, res) => {
   try {
     const { username, password } = req.body;
+
+    if (!username || !password) {
+      return res
+        .status(400)
+        .json({ message: "Username and Password fields must be Required" });
+    }
+
+    let isUserExist = await User.findOne({ username });
+    if (isUserExist) {
+      return res.status(400).json({ message: "User already exists." });
+    }
+
+    const passwordRegex = /^(?=.*[0-9])(?=.*[A-Z]).{6,}$/;
+    if (!passwordRegex.test(password)) {
+      return res.status(400).json({
+        message:
+          "Password must be at least 6 characters, contain 1 number and 1 uppercase letter",
+      });
+    }
+
     const hashedPassword = await bcrypt.hash(password, 10);
     const user = await User.create({
       username,
@@ -165,6 +185,41 @@ export const reset2FA = async (req, res) => {
     });
   }
 };
+
+// //Register Controller
+// export const register = async (req, res) => {
+//   try {
+//     const { username, password } = req.body;
+//     const hashedPassword = await bcrypt.hash(password, 10);
+//     const user = await User.create({
+//       username,
+//       password: hashedPassword,
+//       isMfaActive: false,
+//     });
+//     const profile = await Profile.create({
+//       user: user._id,
+//       fullName: username,
+//     });
+//     res.status(201).json({
+//       username: user.username,
+//       userId: user._id,
+//       profile,
+//       message: "User registered successfully",
+//     });
+//     // const user = new User({
+//     //   username,
+//     //   password: hashedPassword,
+//     //   isMfaActive: false,
+//     // });
+//     // await user.save();
+//     // console.log("New User: ", user);
+//   } catch (err) {
+//     res.status(500).json({
+//       message: "Error: User Registration Failed!",
+//       error: err,
+//     });
+//   }
+// };
 
 // //Verify2FA Controller
 // //-JWT Auth verify

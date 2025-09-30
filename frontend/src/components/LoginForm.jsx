@@ -41,10 +41,22 @@ const LoginForm = ({ onLoginSuccess }) => {
     setMessage("");
     try {
       if (!username || !password || !confirmPassword) {
-        throw new Error("All fields are required");
+        // throw new Error("All fields are required");
+        setError("All fields are required");
+        return;
       }
       if (password !== confirmPassword) {
-        throw new Error("Password and Confirm Password do not match");
+        // throw new Error("Password and Confirm Password do not match");
+        setError("Password and Confirm Password do not match");
+        return;
+      }
+
+      const passwordRegex = /^(?=.*[0-9])(?=.*[A-Z]).{6,}$/;
+      if (!passwordRegex.test(password)) {
+        setError(
+          "Weak Password: Password must be at least 6 characters, contain 1 number and 1 uppercase letter"
+        );
+        return;
       }
       const { data } = await register(username, password);
       setIsRegister(false);
@@ -58,9 +70,8 @@ const LoginForm = ({ onLoginSuccess }) => {
       setPassword("");
       setConfirmPassword("");
       setMessage("");
-      // console.log("The error is: ", error);
-      setError(error.message);
-      // setError(error.response.data.message);
+      // console.log(error);
+      setError(error.response.data.message);
     }
   };
 
@@ -76,7 +87,7 @@ const LoginForm = ({ onLoginSuccess }) => {
       setError("");
       onLoginSuccess(data);
     } catch (error) {
-      console.log("The erros is: ", error.message);
+      // console.log("The erros is: ", error);
       setUsername("");
       setPassword("");
       setMessage("");
