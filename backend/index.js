@@ -1,5 +1,6 @@
 import express from "express";
 import session from "express-session";
+import cookieParser from "cookie-parser";
 import mongoose from "mongoose";
 import path from "path";
 import methodOverride from "method-override";
@@ -41,6 +42,7 @@ const corsOptions = {
 app.use(cors(corsOptions));
 app.use(express.json({ limit: "100mb" }));
 app.use(express.urlencoded({ limit: "100mb", extended: true }));
+app.use(cookieParser());
 app.use(methodOverride("_method"));
 const sessionOptions = {
   secret: process.env.SESSION_SECRET || "secret",
