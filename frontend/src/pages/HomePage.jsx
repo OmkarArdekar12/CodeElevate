@@ -1,11 +1,21 @@
+import { useEffect } from "react";
 import { Outlet } from "react-router-dom";
 import Navbar from "../components/Navbar.jsx";
 import Footer from "../components/Footer.jsx";
 import { useSession } from "../context/SessionContext.jsx";
 import Loading from "../components/Loading.jsx";
+import toast from "react-hot-toast";
 
 function HomePage() {
   const { isLoggedIn, loading, user } = useSession();
+
+  useEffect(() => {
+    if (!localStorage.getItem("welcome_shown")) {
+      toast.success("Welcome to CodeElevate!", { id: "welcome-toast" });
+      localStorage.setItem("welcome_shown", "true");
+    }
+  }, []);
+
   if (loading) {
     return (
       <>
@@ -13,6 +23,7 @@ function HomePage() {
       </>
     );
   }
+
   return (
     <>
       <Navbar isLoggedIn={isLoggedIn} userData={user} />

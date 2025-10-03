@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { verify2FA, reset2FA } from "../service/authApi";
+import toast from "react-hot-toast";
 
 const TwoFAVerification = ({ onVerifySuccess, onResetSuccess }) => {
   const [otp, setOtp] = useState("");
@@ -10,10 +11,12 @@ const TwoFAVerification = ({ onVerifySuccess, onResetSuccess }) => {
     try {
       const { data } = await verify2FA(otp);
       onVerifySuccess(data);
+      toast.success("Valid OTP.", { id: "otp success" });
     } catch (error) {
       setOtp("");
       console.log("The error is: ", error.message);
       setError("Invalid OTP");
+      toast.error("Invalid OTP!", { id: "otp failed" });
     }
   };
 
@@ -22,9 +25,15 @@ const TwoFAVerification = ({ onVerifySuccess, onResetSuccess }) => {
     try {
       const { data } = await reset2FA();
       onResetSuccess(data);
+      toast.success("Two-factor Authentication reset successfully.", {
+        id: "reset success",
+      });
     } catch (error) {
       console.log("The error is: ", error.message);
       setError(error.message);
+      toast.error("Two-factor Authentication reset failed!", {
+        id: "reset failed",
+      });
     }
   };
 

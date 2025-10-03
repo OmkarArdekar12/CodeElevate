@@ -6,6 +6,7 @@ import { faEye, faEyeSlash } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
 import { register, loginUser } from "../service/authApi";
 import Loading2 from "./Loading2";
+import toast from "react-hot-toast";
 
 const LoginForm = ({ onLoginSuccess }) => {
   const [isPasswordVisible, setIsPasswordVisible] = useState(false);
@@ -42,6 +43,8 @@ const LoginForm = ({ onLoginSuccess }) => {
     event.preventDefault();
     setError("");
     setMessage("");
+    setIsPasswordVisible(false);
+    setConfirmPasswordVisible(false);
     setRegisterLoading(true);
     try {
       if (!username || !password || !confirmPassword) {
@@ -69,6 +72,9 @@ const LoginForm = ({ onLoginSuccess }) => {
       setPassword("");
       setConfirmPassword("");
       setError("");
+      toast.success("Account created successfully!", {
+        id: "register success",
+      });
     } catch (error) {
       setUsername("");
       setPassword("");
@@ -76,6 +82,9 @@ const LoginForm = ({ onLoginSuccess }) => {
       setMessage("");
       // console.log(error);
       setError(error.response.data.message);
+      toast.error("Account creation failed! Please try again.", {
+        id: "register failed",
+      });
     } finally {
       setRegisterLoading(false);
     }
@@ -85,6 +94,7 @@ const LoginForm = ({ onLoginSuccess }) => {
     e.preventDefault();
     setMessage("");
     setError("");
+    setIsPasswordVisible(false);
     setLoginLoading(true);
     try {
       const { data } = await loginUser(username, password);
@@ -93,12 +103,16 @@ const LoginForm = ({ onLoginSuccess }) => {
       setPassword("");
       setError("");
       onLoginSuccess(data);
+      toast.success("Valid login credentials.", { id: "login" });
     } catch (error) {
       // console.log("The erros is: ", error);
       setUsername("");
       setPassword("");
       setMessage("");
       setError("Invalid login credentials");
+      toast.error("Invalid login credentials! Please try again.", {
+        id: "login failed",
+      });
     } finally {
       setLoginLoading(false);
     }

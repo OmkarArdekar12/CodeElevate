@@ -1,6 +1,7 @@
 import React from "react";
 import TwoFAVerification from "../components/TwoFAVerification";
 import { useNavigate } from "react-router-dom";
+import toast from "react-hot-toast";
 
 const Verify2FA = () => {
   const navigate = useNavigate();
@@ -8,6 +9,7 @@ const Verify2FA = () => {
   const handleVerification = async (data) => {
     if (data) {
       navigate("/");
+      toast.success("You're now logged in.", { id: "login success" });
     }
   };
 
