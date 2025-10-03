@@ -5,6 +5,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEye, faEyeSlash } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
 import { register, loginUser } from "../service/authApi";
+import Loading2 from "./Loading2";
 
 const LoginForm = ({ onLoginSuccess }) => {
   const [isPasswordVisible, setIsPasswordVisible] = useState(false);
@@ -15,6 +16,8 @@ const LoginForm = ({ onLoginSuccess }) => {
   const [confirmPassword, setConfirmPassword] = useState("");
   const [error, setError] = useState("");
   const [message, setMessage] = useState("");
+  const [registerLoading, setRegisterLoading] = useState(false);
+  const [loginLoading, setLoginLoading] = useState(false);
 
   const togglePasswordVisibility = () => {
     setIsPasswordVisible(!isPasswordVisible);
@@ -39,6 +42,7 @@ const LoginForm = ({ onLoginSuccess }) => {
     event.preventDefault();
     setError("");
     setMessage("");
+    setRegisterLoading(true);
     try {
       if (!username || !password || !confirmPassword) {
         // throw new Error("All fields are required");
@@ -72,6 +76,8 @@ const LoginForm = ({ onLoginSuccess }) => {
       setMessage("");
       // console.log(error);
       setError(error.response.data.message);
+    } finally {
+      setRegisterLoading(false);
     }
   };
 
@@ -79,6 +85,7 @@ const LoginForm = ({ onLoginSuccess }) => {
     e.preventDefault();
     setMessage("");
     setError("");
+    setLoginLoading(true);
     try {
       const { data } = await loginUser(username, password);
       setMessage(data.message);
@@ -92,6 +99,8 @@ const LoginForm = ({ onLoginSuccess }) => {
       setPassword("");
       setMessage("");
       setError("Invalid login credentials");
+    } finally {
+      setLoginLoading(false);
     }
   };
 
@@ -181,9 +190,24 @@ const LoginForm = ({ onLoginSuccess }) => {
         )}
         <button
           type="submit"
-          className="w-full mt-1 bg-blue-500 text-white py-2 rounded-md hover:bg-blue-600 hover-text-border"
+          disabled={registerLoading || loginLoading}
+          className={`w-full mt-1 text-white py-2 rounded-md hover-text-border ${
+            registerLoading || loginLoading
+              ? "bg-blue-300 cursor-not-allowed"
+              : "bg-blue-500 hover:bg-blue-600 cursor-pointer"
+          }`}
         >
-          {isRegister ? "Register" : "Login"}
+          {isRegister ? (
+            registerLoading ? (
+              <Loading2 text="Registering..." />
+            ) : (
+              "Register"
+            )
+          ) : loginLoading ? (
+            <Loading2 text="Logging..." />
+          ) : (
+            "Login"
+          )}
         </button>
         <div>
           <p className="pt-3 text-center text-gray-600 text-sm">
@@ -193,7 +217,7 @@ const LoginForm = ({ onLoginSuccess }) => {
             <Link
               to=""
               onClick={handleRegisterToggle}
-              className="hover:text-blue-600"
+              className="hover:text-blue-600 hover:underline"
             >
               {isRegister ? "Login" : "Create Account"}
             </Link>
