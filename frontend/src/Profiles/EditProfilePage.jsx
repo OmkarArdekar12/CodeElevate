@@ -4,6 +4,7 @@ import { showProfile, editProfile } from "../service/profileApi";
 import { useSession } from "../context/SessionContext.jsx";
 import Loading from "../components/Loading.jsx";
 import Loading2 from "../components/Loading2.jsx";
+import toast from "react-hot-toast";
 
 const EditProfilePage = () => {
   const { id } = useParams();
@@ -228,8 +229,14 @@ const EditProfilePage = () => {
 
       const res = await editProfile(id, formData);
       navigate(`/profiles/${id}`);
+      toast.success("Profile updated successfully.", {
+        id: "profile updated success",
+      });
     } catch (err) {
       console.error("Failed to update profile", err);
+      toast.error("Profile updated failed!", {
+        id: "profile updated failed",
+      });
     } finally {
       setSaving(false);
     }
