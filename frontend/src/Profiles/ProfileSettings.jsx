@@ -1,13 +1,16 @@
-import React from "react";
+import React, { useState } from "react";
 import { useLocation, useParams, useNavigate } from "react-router-dom";
 import { logoutUser } from "../service/authApi.js";
 import { useSession } from "../context/SessionContext";
 import { FaSignOutAlt as LogoutIcon } from "react-icons/fa";
 import { FaUserTimes as DeleteIcon } from "react-icons/fa";
+import toast from "react-hot-toast";
+import Loading2 from "../components/Loading2.jsx";
 
 const ProfileSettings = () => {
   const { id: profileId } = useParams();
   const navigate = useNavigate();
+  const [logoutLoading, setLogoutLoading] = useState(false);
   const { isLoggedIn, user, logout } = useSession();
   const userId = user && user.userId ? user.userId : "";
   const isOwner = profileId === userId;
@@ -17,12 +20,16 @@ const ProfileSettings = () => {
   // const isAuthorized = state?.isAuthorized;
 
   const handleLogout = async () => {
+    setLogoutLoading(true);
     try {
       const { data } = await logoutUser();
       logout(data);
       navigate("/login");
+      toast.success("You've been logged out. See you soon!", { id: "logout" });
     } catch (err) {
       console.log("Error: ", err.message);
+    } finally {
+      setLogoutLoading(false);
     }
   };
 
@@ -38,16 +45,27 @@ const ProfileSettings = () => {
     <div className="text-white w-full px-3 py-5 flex flex-col items-center justify-center">
       {isAuthorized && (
         <button
-          className="flex items-center justify-center bg-red-500 text-center rounded-md px-4 py-2 hover-text-border w-[90%] md:w-[50%] my-2 text-xl hover:bg-red-700"
+          className={`flex items-center justify-center text-center rounded-md px-4 py-2 hover-text-border w-[90%] md:w-[50%] my-2 text-xl ${
+            logoutLoading
+              ? "bg-red-400 cursor-not-allowed"
+              : "bg-red-500 hover:bg-red-700 cursor-pointer"
+          }`}
           onClick={handleLogout}
+          disabled={logoutLoading}
         >
-          <LogoutIcon className="inline mr-2" size={25} />
-          Logout
+          {logoutLoading ? (
+            <Loading2 text="Logging out..." />
+          ) : (
+            <>
+              <LogoutIcon className="inline mr-2" size={25} />
+              Logout
+            </>
+          )}
         </button>
       )}
       {isAuthorized && (
         <button
-          className="flex items-center justify-center bg-red-500 text-center rounded-md px-4 py-2 hover-text-border w-[90%] md:w-[50%] my-2 text-xl hover:bg-red-700"
+          className="flex items-center justify-center bg-red-500 text-center rounded-md px-4 py-2 hover-text-border w-[90%] md:w-[50%] my-2 text-xl hover:bg-red-700 cursor-pointer"
           //   onClick={handleLogout}
         >
           <DeleteIcon className="inline mr-2" size={25} />

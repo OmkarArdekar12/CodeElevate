@@ -9,7 +9,10 @@ const Verify2FA = () => {
   const handleVerification = async (data) => {
     if (data) {
       navigate("/");
-      toast.success("You're now logged in.", { id: "login success" });
+      setTimeout(() => {
+        toast.dismiss();
+        toast.success("You're now logged in.", { id: "login success" });
+      }, 500);
     }
   };
 
