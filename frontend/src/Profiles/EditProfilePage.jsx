@@ -3,6 +3,7 @@ import { Navigate, useNavigate, useParams } from "react-router-dom";
 import { showProfile, editProfile } from "../service/profileApi";
 import { useSession } from "../context/SessionContext.jsx";
 import Loading from "../components/Loading.jsx";
+import Loading2 from "../components/Loading2.jsx";
 
 const EditProfilePage = () => {
   const { id } = useParams();
@@ -65,6 +66,7 @@ const EditProfilePage = () => {
   const [saving, setSaving] = useState(false);
 
   const fetchProfile = async () => {
+    setLoading(true);
     try {
       const profileData = await showProfile(id);
       console.log(profileData);
@@ -805,7 +807,7 @@ const EditProfilePage = () => {
               saving ? "bg-gray-700" : "bg-green-600"
             }`}
           >
-            {saving ? "Saving..." : "Save Changes"}
+            {saving ? <Loading2 text="Saving..." /> : "Save Changes"}
           </button>
         </form>
       </div>
