@@ -6,20 +6,25 @@ const notificationSchema = new Schema({
   from: {
     type: Schema.Types.ObjectId,
     ref: "User",
+    required: true,
   },
   to: {
     type: Schema.Types.ObjectId,
     ref: "User",
+    required: true,
   },
   type: {
     type: String,
-    enum: ["follow", "connect_request", "connect_accept", "connect_reject"],
+    enum: ["follow", "connect", "message", "like", "comment"],
     required: true,
   },
-  status: {
+  message: {
     type: String,
-    enum: ["pending", "accepted", "rejected", "seen"],
-    default: "pending",
+    required: true,
+  },
+  isRead: {
+    type: Boolean,
+    default: false,
   },
   createdAt: {
     type: Date,

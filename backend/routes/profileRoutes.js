@@ -26,7 +26,6 @@ router.get("/:id", showProfile);
 // router.post("/", auth, createProfile);
 
 //Update Profile Route
-// router.put("/:userId", auth, updateProfile);
 router.put(
   "/:id",
   auth,

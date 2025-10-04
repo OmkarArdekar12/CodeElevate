@@ -3,6 +3,7 @@ import { githubStats } from "../controllers/developmentProfilesStatsControllers.
 
 const router = express.Router();
 
+//GitHub Stats Route/API
 router.get("/github/:username", githubStats);
 
 export default router;

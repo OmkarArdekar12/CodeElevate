@@ -17,6 +17,8 @@ import authRoutes from "./routes/authRoutes.js";
 import profileRoutes from "./routes/profileRoutes.js";
 import competitiveProgrammingStatsRoutes from "./routes/competitiveProgrammingStatsRoutes.js";
 import developmentProfilesStatsRoutes from "./routes/developmentProfilesStatsRoutes.js";
+import connectionRoutes from "./routes/connectionRoutes.js";
+import notificationRoutes from "./routes/notificationRoutes.js";
 import {
   pageNotFoundMiddleware,
   errorHandlerMiddleware,
@@ -69,6 +71,8 @@ app.use(
   competitiveProgrammingStatsRoutes
 );
 app.use("/api/stats/development-profiles", developmentProfilesStatsRoutes);
+app.use("/api/users", connectionRoutes);
+app.use("/api/notifications", notificationRoutes);
 
 //Error handlers
 app.use((req, res, next) => {

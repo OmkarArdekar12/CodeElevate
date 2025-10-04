@@ -1,5 +1,6 @@
 import axios from "axios";
 
+//GitHub Stats Controller
 export const githubStats = async (req, res) => {
   const { username } = req.params;
   try {

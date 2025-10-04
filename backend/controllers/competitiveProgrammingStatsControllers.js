@@ -1,5 +1,6 @@
 import axios from "axios";
 
+//Codeforces Stats Controller
 export const codeforcesStats = async (req, res) => {
   const { username } = req.params;
   try {
@@ -46,6 +47,7 @@ export const codeforcesStats = async (req, res) => {
   }
 };
 
+//LeetCode Stats Controller
 export const leetCodeStats = async (req, res) => {
   const { username } = req.params;
   console.log(username);
