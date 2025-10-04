@@ -40,7 +40,7 @@ const ConnectRequestNotification = ({ notification, fetchNotifications }) => {
       const notificationId = notification._id;
       const response = await connectResponse(notificationId, action);
       fetchNotifications();
-      console.log(response);
+      toast.success(`You are now connected to ${userData.fullName}`);
     } catch (err) {
       console.log(err);
     }

@@ -2,19 +2,31 @@ import React, { useEffect, useState } from "react";
 import { getNotifications } from "../service/notificationApi";
 import Notification from "./Notification";
 import ConnectRequestNotification from "./ConnectRequestNotification";
+import Loading from "../components/Loading.jsx";
 
 const NotificationPage = () => {
   const [allNotifications, setAllNotifications] = useState([]);
+  const [loading, setLoading] = useState(false);
 
   const fetchNotifications = async () => {
-    const data = await getNotifications();
-    console.log(data);
-    setAllNotifications(data);
+    setLoading(true);
+    try {
+      const data = await getNotifications();
+      setAllNotifications(data);
+    } catch (err) {
+      console.log(err);
+    } finally {
+      setLoading(false);
+    }
   };
 
   useEffect(() => {
     fetchNotifications();
   }, []);
+
+  if (loading) {
+    return <Loading />;
+  }
 
   return (
     <div className="w-full flex flex-col items-center justify-center text-white py-4 px-1 md:px-5 mb-5">
@@ -22,20 +34,26 @@ const NotificationPage = () => {
         <h1 className="text-3xl">All Notifications</h1>
       </div>
       <div className="w-full flex flex-col items-center justify-center pt-5 md:px-6">
-        {allNotifications.map((notification) =>
-          notification.type === "connect" ? (
-            <ConnectRequestNotification
-              key={notification._id}
-              notification={notification}
-              fetchNotifications={fetchNotifications}
-            />
-          ) : (
-            <Notification
-              key={notification._id}
-              notification={notification}
-              fetchNotifications={fetchNotifications}
-            />
+        {allNotificationsa && allNotifications.length > 0 ? (
+          allNotifications.map((notification) =>
+            notification.type === "connect" ? (
+              <ConnectRequestNotification
+                key={notification._id}
+                notification={notification}
+                fetchNotifications={fetchNotifications}
+              />
+            ) : (
+              <Notification
+                key={notification._id}
+                notification={notification}
+                fetchNotifications={fetchNotifications}
+              />
+            )
           )
+        ) : (
+          <div className="flex items-center justify-center text-gray-300">
+            No notifications found
+          </div>
         )}
       </div>
     </div>
