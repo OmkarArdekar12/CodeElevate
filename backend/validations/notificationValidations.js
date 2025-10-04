@@ -1,7 +1,7 @@
 import Joi from "joi";
 
 export const notificationValidationSchema = Joi.object({
-  from: Joi.string().required(), //mongo ObjectId
+  from: Joi.string().required(), //mongodb ObjectId
   to: Joi.string().required(),
   type: Joi.string()
     .valid("follow", "connect", "message", "like", "comment")
