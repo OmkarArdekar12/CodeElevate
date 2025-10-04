@@ -24,8 +24,8 @@ const ButtonSection = ({
   isLoggedIn,
   isOwner,
   profileUserFullName,
-  followersCount = 0,
-  followingCount = 0,
+  followersCount,
+  followingCount,
 }) => {
   const navigate = useNavigate();
   const [isFollowing, setIsFollowing] = useState(false);
@@ -103,27 +103,28 @@ const ButtonSection = ({
   return (
     <>
       <div className="w-full mt-10 inline-flex flex-wrap items-center justify-center md:justify-start pl-1 md:pl-25">
-        <div className="flex flex-col justify-center w-full mb-4">
-          {followersCount > 0 ||
-            (followingCount > 0 && (
-              <div className="flex items-center w-full">
-                <span className="mr-2 text-lg py-2 px-4 hover-text-border">
-                  {followersCount.toLocaleString()} followers
-                </span>
-                <span className="text-sm py-2 hover-text-border">
-                  {followingCount.toLocaleString()} following
-                </span>
-              </div>
-            ))}
-          <div
-            onClick={() => navigate(`/profiles/${profileUserId}/connections`)}
-            className="py-1 px-4 text-gray-400 hover:text-blue-600 hover:underline cursor-pointer group"
-          >
-            See connections
-            <FaLongArrowAltRight
-              className="ml-1 hidden group-hover:inline"
-              size={15}
-            />
+        <div className="w-full flex flex-col justify-center mb-4">
+          {(followersCount > 0 || followingCount > 0) && (
+            <div className="flex items-center">
+              <span className="mr-2 text-lg py-2 px-4 hover-text-border">
+                {followersCount.toLocaleString()} followers
+              </span>
+              <span className="text-sm py-2 hover-text-border">
+                {followingCount.toLocaleString()} following
+              </span>
+            </div>
+          )}
+          <div className="flex items-center">
+            <button
+              onClick={() => navigate(`/profiles/${profileUserId}/connections`)}
+              className="py-1 px-4 text-gray-400 hover:text-blue-600 hover:underline cursor-pointer group"
+            >
+              See connections
+              <FaLongArrowAltRight
+                className="ml-1 hidden group-hover:inline"
+                size={15}
+              />
+            </button>
           </div>
         </div>
         {!isOwner && isLoggedIn && (
