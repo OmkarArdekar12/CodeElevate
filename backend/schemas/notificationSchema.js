@@ -15,8 +15,13 @@ const notificationSchema = new Schema({
   },
   type: {
     type: String,
-    enum: ["follow", "connect", "message", "like", "comment"],
+    enum: ["connect", "message"],
     required: true,
+  },
+  status: {
+    type: String,
+    enum: ["connected", "pending", "not_connected"],
+    default: "",
   },
   message: {
     type: String,

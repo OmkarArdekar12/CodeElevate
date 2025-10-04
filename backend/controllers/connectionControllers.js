@@ -31,7 +31,7 @@ export const followUser = async (req, res) => {
     const notification = await Notification.create({
       from: currUserId,
       to: targetUserId,
-      type: "follow",
+      type: "message",
       message: `${req.user.username} started following you.`,
     });
 
@@ -71,6 +71,13 @@ export const unfollowUser = async (req, res) => {
     await currProfile.save();
     await targetProfile.save();
 
+    const notification = await Notification.create({
+      from: currUserId,
+      to: targetUserId,
+      type: "message",
+      message: `${req.user.username} unfollowing you.`,
+    });
+
     return res.json({ msg: "Unfollowed successfully" });
   } catch (err) {
     return res
@@ -92,15 +99,34 @@ export const sendConnectRequest = async (req, res) => {
     }
 
     const targetProfile = await Profile.findOne({ user: targetUserId });
+    const currProfile = await Profile.findOne({ user: currUserId });
 
     if (!targetProfile) {
       return res.status(404).json({ message: "User not found" });
     }
 
-    if (targetProfile.followers.includes(currUserId)) {
+    const isConnected =
+      targetProfile.followers.includes(currUserId) &&
+      currProfile.followers.includes(targetUserId);
+
+    if (isConnected) {
       return res
         .status(400)
         .json({ message: "You are already connected with this user" });
+    }
+
+    const existingConnectionRequest = await Notification.findOne({
+      type: "connect",
+      $or: [
+        { from: currUserId, to: targetUserId },
+        { from: targetUserId, to: currUserId },
+      ],
+    });
+
+    if (existingConnectionRequest) {
+      return res
+        .status(400)
+        .json({ message: "Already Connection Request is Send" });
     }
 
     const notification = await Notification.create({
@@ -108,6 +134,7 @@ export const sendConnectRequest = async (req, res) => {
       to: targetUserId,
       type: "connect",
       message: `${req.user.username} send you a connection request`,
+      status: "pending",
     });
 
     return res.status(200).json({ message: "Connection request sent" });
@@ -122,55 +149,55 @@ export const sendConnectRequest = async (req, res) => {
 //Connect Respond Controller
 export const respondConnectRequest = async (req, res) => {
   try {
-    const targetUserId = req.user._id;
+    const currUserId = req.user._id;
     const { id: notificationId } = req.params;
     const { action } = req.body;
 
-    const notification = await Notification.findById(notificationId);
-    if (!notification) {
-      return res.status(404).json({ message: "Request not found" });
+    const connectionRequest = await Notification.findById(notificationId);
+    if (!connectionRequest) {
+      return res.status(404).json({ message: "Connection Request not found" });
     }
 
-    if (notification.to.toString() !== targetUserId.toString()) {
+    if (connectionRequest.to.toString() !== currUserId.toString()) {
       return res.status(403).json({ message: "Not authorized" });
     }
 
-    const requesterId = notification.from;
+    const requesterId = connectionRequest.from;
 
     if (action === "accept") {
-      const targetProfile = await Profile.findOne({ user: targetUserId });
+      const currProfile = await Profile.findOne({ user: currUserId });
       const requesterProfile = await Profile.findOne({ user: requesterId });
 
-      if (!targetProfile || !requesterProfile) {
+      if (!currProfile || !requesterProfile) {
         return res.status(404).json({ error: "User profiles not found" });
       }
 
-      if (!targetProfile.followers.includes(requesterId)) {
-        targetProfile.followers.push(requesterId);
+      if (!currProfile.followers.includes(requesterId)) {
+        currProfile.followers.push(requesterId);
       }
-      if (!targetProfile.following.includes(requesterId)) {
-        targetProfile.following.push(requesterId);
-      }
-
-      if (!requesterProfile.followers.includes(targetUserId)) {
-        requesterProfile.followers.push(targetUserId);
-      }
-      if (!requesterProfile.following.includes(targetUserId)) {
-        requesterProfile.following.push(targetUserId);
+      if (!currProfile.following.includes(requesterId)) {
+        currProfile.following.push(requesterId);
       }
 
-      await targetProfile.save();
+      if (!requesterProfile.followers.includes(currUserId)) {
+        requesterProfile.followers.push(currUserId);
+      }
+      if (!requesterProfile.following.includes(currUserId)) {
+        requesterProfile.following.push(currUserId);
+      }
+
+      await currProfile.save();
       await requesterProfile.save();
 
-      await Notification.create({
+      const notification = await Notification.create({
         from: targetUserId,
         to: requesterId,
         type: "message",
         message: `${req.user.username} accepted your connection request`,
       });
 
-      await notification.deleteOne();
-      return res.json({ msg: "Connection request accepted" });
+      await connectionRequest.deleteOne();
+      return res.json({ message: "Connection request accepted" });
     } else if (action === "reject") {
       await Notification.create({
         from: targetUserId,
@@ -180,13 +207,53 @@ export const respondConnectRequest = async (req, res) => {
       });
 
       await notification.deleteOne();
-      return res.json({ msg: "Connection request rejected" });
+      return res.json({ message: "Connection request rejected" });
     } else {
-      return res.status(400).json({ error: "Invalid action" });
+      return res.status(400).json({ message: "Invalid action" });
     }
   } catch (err) {
     return res.status(500).json({
       message: "Internal Server Error, Connect Response failed!",
+      error: err,
+    });
+  }
+};
+
+//Unconnect Controller
+export const unconnectUser = async (req, res) => {
+  try {
+    const { id: targetUserId } = req.params;
+    const currUserId = req.user._id;
+
+    const targetProfile = await Profile.findOne({ user: targetUserId });
+    const currProfile = await Profile.findOne({ user: currUserId });
+
+    const isConnected =
+      targetProfile.followers.includes(currUserId) &&
+      currProfile.followers.includes(targetUserId);
+
+    if (!isConnected) {
+      return res.status(400).json({ message: "Connection not found" });
+    }
+
+    if (targetProfile.followers.includes(currUserId)) {
+      targetProfile.followers.pull(currUserId);
+    }
+    if (targetProfile.following.includes(currUserId)) {
+      targetProfile.following.pull(currUserId);
+    }
+
+    if (currProfile.followers.includes(targetUserId)) {
+      currProfile.followers.pull(targetUserId);
+    }
+    if (currProfile.following.includes(targetUserId)) {
+      currProfile.following.pull(targetUserId);
+    }
+
+    res.status(200).json({ message: "Unconnected successfully" });
+  } catch (err) {
+    return res.status(500).json({
+      message: "Internal Server Error, Unconnect failed!",
       error: err,
     });
   }
@@ -210,9 +277,27 @@ export const checkConnectionStatus = async (req, res) => {
       targetProfile.followers.includes(currUserId) &&
       currProfile.followers.includes(targetUserId);
 
+    const connectStatus = "none";
+    if (isConnected) {
+      connectStatus = "connect";
+    } else {
+      const connection = Notification.findOne({
+        type: "connect",
+        $or: [
+          { from: currUserId, to: targetUserId },
+          { from: targetUserId, to: currUserId },
+        ],
+      });
+      if (!connection) {
+        connectStatus = "not_connected";
+      } else {
+        connectStatus = "pending";
+      }
+    }
+
     return res.status(200).json({
       followStatus: isFollowing,
-      connectStatus: isConnected,
+      connectStatus: connectStatus,
     });
   } catch (err) {
     return res.status(500).json({

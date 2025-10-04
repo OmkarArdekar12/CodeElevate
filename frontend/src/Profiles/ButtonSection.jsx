@@ -22,7 +22,7 @@ const ButtonSection = ({
 }) => {
   const navigate = useNavigate();
   const [isFollowing, setIsFollowing] = useState(false);
-  const [connectStatus, setConnectStatus] = useState(false);
+  const [connectStatus, setConnectStatus] = useState("none");
   const [loadingFollow, setLoadingFollow] = useState(false);
   const [loadingConnect, setLoadingConnect] = useState(false);
 
