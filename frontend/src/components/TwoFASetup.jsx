@@ -65,7 +65,7 @@ const TwoFASetup = ({ onSetupComplete }) => {
         </div>
         <button
           onClick={onSetupComplete}
-          className="w-full bg-blue-500 text-white py-2 rounded-md hover:bg-blue-600 hover-text-border"
+          className="w-full bg-blue-500 text-white py-2 rounded-md hover:bg-blue-600 hover-text-border cursor-pointer"
         >
           Continue to Verification
         </button>

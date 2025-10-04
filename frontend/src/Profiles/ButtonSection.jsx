@@ -97,6 +97,8 @@ const ButtonSection = ({
     }
   };
 
+  console.log(connectStatus);
+
   return (
     <>
       <div className="w-full mt-10 inline-flex flex-wrap items-center justify-center md:justify-start pl-1 md:pl-25">
@@ -134,7 +136,7 @@ const ButtonSection = ({
               loadingConnect
                 ? "bg-gray-700 cursor-not-allowed"
                 : connectStatus === "connected"
-                ? "bg-gray-600 hover:bg-gray-700 cursor-not-allowed"
+                ? "bg-gray-600 hover:bg-gray-700 cursor-pointer"
                 : connectStatus === "pending"
                 ? "bg-gray-500 hover:bg-gray-600 cursor-not-allowed"
                 : "bg-blue-500 hover:border-1 hover:border-blue-500 hover:bg-gradient-to-r hover:from-blue-500 hover:via-blue-600 hover:to-blue-700 cursor-pointer"

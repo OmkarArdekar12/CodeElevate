@@ -136,6 +136,29 @@ export const destroyProfile = async (req, res) => {
   }
 };
 
+//Get User Data Controller
+export const getUserData = async (req, res) => {
+  try {
+    const userId = req.params.id;
+    const profile = await Profile.findOne({ user: userId }).populate(
+      "user",
+      "username"
+    );
+    if (!profile) {
+      return res.status(404).json({ message: "User Profile not found" });
+    }
+    const userData = {
+      fullName: profile.fullName,
+      username: profile.user.username,
+      headLine: profile.headLine,
+      profilePicture: profile.profilePicture,
+    };
+    res.status(200).json(userData);
+  } catch (err) {
+    res.status(500).json({ message: "Error in fetching profile", error: err });
+  }
+};
+
 // //Create Profile Controller
 // export const createProfile = async (req, res) => {
 //   try {

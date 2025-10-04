@@ -71,13 +71,13 @@ const TwoFAVerification = ({ onVerifySuccess, onResetSuccess }) => {
         {error && <p className="text-red-500 text-sm mb-3">{error}</p>}
         <button
           type="submit"
-          className="w-full mt-1 bg-blue-500 text-white py-2 rounded-md hover:bg-blue-600 hover-text-border mb-3"
+          className="w-full mt-1 bg-blue-500 text-white py-2 rounded-md hover:bg-blue-600 hover-text-border mb-3 cursor-pointer"
         >
           Verify TOTP
         </button>
         <button
           type="submit"
-          className="w-full mt-1 bg-slate-500 text-white py-2 rounded-md hover:bg-slate-600 hover-text-border"
+          className="w-full mt-1 bg-slate-500 text-white py-2 rounded-md hover:bg-slate-600 hover-text-border cursor-pointer"
           onClick={handleReset}
         >
           Reset 2FA

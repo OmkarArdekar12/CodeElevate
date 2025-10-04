@@ -10,16 +10,7 @@ const ProtectedRoute = () => {
   if (loading) {
     return <Loading />;
   }
-  return isLoggedIn ? (
-    <Outlet />
-  ) : (
-    <>
-      {toast.error("You must be logged-in to access that.", {
-        id: "Unauthorized Access",
-      })}
-      <Navigate to="/login" replace />
-    </>
-  );
+  return isLoggedIn ? <Outlet /> : <Navigate to="/login" replace />;
 };
 
 export default ProtectedRoute;

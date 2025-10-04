@@ -3,9 +3,11 @@ import Notification from "../models/notification.js";
 //Get all Notification for logged-in user Controller
 export const getNotifications = async (req, res) => {
   try {
-    const notifications = await Notification.find({ to: req.user_id })
-      .populate("from", "username")
-      .sort({ createdAt: -1 });
+    const currUserId = req.user._id;
+    console.log("Notifications: " + req.user);
+    const notifications = await Notification.find({ to: currUserId }).sort({
+      createdAt: -1,
+    });
 
     res.status(200).json(notifications);
   } catch (err) {

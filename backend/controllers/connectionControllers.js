@@ -76,7 +76,7 @@ export const unfollowUser = async (req, res) => {
       from: currUserId,
       to: targetUserId,
       type: "message",
-      message: `${req.user.username} unfollowing you.`,
+      message: `${req.user.username} unfollowed you.`,
     });
 
     return res.json({ msg: "Unfollowed successfully" });
@@ -163,7 +163,7 @@ export const respondConnectRequest = async (req, res) => {
       return res.status(403).json({ message: "Not authorized" });
     }
 
-    const requesterId = connectionRequest.from;
+    const requesterId = connectionRequest.from.toString();
 
     if (action === "accept") {
       const currProfile = await Profile.findOne({ user: currUserId });
@@ -191,7 +191,7 @@ export const respondConnectRequest = async (req, res) => {
       await requesterProfile.save();
 
       const notification = await Notification.create({
-        from: targetUserId,
+        from: currUserId,
         to: requesterId,
         type: "message",
         message: `${req.user.username} accepted your connection request`,
@@ -201,13 +201,13 @@ export const respondConnectRequest = async (req, res) => {
       return res.json({ message: "Connection request accepted" });
     } else if (action === "reject") {
       await Notification.create({
-        from: targetUserId,
-        to: notification.from,
+        from: currUserId,
+        to: requesterId,
         type: "message",
         message: `${req.user.username} rejected your connection request`,
       });
 
-      await notification.deleteOne();
+      await connectionRequest.deleteOne();
       return res.json({ message: "Connection request rejected" });
     } else {
       return res.status(400).json({ message: "Invalid action" });
@@ -251,6 +251,16 @@ export const unconnectUser = async (req, res) => {
       currProfile.following.pull(targetUserId);
     }
 
+    await currProfile.save();
+    await targetProfile.save();
+
+    const notification = await Notification.create({
+      from: currUserId,
+      to: targetUserId,
+      type: "message",
+      message: `${req.user.username} unconnected from you`,
+    });
+
     res.status(200).json({ message: "Unconnected successfully" });
   } catch (err) {
     return res.status(500).json({
@@ -280,7 +290,7 @@ export const checkConnectionStatus = async (req, res) => {
 
     let connectStatus = "none";
     if (isConnected) {
-      connectStatus = "connect";
+      connectStatus = "connected";
     } else {
       const connection = await Notification.findOne({
         type: "connect",

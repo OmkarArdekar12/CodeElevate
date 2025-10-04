@@ -10,6 +10,13 @@ export const showProfile = async (id) => {
   return profile.data;
 };
 
+export const getUserData = async (id) => {
+  const userData = await api.get(`/profiles/data/${id}`, {
+    withCredentials: true,
+  });
+  return userData.data;
+};
+
 export const editProfile = async (userId, formData) => {
   const response = await api.put(`/profiles/${userId}`, formData, {
     withCredentials: true,
