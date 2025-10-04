@@ -62,7 +62,7 @@ export default function Hero() {
             text={"Competitive Programmers"}
           />
           <TopCard image={"/images/laptop.png"} text={"Developers"} />
-          <TopCard image={"/images/laptopTrophy.png"} text={"All rounders"} />
+          <TopCard image={"/images/laptopTrophy.png"} text={"All Rounders"} />
           <TopCard image={"/images/computer.png"} text={"Contributors"} />
           <TopCard image={"/images/rank.png"} text={"Rankers"} />
         </Slider>

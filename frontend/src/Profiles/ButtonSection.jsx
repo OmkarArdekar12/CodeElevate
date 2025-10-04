@@ -2,6 +2,10 @@ import React from "react";
 import { FaUserEdit, FaEdit } from "react-icons/fa";
 import { FaCog as SettingsIcon } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
+import { MdMessage } from "react-icons/md";
+import { SlUserFollow } from "react-icons/sl";
+import { FaUserPlus, FaUserMinus } from "react-icons/fa";
+import { FaUserClock } from "react-icons/fa6";
 
 const ButtonSection = ({ profileUserId, isLoggedIn, isOwner }) => {
   const navigate = useNavigate();
@@ -9,16 +13,16 @@ const ButtonSection = ({ profileUserId, isLoggedIn, isOwner }) => {
   return (
     <>
       <div className="w-full mt-10 inline-flex flex-wrap items-center justify-center md:justify-start pl-1 md:pl-25">
-        <button className="bg-blue-500 py-2 px-4 m-1 rounded-md hover:text-white hover:border-1 hover-text-border hover:bg-gradient-to-r hover:from-blue-500 hover:via-blue-600 hover:to-blue-700 cursor-pointer">
+        <button className="flex items-center bg-blue-500 py-2 px-4 m-1 rounded-md hover:text-white hover:border-1 hover:border-blue-500 hover-text-border hover:bg-gradient-to-r hover:from-blue-500 hover:via-blue-600 hover:to-blue-700 cursor-pointer">
+          <FaUserPlus className="inline mr-1" size={20} />
           Follow
         </button>
-        <button className="bg-blue-500 py-2 px-4 m-1 rounded-md hover:text-white hover:border-1 hover-text-border hover:bg-gradient-to-r hover:from-blue-500 hover:via-blue-600 hover:to-blue-700 cursor-pointer">
-          Following
-        </button>
-        <button className="bg-blue-500 py-2 px-4 m-1 rounded-md hover:text-white hover:border-1 hover-text-border hover:bg-gradient-to-r hover:from-blue-500 hover:via-blue-600 hover:to-blue-700 cursor-pointer">
+        <button className="flex items-center bg-blue-500 py-2 px-4 m-1 rounded-md hover:text-white hover:border-1 hover:border-blue-500 hover-text-border hover:bg-gradient-to-l hover:from-blue-500 hover:via-blue-600 hover:to-blue-700 cursor-pointer">
+          <FaUserClock className="inline mr-1" size={20} />
           Connect
         </button>
-        <button className="bg-blue-500 py-2 px-4 m-1 rounded-md hover:text-white hover:border-1 hover-text-border hover:bg-gradient-to-r hover:from-blue-500 hover:via-blue-600 hover:to-blue-700 cursor-pointer">
+        <button className="flex items-center bg-blue-500 py-2 px-4 m-1 rounded-md hover:text-white hover:border-1 hover:border-blue-500 hover-text-border hover:bg-gradient-to-l hover:from-blue-500 hover:via-blue-600 hover:to-blue-700 cursor-pointer">
+          <MdMessage className="inline mr-1" size={20} />
           Message
         </button>
         {isLoggedIn && isOwner && (
