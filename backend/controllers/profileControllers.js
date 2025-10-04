@@ -2,6 +2,7 @@ import express from "express";
 import auth from "../middlewares/auth.js";
 import Profile from "../models/profile.js";
 
+//All Profile Controller
 export const getAllProfiles = async (req, res) => {
   try {
     const profiles = await Profile.find().populate("user", "username");
@@ -11,6 +12,7 @@ export const getAllProfiles = async (req, res) => {
   }
 };
 
+//Show Profile Controller
 export const showProfile = async (req, res) => {
   try {
     const userId = req.params.id;
@@ -27,6 +29,7 @@ export const showProfile = async (req, res) => {
   }
 };
 
+//Update Profile Controller
 export const updateProfile = async (req, res) => {
   try {
     const { id } = req.params;
@@ -114,6 +117,7 @@ export const updateProfile = async (req, res) => {
   }
 };
 
+//Destroy Profile Controller
 export const destroyProfile = async (req, res) => {
   try {
     const clientUserId = req.params.userId;
@@ -132,22 +136,7 @@ export const destroyProfile = async (req, res) => {
   }
 };
 
-// export const showProfile = async (req, res) => {
-//   try {
-//     const id = req.params.id;
-//     const profile = await Profile.findOne({ _id: id }).populate(
-//       "user",
-//       "username"
-//     );
-//     if (!profile) {
-//       return res.status(404).json({ message: "Profile not found" });
-//     }
-//     res.status(200).json(profile);
-//   } catch (err) {
-//     res.status(500).json({ message: "Error in fetching profile", error: err });
-//   }
-// };
-
+// //Create Profile Controller
 // export const createProfile = async (req, res) => {
 //   try {
 //     const userId = req.user._id;
@@ -167,6 +156,21 @@ export const destroyProfile = async (req, res) => {
 //   }
 // };
 
+// export const showProfile = async (req, res) => {
+//   try {
+//     const id = req.params.id;
+//     const profile = await Profile.findOne({ _id: id }).populate(
+//       "user",
+//       "username"
+//     );
+//     if (!profile) {
+//       return res.status(404).json({ message: "Profile not found" });
+//     }
+//     res.status(200).json(profile);
+//   } catch (err) {
+//     res.status(500).json({ message: "Error in fetching profile", error: err });
+//   }
+// };
 // export const updateProfile = async (req, res) => {
 //   try {
 //     const { id } = req.params;

@@ -5,9 +5,9 @@ import { validateProfile, isOwner } from "../middlewares/profileValidations.js";
 import {
   getAllProfiles,
   showProfile,
-  // createProfile,
   updateProfile,
-  // destroyProfile,
+  destroyProfile,
+  // createProfile,
 } from "../controllers/profileControllers.js";
 import multer from "multer";
 import { storage } from "../config/cloudConfig.js";
@@ -21,9 +21,6 @@ router.get("/", getAllProfiles);
 
 //Show Profile Route
 router.get("/:id", showProfile);
-
-//Create Profile Route
-// router.post("/", auth, createProfile);
 
 //Update Profile Route
 router.put(
@@ -39,6 +36,9 @@ router.put(
 );
 
 //Delete Profile Route
-// router.delete("/:userId", auth, destroyProfile);
+router.delete("/:userId", auth, destroyProfile);
+
+// //Create Profile Route
+// router.post("/", auth, createProfile);
 
 export default router;
