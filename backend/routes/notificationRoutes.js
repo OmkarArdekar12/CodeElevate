@@ -1,10 +1,10 @@
 import express from "express";
-import auth from "../middlewares/auth";
+import auth from "../middlewares/auth.js";
 import {
   deleteNotification,
   getNotifications,
   markAsRead,
-} from "../controllers/notificationControllers";
+} from "../controllers/notificationControllers.js";
 
 const router = express.Router();
 

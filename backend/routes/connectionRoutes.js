@@ -1,11 +1,11 @@
 import express from "express";
-import auth from "../middlewares/auth";
+import auth from "../middlewares/auth.js";
 import {
   followUser,
   respondConnectRequest,
   sendConnectRequest,
   unfollowUser,
-} from "../controllers/connectionControllers";
+} from "../controllers/connectionControllers.js";
 
 const router = express.Router();
 
