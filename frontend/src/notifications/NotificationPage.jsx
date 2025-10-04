@@ -34,7 +34,7 @@ const NotificationPage = () => {
         <h1 className="text-3xl">All Notifications</h1>
       </div>
       <div className="w-full flex flex-col items-center justify-center pt-5 md:px-6">
-        {allNotificationsa && allNotifications.length > 0 ? (
+        {allNotifications && allNotifications.length > 0 ? (
           allNotifications.map((notification) =>
             notification.type === "connect" ? (
               <ConnectRequestNotification
