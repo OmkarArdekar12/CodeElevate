@@ -4,7 +4,6 @@ import Notification from "../models/notification.js";
 export const getNotifications = async (req, res) => {
   try {
     const currUserId = req.user._id;
-    console.log("Notifications: " + req.user);
     const notifications = await Notification.find({ to: currUserId }).sort({
       createdAt: -1,
     });
