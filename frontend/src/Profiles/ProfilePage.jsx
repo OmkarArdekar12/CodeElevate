@@ -67,6 +67,7 @@ const ProfilePage = () => {
           profileUserId={profileId}
           isLoggedIn={isLoggedIn}
           isOwner={isOwner}
+          profileUserFullName={userData.fullName}
         />
 
         <AboutSection about={userData.about} />

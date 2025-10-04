@@ -19,7 +19,7 @@ export const followUser = async (req, res) => {
     }
 
     if (currProfile.following.includes(targetUserId)) {
-      res.status(400).json({ message: "Already following this user" });
+      return res.status(400).json({ message: "Already following this user" });
     }
 
     currProfile.following.push(targetUserId);
@@ -35,9 +35,9 @@ export const followUser = async (req, res) => {
       message: `${req.user.username} started following you.`,
     });
 
-    res.json({ message: "Followed successfully" });
+    return res.json({ message: "Followed successfully" });
   } catch (err) {
-    res
+    return res
       .status(500)
       .json({ message: "Internal Server Error, Follow failed!", error: err });
   }
@@ -71,9 +71,9 @@ export const unfollowUser = async (req, res) => {
     await currProfile.save();
     await targetProfile.save();
 
-    res.json({ msg: "Unfollowed successfully" });
+    return res.json({ msg: "Unfollowed successfully" });
   } catch (err) {
-    res
+    return res
       .status(500)
       .json({ message: "Internal Server Error, Unfollow failed!", error: err });
   }
@@ -110,9 +110,9 @@ export const sendConnectRequest = async (req, res) => {
       message: `${req.user.username} send you a connection request`,
     });
 
-    res.status(200).json({ message: "Connection request sent" });
+    return res.status(200).json({ message: "Connection request sent" });
   } catch (err) {
-    res.status(500).json({
+    return res.status(500).json({
       message: "Internal Server Error, Connect Request failed!",
       error: err,
     });
@@ -170,7 +170,7 @@ export const respondConnectRequest = async (req, res) => {
       });
 
       await notification.deleteOne();
-      res.json({ msg: "Connection request accepted" });
+      return res.json({ msg: "Connection request accepted" });
     } else if (action === "reject") {
       await Notification.create({
         from: targetUserId,
@@ -180,13 +180,43 @@ export const respondConnectRequest = async (req, res) => {
       });
 
       await notification.deleteOne();
-      res.json({ msg: "Connection request rejected" });
+      return res.json({ msg: "Connection request rejected" });
     } else {
       return res.status(400).json({ error: "Invalid action" });
     }
   } catch (err) {
-    res.status(500).json({
+    return res.status(500).json({
       message: "Internal Server Error, Connect Response failed!",
+      error: err,
+    });
+  }
+};
+
+//Check Connection Status Controller
+export const checkConnectionStatus = async (req, res) => {
+  try {
+    const { id: targetUserId } = req.params;
+    const currUserId = req.user._id;
+
+    const targetProfile = await Profile.findOne({ user: targetUserId });
+    const currProfile = await Profile.findOne({ user: currUserId });
+
+    if (!targetProfile) {
+      return res.status(404).json({ message: "User Profile not found" });
+    }
+
+    const isFollowing = currProfile.following.includes(targetUserId);
+    const isConnected =
+      targetProfile.followers.includes(currUserId) &&
+      currProfile.followers.includes(targetUserId);
+
+    return res.status(200).json({
+      followStatus: isFollowing,
+      connectStatus: isConnected,
+    });
+  } catch (err) {
+    return res.status(500).json({
+      message: "Internal Server Error, failed fetch the status!",
       error: err,
     });
   }

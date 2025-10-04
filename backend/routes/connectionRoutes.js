@@ -5,6 +5,7 @@ import {
   respondConnectRequest,
   sendConnectRequest,
   unfollowUser,
+  checkConnectionStatus,
 } from "../controllers/connectionControllers.js";
 
 const router = express.Router();
@@ -20,5 +21,8 @@ router.post("/connect/:id", auth, sendConnectRequest);
 
 //Connect Respond Route
 router.post("/connect/response/:id", auth, respondConnectRequest);
+
+//Check Connection Status Route
+router.get("/:id/status", auth, checkConnectionStatus);
 
 export default router;
