@@ -20,7 +20,7 @@ const notificationSchema = new Schema({
   },
   status: {
     type: String,
-    enum: ["connected", "pending", "not_connected"],
+    enum: ["connected", "pending", "not_connected", "none", ""],
     default: "",
   },
   message: {

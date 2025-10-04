@@ -6,6 +6,7 @@ import {
   sendConnectRequest,
   unfollowUser,
   checkConnectionStatus,
+  unconnectUser,
 } from "../controllers/connectionControllers.js";
 
 const router = express.Router();
@@ -21,6 +22,9 @@ router.post("/connect/:id", auth, sendConnectRequest);
 
 //Connect Respond Route
 router.post("/connect/response/:id", auth, respondConnectRequest);
+
+//Unconnect Route
+router.post("/unconnect/:id", auth, unconnectUser);
 
 //Check Connection Status Route
 router.get("/:id/status", auth, checkConnectionStatus);

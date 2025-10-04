@@ -4,11 +4,15 @@ import { FaCog as SettingsIcon } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
 import { MdMessage } from "react-icons/md";
 import { SlUserFollow } from "react-icons/sl";
+import { FaUserAltSlash } from "react-icons/fa";
+import { FaClockRotateLeft } from "react-icons/fa6";
 import { FaUserPlus, FaUserMinus } from "react-icons/fa";
 import { FaUserClock } from "react-icons/fa6";
 import {
   checkConnectionStatus,
+  connectRequest,
   followUser,
+  unconnectUser,
   unfollowUser,
 } from "../service/connectionApi";
 import toast from "react-hot-toast";
@@ -65,7 +69,33 @@ const ButtonSection = ({
     }
   };
 
-  const handleConnect = async () => {};
+  const handleConnect = async () => {
+    setLoadingConnect(true);
+    try {
+      if (connectStatus === "none" || connectStatus == "not_connected") {
+        //send connection request
+        const response = await connectRequest(profileUserId);
+        toast.success(`Connection request send to ${profileUserFullName}.`);
+        setConnectStatus("pending");
+      } else if (connectStatus == "pending") {
+        //connection request already send - toast message
+        toast("Connection request already send!");
+      } else if (connectStatus == "connected") {
+        //unconnect connection
+        const response = await unconnectUser(profileUserId);
+        toast.success(`You disconnected from ${profileUserFullName}.`);
+        setConnectStatus("not_connected");
+      } else {
+        toast.error("Invalid connected state");
+      }
+      fetchStatus(); //refreshing status
+    } catch (err) {
+      console.error(err.response?.data?.message || err.message);
+      toast.error(err.response?.data?.message);
+    } finally {
+      setLoadingConnect(false);
+    }
+  };
 
   return (
     <>
@@ -78,7 +108,7 @@ const ButtonSection = ({
               loadingFollow
                 ? "bg-gray-700 cursor-not-allowed"
                 : isFollowing
-                ? "bg-gray-600 cursor-pointer"
+                ? "bg-gray-600 hover:bg-gray-700 cursor-pointer"
                 : "bg-blue-500 hover:border-1 hover:border-blue-500 hover:bg-gradient-to-r hover:from-blue-500 hover:via-blue-600 hover:to-blue-700 cursor-pointer"
             }`}
           >
@@ -88,7 +118,7 @@ const ButtonSection = ({
               <FaUserMinus className="inline mr-1" size={20} />
             )}
             {loadingFollow ? (
-              <Loading2 text="..." />
+              <Loading2 text="following..." />
             ) : isFollowing ? (
               "Unfollow"
             ) : (
@@ -96,10 +126,43 @@ const ButtonSection = ({
             )}
           </button>
         )}
-        <button className="flex items-center bg-blue-500 py-2 px-4 m-1 rounded-md hover:text-white hover:border-1 hover:border-blue-500 hover-text-border hover:bg-gradient-to-l hover:from-blue-500 hover:via-blue-600 hover:to-blue-700 cursor-pointer">
-          <FaUserClock className="inline mr-1" size={20} />
-          Connect
-        </button>
+        {!isOwner && isLoggedIn && (
+          <button
+            onClick={handleConnect}
+            disabled={loadingConnect || connectStatus === "pending"}
+            className={`flex items-center py-2 px-4 m-1 rounded-md hover:text-white hover-text-border  ${
+              loadingConnect
+                ? "bg-gray-700 cursor-not-allowed"
+                : connectStatus === "connected"
+                ? "bg-gray-600 hover:bg-gray-700 cursor-not-allowed"
+                : connectStatus === "pending"
+                ? "bg-gray-500 hover:bg-gray-600 cursor-not-allowed"
+                : "bg-blue-500 hover:border-1 hover:border-blue-500 hover:bg-gradient-to-r hover:from-blue-500 hover:via-blue-600 hover:to-blue-700 cursor-pointer"
+            }`}
+          >
+            {loadingConnect ? (
+              <>
+                <FaUserClock className="inline mr-1" size={20} />
+                <Loading2 text="connecting..." />
+              </>
+            ) : connectStatus === "connected" ? (
+              <>
+                <FaUserAltSlash className="inline mr-1" size={20} />
+                Disconnect
+              </>
+            ) : connectStatus === "pending" ? (
+              <>
+                <FaClockRotateLeft className="inline mr-1" size={20} />
+                Pending
+              </>
+            ) : (
+              <>
+                <FaUserClock className="inline mr-1" size={20} />
+                Connect
+              </>
+            )}
+          </button>
+        )}
         <button className="flex items-center bg-blue-500 py-2 px-4 m-1 rounded-md hover:text-white hover:border-1 hover:border-blue-500 hover-text-border hover:bg-gradient-to-l hover:from-blue-500 hover:via-blue-600 hover:to-blue-700 cursor-pointer">
           <MdMessage className="inline mr-1" size={20} />
           Message

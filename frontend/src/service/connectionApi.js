@@ -21,10 +21,22 @@ export const connectRequest = async (id) => {
   return response.data;
 };
 
-export const connectResponse = async (id) => {
-  const response = await api.post(`/users/connect/response/${id}`, {
+export const connectResponse = async (id, action) => {
+  const response = await api.post(
+    `/users/connect/response/${id}`,
+    { action: action },
+    {
+      withCredentials: true,
+    }
+  );
+  return response.data;
+};
+
+export const unconnectUser = async (id) => {
+  const response = await api.post(`/users/unconnect/${id}`, {
     withCredentials: true,
   });
+  return response.data;
 };
 
 export const checkConnectionStatus = async (id) => {

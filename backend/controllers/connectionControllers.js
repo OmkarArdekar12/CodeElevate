@@ -37,6 +37,7 @@ export const followUser = async (req, res) => {
 
     return res.json({ message: "Followed successfully" });
   } catch (err) {
+    console.log(err);
     return res
       .status(500)
       .json({ message: "Internal Server Error, Follow failed!", error: err });
@@ -277,11 +278,11 @@ export const checkConnectionStatus = async (req, res) => {
       targetProfile.followers.includes(currUserId) &&
       currProfile.followers.includes(targetUserId);
 
-    const connectStatus = "none";
+    let connectStatus = "none";
     if (isConnected) {
       connectStatus = "connect";
     } else {
-      const connection = Notification.findOne({
+      const connection = await Notification.findOne({
         type: "connect",
         $or: [
           { from: currUserId, to: targetUserId },
