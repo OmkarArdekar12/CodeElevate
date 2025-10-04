@@ -2,6 +2,9 @@ import { Link, useNavigate } from "react-router-dom";
 
 export default function Profile({ profile }) {
   const navigate = useNavigate();
+  if (!profile) {
+    return null;
+  }
   const userId = profile.user._id;
   const userImage = profile.profilePicture || "/images/userImage.png";
   const headLine = profile.headLine ? profile.headLine : "Hello! Everyone";

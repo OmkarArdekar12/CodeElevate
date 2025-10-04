@@ -8,6 +8,7 @@ import {
   updateProfile,
   destroyProfile,
   getUserData,
+  getConnections,
   // createProfile,
 } from "../controllers/profileControllers.js";
 import multer from "multer";
@@ -38,6 +39,9 @@ router.put(
 
 //Delete Profile Route
 router.delete("/:userId", auth, destroyProfile);
+
+//Get Connections Route
+router.get("/:userId/connections", auth, getConnections);
 
 //Get User Data Route
 router.get("/data/:id", getUserData);

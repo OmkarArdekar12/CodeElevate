@@ -23,14 +23,77 @@ const ProfilePage = () => {
   const isOwner = profileId === userId;
 
   const navigate = useNavigate();
-  const [userData, setUserData] = useState({});
-  const [loading, setLoading] = useState(true);
+  const [userData, setUserData] = useState({
+    fullName: "",
+    user: {
+      _id: userId,
+      username: "",
+    },
+    profilePicture: "",
+    backgroundBanner: "",
+    headLine: "",
+    role: "Explorer",
+    domain: "General",
+    tags: ["", "", "", "", ""],
+    about: "",
+    developmentProfiles: {
+      github: "",
+      gitlab: "",
+      portfolio: "",
+    },
+    competitiveProfiles: {
+      leetCode: "",
+      codeforces: "",
+      atCoder: "",
+      codechef: "",
+      geeksforgeeks: "",
+      hackerrank: "",
+    },
+    socials: {
+      linkedin: "",
+      email: "",
+      youtube: "",
+      discord: "",
+      stackoverflow: "",
+      facebook: "",
+      instagram: "",
+      twitterx: "",
+      telegram: "",
+      others: "",
+    },
+    showStats: false,
+    education: {
+      degree: "",
+      cgpa: null,
+      institution: "",
+    },
+    followers: [],
+    following: [],
+  });
+  const [loading, setLoading] = useState(false);
 
   const fetchUserData = async (id) => {
+    setLoading(true);
     try {
-      const profileData = await showProfile(profileId);
-      setUserData(profileData);
-      setLoading(false);
+      const profileData = await showProfile(id);
+      setUserData((prev) => ({
+        ...prev,
+        ...profileData,
+        tags: [...profileData.tags],
+        socials: { ...prev.socials, ...profileData.socials },
+        competitiveProfiles: {
+          ...prev.competitiveProfiles,
+          ...profileData.competitiveProfiles,
+        },
+        developmentProfiles: {
+          ...prev.developmentProfiles,
+          ...profileData.developmentProfiles,
+        },
+        education: {
+          ...prev.education,
+          ...profileData.education,
+        },
+      }));
     } catch (err) {
       console.error("Failed to fetch profile", err);
     } finally {
@@ -68,6 +131,8 @@ const ProfilePage = () => {
           isLoggedIn={isLoggedIn}
           isOwner={isOwner}
           profileUserFullName={userData.fullName}
+          followersCount={userData.followers ? userData.followers.length : 0}
+          followingCount={userData.following ? userData.following.length : 0}
         />
 
         <AboutSection about={userData.about} />

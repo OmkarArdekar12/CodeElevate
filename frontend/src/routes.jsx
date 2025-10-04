@@ -7,6 +7,7 @@ import HomePage from "./pages/HomePage.jsx";
 import Home from "./home/Home.jsx";
 import PostPage from "./posts/PostPage.jsx";
 import ProfilePage from "./profiles/ProfilePage.jsx";
+import ConnectionPage from "./profiles/ConnectionPage.jsx";
 import EditProfilePage from "./profiles/EditProfilePage.jsx";
 import ProfileSettings from "./profiles/ProfileSettings.jsx";
 import NotificationPage from "./notifications/NotificationPage.jsx";
@@ -78,6 +79,10 @@ const router = createBrowserRouter([
           {
             path: "/profiles/:id/settings",
             element: <ProfileSettings />,
+          },
+          {
+            path: "/profiles/:id/connections",
+            element: <ConnectionPage />,
           },
         ],
       },

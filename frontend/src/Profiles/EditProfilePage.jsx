@@ -70,7 +70,7 @@ const EditProfilePage = () => {
     setLoading(true);
     try {
       const profileData = await showProfile(id);
-      console.log(profileData);
+      // console.log(profileData);
       setProfile((prev) => ({
         ...prev,
         ...profileData,

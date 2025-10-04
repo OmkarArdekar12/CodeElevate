@@ -10,6 +10,16 @@ export const showProfile = async (id) => {
   return profile.data;
 };
 
+export const editProfile = async (userId, formData) => {
+  const response = await api.put(`/profiles/${userId}`, formData, {
+    withCredentials: true,
+    headers: {
+      "Content-Type": "multipart/form-data",
+    },
+  });
+  return response.data;
+};
+
 export const getUserData = async (id) => {
   const userData = await api.get(`/profiles/data/${id}`, {
     withCredentials: true,
@@ -17,12 +27,9 @@ export const getUserData = async (id) => {
   return userData.data;
 };
 
-export const editProfile = async (userId, formData) => {
-  const response = await api.put(`/profiles/${userId}`, formData, {
+export const getConnections = async (userId) => {
+  const response = await api.get(`/profiles/${userId}/connections`, {
     withCredentials: true,
-    headers: {
-      "Content-Type": "multipart/form-data",
-    },
   });
   return response.data;
 };

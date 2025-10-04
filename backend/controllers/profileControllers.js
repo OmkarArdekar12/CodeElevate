@@ -1,6 +1,8 @@
 import express from "express";
 import auth from "../middlewares/auth.js";
+import mongoose from "mongoose";
 import Profile from "../models/profile.js";
+import User from "../models/user.js";
 
 //All Profile Controller
 export const getAllProfiles = async (req, res) => {
@@ -133,6 +135,75 @@ export const destroyProfile = async (req, res) => {
     res.json({ message: "Profile deleted" });
   } catch (err) {
     res.status(500).json({ message: "Error deleting profile" });
+  }
+};
+
+//Get Connections Controller
+export const getConnections = async (req, res) => {
+  try {
+    const { userId } = req.params;
+
+    if (!mongoose.Types.ObjectId.isValid(userId)) {
+      return res.status(400).json({ message: "Invalid userID" });
+    }
+
+    const profile = await Profile.findOne({ user: userId })
+      .populate("followers", "username")
+      .populate("following", "username");
+
+    if (!profile) {
+      return res.status(404).json({ message: "User Profile not found" });
+    }
+
+    const followerIds = profile.followers.map((follower) => follower._id);
+    const followingIds = profile.following.map((following) => following._id);
+
+    const mutualConnectionIds = followerIds.filter((followerId) =>
+      followingIds.some((followingId) => followingId.equals(followerId))
+    );
+
+    const getUserDetails = async (userIds) => {
+      const users = await User.find({ _id: { $in: userIds } })
+        .select("username")
+        .lean();
+
+      const profiles = await Profile.find({ user: { $in: userIds } })
+        .select("user fullName profilePicture headLine")
+        .lean();
+
+      return users.map((user) => {
+        const userProfile = profiles.find(
+          (profile) => profile.user.toString() === user._id.toString()
+        );
+
+        return {
+          userId: user._id,
+          username: user.username,
+          fullName: userProfile?.fullName || "",
+          profilePicture: userProfile?.profilePicture || "",
+          headLine: userProfile?.headLine || "",
+        };
+      });
+    };
+
+    const [followers, following, connections] = await Promise.all([
+      getUserDetails(followerIds),
+      getUserDetails(followingIds),
+      getUserDetails(mutualConnectionIds),
+    ]);
+
+    res.status(200).json({
+      connections: {
+        followers,
+        following,
+        connections,
+      },
+    });
+  } catch (err) {
+    res.status(500).json({
+      message: "Internal Server error, failed to fetch connections!",
+      error: err,
+    });
   }
 };
 
