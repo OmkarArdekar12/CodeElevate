@@ -79,7 +79,11 @@ main {
     transform: rotateX(270deg) rotateY(135deg) rotateZ(270deg) scale(1.2);
     filter: drop-shadow(0 0 12px orange);
   }
-  90% {
+  85% {
+    transform: rotateY(25deg) rotateX(50deg) scale(1.2);
+    filter: drop-shadow(0 0 12px orange);
+  }
+  95% {
     transform: rotateX(360deg) rotateY(180deg) rotateZ(360deg) scale(1);
     filter: drop-shadow(0 0 19px orange);
   }
