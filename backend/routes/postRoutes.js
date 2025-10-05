@@ -9,11 +9,15 @@ import {
   likeOrUnlikePost,
 } from "../controllers/postControllers.js";
 import { validatePost, isOwner } from "../middlewares/postValidations.js";
+import multer from "multer";
+import { storage } from "../config/cloudConfig.js";
+
+const upload = multer({ storage });
 
 const router = express.Router();
 
 //Create Post Route
-router.post("/", auth, validatePost, createPost);
+router.post("/", auth, upload.single("image"), validatePost, createPost);
 
 //Get All Post Route
 router.get("/", getAllPosts);
@@ -29,3 +33,5 @@ router.post("/:id/comment", auth, addComment);
 
 //Delete Post Route
 router.delete("/:id", auth, isOwner, deletePost);
+
+export default router;

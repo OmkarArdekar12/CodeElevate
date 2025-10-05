@@ -13,6 +13,7 @@ import ProfileSettings from "./profiles/ProfileSettings.jsx";
 import NotificationPage from "./notifications/NotificationPage.jsx";
 import MessagePage from "./messages/MessagePage.jsx";
 import RankingPage from "./rankings/RankingPage.jsx";
+import CreatePostPage from "./posts/CreatePostPage.jsx";
 import AboutPage from "./about/AboutPage.jsx";
 import NotFound from "./components/NotFound.jsx";
 import ProtectedRoute from "./components/ProtectedRoute.jsx";
@@ -83,6 +84,10 @@ const router = createBrowserRouter([
           {
             path: "/profiles/:id/connections",
             element: <ConnectionPage />,
+          },
+          {
+            path: "/posts/create",
+            element: <CreatePostPage />,
           },
         ],
       },

@@ -5,9 +5,9 @@ import { cloudinary } from "../config/cloudConfig.js";
 //Create Post Controller
 export const createPost = async (req, res) => {
   try {
-    const { title, description, image } = req.body;
+    const { title, description } = req.body;
     const userId = req.user._id;
-    const profile = await Profile.find({ user: userId });
+    const profile = await Profile.findOne({ user: userId });
 
     if (!profile) {
       return res.status(400).json({ message: "User Profile not found" });
@@ -16,11 +16,18 @@ export const createPost = async (req, res) => {
     const profileId = profile._id;
 
     let imageData = null;
-    if (image) {
-      const upload = await cloudinary.uploader.upload(image, {
-        folder: "CodeElevate_Project/posts",
-      });
-      imageData = { publicId: upload.public_id, url: upload.secure_url };
+    if (req.file) {
+      imageData = {
+        publicId: req.file.filename,
+        url: req.file.path,
+      };
+      // const uploadResult = await cloudinary.uploader.upload(req.file.path, {
+      //   folder: "CodeElevate_Project/posts",
+      // });
+      // imageData = {
+      //   publicId: uploadResult.public_id,
+      //   url: uploadResult.secure_url,
+      // };
     }
 
     const post = await Post.create({
@@ -43,7 +50,7 @@ export const createPost = async (req, res) => {
 //Get All Posts Controller
 export const getAllPosts = async (req, res) => {
   try {
-    const posts = (await Post.find())
+    const posts = await Post.find()
       .populate("user", "username")
       .populate("profile", "fullName profilePicture headLine")
       .populate("comments.user", "username")
@@ -115,7 +122,7 @@ export const addComment = async (req, res) => {
     const { id: postId } = req.params;
     const { text } = req.body;
     const userId = req.user._id;
-    const profile = await Profile.find({ user: userId });
+    const profile = await Profile.findOne({ user: userId });
 
     if (!profile) {
       return res.status(400).json({ message: "User Profile not found" });

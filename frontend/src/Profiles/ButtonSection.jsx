@@ -9,6 +9,7 @@ import { FaUserAltSlash } from "react-icons/fa";
 import { FaClockRotateLeft } from "react-icons/fa6";
 import { FaUserPlus, FaUserMinus } from "react-icons/fa";
 import { FaUserClock } from "react-icons/fa6";
+import { IoAddCircle } from "react-icons/io5";
 import {
   checkConnectionStatus,
   connectRequest,
@@ -204,10 +205,10 @@ const ButtonSection = ({
                 className="inline text-black mr-1 group-hover:text-white"
                 size={20}
               />
-              Edit
+              Edit Profile
             </button>
             <button
-              className="mt-1 md:mt-0 group text-black bg-teal-500 hover:bg-teal-700 px-6 py-2 text-xl rounded-2xl flex items-center hover-text-border cursor-pointer border-1"
+              className="mt-1 mr-4 md:mt-0 group text-black bg-teal-500 hover:bg-teal-700 px-6 py-2 text-xl rounded-2xl flex items-center hover-text-border cursor-pointer border-1"
               onClick={() => navigate(`/profiles/${profileUserId}/settings`)}
             >
               <SettingsIcon
@@ -215,6 +216,20 @@ const ButtonSection = ({
                 size={20}
               />
               Settings
+            </button>
+            <button
+              className="mt-1 md:mt-0 group text-white px-6 py-2 text-xl rounded-2xl flex items-center hover-text-border cursor-pointer border-1 hover:border-2"
+              onClick={() =>
+                navigate(`/posts/create`, {
+                  state: { from: window.location.pathname },
+                })
+              }
+            >
+              <IoAddCircle
+                className="inline text-white mr-1 group-hover:border-1 rounded-full"
+                size={25}
+              />
+              Create a Post
             </button>
             {/* <button
               className="group text-black bg-teal-500 hover:bg-teal-700 px-6 py-2 text-xl rounded-2xl flex items-center hover-text-border cursor-pointer border-1"
