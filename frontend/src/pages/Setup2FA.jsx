@@ -10,7 +10,11 @@ const Setup2FA = () => {
   return (
     <div className="w-[100%] h-[100%] text-white bg-slate-900 flex flex-col justify-center items-center px-5 py-9">
       <div className="logo-text-container inline-flex justify-center items-center mb-1">
-        <img src="/images/logo.png" alt="CodeElevate" className="logo h-10" />
+        <img
+          src="/images/CodeElevateLogo.png"
+          alt="CodeElevate"
+          className="logo h-10"
+        />
         <h1 className="logo-text ml-1 text-white text-3xl">CodeElevate</h1>
       </div>
       <TwoFASetup onSetupComplete={handleSetupComplete} />

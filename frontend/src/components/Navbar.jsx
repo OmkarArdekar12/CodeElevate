@@ -42,7 +42,7 @@ export default function Navbar({ isLoggedIn, userData }) {
                 <img
                   src="/images/CodeElevateLogo.png"
                   alt="CodeElevate"
-                  className="logo h-18 mr-2"
+                  className="logo h-18 mr-1"
                 />
                 <h1 className="LogoText logo-text ml-1 text-white text-3xl hover-logo-text-border">
                   CodeElevate
