@@ -45,3 +45,4 @@ dist-ssr
 .json
 .js
 /sampleData.js
+/testingData.js
