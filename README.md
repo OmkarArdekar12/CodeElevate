@@ -1,1 +1,1 @@
-# CodeElevate - Stay Updated and Connected
+# CodeElevate
