@@ -47,7 +47,7 @@ const ConnectRequestNotification = ({ notification, fetchNotifications }) => {
   };
 
   return (
-    <div className="bg-[#03393f] hover:bg-[#033954] w-[95%] flex flex-col flex-wrap justify-center px-5 py-2 rounded-lg my-2 group">
+    <div className="bg-[#03393f] hover:bg-[#08505a] w-[95%] flex flex-col flex-wrap justify-center px-5 py-2 rounded-lg my-2 group">
       <div className="w-ful flex">
         <Link
           to={`/profiles/${senderId}`}
@@ -62,23 +62,23 @@ const ConnectRequestNotification = ({ notification, fetchNotifications }) => {
             alt="UserImage"
             className="w-14 h-14 rounded-full"
           />
-          <span className="text-sm text-gray-900 font-bold group-hover:underline">
+          <span className="text-sm text-gray-300 font-bold group-hover:underline">
             @{senderData.username}
           </span>
         </Link>
-        <div className="w-full text-md md:text-xl italic flex flex-col justify-center pl-2 md:pl-5 mr-2 group-hover:not-italic">
+        <div className="w-full text-gray-300 text-md md:text-xl italic flex flex-col justify-center pl-2 md:pl-5 mr-2 group-hover:not-italic">
           <span>{msg}</span>
           <div className="flex flex-wrap items-center not-italic text-sm p-1">
             <button
               onClick={() => handleConnection("accept")}
-              className="mt-1 flex items-center bg-green-600 hover-text-border hover:bg-green-700 px-4 py-2 rounded-full text-md mr-1"
+              className="mt-1 font-bold flex items-center bg-green-600 hover-text-border hover:bg-green-700 px-4 py-2 rounded-full text-md mr-1"
             >
               <SiTicktick className="mr-1 inline w-4 h-4" />
               Accept
             </button>
             <button
               onClick={() => handleConnection("reject")}
-              className="mt-1 flex items-center bg-gray-600 hover-text-border hover:bg-gray-700 px-4 py-2 rounded-full text-md"
+              className="mt-1 font-bold flex items-center bg-teal-700 hover-text-border hover:bg-teal-800 px-4 py-2 rounded-full text-md"
             >
               <FaRegTimesCircle className="mr-1 inline w-4 h-4" />
               Reject

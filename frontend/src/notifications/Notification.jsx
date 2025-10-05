@@ -46,7 +46,7 @@ const Notification = ({ notification, fetchNotifications }) => {
   };
 
   return (
-    <div className="bg-[#03393f] hover:bg-[#033954] w-[95%] flex flex-col flex-wrap justify-center px-5 py-2 rounded-lg my-2 group">
+    <div className="bg-[#03393f] hover:bg-[#08505a] w-[95%] flex flex-col flex-wrap justify-center px-5 py-2 rounded-lg my-2 group">
       <div className="w-ful flex">
         <Link
           to={`/profiles/${senderId}`}
@@ -61,16 +61,16 @@ const Notification = ({ notification, fetchNotifications }) => {
             alt="UserImage"
             className="w-14 h-14 rounded-full"
           />
-          <span className="text-sm text-gray-900 font-bold group-hover:underline">
+          <span className="text-sm text-gray-300 font-bold group-hover:underline">
             @{senderData.username}
           </span>
         </Link>
-        <div className="w-[90%] text-md md:text-xl italic flex items-center pl-2 md:pl-5 mr-2 group-hover:not-italic">
+        <div className="w-[90%] text-gray-300 text-md md:text-xl italic flex items-center pl-2 md:pl-5 mr-2 group-hover:not-italic">
           {msg}
         </div>
         <button
           onClick={handleDeleteNotification}
-          className="hidden text-2xl text-red-600 cursor-pointer ml-auto group-hover:block"
+          className="hidden text-2xl text-red-500 cursor-pointer ml-auto group-hover:block"
         >
           <MdDeleteForever />
         </button>
