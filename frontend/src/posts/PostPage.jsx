@@ -2,15 +2,22 @@ import { useState, useEffect } from "react";
 import PostsList from "./PostsList.jsx";
 import Loading from "../components/Loading.jsx";
 import { getAllPosts } from "../service/postApi.js";
+import { getUserData } from "../service/profileApi.js";
+import { useSession } from "../context/SessionContext.jsx";
 
 export default function PostPage() {
   const [allPosts, setAllPosts] = useState([]);
+  const [currUserData, setCurrUserData] = useState({});
   const [loading, setLoading] = useState(false);
+  const { isLoggedIn, user } = useSession();
+  const userId = user && user.userId ? user.userId : "";
 
-  const fetchAllPosts = async () => {
+  const fetchData = async () => {
     setLoading(true);
     try {
-      const posts = await getAllPosts();
+      const user = await getUserData(userId); //fetch currUser data
+      setCurrUserData(user);
+      const posts = await getAllPosts(); //fetch allPosts data
       setAllPosts(posts);
     } catch (err) {
       console.log("Error in fetching posts");
@@ -20,7 +27,7 @@ export default function PostPage() {
   };
 
   useEffect(() => {
-    fetchAllPosts();
+    fetchData();
   }, []);
 
   if (loading) {
@@ -32,7 +39,13 @@ export default function PostPage() {
       <div className="w-full flex">
         <h1 className="text-3xl hover-text-border text-gray-100">All Posts</h1>
       </div>
-      <PostsList allPosts={allPosts} setAllPosts={setAllPosts} />
+      <PostsList
+        allPosts={allPosts}
+        setAllPosts={setAllPosts}
+        currUserData={currUserData}
+        userId={userId}
+        isLoggedIn={isLoggedIn}
+      />
     </div>
   );
 }

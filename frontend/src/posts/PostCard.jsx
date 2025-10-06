@@ -7,12 +7,17 @@ import { MdOutlineMessage } from "react-icons/md";
 import { useNavigate } from "react-router-dom";
 import Comment from "./Comment.jsx";
 import { GrSend } from "react-icons/gr";
-import { useSession } from "../context/SessionContext.jsx";
 import { addComment, likeOrUnlikePost } from "../service/postApi.js";
 import Loading2 from "../components/Loading2.jsx";
 import toast from "react-hot-toast";
 
-const PostCard = ({ postData, setAllPosts }) => {
+const PostCard = ({
+  postData,
+  onPostUpdate,
+  currUserData,
+  userId,
+  isLoggedIn,
+}) => {
   if (!postData) {
     return null;
   }
@@ -21,8 +26,6 @@ const PostCard = ({ postData, setAllPosts }) => {
   const [commentLoading, setCommentLoading] = useState(false);
   const [comment, setComment] = useState("");
   const navigate = useNavigate();
-  const { isLoggedIn, user } = useSession();
-  const userId = user && user.userId ? user.userId : "";
 
   const handleCommentToggle = () => {
     setShowCommentBox(!showCommentBox);
@@ -37,6 +40,13 @@ const PostCard = ({ postData, setAllPosts }) => {
       const postId = postData._id;
       const response = await likeOrUnlikePost(postId);
       toast.success(response.message);
+      const updatedPost = {
+        ...postData,
+        likes: isLiked
+          ? postData.likes.filter((id) => id !== userId) //unlike
+          : [...postData.likes, userId], //like
+      };
+      onPostUpdate(updatedPost);
       // setAllPosts((prevPosts) =>
       //   prevPosts.map((post) =>
       //     post._id === postId
@@ -83,6 +93,28 @@ const PostCard = ({ postData, setAllPosts }) => {
         toast.success(response.message);
         setComment("");
         setShowCommentBox(false);
+        const updatedPost = {
+          ...postData,
+          comments: [
+            ...postData.comments,
+            {
+              text: comment,
+              user: {
+                _id: currUserData.userId,
+                username: currUserData.username,
+              },
+              profile: {
+                _id: currUserData.profileId,
+                fullName: currUserData.fullName,
+                profilePicture: currUserData.profilePicture,
+                headLine: currUserData.headLine,
+              },
+              createdAt: new Date().toISOString(),
+              updatedAt: new Date().toISOString(),
+            },
+          ],
+        };
+        onPostUpdate(updatedPost);
         // setAllPosts((prevPosts) =>
         //   prevPosts.map((post) =>
         //     post._id === postId

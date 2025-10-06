@@ -219,6 +219,8 @@ export const getUserData = async (req, res) => {
       return res.status(404).json({ message: "User Profile not found" });
     }
     const userData = {
+      userId: userId,
+      profileId: profile._id,
       fullName: profile.fullName,
       username: profile.user.username,
       headLine: profile.headLine,
