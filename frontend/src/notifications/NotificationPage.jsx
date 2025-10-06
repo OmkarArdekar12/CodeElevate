@@ -29,9 +29,11 @@ const NotificationPage = () => {
   }
 
   return (
-    <div className="w-full flex flex-col items-center justify-center text-white py-4 px-1 md:px-5 mb-5">
+    <div className="w-full flex flex-col items-center justify-center text-white py-4 px-2 md:px-10 mb-5">
       <div className="flex w-full">
-        <h1 className="text-3xl hover-text-border">All Notifications</h1>
+        <h1 className="text-3xl hover-text-border text-gray-100">
+          All Notifications
+        </h1>
       </div>
       <div className="w-full flex flex-col items-center justify-center pt-5 md:px-6">
         {allNotifications && allNotifications.length > 0 ? (
