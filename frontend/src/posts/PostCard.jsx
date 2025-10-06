@@ -12,7 +12,7 @@ import { addComment, likeOrUnlikePost } from "../service/postApi.js";
 import Loading2 from "../components/Loading2.jsx";
 import toast from "react-hot-toast";
 
-const PostCard = ({ postData }) => {
+const PostCard = ({ postData, setAllPosts }) => {
   if (!postData) {
     return null;
   }
