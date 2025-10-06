@@ -91,8 +91,8 @@ const PostCard = ({ postData, updatePostData }) => {
   const isLiked = postLikes.includes(userId);
 
   return (
-    <div className="w-[25rem] rounded-2xl bg-gray-100 hover:scale-[1.02] transition-transform duration-300">
-      <div className="w-full flex items-center pt-4 pb-1 px-2 border-b border-slate-300">
+    <div className="w-[25rem] rounded-2xl bg-gray-100 hover:scale-[1.02] transition-transform duration-300 my-1">
+      <div className="w-full flex items-center pt-4 pb-2 px-2 border-b border-slate-300">
         <img
           src={authorImage || "/images/defaultUserImage.png"}
           alt="authorProfileImage"
@@ -118,10 +118,12 @@ const PostCard = ({ postData, updatePostData }) => {
 
       <div className="pt-2 px-4 flex flex-col justify-center">
         {postTitle && (
-          <h2 className="text-xl font-bold text-gray-900">{postTitle}</h2>
+          <h2 className="text-xl font-bold text-gray-900 pb-1">{postTitle}</h2>
         )}
         {postDescription && (
-          <p className="mt-2 text-gray-800 leading-none">{postDescription}</p>
+          <p className="mt-2 pb-2 text-gray-800 leading-none">
+            {postDescription}
+          </p>
         )}
         {postImage && (
           <img
