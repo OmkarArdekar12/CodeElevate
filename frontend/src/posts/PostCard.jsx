@@ -1,17 +1,3 @@
-// import React from "react";
-
-// const PostCard = () => {
-//   return (
-//     <div className="flex flex-col justify-center border-2">
-//       <div>Title</div>
-//       <div>Description</div>
-//       <div>Image</div>
-//     </div>
-//   );
-// };
-
-// export default PostCard;
-
 import React, { useState } from "react";
 import { FaHeart, FaComment } from "react-icons/fa";
 import { BiLike } from "react-icons/bi";
@@ -20,97 +6,56 @@ import { MdMessage } from "react-icons/md";
 import { MdOutlineMessage } from "react-icons/md";
 import Comment from "./Comment.jsx";
 import { GrSend } from "react-icons/gr";
+import { useSession } from "../context/SessionContext.jsx";
+import { addComment, likeOrUnlikePost } from "../service/postApi.js";
+import Loading2 from "../components/Loading2.jsx";
+import toast from "react-hot-toast";
 
-const PostCard = () => {
-  const [postData, setPostData] = useState({
-    image: {
-      publicId: "CodeElevate_Project/posts/xiymzr7ipp8djehyizzi",
-      url: "https://res.cloudinary.com/dxqftuwcr/image/upload/v1759675568/CodeElevate_Project/posts/xiymzr7ipp8djehyizzi.png",
-    },
-    _id: "68e284b1baecbf2a5c3cb65e",
-    user: {
-      _id: "68dc2be8a834836f4b62bb52",
-      username: "alice",
-    },
-    profile: {
-      _id: "68dc2be8a834836f4b62bb54",
-      fullName: "alice",
-      profilePicture:
-        "https://res.cloudinary.com/dxqftuwcr/image/upload/v1759259773/CodeElevate_Project/pfqgmtss1k1ssizvpppn.png",
-      headLine: "Coding is Passion",
-    },
-    title: "Working",
-    description: "It is very nice day",
-    likes: ["68dc2be8a834836f4b62bb52"],
-    comments: [
-      {
-        user: {
-          _id: "68dc2be8a834836f4b62bb52",
-          username: "alice",
-        },
-        profile: {
-          _id: "68dc2be8a834836f4b62bb54",
-          fullName: "alice",
-          profilePicture:
-            "https://res.cloudinary.com/dxqftuwcr/image/upload/v1759259773/CodeElevate_Project/pfqgmtss1k1ssizvpppn.png",
-          headLine: "Coding is Passion",
-        },
-        text: "Great! Very nice!",
-        _id: "68e3d8697987f537c164c6e3",
-        createdAt: "2025-10-06T14:55:37.142Z",
-        updatedAt: "2025-10-06T14:55:37.142Z",
-      },
-      {
-        user: {
-          _id: "68dc2be8a834836f4b62bb52",
-          username: "alice",
-        },
-        profile: {
-          _id: "68dc2be8a834836f4b62bb54",
-          fullName: "alice",
-          profilePicture:
-            "https://res.cloudinary.com/dxqftuwcr/image/upload/v1759259773/CodeElevate_Project/pfqgmtss1k1ssizvpppn.png",
-          headLine: "Coding is Passion",
-        },
-        text: "Great! Very nice!",
-        _id: "68e3d8697987f537c164c6e3",
-        createdAt: "2025-10-06T14:55:37.142Z",
-        updatedAt: "2025-10-06T14:55:37.142Z",
-      },
-      {
-        user: {
-          _id: "68dc2be8a834836f4b62bb52",
-          username: "alice",
-        },
-        profile: {
-          _id: "68dc2be8a834836f4b62bb54",
-          fullName: "alice",
-          profilePicture:
-            "https://res.cloudinary.com/dxqftuwcr/image/upload/v1759259773/CodeElevate_Project/pfqgmtss1k1ssizvpppn.png",
-          headLine: "Coding is Passion",
-        },
-        text: "Great! Very nice!",
-        _id: "68e3d8697987f537c164c6e3",
-        createdAt: "2025-10-06T14:55:37.142Z",
-        updatedAt: "2025-10-06T14:55:37.142Z",
-      },
-    ],
-    createdAt: "2025-10-05T14:46:09.043Z",
-    updatedAt: "2025-10-06T14:55:37.142Z",
-    __v: 4,
-  });
+const PostCard = ({ postData, updatePostData }) => {
+  if (!postData) {
+    return null;
+  }
 
   const [showCommentBox, setShowCommentBox] = useState(false);
+  const [commentLoading, setCommentLoading] = useState(false);
   const [comment, setComment] = useState("");
+  const { isLoggedIn, user } = useSession();
+  const userId = user && user.userId ? user.userId : "";
 
   const handleCommentToggle = () => {
     setShowCommentBox(!showCommentBox);
   };
 
-  const handleCommentSubmit = () => {
+  const handleLikeUnlike = async () => {
+    try {
+      const postId = postData._id;
+      const response = await likeOrUnlikePost(postId);
+      toast.success(response.message);
+      if (updatePostData) {
+        updatePostData();
+      }
+    } catch (err) {
+      console.log("Error in Like/Unlike post");
+    }
+  };
+
+  const handleCommentSubmit = async () => {
     if (comment.trim()) {
-      setComment("");
-      setShowCommentBox(false);
+      setCommentLoading(true);
+      try {
+        const postId = postData._id;
+        const response = await addComment(postId, { text: comment });
+        toast.success(response.message);
+        setComment("");
+        setShowCommentBox(false);
+        if (updatePostData) {
+          updatePostData();
+        }
+      } catch (err) {
+        console.log("Error in commenting on post");
+      } finally {
+        setCommentLoading(false);
+      }
     }
   };
 
@@ -132,7 +77,7 @@ const PostCard = () => {
   const postDescription = postData.description ? postData.description : "";
   const postImage =
     postData.image && postData.image.url ? postData.image.url : "";
-  const postUpdatedAtTime = postData.updated
+  const postUpdatedAtTime = postData.updatedAt
     ? new Date(postData.updatedAt).toLocaleString("en-GB", {
         day: "2-digit",
         month: "2-digit",
@@ -143,6 +88,7 @@ const PostCard = () => {
     : "";
   const postLikes = postData.likes ? postData.likes : [];
   const postComments = postData.comments ? postData.comments : [];
+  const isLiked = postLikes.includes(userId);
 
   return (
     <div className="w-[25rem] rounded-2xl bg-gray-100 hover:scale-[1.02] transition-transform duration-300">
@@ -170,7 +116,6 @@ const PostCard = () => {
         </div>
       </div>
 
-      {/* Post Content */}
       <div className="pt-2 px-4 flex flex-col justify-center">
         {postTitle && (
           <h2 className="text-xl font-bold text-gray-900">{postTitle}</h2>
@@ -188,9 +133,16 @@ const PostCard = () => {
       </div>
 
       <div className="flex items-center justify-between px-4 py-3 border-t border-gray-300">
-        <div className="flex flex-col items-center cursor-pointer text-gray-600 hover:text-red-600">
+        <div
+          onClick={handleLikeUnlike}
+          className="flex flex-col items-center cursor-pointer text-gray-600 hover:text-red-600"
+        >
           <div className="flex items-center leading-none">
-            <BiLike size={20} className="mr-1" />
+            {isLiked ? (
+              <BiSolidLike size={20} className="mr-1 text-red-500" />
+            ) : (
+              <BiLike size={20} className="mr-1" />
+            )}
             {postLikes.length > 0 && <span>{postLikes.length}</span>}
           </div>
           <p className="leading-none">Like</p>
@@ -225,10 +177,15 @@ const PostCard = () => {
           ></textarea>
           <div className="flex justify-end mt-2">
             <button
-              className="flex items-center bg-blue-600 text-white px-4 py-1 rounded-xl hover:bg-blue-600 transition-colors cursor-pointer"
+              disabled={commentLoading}
+              className={`flex items-center text-white px-4 py-1 rounded-xl transition-colors ${
+                commentLoading
+                  ? "bg-gray-500 cursor-not-allowed"
+                  : "bg-blue-500 hover:bg-blue-600 cursor-pointer"
+              }`}
               onClick={handleCommentSubmit}
             >
-              Comment
+              {commentLoading ? <Loading2 text="Commenting..." /> : "Comment"}
               <GrSend className="ml-1 inline" />
             </button>
           </div>
