@@ -19,14 +19,14 @@ export const getUserPosts = async (id) => {
 };
 
 export const likeOrUnlikePost = async (id) => {
-  const response = await api.put(`/posts/${id}/like`, {
+  const response = await api.patch(`/posts/${id}/like`, {
     withCredentials: true,
   });
   return response.data;
 };
 
 export const addComment = async (id, comment) => {
-  const response = await api.post(`/posts/${id}/comment`, comment, {
+  const response = await api.put(`/posts/${id}/comment`, comment, {
     withCredentials: true,
   });
   return response.data;

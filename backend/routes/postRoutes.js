@@ -26,10 +26,10 @@ router.get("/", getAllPosts);
 router.get("/:id", getUserPosts);
 
 //Like/Unlike Post Route
-router.put("/:id/like", auth, likeOrUnlikePost);
+router.patch("/:id/like", auth, likeOrUnlikePost);
 
 //Comment Post Route
-router.post("/:id/comment", auth, addComment);
+router.put("/:id/comment", auth, addComment);
 
 //Delete Post Route
 router.delete("/:id", auth, isOwner, deletePost);

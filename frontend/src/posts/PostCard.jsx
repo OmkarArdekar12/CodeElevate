@@ -4,6 +4,7 @@ import { BiLike } from "react-icons/bi";
 import { BiSolidLike } from "react-icons/bi";
 import { MdMessage } from "react-icons/md";
 import { MdOutlineMessage } from "react-icons/md";
+import { useNavigate } from "react-router-dom";
 import Comment from "./Comment.jsx";
 import { GrSend } from "react-icons/gr";
 import { useSession } from "../context/SessionContext.jsx";
@@ -19,6 +20,7 @@ const PostCard = ({ postData, updatePostData }) => {
   const [showCommentBox, setShowCommentBox] = useState(false);
   const [commentLoading, setCommentLoading] = useState(false);
   const [comment, setComment] = useState("");
+  const navigate = useNavigate();
   const { isLoggedIn, user } = useSession();
   const userId = user && user.userId ? user.userId : "";
 
@@ -27,6 +29,10 @@ const PostCard = ({ postData, updatePostData }) => {
   };
 
   const handleLikeUnlike = async () => {
+    if (!isLoggedIn) {
+      toast.error("You need to logged-in to access that");
+      return;
+    }
     try {
       const postId = postData._id;
       const response = await likeOrUnlikePost(postId);
@@ -40,6 +46,11 @@ const PostCard = ({ postData, updatePostData }) => {
   };
 
   const handleCommentSubmit = async () => {
+    if (!isLoggedIn) {
+      toast.error("You need to logged-in to access that");
+      navigate("/login");
+      return;
+    }
     if (comment.trim()) {
       setCommentLoading(true);
       try {
