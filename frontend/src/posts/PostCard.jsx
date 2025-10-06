@@ -182,10 +182,17 @@ const PostCard = ({
   const postLikes = postData.likes ? postData.likes : [];
   const postComments = postData.comments ? postData.comments : [];
   const isLiked = postLikes.includes(userId);
+  const authorUserId =
+    postData.user && postData.user._id ? postData.user._id : "";
 
   return (
     <div className="w-[25rem] rounded-2xl bg-gray-100 hover:scale-[1.02] transition-transform duration-300 my-1">
-      <div className="w-full flex items-center pt-4 pb-2 px-2 border-b border-slate-300">
+      <div
+        onClick={() =>
+          navigate(authorUserId ? `/profiles/${authorUserId}` : "/posts")
+        }
+        className="w-full flex items-center pt-4 pb-2 px-2 border-b border-slate-300 cursor-pointer"
+      >
         <img
           src={authorImage || "/images/defaultUserImage.png"}
           alt="authorProfileImage"

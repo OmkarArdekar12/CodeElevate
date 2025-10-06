@@ -1,9 +1,11 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 
 const Comment = ({ comment }) => {
   if (!comment) {
     return null;
   }
+  const navigate = useNavigate();
   const profileUserId =
     comment.user && comment.user._id ? comment.user._id : "";
   const username =
@@ -20,7 +22,10 @@ const Comment = ({ comment }) => {
     : "";
   return (
     <div className="w-full flex flex-col mb-3 pb-2">
-      <div className="w-full flex">
+      <div
+        onClick={() => navigate(`/profiles/${profileUserId}`)}
+        className="w-full flex cursor-pointer"
+      >
         <img
           src={profilePicture || "/images/defaultUserImage.png"}
           alt="userImage"
