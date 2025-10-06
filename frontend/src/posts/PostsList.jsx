@@ -2,9 +2,9 @@ import React, { useState, useEffect } from "react";
 import PostCard from "./PostCard";
 import { motion } from "framer-motion";
 
-const PostsList = ({ allPosts, fetchAllPosts }) => {
+const PostsList = ({ allPosts, setAllPosts }) => {
   return (
-    <div className="w-full flex flex-wrap gap-4 items-center justify-around pt-5 md:px-6 pb-5">
+    <div className="w-full flex flex-wrap gap-1 items-center justify-around pt-5 md:px-6 pb-5">
       {allPosts && allPosts.length > 0 ? (
         allPosts
           .slice()
@@ -23,7 +23,7 @@ const PostsList = ({ allPosts, fetchAllPosts }) => {
               }}
               className="inline-flex justify-center"
             >
-              <PostCard postData={post} />
+              <PostCard postData={post} setAllPosts={setAllPosts} />
             </motion.div>
           ))
       ) : (

@@ -12,7 +12,7 @@ import { addComment, likeOrUnlikePost } from "../service/postApi.js";
 import Loading2 from "../components/Loading2.jsx";
 import toast from "react-hot-toast";
 
-const PostCard = ({ postData, updatePostData }) => {
+const PostCard = ({ postData, setAllPosts }) => {
   if (!postData) {
     return null;
   }
@@ -37,9 +37,33 @@ const PostCard = ({ postData, updatePostData }) => {
       const postId = postData._id;
       const response = await likeOrUnlikePost(postId);
       toast.success(response.message);
-      if (updatePostData) {
-        updatePostData();
-      }
+      // setAllPosts((prevPosts) =>
+      //   prevPosts.map((post) =>
+      //     post._id === postId
+      //       ? {
+      //           ...post,
+      //           likes: post.likes.includes(user.userId)
+      //             ? post.likes.filter((id) => id !== user.userId) //unlike
+      //             : [...post.likes, user.userId], //like
+      //         }
+      //       : post
+      //   )
+      // );
+      // setAllPosts(
+      //   allPosts.map((post) =>
+      //     post._id === postData._id
+      //       ? {
+      //           ...post,
+      //           likes: post.likes.includes(userId)
+      //             ? post.likes.filter((id) => id !== userId) //unlike
+      //             : [...post.likes, userId], //like
+      //         }
+      //       : post
+      //   )
+      // );
+      // if (updatePostData) { //fetchAllPosts - refresh
+      //   updatePostData();
+      // }
     } catch (err) {
       console.log("Error in Like/Unlike post");
     }
@@ -59,9 +83,35 @@ const PostCard = ({ postData, updatePostData }) => {
         toast.success(response.message);
         setComment("");
         setShowCommentBox(false);
-        if (updatePostData) {
-          updatePostData();
-        }
+        // setAllPosts((prevPosts) =>
+        //   prevPosts.map((post) =>
+        //     post._id === postId
+        //       ? {
+        //           ...post,
+        //           comments: [
+        //             ...post.comments,
+        //             { text: comment, user: user, profile: user.profile },
+        //           ],
+        //         }
+        //       : post
+        //   )
+        // );
+        // setAllPosts(
+        //   allPosts.map((post) =>
+        //     post._id === postData._id
+        //       ? {
+        //           ...post,
+        //           comments: [
+        //             ...post.comments,
+        //             { text: comment, user, profile: user.profile },
+        //           ],
+        //         }
+        //       : post
+        //   )
+        // );
+        // if (updatePostData) { //fetchAllPosts - refresh/reload
+        //   updatePostData();
+        // }
       } catch (err) {
         console.log("Error in commenting on post");
       } finally {

@@ -11,7 +11,6 @@ export default function PostPage() {
     setLoading(true);
     try {
       const posts = await getAllPosts();
-      console.log(posts);
       setAllPosts(posts);
     } catch (err) {
       console.log("Error in fetching posts");
@@ -33,7 +32,7 @@ export default function PostPage() {
       <div className="w-full flex">
         <h1 className="text-3xl hover-text-border text-gray-100">All Posts</h1>
       </div>
-      <PostsList allPosts={allPosts} fetchAllPosts={fetchAllPosts} />
+      <PostsList allPosts={allPosts} setAllPosts={setAllPosts} />
     </div>
   );
 }
