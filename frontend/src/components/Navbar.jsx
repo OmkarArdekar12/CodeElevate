@@ -55,14 +55,14 @@ export default function Navbar({ isLoggedIn, userData }) {
               <div className="hidden lg:flex items-center space-x-4">
                 <Link
                   to="/"
-                  className="flex flex-col items-center text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-md font-medium transition duration-150"
+                  className="flex flex-col items-center text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-md font-medium transition duration-150 hover:font-bold"
                 >
                   <HomeIcon className="text-2xl" />
                   Home
                 </Link>
                 <Link
                   to="/posts"
-                  className="flex flex-col items-center text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-md font-medium transition duration-150"
+                  className="flex flex-col items-center text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-md font-medium transition duration-150 hover:font-bold"
                 >
                   <PostsIcon className="text-xl" />
                   Posts
@@ -70,7 +70,7 @@ export default function Navbar({ isLoggedIn, userData }) {
                 {isLoggedIn && (
                   <Link
                     to="/notifications"
-                    className="flex flex-col items-center text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-md font-medium transition duration-150"
+                    className="flex flex-col items-center text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-md font-medium transition duration-150 hover:font-bold"
                   >
                     <NotificationsIcon className="text-xl" />
                     Notifications
@@ -79,7 +79,7 @@ export default function Navbar({ isLoggedIn, userData }) {
                 {isLoggedIn && (
                   <Link
                     to="/messages"
-                    className="flex flex-col items-center text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-md font-medium transition duration-150"
+                    className="flex flex-col items-center text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-md font-medium transition duration-150 hover:font-bold"
                   >
                     <MessagesIcon className="text-xl" />
                     Messages
@@ -87,14 +87,14 @@ export default function Navbar({ isLoggedIn, userData }) {
                 )}
                 <Link
                   to="/rankings"
-                  className="flex flex-col items-center text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-md font-medium transition duration-150"
+                  className="flex flex-col items-center text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-md font-medium transition duration-150 hover:font-bold"
                 >
                   <RankingsIcon className="text-xl" />
                   Rankings
                 </Link>
                 <Link
                   to="/about"
-                  className="flex flex-col items-center text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-md font-medium transition duration-150"
+                  className="flex flex-col items-center text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-md font-medium transition duration-150 hover:font-bold"
                 >
                   <AboutIcon className="text-xl" />
                   About
@@ -127,7 +127,7 @@ export default function Navbar({ isLoggedIn, userData }) {
                     className="flex items-center text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-md font-medium transition duration-150"
                   >
                     <div className="hidden md:block">
-                      <button className="flex items-center text-white bg-green-700 hover:bg-green-600 p-2 rounded-md cursor-pointer">
+                      <button className="flex items-center text-white bg-green-700 hover:bg-green-600 p-2 rounded-md cursor-pointer hover-text-border">
                         <LoginIcon className="inline mr-2" />
                         Login / SignUp
                       </button>
@@ -191,7 +191,7 @@ export default function Navbar({ isLoggedIn, userData }) {
                       ? `/profiles/${userData.userId}`
                       : "/"
                   }
-                  className="flex items-center px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-700 transition duration-150 md:hidden"
+                  className="flex items-center px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-700 transition duration-150 md:hidden hover:font-semibold"
                 >
                   <UserIcon className="mr-2" />
                   Profile
@@ -199,7 +199,7 @@ export default function Navbar({ isLoggedIn, userData }) {
               ) : (
                 <Link
                   to="/login"
-                  className="flex items-center px-3 py-2 rounded-md text-base font-medium text-green-500 hover:underline hover:bg-gray-700 transition duration-150 md:hidden"
+                  className="flex items-center px-3 py-2 rounded-md text-base font-medium text-green-500 hover:underline hover:bg-gray-700 transition duration-150 md:hidden hover:font-extrabold"
                 >
                   <LoginIcon className="inline mr-2" />
                   Login / Signup
@@ -207,14 +207,14 @@ export default function Navbar({ isLoggedIn, userData }) {
               )}
               <Link
                 to="/"
-                className="flex items-center px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-700 transition duration-150"
+                className="flex items-center px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-700 transition duration-150 hover:font-bold"
               >
                 <HomeIcon className="mr-2" />
                 Home
               </Link>
               <Link
                 to="/posts"
-                className="flex items-center px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-700 transition duration-150"
+                className="flex items-center px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-700 transition duration-150 hover:font-bold"
               >
                 <PostsIcon className="mr-2" />
                 Posts
@@ -222,7 +222,7 @@ export default function Navbar({ isLoggedIn, userData }) {
               {isLoggedIn && (
                 <Link
                   to="/notifications"
-                  className="flex items-center px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-700 transition duration-150"
+                  className="flex items-center px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-700 transition duration-150 hover:font-bold"
                 >
                   <NotificationsIcon className="mr-2" />
                   Notifications
@@ -231,7 +231,7 @@ export default function Navbar({ isLoggedIn, userData }) {
               {isLoggedIn && (
                 <Link
                   to="/messages"
-                  className="flex items-center px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-700 transition duration-150"
+                  className="flex items-center px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-700 transition duration-150 hover:font-bold"
                 >
                   <MessagesIcon className="mr-2" />
                   Messages
@@ -239,14 +239,14 @@ export default function Navbar({ isLoggedIn, userData }) {
               )}
               <Link
                 to="/rankings"
-                className="flex items-center px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-700 transition duration-150"
+                className="flex items-center px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-700 transition duration-150 hover:font-bold"
               >
                 <RankingsIcon className="mr-2" />
                 Rankings
               </Link>
               <Link
                 to="/about"
-                className="flex items-center px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-700 transition duration-150"
+                className="flex items-center px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-700 transition duration-150 hover:font-bold"
               >
                 <AboutIcon className="mr-2" />
                 About
