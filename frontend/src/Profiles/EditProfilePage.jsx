@@ -12,7 +12,10 @@ const EditProfilePage = () => {
   const { user } = useSession();
 
   if (user.userId !== id) {
-    return <Navigate to={`/profiles/${id}`} replace />;
+    toast.error("Access denied. You can only edit your own profile.", {
+      id: "Invalid user to update profile",
+    });
+    return <Navigate to={`/`} replace />;
   }
 
   const [profile, setProfile] = useState({
@@ -230,12 +233,12 @@ const EditProfilePage = () => {
       const res = await editProfile(id, formData);
       navigate(`/profiles/${id}`);
       toast.success("Profile updated successfully.", {
-        id: "profile updated success",
+        id: "profile update success",
       });
     } catch (err) {
       console.error("Failed to update profile", err);
-      toast.error("Profile updated failed!", {
-        id: "profile updated failed",
+      toast.error("Failed to update profile.", {
+        id: "profile update failed",
       });
     } finally {
       setSaving(false);

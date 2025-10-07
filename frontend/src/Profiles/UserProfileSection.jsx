@@ -26,13 +26,15 @@ const UserProfileSection = ({
             className="w-39 h-39 flex items-center justify-center md:w-55 md:h-55 rounded-full border-3 border-white object-cover"
           />
           {username && (
-            <h3 className="text-white text-xl italic mt-3">@{username}</h3>
+            <h3 className="text-white text-md md:text-xl italic mt-3">
+              @{username}
+            </h3>
           )}
         </div>
-        <div className="flex flex-col justify-center text-2xl items-center md:items-start mt-10 md:ml-4 text-white md:text-5xl font-semibold">
+        <div className="flex flex-col justify-center text-3xl items-center md:items-start mt-10 md:ml-4 text-white md:text-5xl font-semibold">
           {fullName && <h1>{fullName}</h1>}
           {headLine && (
-            <h2 className="mt-1 text-xl md:text-3xl font-sans">{headLine}</h2>
+            <h2 className="mt-1 text-xl md:text-2xl font-normal">{headLine}</h2>
           )}
         </div>
       </div>

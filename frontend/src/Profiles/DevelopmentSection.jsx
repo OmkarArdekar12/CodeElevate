@@ -19,7 +19,9 @@ const DevelopmentSection = ({ versionControlProfiles }) => {
       {isEmpty && (
         <>
           <div className="w-full flex flex-col justify-center p-4">
-            <h2 className="text-3xl mb-1 title-font">Development Profiles</h2>
+            <h2 className="text-2xl md:text-3xl mb-1 title-font">
+              Development Profiles
+            </h2>
             <div className="mt-4 p-4 md:px-25">
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
                 {github && (
@@ -30,7 +32,7 @@ const DevelopmentSection = ({ versionControlProfiles }) => {
                       <a
                         href={`https://github.com/${github}`}
                         target="_blank"
-                        className="text-2xl hover-text-border hover:underline hover:decoration-[#FFA116] hover:decoration-2"
+                        className="text-xl md:text-2xl hover-text-border hover:underline hover:decoration-[#FFA116] hover:decoration-2"
                       >
                         GitHub
                       </a>
@@ -46,7 +48,7 @@ const DevelopmentSection = ({ versionControlProfiles }) => {
                       <a
                         href={`https://gitlab.com/${gitlab}`}
                         target="_blank"
-                        className="text-2xl hover-text-border hover:underline hover:decoration-[#FFA116] hover:decoration-2"
+                        className="text-xl md:text-2xl hover-text-border hover:underline hover:decoration-[#FFA116] hover:decoration-2"
                       >
                         GitLab
                       </a>
@@ -62,7 +64,7 @@ const DevelopmentSection = ({ versionControlProfiles }) => {
                       <a
                         href={`${portfolio}`}
                         target="_blank"
-                        className="text-2xl hover-text-border hover:underline hover:decoration-[#1F8ACB] hover:decoration-2"
+                        className="text-xl md:text-2xl hover-text-border hover:underline hover:decoration-[#1F8ACB] hover:decoration-2"
                       >
                         Portfolio
                       </a>

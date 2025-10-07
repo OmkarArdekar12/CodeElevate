@@ -1,6 +1,7 @@
 import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCircleRight } from "@fortawesome/free-solid-svg-icons";
+import { TbPointFilled } from "react-icons/tb";
 
 const DomainRoleSection = ({ domain, role }) => {
   if (!domain && !role) {
@@ -9,26 +10,28 @@ const DomainRoleSection = ({ domain, role }) => {
   return (
     <>
       <div className="w-full flex flex-col justify-center p-4">
-        <h2 className="text-3xl mb-3 title-font">Domain & Role</h2>
+        <h2 className="text-2xl md:text-3xl mb-3 title-font">Domain & Role</h2>
         <div className="w-full flex items-center flex-wrap">
-          {role && (
-            <h3 className="bg-indigo-500 inline px-4 py-2 rounded-lg text-lg mx-2 my-1 hover-text-border text-center">
-              <FontAwesomeIcon
-                icon={faCircleRight}
-                className="text-black mr-1"
-              />
-              <span className="italic">Role</span>:{" "}
-              <span className="font-semibold">{role.toUpperCase()}</span>
+          {domain && (
+            <h3 className="inline-flex flex-wrap items-center bg-indigo-600 px-4 py-2 rounded-full md:text-lg mx-2 my-1 text-center">
+              <div className="inline-flex items-center mr-1">
+                <TbPointFilled className="text-black inline" />
+                <span className="text-black font-semibold">Domain: </span>
+              </div>
+              <div className="font-semibold hover-text-border">
+                {domain.toUpperCase()}
+              </div>
             </h3>
           )}
-          {domain && (
-            <h3 className="bg-teal-500 inline px-4 py-2 rounded-lg text-lg mx-2 my-1 hover-text-border text-center align-middle">
-              <FontAwesomeIcon
-                icon={faCircleRight}
-                className="text-black mr-1"
-              />
-              <span className="italic">Domain:</span>{" "}
-              <span className="font-semibold">{domain.toUpperCase()}</span>
+          {role && (
+            <h3 className="inline-flex flex-wrap items-center bg-indigo-600 px-4 py-2 rounded-full md:text-lg mx-2 my-1 text-center">
+              <div className="inline-flex items-center mr-1">
+                <TbPointFilled className="text-black inline" />
+                <span className="text-black font-semibold">Role: </span>
+              </div>
+              <div className="font-semibold hover-text-border">
+                {role.toUpperCase()}
+              </div>
             </h3>
           )}
         </div>
