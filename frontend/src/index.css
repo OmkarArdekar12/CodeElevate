@@ -244,7 +244,7 @@ main {
     padding: 0.5rem;
   }
 
-  .Profile {
+  /* .Profile {
     font-size: 1rem;
     flex-direction: column;
     padding: 0.5rem;
@@ -252,7 +252,7 @@ main {
     justify-content: center;
     margin: 1rem 0.5rem 1rem 0.5rem;
     text-align: center;
-  }
+  } */
 
   .profile-image,
   .profile-description {
@@ -263,7 +263,7 @@ main {
     margin: 0.1rem;
   }
 
-  .Profile p {
+  /* .Profile p {
     padding: 0.5rem;
     margin: 3px;
   }
@@ -271,7 +271,7 @@ main {
   .Profile button {
     padding: 0.5rem 3rem 0.5rem 3rem;
     margin: 1rem 0.5rem 0.5rem 0.5rem;
-  }
+  } */
 
   .LogoText {
     display: none;

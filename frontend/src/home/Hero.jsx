@@ -54,7 +54,7 @@ const settings = {
 
 export default function Hero() {
   return (
-    <div className="HeroHome box flex text-white items-center justify-center w-[95%] h-66 p-12 rounded-md m-10 border border-slate-500 shadow-sm shadow-cyan-500/50">
+    <div className="HeroHome box flex text-white items-center justify-center w-[95%] h-66 p-12 rounded-md m-10 border border-slate-500 shadow-sm shadow-cyan-500/50 transition-all duration-300 ease-in-out">
       <div className="w-full">
         <Slider {...settings}>
           <TopCard

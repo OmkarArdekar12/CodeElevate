@@ -15,7 +15,7 @@ export default function Search() {
   };
 
   return (
-    <div className="Search my-2 w-[60%]">
+    <div className="Search my-2 w-[60%] transition-all duration-300 ease-in-out">
       <form
         onSubmit={handleSubmit}
         className="flex justify-evenly items-center text-white border border-cyan-300 rounded text-md p-2"
