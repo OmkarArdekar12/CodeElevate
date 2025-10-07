@@ -209,13 +209,39 @@ main {
   }
 }
 
-.stats-card:hover {
+/* Stats Card */
+.stats-card-leetcode {
+  transform-style: preserve-3d;
+  transition: transform 0.6s cubic-bezier(0.4, 0.2, 0.2, 1),
+    box-shadow 0.6s ease-in-out;
+  perspective: 1000px;
+}
+.stats-card-leetcode:hover {
+  transform: rotateY(30deg) rotateX(25deg) rotateZ(-5deg);
+  box-shadow: 0 0 50px rgba(248, 0, 0, 0.4);
+}
+.stats-card-codeforces {
+  transform-style: preserve-3d;
+  transition: transform 0.6s cubic-bezier(0.4, 0.2, 0.2, 1),
+    box-shadow 0.6s ease-in-out;
+  perspective: 1000px;
+}
+.stats-card-codeforces:hover {
+  transform: rotateY(-30deg) rotateX(25deg) rotateZ(5deg);
+  box-shadow: 0 0 50px rgba(248, 0, 0, 0.4);
+}
+.stats-card-github {
+  transform-style: preserve-3d;
+  transition: transform 0.6s cubic-bezier(0.4, 0.2, 0.2, 1),
+    box-shadow 0.6s ease-in-out;
+  perspective: 1000px;
+}
+.stats-card-github:hover {
   transform: scale(1.01);
   box-shadow: 0 0 50px rgba(248, 0, 0, 0.4);
-  transition: transform 0.5s ease-in-out, box-shadow 0.5s ease-in-out;
 }
 
-/* Posts */
+/* Posts Card */
 .PostCard {
   width: 25rem;
 }

@@ -19,15 +19,19 @@ const CompetitiveProgrammingStatsSection = ({ leetcode, codeforces }) => {
     codeforcesUsername
   ) => {
     try {
-      const leetcodeData = await leetCodeStats(leetcodeUsername);
-      setUserLeetCodeData(leetcodeData);
+      if (leetcodeUsername) {
+        const leetcodeData = await leetCodeStats(leetcodeUsername);
+        setUserLeetCodeData(leetcodeData);
+      }
     } catch (err) {
       console.log("Invalid LeetCode Username");
       setUserLeetCodeData({});
     }
     try {
-      const codeforcesData = await codeforcesStats(codeforcesUsername);
-      setUserCodeforcesData(codeforcesData);
+      if (codeforcesUsername) {
+        const codeforcesData = await codeforcesStats(codeforcesUsername);
+        setUserCodeforcesData(codeforcesData);
+      }
     } catch (err) {
       console.log("Invalid Codeforces Username");
       setUserCodeforcesData({});
@@ -67,7 +71,7 @@ const CompetitiveProgrammingStatsSection = ({ leetcode, codeforces }) => {
         <h2 className="text-2xl md:text-3xl mb-1 title-font">
           Coding Profiles Stats
         </h2>
-        <div className="flex justify-center flex-col lg:flex-row lg:justify-evenly items-center flex-wrap mt-4 p-4 md:px-25">
+        <div className="flex justify-center flex-col lg:flex-row lg:justify-evenly items-center flex-wrap mt-4 p-4 md:px-19">
           {userLeetCodeData && Object.keys(userLeetCodeData).length !== 0 && (
             <LeetCodeCardStats leetCodeData={userLeetCodeData} />
           )}

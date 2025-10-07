@@ -11,8 +11,10 @@ const DevelopmentStatsSection = ({ github }) => {
 
   const fetchDevelopmentProfilesStats = async (gitHubUsername) => {
     try {
-      const gitHubData = await gitHubStats(gitHubUsername);
-      setUserGitHubData(gitHubData);
+      if (gitHubUsername) {
+        const gitHubData = await gitHubStats(gitHubUsername);
+        setUserGitHubData(gitHubData);
+      }
     } catch (err) {
       console.log("Invalid GitHub Username");
       setUserGitHubData({});

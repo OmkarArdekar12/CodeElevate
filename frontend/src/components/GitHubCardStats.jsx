@@ -23,7 +23,7 @@ const GitHubCardStats = ({ gitHubData }) => {
   }
 
   return (
-    <div className="w-[90%] lg:w-[60%] m-1 my-4 p-6 text-white from-black via-gray-950 to-gray-900 bg-gradient-to-r rounded-2xl border border-gray-100 text-center stats-card transition-all duration-200 ease-in-out">
+    <div className="w-[20rem] sm:w-[30rem] m-1 my-4 p-6 text-white from-black via-gray-950 to-gray-900 bg-gradient-to-r rounded-2xl border border-gray-100 text-center stats-card-github transition-all duration-200 ease-in-out">
       <div className="flex flex-col flex-wrap items-center justify-center">
         <div className="flex items-center justify-center">
           <FaGithub className="w-9 h-9 mr-2" />
@@ -49,7 +49,7 @@ const GitHubCardStats = ({ gitHubData }) => {
               </h3>
             )}
             {gitHubData.bio && (
-              <h5 className="w-[80%] lg:w-[75%] inline-flex items-center justify-center text-lg italic">
+              <h5 className="w-[80%] lg:w-[75%] inline-flex items-center justify-center text-md italic">
                 {gitHubData.bio}
               </h5>
             )}
