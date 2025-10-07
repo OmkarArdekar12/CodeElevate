@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { createPost } from "../service/postApi"; // we'll create this next
+import { createPost } from "../service/postApi";
 import toast from "react-hot-toast";
 import { ImagePlus, Loader2 } from "lucide-react";
 import Loading2 from "../components/Loading2";
@@ -31,7 +31,7 @@ const CreatePostPage = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    if (!title) {
+    if (!title.trim()) {
       toast.error("Please add a Title to a Post!");
       return;
     }

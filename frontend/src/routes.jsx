@@ -14,6 +14,7 @@ import NotificationPage from "./notifications/NotificationPage.jsx";
 import MessagePage from "./messages/MessagePage.jsx";
 import RankingPage from "./rankings/RankingPage.jsx";
 import CreatePostPage from "./posts/CreatePostPage.jsx";
+import EditPostPage from "./posts/EditPostPage.jsx";
 import AboutPage from "./about/AboutPage.jsx";
 import NotFound from "./components/NotFound.jsx";
 import ProtectedRoute from "./components/ProtectedRoute.jsx";
@@ -88,6 +89,10 @@ const router = createBrowserRouter([
           {
             path: "/posts/create",
             element: <CreatePostPage />,
+          },
+          {
+            path: "/posts/:id/edit",
+            element: <EditPostPage />,
           },
         ],
       },

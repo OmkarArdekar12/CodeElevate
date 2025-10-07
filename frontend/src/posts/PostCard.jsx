@@ -206,6 +206,7 @@ const PostCard = ({
   const isLiked = postLikes.includes(userId);
   const authorUserId =
     postData.user && postData.user._id ? postData.user._id : "";
+  const postId = postData._id ? postData._id : "";
   const isPostOwner = authorUserId == userId;
 
   const isEmpty = !postTitle && !postDescription && !postImage;
@@ -299,8 +300,12 @@ const PostCard = ({
             {menuOpen && (
               <div className="absolute right-3 -top-20 bg-white border rounded-lg shadow-md py-1 px-4 space-y-1 z-10">
                 <button
-                  // onClick={handleDelete}
-                  className="block w-full text-left px-1 py-1 text-gray-600 rounded-md text-sm cursor-pointer"
+                  onClick={() =>
+                    navigate(`/posts/${postId}/edit`, {
+                      state: { from: window.location.pathname },
+                    })
+                  }
+                  className="block w-full font-medium text-left px-1 py-1 text-gray-600 hover:text-gray-800 rounded-md text-sm cursor-pointer"
                 >
                   Edit Post
                 </button>
@@ -308,7 +313,7 @@ const PostCard = ({
                 <button
                   onClick={handlePostDelete}
                   disabled={deletePostLoading}
-                  className={`block w-full text-left px-1 py-1 ${
+                  className={`block w-full text-left px-1 py-1 font-medium ${
                     deletePostLoading
                       ? "text-gray-500 cursor-not-allowed"
                       : "text-gray-600 hover:text-red-600 cursor-pointer"

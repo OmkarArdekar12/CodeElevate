@@ -8,6 +8,13 @@ export const createPost = async (post) => {
   return response.data;
 };
 
+export const editPost = async (id, post) => {
+  const response = await api.put(`/posts/${id}/edit`, post, {
+    withCredentials: true,
+  });
+  return response.data;
+};
+
 export const getAllPosts = async () => {
   const response = await api.get("/posts", { withCredentials: true });
   return response.data;
@@ -15,6 +22,13 @@ export const getAllPosts = async () => {
 
 export const getUserPosts = async (id) => {
   const response = await api.get(`/posts/${id}`, { withCredentials: true });
+  return response.data;
+};
+
+export const getPost = async (id) => {
+  const response = await api.get(`/posts/${id}/data`, {
+    withCredentials: true,
+  });
   return response.data;
 };
 

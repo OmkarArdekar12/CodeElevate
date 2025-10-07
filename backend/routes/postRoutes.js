@@ -6,6 +6,7 @@ import {
   deletePost,
   editPost,
   getAllPosts,
+  getPost,
   getUserPosts,
   likeOrUnlikePost,
 } from "../controllers/postControllers.js";
@@ -26,8 +27,11 @@ router.put("/:id/edit", auth, validatePost, isOwner, editPost);
 //Get All Post Route
 router.get("/", getAllPosts);
 
-//Get All User Post Route
+//Get User All Post Route
 router.get("/:id", getUserPosts);
+
+//Get Post Route
+router.get("/:id/data", getPost);
 
 //Like/Unlike Post Route
 router.patch("/:id/like", auth, likeOrUnlikePost);

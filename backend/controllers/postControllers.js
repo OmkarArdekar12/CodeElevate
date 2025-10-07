@@ -96,7 +96,7 @@ export const getAllPosts = async (req, res) => {
   }
 };
 
-//Get User Post Controller
+//Get User Posts Controller
 export const getUserPosts = async (req, res) => {
   try {
     const { id: userId } = req.params;
@@ -111,6 +111,23 @@ export const getUserPosts = async (req, res) => {
   } catch (err) {
     return res.status(500).json({
       message: "Internal Server Error, fail to fetch user posts data",
+      error: err,
+    });
+  }
+};
+
+//Get Post Controller
+export const getPost = async (req, res) => {
+  try {
+    const { id: postId } = req.params;
+    const post = await Post.findById(postId).populate("user", "username");
+    if (!post) {
+      return res.status(404).json({ message: "Post not found" });
+    }
+    return res.status(200).json(post);
+  } catch (err) {
+    return res.status(500).json({
+      message: "Internal Server Error, fail to fetch post data",
       error: err,
     });
   }
