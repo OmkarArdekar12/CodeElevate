@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 
 const Error = () => {
   return (
-    <div className="w-full h-full flex justify-center items-center p-4 text-white">
+    <div className="w-full h-full flex justify-center items-center p-4 text-white transition-all duration-200 ease-in-out">
       <div className="flex flex-col">
         <h1 className="text-5xl mb-5 text-red-600 text-border-error">
           Oops! Something went wrong!

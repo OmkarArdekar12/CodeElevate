@@ -3,7 +3,7 @@ import { BsEmojiFrownFill } from "react-icons/bs";
 
 export default function NotFound() {
   return (
-    <div className="text-white m-9">
+    <div className="text-white m-9 transition-all duration-200 ease-in-out">
       <h1 className="text-5xl text-red-500 my-6">Oops! Error 404</h1>
       <p className="ml-2 text-2xl">
         Page Not Found! <BsEmojiFrownFill className="text-red-500 inline" />

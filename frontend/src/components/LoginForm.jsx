@@ -121,7 +121,7 @@ const LoginForm = ({ onLoginSuccess }) => {
   return (
     <form
       onSubmit={isRegister ? handleRegister : handleLogin}
-      className="bg-white rounded-lg shadow-black-300 shadow-md w-full max-w-sm mx-auto text-black"
+      className="bg-white rounded-lg shadow-black-300 shadow-md w-full max-w-sm mx-auto text-black transition-all duration-200 ease-in-out"
     >
       <div className="pt-6">
         <h2 className="text-3xl text-center font-extralight">

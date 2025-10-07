@@ -33,7 +33,7 @@ export default function Navbar({ isLoggedIn, userData }) {
   }, [isLoggedIn, userData]);
 
   return (
-    <header className="bg-gray-800 w-[100%]">
+    <header className="bg-gray-800 w-[100%] transition-all duration-200 ease-in-out">
       <nav className="bg-gray-800 shadow-lg w-[100%] py-3">
         <div className="px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-18">
