@@ -70,7 +70,7 @@ const ProfilePage = () => {
     followers: [],
     following: [],
   });
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(true);
 
   const fetchUserData = async (id) => {
     setLoading(true);

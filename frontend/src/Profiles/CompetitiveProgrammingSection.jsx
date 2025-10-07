@@ -21,7 +21,7 @@ const CompetitiveProgrammingSection = ({ codingProfiles }) => {
   const codechef = codingProfiles.codechef;
   const geeksforgeeks = codingProfiles.geeksforgeeks;
   const hackerrank = codingProfiles.hackerrank;
-  const isEmpty =
+  const hasAny =
     leetCode ||
     codeforces ||
     atCoder ||
@@ -30,7 +30,7 @@ const CompetitiveProgrammingSection = ({ codingProfiles }) => {
     hackerrank;
   return (
     <>
-      {isEmpty && (
+      {hasAny && (
         <>
           <div className="w-full flex flex-col justify-center p-4 transition-all duration-300 ease-in-out">
             <h2 className="text-2xl md:text-3xl mb-1 title-font">

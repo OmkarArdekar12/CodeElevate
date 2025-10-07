@@ -6,7 +6,7 @@ import Loading from "../components/Loading.jsx";
 
 const NotificationPage = () => {
   const [allNotifications, setAllNotifications] = useState([]);
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(true);
 
   const fetchNotifications = async () => {
     setLoading(true);

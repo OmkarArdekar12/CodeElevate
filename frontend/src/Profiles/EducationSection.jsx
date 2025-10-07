@@ -10,10 +10,10 @@ const EducationSection = ({ education }) => {
   const degree = education.degree;
   const cgpa = education.cgpa ? education.cgpa.toFixed(2) : "";
   const institution = education.institution;
-  const isEmpty = degree || cgpa || institution;
+  const hasAny = degree || cgpa || institution;
   return (
     <>
-      {isEmpty && (
+      {hasAny && (
         <>
           <div className="w-full flex flex-col justify-center p-4 transition-all duration-300 ease-in-out">
             <h2 className="text-2xl md:text-3xl mb-1 title-font">Education</h2>

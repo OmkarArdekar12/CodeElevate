@@ -27,7 +27,7 @@ const SocialsSection = ({ socials }) => {
   const twitterxLink = socials.twitterx;
   const telegramLink = socials.telegram;
   const othersLink = socials.others;
-  const isEmpty =
+  const hasAny =
     linkedinLink ||
     emailLink ||
     youtubeLink ||
@@ -41,7 +41,7 @@ const SocialsSection = ({ socials }) => {
 
   return (
     <>
-      {isEmpty && (
+      {hasAny && (
         <>
           <div className="w-full flex flex-col justify-center p-4 mb-3 transition-all duration-300 ease-in-out">
             <h2 className="text-2xl md:text-3xl mb-1 title-font">Socials</h2>

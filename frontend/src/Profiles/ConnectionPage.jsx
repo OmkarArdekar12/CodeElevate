@@ -12,7 +12,7 @@ const tabOptions = [
 const ConnectionPage = () => {
   const { id } = useParams();
   const navigate = useNavigate();
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(true);
   const [followers, setFollowers] = useState([]);
   const [following, setFollowing] = useState([]);
   const [connections, setConnections] = useState([]);

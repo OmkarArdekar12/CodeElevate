@@ -13,10 +13,10 @@ const DevelopmentSection = ({ versionControlProfiles }) => {
   const github = versionControlProfiles.github;
   const gitlab = versionControlProfiles.gitlab;
   const portfolio = versionControlProfiles.portfolio;
-  const isEmpty = github || gitlab || portfolio;
+  const hasAny = github || gitlab || portfolio;
   return (
     <>
-      {isEmpty && (
+      {hasAny && (
         <>
           <div className="w-full flex flex-col justify-center p-4 transition-all duration-300 ease-in-out">
             <h2 className="text-2xl md:text-3xl mb-1 title-font">

@@ -8,7 +8,7 @@ import { useSession } from "../context/SessionContext.jsx";
 export default function PostPage() {
   const [allPosts, setAllPosts] = useState([]);
   const [currUserData, setCurrUserData] = useState({});
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(true);
   const { isLoggedIn, user } = useSession();
   const userId = user && user.userId ? user.userId : "";
 
