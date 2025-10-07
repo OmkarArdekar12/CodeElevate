@@ -196,6 +196,43 @@ export const addComment = async (req, res) => {
   }
 };
 
+//Delete Comment Controller
+export const destroyComment = async (req, res) => {
+  try {
+    const { postId, commentId } = req.params;
+
+    const post = await Post.findById(postId);
+
+    if (!post) {
+      return res.status(404).json({ message: "Post not found!" });
+    }
+
+    const comment = post.comments.id(commentId);
+    if (!comment) {
+      return res.status(404).json({ message: "Comment not found!" });
+    }
+
+    comment.deleteOne();
+
+    await post.save();
+
+    return res.status(200).json({ message: "Comment deleted successfully" });
+    // const result = await Post.updateOne(
+    //   { _id: postId },
+    //   { $pull: { comments: { _id: commentId } } }
+    // );
+    // if (result.modifiedCount === 0) {
+    //   return res.status(404).json({ message: "Post or Comment not found!" });
+    // }
+    // return res.status(200).json({ message: "Comment deleted successfully" });
+  } catch (error) {
+    return res.status(500).json({
+      message: "Internal Server Error, fail to delete comment",
+      error: err,
+    });
+  }
+};
+
 //Delete Post Controller
 export const deletePost = async (req, res) => {
   try {

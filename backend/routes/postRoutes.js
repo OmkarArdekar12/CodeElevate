@@ -4,13 +4,18 @@ import {
   addComment,
   createPost,
   deletePost,
+  destroyComment,
   editPost,
   getAllPosts,
   getPost,
   getUserPosts,
   likeOrUnlikePost,
 } from "../controllers/postControllers.js";
-import { validatePost, isOwner } from "../middlewares/postValidations.js";
+import {
+  validatePost,
+  isOwner,
+  isCommentOwner,
+} from "../middlewares/postValidations.js";
 import multer from "multer";
 import { storage } from "../config/cloudConfig.js";
 
@@ -40,6 +45,12 @@ router.patch("/:id/like", auth, likeOrUnlikePost);
 router.put("/:id/comment", auth, addComment);
 
 //Delete Comment Post Route
+router.delete(
+  "/:postId/comment/:commentId",
+  auth,
+  isCommentOwner,
+  destroyComment
+);
 
 //Delete Post Route
 router.delete("/:id", auth, isOwner, deletePost);

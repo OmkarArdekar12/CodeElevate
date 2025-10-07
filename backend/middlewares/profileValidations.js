@@ -35,7 +35,9 @@ export const isOwner = async (req, res, next) => {
 
     next();
   } catch (err) {
-    res.status(500).json({ message: "Server error", error: err });
+    return res
+      .status(500)
+      .json({ message: "Internal Server Error", error: err });
   }
 };
 
