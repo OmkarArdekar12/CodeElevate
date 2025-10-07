@@ -18,7 +18,7 @@ const DevelopmentSection = ({ versionControlProfiles }) => {
     <>
       {isEmpty && (
         <>
-          <div className="w-full flex flex-col justify-center p-4">
+          <div className="w-full flex flex-col justify-center p-4 transition-all duration-300 ease-in-out">
             <h2 className="text-2xl md:text-3xl mb-1 title-font">
               Development Profiles
             </h2>

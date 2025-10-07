@@ -9,7 +9,7 @@ const UserProfileSection = ({
 }) => {
   return (
     <>
-      <div className="w-full flex items-center justify-center relative">
+      <div className="w-full flex items-center justify-center relative transition-all duration-300 ease-in-out">
         <img
           src={bgBanner ? bgBanner : "/images/defaultBgBannerImage.png"}
           alt="backgroundBannerImage"

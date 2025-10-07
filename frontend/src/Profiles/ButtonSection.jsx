@@ -103,7 +103,7 @@ const ButtonSection = ({
 
   return (
     <>
-      <div className="w-full mt-4 inline-flex flex-wrap items-center justify-center md:justify-start pl-1 md:pl-25">
+      <div className="w-full mt-4 inline-flex flex-wrap items-center justify-center md:justify-start pl-1 md:pl-25 transition-all duration-300 ease-in-out">
         <div className="w-full pt-1 pb-4 flex flex-col justify-center md:flex-row md:justify-between mb-2">
           <div className="flex flex-col justify-center pl-1">
             {(followersCount > 0 || followingCount > 0) && (

@@ -42,7 +42,7 @@ const ProfileSettings = () => {
   }
 
   return (
-    <div className="text-white w-full px-3 py-5 flex flex-col items-center justify-center">
+    <div className="text-white w-full px-3 py-5 flex flex-col items-center justify-center transition-all duration-300 ease-in-out">
       {isAuthorized && (
         <button
           className={`flex items-center justify-center text-center rounded-md px-4 py-2 hover-text-border w-[90%] md:w-[50%] my-2 text-xl ${

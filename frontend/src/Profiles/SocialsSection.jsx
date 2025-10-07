@@ -43,7 +43,7 @@ const SocialsSection = ({ socials }) => {
     <>
       {isEmpty && (
         <>
-          <div className="w-full flex flex-col justify-center p-4 mb-3">
+          <div className="w-full flex flex-col justify-center p-4 mb-3 transition-all duration-300 ease-in-out">
             <h2 className="text-2xl md:text-3xl mb-1 title-font">Socials</h2>
             <div className="flex flex-row justify-center items-center flex-wrap mt-4 p-4 md:px-14">
               {linkedinLink && (

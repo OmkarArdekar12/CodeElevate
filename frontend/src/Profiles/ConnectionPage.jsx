@@ -55,7 +55,7 @@ const ConnectionPage = () => {
   }
 
   return (
-    <div className="w-full flex items-center justify-center nd:px-5 text-white h-full">
+    <div className="w-full flex items-center justify-center nd:px-5 text-white h-full transition-all duration-300 ease-in-out">
       <div className="w-full md:w-[95%] flex flex-col items-center bg-[#181818] rounded-lg h-full">
         <div className="flex flex-wrap gap-1 md:gap-8 py-6 border-b border-gray-700 w-full justify-center">
           {tabOptions.map((tab) => (

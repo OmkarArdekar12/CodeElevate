@@ -8,7 +8,7 @@ const TagsSection = ({ tags }) => {
     <>
       {tags && tags.length != 0 && (
         <>
-          <div className="w-full flex flex-col justify-center p-4">
+          <div className="w-full flex flex-col justify-center p-4 transition-all duration-300 ease-in-out">
             <h2 className="text-2xl md:text-3xl mb-3 title-font">Tags</h2>
             <div className="w-full flex items-center flex-wrap">
               {tags.map((tag, index) =>
