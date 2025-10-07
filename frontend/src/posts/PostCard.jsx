@@ -186,7 +186,7 @@ const PostCard = ({
     postData.user && postData.user._id ? postData.user._id : "";
 
   return (
-    <div className="w-[25rem] rounded-2xl bg-gray-100 hover:scale-[1.02] transition-transform duration-300 my-1">
+    <div className="PostCard rounded-2xl bg-gray-100 hover:scale-[1.02] transition-all duration-300 ease-in-out my-1">
       <div
         onClick={() =>
           navigate(authorUserId ? `/profiles/${authorUserId}` : "/posts")

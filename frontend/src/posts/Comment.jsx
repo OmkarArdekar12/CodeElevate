@@ -21,7 +21,7 @@ const Comment = ({ comment }) => {
     ? new Date(comment.createdAt).toLocaleDateString("en-GB")
     : "";
   return (
-    <div className="w-full flex flex-col mb-3 pb-2">
+    <div className="w-full flex flex-col mb-3 pb-2 transition-all duration-200 ease-in-out">
       <div
         onClick={() => navigate(`/profiles/${profileUserId}`)}
         className="w-full flex cursor-pointer"

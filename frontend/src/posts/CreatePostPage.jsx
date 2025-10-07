@@ -59,7 +59,7 @@ const CreatePostPage = () => {
   };
 
   return (
-    <div className="w-full h-full flex flex-col items-center justify-center bg-[#01161e] text-white px-4 py-8">
+    <div className="w-full h-full flex flex-col items-center justify-center bg-[#01161e] text-white px-4 py-8 transition-all duration-300 ease-in-out">
       <div className="bg-[#03393f] p-6 rounded-2xl shadow-md w-full md:w-2/3 lg:w-1/2">
         <h1 className="text-3xl font-semibold mb-6 text-center">Create Post</h1>
 

@@ -215,6 +215,11 @@ main {
   transition: transform 0.5s ease-in-out, box-shadow 0.5s ease-in-out;
 }
 
+/* Posts */
+.PostCard {
+  width: 25rem;
+}
+
 /* Responsiveness */
 @media (max-width: 570px) {
   .TopCard {
@@ -295,5 +300,9 @@ main {
   }
   .logo-text-container {
     display: none;
+  }
+
+  .PostCard {
+    width: 20rem;
   }
 }
