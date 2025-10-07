@@ -4,6 +4,7 @@ import {
   addComment,
   createPost,
   deletePost,
+  editPost,
   getAllPosts,
   getUserPosts,
   likeOrUnlikePost,
@@ -19,6 +20,9 @@ const router = express.Router();
 //Create Post Route
 router.post("/", auth, upload.single("image"), validatePost, createPost);
 
+//Edit Post Route
+router.put("/:id/edit", auth, validatePost, isOwner, editPost);
+
 //Get All Post Route
 router.get("/", getAllPosts);
 
@@ -30,8 +34,6 @@ router.patch("/:id/like", auth, likeOrUnlikePost);
 
 //Add Comment Post Route
 router.put("/:id/comment", auth, addComment);
-
-//Edit Post Route
 
 //Delete Comment Post Route
 

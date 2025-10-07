@@ -3,11 +3,16 @@ import { FaHeart, FaComment } from "react-icons/fa";
 import { BiLike } from "react-icons/bi";
 import { BiSolidLike } from "react-icons/bi";
 import { MdMessage } from "react-icons/md";
+import { Loader2, MoreVertical } from "lucide-react";
 import { MdOutlineMessage } from "react-icons/md";
 import { useNavigate } from "react-router-dom";
 import Comment from "./Comment.jsx";
 import { GrSend } from "react-icons/gr";
-import { addComment, likeOrUnlikePost } from "../service/postApi.js";
+import {
+  addComment,
+  deletePost,
+  likeOrUnlikePost,
+} from "../service/postApi.js";
 import Loading2 from "../components/Loading2.jsx";
 import toast from "react-hot-toast";
 
@@ -25,6 +30,8 @@ const PostCard = ({
   const [showCommentBox, setShowCommentBox] = useState(false);
   const [commentLoading, setCommentLoading] = useState(false);
   const [comment, setComment] = useState("");
+  const [menuOpen, setMenuOpen] = useState(false);
+  const [deletePostLoading, setDeletePostLoading] = useState(false);
   const navigate = useNavigate();
 
   const handleCommentToggle = () => {
@@ -152,6 +159,21 @@ const PostCard = ({
     }
   };
 
+  const handlePostDelete = async () => {
+    setDeletePostLoading(true);
+    try {
+      const postId = postData._id;
+      const response = await deletePost(postId);
+      toast.success(response.message);
+      const updatedPost = { _id: postId };
+      onPostUpdate(updatedPost);
+    } catch (err) {
+      console.log("Error in commenting on post");
+    } finally {
+      setDeletePostLoading(false);
+    }
+  };
+
   const authorUsername =
     postData.user && postData.user.username ? postData.user.username : "";
   const authorFullName =
@@ -184,6 +206,13 @@ const PostCard = ({
   const isLiked = postLikes.includes(userId);
   const authorUserId =
     postData.user && postData.user._id ? postData.user._id : "";
+  const isPostOwner = authorUserId == userId;
+
+  const isEmpty = !postTitle && !postDescription && !postImage;
+
+  if (isEmpty) {
+    return null;
+  }
 
   return (
     <div className="PostCard rounded-2xl bg-gray-100 hover:scale-[1.02] transition-all duration-300 ease-in-out my-1">
@@ -259,6 +288,48 @@ const PostCard = ({
           </div>
           <p className="leading-none">Comment</p>
         </div>
+        {isPostOwner && (
+          <div className="relative">
+            <button
+              onClick={() => setMenuOpen(!menuOpen)}
+              className="cursor-pointer"
+            >
+              <MoreVertical className="text-gray-600 hover:text-gray-700" />
+            </button>
+            {menuOpen && (
+              <div className="absolute right-3 -top-20 bg-white border rounded-lg shadow-md py-1 px-4 space-y-1 z-10">
+                <button
+                  // onClick={handleDelete}
+                  className="block w-full text-left px-1 py-1 text-gray-600 rounded-md text-sm cursor-pointer"
+                >
+                  Edit Post
+                </button>
+                <hr className="block w-full text-left px-10 py-0 transparent" />
+                <button
+                  onClick={handlePostDelete}
+                  disabled={deletePostLoading}
+                  className={`block w-full text-left px-1 py-1 ${
+                    deletePostLoading
+                      ? "text-gray-500 cursor-not-allowed"
+                      : "text-gray-600 hover:text-red-600 cursor-pointer"
+                  } rounded-md text-sm`}
+                >
+                  {deletePostLoading ? (
+                    <span className="inline-flex items-center">
+                      <Loader2
+                        className="text-gray-500 animate-spin mr-1"
+                        size={15}
+                      />
+                      Deleting...
+                    </span>
+                  ) : (
+                    <span>Delete Post</span>
+                  )}
+                </button>
+              </div>
+            )}
+          </div>
+        )}
       </div>
 
       {showCommentBox && (

@@ -47,6 +47,37 @@ export const createPost = async (req, res) => {
   }
 };
 
+//Edit Post Controller
+export const editPost = async (req, res) => {
+  try {
+    const userId = req.user._id;
+    const { id: postId } = req.params;
+    const { title, description } = req.body;
+
+    const post = await Post.findById(postId);
+
+    if (!post) {
+      return res.status(404).json({ message: "Post not found" });
+    }
+
+    if (post.user.toString() != userId.toString()) {
+      return res.status(403).json({ message: "Unauthorized. Access Denied!" });
+    }
+
+    post.title = title;
+    post.description = description;
+
+    await post.save();
+
+    return res.json({ message: "Post updated successfully" });
+  } catch (err) {
+    return res.status(500).json({
+      message: "Internal Sever Error, failed to update post!",
+      error: err,
+    });
+  }
+};
+
 //Get All Posts Controller
 export const getAllPosts = async (req, res) => {
   try {
