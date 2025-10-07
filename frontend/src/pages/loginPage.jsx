@@ -18,7 +18,7 @@ const LoginPage = () => {
   };
 
   return (
-    <div className="w-[100%] h-[100%] text-white bg-slate-900 flex flex-col justify-center items-center px-5 py-9">
+    <div className="w-[100%] h-[100%] text-white bg-slate-900 flex flex-col justify-center items-center px-5 py-9 transition-all duration-300 ease-in-out">
       <div className="logo-container inline-flex justify-center items-center mb-5">
         <img
           src="/images/CodeElevateLogo.png"
