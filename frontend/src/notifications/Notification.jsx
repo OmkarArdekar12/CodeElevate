@@ -46,7 +46,7 @@ const Notification = ({ notification, fetchNotifications }) => {
   };
 
   return (
-    <div className="bg-[#03393f] hover:bg-[#08505a] w-[95%] flex flex-col flex-wrap justify-center px-5 py-2 rounded-lg my-2 group">
+    <div className="bg-[#03393f] hover:bg-[#08505a] w-[95%] flex flex-col flex-wrap justify-center px-5 py-2 rounded-lg my-2 group transition-all duration-300 ease-in-out">
       <div className="w-ful flex">
         <Link
           to={`/profiles/${senderId}`}
