@@ -28,8 +28,12 @@ router.get("/:id", getUserPosts);
 //Like/Unlike Post Route
 router.patch("/:id/like", auth, likeOrUnlikePost);
 
-//Comment Post Route
+//Add Comment Post Route
 router.put("/:id/comment", auth, addComment);
+
+//Edit Post Route
+
+//Delete Comment Post Route
 
 //Delete Post Route
 router.delete("/:id", auth, isOwner, deletePost);
