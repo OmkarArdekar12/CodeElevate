@@ -55,14 +55,14 @@ export default function Navbar({ isLoggedIn, userData }) {
               <div className="hidden lg:flex items-center space-x-4">
                 <Link
                   to="/"
-                  className="flex flex-col items-center text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-md font-medium transition duration-150 hover:font-bold"
+                  className="flex flex-col items-center text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-md font-medium transition duration-150"
                 >
                   <HomeIcon className="text-2xl" />
                   Home
                 </Link>
                 <Link
                   to="/posts"
-                  className="flex flex-col items-center text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-md font-medium transition duration-150 hover:font-bold"
+                  className="flex flex-col items-center text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-md font-medium transition duration-150"
                 >
                   <PostsIcon className="text-xl" />
                   Posts
@@ -70,7 +70,7 @@ export default function Navbar({ isLoggedIn, userData }) {
                 {isLoggedIn && (
                   <Link
                     to="/notifications"
-                    className="flex flex-col items-center text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-md font-medium transition duration-150 hover:font-bold"
+                    className="flex flex-col items-center text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-md font-medium transition duration-150"
                   >
                     <NotificationsIcon className="text-xl" />
                     Notifications
@@ -79,7 +79,7 @@ export default function Navbar({ isLoggedIn, userData }) {
                 {isLoggedIn && (
                   <Link
                     to="/messages"
-                    className="flex flex-col items-center text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-md font-medium transition duration-150 hover:font-bold"
+                    className="flex flex-col items-center text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-md font-medium transition duration-150"
                   >
                     <MessagesIcon className="text-xl" />
                     Messages
@@ -87,14 +87,14 @@ export default function Navbar({ isLoggedIn, userData }) {
                 )}
                 <Link
                   to="/rankings"
-                  className="flex flex-col items-center text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-md font-medium transition duration-150 hover:font-bold"
+                  className="flex flex-col items-center text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-md font-medium transition duration-150"
                 >
                   <RankingsIcon className="text-xl" />
                   Rankings
                 </Link>
                 <Link
                   to="/about"
-                  className="flex flex-col items-center text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-md font-medium transition duration-150 hover:font-bold"
+                  className="flex flex-col items-center text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-md font-medium transition duration-150"
                 >
                   <AboutIcon className="text-xl" />
                   About
@@ -191,7 +191,7 @@ export default function Navbar({ isLoggedIn, userData }) {
                       ? `/profiles/${userData.userId}`
                       : "/"
                   }
-                  className="flex items-center px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-700 transition duration-150 md:hidden hover:font-semibold"
+                  className="flex items-center px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-700 transition duration-150 md:hidden hover:font-bold"
                 >
                   <UserIcon className="mr-2" />
                   Profile
