@@ -46,6 +46,13 @@ export const addComment = async (id, comment) => {
   return response.data;
 };
 
+export const deleteComment = async (postId, commentId) => {
+  const response = await api.delete(`/posts/${postId}/comment/${commentId}`, {
+    withCredentials: true,
+  });
+  return response.data;
+};
+
 export const deletePost = async (id) => {
   const response = await api.delete(`/posts/${id}`, { withCredentials: true });
   return response.data;

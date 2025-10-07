@@ -98,28 +98,29 @@ const PostCard = ({
         const postId = postData._id;
         const response = await addComment(postId, { text: comment });
         toast.success(response.message);
+        const addedComment =
+          response && response.comment
+            ? response.comment
+            : {
+                text: comment,
+                user: {
+                  _id: currUserData.userId,
+                  username: currUserData.username,
+                },
+                profile: {
+                  _id: currUserData.profileId,
+                  fullName: currUserData.fullName,
+                  profilePicture: currUserData.profilePicture,
+                  headLine: currUserData.headLine,
+                },
+                createdAt: new Date().toISOString(),
+                updatedAt: new Date().toISOString(),
+              };
         setComment("");
         setShowCommentBox(false);
         const updatedPost = {
           ...postData,
-          comments: [
-            ...postData.comments,
-            {
-              text: comment,
-              user: {
-                _id: currUserData.userId,
-                username: currUserData.username,
-              },
-              profile: {
-                _id: currUserData.profileId,
-                fullName: currUserData.fullName,
-                profilePicture: currUserData.profilePicture,
-                headLine: currUserData.headLine,
-              },
-              createdAt: new Date().toISOString(),
-              updatedAt: new Date().toISOString(),
-            },
-          ],
+          comments: [...postData.comments, addedComment],
         };
         onPostUpdate(updatedPost);
         // setAllPosts((prevPosts) =>
@@ -170,6 +171,7 @@ const PostCard = ({
     } catch (err) {
       console.log("Error in commenting on post");
     } finally {
+      setMenuOpen(false);
       setDeletePostLoading(false);
     }
   };
@@ -342,7 +344,13 @@ const PostCard = ({
           {postComments && postComments.length > 0 && (
             <div className="max-h-40 overflow-y-auto mb-3 pr-2">
               {postComments.map((comment, idx) => (
-                <Comment comment={comment} key={idx} />
+                <Comment
+                  comment={comment}
+                  postData={postData}
+                  userId={userId}
+                  onPostUpdate={onPostUpdate}
+                  key={idx}
+                />
               ))}
             </div>
           )}

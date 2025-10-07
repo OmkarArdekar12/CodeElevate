@@ -15,8 +15,10 @@ export default function PostPage() {
   const fetchData = async () => {
     setLoading(true);
     try {
-      const user = await getUserData(userId); //fetch currUser data
-      setCurrUserData(user);
+      if (userId) {
+        const user = await getUserData(userId); //fetch currUser data
+        setCurrUserData(user);
+      }
       const posts = await getAllPosts(); //fetch allPosts data
       setAllPosts(posts);
     } catch (err) {

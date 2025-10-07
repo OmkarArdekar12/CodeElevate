@@ -43,6 +43,7 @@ const PostsList = ({
                 currUserData={currUserData}
                 userId={userId}
                 isLoggedIn={isLoggedIn}
+                key={index}
               />
             </motion.div>
           ))
