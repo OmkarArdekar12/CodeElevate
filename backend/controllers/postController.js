@@ -1,6 +1,7 @@
 import Post from "../models/post.js";
 import Profile from "../models/profile.js";
 import { cloudinary } from "../config/cloudConfig.js";
+import Notification from "../models/notification.js";
 
 //Create Post Controller
 export const createPost = async (req, res) => {
@@ -144,6 +145,7 @@ export const likeOrUnlikePost = async (req, res) => {
     }
 
     const userId = req.user._id;
+    const postUserId = post.user ? post.user : "";
     const isLiked = post.likes.includes(userId);
 
     if (isLiked) {
@@ -152,6 +154,15 @@ export const likeOrUnlikePost = async (req, res) => {
       post.likes.push(userId);
     }
     await post.save();
+
+    if ((!isLiked && userId, toString() !== postUserId.toString())) {
+      const notification = await Notification.create({
+        from: userId,
+        to: postUserId,
+        type: "message",
+        message: `${req.user.username} liked your post.`,
+      });
+    }
 
     return res
       .status(200)
@@ -227,7 +238,8 @@ export const destroyComment = async (req, res) => {
       return res.status(404).json({ message: "Comment not found!" });
     }
 
-    comment.deleteOne();
+    await comment.remove();
+    // await comment.deleteOne();
 
     await post.save();
 

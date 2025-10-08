@@ -1,7 +1,7 @@
 import Joi from "joi";
 
 export const profileValidationSchema = Joi.object({
-  fullName: Joi.string().max(100).allow("").required(),
+  fullName: Joi.string().max(100).required(),
 
   user: Joi.string().required(), //ObjectId as a string
 

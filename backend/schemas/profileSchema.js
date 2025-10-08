@@ -30,9 +30,11 @@ const profileSchema = Schema({
 
   role: {
     type: String,
+    default: "",
   },
   domain: {
     type: String,
+    default: "",
   },
 
   tags: {

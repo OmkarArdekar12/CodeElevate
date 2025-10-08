@@ -27,8 +27,8 @@ const EditProfilePage = () => {
     profilePicture: "",
     backgroundBanner: "",
     headLine: "",
-    role: "Explorer",
-    domain: "General",
+    role: "",
+    domain: "",
     tags: ["", "", "", "", ""],
     about: "",
     developmentProfiles: {

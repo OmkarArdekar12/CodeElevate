@@ -13,11 +13,14 @@ export const getRankings = async (req, res) => {
   try {
     let cache = await RankingCache.findOne();
 
-    if (
-      (cache && Date.now() - new Date(cache.lastUpdated).getTime()) <
-      2 * dayInMS
-    ) {
-      return res.status(200).json({ ...cache.rankings, source: "cache" });
+    if (cache) {
+      if (
+        cache.lastUpdated &&
+        !isNaN(new Date(cache.lastUpdated).getTime()) &&
+        Date.now() - new Date(cache.lastUpdated).getTime() < 2 * dayInMS
+      ) {
+        return res.status(200).json({ ...cache.rankings, source: "cache" });
+      }
     }
 
     const profiles = await Profile.find().populate("user");
@@ -50,7 +53,7 @@ export const getRankings = async (req, res) => {
           ).data;
         }
       } catch (err) {
-        leetcodeData = {};
+        leetCodeData = {};
       }
 
       try {
@@ -62,7 +65,7 @@ export const getRankings = async (req, res) => {
           ).data;
         }
       } catch (err) {
-        codeforces = {};
+        codeforcesData = {};
       }
 
       try {
@@ -74,14 +77,14 @@ export const getRankings = async (req, res) => {
           ).data;
         }
       } catch (err) {
-        githuData = {};
+        githubData = {};
       }
 
       const cpScore =
         safeNumber(leetCodeData.totalSolved) +
         safeNumber(leetCodeData.contestRating) +
         safeNumber(codeforcesData.rating) * 1.5 +
-        safeNumber(codeforcesData.totalProblemSolve);
+        safeNumber(codeforcesData.totalProblemsSolved);
 
       const devScore =
         safeNumber(githubData.totalStars) * 5 +
@@ -110,7 +113,7 @@ export const getRankings = async (req, res) => {
     }
 
     const sortRank = (key) => {
-      [...rankingData].sort((a, b) => {
+      return [...rankingData].sort((a, b) => {
         if (b[key] === a[key]) {
           return new Date(a.createdAt) - new Date(b.createdAt);
         }
@@ -123,7 +126,7 @@ export const getRankings = async (req, res) => {
       development: sortRank("devScore"),
       rankers: sortRank("rankerScore"),
       contributors: sortRank("contributorScore"),
-      allRounders: sortRank("allRounderScore"),
+      allRounders: sortRank("allRoundersScore"),
     };
 
     if (cache) {

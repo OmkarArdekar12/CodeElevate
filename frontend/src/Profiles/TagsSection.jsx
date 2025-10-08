@@ -1,12 +1,15 @@
 import React from "react";
 
 const TagsSection = ({ tags }) => {
+  console.log(tags);
   if (!tags) {
     return null;
   }
+
+  const hasAny = tags[0] || tags[1] || tags[2] || tags[3] || tags[4];
   return (
     <>
-      {tags && tags.length != 0 && (
+      {hasAny && tags && tags.length > 0 && (
         <>
           <div className="w-full flex flex-col justify-center p-4 transition-all duration-300 ease-in-out">
             <h2 className="text-2xl md:text-3xl mb-3 title-font">Tags</h2>
