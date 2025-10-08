@@ -35,9 +35,8 @@ export const followUser = async (req, res) => {
       message: `${req.user.username} started following you.`,
     });
 
-    return res.json({ message: "Followed successfully" });
+    return res.status(200).json({ message: "Followed successfully" });
   } catch (err) {
-    console.log(err);
     return res
       .status(500)
       .json({ message: "Internal Server Error, Follow failed!", error: err });
@@ -79,7 +78,7 @@ export const unfollowUser = async (req, res) => {
       message: `${req.user.username} unfollowed you.`,
     });
 
-    return res.json({ msg: "Unfollowed successfully" });
+    return res.status(200).json({ msg: "Unfollowed successfully" });
   } catch (err) {
     return res
       .status(500)
@@ -208,7 +207,7 @@ export const respondConnectRequest = async (req, res) => {
       });
 
       await connectionRequest.deleteOne();
-      return res.json({ message: "Connection request rejected" });
+      return res.status(200).json({ message: "Connection request rejected" });
     } else {
       return res.status(400).json({ message: "Invalid action" });
     }
@@ -261,7 +260,7 @@ export const unconnectUser = async (req, res) => {
       message: `${req.user.username} unconnected from you`,
     });
 
-    res.status(200).json({ message: "Unconnected successfully" });
+    return res.status(200).json({ message: "Unconnected successfully" });
   } catch (err) {
     return res.status(500).json({
       message: "Internal Server Error, Unconnect failed!",

@@ -20,6 +20,7 @@ import developmentProfilesStatsRoutes from "./routes/developmentProfilesStatsRou
 import connectionRoutes from "./routes/connectionRoutes.js";
 import notificationRoutes from "./routes/notificationRoutes.js";
 import postRoutes from "./routes/postRoutes.js";
+import rankingRoutes from "./routes/rankingRoutes.js";
 import {
   pageNotFoundMiddleware,
   errorHandlerMiddleware,
@@ -75,6 +76,7 @@ app.use("/api/stats/development-profiles", developmentProfilesStatsRoutes);
 app.use("/api/users", connectionRoutes);
 app.use("/api/notifications", notificationRoutes);
 app.use("/api/posts", postRoutes);
+app.use("/api/rankings", rankingRoutes);
 
 //Error handlers
 app.use((req, res, next) => {

@@ -40,7 +40,7 @@ export const register = async (req, res) => {
       fullName: username,
     });
 
-    res.status(201).json({
+    return res.status(201).json({
       username: user.username,
       userId: user._id,
       profile,
@@ -55,7 +55,7 @@ export const register = async (req, res) => {
     // await user.save();
     // console.log("New User: ", user);
   } catch (err) {
-    res.status(500).json({
+    return res.status(500).json({
       message: "Error: User Registration Failed!",
       error: err,
     });
@@ -64,8 +64,8 @@ export const register = async (req, res) => {
 
 //Login Controller
 export const login = async (req, res) => {
-  console.log("The authenticate user is: ", req.user);
-  res.status(200).json({
+  // console.log("The authenticate user is: ", req.user);
+  return res.status(200).json({
     message: "User logged in successfully",
     username: req.user.username,
     userId: req.user._id,
@@ -76,14 +76,14 @@ export const login = async (req, res) => {
 //AuthStatus Controller
 export const authStatus = async (req, res) => {
   if (req.user) {
-    res.status(200).json({
+    return res.status(200).json({
       message: "User logged in successfully",
       username: req.user.username,
       userId: req.user._id,
       isMfaActive: req.user.isMfaActive,
     });
   } else {
-    res.status(401).json({ message: "Unauthorized user!" });
+    return res.status(401).json({ message: "Unauthorized user!" });
   }
 };
 
@@ -102,7 +102,7 @@ export const logout = async (req, res, next) => {
       }
       //Clear cookie
       res.clearCookie("connect.sid"); //default sessionId
-      res.status(200).json({ message: "Logged out successfully" });
+      return res.status(200).json({ message: "Logged out successfully" });
     });
   });
 };
@@ -110,10 +110,10 @@ export const logout = async (req, res, next) => {
 //Setup2FA Controller
 export const setup2FA = async (req, res) => {
   try {
-    console.log("The req.user is: ", req.user);
+    // console.log("The req.user is: ", req.user);
     const user = req.user;
     var secret = speakeasy.generateSecret();
-    console.log("The secret object is: ", secret); //secret object
+    // console.log("The secret object is: ", secret); //secret object
     user.twoFactorSecret = secret.base32;
     user.isMfaActive = true;
     await user.save();
@@ -125,12 +125,12 @@ export const setup2FA = async (req, res) => {
       encoding: "base32",
     });
     const qrImageUrl = await qrCode.toDataURL(url);
-    res.status(200).json({
+    return res.status(200).json({
       secret: secret.base32,
       qrCode: qrImageUrl,
     });
   } catch (err) {
-    res.status(500).json({
+    return res.status(500).json({
       error: "Error in setting up two-factor-authentication-(2FA)",
       message: err,
     });
@@ -140,7 +140,7 @@ export const setup2FA = async (req, res) => {
 //Verify2FA Controller
 export const verify2FA = async (req, res) => {
   const { token } = req.body;
-  console.log(token);
+  // console.log(token);
   const user = req.user;
 
   const verified = speakeasy.totp.verify({
@@ -162,7 +162,7 @@ export const verify2FA = async (req, res) => {
       });
     });
   } else {
-    res
+    return res
       .status(400)
       .json({ message: "Invalid two-factor-authentication-(2FA) token" });
   }
@@ -175,13 +175,13 @@ export const reset2FA = async (req, res) => {
     user.twoFactorSecret = "";
     user.isMfaActive = false;
     await user.save();
-    res
+    return res
       .status(200)
       .json({ message: "two-factor-authentication-(2FA) reset successful" });
   } catch (err) {
-    res.status(500).json({
-      error: "Error resetting two-factor-authentication-(2FA)",
-      message: err,
+    return res.status(500).json({
+      message: "Error resetting two-factor-authentication-(2FA)",
+      error: err,
     });
   }
 };
@@ -200,7 +200,7 @@ export const reset2FA = async (req, res) => {
 //       user: user._id,
 //       fullName: username,
 //     });
-//     res.status(201).json({
+//     return res.status(201).json({
 //       username: user.username,
 //       userId: user._id,
 //       profile,
@@ -214,7 +214,7 @@ export const reset2FA = async (req, res) => {
 //     // await user.save();
 //     // console.log("New User: ", user);
 //   } catch (err) {
-//     res.status(500).json({
+//     return res.status(500).json({
 //       message: "Error: User Registration Failed!",
 //       error: err,
 //     });
@@ -240,12 +240,12 @@ export const reset2FA = async (req, res) => {
 //       process.env.JWT_SECRET,
 //       { expiresIn: "1hr" }
 //     );
-//     res.status(200).json({
+//     return res.status(200).json({
 //       message: "two-factor-authentication-(2FA) successful",
 //       token: jwtToken,
 //     });
 //   } else {
-//     res
+//     return res
 //       .status(400)
 //       .json({ message: "Invalid two-factor-authentication-(2FA) token" });
 //   }

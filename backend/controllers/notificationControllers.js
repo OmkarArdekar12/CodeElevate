@@ -8,9 +8,9 @@ export const getNotifications = async (req, res) => {
       createdAt: -1,
     });
 
-    res.status(200).json(notifications);
+    return res.status(200).json(notifications);
   } catch (err) {
-    res.status(500).json({
+    return res.status(500).json({
       message: "Internal Server Error, failed to fetch notifications!",
       error: err,
     });
@@ -35,9 +35,9 @@ export const markAsRead = async (req, res) => {
     notification.isRead = true;
     await notification.save();
 
-    res.status(200).json({ message: "Notification marked as read" });
+    return res.status(200).json({ message: "Notification marked as read" });
   } catch (err) {
-    res.status(500).json({
+    return res.status(500).json({
       message: "Internal Server Error, failed to mark notification as read!",
       error: err,
     });
@@ -60,9 +60,11 @@ export const deleteNotification = async (req, res) => {
     }
 
     await notification.deleteOne();
-    res.status(200).json({ message: "Notification deleted successfully" });
+    return res
+      .status(200)
+      .json({ message: "Notification deleted successfully" });
   } catch (err) {
-    res.status(500).json({
+    return res.status(500).json({
       message: "Internal Server Error, failed to delete notification!",
       error: err,
     });

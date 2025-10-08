@@ -1,20 +1,28 @@
 import axios from "axios";
 
+const cfApi = axios.create({
+  baseURL: "https://codeforces.com/api",
+  timeout: 10000,
+});
+
 //Codeforces Stats Controller
 export const codeforcesStats = async (req, res) => {
   const { username } = req.params;
   try {
-    const userInfo = await axios.get(
-      `https://codeforces.com/api/user.info?handles=${username}`
-    );
+    if (!username || typeof username !== "string" || username.trim() === "") {
+      return res.status(400).json({ message: "Invalid codeforces username" });
+    }
 
-    const user = userInfo.data.result[0];
+    const userInfo = await cfApi.get(`/user.info?handles=${username}`);
+    const user = userInfo.data?.result?.[0];
 
-    const userStatus = await axios.get(
-      `https://codeforces.com/api/user.status?handle=${username}`
-    );
+    if (!user) {
+      return res.status(404).json({ error: "Codeforces user not found" });
+    }
 
-    const submissions = userStatus.data.result;
+    const userStatus = await cfApi.get(`/user.status?handle=${username}`);
+
+    const submissions = userStatus.data?.result || [];
 
     const problemSolvedSet = new Set();
     submissions.forEach((sub) => {
@@ -39,19 +47,41 @@ export const codeforcesStats = async (req, res) => {
       totalProblemsSolved: problemSolvedSet.size,
     };
     // console.log(codeforcesData);
-    res.json(codeforcesData);
+    return res.status(200).json(codeforcesData);
   } catch (err) {
-    res
-      .status(500)
-      .json({ message: "Failed to fetch Codeforces data", error: err });
+    if (err.response && err.response.status === 404) {
+      return res
+        .status(404)
+        .json({ message: "Codeforces user not found", error: err });
+    } else if (err.code === "ECONNABORTED") {
+      return res.status(504).json({
+        message: "Codeforces API timeout. Try again later.",
+        error: err,
+      });
+    } else {
+      // console.error("Codeforces API Error:", err.message);
+      return res.status(500).json({
+        message: "Failed to fetch Codeforces data",
+        error: err,
+      });
+    }
   }
 };
+
+const lcApi = axios.create({
+  baseURL: "https://leetcode/com/graphql",
+  timeout: 10000,
+  headers: { "Content-Type": "application/json" },
+});
 
 //LeetCode Stats Controller
 export const leetCodeStats = async (req, res) => {
   const { username } = req.params;
-  console.log(username);
   try {
+    if (!username || typeof username !== "string" || username.trim() === "") {
+      return res.status(400).json({ message: "Invalid leetCode username" });
+    }
+
     const statsQuery = `
       query userProfile($username: String!) {
         matchedUser(username: $username) {
@@ -91,30 +121,30 @@ export const leetCodeStats = async (req, res) => {
       }
     `;
 
-    const [statsResponse, contestResponse] = await Promise.all([
-      axios.post(
-        "https://leetcode.com/graphql",
-        { query: statsQuery, variables: { username } },
-        { headers: { "Content-Type": "application/json" } }
-      ),
-      axios.post(
-        "https://leetcode.com/graphql",
-        { query: contestQuery, variables: { username } },
-        { headers: { "Content-Type": "application/json" } }
-      ),
+    const [statsResponse, contestResponse] = await Promise.allSettled([
+      lcApi.post("", { query: statsQuery, variables: { username } }),
+      lcApi.post("", { query: contestQuery, variables: { username } }),
     ]);
 
-    const user = statsResponse.data.data.matchedUser;
-    const contest = contestResponse.data.data.userContestRanking;
+    const user =
+      statsResponse.status === "fulfilled"
+        ? statsResponse.value.data.data.matchedUser
+        : null;
+
+    const contest =
+      contestResponse.status === "fulfilled"
+        ? contestResponse.value.data.data.userContestRanking
+        : null;
 
     if (!user) {
       return res.status(404).json({ error: "LeetCode user not found" });
     }
 
-    const stats = user.submitStats.acSubmissionNum;
+    const stats = user.submitStats?.acSubmissionNum || [];
     const easy = stats.find((d) => d.difficulty === "Easy")?.count || 0;
     const medium = stats.find((d) => d.difficulty === "Medium")?.count || 0;
     const hard = stats.find((d) => d.difficulty === "Hard")?.count || 0;
+    const totalSolved = easy + medium + hard;
     const badgeNames = (user.badges || []).map((b) => b.name);
     const numberOfBadges = badgeNames.length;
     const hasKnight =
@@ -122,6 +152,7 @@ export const leetCodeStats = async (req, res) => {
     const hasGuardian =
       badgeNames.includes("Guardian") || contest?.badge?.name === "Guardian";
     const leetCodeTotalUser = 5000001;
+
     const leetCodeData = {
       username: username,
       totalLeetCodeUsers: leetCodeTotalUser,
@@ -129,7 +160,7 @@ export const leetCodeStats = async (req, res) => {
       easySolved: easy,
       mediumSolved: medium,
       hardSolved: hard,
-      totalSolved: easy + medium + hard,
+      totalSolved: totalSolved,
       numberOfBadges,
       badgeNames,
       hasKnight,
@@ -147,11 +178,22 @@ export const leetCodeStats = async (req, res) => {
       contestsAttended: contest?.attendedContestsCount || 0,
     };
     // console.log(leetCodeData);
-    res.status(200).json(leetCodeData);
+    return res.status(200).json(leetCodeData);
   } catch (err) {
-    res
-      .status(500)
-      .json({ message: "Failed to fetch LeetCode data", error: err.message });
+    if (err.code === "ECONNABORTED") {
+      return res
+        .status(504)
+        .json({
+          message: "LeetCode API timeout. Try again later.",
+          error: err,
+        });
+    } else {
+      // console.error("LeetCode API Error:", err.message);
+      return res.status(500).json({
+        message: "Failed to fetch LeetCode data",
+        error: err,
+      });
+    }
   }
 };
 

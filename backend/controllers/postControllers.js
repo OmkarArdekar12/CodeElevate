@@ -90,7 +90,7 @@ export const getAllPosts = async (req, res) => {
     return res.status(200).json(posts);
   } catch (err) {
     return res.status(500).json({
-      message: "Internal Server Error, fail to fetch posts data",
+      message: "Internal Server Error, failed to fetch posts data",
       error: err,
     });
   }
@@ -110,7 +110,7 @@ export const getUserPosts = async (req, res) => {
     return res.status(200).json(posts);
   } catch (err) {
     return res.status(500).json({
-      message: "Internal Server Error, fail to fetch user posts data",
+      message: "Internal Server Error, failed to fetch user posts data",
       error: err,
     });
   }
@@ -127,7 +127,7 @@ export const getPost = async (req, res) => {
     return res.status(200).json(post);
   } catch (err) {
     return res.status(500).json({
-      message: "Internal Server Error, fail to fetch post data",
+      message: "Internal Server Error, failed to fetch post data",
       error: err,
     });
   }
@@ -158,7 +158,7 @@ export const likeOrUnlikePost = async (req, res) => {
       .json({ message: isLiked ? "Post unliked" : "Post liked" });
   } catch (err) {
     return res.status(500).json({
-      message: "Internal Server Error, fail to like/unlike post",
+      message: "Internal Server Error, failed to like/unlike post",
       error: err,
     });
   }
@@ -204,7 +204,7 @@ export const addComment = async (req, res) => {
       .json({ message: "Comment added to the Post", comment: addedComment });
   } catch (err) {
     return res.status(500).json({
-      message: "Internal Server Error, fail to add comment on post",
+      message: "Internal Server Error, failed to add comment on post",
       error: err,
     });
   }
@@ -242,7 +242,7 @@ export const destroyComment = async (req, res) => {
     // return res.status(200).json({ message: "Comment deleted successfully" });
   } catch (err) {
     return res.status(500).json({
-      message: "Internal Server Error, fail to delete comment",
+      message: "Internal Server Error, failed to delete comment",
       error: err,
     });
   }
@@ -272,7 +272,7 @@ export const deletePost = async (req, res) => {
     return res.status(200).json({ message: "Post deleted successfully" });
   } catch (err) {
     return res.status(500).json({
-      message: "Internal Server Error, fail to delete post",
+      message: "Internal Server Error, failed to delete post",
       error: err,
     });
   }
