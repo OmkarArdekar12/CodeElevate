@@ -7,7 +7,7 @@ import {
   unfollowUser,
   checkConnectionStatus,
   unconnectUser,
-} from "../controllers/connectionControllers.js";
+} from "../controllers/connectionController.js";
 
 const router = express.Router();
 

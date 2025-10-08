@@ -2,7 +2,7 @@ import express from "express";
 import {
   codeforcesStats,
   leetCodeStats,
-} from "../controllers/competitiveProgrammingStatsControllers.js";
+} from "../controllers/competitiveProgrammingStatsController.js";
 
 const router = express.Router();
 

@@ -8,7 +8,7 @@ import {
   setup2FA,
   verify2FA,
   reset2FA,
-} from "../controllers/authControllers.js";
+} from "../controllers/authController.js";
 import auth from "../middlewares/auth.js";
 
 const router = Router();

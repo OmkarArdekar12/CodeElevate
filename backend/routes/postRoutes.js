@@ -10,7 +10,7 @@ import {
   getPost,
   getUserPosts,
   likeOrUnlikePost,
-} from "../controllers/postControllers.js";
+} from "../controllers/postController.js";
 import {
   validatePost,
   isOwner,

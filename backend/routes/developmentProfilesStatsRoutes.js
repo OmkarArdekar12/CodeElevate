@@ -1,5 +1,5 @@
 import express from "express";
-import { githubStats } from "../controllers/developmentProfilesStatsControllers.js";
+import { githubStats } from "../controllers/developmentProfilesStatsController.js";
 
 const router = express.Router();
 

@@ -10,7 +10,7 @@ import {
   getUserData,
   getConnections,
   // createProfile,
-} from "../controllers/profileControllers.js";
+} from "../controllers/profileController.js";
 import multer from "multer";
 import { storage } from "../config/cloudConfig.js";
 
