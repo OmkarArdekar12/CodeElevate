@@ -69,7 +69,7 @@ export const codeforcesStats = async (req, res) => {
 };
 
 const lcApi = axios.create({
-  baseURL: "https://leetcode/com/graphql",
+  baseURL: "https://leetcode.com/graphql",
   timeout: 10000,
   headers: { "Content-Type": "application/json" },
 });
@@ -181,12 +181,10 @@ export const leetCodeStats = async (req, res) => {
     return res.status(200).json(leetCodeData);
   } catch (err) {
     if (err.code === "ECONNABORTED") {
-      return res
-        .status(504)
-        .json({
-          message: "LeetCode API timeout. Try again later.",
-          error: err,
-        });
+      return res.status(504).json({
+        message: "LeetCode API timeout. Try again later.",
+        error: err,
+      });
     } else {
       // console.error("LeetCode API Error:", err.message);
       return res.status(500).json({

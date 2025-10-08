@@ -14,8 +14,8 @@ export const githubStats = async (req, res) => {
     }
 
     const [userResponse, reposResponse] = await Promise.all([
-      githubAPI.get(`/users/${username}`),
-      githubAPI.get(`/users/${username}/repos?per_page=100`),
+      githubApi.get(`/users/${username}`),
+      githubApi.get(`/users/${username}/repos?per_page=100`),
     ]);
     // const userResponse = await axios.get(
     //   `https://api.github.com/users/${username}`
