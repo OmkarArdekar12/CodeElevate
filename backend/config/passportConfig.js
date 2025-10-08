@@ -24,13 +24,13 @@ passport.use(
 );
 
 passport.serializeUser((user, done) => {
-  console.log("We are inside serializeUser");
+  // console.log("We are inside serializeUser");
   done(null, user._id); //only userID saved in session
 });
 
 passport.deserializeUser(async (_id, done) => {
   try {
-    console.log("We are inside deserializeUser");
+    // console.log("We are inside deserializeUser");
     const user = await User.findById(_id);
     done(null, user); //full user object is attached to req.user
   } catch (error) {
