@@ -32,11 +32,11 @@ router.put("/:id/edit", auth, validatePost, isOwner, editPost);
 //Get All Post Route
 router.get("/", getAllPosts);
 
-//Get User All Post Route
-router.get("/:id", getUserPosts);
-
 //Get Post Route
 router.get("/:id/data", getPost);
+
+//Get User All Post Route
+router.get("/:id", getUserPosts);
 
 //Like/Unlike Post Route
 router.patch("/:id/like", auth, likeOrUnlikePost);

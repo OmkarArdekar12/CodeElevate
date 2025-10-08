@@ -187,7 +187,21 @@ export const addComment = async (req, res) => {
     post.comments.push({ user: userId, profile: profileId, text });
     await post.save();
 
-    return res.status(200).json({ message: "Comment added to the Post" });
+    const populatedPost = await Post.findById(postId)
+      .populate({
+        path: "comments.user",
+        select: "username",
+      })
+      .populate({
+        path: "comments.profile",
+        select: "fullName profilePicture headLine",
+      });
+    const addedComment =
+      populatedPost.comments[populatedPost.comments.length - 1];
+
+    return res
+      .status(200)
+      .json({ message: "Comment added to the Post", comment: addedComment });
   } catch (err) {
     return res.status(500).json({
       message: "Internal Server Error, fail to add comment on post",
@@ -208,6 +222,7 @@ export const destroyComment = async (req, res) => {
     }
 
     const comment = post.comments.id(commentId);
+
     if (!comment) {
       return res.status(404).json({ message: "Comment not found!" });
     }
@@ -225,7 +240,7 @@ export const destroyComment = async (req, res) => {
     //   return res.status(404).json({ message: "Post or Comment not found!" });
     // }
     // return res.status(200).json({ message: "Comment deleted successfully" });
-  } catch (error) {
+  } catch (err) {
     return res.status(500).json({
       message: "Internal Server Error, fail to delete comment",
       error: err,

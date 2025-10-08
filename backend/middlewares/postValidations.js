@@ -1,3 +1,4 @@
+import mongoose from "mongoose";
 import { postValidationSchema } from "../validations/postValidations.js";
 import Post from "../models/post.js";
 
@@ -42,10 +43,20 @@ export const isCommentOwner = async (req, res, next) => {
   try {
     const { postId, commentId } = req.params;
 
-    const post = await Post.findById(postId).populate({
-      path: "comments.user comments.profile",
-      select: "username fullName profilePicture headLine",
-    });
+    const post = await Post.findById(postId).populate(
+      "comments.user",
+      "username"
+    );
+    // const post = await Post.findById(postId).populate([
+    //   { path: "comments.user", select: "username" },
+    //   { path: "comments.profile", select: "fullName profilePicture headLine" },
+    // ]);
+    // const post = await Post.findById(postId)
+    //   .populate({ path: "comments.user", select: "username" })
+    //   .populate({
+    //     path: "comments.profile",
+    //     select: "fullName profilePicture headLine",
+    //   });
 
     if (!post) {
       return res.status(404).json({ message: "Post not found!" });
