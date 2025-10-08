@@ -1,4 +1,4 @@
-import { notificationValidationSchema } from "../validations/notificationValidations";
+import { notificationValidationSchema } from "../validations/notificationValidations.js";
 
 export const validateNotification = (req, res, next) => {
   const { error } = notificationValidationSchema.validate(req.body, {
