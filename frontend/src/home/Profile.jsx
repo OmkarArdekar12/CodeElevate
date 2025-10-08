@@ -10,8 +10,8 @@ export default function Profile({ profile }) {
   const headLine = profile.headLine ? profile.headLine : "Hello! Everyone";
   const fullName = profile.fullName;
   const username = profile.user.username;
-  const role = profile.role ? profile.role : "Explorer";
-  const domain = profile.domain ? profile.domain : "General";
+  const role = profile.role ? profile.role : "";
+  const domain = profile.domain ? profile.domain : "";
   const tags = profile.tags;
   return (
     <div
@@ -34,12 +34,16 @@ export default function Profile({ profile }) {
         <div className="flex flex-col items-center justify-center flex-wrap md:flex-row">
           <div className="inline-flex flex-wrap items-center justify-center sm:justify-end">
             <div className="m-1 inline-flex flex-wrap items-center justify-center">
-              <p className="m-[1px] bg-gray-600 py-2 px-4 rounded-2xl italic text-sm hover-text-border">
-                {role}
-              </p>
-              <p className="m-[1px] bg-gray-600 py-2 px-4 rounded-2xl italic text-sm hover-text-border">
-                {domain}
-              </p>
+              {role && (
+                <p className="m-[1px] bg-gray-600 py-2 px-4 rounded-2xl italic text-sm hover-text-border">
+                  {role}
+                </p>
+              )}
+              {domain && (
+                <p className="m-[1px] bg-gray-600 py-2 px-4 rounded-2xl italic text-sm hover-text-border">
+                  {domain}
+                </p>
+              )}
             </div>
             {tags && tags.length !== 0 && (
               <div className="inline-flex m-1 flex-wrap items-center justify-center sm:justify-end">
