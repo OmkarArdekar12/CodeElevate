@@ -21,6 +21,12 @@ const router = express.Router();
 //All Profiles Route
 router.get("/", getAllProfiles);
 
+//Get User Data Route
+router.get("/data/:id", getUserData);
+
+//Get Connections Route
+router.get("/:userId/connections", auth, getConnections);
+
 //Show Profile Route
 router.get("/:id", showProfile);
 
@@ -39,12 +45,6 @@ router.put(
 
 //Delete Profile Route
 router.delete("/:userId", auth, destroyProfile);
-
-//Get Connections Route
-router.get("/:userId/connections", auth, getConnections);
-
-//Get User Data Route
-router.get("/data/:id", getUserData);
 
 // //Create Profile Route
 // router.post("/", auth, createProfile);

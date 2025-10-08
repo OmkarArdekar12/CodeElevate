@@ -26,9 +26,6 @@ const router = express.Router();
 //Create Post Route
 router.post("/", auth, upload.single("image"), validatePost, createPost);
 
-//Edit Post Route
-router.put("/:id/edit", auth, validatePost, isOwner, editPost);
-
 //Get All Post Route
 router.get("/", getAllPosts);
 
@@ -51,6 +48,9 @@ router.delete(
   isCommentOwner,
   destroyComment
 );
+
+//Edit Post Route
+router.put("/:id/edit", auth, validatePost, isOwner, editPost);
 
 //Delete Post Route
 router.delete("/:id", auth, isOwner, deletePost);
