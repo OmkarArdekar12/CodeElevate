@@ -10,8 +10,8 @@ export const profileValidationSchema = Joi.object({
 
   headLine: Joi.string().max(150).allow(""),
 
-  role: Joi.string(),
-  domain: Joi.string(),
+  role: Joi.string().allow(""),
+  domain: Joi.string().allow(""),
 
   tags: Joi.array().items(Joi.string().allow("")).max(5),
 

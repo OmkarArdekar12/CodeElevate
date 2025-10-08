@@ -261,7 +261,7 @@ const PostCard = ({
           <img
             src={postImage}
             alt={postTitle}
-            className="mt-4 w-full max-h-70 object-cover rounded-md"
+            className="mt-4 w-full max-h-70 object-contain rounded-md"
           />
         )}
       </div>
