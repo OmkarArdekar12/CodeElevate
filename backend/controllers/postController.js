@@ -155,7 +155,7 @@ export const likeOrUnlikePost = async (req, res) => {
     }
     await post.save();
 
-    if ((!isLiked && userId, toString() !== postUserId.toString())) {
+    if (!isLiked && userId.toString() !== postUserId.toString()) {
       const notification = await Notification.create({
         from: userId,
         to: postUserId,
@@ -238,8 +238,7 @@ export const destroyComment = async (req, res) => {
       return res.status(404).json({ message: "Comment not found!" });
     }
 
-    await comment.remove();
-    // await comment.deleteOne();
+    await comment.deleteOne();
 
     await post.save();
 
