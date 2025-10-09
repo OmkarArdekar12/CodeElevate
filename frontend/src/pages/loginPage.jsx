@@ -2,6 +2,7 @@ import React, { use } from "react";
 import LoginForm from "../components/LoginForm";
 import { useNavigate } from "react-router-dom";
 import { useSession } from "../context/SessionContext";
+import Logo3D from "../components/Logo3D";
 
 const LoginPage = () => {
   const navigate = useNavigate();
@@ -20,11 +21,12 @@ const LoginPage = () => {
   return (
     <div className="w-[100%] h-[100%] text-white bg-slate-900 flex flex-col justify-center items-center px-5 py-9 transition-all duration-300 ease-in-out">
       <div className="inline-flex justify-center items-center mb-5">
-        <img
+        {/* <img
           src="/images/CodeElevateLogo.gif"
           alt="CodeElevate"
           className="h-25 mr-1"
-        />
+        /> */}
+        <Logo3D />
         <h1 className="logo-text ml-1 text-white text-4xl">CodeElevate</h1>
       </div>
       <LoginForm onLoginSuccess={handleLoginSuccess} />
