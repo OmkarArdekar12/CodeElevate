@@ -6,7 +6,7 @@ export default function Footer() {
     <footer className="w-[100%] bg-black text-gray-400 py-10 border-t border-cyan-700 transition-all duration-200 ease-in-out">
       <div className="max-w-[95%] mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-3 gap-8">
         <div>
-          <div>
+          <div className="logo-container">
             <img
               src="/images/CodeElevateLogo.png"
               alt="CodeElevate"
