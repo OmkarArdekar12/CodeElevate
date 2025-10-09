@@ -24,7 +24,7 @@ const LogoMesh = () => {
   return (
     <mesh ref={meshRef} geometry={geometry} scale={[scale, scale, scale]}>
       <meshPhysicalMaterial
-        color="#ffff00"
+        color="#ffffff"
         metalness={0.8}
         roughness={0.4}
         clearcoat={0.6}
