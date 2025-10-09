@@ -6,8 +6,16 @@ export default function Footer() {
     <footer className="w-[100%] bg-black text-gray-400 py-10 border-t border-cyan-700 transition-all duration-200 ease-in-out">
       <div className="max-w-[95%] mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-3 gap-8">
         <div>
-          <img src="/images/logo.png" alt="CodeElevate" className="h-19" />
-          <h1 className="text-white text-2xl font-bold mb-4">CodeElevate</h1>
+          <div>
+            <img
+              src="/images/CodeElevateLogo.png"
+              alt="CodeElevate"
+              className="logo h-19"
+            />
+            <h1 className="logo-text text-white text-2xl font-bold mb-4">
+              CodeElevate
+            </h1>
+          </div>
           <p className="text-sm">
             Elevate your coding journey. Connect with developers and CP
             enthusiasts. Showcase projects, compete, grow together.
