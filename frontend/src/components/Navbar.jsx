@@ -40,9 +40,9 @@ export default function Navbar({ isLoggedIn, userData }) {
             <Link to="/">
               <div className="logo-container flex-shrink-0 flex items-center">
                 <img
-                  src="/images/CodeElevateLogo.png"
+                  src="/images/CodeElevateLogo.gif"
                   alt="CodeElevate"
-                  className="logo h-18 mr-1"
+                  className="h-18 mr-1"
                 />
                 <h1 className="LogoText logo-text ml-1 text-white text-3xl hover-logo-text-border">
                   CodeElevate

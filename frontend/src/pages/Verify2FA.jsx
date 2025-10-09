@@ -26,9 +26,9 @@ const Verify2FA = () => {
     <div className="w-[100%] h-[100%] text-white bg-slate-900 flex flex-col justify-center items-center px-10 py-9 transition-all duration-300 ease-in-out">
       <div className="logo-container inline-flex justify-center items-center mb-5">
         <img
-          src="/images/CodeElevateLogo.png"
+          src="/images/CodeElevateLogo.gif"
           alt="CodeElevate"
-          className="logo h-25 mr-1"
+          className="h-25 mr-1"
         />
         <h1 className="logo-text ml-1 text-white text-4xl">CodeElevate</h1>
       </div>

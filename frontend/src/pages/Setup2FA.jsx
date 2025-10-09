@@ -11,9 +11,9 @@ const Setup2FA = () => {
     <div className="w-[100%] h-[100%] text-white bg-slate-900 flex flex-col justify-center items-center px-5 py-9 transition-all duration-300 ease-in-out">
       <div className="logo-text-container inline-flex justify-center items-center mb-1">
         <img
-          src="/images/CodeElevateLogo.png"
+          src="/images/CodeElevateLogo.gif"
           alt="CodeElevate"
-          className="logo h-10"
+          className="h-10"
         />
         <h1 className="logo-text ml-1 text-white text-3xl">CodeElevate</h1>
       </div>
