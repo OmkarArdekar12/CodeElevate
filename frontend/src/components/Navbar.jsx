@@ -11,7 +11,7 @@ import { FaInfoCircle as AboutIcon } from "react-icons/fa";
 import { FaUser as UserIcon } from "react-icons/fa";
 import { FaSignInAlt as LoginIcon } from "react-icons/fa";
 
-export default function Navbar({ isLoggedIn, userData }) {
+export default function Navbar({ isLoggedIn, isVerified, userData }) {
   const [isOpen, setIsOpen] = useState(false);
   const [userImage, setUserImage] = useState("/images/defaultUserImage.png");
 
@@ -27,10 +27,10 @@ export default function Navbar({ isLoggedIn, userData }) {
   };
 
   useEffect(() => {
-    if (isLoggedIn && userData && userData.userId) {
+    if (isLoggedIn && isVerified && userData && userData.userId) {
       fetchCurrentUser();
     }
-  }, [isLoggedIn, userData]);
+  }, [isLoggedIn, isVerified, userData]);
 
   return (
     <header className="bg-gray-800 w-[100%] transition-all duration-200 ease-in-out">
@@ -67,7 +67,7 @@ export default function Navbar({ isLoggedIn, userData }) {
                   <PostsIcon className="text-xl" />
                   Posts
                 </Link>
-                {isLoggedIn && (
+                {isLoggedIn && isVerified && (
                   <Link
                     to="/notifications"
                     className="flex flex-col items-center text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-md font-medium transition duration-150"
@@ -76,7 +76,7 @@ export default function Navbar({ isLoggedIn, userData }) {
                     Notifications
                   </Link>
                 )}
-                {isLoggedIn && (
+                {isLoggedIn && isVerified && (
                   <Link
                     to="/messages"
                     className="flex flex-col items-center text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-md font-medium transition duration-150"
@@ -101,7 +101,7 @@ export default function Navbar({ isLoggedIn, userData }) {
                 </Link>
               </div>
 
-              {isLoggedIn ? (
+              {isLoggedIn && isVerified ? (
                 <div className="flex items-center ml-4">
                   <Link
                     to={
@@ -184,7 +184,7 @@ export default function Navbar({ isLoggedIn, userData }) {
         {isOpen && (
           <div className="lg:hidden bg-gray-800">
             <div className="px-2 pt-2 pb-3 space-y-1">
-              {isLoggedIn ? (
+              {isLoggedIn && isVerified ? (
                 <Link
                   to={
                     userData && userData.userId
@@ -219,7 +219,7 @@ export default function Navbar({ isLoggedIn, userData }) {
                 <PostsIcon className="mr-2" />
                 Posts
               </Link>
-              {isLoggedIn && (
+              {isLoggedIn && isVerified && (
                 <Link
                   to="/notifications"
                   className="flex items-center px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-700 transition duration-150 hover:font-bold"
@@ -228,7 +228,7 @@ export default function Navbar({ isLoggedIn, userData }) {
                   Notifications
                 </Link>
               )}
-              {isLoggedIn && (
+              {isLoggedIn && isVerified && (
                 <Link
                   to="/messages"
                   className="flex items-center px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-700 transition duration-150 hover:font-bold"

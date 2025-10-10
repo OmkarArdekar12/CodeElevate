@@ -2,13 +2,16 @@ import React from "react";
 import TwoFAVerification from "../components/TwoFAVerification";
 import { useNavigate } from "react-router-dom";
 import toast from "react-hot-toast";
+import { useSession } from "../context/SessionContext";
 
 const Verify2FA = () => {
   const navigate = useNavigate();
+  const { verify } = useSession();
 
   const handleVerification = async (data) => {
     if (data) {
       navigate("/");
+      verify();
       setTimeout(() => {
         toast.dismiss();
         toast.success("You're now logged in.", { id: "login success" });

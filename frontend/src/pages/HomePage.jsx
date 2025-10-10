@@ -7,7 +7,7 @@ import Loading from "../components/Loading.jsx";
 import toast from "react-hot-toast";
 
 function HomePage() {
-  const { isLoggedIn, loading, user } = useSession();
+  const { isLoggedIn, isVerified, loading, user } = useSession();
 
   useEffect(() => {
     if (!localStorage.getItem("welcome_shown")) {
@@ -26,7 +26,7 @@ function HomePage() {
 
   return (
     <>
-      <Navbar isLoggedIn={isLoggedIn} userData={user} />
+      <Navbar isLoggedIn={isLoggedIn} isVerified={isVerified} userData={user} />
       <main>
         <Outlet />
       </main>

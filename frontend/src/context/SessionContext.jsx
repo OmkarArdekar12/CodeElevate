@@ -7,6 +7,7 @@ export const useSession = () => useContext(SessionContext);
 
 export const SessionProvider = ({ children }) => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [isVerified, setIsVerified] = useState(false);
   const [loading, setLoading] = useState(true);
   const [user, setUser] = useState(null);
 
@@ -26,17 +27,24 @@ export const SessionProvider = ({ children }) => {
     sessionStorage.setItem("user", JSON.stringify(userData));
   };
 
+  const verify = () => {
+    setIsVerified(true);
+    sessionStorage.setItem("isVerified", "true");
+  };
+
   const logout = (data) => {
     if (data) {
       setIsLoggedIn(false);
+      setIsVerified(false);
       setUser(null);
       sessionStorage.removeItem("user");
+      sessionStorage.removeItem("isVerified", "true");
     }
   };
 
   return (
     <SessionContext.Provider
-      value={{ isLoggedIn, loading, user, login, logout }}
+      value={{ isLoggedIn, isVerified, loading, user, login, verify, logout }}
     >
       {children}
     </SessionContext.Provider>

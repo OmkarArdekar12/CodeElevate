@@ -17,6 +17,7 @@ import CreatePostPage from "./posts/CreatePostPage.jsx";
 import EditPostPage from "./posts/EditPostPage.jsx";
 import AboutPage from "./about/AboutPage.jsx";
 import NotFound from "./components/NotFound.jsx";
+import PrivateRoute from "./components/PrivateRoute.jsx";
 import ProtectedRoute from "./components/ProtectedRoute.jsx";
 
 const router = createBrowserRouter([
@@ -64,7 +65,7 @@ const router = createBrowserRouter([
         element: <PostPage />,
       },
       {
-        element: <ProtectedRoute />,
+        element: <PrivateRoute />,
         children: [
           {
             path: "/notifications",

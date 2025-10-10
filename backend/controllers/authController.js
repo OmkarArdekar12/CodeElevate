@@ -150,6 +150,8 @@ export const verify2FA = async (req, res) => {
   });
 
   if (verified) {
+    req.session.isVerfied = true;
+
     req.login(user, (err) => {
       if (err) {
         return res.status(500).json({ message: "Login failed", error: err });
@@ -159,6 +161,7 @@ export const verify2FA = async (req, res) => {
         message: "two-factor-authentication-(2FA) successful",
         username: user.username,
         userId: user._id,
+        isVerfied: true,
       });
     });
   } else {

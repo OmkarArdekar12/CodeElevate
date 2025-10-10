@@ -6,7 +6,7 @@ import toast from "react-hot-toast";
 
 const ProtectedRoute = () => {
   const { isLoggedIn, loading } = useSession();
-  console.log("The LoggedIn: ", isLoggedIn);
+  // console.log("The LoggedIn: ", isLoggedIn);
   if (loading) {
     return <Loading />;
   }
