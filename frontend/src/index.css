@@ -164,6 +164,30 @@ main {
   -webkit-text-stroke: 1px var(--color-blue-600);
 }
 
+/* Loading dots Animation */
+@keyframes bounceDot {
+  0%,
+  80%,
+  100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-5px);
+  }
+}
+
+.animate-bounce1 {
+  animation: bounceDot 1.2s infinite ease-in-out;
+}
+.animate-bounce2 {
+  animation: bounceDot 1.2s infinite ease-in-out;
+  animation-delay: 0.2s;
+}
+.animate-bounce3 {
+  animation: bounceDot 1.2s infinite ease-in-out;
+  animation-delay: 0.4s;
+}
+
 /* Profile border effect animation */
 @property --angle {
   syntax: "<angle>";
