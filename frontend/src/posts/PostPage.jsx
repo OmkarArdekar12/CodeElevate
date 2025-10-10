@@ -9,7 +9,7 @@ export default function PostPage() {
   const [allPosts, setAllPosts] = useState([]);
   const [currUserData, setCurrUserData] = useState({});
   const [loading, setLoading] = useState(true);
-  const { isLoggedIn, user } = useSession();
+  const { isLoggedIn, isVerified, user } = useSession();
   const userId = user && user.userId ? user.userId : "";
 
   const fetchData = async () => {
@@ -47,6 +47,7 @@ export default function PostPage() {
         currUserData={currUserData}
         userId={userId}
         isLoggedIn={isLoggedIn}
+        isVerified={isVerified}
       />
     </div>
   );

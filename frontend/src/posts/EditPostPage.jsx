@@ -77,7 +77,7 @@ const EditPostPage = () => {
     return <Loading />;
   }
 
-  if (userId !== postUserId) {
+  if (userId.toString() !== postUserId.toString()) {
     toast.error("Access denied. You can only edit your own post.", {
       id: "Invalid user to update post",
     });

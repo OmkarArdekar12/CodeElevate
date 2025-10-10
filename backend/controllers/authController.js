@@ -150,12 +150,12 @@ export const verify2FA = async (req, res) => {
   });
 
   if (verified) {
-    req.session.isVerfied = true;
-
     req.login(user, (err) => {
       if (err) {
         return res.status(500).json({ message: "Login failed", error: err });
       }
+
+      req.session.isVerified = true;
 
       return res.status(200).json({
         message: "two-factor-authentication-(2FA) successful",

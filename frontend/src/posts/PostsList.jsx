@@ -8,6 +8,7 @@ const PostsList = ({
   currUserData,
   userId,
   isLoggedIn,
+  isVerified,
 }) => {
   const onPostUpdate = (updatedPost) => {
     setAllPosts((prevPosts) =>
@@ -43,6 +44,7 @@ const PostsList = ({
                 currUserData={currUserData}
                 userId={userId}
                 isLoggedIn={isLoggedIn}
+                isVerified={isVerified}
                 key={index}
               />
             </motion.div>

@@ -18,7 +18,7 @@ import { useSession } from "../context/SessionContext";
 
 const ProfilePage = () => {
   const { id: profileId } = useParams();
-  const { isLoggedIn, user } = useSession();
+  const { isLoggedIn, isVerified, user } = useSession();
   const userId = user && user.userId ? user.userId : "";
   const isOwner = profileId === userId;
 
@@ -129,6 +129,7 @@ const ProfilePage = () => {
         <ButtonSection
           profileUserId={profileId}
           isLoggedIn={isLoggedIn}
+          isVerified={isVerified}
           isOwner={isOwner}
           profileUserFullName={userData.fullName}
           followersCount={userData.followers ? userData.followers.length : 0}

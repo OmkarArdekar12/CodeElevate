@@ -13,10 +13,14 @@ export const SessionProvider = ({ children }) => {
 
   useEffect(() => {
     const storedUser = JSON.parse(sessionStorage.getItem("user"));
+    const storedVerified = sessionStorage.getItem("isVerified") === "true";
     // console.log("The useEffect runs: ", storedUser);
     if (storedUser) {
       setUser(storedUser);
       setIsLoggedIn(true);
+    }
+    if (storedVerified) {
+      setIsVerified(true);
     }
     setLoading(false);
   }, []);
@@ -38,7 +42,7 @@ export const SessionProvider = ({ children }) => {
       setIsVerified(false);
       setUser(null);
       sessionStorage.removeItem("user");
-      sessionStorage.removeItem("isVerified", "true");
+      sessionStorage.removeItem("isVerified");
     }
   };
 

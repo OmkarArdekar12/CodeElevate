@@ -22,6 +22,7 @@ const PostCard = ({
   currUserData,
   userId,
   isLoggedIn,
+  isVerified,
 }) => {
   if (!postData) {
     return null;
@@ -41,6 +42,10 @@ const PostCard = ({
   const handleLikeUnlike = async () => {
     if (!isLoggedIn) {
       toast.error("You need to logged-in to access that");
+      return;
+    }
+    if (!isVerified) {
+      toast.error("You need to verify to access that");
       return;
     }
     try {
@@ -90,6 +95,11 @@ const PostCard = ({
     if (!isLoggedIn) {
       toast.error("You need to logged-in to access that");
       navigate("/login");
+      return;
+    }
+    if (!isVerified) {
+      toast.error("You need to verify to access that");
+      navigate("/verify-2fa");
       return;
     }
     if (comment.trim()) {
@@ -161,6 +171,16 @@ const PostCard = ({
   };
 
   const handlePostDelete = async () => {
+    if (!isLoggedIn) {
+      toast.error("You need to logged-in to access that");
+      navigate("/login");
+      return;
+    }
+    if (!isVerified) {
+      toast.error("You need to verify to access that");
+      navigate("/verify-2fa");
+      return;
+    }
     setDeletePostLoading(true);
     try {
       const postId = postData._id;
@@ -169,7 +189,7 @@ const PostCard = ({
       const updatedPost = { _id: postId };
       onPostUpdate(updatedPost);
     } catch (err) {
-      console.log("Error in commenting on post");
+      console.log("Error in commenting on post", err);
     } finally {
       setMenuOpen(false);
       setDeletePostLoading(false);
@@ -291,7 +311,7 @@ const PostCard = ({
           </div>
           <p className="leading-none">Comment</p>
         </div>
-        {isPostOwner && (
+        {isLoggedIn && isVerified && isPostOwner && (
           <div className="relative">
             <button
               onClick={() => setMenuOpen(!menuOpen)}

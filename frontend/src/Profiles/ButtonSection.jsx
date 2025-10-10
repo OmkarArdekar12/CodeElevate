@@ -23,6 +23,7 @@ import Loading2 from "../components/Loading2.jsx";
 const ButtonSection = ({
   profileUserId,
   isLoggedIn,
+  isVerified,
   isOwner,
   profileUserFullName,
   followersCount,
@@ -45,10 +46,10 @@ const ButtonSection = ({
   };
 
   useEffect(() => {
-    if (isLoggedIn && !isOwner) {
+    if (isLoggedIn && isVerified && !isOwner) {
       fetchStatus();
     }
-  }, [profileUserId, isLoggedIn, isOwner]);
+  }, [profileUserId, isLoggedIn, isVerified, isOwner]);
 
   const handleFollow = async () => {
     setLoadingFollow(true);
@@ -131,7 +132,7 @@ const ButtonSection = ({
               </button>
             </div>
           </div>
-          {isLoggedIn && isOwner && (
+          {isLoggedIn && isVerified && isOwner && (
             <div className="px-1 md:ml-auto pr-2 md:pr-10 flex flex-wrap flex-col items-end justify-center">
               <div className="flex flex-wrap items-center">
                 <button
@@ -178,7 +179,7 @@ const ButtonSection = ({
                   state: {
                     profileUserId,
                     from: "profile",
-                    isAuthorized: isLoggedIn && isOwner,
+                    isAuthorized: isLoggedIn && isVerified && isOwner,
                   },
                   replace: false,
                 })

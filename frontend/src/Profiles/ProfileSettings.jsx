@@ -11,10 +11,10 @@ const ProfileSettings = () => {
   const { id: profileId } = useParams();
   const navigate = useNavigate();
   const [logoutLoading, setLogoutLoading] = useState(false);
-  const { isLoggedIn, user, logout } = useSession();
+  const { isLoggedIn, isVerified, user, logout } = useSession();
   const userId = user && user.userId ? user.userId : "";
   const isOwner = profileId === userId;
-  const isAuthorized = isLoggedIn && isOwner;
+  const isAuthorized = isLoggedIn && isVerified && isOwner;
   // const { state } = useLocation();
   // const userId = state?.profileUserId ?? profileUserId;
   // const isAuthorized = state?.isAuthorized;
