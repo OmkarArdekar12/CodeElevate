@@ -112,7 +112,7 @@ main {
 .logo {
   /* display: inline-block; */
   animation: spin3D 2s ease-in-out forwards;
-  transform-style: preserve-3d; /* enable 3D feel */
+  transform-style: preserve-3d; /* Enable 3D feel */
 }
 .logo-text {
   display: inline-block;
