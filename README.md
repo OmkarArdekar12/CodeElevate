@@ -1,5 +1,3 @@
 # CodeElevate
 
 ### Frontend
-
-### Backend
