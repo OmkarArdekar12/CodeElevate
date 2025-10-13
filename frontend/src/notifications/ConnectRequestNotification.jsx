@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import { getUserData } from "../service/profileApi";
+import { getUserData } from "../service/profileApi.js";
 import { FaRegTimesCircle } from "react-icons/fa";
 import { SiTicktick } from "react-icons/si";
 import toast from "react-hot-toast";
-import { connectResponse } from "../service/connectionApi";
+import { connectResponse } from "../service/connectionApi.js";
 
 const ConnectRequestNotification = ({ notification, fetchNotifications }) => {
   const [senderData, setSenderData] = useState({
