@@ -1,5 +1,12 @@
 import express from "express";
-import { getRankings } from "../controllers/rankingController.js";
+import {
+  getRankings,
+  getCompetitiveProgrammingRankings,
+  getDevelopmentRankings,
+  getRankerRankings,
+  getContributorRankings,
+  getAllRounderRankings,
+} from "../controllers/rankingController.js";
 
 const router = express.Router();
 
@@ -7,18 +14,18 @@ const router = express.Router();
 router.get("/", getRankings);
 
 //Get Competitive Programming Ranking Route
-router.get("/competitive-programming", getRankings);
+router.get("/competitive-programming", getCompetitiveProgrammingRankings);
 
 //Get Development Ranking Route
-router.get("/development", getRankings);
+router.get("/development", getDevelopmentRankings);
 
 //Get Rankers Ranking Route
-router.get("/rankers", getRankings);
+router.get("/rankers", getRankerRankings);
 
 //Get Contributors Ranking Route
-router.get("/contributors", getRankings);
+router.get("/contributors", getContributorRankings);
 
 //Get All Rounders Ranking Route
-router.get("/all-rounders", getRankings);
+router.get("/all-rounders", getAllRounderRankings);
 
 export default router;

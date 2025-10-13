@@ -152,9 +152,66 @@ export const getCompetitiveProgrammingRankings = async (req, res) => {
     const response = await axios.get(`${baseURL}/api/rankings/`);
     const competitiveProgrammingRankings =
       response.data?.competitiveProgramming;
+    return res.status(200).json(competitiveProgrammingRankings);
   } catch (err) {
     return res.status(500).json({
       message: "Failed to compute competitive programming rankings",
+      error: err,
+    });
+  }
+};
+
+//Get Development Ranking Controller
+export const getDevelopmentRankings = async (req, res) => {
+  try {
+    const response = await axios.get(`${baseURL}/api/rankings/`);
+    const developmentRankings = response.data?.development;
+    return res.status(200).json(developmentRankings);
+  } catch (err) {
+    return res.status(500).json({
+      message: "Failed to compute development rankings",
+      error: err,
+    });
+  }
+};
+
+//Get Rankers Ranking Controller
+export const getRankerRankings = async (req, res) => {
+  try {
+    const response = await axios.get(`${baseURL}/api/rankings/`);
+    const rankerRankings = response.data?.rankers;
+    return res.status(200).json(rankerRankings);
+  } catch (err) {
+    return res.status(500).json({
+      message: "Failed to compute rankers rankings",
+      error: err,
+    });
+  }
+};
+
+//Get Contributors Ranking Controller
+export const getContributorRankings = async (req, res) => {
+  try {
+    const response = await axios.get(`${baseURL}/api/rankings/`);
+    const contributorRankings = response.data?.contributors;
+    return res.status(200).json(contributorRankings);
+  } catch (err) {
+    return res.status(500).json({
+      message: "Failed to compute contributors rankings",
+      error: err,
+    });
+  }
+};
+
+//Get All Rounders Ranking Controller
+export const getAllRounderRankings = async (req, res) => {
+  try {
+    const response = await axios.get(`${baseURL}/api/rankings/`);
+    const allRounderRankings = response.data?.allRounders;
+    return res.status(200).json(allRounderRankings);
+  } catch (err) {
+    return res.status(500).json({
+      message: "Failed to compute all rounders rankings",
       error: err,
     });
   }
