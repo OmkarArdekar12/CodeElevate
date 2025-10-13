@@ -53,6 +53,11 @@ main {
   color: yellow;
 }
 
+.top-card-font {
+  font-family: "Schibsted Grotesk", sans-serif;
+  font-style: normal;
+}
+
 .slick-dots li button:before {
   color: #9ca3af !important;
   opacity: 1 !important;
