@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
-import { getNotifications } from "../service/notificationApi";
-import Notification from "./Notification";
-import ConnectRequestNotification from "./ConnectRequestNotification";
+import { getNotifications } from "../service/notificationApi.js";
+import Notification from "./Notification.jsx";
+import ConnectRequestNotification from "./ConnectRequestNotification.jsx";
 import Loading from "../components/Loading.jsx";
 
 const NotificationPage = () => {
