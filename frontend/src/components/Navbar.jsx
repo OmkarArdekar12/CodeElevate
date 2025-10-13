@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import { showProfile } from "../service/profileApi";
+import { showProfile } from "../service/profileApi.js";
 import { useEffect } from "react";
 import { FaHome as HomeIcon } from "react-icons/fa";
 import { IoMdPhotos as PostsIcon } from "react-icons/io";
