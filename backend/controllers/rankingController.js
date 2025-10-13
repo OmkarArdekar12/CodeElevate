@@ -8,7 +8,7 @@ const baseURL = process.env.BASE_URL || "http://localhost:8080";
 const safeNumber = (val) =>
   isNaN(val) || val === null || val === "" ? 0 : Number(val);
 
-//Get Ranking Controller
+//Get All Ranking Controller
 export const getRankings = async (req, res) => {
   try {
     let cache = await RankingCache.findOne();
@@ -142,6 +142,20 @@ export const getRankings = async (req, res) => {
     // console.error("Ranking Error: ", err);
     return res
       .status(500)
-      .json({ message: "Failed to compute rankings", error: err });
+      .json({ message: "Failed to compute all rankings", error: err });
+  }
+};
+
+//Get Competitive Programming Ranking Controller
+export const getCompetitiveProgrammingRankings = async (req, res) => {
+  try {
+    const response = await axios.get(`${baseURL}/api/rankings/`);
+    const competitiveProgrammingRankings =
+      response.data?.competitiveProgramming;
+  } catch (err) {
+    return res.status(500).json({
+      message: "Failed to compute competitive programming rankings",
+      error: err,
+    });
   }
 };
