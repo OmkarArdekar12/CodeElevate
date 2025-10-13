@@ -2,8 +2,8 @@ import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { IoNotificationsCircle } from "react-icons/io5";
 import { MdDeleteForever } from "react-icons/md";
-import { getUserData } from "../service/profileApi";
-import { deleteNotification } from "../service/notificationApi";
+import { getUserData } from "../service/profileApi.js";
+import { deleteNotification } from "../service/notificationApi.js";
 import toast from "react-hot-toast";
 
 const Notification = ({ notification, fetchNotifications }) => {
