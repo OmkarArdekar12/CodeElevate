@@ -4,8 +4,8 @@ import { Eye, EyeOff } from "lucide-react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEye, faEyeSlash } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
-import { register, loginUser } from "../service/authApi";
-import Loading2 from "./Loading2";
+import { register, loginUser } from "../service/authApi.js";
+import Loading2 from "./Loading2.jsx";
 import toast from "react-hot-toast";
 
 const LoginForm = ({ onLoginSuccess }) => {
