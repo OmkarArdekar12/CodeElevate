@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { setup2FA } from "../service/authApi";
+import { setup2FA } from "../service/authApi.js";
 
 const TwoFASetup = ({ onSetupComplete }) => {
   const [response, setResponse] = useState({ secret: "", qrCode: "" });
