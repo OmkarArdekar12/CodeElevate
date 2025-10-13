@@ -1,7 +1,7 @@
 import React from "react";
 import { Navigate, Outlet } from "react-router-dom";
-import { useSession } from "../context/SessionContext";
-import Loading from "./Loading";
+import { useSession } from "../context/SessionContext.jsx";
+import Loading from "./Loading.jsx";
 import toast from "react-hot-toast";
 
 const PrivateRoute = () => {
