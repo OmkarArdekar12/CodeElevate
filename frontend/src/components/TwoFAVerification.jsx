@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { verify2FA, reset2FA } from "../service/authApi";
+import { verify2FA, reset2FA } from "../service/authApi.js";
 import toast from "react-hot-toast";
 
 const TwoFAVerification = ({ onVerifySuccess, onResetSuccess }) => {
