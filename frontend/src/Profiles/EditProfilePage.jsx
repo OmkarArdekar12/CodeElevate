@@ -247,7 +247,7 @@ const EditProfilePage = () => {
 
   return (
     <div className="w-full flex items-center justify-center md:px-10 text-white transition-all duration-300 ease-in-out">
-      <div className="w-full flex flex-col items-center justify-center py-5 px-1 bg-[#181818]">
+      <div className="w-full flex flex-col items-center justify-center py-5 px-1 bg-gray-950">
         <form
           onSubmit={handleSubmit}
           className="w-[95%] bg-gradient-to-r from-gray-800 via-black-900 to-purple-900 rounded-2xl shadow-lg p-6"

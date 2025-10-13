@@ -33,8 +33,8 @@ export default function Navbar({ isLoggedIn, isVerified, userData }) {
   }, [isLoggedIn, isVerified, userData]);
 
   return (
-    <header className="bg-gray-800 w-[100%] transition-all duration-200 ease-in-out">
-      <nav className="bg-gray-800 shadow-lg w-[100%] py-3">
+    <header className="bg-slate-900 z-1 shadow-xs shadow-slate-500 w-[100%] transition-all duration-200 ease-in-out">
+      <nav className="bg-slate-900 w-[100%] py-3">
         <div className="px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-18">
             <Link to="/">

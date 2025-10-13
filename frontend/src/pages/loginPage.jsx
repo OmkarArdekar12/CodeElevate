@@ -26,7 +26,7 @@ const LoginPage = () => {
   };
 
   return (
-    <div className="w-[100%] h-[100%] text-white bg-slate-900 flex flex-col justify-center items-center px-5 py-9 transition-all duration-300 ease-in-out">
+    <div className="w-[100%] h-[100%] text-white bg-slate-950 flex flex-col justify-center items-center px-5 py-9 transition-all duration-300 ease-in-out">
       <motion.div
         initial={{ opacity: 0, scale: 0.1 }}
         animate={{ opacity: 1, scale: 1 }}

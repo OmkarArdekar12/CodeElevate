@@ -6,7 +6,8 @@
     padding: 0;
     width: 100%;
     height: 100vh;
-    background: linear-gradient(45deg, #1a1a1b, #1e1e1e);
+    /* background: linear-gradient(45deg, #1a1a1b, #1e1e1e); */
+    background-color: var(--color-slate-950);
     font-family: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji",
       "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   }
@@ -35,7 +36,8 @@ main {
 }
 
 .box {
-  background-color: #181818;
+  /* background-color: #181818; */
+  background-color: color-mix(in oklab, var(--color-slate-900));
 }
 
 .TopCard {

@@ -16,7 +16,7 @@ export default function Profile({ profile }) {
   return (
     <div
       onDoubleClick={() => navigate(`/profiles/${userId}`)}
-      className="Profile flex flex-col flex-wrap sm:flex-row md:flex-nowrap justify-center w-[100%] text-xl items-center bg-gradient-to-r from-gray-950 to-blue-900 rounded-xl px-10 py-2 my-4 shadow-sm shadow-slate-500/50 cursor-pointer transition-all duration-300 ease-in-out"
+      className="Profile border border-slate-800 flex flex-col flex-wrap sm:flex-row md:flex-nowrap justify-center w-[100%] text-xl items-center bg-gradient-to-r from-gray-950 to-blue-900 rounded-xl px-10 py-2 my-4 shadow-sm shadow-slate-500/50 cursor-pointer transition-all duration-300 ease-in-out"
     >
       <div className="w-full flex flex-col gap-1 items-center justify-center sm:flex-row sm:justify-between rounded-xl">
         <div className="flex flex-col flex-wrap sm:flex-row md:flex-nowrap items-center justify-evenly">

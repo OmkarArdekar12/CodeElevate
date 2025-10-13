@@ -117,7 +117,7 @@ const ProfilePage = () => {
 
   return (
     <div className="w-full flex items-center justify-center md:px-10 text-white transition-all duration-300">
-      <div className="w-full flex flex-col items-center justify-center pb-5 bg-[#181818] transition-all duration-300">
+      <div className="w-full flex flex-col items-center justify-center pb-5 bg-gray-950 transition-all duration-300">
         <UserProfileSection
           fullName={userData.fullName}
           username={userData.user.username}
