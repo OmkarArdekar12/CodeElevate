@@ -10,12 +10,16 @@ const EditProfilePage = () => {
   const { id } = useParams();
   const navigate = useNavigate();
   const { user } = useSession();
+  const notOwner = user?.userId !== id;
 
-  if (user.userId !== id) {
-    toast.error("Access denied. You can only edit your own profile.", {
-      id: "Invalid user to update profile",
-    });
-    return <Navigate to={`/`} replace />;
+  useEffect(() => {
+    if (notOwner) {
+      toast.error("Access denied.", { id: "Invalid user to update profile" });
+    }
+  }, [notOwner]);
+
+  if (notOwner) {
+    return <Navigate to="/" replace />;
   }
 
   const [profile, setProfile] = useState({

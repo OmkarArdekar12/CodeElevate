@@ -1,5 +1,10 @@
-import React, { useState } from "react";
-import { useLocation, useParams, useNavigate } from "react-router-dom";
+import React, { useState, useEffect } from "react";
+import {
+  useLocation,
+  useParams,
+  useNavigate,
+  Navigate,
+} from "react-router-dom";
 import { logoutUser } from "../service/authApi.js";
 import { useSession } from "../context/SessionContext";
 import { FaSignOutAlt as LogoutIcon } from "react-icons/fa";
@@ -19,6 +24,19 @@ const ProfileSettings = () => {
   // const userId = state?.profileUserId ?? profileUserId;
   // const isAuthorized = state?.isAuthorized;
 
+  const notAuth = !isAuthorized;
+  useEffect(() => {
+    if (notAuth) {
+      toast.error("Not authorized.", {
+        id: "Invalid user to access profile settings",
+      });
+    }
+  }, [notAuth]);
+
+  if (notAuth) {
+    return <Navigate to="/" replace />;
+  }
+
   const handleLogout = async () => {
     setLogoutLoading(true);
     try {
@@ -32,14 +50,6 @@ const ProfileSettings = () => {
       setLogoutLoading(false);
     }
   };
-
-  if (!isAuthorized) {
-    return (
-      <div className="text-white w-full px-3 py-5 flex flex-col items-center justify-center">
-        <p className="opacity-80">Not authorized.</p>
-      </div>
-    );
-  }
 
   return (
     <div className="text-white w-full px-3 py-5 flex flex-col items-center justify-center transition-all duration-300 ease-in-out">
