@@ -10,9 +10,9 @@ function HomePage() {
   const { isLoggedIn, isVerified, loading, user } = useSession();
 
   useEffect(() => {
-    if (typeof window === "undefined") {
-      return;
-    }
+    // if (typeof window === "undefined") {
+    //   return;
+    // }
     if (!localStorage.getItem("welcome_shown")) {
       toast.success("Welcome to CodeElevate!", { id: "welcome-toast" });
       localStorage.setItem("welcome_shown", "true");
