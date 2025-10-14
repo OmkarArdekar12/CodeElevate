@@ -43,6 +43,15 @@ const EditPostPage = () => {
     fetchPostData();
   }, [id]);
 
+  useEffect(() => {
+    if (userId && postUserId && userId.toString() !== postUserId.toString()) {
+      toast.error("Access denied. You can only edit your own post.", {
+        id: "Invalid user to update post",
+      });
+      navigate("/posts");
+    }
+  });
+
   //   useEffect(() => {
   //     if (!loading && userId && postUserId && userId !== postUserId) {
   //       toast.error("Access denied. You can only edit your own post.", {
@@ -75,13 +84,6 @@ const EditPostPage = () => {
 
   if (loading) {
     return <Loading />;
-  }
-
-  if (userId.toString() !== postUserId.toString()) {
-    toast.error("Access denied. You can only edit your own post.", {
-      id: "Invalid user to update post",
-    });
-    navigate("/posts");
   }
 
   return (
@@ -117,7 +119,7 @@ const EditPostPage = () => {
             className="w-full p-3 rounded-lg bg-[#02282e] text-white border border-gray-700 focus:outline-none focus:ring-2 focus:ring-[#00c4cc]"
             rows="4"
             placeholder="Write something interesting..."
-            value={postData.description}
+            value={postData.description || ""}
             onChange={(e) =>
               setPostData((prevPost) => ({
                 ...prevPost,
