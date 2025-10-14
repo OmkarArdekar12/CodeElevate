@@ -77,15 +77,15 @@ const ButtonSection = ({
   const handleConnect = async () => {
     setLoadingConnect(true);
     try {
-      if (connectStatus === "none" || connectStatus == "not_connected") {
+      if (connectStatus === "none" || connectStatus === "not_connected") {
         //send connection request
         const response = await connectRequest(profileUserId);
         toast.success(`Connection request send to ${profileUserFullName}.`);
         setConnectStatus("pending");
-      } else if (connectStatus == "pending") {
+      } else if (connectStatus === "pending") {
         //connection request already send - toast message
         toast("Connection request already send!");
-      } else if (connectStatus == "connected") {
+      } else if (connectStatus === "connected") {
         //unconnect connection
         const response = await unconnectUser(profileUserId);
         toast.success(`You disconnected from ${profileUserFullName}.`);
