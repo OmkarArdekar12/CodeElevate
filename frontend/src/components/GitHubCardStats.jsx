@@ -23,7 +23,7 @@ const GitHubCardStats = ({ gitHubData }) => {
   }
 
   return (
-    <div className="w-[20rem] sm:w-[30rem] m-1 my-4 p-6 text-white from-black via-gray-950 to-gray-900 bg-gradient-to-r rounded-2xl border border-gray-100 text-center stats-card-github transition-all duration-200 ease-in-out">
+    <div className="w-[95%] sm:w-[30rem] m-1 my-4 p-6 text-white from-black via-gray-950 to-gray-900 bg-gradient-to-r rounded-2xl border border-gray-100 text-center stats-card-github transition-all duration-200 ease-in-out">
       <div className="flex flex-col flex-wrap items-center justify-center">
         <div className="flex items-center justify-center">
           <FaGithub className="w-9 h-9 mr-2" />

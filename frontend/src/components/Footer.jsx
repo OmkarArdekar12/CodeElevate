@@ -1,24 +1,26 @@
 import { FaGithub, FaLinkedin, FaTwitter, FaEnvelope } from "react-icons/fa";
-import { Link } from "react-router-dom";
+import { AiOutlineCopyright } from "react-icons/ai";
+import { Link, useNavigate } from "react-router-dom";
 
 export default function Footer() {
+  const navigate = useNavigate();
   return (
     <footer className="w-[100%] bg-black z-1 text-gray-400 py-10 border-t border-cyan-700 transition-all duration-200 ease-in-out">
       <div className="max-w-[95%] mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-3 gap-8">
         <div>
-          <div className="logo-container">
+          <div onDoubleClick={() => navigate("/")} className="logo-container">
             <img
               src="/images/CodeElevateLogo.png"
               alt="CodeElevate"
               className="logo h-19"
             />
-            <h1 className="logo-text text-white text-2xl font-bold mb-4">
+            <h1 className="logo-text text-white text-2xl font-semibold mb-4">
               CodeElevate
             </h1>
           </div>
           <p className="text-sm">
-            Elevate your coding journey. Connect with developers and CP
-            enthusiasts. Showcase projects, compete, grow together.
+            Elevate your coding journey. Connect with Developers and CP
+            enthusiasts. Showcase Projects, CP Progress, and Grow together.
           </p>
         </div>
 
@@ -71,6 +73,7 @@ export default function Footer() {
             </a>
             <a
               href="https://www.linkedin.com/in/omkarardekar09"
+              target="_blank"
               className="hover:text-white"
             >
               <FaEnvelope />
@@ -79,8 +82,15 @@ export default function Footer() {
         </div>
       </div>
 
-      <div className="mt-10 text-center text-xs text-gray-500">
-        © 2025 CodeElevate. All rights reserved.
+      <div className="mt-10 flex items-center justify-center text-center text-xs text-slate-300 hover:underline cursor-pointer">
+        <a
+          href="https://www.linkedin.com/in/omkarardekar09"
+          target="_blank"
+          className="flex items-center"
+        >
+          <AiOutlineCopyright className="size-3 mr-1" /> CodeElevate. All rights
+          reserved.
+        </a>
       </div>
     </footer>
   );

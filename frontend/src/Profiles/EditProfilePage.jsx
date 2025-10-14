@@ -250,10 +250,10 @@ const EditProfilePage = () => {
       <div className="w-full flex flex-col items-center justify-center py-5 px-1 bg-gray-950">
         <form
           onSubmit={handleSubmit}
-          className="w-[95%] bg-gradient-to-r from-gray-800 via-black-900 to-purple-900 rounded-2xl shadow-lg p-6"
+          className="w-[95%] bg-gradient-to-r from-gray-800 via-black-900 to-purple-950 rounded-2xl shadow-lg p-6"
           encType="multipart/form-data"
         >
-          <h1 className="text-2xl font-bold mb-3">Edit Profile</h1>
+          <h1 className="text-2xl font-semibold mb-3">Edit Profile</h1>
           <hr className="w-full text-white my-5 mb-10" />
 
           {/* User Profile Picture and Background Banner Images */}
@@ -365,7 +365,7 @@ const EditProfilePage = () => {
               <input
                 id="domain"
                 type="text"
-                placeholder="Enter your Domain in your field"
+                placeholder="Enter your Domain"
                 name="domain"
                 value={profile.domain || ""}
                 onChange={handleChange}

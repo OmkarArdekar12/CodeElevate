@@ -11,7 +11,7 @@ export default function LeetCodeCardStats({ leetCodeData }) {
   };
 
   return (
-    <div className="w-[20rem] sm:w-[27rem] m-1 my-4 p-6 text-white bg-gray-900 rounded-2xl shadow-xl border border-gray-100 stats-card-leetcode transition-all duration-200 ease-in-out">
+    <div className="w-[95%] sm:w-[27rem] m-1 my-4 p-6 text-white bg-slate-950 rounded-2xl shadow-xl border border-gray-100 stats-card-leetcode transition-all duration-200 ease-in-out">
       <div className="flex flex-wrap items-center justify-center">
         <img
           src="/images/LeetCodeLogo.png"

@@ -56,7 +56,7 @@ const ConnectionPage = () => {
 
   return (
     <div className="w-full flex items-center justify-center nd:px-5 text-white h-full transition-all duration-300 ease-in-out">
-      <div className="w-full md:w-[95%] flex flex-col items-center bg-[#181818] rounded-lg h-full">
+      <div className="w-full md:w-[95%] flex flex-col items-center bg-gray-950 rounded-lg h-full">
         <div className="flex flex-wrap gap-1 md:gap-8 py-6 border-b border-gray-700 w-full justify-center">
           {tabOptions.map((tab) => (
             <button
@@ -79,13 +79,13 @@ const ConnectionPage = () => {
             No {activeTab} found.
           </div>
         ) : (
-          <div className="w-full p-4 bg-[#232323] rounded-b-lg">
+          <div className="w-full p-3 bg-gray-900 rounded-b-lg">
             <ul className="space-y-4">
               {getCurrList().map((user, idx) => (
                 <li
                   onClick={() => navigate(`/profiles/${user.userId}`)}
                   key={user.userId || idx}
-                  className="flex items-center gap-4 p-2 rounded hover:bg-gray-700 cursor-pointer border-b-1 border-gray-800"
+                  className="flex items-center gap-4 p-2 rounded hover:bg-gray-700 cursor-pointer border-b-1 border-slate-700"
                 >
                   <img
                     src={user.profilePicture || "/images/defaultUserImage.png"}

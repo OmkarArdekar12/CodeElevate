@@ -182,7 +182,7 @@ export default function Navbar({ isLoggedIn, isVerified, userData }) {
         </div>
 
         {isOpen && (
-          <div className="lg:hidden bg-gray-800">
+          <div className="lg:hidden bg-slate-900 mt-1">
             <div className="px-2 pt-2 pb-3 space-y-1">
               {isLoggedIn && isVerified ? (
                 <Link
