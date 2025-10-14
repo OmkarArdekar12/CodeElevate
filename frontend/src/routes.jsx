@@ -54,7 +54,7 @@ const router = createBrowserRouter([
     children: [
       {
         index: true,
-        element: <Home />, //default route "/"
+        element: <Home />, //defaultRoute "/"
       },
       {
         path: "/profiles/:id",
