@@ -32,6 +32,7 @@ const DevelopmentSection = ({ versionControlProfiles }) => {
                       <a
                         href={`https://github.com/${github}`}
                         target="_blank"
+                        rel="noopener noreferrer"
                         className="text-xl md:text-2xl hover-text-border hover:underline hover:decoration-[#FFA116] hover:decoration-2"
                       >
                         GitHub
@@ -48,6 +49,7 @@ const DevelopmentSection = ({ versionControlProfiles }) => {
                       <a
                         href={`https://gitlab.com/${gitlab}`}
                         target="_blank"
+                        rel="noopener noreferrer"
                         className="text-xl md:text-2xl hover-text-border hover:underline hover:decoration-[#FFA116] hover:decoration-2"
                       >
                         GitLab
@@ -64,6 +66,7 @@ const DevelopmentSection = ({ versionControlProfiles }) => {
                       <a
                         href={`${portfolio}`}
                         target="_blank"
+                        rel="noopener noreferrer"
                         className="text-xl md:text-2xl hover-text-border hover:underline hover:decoration-[#1F8ACB] hover:decoration-2"
                       >
                         Portfolio
