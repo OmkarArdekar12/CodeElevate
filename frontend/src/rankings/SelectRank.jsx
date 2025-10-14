@@ -18,11 +18,13 @@ const SelectRank = ({ selectRank, changeRankings, rankingsDetails }) => {
       entries.findIndex(([k]) => k === selectRank)
     );
     setActiveIndex(i);
-  }, [selectRank]);
+  }, [selectRank, entries]);
 
   useEffect(() => {
     const onDocClick = (e) => {
-      if (!btnRef.current || !listRef.current) return;
+      if (!btnRef.current || !listRef.current) {
+        return;
+      }
       if (
         !btnRef.current.contains(e.target) &&
         !listRef.current.contains(e.target)
@@ -40,19 +42,19 @@ const SelectRank = ({ selectRank, changeRankings, rankingsDetails }) => {
   const handleKey = (e) => {
     if (e.key === "ArrowDown") {
       e.preventDefault();
-      setOpen(true);
+      openList();
       setActiveIndex((i) => Math.min(entries.length - 1, i + 1));
     } else if (e.key === "ArrowUp") {
       e.preventDefault();
-      setOpen(true);
+      closeList();
       setActiveIndex((i) => Math.max(0, i - 1));
     } else if (e.key === "Enter" || e.key === " ") {
       e.preventDefault();
       if (!open) {
-        setOpen(true);
+        openList();
       } else {
         const [k] = entries[activeIndex];
-        onChange({ target: { value: k } });
+        changeRankings({ target: { value: k } });
         closeList();
       }
     } else if (e.key === "Escape") {
@@ -83,7 +85,7 @@ const SelectRank = ({ selectRank, changeRankings, rankingsDetails }) => {
         ref={btnRef}
         onClick={() => setOpen((o) => !o)}
         onKeyDown={handleKey}
-        className="group flex items-center gap-2 bg-slate-800/80 hover:bg-slate-800 text-white px-2 sm:px-5 py-2 rounded-xl border border-slate-700 focus:outline-none focus:ring-1 focus:ring-blue-600/70 shadow-sm hover:shadow-blue-600/20 cursor-pointer transition-all"
+        className="group flex items-center gap-2 bg-slate-800/80 hover:bg-slate-800 text-white px-2 sm:px-5 py-2 rounded-xl border border-slate-700 cursor-pointer focus:outline-none focus:ring-1 focus:ring-blue-600/70 shadow-sm hover:shadow-blue-600/20 transition-all"
         aria-haspopup="listbox"
         aria-expanded={open}
       >
@@ -106,7 +108,7 @@ const SelectRank = ({ selectRank, changeRankings, rankingsDetails }) => {
             animate="visible"
             exit="exit"
             variants={variants}
-            className="absolute right-0 z-20 mt-2 w-56 origin-top-right rounded-xl border border-slate-700/70 bg-slate-900/90 backdrop-blur-xl shadow-xl ring-1 ring-black/5 overflow-hidden"
+            className="absolute right-0 z-2 mt-2 w-55 origin-top-right rounded-xl border border-slate-700/70 bg-slate-900/90 backdrop-blur-xl shadow-xl ring-1 ring-black/5 overflow-hidden"
           >
             {entries.map(([k, v], i) => {
               const active = i === activeIndex;
@@ -119,7 +121,7 @@ const SelectRank = ({ selectRank, changeRankings, rankingsDetails }) => {
                   tabIndex={-1}
                   onMouseEnter={() => setActiveIndex(i)}
                   onClick={() => {
-                    onChange({ target: { value: k } });
+                    changeRankings({ target: { value: k } });
                     closeList();
                   }}
                   className={[

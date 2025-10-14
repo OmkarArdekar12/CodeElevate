@@ -1,13 +1,12 @@
 import React, { useEffect, useState } from "react";
+import { FaCrown, FaMedal } from "react-icons/fa";
+import { useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
 import { MdOutlineLeaderboard } from "react-icons/md";
-import { FaCrown } from "react-icons/fa";
-import { FaMedal } from "react-icons/fa";
-import { useNavigate } from "react-router-dom";
-import Rank from "./Rank";
+import Rank from "./Rank.jsx";
 
 const RankingList = ({ rankings = [], rankName, score }) => {
-  if (!rankings && rankings.length == 0) {
+  if (!rankings && rankings.length === 0) {
     return null;
   }
 
