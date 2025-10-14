@@ -44,13 +44,16 @@ const EditPostPage = () => {
   }, [id]);
 
   useEffect(() => {
+    if (loading) {
+      return;
+    }
     if (userId && postUserId && userId.toString() !== postUserId.toString()) {
       toast.error("Access denied. You can only edit your own post.", {
         id: "Invalid user to update post",
       });
       navigate("/posts");
     }
-  });
+  }, [loading, userId, postUserId]);
 
   //   useEffect(() => {
   //     if (!loading && userId && postUserId && userId !== postUserId) {

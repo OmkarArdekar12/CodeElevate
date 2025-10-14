@@ -47,6 +47,7 @@ const CompetitiveProgrammingSection = ({ codingProfiles }) => {
                       <a
                         href={`https://leetcode.com/${leetCode}/`}
                         target="_blank"
+                        rel="noopener noreferrer"
                         className="text-xl md:text-2xl hover-text-border hover:underline hover:decoration-[#FFA116] hover:decoration-2"
                       >
                         LeetCode
@@ -63,6 +64,7 @@ const CompetitiveProgrammingSection = ({ codingProfiles }) => {
                       <a
                         href={`https://codeforces.com/profile/${codeforces}`}
                         target="_blank"
+                        rel="noopener noreferrer"
                         className="text-xl md:text-2xl hover-text-border hover:underline hover:decoration-[#1F8ACB] hover:decoration-2"
                       >
                         Codeforces
@@ -79,6 +81,7 @@ const CompetitiveProgrammingSection = ({ codingProfiles }) => {
                       <a
                         href={`https://atcoder.jp/users/${atCoder}`}
                         target="_blank"
+                        rel="noopener noreferrer"
                         className="text-xl md:text-2xl hover-text-border hover:underline hover:decoration-gray-700 hover:decoration-2"
                       >
                         AtCoder
@@ -95,6 +98,7 @@ const CompetitiveProgrammingSection = ({ codingProfiles }) => {
                       <a
                         href={`https://www.codechef.com/users/${codechef}`}
                         target="_blank"
+                        rel="noopener noreferrer"
                         className="text-xl md:text-2xl hover-text-border hover:underline hover:decoration-[#5B4638] hover:decoration-2"
                       >
                         CodeChef
@@ -111,6 +115,7 @@ const CompetitiveProgrammingSection = ({ codingProfiles }) => {
                       <a
                         href={`https://auth.geeksforgeeks.org/user/${geeksforgeeks}/`}
                         target="_blank"
+                        rel="noopener noreferrer"
                         className="text-xl md:text-2xl hover-text-border hover:underline hover:decoration-[#2F8D46] hover:decoration-2"
                       >
                         GeeksforGeeks
@@ -127,6 +132,7 @@ const CompetitiveProgrammingSection = ({ codingProfiles }) => {
                       <a
                         href={`https://www.hackerrank.com/${hackerrank}`}
                         target="_blank"
+                        rel="noopener noreferrer"
                         className="text-xl md:text-2xl hover-text-border hover:underline hover:decoration-[#2EC866] hover:decoration-2"
                       >
                         HackerRank

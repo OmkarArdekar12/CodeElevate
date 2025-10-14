@@ -41,7 +41,7 @@ const CompetitiveProgrammingStatsSection = ({ leetcode, codeforces }) => {
   };
   useEffect(() => {
     fetchCompetitiveProgrammingStats(leetcode, codeforces);
-  }, []);
+  }, [leetcode, codeforces]);
   // const fetchLeetCodeStats = async (leetcodeUsername) => {
   //   try {
   //     const leetcodeData = await leetCodeStats(leetcodeUsername);
