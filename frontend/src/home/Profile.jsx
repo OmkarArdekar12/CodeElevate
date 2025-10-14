@@ -36,12 +36,12 @@ export default function Profile({ profile }) {
             <div className="m-1 inline-flex flex-wrap items-center justify-center">
               {role && (
                 <p className="m-[1px] bg-gray-600 py-2 px-4 rounded-2xl italic text-sm hover-text-border">
-                  {role}
+                  {role.toUpperCase()}
                 </p>
               )}
               {domain && (
                 <p className="m-[1px] bg-gray-600 py-2 px-4 rounded-2xl italic text-sm hover-text-border">
-                  {domain}
+                  {domain.toUpperCase()}
                 </p>
               )}
             </div>
