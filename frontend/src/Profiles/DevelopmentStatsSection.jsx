@@ -23,7 +23,7 @@ const DevelopmentStatsSection = ({ github }) => {
 
   useEffect(() => {
     fetchDevelopmentProfilesStats(github);
-  }, []);
+  }, [github]);
 
   return (
     <>
