@@ -60,6 +60,15 @@ export default function Hero() {
       <div className="w-full">
         <Slider {...settings}>
           <TopCard
+            image={"/images/laptopTrophy.png"}
+            text={"All Rounders"}
+            onClick={() =>
+              navigate("/rankings", {
+                state: { selectedRank: "allRounders" },
+              })
+            }
+          />
+          <TopCard
             image={"/images/trophy.png"}
             text={"Competitive Programmers"}
             onClick={() =>
@@ -83,15 +92,6 @@ export default function Hero() {
             onClick={() =>
               navigate("/rankings", {
                 state: { selectedRank: "contributors" },
-              })
-            }
-          />
-          <TopCard
-            image={"/images/laptopTrophy.png"}
-            text={"All Rounders"}
-            onClick={() =>
-              navigate("/rankings", {
-                state: { selectedRank: "allRounders" },
               })
             }
           />
