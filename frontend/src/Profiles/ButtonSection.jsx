@@ -16,7 +16,7 @@ import {
   followUser,
   unconnectUser,
   unfollowUser,
-} from "../service/connectionApi";
+} from "../service/connectionApi.js";
 import toast from "react-hot-toast";
 import Loading2 from "../components/Loading2.jsx";
 
