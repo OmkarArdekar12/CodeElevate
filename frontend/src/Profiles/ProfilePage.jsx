@@ -14,7 +14,7 @@ import PostsSection from "./PostsSection.jsx";
 import { useNavigate, useParams } from "react-router-dom";
 import { showProfile } from "../service/profileApi.js";
 import Loading from "../components/Loading.jsx";
-import { useSession } from "../context/SessionContext";
+import { useSession } from "../context/SessionContext.jsx";
 
 const ProfilePage = () => {
   const { id: profileId } = useParams();
