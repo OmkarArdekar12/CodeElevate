@@ -6,7 +6,7 @@ import {
   Navigate,
 } from "react-router-dom";
 import { logoutUser } from "../service/authApi.js";
-import { useSession } from "../context/SessionContext";
+import { useSession } from "../context/SessionContext.jsx";
 import { FaSignOutAlt as LogoutIcon } from "react-icons/fa";
 import { FaUserTimes as DeleteIcon } from "react-icons/fa";
 import toast from "react-hot-toast";
