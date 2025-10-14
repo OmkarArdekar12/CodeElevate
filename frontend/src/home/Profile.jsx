@@ -63,7 +63,7 @@ export default function Profile({ profile }) {
         </div>
       </div>
       <button
-        className="inline-flex w-[95%] md:w-[12%] items-center justify-center m-1 bg-blue-700 px-6 py-2 rounded-full hover:bg-green-700 hover:border-green-700 hover-text-border cursor-pointer"
+        className="inline-flex w-[95%] md:w-[12%] items-center justify-center m-1 bg-blue-700 px-6 py-2 rounded-full hover:bg-blue-500 hover:border hover:border-blue-500 hover-text-border cursor-pointer"
         onClick={() => navigate(`/profiles/${userId}`)}
       >
         Visit

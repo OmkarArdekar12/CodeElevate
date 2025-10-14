@@ -23,13 +23,13 @@ export default function Search() {
         <input
           type="text"
           placeholder="Search here..."
-          className="text-white border border-cyan-300 rounded text-md p-2 w-[93%]"
+          className="text-white border border-cyan-300 rounded text-md p-2 w-[93%] focus:outline-none focus:ring-1 focus:ring-[#00c4cc]"
           value={val}
           onChange={handleChange}
         />
         <button
           type="submit"
-          className="text-xl text-cyan-300 hover:text-3xl hover:text-white cursor-pointer ml-1"
+          className="text-xl text-cyan-300 hover:text-3xl hover:text-[#00c4cc] cursor-pointer ml-1"
         >
           <FaSearch />
         </button>
