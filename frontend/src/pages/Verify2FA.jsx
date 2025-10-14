@@ -1,8 +1,8 @@
 import React from "react";
-import TwoFAVerification from "../components/TwoFAVerification";
+import TwoFAVerification from "../components/TwoFAVerification.jsx";
 import { useNavigate } from "react-router-dom";
 import toast from "react-hot-toast";
-import { useSession } from "../context/SessionContext";
+import { useSession } from "../context/SessionContext.jsx";
 
 const Verify2FA = () => {
   const navigate = useNavigate();
