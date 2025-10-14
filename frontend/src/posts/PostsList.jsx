@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import PostCard from "./PostCard";
+import PostCard from "./PostCard.jsx";
 import { motion } from "framer-motion";
 
 const PostsList = ({
