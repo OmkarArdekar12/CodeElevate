@@ -2,19 +2,25 @@ import React from "react";
 import { FaGithub } from "react-icons/fa";
 
 function formatNumber(num) {
-  if (num >= 1000000000) {
-    let n = num / 1000000000;
-    return Math.round(n * 10) / 10 + "B";
-  }
-  if (num >= 1000000) {
-    let n = num / 1000000;
-    return Math.round(n * 10) / 10 + "M";
-  }
-  if (num >= 1000) {
-    let n = num / 1000;
-    return Math.round(n * 10) / 10 + "K";
-  }
-  return num.toString();
+  return new Intl.NumberFormat("en", {
+    notation: "compact",
+    maximumFractionDigits: 1,
+  })
+    .format(num)
+    .toString();
+  // if (num >= 1000000000) {
+  //   let n = num / 1000000000;
+  //   return Math.round(n * 10) / 10 + "B";
+  // }
+  // if (num >= 1000000) {
+  //   let n = num / 1000000;
+  //   return Math.round(n * 10) / 10 + "M";
+  // }
+  // if (num >= 1000) {
+  //   let n = num / 1000;
+  //   return Math.round(n * 10) / 10 + "K";
+  // }
+  // return num.toString();
 }
 
 const GitHubCardStats = ({ gitHubData }) => {
@@ -37,7 +43,7 @@ const GitHubCardStats = ({ gitHubData }) => {
             <img
               src={gitHubData.avatarUrl}
               alt="githubProfileImage"
-              className="w-50 rounded-full object-cover border-2 border-gray-50"
+              className="w-50 h-50 rounded-full object-cover border-2 border-gray-50"
             />
           </div>
         )}
