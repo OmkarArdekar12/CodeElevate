@@ -50,7 +50,7 @@ const PostsList = ({
             </motion.div>
           ))
       ) : (
-        <div className="flex items-center justify-center text-gray-300">
+        <div className="flex items-center justify-center text-gray-300 pt-5">
           No posts found
         </div>
       )}
