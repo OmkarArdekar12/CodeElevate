@@ -5,13 +5,13 @@ const TwoFASetup = ({ onSetupComplete }) => {
   const [response, setResponse] = useState({ secret: "", qrCode: "" });
   const [message, setMessage] = useState("");
 
-  const fetchORCode = async () => {
+  const fetchQRCode = async () => {
     const { data } = await setup2FA();
     setResponse(data);
   };
 
   useEffect(() => {
-    fetchORCode();
+    fetchQRCode();
   }, []);
 
   const copyClipBoard = async () => {
