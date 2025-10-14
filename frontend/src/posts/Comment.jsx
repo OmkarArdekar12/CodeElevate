@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Loader2, MoreVertical, Trash } from "lucide-react";
-import { deleteComment } from "../service/postApi";
+import { deleteComment } from "../service/postApi.js";
 import toast from "react-hot-toast";
 
 const Comment = ({ comment, postData, userId, onPostUpdate }) => {
