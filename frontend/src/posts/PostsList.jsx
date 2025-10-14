@@ -51,7 +51,7 @@ const PostsList = ({
           ))
       ) : (
         <div className="flex items-center justify-center text-gray-300 pt-5">
-          No posts found
+          No posts found.
         </div>
       )}
     </div>

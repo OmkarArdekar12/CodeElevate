@@ -54,7 +54,7 @@ const NotificationPage = () => {
           )
         ) : (
           <div className="flex items-center justify-center text-gray-300 pt-5">
-            No notifications found
+            No notifications found.
           </div>
         )}
       </div>

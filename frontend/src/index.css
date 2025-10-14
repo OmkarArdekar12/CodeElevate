@@ -277,6 +277,11 @@ main {
   width: 25rem;
 }
 
+.rank-number-font {
+  font-family: "Michroma", sans-serif;
+  font-style: normal;
+}
+
 /* Responsiveness */
 @media (max-width: 570px) {
   .TopCard {
