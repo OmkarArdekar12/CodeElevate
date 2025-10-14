@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Navigate, useNavigate, useParams } from "react-router-dom";
-import { getConnections } from "../service/profileApi";
-import Loading from "../components/Loading";
+import { getConnections } from "../service/profileApi.js";
+import Loading from "../components/Loading.jsx";
 
 const tabOptions = [
   { label: "Followers", key: "followers" },
