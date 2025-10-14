@@ -81,7 +81,10 @@ const LoginForm = ({ onLoginSuccess }) => {
       setConfirmPassword("");
       setMessage("");
       // console.log(error);
-      setError(error.response.data.message);
+      setError(
+        error?.response?.data?.message ||
+          "Something went wrong. Please try again."
+      );
       toast.error("Account creation failed! Please try again.", {
         id: "register failed",
       });
