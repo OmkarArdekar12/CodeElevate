@@ -30,7 +30,7 @@ const TwoFAVerification = ({ onVerifySuccess, onResetSuccess }) => {
       });
     } catch (error) {
       console.log("The error is: ", error.message);
-      setError(error.message);
+      setError("Reset failed. Try again.");
       toast.error("Two-factor Authentication reset failed!", {
         id: "reset failed",
       });
@@ -76,7 +76,7 @@ const TwoFAVerification = ({ onVerifySuccess, onResetSuccess }) => {
           Verify TOTP
         </button>
         <button
-          type="submit"
+          type="button"
           className="w-full mt-1 bg-slate-500 text-white py-2 rounded-md hover:bg-slate-600 hover-text-border cursor-pointer"
           onClick={handleReset}
         >
