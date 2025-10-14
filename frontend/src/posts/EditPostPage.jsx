@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { createPost, editPost, getPost } from "../service/postApi";
+import { createPost, editPost, getPost } from "../service/postApi.js";
 import toast from "react-hot-toast";
 import { ImagePlus, Loader2 } from "lucide-react";
 import {
@@ -8,11 +8,11 @@ import {
   useParams,
   useLocation,
 } from "react-router-dom";
-import Loading2 from "../components/Loading2";
+import Loading2 from "../components/Loading2.jsx";
 import { IoIosSend } from "react-icons/io";
 import { useEffect } from "react";
-import Loading from "../components/Loading";
-import { useSession } from "../context/SessionContext";
+import Loading from "../components/Loading.jsx";
+import { useSession } from "../context/SessionContext.jsx";
 
 const EditPostPage = () => {
   const [postData, setPostData] = useState({});

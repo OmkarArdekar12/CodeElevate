@@ -1,8 +1,8 @@
 import React, { useState } from "react";
-import { createPost } from "../service/postApi";
+import { createPost } from "../service/postApi.js";
 import toast from "react-hot-toast";
 import { ImagePlus, Loader2 } from "lucide-react";
-import Loading2 from "../components/Loading2";
+import Loading2 from "../components/Loading2.jsx";
 import { IoIosSend } from "react-icons/io";
 import { useNavigate, useLocation } from "react-router-dom";
 
