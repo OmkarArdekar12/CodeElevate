@@ -3,22 +3,22 @@ import { motion, AnimatePresence } from "framer-motion";
 import { MdOutlineKeyboardArrowDown } from "react-icons/md";
 import { FaMedal } from "react-icons/fa";
 
-const SelectRank = ({ value, onChange, optionsMap }) => {
+const SelectRank = ({ selectRank, changeRankings, rankingsDetails }) => {
   const [open, setOpen] = useState(false);
   const [activeIndex, setActiveIndex] = useState(0);
   const btnRef = useRef(null);
   const listRef = useRef(null);
 
-  const entries = Object.entries(optionsMap);
-  const selected = entries.find(([k]) => k === value) ?? entries[0];
+  const entries = Object.entries(rankingsDetails);
+  const selected = entries.find(([k]) => k === selectRank) ?? entries[0];
 
   useEffect(() => {
     const i = Math.max(
       0,
-      entries.findIndex(([k]) => k === value)
+      entries.findIndex(([k]) => k === selectRank)
     );
     setActiveIndex(i);
-  }, [value]);
+  }, [selectRank]);
 
   useEffect(() => {
     const onDocClick = (e) => {
@@ -110,7 +110,7 @@ const SelectRank = ({ value, onChange, optionsMap }) => {
           >
             {entries.map(([k, v], i) => {
               const active = i === activeIndex;
-              const selectedKey = k === value;
+              const selectedKey = k === selectRank;
               return (
                 <li
                   key={k}

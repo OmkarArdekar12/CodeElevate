@@ -66,11 +66,11 @@ export default function RankingPage() {
       <div className="w-full flex">
         <h1 className="text-3xl hover-text-border text-gray-100">Rankings</h1>
       </div>
-      <div className="w-full flex items-center justify-end pt-3">
+      <div className="w-full flex items-center justify-end pt-3 pr-1">
         <SelectRank
-          value={selectRank}
-          onChange={changeRankings}
-          optionsMap={rankingsDetails}
+          selectRank={selectRank}
+          changeRankings={changeRankings}
+          rankingsDetails={rankingsDetails}
         />
       </div>
       {rankings && rankings.length > 0 ? (
