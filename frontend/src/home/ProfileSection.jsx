@@ -10,13 +10,15 @@ export default function ProfileSection() {
 
   const fetchAllProfiles = async () => {
     try {
+      setLoading(true);
       const profiles = await allProfiles();
       // console.log(profiles.data);
       setUserProfiles(profiles.data);
     } catch (err) {
       console.error("Failed to fetch all profiles data", err);
+    } finally {
+      setLoading(false);
     }
-    setLoading(false);
   };
 
   useEffect(() => {
@@ -37,70 +39,3 @@ export default function ProfileSection() {
     </div>
   );
 }
-
-//Testing Data
-// const users = [
-//   {
-//     id: 1,
-//     image: "/images/userImage.png",
-//     name: "Sample Username",
-//     role: "Student",
-//     domain: "Competitive Programmer",
-//   },
-//   {
-//     id: 2,
-//     image: "/images/userImage.png",
-//     name: "Sample Username",
-//     role: "Professional",
-//     domain: "Developer",
-//   },
-//   {
-//     id: 3,
-//     image: "/images/userImage.png",
-//     name: "Sample Username",
-//     role: "Student",
-//     domain: "Web Developer",
-//   },
-//   {
-//     id: 4,
-//     image: "/images/userImage.png",
-//     name: "Sample Username",
-//     role: "Professional",
-//     domain: "Coder",
-//   },
-//   {
-//     id: 5,
-//     image: "/images/userImage.png",
-//     name: "Sample Username",
-//     role: "Student",
-//     domain: "Competitive Programmer",
-//   },
-//   {
-//     id: 6,
-//     image: "/images/userImage.png",
-//     name: "Sample Username",
-//     role: "Professional",
-//     domain: "Developer",
-//   },
-//   {
-//     id: 7,
-//     image: "/images/userImage.png",
-//     name: "Sample Username",
-//     role: "Student",
-//     domain: "Web Developer",
-//   },
-//   {
-//     id: 8,
-//     image: "/images/userImage.png",
-//     name: "Sample Username",
-//     role: "Professional",
-//     domain: "Coder",
-//   },
-//   {
-//     id: 9,
-//     image: "/images/userImage.png",
-//     name: "Sample Username",
-//     role: "Student",
-//     domain: "Competitive Programmer",
-//   },
-// ];
