@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Navigate, useNavigate, useParams } from "react-router-dom";
-import { showProfile, editProfile } from "../service/profileApi";
+import { showProfile, editProfile } from "../service/profileApi.js";
 import { useSession } from "../context/SessionContext.jsx";
 import Loading from "../components/Loading.jsx";
 import Loading2 from "../components/Loading2.jsx";
