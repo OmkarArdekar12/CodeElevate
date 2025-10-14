@@ -53,6 +53,7 @@ export default function Footer() {
             <a
               href="https://www.linkedin.com/in/omkarardekar09"
               target="_blank"
+              rel="noopener noreferrer"
               className="hover:text-white"
             >
               <FaGithub />
@@ -60,6 +61,7 @@ export default function Footer() {
             <a
               href="https://www.linkedin.com/in/omkarardekar09"
               target="_blank"
+              rel="noopener noreferrer"
               className="hover:text-white"
             >
               <FaLinkedin />
@@ -67,6 +69,7 @@ export default function Footer() {
             <a
               href="https://www.linkedin.com/in/omkarardekar09"
               target="_blank"
+              rel="noopener noreferrer"
               className="hover:text-white"
             >
               <FaTwitter />
@@ -74,6 +77,7 @@ export default function Footer() {
             <a
               href="https://www.linkedin.com/in/omkarardekar09"
               target="_blank"
+              rel="noopener noreferrer"
               className="hover:text-white"
             >
               <FaEnvelope />
@@ -86,6 +90,7 @@ export default function Footer() {
         <a
           href="https://www.linkedin.com/in/omkarardekar09"
           target="_blank"
+          rel="noopener noreferrer"
           className="flex items-center"
         >
           <AiOutlineCopyright className="size-3 mr-1" /> CodeElevate. All rights
