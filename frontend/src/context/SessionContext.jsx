@@ -10,16 +10,19 @@ export const SessionProvider = ({ children }) => {
   const [isVerified, setIsVerified] = useState(false);
   const [loading, setLoading] = useState(true);
   const [user, setUser] = useState(null);
+  const [token2FA, setToken2FA] = useState(null);
 
   useEffect(() => {
     const storedUser = JSON.parse(sessionStorage.getItem("user"));
     const storedVerified = sessionStorage.getItem("isVerified") === "true";
+    const stored2FAToken = sessionStorage.getItem("token2FA");
     // console.log("The useEffect runs: ", storedUser);
     if (storedUser) {
       setUser(storedUser);
       setIsLoggedIn(true);
     }
-    if (storedVerified) {
+    if (stored2FAToken && storedVerified) {
+      setToken2FA(stored2FAToken);
       setIsVerified(true);
     }
     setLoading(false);
@@ -31,9 +34,13 @@ export const SessionProvider = ({ children }) => {
     sessionStorage.setItem("user", JSON.stringify(userData));
   };
 
-  const verify = () => {
+  const verify = (data) => {
+    console.log(data);
+    const token2fa = data?.token2FA;
     setIsVerified(true);
+    setToken2FA(token2fa);
     sessionStorage.setItem("isVerified", "true");
+    sessionStorage.setItem("token2FA", token2fa);
   };
 
   const logout = (data) => {
@@ -41,8 +48,10 @@ export const SessionProvider = ({ children }) => {
       setIsLoggedIn(false);
       setIsVerified(false);
       setUser(null);
+      setToken2FA(null);
       sessionStorage.removeItem("user");
       sessionStorage.removeItem("isVerified");
+      sessionStorage.removeItem("token2FA");
     }
   };
 

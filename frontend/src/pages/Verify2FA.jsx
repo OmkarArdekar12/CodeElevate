@@ -11,7 +11,7 @@ const Verify2FA = () => {
   const handleVerification = async (data) => {
     if (data) {
       navigate("/");
-      verify();
+      verify(data);
       setTimeout(() => {
         toast.dismiss();
         toast.success("You're now logged in.", { id: "login success" });
