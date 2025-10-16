@@ -1,4 +1,5 @@
 import api from "./api";
+import { getToken2fa } from "./utils/getToken2FA.js";
 
 export const createPost = async (post) => {
   const response = await api.post("/posts", post, {

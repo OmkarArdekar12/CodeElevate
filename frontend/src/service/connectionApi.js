@@ -1,5 +1,5 @@
 import api from "./api";
-import { getToken2fa } from "./utils/getToken2FA";
+import { getToken2fa } from "./utils/getToken2FA.js";
 
 export const followUser = async (id) => {
   const token2FA = getToken2fa();
