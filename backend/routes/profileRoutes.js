@@ -1,6 +1,7 @@
 import express from "express";
 import auth from "../middlewares/auth.js";
 import verifyAuth from "../middlewares/verifyAuth.js";
+import auth2FA from "../middlewares/auth2FA.js";
 import Profile from "../models/profile.js";
 import { validateProfile, isOwner } from "../middlewares/profileValidations.js";
 import {
@@ -26,7 +27,7 @@ router.get("/", getAllProfiles);
 router.get("/data/:id", getUserData);
 
 //Get Connections Route
-router.get("/:userId/connections", auth, verifyAuth, getConnections);
+router.get("/:userId/connections", auth, verifyAuth, auth2FA, getConnections);
 
 //Show Profile Route
 router.get("/:id", showProfile);
@@ -36,6 +37,7 @@ router.put(
   "/:id",
   auth,
   verifyAuth,
+  auth2FA,
   isOwner,
   upload.fields([
     { name: "profilePicture", maxCount: 1 },
@@ -46,9 +48,9 @@ router.put(
 );
 
 //Delete Profile Route
-router.delete("/:userId", auth, verifyAuth, destroyProfile);
+router.delete("/:userId", auth, verifyAuth, auth2FA, destroyProfile);
 
 // //Create Profile Route
-// router.post("/", auth, verifyAuth, createProfile);
+// router.post("/", auth, verifyAuth, auth2FA, createProfile);
 
 export default router;
