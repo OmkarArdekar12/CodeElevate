@@ -1,6 +1,7 @@
 import express from "express";
 import auth from "../middlewares/auth.js";
 import verifyAuth from "../middlewares/verifyAuth.js";
+import auth2FA from "../middlewares/auth2FA.js";
 import {
   addComment,
   createPost,
@@ -29,6 +30,7 @@ router.post(
   "/",
   auth,
   verifyAuth,
+  auth2FA,
   upload.single("image"),
   validatePost,
   createPost
@@ -44,24 +46,33 @@ router.get("/:id/data", getPost);
 router.get("/:id", getUserPosts);
 
 //Like/Unlike Post Route
-router.patch("/:id/like", auth, verifyAuth, likeOrUnlikePost);
+router.patch("/:id/like", auth, verifyAuth, auth2FA, likeOrUnlikePost);
 
 //Add Comment Post Route
-router.put("/:id/comment", auth, verifyAuth, addComment);
+router.put("/:id/comment", auth, verifyAuth, auth2FA, addComment);
 
 //Delete Comment Post Route
 router.delete(
   "/:postId/comment/:commentId",
   auth,
   verifyAuth,
+  auth2FA,
   isCommentOwner,
   destroyComment
 );
 
 //Edit Post Route
-router.put("/:id/edit", auth, verifyAuth, validatePost, isOwner, editPost);
+router.put(
+  "/:id/edit",
+  auth,
+  verifyAuth,
+  auth2FA,
+  validatePost,
+  isOwner,
+  editPost
+);
 
 //Delete Post Route
-router.delete("/:id", auth, verifyAuth, isOwner, deletePost);
+router.delete("/:id", auth, verifyAuth, auth2FA, isOwner, deletePost);
 
 export default router;
