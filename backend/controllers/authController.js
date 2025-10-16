@@ -139,35 +139,51 @@ export const setup2FA = async (req, res) => {
 
 //Verify2FA Controller
 export const verify2FA = async (req, res) => {
-  const { token } = req.body;
-  // console.log(token);
-  const user = req.user;
+  try {
+    const { token } = req.body;
+    // console.log(token);
+    const user = req.user;
 
-  const verified = speakeasy.totp.verify({
-    secret: user.twoFactorSecret,
-    encoding: "base32",
-    token,
-  });
-
-  if (verified) {
-    req.login(user, (err) => {
-      if (err) {
-        return res.status(500).json({ message: "Login failed", error: err });
-      }
-
-      req.session.isVerified = true;
-
-      return res.status(200).json({
-        message: "two-factor-authentication-(2FA) successful",
-        username: user.username,
-        userId: user._id,
-        isVerfied: true,
-      });
+    const verified = speakeasy.totp.verify({
+      secret: user.twoFactorSecret,
+      encoding: "base32",
+      token,
     });
-  } else {
-    return res
-      .status(400)
-      .json({ message: "Invalid two-factor-authentication-(2FA) token" });
+
+    if (verified) {
+      req.login(user, (err) => {
+        if (err) {
+          return res.status(500).json({ message: "Login failed", error: err });
+        }
+
+        req.session.isVerified = true;
+
+        const token2FA = jwt.sign(
+          { userId: user._id },
+          process.env.JWT_SECRET,
+          {
+            expiresIn: "7d",
+          }
+        );
+
+        return res.status(200).json({
+          message: "two-factor-authentication-(2FA) successful",
+          username: user.username,
+          userId: user._id,
+          isVerfied: true,
+          token2FA: token2FA,
+        });
+      });
+    } else {
+      return res
+        .status(400)
+        .json({ message: "Invalid two-factor-authentication-(2FA) token" });
+    }
+  } catch (err) {
+    return res.status(500).json({
+      error: "Error in verifying two-factor-authentication-(2FA)",
+      message: err,
+    });
   }
 };
 
