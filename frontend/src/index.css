@@ -274,7 +274,7 @@ main {
 
 /* Posts Card */
 .PostCard {
-  width: 25rem;
+  width: 23rem;
 }
 
 .rank-number-font {
@@ -365,6 +365,11 @@ main {
   }
 
   .PostCard {
-    width: 95%;
+    width: 20rem;
+  }
+}
+@media (max-width: 360px) {
+  .PostCard {
+    width: 250px;
   }
 }

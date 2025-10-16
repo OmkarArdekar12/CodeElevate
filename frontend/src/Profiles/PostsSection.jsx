@@ -1,25 +1,32 @@
 import React, { useState, useEffect } from "react";
-import Loading2 from "../components/Loading2";
-import { getUserData } from "../service/profileApi";
-import { getUserPosts } from "../service/postApi";
+import Loading2 from "../components/Loading2.jsx";
+import PostsList from "../components/PostsList.jsx";
+import { getUserData } from "../service/profileApi.js";
+import { getUserPosts } from "../service/postApi.js";
 
-const PostsSection = ({ profileUserId }) => {
+const PostsSection = ({ profileUserId, isLoggedIn, isVerified, userId }) => {
   const [loading, setLoading] = useState(true);
+  const [currUserData, setCurrUserData] = useState({});
+  const [allUserPosts, setAllUserPosts] = useState([]);
 
-  const fetchAllUserPosts = async () => {
+  const fetchData = async () => {
     setLoading(true);
     try {
+      if (userId) {
+        const user = await getUserData(userId);
+        setCurrUserData(user);
+      }
       const userPosts = await getUserPosts(profileUserId);
-      console.log(userPosts);
+      setAllUserPosts(userPosts);
     } catch (err) {
-      console.log("Error: ", err);
+      console.log("Error in fetching user posts: ", err);
     } finally {
       setLoading(false);
     }
   };
 
   useEffect(() => {
-    fetchAllUserPosts();
+    fetchData();
   }, [profileUserId]);
 
   if (loading) {
@@ -31,10 +38,19 @@ const PostsSection = ({ profileUserId }) => {
   }
   return (
     <>
-      <div className="w-full flex flex-col justify-center mb-4 p-4 transition-all duration-300 ease-in-out">
-        <h2 className="text-2xl md:text-3xl mb-1 title-font">Posts</h2>
-        <div className="flex justify-center flex-col lg:flex-row lg:justify-evenly items-center flex-wrap mt-4 p-4 md:px-25"></div>
-      </div>
+      {allUserPosts && allUserPosts.length > 0 && (
+        <div className="w-full flex flex-col justify-center mb-4 p-4 transition-all duration-300 ease-in-out">
+          <h2 className="text-2xl md:text-3xl mb-1 title-font">Posts</h2>
+          <PostsList
+            allUserPosts={allUserPosts}
+            setAllUserPosts={setAllUserPosts}
+            currUserData={currUserData}
+            userId={userId}
+            isLoggedIn={isLoggedIn}
+            isVerified={isVerified}
+          />
+        </div>
+      )}
     </>
   );
 };

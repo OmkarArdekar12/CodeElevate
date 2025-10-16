@@ -179,7 +179,12 @@ const ProfilePage = () => {
 
         <SocialsSection socials={userData.socials} />
 
-        <PostsSection profileUserId={profileId} />
+        <PostsSection
+          profileUserId={profileId}
+          isLoggedIn={isLoggedIn}
+          isVerified={isVerified}
+          userId={userId}
+        />
       </div>
     </div>
   );

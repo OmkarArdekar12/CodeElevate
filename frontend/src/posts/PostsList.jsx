@@ -19,7 +19,7 @@ const PostsList = ({
   };
 
   return (
-    <div className="w-full flex flex-wrap gap-1 items-center justify-around pt-5 md:px-6 pb-5 transition-all duration-300 ease-in-out">
+    <div className="w-full flex flex-wrap gap-2 items-center justify-evenly pt-5 md:px-6 pb-5 transition-all duration-300 ease-in-out">
       {allPosts && allPosts.length > 0 ? (
         allPosts
           .slice()
