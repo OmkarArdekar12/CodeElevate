@@ -13,7 +13,7 @@ const UserProfileSection = ({
         <img
           src={bgBanner ? bgBanner : "/images/defaultBgBannerImage.png"}
           alt="backgroundBannerImage"
-          className="w-full h-45 md:h-70 rounded-b-2xl object-fill"
+          className="w-full h-45 md:h-70 rounded-b-2xl object-fill border-b border-slate-800"
         />
       </div>
       <div className="w-full flex flex-wrap flex-col items-center relative -mt-20 z-1 md:flex-row md:pl-20">

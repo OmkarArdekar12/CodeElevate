@@ -14,12 +14,16 @@ export const getNotifications = async () => {
 
 export const markNotificationAsRead = async (id) => {
   const token2FA = getToken2fa();
-  const response = await api.patch(`/notifications/${id}/read`, {
-    headers: {
-      Authorization: `Bearer ${token2FA}`,
-    },
-    withCredentials: true,
-  });
+  const response = await api.patch(
+    `/notifications/${id}/read`,
+    {},
+    {
+      headers: {
+        Authorization: `Bearer ${token2FA}`,
+      },
+      withCredentials: true,
+    }
+  );
   return response.data;
 };
 

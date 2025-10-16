@@ -43,12 +43,16 @@ export const getPost = async (id) => {
 
 export const likeOrUnlikePost = async (id) => {
   const token2FA = getToken2fa();
-  const response = await api.patch(`/posts/${id}/like`, {
-    headers: {
-      Authorization: `Bearer ${token2FA}`,
-    },
-    withCredentials: true,
-  });
+  const response = await api.patch(
+    `/posts/${id}/like`,
+    {},
+    {
+      headers: {
+        Authorization: `Bearer ${token2FA}`,
+      },
+      withCredentials: true,
+    }
+  );
   return response.data;
 };
 
