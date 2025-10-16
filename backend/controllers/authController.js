@@ -89,22 +89,29 @@ export const authStatus = async (req, res) => {
 
 //Logout Controller
 export const logout = async (req, res, next) => {
-  if (!req.user) {
-    return res.status(401).json({ message: "Unauthorized user!" });
-  }
-  req.logout((err) => {
-    if (err) {
-      return next(err);
+  try {
+    if (!req.user) {
+      return res.status(401).json({ message: "Unauthorized user!" });
     }
-    req.session.destroy((err) => {
+    req.logout((err) => {
       if (err) {
         return next(err);
       }
-      //Clear cookie
-      res.clearCookie("connect.sid"); //default sessionId
-      return res.status(200).json({ message: "Logged out successfully" });
+      req.session.destroy((err) => {
+        if (err) {
+          return next(err);
+        }
+        //Clear cookie
+        res.clearCookie("connect.sid"); //default sessionId
+        return res.status(200).json({ message: "Logged out successfully" });
+      });
     });
-  });
+  } catch (err) {
+    return res.status(500).json({
+      error: "Error in logging-out",
+      message: err,
+    });
+  }
 };
 
 //Setup2FA Controller

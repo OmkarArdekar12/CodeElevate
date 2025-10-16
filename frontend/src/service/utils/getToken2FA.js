@@ -6,7 +6,7 @@ export const getToken2fa = () => {
       return null;
     }
 
-    return token;
+    return token2FA;
   } catch (err) {
     return null;
   }
