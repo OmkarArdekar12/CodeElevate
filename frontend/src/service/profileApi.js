@@ -1,4 +1,5 @@
 import api from "./api";
+import { getToken2fa } from "./utils/getToken2FA";
 
 export const allProfiles = async () => {
   const profiles = await api.get("/profiles", { withCredentials: true });
@@ -11,9 +12,11 @@ export const showProfile = async (id) => {
 };
 
 export const editProfile = async (userId, formData) => {
+  const token2FA = getToken2fa();
   const response = await api.put(`/profiles/${userId}`, formData, {
     withCredentials: true,
     headers: {
+      Authorization: `Bearer ${token2FA}`,
       "Content-Type": "multipart/form-data",
     },
   });
@@ -28,7 +31,11 @@ export const getUserData = async (id) => {
 };
 
 export const getConnections = async (userId) => {
+  const token2FA = getToken2fa();
   const response = await api.get(`/profiles/${userId}/connections`, {
+    headers: {
+      Authorization: `Bearer ${token2FA}`,
+    },
     withCredentials: true,
   });
   return response.data;
