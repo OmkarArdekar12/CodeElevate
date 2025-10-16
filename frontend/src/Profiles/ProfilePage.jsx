@@ -177,8 +177,9 @@ const ProfilePage = () => {
 
         <EducationSection education={userData.education} />
 
-        <PostsSection />
         <SocialsSection socials={userData.socials} />
+
+        <PostsSection profileUserId={profileId} />
       </div>
     </div>
   );
