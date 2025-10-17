@@ -15,7 +15,7 @@ export default function AboutPage() {
   return (
     <div className="w-full flex flex-col items-center justify-center text-white pt-14 py-4 px-2 md:px-10 mb-5 transition-all duration-300 ease-in-out">
       <Hero />
-      <div className="flex items-center justify-center">
+      <div className="flex justify-start">
         <AnimatePresence mode="wait" initial={false}>
           {showGold ? (
             <motion.div
@@ -39,6 +39,7 @@ export default function AboutPage() {
             </motion.div>
           )}
         </AnimatePresence>
+        <div className="flex-1/2">Goal</div>
       </div>
     </div>
   );

@@ -50,7 +50,7 @@ const Logo3D = ({ width = 200, height = 250 }) => {
       }}
     >
       <Canvas
-        camera={{ position: [0, 0, 40], fov: 45 }}
+        camera={{ position: [0, 0, 39], fov: 45 }}
         style={{ width: "100%", height: "100%", background: "transparent" }}
       >
         <ambientLight intensity={0.5} />
