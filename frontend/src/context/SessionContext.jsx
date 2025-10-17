@@ -35,7 +35,6 @@ export const SessionProvider = ({ children }) => {
   };
 
   const verify = (data) => {
-    console.log(data);
     const token2fa = data?.token2FA;
     setIsVerified(true);
     setToken2FA(token2fa);

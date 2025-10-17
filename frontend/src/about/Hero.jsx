@@ -16,7 +16,11 @@ const Hero = () => {
   }, []);
 
   const currCameraPosition =
-    viewAngle == 0 ? [0, 0, 39] : viewAngle == 1 ? [0, 19, 39] : [10, -14, 39];
+    viewAngle === 0
+      ? [0, 0, 39]
+      : viewAngle === 1
+      ? [0, 19, 39]
+      : [10, -14, 39];
 
   return (
     <div className="w-full flex flex-col lg:flex-row items-center">
@@ -45,9 +49,11 @@ const Hero = () => {
           )}
         </AnimatePresence>
       </div>
-      <div className="flex gap-1 items-center justify-center flex-col px-4 md:px-10 selection:bg-yellow-300 selection:text-black">
-        <h1 className="text-xl sm:text-3xl lg:text-5xl py-4">Our Vision</h1>
-        <div className="text-sm sm:text-md lg:text-lg tracking-widest about-font">
+      <div className="text-cyan-100 flex gap-1 items-center justify-center flex-col px-4 md:px-10 selection:bg-yellow-300 selection:text-black">
+        <h1 className="text-xl sm:text-3xl lg:text-5xl py-4 hover-text-border">
+          Our Vision
+        </h1>
+        <div className="text-sm sm:text-md lg:text-lg tracking-widest about-font hover-text-border">
           <h2 className="my-1 about-font">
             CodeElevate empowers users to showcase their coding and development
             profiles all in one place. It provides a unified platform where

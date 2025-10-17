@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Hero from "./Hero.jsx";
+import Features from "./Features.jsx";
 
 export default function AboutPage() {
   return (
@@ -7,7 +8,8 @@ export default function AboutPage() {
       <div className="text-xl sm:text-3xl md:text-5xl flex items-center justify-center hover-text-border text-gray-100">
         About CodeElevate
       </div>
-      <Hero />
+      {/* <Hero /> */}
+      <Features />
     </div>
   );
 }
