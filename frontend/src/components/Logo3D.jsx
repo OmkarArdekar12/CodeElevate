@@ -2,6 +2,7 @@ import React, { useRef } from "react";
 import { Canvas, useFrame, useLoader } from "@react-three/fiber";
 import { STLLoader } from "three/examples/jsm/loaders/STLLoader";
 import * as THREE from "three";
+import { Environment } from "@react-three/drei";
 
 const LogoMesh = () => {
   const meshRef = useRef();
@@ -24,23 +25,25 @@ const LogoMesh = () => {
   return (
     <mesh ref={meshRef} geometry={geometry} scale={[scale, scale, scale]}>
       <meshPhysicalMaterial
-        color="#ffffff"
-        metalness={0.8}
-        roughness={0.4}
-        clearcoat={0.6}
-        clearcoatRoughness={0.2}
+        color="#e0e0e0"
+        metalness={1}
+        roughness={0.09}
+        clearcoat={0.9}
+        clearcoatRoughness={0.06}
+        envMapIntensity={1.8}
       />
+      ;
     </mesh>
   );
 };
 
-const Logo3D = () => {
+const Logo3D = ({ width = 200, height = 250 }) => {
   return (
     <div
       className="logo-container"
       style={{
-        width: "200px",
-        height: "250px",
+        width,
+        height,
         display: "flex",
         justifyContent: "center",
         alignItems: "center",
@@ -48,13 +51,15 @@ const Logo3D = () => {
     >
       <Canvas
         camera={{ position: [0, 0, 40], fov: 45 }}
-        style={{
-          width: "100%",
-          height: "100%",
-          background: "transparent",
-        }}
+        style={{ width: "100%", height: "100%", background: "transparent" }}
       >
         <ambientLight intensity={0.5} />
+        <directionalLight position={[10, 10, 10]} intensity={1.25} />
+        <Environment
+          preset="city"
+          environmentIntensity={1.5}
+          background={false}
+        />
         <directionalLight position={[10, 10, 10]} intensity={1.5} />
         <pointLight position={[-10, -10, -10]} intensity={0.5} />
         <spotLight position={[20, 20, 10]} angle={0.3} intensity={1} />
