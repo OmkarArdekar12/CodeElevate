@@ -6,15 +6,21 @@ import { AnimatePresence, motion } from "framer-motion";
 
 export default function AboutPage() {
   const [showGold, setShowGold] = useState(false);
+  const [viewAngle, setViewAngle] = useState(0);
 
   useEffect(() => {
-    const id = setInterval(() => setShowGold((prev) => !prev), 10000);
+    const id = setInterval(() => {
+      setShowGold((prev) => !prev);
+      setViewAngle((prev) => (prev + 1) % 3);
+    }, 10000);
     return () => clearInterval(id);
   }, []);
 
+  const currCameraPosition =
+    viewAngle == 0 ? [0, 0, 39] : viewAngle == 1 ? [0, 19, 39] : [10, -14, 39];
+
   return (
     <div className="w-full flex flex-col items-center justify-center text-white pt-14 py-4 px-2 md:px-10 mb-5 transition-all duration-300 ease-in-out">
-      <Hero />
       <div className="flex justify-start">
         <AnimatePresence mode="wait" initial={false}>
           {showGold ? (
@@ -25,7 +31,7 @@ export default function AboutPage() {
               exit={{ opacity: 0 }}
               transition={{ duration: 0.9, ease: "easeInOut" }}
             >
-              <Logo3DGold width="648px" height="756px" />
+              <Logo3DGold cameraPosition={currCameraPosition} />
             </motion.div>
           ) : (
             <motion.div
@@ -35,7 +41,7 @@ export default function AboutPage() {
               exit={{ opacity: 0 }}
               transition={{ duration: 0.9, ease: "easeInOut" }}
             >
-              <Logo3D width="648px" height="756px" />
+              <Logo3D cameraPosition={currCameraPosition} />
             </motion.div>
           )}
         </AnimatePresence>

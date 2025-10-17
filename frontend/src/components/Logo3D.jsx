@@ -37,20 +37,11 @@ const LogoMesh = () => {
   );
 };
 
-const Logo3D = ({ width = 200, height = 250 }) => {
+const Logo3D = ({ cameraPosition = [0, 0, 39] }) => {
   return (
-    <div
-      className="logo-container"
-      style={{
-        width,
-        height,
-        display: "flex",
-        justifyContent: "center",
-        alignItems: "center",
-      }}
-    >
+    <div className="w-[200px] h-[250px] sm:w-[500px] sm:h-[500px] md:w-[648px] md:h-[700px] flex justify-center items-center">
       <Canvas
-        camera={{ position: [0, 0, 39], fov: 45 }}
+        camera={{ position: cameraPosition, fov: 45 }}
         style={{ width: "100%", height: "100%", background: "transparent" }}
       >
         <ambientLight intensity={0.5} />
