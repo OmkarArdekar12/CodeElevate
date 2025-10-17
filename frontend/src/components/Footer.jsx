@@ -20,7 +20,8 @@ export default function Footer() {
           </div>
           <p className="text-sm">
             Elevate your coding journey. Connect with Developers and CP
-            enthusiasts. Showcase Projects, CP Progress, and Grow together.
+            enthusiasts. Showcase Competitive Programming and Development
+            Progress, and Grow together.
           </p>
         </div>
 
