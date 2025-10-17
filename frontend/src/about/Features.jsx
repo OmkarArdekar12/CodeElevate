@@ -1,5 +1,6 @@
 import React from "react";
 import ImageSection from "./ImageSection.jsx";
+import ContentSection from "./ContentSection.jsx";
 
 const Features = () => {
   return (
@@ -8,6 +9,7 @@ const Features = () => {
       <div className="w-full flex flex-col justify-center items-center">
         <div className="w-full flex items-center">
           <ImageSection />
+          <ContentSection />
         </div>
       </div>
     </div>
