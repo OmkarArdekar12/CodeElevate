@@ -12,34 +12,50 @@ export const SessionProvider = ({ children }) => {
   const [user, setUser] = useState(null);
   const [token2FA, setToken2FA] = useState(null);
 
+  const expiryTime = 7 * 24 * 60 * 60 * 1000;
+
   useEffect(() => {
-    const storedUser = JSON.parse(sessionStorage.getItem("user"));
-    const storedVerified = sessionStorage.getItem("isVerified") === "true";
-    const stored2FAToken = sessionStorage.getItem("token2FA");
+    const expireCodeElevate = localStorage.getItem("expireCodeElevate");
+    const storedUser = JSON.parse(localStorage.getItem("user"));
+    const storedVerified = localStorage.getItem("isVerified") === "true";
+    const stored2FAToken = localStorage.getItem("token2FA");
     // console.log("The useEffect runs: ", storedUser);
-    if (storedUser) {
-      setUser(storedUser);
-      setIsLoggedIn(true);
-    }
-    if (stored2FAToken && storedVerified) {
-      setToken2FA(stored2FAToken);
-      setIsVerified(true);
+    if (expireCodeElevate && Date.now() < +expireCodeElevate) {
+      if (storedUser) {
+        setUser(storedUser);
+        setIsLoggedIn(true);
+      }
+      if (stored2FAToken && storedVerified) {
+        setToken2FA(stored2FAToken);
+        setIsVerified(true);
+      }
+    } else {
+      localStorage.removeItem("user");
+      localStorage.removeItem("token2FA");
+      localStorage.removeItem("isVerified");
+      localStorage.removeItem("expireCodeElevate");
+      setIsLoggedIn(false);
+      setIsVerified(false);
+      setUser(null);
+      setToken2FA(null);
     }
     setLoading(false);
   }, []);
 
   const login = (userData) => {
+    const expireCodeElevate = Date.now() + expiryTime;
     setIsLoggedIn(true);
     setUser(userData);
-    sessionStorage.setItem("user", JSON.stringify(userData));
+    localStorage.setItem("user", JSON.stringify(userData));
+    localStorage.setItem("expireCodeElevate", expireCodeElevate);
   };
 
   const verify = (data) => {
     const token2fa = data?.token2FA;
     setIsVerified(true);
     setToken2FA(token2fa);
-    sessionStorage.setItem("isVerified", "true");
-    sessionStorage.setItem("token2FA", token2fa);
+    localStorage.setItem("isVerified", "true");
+    localStorage.setItem("token2FA", token2fa);
   };
 
   const logout = (data) => {
@@ -48,9 +64,11 @@ export const SessionProvider = ({ children }) => {
       setIsVerified(false);
       setUser(null);
       setToken2FA(null);
-      sessionStorage.removeItem("user");
-      sessionStorage.removeItem("isVerified");
-      sessionStorage.removeItem("token2FA");
+      localStorage.removeItem("user");
+      localStorage.removeItem("isVerified");
+      localStorage.removeItem("token2FA");
+      localStorage.removeItem("expireCodeElevate");
+      localStorage.removeItem("welcome_to_codeelevate");
     }
   };
 

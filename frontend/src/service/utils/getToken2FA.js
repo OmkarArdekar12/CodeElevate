@@ -1,6 +1,6 @@
 export const getToken2fa = () => {
   try {
-    const token2FA = sessionStorage.getItem("token2FA");
+    const token2FA = localStorage.getItem("token2FA");
 
     if (!token2FA) {
       return null;

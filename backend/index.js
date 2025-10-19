@@ -1,5 +1,6 @@
 import express from "express";
 import session from "express-session";
+import MongoStore from "connect-mongo";
 import cookieParser from "cookie-parser";
 import mongoose from "mongoose";
 import path from "path";
@@ -52,6 +53,10 @@ const sessionOptions = {
   secret: process.env.SESSION_SECRET || "secret",
   resave: false,
   saveUninitialized: false,
+  store: MongoStore.create({
+    mongoUrl: process.env.MONGODB_URL,
+    ttl: 7 * 24 * 60 * 60,
+  }),
   cookie: {
     expires: Date.now() + 7 * 24 * 60 * 60 * 1000,
     maxAge: 7 * 24 * 60 * 60 * 1000,

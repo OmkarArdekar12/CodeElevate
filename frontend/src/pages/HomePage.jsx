@@ -13,9 +13,9 @@ function HomePage() {
     // if (typeof window === "undefined") {
     //   return;
     // }
-    if (!localStorage.getItem("welcome_shown")) {
+    if (!localStorage.getItem("welcome_to_codeelevate")) {
       toast.success("Welcome to CodeElevate!", { id: "welcome-toast" });
-      localStorage.setItem("welcome_shown", "true");
+      localStorage.setItem("welcome_to_codeelevate", "true");
     }
   }, []);
 

@@ -17,7 +17,7 @@ export const getRankings = async (req, res) => {
       if (
         cache.lastUpdated &&
         !isNaN(new Date(cache.lastUpdated).getTime()) &&
-        Date.now() - new Date(cache.lastUpdated).getTime() < 2 * dayInMS
+        Date.now() - new Date(cache.lastUpdated).getTime() < dayInMS
       ) {
         return res.status(200).json({ ...cache.rankings, source: "cache" });
       }
