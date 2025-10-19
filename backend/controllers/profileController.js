@@ -1,5 +1,6 @@
 import express from "express";
 import auth from "../middlewares/auth.js";
+import { cloudinary } from "../config/cloudConfig.js";
 import mongoose from "mongoose";
 import Profile from "../models/profile.js";
 import User from "../models/user.js";
@@ -48,10 +49,36 @@ export const updateProfile = async (req, res) => {
 
     if (req.files) {
       if (req.files.profilePicture) {
-        profile.profilePicture = req.files.profilePicture[0].path;
+        const uploadProfilePictureResult = await cloudinary.uploader.upload(
+          req.files.profilePicture[0].path,
+          {
+            folder: "CodeElevate_Project",
+            public_id: `${id}-profile-picture`,
+            overwrite: true,
+          }
+        );
+        profile.profilePicture = uploadProfilePictureResult.secure_url;
+
+        const oldUserImagePublicId = req.files.profilePicture[0].filename;
+        if (oldUserImagePublicId) {
+          await cloudinary.uploader.destroy(oldUserImagePublicId);
+        }
       }
       if (req.files.backgroundBanner) {
-        profile.backgroundBanner = req.files.backgroundBanner[0].path;
+        const uploadBgBannerResult = await cloudinary.uploader.upload(
+          req.files.backgroundBanner[0].path,
+          {
+            folder: "CodeElevate_Project",
+            public_id: `${id}-bg-banner`,
+            overwrite: true,
+          }
+        );
+        profile.backgroundBanner = uploadBgBannerResult.secure_url;
+
+        const oldBannerImagePublicId = req.files.backgroundBanner[0].filename;
+        if (oldBannerImagePublicId) {
+          await cloudinary.uploader.destroy(oldBannerImagePublicId);
+        }
       }
     }
 
