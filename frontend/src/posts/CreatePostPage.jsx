@@ -19,6 +19,10 @@ const CreatePostPage = () => {
 
   const handleImageChange = (e) => {
     const file = e.target.files[0];
+    if (!file.type.startsWith("image/")) {
+      toast.error("Please select an image file");
+      return;
+    }
     setImage(file);
     if (file) {
       const reader = new FileReader();

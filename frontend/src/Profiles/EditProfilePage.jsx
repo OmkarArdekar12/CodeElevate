@@ -159,6 +159,10 @@ const EditProfilePage = () => {
   const handleFileChange = (e) => {
     const { name, files } = e.target;
     if (files && files[0]) {
+      if (!files[0].type.startsWith("image/")) {
+        toast.error("Please select an image file");
+        return;
+      }
       const previewURL = URL.createObjectURL(files[0]);
       if (name === "profilePicture") {
         setProfilePreview(previewURL);
