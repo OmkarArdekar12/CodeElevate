@@ -53,7 +53,17 @@ const Hero = () => {
         <h1 className="text-xl sm:text-3xl lg:text-5xl py-4 hover-text-border">
           Our Vision
         </h1>
-        <div className="text-sm sm:text-md lg:text-lg tracking-widest about-font hover-text-border">
+        <motion.div
+          initial={{ opacity: 0, x: 200, y: 100 }}
+          whileInView={{ opacity: 1, x: 0, y: 0 }}
+          viewport={{ once: true }}
+          transition={{
+            duration: 0.6,
+            delay: 0.5,
+            ease: "linear",
+          }}
+          className="text-sm sm:text-md lg:text-lg tracking-widest about-font hover-text-border"
+        >
           <h2 className="my-1 about-font">
             CodeElevate empowers users to showcase their coding and development
             profiles all in one place. It provides a unified platform where
@@ -70,7 +80,7 @@ const Hero = () => {
             achievement, and create a community where every coder can rise to
             their full potential.
           </h2>
-        </div>
+        </motion.div>
       </div>
     </div>
   );
