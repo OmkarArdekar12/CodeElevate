@@ -7,7 +7,6 @@ export default function ChatWindow({ user, selectedUser, socket }) {
   const [loadingChat, setLoadingChat] = useState(true);
   const [messages, setMessages] = useState([]);
   const messagesContainerRef = useRef(null);
-  const messagesEndRef = useRef(null);
 
   const loggedInUserId = user?.userId;
   const selectedUserId = selectedUser.user._id;
@@ -18,11 +17,18 @@ export default function ChatWindow({ user, selectedUser, socket }) {
       return;
     }
 
-    socket.emit("joinRoom", roomId);
+    if (socket.connected) {
+      socket.emit("joinRoom", roomId);
+    } else {
+      socket.on("connect", () => {
+        socket.emit("joinRoom", roomId);
+      });
+    }
+
     return () => {
       socket.emit("leaveRoom", roomId);
     };
-  }, [socket, roomId, user]);
+  }, [socket, roomId]);
 
   const loadMessages = async () => {
     setLoadingChat(true);
@@ -57,14 +63,12 @@ export default function ChatWindow({ user, selectedUser, socket }) {
   }, [selectedUser, roomId, socket]);
 
   useEffect(() => {
-    messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
-  }, [messages]);
-
-  useEffect(() => {
-    if (messagesContainerRef.current) {
-      messagesContainerRef.current.scrollTop =
-        messagesContainerRef.current.scrollHeight;
+    const container = messagesContainerRef.current;
+    if (!container) {
+      return;
     }
+
+    container.scrollTo({ top: container.scrollHeight, behavior: "smooth" });
   }, [messages]);
 
   const handleSend = async (msgData) => {
@@ -77,11 +81,10 @@ export default function ChatWindow({ user, selectedUser, socket }) {
       <div className="p-4 border-b border-cyan-300 flex items-center justify-between">
         <h2 className="font-semibold text-lg">{selectedUser.user.username}</h2>
       </div>
-      <div className="flex-1 p-4 overflow-y-auto" rel={messagesContainerRef}>
+      <div className="flex-1 p-4 overflow-y-auto" ref={messagesContainerRef}>
         {messages.map((msg) => (
           <MessageBubble key={msg._id} message={msg} />
         ))}
-        <div ref={messagesEndRef} />
       </div>
       <MessageInput onSend={handleSend} />
     </div>

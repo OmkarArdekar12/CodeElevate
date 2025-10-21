@@ -102,6 +102,10 @@ io.on("connection", (socket) => {
     io.emit("getActiveUsers", Array.from(activeUsers.keys()));
   });
 
+  socket.on("requestActiveUsers", () => {
+    socket.emit("getActiveUsers", Array.from(activeUsers.keys()));
+  });
+
   socket.on("disconnect", () => {
     for (const [userId, socketId] of activeUsers.entries()) {
       if (socketId == socket.id) {

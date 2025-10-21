@@ -6,7 +6,7 @@ const Sidebar = ({ users, activeUsers, selectedUser, setSelectedUser }) => {
   console.log(activeUsers);
 
   const filteredUsers = showOnlineOnly
-    ? users.filter((user) => activeUsers.includes(user._id))
+    ? users.filter((user) => activeUsers.includes(user.user._id))
     : users;
 
   return (

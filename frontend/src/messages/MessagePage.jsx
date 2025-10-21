@@ -36,6 +36,7 @@ export default function MessagePage() {
       return;
     }
     socket.on("getActiveUsers", setActiveUsers);
+    socket.emit("requestActiveUsers");
     return () => {
       socket.off("getActiveUsers");
     };
