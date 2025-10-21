@@ -7,7 +7,9 @@ export const getUsersForMessageSidebar = async (req, res) => {
     const loggedInUserId = req.user._id;
     const filteredUsers = await Profile.find({
       user: { $ne: loggedInUserId },
-    }).populate("user", "username");
+    })
+      .populate("user", "username")
+      .select("fullName user profilePicture headLine");
 
     return res.status(200).json(filteredUsers);
   } catch (err) {

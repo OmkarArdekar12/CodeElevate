@@ -288,6 +288,24 @@ main {
   font-style: normal;
 }
 
+/* Scrollbar Styling */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 7px;
+  height: 7px;
+}
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: #0f172a;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background-color: #0e131f;
+  border-radius: 8px;
+  border: 2px solid #0f172a;
+}
+.custom-scrollbar {
+  scrollbar-width: thin;
+  scrollbar-color: #374151 #111827;
+}
+
 /* Responsiveness */
 @media (max-width: 570px) {
   .TopCard {

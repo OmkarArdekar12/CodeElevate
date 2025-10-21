@@ -3,7 +3,7 @@ import { getToken2fa } from "./utils/getToken2FA.js";
 
 export const getUserForSidebar = async () => {
   const token2FA = getToken2fa();
-  const response = await api.get("/messages/api/users", {
+  const response = await api.get("/messages/users", {
     headers: {
       Authorization: `Bearer ${token2FA}`,
     },

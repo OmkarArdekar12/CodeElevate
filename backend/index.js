@@ -98,6 +98,7 @@ io.on("connection", (socket) => {
         activeUsers.delete(userId);
       }
     }
+    console.log("user disconnected: ", socket.id);
     io.emit("getActiveUsers", Array.from(activeUsers.keys()));
   });
 });
