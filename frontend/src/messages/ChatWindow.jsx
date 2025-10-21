@@ -1,9 +1,16 @@
 import React, { useState, useEffect, useRef } from "react";
 import MessageBubble from "./MessageBubble.jsx";
 import MessageInput from "./MessageInput.jsx";
+import ChatHeader from "./ChatHeader.jsx";
+import ChatSkeleton from "./skeletons/ChatSkeleton.jsx";
 import { getMessages, sendMessage } from "../service/messagesApi.js";
 
-export default function ChatWindow({ user, selectedUser, socket }) {
+export default function ChatWindow({
+  user,
+  selectedUser,
+  setSelectedUser,
+  socket,
+}) {
   const [loadingChat, setLoadingChat] = useState(true);
   const [messages, setMessages] = useState([]);
   const messagesContainerRef = useRef(null);
@@ -77,15 +84,17 @@ export default function ChatWindow({ user, selectedUser, socket }) {
   };
 
   return (
-    <div className="md:bg-gray-900 overflow-auto flex flex-col flex-1 custom-scrollbar">
-      <div className="p-4 border-b border-cyan-300 flex items-center justify-between">
-        <h2 className="font-semibold text-lg">{selectedUser.user.username}</h2>
-      </div>
-      <div className="flex-1 p-4 overflow-y-auto" ref={messagesContainerRef}>
-        {messages.map((msg) => (
-          <MessageBubble key={msg._id} message={msg} />
-        ))}
-      </div>
+    <div className="overflow-auto flex flex-col flex-1 custom-scrollbar">
+      <ChatHeader selectedUser={selectedUser} closeChat={setSelectedUser} />
+      {loadingChat ? (
+        <ChatSkeleton />
+      ) : (
+        <div className="flex-1 p-4 overflow-y-auto" ref={messagesContainerRef}>
+          {messages.map((msg) => (
+            <MessageBubble key={msg._id} user={user} message={msg} />
+          ))}
+        </div>
+      )}
       <MessageInput onSend={handleSend} />
     </div>
   );

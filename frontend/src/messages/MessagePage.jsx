@@ -18,7 +18,6 @@ export default function MessagePage() {
     setLoading(true);
     try {
       const userList = await getUserForSidebar();
-      console.log(userList);
       setUsers(userList);
     } catch (err) {
       setUsers([]);
@@ -47,7 +46,7 @@ export default function MessagePage() {
       <div className="w-full flex">
         <h1 className="text-3xl hover-text-border text-gray-100">Messages</h1>
       </div>
-      <div className="w-full h-screen md:bg-gray-900 mt-4 md:rounded-lg flex">
+      <div className="w-full h-screen mt-4 md:rounded-lg flex border border-slate-800">
         {loading ? (
           <SidebarSkeleton />
         ) : (
@@ -59,7 +58,12 @@ export default function MessagePage() {
           />
         )}
         {selectedUser ? (
-          <ChatWindow user={user} selectedUser={selectedUser} socket={socket} />
+          <ChatWindow
+            user={user}
+            selectedUser={selectedUser}
+            setSelectedUser={setSelectedUser}
+            socket={socket}
+          />
         ) : (
           <NoChatSelected />
         )}

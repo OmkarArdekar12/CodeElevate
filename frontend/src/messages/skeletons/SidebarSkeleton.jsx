@@ -1,7 +1,7 @@
 import { Users } from "lucide-react";
 
 const SidebarSkeleton = () => {
-  const skeletonContacts = Array(8).fill(null);
+  const skeletonContacts = Array(9).fill(null);
 
   return (
     <aside className="h-full w-20 md:w-50 lg:w-100 border-r border-slate-600 flex flex-col transition-all duration-200">
@@ -33,12 +33,12 @@ const SidebarSkeleton = () => {
             >
               <div className="flex relative">
                 <div className="relative mx-auto lg:mx-0">
-                  <div className="skeleton size-14 rounded-full bg-gray-950 animate-pulse" />
+                  <div className="size-14 rounded-full bg-gray-800 animate-pulse" />
                 </div>
               </div>
               <div className="hidden md:flex flex-col justify-center">
-                <div className="skeleton h-4 w-32 mb-2 bg-gray-950 animate-pulse" />
-                <div className="skeleton h-3 w-16 bg-gray-950 animate-pulse" />
+                <div className="h-4 w-32 mb-2 bg-gray-800 animate-pulse" />
+                <div className="h-3 w-16 bg-gray-800 animate-pulse" />
               </div>
             </div>
           );

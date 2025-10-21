@@ -3,7 +3,6 @@ import { Users } from "lucide-react";
 
 const Sidebar = ({ users, activeUsers, selectedUser, setSelectedUser }) => {
   const [showOnlineOnly, setShowOnlineOnly] = useState(false);
-  console.log(activeUsers);
 
   const filteredUsers = showOnlineOnly
     ? users.filter((user) => activeUsers.includes(user.user._id))
@@ -43,7 +42,7 @@ const Sidebar = ({ users, activeUsers, selectedUser, setSelectedUser }) => {
                 key={u.user._id}
                 onClick={() => setSelectedUser(u)}
                 className={`px-2 sm:px-4 py-6 flex items-center gap-2 cursor-pointer border-gray-700 hover:bg-gray-800 ${
-                  isSelected ? "bg-gray-950" : ""
+                  isSelected ? "bg-gray-900" : ""
                 }`}
               >
                 <div className="flex relative">
