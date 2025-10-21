@@ -12,6 +12,8 @@ import passport from "passport";
 import multer from "multer";
 import dotenv from "dotenv";
 import cors from "cors";
+import http from "http";
+import { Server } from "socket.io";
 import dbConnect from "./config/dbConnect.js";
 import "./config/passportConfig.js";
 import authRoutes from "./routes/authRoutes.js";
@@ -32,13 +34,22 @@ if (process.env.NODE_ENV !== "production") {
   dotenv.config();
 }
 
+//Express App
 const app = express();
 const PORT = process.env.PORT || 8080;
+
+//HTTP Server for Socket.IO
+const server = http.createServer(app);
 
 //Database Connection
 dbConnect();
 
 //Middlewares
+app.use(express.json({ limit: "100mb" }));
+app.use(express.urlencoded({ limit: "100mb", extended: true }));
+app.use(cookieParser());
+app.use(methodOverride("_method"));
+
 const corsOptions = {
   origin: ["http://localhost:3001"],
   credentials: true,
@@ -46,10 +57,7 @@ const corsOptions = {
   allowedHeaders: ["Content-Type", "Authorization", "Cookie"],
 };
 app.use(cors(corsOptions));
-app.use(express.json({ limit: "100mb" }));
-app.use(express.urlencoded({ limit: "100mb", extended: true }));
-app.use(cookieParser());
-app.use(methodOverride("_method"));
+
 const sessionOptions = {
   secret: process.env.SESSION_SECRET || "secret",
   resave: false,
@@ -70,6 +78,34 @@ app.use(session(sessionOptions));
 
 app.use(passport.initialize());
 app.use(passport.session());
+
+//Socket.IO
+const io = new Server(server, { cors: corsOptions });
+
+let activeUsers = new Map();
+
+io.on("connection", (socket) => {
+  console.log("user connected: ", socket.id);
+
+  socket.on("addUser", (userId) => {
+    activeUsers.set(userId, socket.id);
+    io.emit("getActiveUsers", Array.from(activeUsers.keys()));
+  });
+
+  socket.on("disconnect", () => {
+    for (const [userId, socketId] of activeUsers.entries()) {
+      if (socketId == socket.id) {
+        activeUsers.delete(userId);
+      }
+    }
+    io.emit("getActiveUsers", Array.from(activeUsers.keys()));
+  });
+});
+
+app.use((req, res, next) => {
+  req.io = io;
+  next();
+});
 
 //Routes
 app.use("/api/auth", authRoutes);
@@ -92,6 +128,6 @@ app.use((req, res, next) => {
 app.use(errorHandlerMiddleware);
 
 //Listen App
-app.listen(PORT, () => {
+server.listen(PORT, () => {
   console.log(`Server is listening to port ${PORT}`);
 });

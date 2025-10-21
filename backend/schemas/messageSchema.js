@@ -21,6 +21,10 @@ const messageSchema = new Schema(
       publicId: String,
       url: String,
     },
+    roomId: {
+      type: String,
+      required: true,
+    },
   },
   {
     timestamps: true,

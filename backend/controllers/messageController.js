@@ -20,15 +20,17 @@ export const getUsersForMessageSidebar = async (req, res) => {
 
 export const getMessages = async (req, res) => {
   try {
-    const { id: currReceiverId } = req.params;
-    const currSenderId = req.user._id;
+    const { id: roomId } = req.params;
 
-    const messages = await Message.find({
-      $or: [
-        { senderId: currSenderId, receiverId: currReceiverId },
-        { senderId: currReceiverId, receiverId: currSenderId },
-      ],
-    }).sort({ createdAt: 1 });
+    const messages = await Message.find({ roomId }).sort({ createdAt: 1 });
+    // const { id: currReceiverId } = req.params;
+    // const currSenderId = req.user._id;
+    // const messages = await Message.find({
+    //   $or: [
+    //     { senderId: currSenderId, receiverId: currReceiverId },
+    //     { senderId: currReceiverId, receiverId: currSenderId },
+    //   ],
+    // }).sort({ createdAt: 1 });
 
     return res.status(200).json(messages);
   } catch (err) {
@@ -45,29 +47,24 @@ export const sendMessage = async (req, res) => {
     const { id: receiverId } = req.params;
     const senderId = req.user._id;
 
-    let imagePublicId, imageUrl;
+    const roomId = [senderId, receiverId].sort().join("_");
+
+    let messageData = { senderId, receiverId, text: text || "", roomId };
+
     if (image) {
       const uploadResponse = await cloudinary.uploader.upload(image, {
         folder: "CodeElevate_Project",
-        overwrite: false,
       });
-      imagePublicId = uploadResponse.public_id;
-      imageUrl = uploadResponse.secure_url;
+      messageData.image = {
+        publicId: uploadResponse.public_id,
+        url: uploadResponse.secure_url,
+      };
     }
 
-    const newMessage = new Message({
-      senderId: senderId,
-      receiverId: receiverId,
-      text: text,
-      image: {
-        publicId: imagePublicId,
-        url: imageUrl,
-      },
-    });
+    const newMessage = await Message.create(messageData);
 
-    await newMessage.save();
-
-    // todo => realtime functionality goes here using socket
+    //emit via Socket.IO
+    req.io.to(roomId).emit("receiveMessage", newMessage);
 
     return res.status(201).json(newMessage);
   } catch (err) {
