@@ -25,7 +25,7 @@ export const getMessages = async (id) => {
 
 export const sendMessage = async (id, meesageData) => {
   const token2FA = getToken2fa();
-  const response = await api.post(`/messages/${id}`, meesageData, {
+  const response = await api.post(`/messages/send/${id}`, meesageData, {
     headers: {
       Authorization: `Bearer ${token2FA}`,
     },

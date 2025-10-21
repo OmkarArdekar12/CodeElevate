@@ -4,10 +4,11 @@ import { getUserForSidebar } from "../service/messagesApi.js";
 import Loading from "../components/Loading.jsx";
 import Sidebar from "./Sidebar.jsx";
 import SidebarSkeleton from "./skeletons/SidebarSkeleton.jsx";
-import ChatContainer from "./ChatContainer.jsx";
+import NoChatSelected from "./NoChatSelected.jsx";
+import ChatWindow from "./ChatWindow.jsx";
 
 export default function MessagePage() {
-  const { socket } = useSession();
+  const { socket, user } = useSession();
   const [loading, setLoading] = useState(true);
   const [users, setUsers] = useState([]);
   const [selectedUser, setSelectedUser] = useState(null);
@@ -28,7 +29,7 @@ export default function MessagePage() {
 
   useEffect(() => {
     fetchUsers();
-  }, [activeUsers]);
+  }, []);
 
   useEffect(() => {
     if (!socket) {
@@ -45,7 +46,7 @@ export default function MessagePage() {
       <div className="w-full flex">
         <h1 className="text-3xl hover-text-border text-gray-100">Messages</h1>
       </div>
-      <div className="w-full h-screen bg-gray-900 mt-4 md:rounded-2xl">
+      <div className="w-full h-screen md:bg-gray-900 mt-4 md:rounded-lg flex">
         {loading ? (
           <SidebarSkeleton />
         ) : (
@@ -56,7 +57,11 @@ export default function MessagePage() {
             setSelectedUser={setSelectedUser}
           />
         )}
-        <ChatContainer />
+        {selectedUser ? (
+          <ChatWindow user={user} selectedUser={selectedUser} socket={socket} />
+        ) : (
+          <NoChatSelected />
+        )}
       </div>
     </div>
   );

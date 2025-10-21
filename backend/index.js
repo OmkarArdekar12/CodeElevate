@@ -87,6 +87,16 @@ let activeUsers = new Map();
 io.on("connection", (socket) => {
   console.log("user connected: ", socket.id);
 
+  socket.on("joinRoom", (roomId) => {
+    socket.join(roomId);
+    console.log(`User ${socket.id} joined room ${roomId}`);
+  });
+
+  socket.on("leaveRoom", (roomId) => {
+    socket.leave(roomId);
+    console.log(`User ${socket.id} left room ${roomId}`);
+  });
+
   socket.on("addUser", (userId) => {
     activeUsers.set(userId, socket.id);
     io.emit("getActiveUsers", Array.from(activeUsers.keys()));

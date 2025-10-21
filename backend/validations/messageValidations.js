@@ -1,8 +1,6 @@
 import Joi from "joi";
 
 export const messageValidationSchema = Joi.object({
-  senderId: Joi.string().required(),
-  receiverId: Joi.string().required(),
   text: Joi.string().allow("").max(2000),
   image: Joi.string().allow("").allow(null).optional(),
 });
