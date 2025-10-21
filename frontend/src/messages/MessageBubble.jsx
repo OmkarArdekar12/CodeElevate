@@ -8,7 +8,7 @@ export default function MessageBubble({ user, message }) {
     <div
       className={`flex ${
         isSentByCurrentUser ? "justify-end" : "justify-start"
-      } mb-2`}
+      } mb-2 transition-all duration-300 ease-in-out`}
     >
       <div
         className={`max-w-xs md:max-w-md px-5 py-2 rounded-xl shadow ${

@@ -84,7 +84,7 @@ export default function ChatWindow({
   };
 
   return (
-    <div className="overflow-auto flex flex-col flex-1 custom-scrollbar">
+    <div className="overflow-auto flex flex-col flex-1 custom-scrollbar transition-all duration-300 ease-in-out">
       <ChatHeader selectedUser={selectedUser} closeChat={setSelectedUser} />
       {loadingChat ? (
         <ChatSkeleton />

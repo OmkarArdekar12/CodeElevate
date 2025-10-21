@@ -55,7 +55,7 @@ const MessageInput = ({ onSend }) => {
   };
 
   return (
-    <div className="p-4 w-full border-t border-cyan-300">
+    <div className="p-4 w-full border-t border-cyan-300 transition-all duration-300 ease-in-out">
       {imagePreview && (
         <div className="mb-3 flex items-center gap-2">
           <div className="relative">

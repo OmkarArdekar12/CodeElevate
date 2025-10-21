@@ -4,7 +4,7 @@ const SidebarSkeleton = () => {
   const skeletonContacts = Array(9).fill(null);
 
   return (
-    <aside className="h-full w-20 md:w-50 lg:w-100 border-r border-slate-600 flex flex-col transition-all duration-200">
+    <aside className="h-full w-20 md:w-50 lg:w-100 border-r border-slate-600 flex flex-col transition-all duration-200 ease-in-out">
       <div className="w-full flex flex-col p-1 md:p-4 items-start justify-center border-b border-slate-600">
         <div className="text-xl md:text-2xl font-semibold flex gap-1 md:gap-2 items-center">
           <Users className="w-6 h-6" />

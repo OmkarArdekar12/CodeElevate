@@ -6,7 +6,7 @@ import { MdArrowBackIosNew } from "react-icons/md";
 const ChatHeader = ({ selectedUser, closeChat }) => {
   const navigate = useNavigate();
   return (
-    <div className="px-4 py-7 border-b border-cyan-300 flex items-center justify-between">
+    <div className="px-4 py-7 border-b border-cyan-300 flex items-center justify-between transition-all duration-300 ease-in-out">
       <div
         onClick={() => navigate(`/profiles/${selectedUser.user._id}`)}
         className="flex items-center gap-2 cursor-pointer"

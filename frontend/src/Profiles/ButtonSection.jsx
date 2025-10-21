@@ -194,7 +194,7 @@ const ButtonSection = ({
             </div>
           )}
         </div>
-        {!isOwner && isLoggedIn && (
+        {!isOwner && isLoggedIn && isVerified && (
           <div className="w-full flex items-center flex-wrap pl-1">
             <button
               onClick={handleFollow}

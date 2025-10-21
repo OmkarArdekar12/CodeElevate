@@ -79,7 +79,7 @@ const SelectRank = ({ selectRank, changeRankings, rankingsDetails }) => {
   };
 
   return (
-    <div className="relative inline-block text-left md:text-lg text-md">
+    <div className="relative inline-block text-left md:text-lg text-md transition-all duration-300 ease-in-out">
       <button
         type="button"
         ref={btnRef}

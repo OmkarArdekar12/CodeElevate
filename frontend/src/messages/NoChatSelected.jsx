@@ -3,7 +3,7 @@ import { FaMessage } from "react-icons/fa6";
 
 const NoChatSelected = () => {
   return (
-    <div className="flex-1 flex flex-col items-center justify-center p-16">
+    <div className="flex-1 flex flex-col items-center justify-center p-16 transition-all duration-300 ease-in-out">
       <div className="w-full text-center space-y-6">
         <div className="flex justify-center gap-4 mb-4">
           <div className="relative">

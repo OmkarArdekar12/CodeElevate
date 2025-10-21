@@ -3,7 +3,7 @@ import React from "react";
 const ChatSkeleton = () => {
   const skeletonChats = Array(9).fill(null);
   return (
-    <div className="flex-1 p-4 overflow-y-auto">
+    <div className="flex-1 p-4 overflow-y-auto transition-all duration-300 ease-in-out">
       {skeletonChats.map((_, i) => (
         <div
           className={`flex ${

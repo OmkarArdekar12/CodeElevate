@@ -85,16 +85,16 @@ const io = new Server(server, { cors: corsOptions });
 let activeUsers = new Map();
 
 io.on("connection", (socket) => {
-  console.log("user connected: ", socket.id);
+  //console.log("user connected: ", socket.id);
 
   socket.on("joinRoom", (roomId) => {
     socket.join(roomId);
-    console.log(`User ${socket.id} joined room ${roomId}`);
+    //console.log(`User ${socket.id} joined room ${roomId}`);
   });
 
   socket.on("leaveRoom", (roomId) => {
     socket.leave(roomId);
-    console.log(`User ${socket.id} left room ${roomId}`);
+    //console.log(`User ${socket.id} left room ${roomId}`);
   });
 
   socket.on("addUser", (userId) => {
@@ -112,7 +112,7 @@ io.on("connection", (socket) => {
         activeUsers.delete(userId);
       }
     }
-    console.log("user disconnected: ", socket.id);
+    //console.log("user disconnected: ", socket.id);
     io.emit("getActiveUsers", Array.from(activeUsers.keys()));
   });
 });
