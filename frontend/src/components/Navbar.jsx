@@ -109,7 +109,7 @@ export default function Navbar({ isLoggedIn, isVerified, userData }) {
                         ? `/profiles/${userData.userId}`
                         : "/"
                     }
-                    className="flex items-center text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-md font-medium transition duration-150"
+                    className="hidden md:flex items-center text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-md font-medium transition duration-150"
                   >
                     <div className="hidden md:block">
                       <img
@@ -124,7 +124,7 @@ export default function Navbar({ isLoggedIn, isVerified, userData }) {
                 <div className="flex items-center ml-4">
                   <Link
                     to="/login"
-                    className="flex items-center text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-md font-medium transition duration-150"
+                    className="hidden md:flex items-center text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-md font-medium transition duration-150"
                   >
                     <div className="hidden md:block">
                       <button className="flex items-center text-white bg-green-700 hover:bg-green-600 p-2 rounded-md cursor-pointer hover-text-border">

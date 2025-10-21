@@ -48,7 +48,6 @@ const MessageInput = ({ onSend }) => {
         fileInputRef.current.value = "";
       }
     } catch (err) {
-      console.log(err);
       toast.error("Failed to send message.");
     } finally {
       setIsMessageSendLoading(false);

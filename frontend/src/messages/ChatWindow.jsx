@@ -56,7 +56,7 @@ export default function ChatWindow({
 
     if (socket) {
       socket.on("receiveMessage", (msg) => {
-        if (msg.roomId === roomId) {
+        if (msg.roomId === roomId && msg.senderId != loggedInUserId) {
           setMessages((prev) => [...prev, msg]);
         }
       });
