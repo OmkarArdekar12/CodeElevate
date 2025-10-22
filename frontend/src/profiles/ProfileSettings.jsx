@@ -19,6 +19,7 @@ const ProfileSettings = () => {
   const navigate = useNavigate();
   const [logoutLoading, setLogoutLoading] = useState(false);
   const [deleteLoading, setDeleteLoading] = useState(false);
+  const [showDeletePopup, setShowDeletePopup] = useState(false);
   const [userProfileData, setUserProfileData] = useState(null);
   const [loading, setLoading] = useState(true);
   const { isLoggedIn, isVerified, user, logout } = useSession();
@@ -72,10 +73,7 @@ const ProfileSettings = () => {
   };
 
   const handleDeleteAccount = async () => {
-    if (!window.confirm("Are you sure you want to delete your account?")) {
-      return;
-    }
-
+    setShowDeletePopup(false);
     setDeleteLoading(true);
     try {
       const data = await deleteProfile(profileId);
@@ -192,7 +190,7 @@ const ProfileSettings = () => {
               ? "bg-red-400 cursor-not-allowed"
               : "bg-red-500 hover:bg-red-700 cursor-pointer"
           }`}
-          onClick={handleDeleteAccount}
+          onClick={() => setShowDeletePopup(true)}
           disabled={deleteLoading}
         >
           {deleteLoading ? (
@@ -204,6 +202,35 @@ const ProfileSettings = () => {
             </>
           )}
         </button>
+      )}
+      {showDeletePopup && (
+        <div className="fixed inset-0 flex items-center justify-center bg-black/70 z-50">
+          <div className="bg-slate-900 p-6 rounded-2xl shadow-lg w-[90%] max-w-md text-center">
+            <h2 className="text-2xl mb-4 font-semibold text-red-500">
+              Delete Account
+            </h2>
+            <p className="text-gray-300 mb-6">
+              Are you sure you want to permanently delete your account? <br />
+            </p>
+            <div className="flex flex-wrap justify-center gap-4">
+              <button
+                className="px-5 py-2 rounded-md bg-gray-600 hover:bg-gray-700 transition"
+                onClick={() => setShowDeletePopup(false)}
+              >
+                Cancel
+              </button>
+              <button
+                className={`px-5 py-2 rounded-md bg-red-600 hover:bg-red-700 transition ${
+                  deleteLoading ? "cursor-not-allowed opacity-70" : ""
+                }`}
+                onClick={handleDeleteAccount}
+                disabled={deleteLoading}
+              >
+                {deleteLoading ? "Deleting..." : "Yes, Delete"}
+              </button>
+            </div>
+          </div>
+        </div>
       )}
     </div>
   );
