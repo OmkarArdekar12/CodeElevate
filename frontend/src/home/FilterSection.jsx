@@ -1,13 +1,23 @@
 import Filter from "./Filter.jsx";
 
-export default function FilterSection() {
+export default function FilterSection({ selectedFilter, setSelectedFilter }) {
+  const filters = [
+    "Trending",
+    "CP/DSA",
+    "DEVS",
+    "Experienced",
+    "Professionals",
+  ];
   return (
-    <div className="FilterSection w-[45%] flex flex-wrap justify-center items-center transition-all duration-300 ease-in-out">
-      <Filter text={"Trending"} />
-      <Filter text={"CP/DSA"} />
-      <Filter text={"DEVS"} />
-      <Filter text={"Rankers"} />
-      <Filter text={"Professionals"} />
+    <div className="FilterSection w-full md:flex-1 flex flex-wrap md:flex-nowrap justify-center items-center transition-all duration-300 ease-in-out">
+      {filters.map((f) => (
+        <Filter
+          text={f}
+          active={selectedFilter === f}
+          onClick={() => setSelectedFilter(f === selectedFilter ? "" : f)}
+          key={f}
+        />
+      ))}
     </div>
   );
 }
