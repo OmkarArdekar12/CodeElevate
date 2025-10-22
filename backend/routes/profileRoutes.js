@@ -45,7 +45,7 @@ router.put(
 );
 
 //Delete Profile Route
-router.delete("/:userId", auth, verifyAuth, auth2FA, destroyProfile);
+router.delete("/:id", auth, verifyAuth, auth2FA, destroyProfile);
 
 //Show Profile Route
 router.get("/:id", showProfile);

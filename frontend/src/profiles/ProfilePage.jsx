@@ -15,6 +15,7 @@ import { useNavigate, useParams } from "react-router-dom";
 import { showProfile } from "../service/profileApi.js";
 import Loading from "../components/Loading.jsx";
 import { useSession } from "../context/SessionContext.jsx";
+import toast from "react-hot-toast";
 
 const ProfilePage = () => {
   const { id: profileId } = useParams();
@@ -95,7 +96,10 @@ const ProfilePage = () => {
         },
       }));
     } catch (err) {
-      console.error("Failed to fetch profile", err);
+      navigate("/", { replace: true });
+      toast.error("User Profile not found.", {
+        id: "Profile not found or does exist",
+      });
     } finally {
       setLoading(false);
     }

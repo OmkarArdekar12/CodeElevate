@@ -4,6 +4,10 @@ import { cloudinary } from "../config/cloudConfig.js";
 import mongoose from "mongoose";
 import Profile from "../models/profile.js";
 import User from "../models/user.js";
+import Notification from "../models/notification.js";
+import Message from "../models/message.js";
+import Post from "../models/post.js";
+import RankingCache from "../models/rankingCache.js";
 
 //All Profile Controller
 export const getAllProfiles = async (req, res) => {
@@ -151,20 +155,118 @@ export const updateProfile = async (req, res) => {
 
 //Destroy Profile Controller
 export const destroyProfile = async (req, res) => {
-  try {
-    const clientUserId = req.params.userId;
-    const ownerUserId = req.user._id.toString();
+  const session = await mongoose.startSession();
+  session.startTransaction();
 
-    if (clientUserId !== ownerUserId) {
-      return res
-        .status(403)
-        .json({ message: "Unauthorized to delete this profile" });
+  try {
+    const userId = req.user._id; //logged-in user
+    const profileUserId = req.params.id; //profileUserId to delete
+
+    if (userId.toString() !== profileUserId.toString()) {
+      await session.abortTransaction();
+      return res.status(403).json({
+        message: "Unauthorized: You are not the owner of this profile.",
+      });
     }
 
-    await Profile.findOneAndDelete({ user: req.params.userid });
-    return res.status(200).json({ message: "Profile deleted" });
+    const profile = await Profile.findOne({ user: profileUserId }).session(
+      session
+    );
+    if (!profile) {
+      await session.abortTransaction();
+      return res.status(404).json({ message: "User Profile not found." });
+    }
+
+    //delete all notifications sent and received both
+    await Notification.deleteMany({
+      $or: [{ from: profileUserId }, { to: profileUserId }],
+    }).session(session);
+
+    //delete all messages and also images with messages
+    const allMessages = await Message.find({
+      $or: [{ senderId: profileUserId }, { receiverId: profileUserId }],
+    }).session(session);
+    for (const message of allMessages) {
+      if (message?.image?.publicId) {
+        await cloudinary.uploader.destroy(message.image.publicId);
+      }
+      await message.deleteOne({ session });
+    }
+
+    //remove user all likes and comments, and delete all user posts
+    const allPosts = await Post.find().session(session);
+    for (const post of allPosts) {
+      //remove likes by this user
+      if (post.likes.includes(profileUserId)) {
+        post.likes = post.likes.filter(
+          (like) => like.toString() !== profileUserId.toString()
+        );
+        await post.save({ session });
+      }
+      //remove comments by this user
+      post.comments = post.comments.filter(
+        (comment) => comment.user.toString() !== profileUserId.toString()
+      );
+      await post.save({ session });
+      //delete post belonging to the currUser
+      if (post.user.toString() === profileUserId.toString()) {
+        if (post?.image?.publicId) {
+          await cloudinary.uploader.destroy(post.image.publicId);
+        }
+        await post.deleteOne({ session });
+      }
+    }
+
+    //removing from followers and following
+    await Profile.updateMany(
+      {},
+      {
+        $pull: {
+          followers: profileUserId,
+          following: profileUserId,
+        },
+      }
+    ).session(session);
+
+    //refreshing ranking cache
+    await RankingCache.deleteMany({}).session(session);
+
+    //deleting profilePicture and backgroundBanner
+    if (profile?.profilePicture !== "") {
+      await cloudinary.uploader.destroy(`${profileUserId}-profile-picture`);
+    }
+    if (profile?.backgroundBanner !== "") {
+      await cloudinary.uploader.destroy(`${profileUserId}-bg-banner`);
+    }
+
+    //delete profile and user
+    await Profile.findOneAndDelete({ user: profileUserId }).session(session);
+    await User.findOneAndDelete({ _id: profileUserId }).session(session);
+
+    await session.commitTransaction();
+    session.endSession();
+
+    //logging-out the user
+    req.logout((err) => {
+      if (err) {
+        return next(err);
+      }
+      req.session.destroy((err) => {
+        if (err) {
+          return next(err);
+        }
+        res.clearCookie("connect.sid");
+        return res
+          .status(200)
+          .json({ message: "User Profile and all associated data deleted." });
+      });
+    });
   } catch (err) {
-    return res.status(500).json({ message: "Error deleting profile" });
+    await session.abortTransaction();
+    session.endSession();
+    return res
+      .status(500)
+      .json({ message: "Error in deleting profile", error: err });
   }
 };
 
