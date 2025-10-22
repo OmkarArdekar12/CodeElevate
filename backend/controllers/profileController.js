@@ -233,10 +233,14 @@ export const destroyProfile = async (req, res) => {
 
     //deleting profilePicture and backgroundBanner
     if (profile?.profilePicture !== "") {
-      await cloudinary.uploader.destroy(`${profileUserId}-profile-picture`);
+      await cloudinary.uploader.destroy(
+        `CodeElevate_Project/${profileUserId}-profile-picture`
+      );
     }
     if (profile?.backgroundBanner !== "") {
-      await cloudinary.uploader.destroy(`${profileUserId}-bg-banner`);
+      await cloudinary.uploader.destroy(
+        `CodeElevate_Project/${profileUserId}-bg-banner`
+      );
     }
 
     //delete profile and user

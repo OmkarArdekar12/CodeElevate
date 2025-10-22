@@ -7,7 +7,7 @@ export default function Profile({ profile }) {
   }
   const userId = profile.user._id;
   const userImage = profile.profilePicture || "/images/defaultUserImage.png";
-  const headLine = profile.headLine ? profile.headLine : "Hello! Everyone";
+  const headLine = profile.headLine ? profile.headLine : "";
   const fullName = profile.fullName;
   const username = profile.user.username;
   const role = profile.role ? profile.role : "";

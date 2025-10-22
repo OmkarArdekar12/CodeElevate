@@ -40,3 +40,14 @@ export const getConnections = async (userId) => {
   });
   return response.data;
 };
+
+export const deleteProfile = async (id) => {
+  const token2FA = getToken2fa();
+  const response = await api.delete(`/profiles/${id}`, {
+    withCredentials: true,
+    headers: {
+      Authorization: `Bearer ${token2FA}`,
+    },
+  });
+  return response.data;
+};

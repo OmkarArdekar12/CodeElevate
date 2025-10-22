@@ -12,7 +12,7 @@ import { FaUserTimes as DeleteIcon } from "react-icons/fa";
 import toast from "react-hot-toast";
 import Loading2 from "../components/Loading2.jsx";
 import Loading from "../components/Loading.jsx";
-import { getUserData } from "../service/profileApi.js";
+import { deleteProfile, getUserData } from "../service/profileApi.js";
 
 const ProfileSettings = () => {
   const { id: profileId } = useParams();
@@ -71,7 +71,27 @@ const ProfileSettings = () => {
     }
   };
 
-  const handleDeleteAccount = async () => {};
+  const handleDeleteAccount = async () => {
+    if (!window.confirm("Are you sure you want to delete your account?")) {
+      return;
+    }
+
+    setDeleteLoading(true);
+    try {
+      const data = await deleteProfile(profileId);
+      toast.success("User profile deleted successfully.", {
+        id: "user profile delete success",
+      });
+      logout(true);
+      navigate("/login", { replace: true });
+    } catch (err) {
+      toast.error("Failed to delete account.", {
+        id: "user profile delete failed",
+      });
+    } finally {
+      setDeleteLoading(false);
+    }
+  };
 
   if (loading) {
     return <Loading />;
@@ -87,7 +107,8 @@ const ProfileSettings = () => {
               <div className="flex justify-center items-center">
                 <img
                   src={
-                    userProfileData.profilePicture || "/images/deafultUserImage"
+                    userProfileData.profilePicture ||
+                    "/images/defaultUserImage.png"
                   }
                   alt="ProfilePicture"
                   className="size-25 border-2 rounded-full"
