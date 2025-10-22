@@ -42,24 +42,11 @@ router.get("/", getAllPosts);
 //Get Post Route
 router.get("/:id/data", getPost);
 
-//Get User All Post Route
-router.get("/:id", getUserPosts);
-
 //Like/Unlike Post Route
 router.patch("/:id/like", auth, verifyAuth, auth2FA, likeOrUnlikePost);
 
 //Add Comment Post Route
 router.put("/:id/comment", auth, verifyAuth, auth2FA, addComment);
-
-//Delete Comment Post Route
-router.delete(
-  "/:postId/comment/:commentId",
-  auth,
-  verifyAuth,
-  auth2FA,
-  isCommentOwner,
-  destroyComment
-);
 
 //Edit Post Route
 router.put(
@@ -72,7 +59,20 @@ router.put(
   editPost
 );
 
+//Delete Comment Post Route
+router.delete(
+  "/:postId/comment/:commentId",
+  auth,
+  verifyAuth,
+  auth2FA,
+  isCommentOwner,
+  destroyComment
+);
+
 //Delete Post Route
 router.delete("/:id", auth, verifyAuth, auth2FA, isOwner, deletePost);
+
+//Get User All Post Route
+router.get("/:id", getUserPosts);
 
 export default router;

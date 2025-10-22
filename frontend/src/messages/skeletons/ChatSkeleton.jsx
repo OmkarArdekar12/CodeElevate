@@ -6,6 +6,7 @@ const ChatSkeleton = () => {
     <div className="flex-1 p-4 overflow-y-auto transition-all duration-300 ease-in-out">
       {skeletonChats.map((_, i) => (
         <div
+          key={i}
           className={`flex ${
             (i + 1) % 2 == 0 ? "justify-end" : "justify-start"
           } mb-2`}

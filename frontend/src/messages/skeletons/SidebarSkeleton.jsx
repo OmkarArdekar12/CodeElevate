@@ -29,6 +29,7 @@ const SidebarSkeleton = () => {
         {skeletonContacts.map((_, idx) => {
           return (
             <div
+              key={idx}
               className={`px-2 sm:px-4 py-6 flex items-center gap-2 border-gray-700`}
             >
               <div className="flex relative">

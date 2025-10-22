@@ -17,7 +17,9 @@ export default function ChatWindow({
 
   const loggedInUserId = user?.userId;
   const selectedUserId = selectedUser.user._id;
-  const roomId = [loggedInUserId, selectedUserId].sort().join("_");
+  const roomId = [loggedInUserId.toString(), selectedUserId.toString()]
+    .sort()
+    .join("_");
 
   useEffect(() => {
     if (!socket || !roomId) {

@@ -29,9 +29,6 @@ router.get("/data/:id", getUserData);
 //Get Connections Route
 router.get("/:userId/connections", auth, verifyAuth, auth2FA, getConnections);
 
-//Show Profile Route
-router.get("/:id", showProfile);
-
 //Update Profile Route
 router.put(
   "/:id",
@@ -49,6 +46,9 @@ router.put(
 
 //Delete Profile Route
 router.delete("/:userId", auth, verifyAuth, auth2FA, destroyProfile);
+
+//Show Profile Route
+router.get("/:id", showProfile);
 
 // //Create Profile Route
 // router.post("/", auth, verifyAuth, auth2FA, createProfile);

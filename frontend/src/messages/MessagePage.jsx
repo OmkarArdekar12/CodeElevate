@@ -6,6 +6,7 @@ import Sidebar from "./Sidebar.jsx";
 import SidebarSkeleton from "./skeletons/SidebarSkeleton.jsx";
 import NoChatSelected from "./NoChatSelected.jsx";
 import ChatWindow from "./ChatWindow.jsx";
+import { useLocation } from "react-router-dom";
 
 export default function MessagePage() {
   const { socket, user } = useSession();
@@ -13,6 +14,7 @@ export default function MessagePage() {
   const [users, setUsers] = useState([]);
   const [selectedUser, setSelectedUser] = useState(null);
   const [activeUsers, setActiveUsers] = useState([]);
+  const location = useLocation();
 
   const fetchUsers = async () => {
     setLoading(true);
@@ -40,6 +42,12 @@ export default function MessagePage() {
       socket.off("getActiveUsers");
     };
   }, [socket]);
+
+  useEffect(() => {
+    if (location.state?.toMessage) {
+      setSelectedUser(toMessage);
+    }
+  }, [location.state]);
 
   return (
     <div className="w-full flex flex-col items-center justify-center text-white py-4 px-1 md:px-10 mb-5 transition-all duration-300 ease-in-out">

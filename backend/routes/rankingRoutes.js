@@ -10,9 +10,6 @@ import {
 
 const router = express.Router();
 
-//Get all 5 Rankings Route
-router.get("/", getRankings);
-
 //Get Competitive Programming Ranking Route
 router.get("/competitive-programming", getCompetitiveProgrammingRankings);
 
@@ -27,5 +24,8 @@ router.get("/contributors", getContributorRankings);
 
 //Get All Rounders Ranking Route
 router.get("/all-rounders", getAllRounderRankings);
+
+//Get all 5 Rankings Route
+router.get("/", getRankings);
 
 export default router;

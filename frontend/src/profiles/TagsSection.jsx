@@ -1,7 +1,6 @@
 import React from "react";
 
 const TagsSection = ({ tags }) => {
-  console.log(tags);
   if (!tags) {
     return null;
   }
