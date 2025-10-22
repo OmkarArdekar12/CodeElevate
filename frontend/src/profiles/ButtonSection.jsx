@@ -19,6 +19,7 @@ import {
 } from "../service/connectionApi.js";
 import toast from "react-hot-toast";
 import Loading2 from "../components/Loading2.jsx";
+import { getUserForMessage } from "../service/messagesApi.js";
 
 const ButtonSection = ({
   profileUserId,
@@ -31,19 +32,44 @@ const ButtonSection = ({
 }) => {
   const navigate = useNavigate();
   const [isFollowing, setIsFollowing] = useState(false);
+  const [statusLoading, setStatusLoading] = useState(true);
+  const [msgUserLoading, setMsgUserLoading] = useState(true);
   const [connectStatus, setConnectStatus] = useState("none");
+  const [msgUser, setMsgUser] = useState(null);
   const [loadingFollow, setLoadingFollow] = useState(false);
   const [loadingConnect, setLoadingConnect] = useState(false);
 
   const fetchStatus = async () => {
+    setStatusLoading(true);
     try {
       const data = await checkConnectionStatus(profileUserId);
       setIsFollowing(data.followStatus);
       setConnectStatus(data.connectStatus);
     } catch (err) {
-      console.error(err.response?.data?.error || err.message);
+      setIsFollowing(false);
+      setConnectStatus("none");
+    } finally {
+      setStatusLoading(false);
     }
   };
+
+  const fetchUserForMessage = async () => {
+    setMsgUserLoading(true);
+    try {
+      const data = await getUserForMessage(profileUserId);
+      setMsgUser(data);
+    } catch (err) {
+      setMsgUser(null);
+    } finally {
+      setMsgUserLoading(false);
+    }
+  };
+
+  useEffect(() => {
+    if (isLoggedIn && isVerified && !isOwner) {
+      fetchUserForMessage();
+    }
+  }, [profileUserId, isLoggedIn, isVerified, isOwner]);
 
   useEffect(() => {
     if (isLoggedIn && isVerified && !isOwner) {
@@ -194,73 +220,86 @@ const ButtonSection = ({
             </div>
           )}
         </div>
-        {!isOwner && isLoggedIn && isVerified && (
-          <div className="w-full flex items-center flex-wrap pl-1">
-            <button
-              onClick={handleFollow}
-              disabled={loadingFollow}
-              className={`flex items-center py-2 px-4 m-1 rounded-md hover:text-white hover-text-border  ${
-                loadingFollow
-                  ? "bg-gray-700 cursor-not-allowed"
-                  : isFollowing
-                  ? "bg-gray-600 hover:bg-gray-700 cursor-pointer"
-                  : "bg-blue-500 hover:border-1 hover:border-blue-500 hover:bg-gradient-to-r hover:from-blue-500 hover:via-blue-600 hover:to-blue-700 cursor-pointer"
-              }`}
-            >
-              {!isFollowing ? (
-                <FaUserPlus className="inline mr-1" size={20} />
-              ) : (
-                <FaUserMinus className="inline mr-1" size={20} />
+        {!isOwner &&
+          isLoggedIn &&
+          isVerified &&
+          !statusLoading &&
+          !msgUserLoading && (
+            <div className="w-full flex items-center flex-wrap pl-1">
+              <button
+                onClick={handleFollow}
+                disabled={loadingFollow}
+                className={`flex items-center py-2 px-4 m-1 rounded-md hover:text-white hover-text-border  ${
+                  loadingFollow
+                    ? "bg-gray-700 cursor-not-allowed"
+                    : isFollowing
+                    ? "bg-gray-600 hover:bg-gray-700 cursor-pointer"
+                    : "bg-blue-500 hover:border-1 hover:border-blue-500 hover:bg-gradient-to-r hover:from-blue-500 hover:via-blue-600 hover:to-blue-700 cursor-pointer"
+                }`}
+              >
+                {!isFollowing ? (
+                  <FaUserPlus className="inline mr-1" size={20} />
+                ) : (
+                  <FaUserMinus className="inline mr-1" size={20} />
+                )}
+                {loadingFollow ? (
+                  <Loading2 text="following..." />
+                ) : isFollowing ? (
+                  "Unfollow"
+                ) : (
+                  "Follow"
+                )}
+              </button>
+              <button
+                onClick={handleConnect}
+                disabled={loadingConnect || connectStatus === "pending"}
+                className={`flex items-center py-2 px-4 m-1 rounded-md hover:text-white hover-text-border  ${
+                  loadingConnect
+                    ? "bg-gray-700 cursor-not-allowed"
+                    : connectStatus === "connected"
+                    ? "bg-gray-600 hover:bg-gray-700 cursor-pointer"
+                    : connectStatus === "pending"
+                    ? "bg-gray-500 hover:bg-gray-600 cursor-not-allowed"
+                    : "bg-blue-500 hover:border-1 hover:border-blue-500 hover:bg-gradient-to-r hover:from-blue-500 hover:via-blue-600 hover:to-blue-700 cursor-pointer"
+                }`}
+              >
+                {loadingConnect ? (
+                  <>
+                    <FaUserClock className="inline mr-1" size={20} />
+                    <Loading2 text="connecting..." />
+                  </>
+                ) : connectStatus === "connected" ? (
+                  <>
+                    <FaUserAltSlash className="inline mr-1" size={20} />
+                    Disconnect
+                  </>
+                ) : connectStatus === "pending" ? (
+                  <>
+                    <FaClockRotateLeft className="inline mr-1" size={20} />
+                    Pending
+                  </>
+                ) : (
+                  <>
+                    <FaUserClock className="inline mr-1" size={20} />
+                    Connect
+                  </>
+                )}
+              </button>
+              {msgUser && (
+                <button
+                  onClick={() =>
+                    navigate(`/messages`, {
+                      state: { toMessage: msgUser },
+                    })
+                  }
+                  className="flex items-center bg-blue-500 py-2 px-4 m-1 rounded-md hover:text-white hover:border-1 hover:border-blue-500 hover-text-border hover:bg-gradient-to-l hover:from-blue-500 hover:via-blue-600 hover:to-blue-700 cursor-pointer"
+                >
+                  <MdMessage className="inline mr-1" size={20} />
+                  Message
+                </button>
               )}
-              {loadingFollow ? (
-                <Loading2 text="following..." />
-              ) : isFollowing ? (
-                "Unfollow"
-              ) : (
-                "Follow"
-              )}
-            </button>
-            <button
-              onClick={handleConnect}
-              disabled={loadingConnect || connectStatus === "pending"}
-              className={`flex items-center py-2 px-4 m-1 rounded-md hover:text-white hover-text-border  ${
-                loadingConnect
-                  ? "bg-gray-700 cursor-not-allowed"
-                  : connectStatus === "connected"
-                  ? "bg-gray-600 hover:bg-gray-700 cursor-pointer"
-                  : connectStatus === "pending"
-                  ? "bg-gray-500 hover:bg-gray-600 cursor-not-allowed"
-                  : "bg-blue-500 hover:border-1 hover:border-blue-500 hover:bg-gradient-to-r hover:from-blue-500 hover:via-blue-600 hover:to-blue-700 cursor-pointer"
-              }`}
-            >
-              {loadingConnect ? (
-                <>
-                  <FaUserClock className="inline mr-1" size={20} />
-                  <Loading2 text="connecting..." />
-                </>
-              ) : connectStatus === "connected" ? (
-                <>
-                  <FaUserAltSlash className="inline mr-1" size={20} />
-                  Disconnect
-                </>
-              ) : connectStatus === "pending" ? (
-                <>
-                  <FaClockRotateLeft className="inline mr-1" size={20} />
-                  Pending
-                </>
-              ) : (
-                <>
-                  <FaUserClock className="inline mr-1" size={20} />
-                  Connect
-                </>
-              )}
-            </button>
-            <button className="flex items-center bg-blue-500 py-2 px-4 m-1 rounded-md hover:text-white hover:border-1 hover:border-blue-500 hover-text-border hover:bg-gradient-to-l hover:from-blue-500 hover:via-blue-600 hover:to-blue-700 cursor-pointer">
-              <MdMessage className="inline mr-1" size={20} />
-              Message
-            </button>
-          </div>
-        )}
+            </div>
+          )}
       </div>
       <hr className="w-full text-gray-600 mt-20 mb-10" />
     </>

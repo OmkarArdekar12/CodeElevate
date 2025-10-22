@@ -12,6 +12,17 @@ export const getUserForSidebar = async () => {
   return response.data;
 };
 
+export const getUserForMessage = async (id) => {
+  const token2FA = getToken2fa();
+  const response = await api.get(`/messages/users/${id}`, {
+    headers: {
+      Authorization: `Bearer ${token2FA}`,
+    },
+    withCredentials: true,
+  });
+  return response.data;
+};
+
 export const getMessages = async (id) => {
   const token2FA = getToken2fa();
   const response = await api.get(`/messages/${id}`, {

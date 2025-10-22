@@ -45,7 +45,7 @@ export default function MessagePage() {
 
   useEffect(() => {
     if (location.state?.toMessage) {
-      setSelectedUser(toMessage);
+      setSelectedUser(location.state.toMessage);
     }
   }, [location.state]);
 
