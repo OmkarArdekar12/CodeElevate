@@ -255,6 +255,8 @@ export const getUserData = async (req, res) => {
       username: profile.user.username,
       headLine: profile.headLine,
       profilePicture: profile.profilePicture,
+      createdAt: profile.createdAt,
+      updatedAt: profile.updatedAt,
     };
     return res.status(200).json(userData);
   } catch (err) {

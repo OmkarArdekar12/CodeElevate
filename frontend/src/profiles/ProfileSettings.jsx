@@ -11,11 +11,16 @@ import { FaSignOutAlt as LogoutIcon } from "react-icons/fa";
 import { FaUserTimes as DeleteIcon } from "react-icons/fa";
 import toast from "react-hot-toast";
 import Loading2 from "../components/Loading2.jsx";
+import Loading from "../components/Loading.jsx";
+import { getUserData } from "../service/profileApi.js";
 
 const ProfileSettings = () => {
   const { id: profileId } = useParams();
   const navigate = useNavigate();
   const [logoutLoading, setLogoutLoading] = useState(false);
+  const [deleteLoading, setDeleteLoading] = useState(false);
+  const [userProfileData, setUserProfileData] = useState(null);
+  const [loading, setLoading] = useState(true);
   const { isLoggedIn, isVerified, user, logout } = useSession();
   const userId = user && user.userId ? user.userId : "";
   const isOwner = profileId === userId;
@@ -25,11 +30,26 @@ const ProfileSettings = () => {
   // const isAuthorized = state?.isAuthorized;
 
   const notAuth = !isAuthorized;
+
+  const fetchUserProfile = async () => {
+    setLoading(true);
+    try {
+      const profileData = await getUserData(profileId);
+      setUserProfileData(profileData);
+    } catch (err) {
+      setUserProfileData(null);
+    } finally {
+      setLoading(false);
+    }
+  };
+
   useEffect(() => {
     if (notAuth) {
       toast.error("Not authorized.", {
         id: "Invalid user to access profile settings",
       });
+    } else {
+      fetchUserProfile();
     }
   }, [notAuth]);
 
@@ -51,8 +71,79 @@ const ProfileSettings = () => {
     }
   };
 
+  const handleDeleteAccount = async () => {};
+
+  if (loading) {
+    return <Loading />;
+  }
+
   return (
     <div className="text-white w-full px-3 py-5 flex flex-col items-center justify-center transition-all duration-300 ease-in-out">
+      {isAuthorized && userProfileData && (
+        <div className="flex flex-col justify-center gap-3 w-[90%] md:w-[50%] my-2 border-b">
+          <h1 className="text-2xl title-font">Account Information</h1>
+          <div className="w-full text-lg pt-4 pb-6 sm:px-4 flex flex-col justify-center gap-1 title-font">
+            <div className="flex flex-wrap justify-center items-center gap-3 py-2 pb-3">
+              <div className="flex justify-center items-center">
+                <img
+                  src={
+                    userProfileData.profilePicture || "/images/deafultUserImage"
+                  }
+                  alt="ProfilePicture"
+                  className="size-25 border-2 rounded-full"
+                />
+              </div>
+              <div className="flex flex-col justify-center">
+                <div className="flex flex-wrap items-center">
+                  Full Name: &nbsp;<span>{userProfileData.fullName}</span>
+                </div>
+                <div className="flex flex-wrap items-center">
+                  Username: &nbsp;
+                  <span className="italic">{userProfileData.username}</span>
+                </div>
+              </div>
+            </div>
+            <div className="flex flex-wrap justify-between items-center">
+              <span className="text-left">Account Status:</span>
+              <span className="text-green-500 text-right">&#x25CF; Active</span>
+            </div>
+            <div className="flex flex-wrap justify-between items-center">
+              <span className="text-left">Last updated:</span>
+              <span className="text-right">
+                {new Date(userProfileData.updatedAt).toLocaleDateString(
+                  "en-GB",
+                  {
+                    day: "2-digit",
+                    month: "2-digit",
+                    year: "numeric",
+                  }
+                )}{" "}
+                {new Date(userProfileData.updatedAt).toLocaleTimeString(
+                  "en-US",
+                  {
+                    hour: "2-digit",
+                    minute: "2-digit",
+                    hour12: true,
+                  }
+                )}
+              </span>
+            </div>
+            <div className="flex flex-wrap justify-between items-center">
+              <span className="text-left">Member Since:</span>
+              <span className="text-right">
+                {new Date(userProfileData.createdAt).toLocaleDateString(
+                  "en-GB",
+                  {
+                    day: "2-digit",
+                    month: "2-digit",
+                    year: "numeric",
+                  }
+                )}
+              </span>
+            </div>
+          </div>
+        </div>
+      )}
       {isAuthorized && (
         <button
           className={`flex items-center justify-center text-center rounded-md px-4 py-2 hover-text-border w-[90%] md:w-[50%] my-2 text-xl ${
@@ -75,11 +166,22 @@ const ProfileSettings = () => {
       )}
       {isAuthorized && (
         <button
-          className="flex items-center justify-center bg-red-500 text-center rounded-md px-4 py-2 hover-text-border w-[90%] md:w-[50%] my-2 text-xl hover:bg-red-700 cursor-pointer"
-          //   onClick={handleLogout}
+          className={`flex items-center justify-center text-center rounded-md px-4 py-2 hover-text-border w-[90%] md:w-[50%] my-2 text-xl ${
+            deleteLoading
+              ? "bg-red-400 cursor-not-allowed"
+              : "bg-red-500 hover:bg-red-700 cursor-pointer"
+          }`}
+          onClick={handleDeleteAccount}
+          disabled={deleteLoading}
         >
-          <DeleteIcon className="inline mr-2" size={25} />
-          Delete Account
+          {deleteLoading ? (
+            <Loading2 text="Deleting account..." />
+          ) : (
+            <>
+              <DeleteIcon className="inline mr-2" size={25} />
+              Delete Account
+            </>
+          )}
         </button>
       )}
     </div>
