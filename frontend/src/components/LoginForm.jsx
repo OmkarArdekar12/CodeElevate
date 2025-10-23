@@ -106,7 +106,7 @@ const LoginForm = ({ onLoginSuccess }) => {
       setPassword("");
       setError("");
       onLoginSuccess(data);
-      toast.success("Valid login credentials.", { id: "login" });
+      toast.success("Valid login credentials.", { id: "login success" });
     } catch (error) {
       // console.log("The erros is: ", error);
       setUsername("");

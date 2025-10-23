@@ -41,17 +41,24 @@ const PostCard = ({
 
   const handleLikeUnlike = async () => {
     if (!isLoggedIn) {
-      toast.error("You need to logged-in to access that");
+      toast.error("You need to be logged in to access that!", {
+        id: "user is not logged in.",
+      });
       return;
     }
     if (!isVerified) {
-      toast.error("You need to verify to access that");
+      toast.error("You need to verify your account to access that!", {
+        id: "user is not verified.",
+      });
       return;
     }
     try {
       const postId = postData._id;
       const response = await likeOrUnlikePost(postId);
-      toast.success(response.message);
+      toast.success(
+        isLiked ? "You unliked this post." : "You liked this post.",
+        { id: "post like/unlike success" }
+      );
       const updatedPost = {
         ...postData,
         likes: isLiked
@@ -60,18 +67,25 @@ const PostCard = ({
       };
       onPostUpdate(updatedPost);
     } catch (err) {
-      console.log("Error in Like/Unlike post");
+      toast.error(
+        isLiked ? "Failed to unlike this post." : "Failed to like this post.",
+        { id: "post like/unlike failed" }
+      );
     }
   };
 
   const handleCommentSubmit = async () => {
     if (!isLoggedIn) {
-      toast.error("You need to logged-in to access that");
+      toast.error("You need to be logged in to access that!", {
+        id: "user is not logged in.",
+      });
       navigate("/login");
       return;
     }
     if (!isVerified) {
-      toast.error("You need to verify to access that");
+      toast.error("You need to verify your account to access that!", {
+        id: "user is not verified.",
+      });
       navigate("/verify-2fa");
       return;
     }
@@ -80,7 +94,9 @@ const PostCard = ({
       try {
         const postId = postData._id;
         const response = await addComment(postId, { text: comment });
-        toast.success(response.message);
+        toast.success("Your comment added successfully!", {
+          id: "add comment success",
+        });
         const addedComment =
           response && response.comment
             ? response.comment
@@ -107,7 +123,9 @@ const PostCard = ({
         };
         onPostUpdate(updatedPost);
       } catch (err) {
-        console.log("Error in commenting on post");
+        toast.error("Failed to add your comment.", {
+          id: "add comment failed",
+        });
       } finally {
         setCommentLoading(false);
       }
@@ -116,12 +134,16 @@ const PostCard = ({
 
   const handlePostDelete = async () => {
     if (!isLoggedIn) {
-      toast.error("You need to logged-in to access that");
+      toast.error("You need to be logged in to access that!", {
+        id: "user is not logged in.",
+      });
       navigate("/login");
       return;
     }
     if (!isVerified) {
-      toast.error("You need to verify to access that");
+      toast.error("You need to verify your account to access that!", {
+        id: "user is not verified.",
+      });
       navigate("/verify-2fa");
       return;
     }
@@ -129,11 +151,15 @@ const PostCard = ({
     try {
       const postId = postData._id;
       const response = await deletePost(postId);
-      toast.success(response.message);
+      toast.success("Your post deleted successfully!", {
+        id: "post delete success",
+      });
       const updatedPost = { _id: postId };
       onPostUpdate(updatedPost);
     } catch (err) {
-      console.log("Error in commenting on post", err);
+      toast.error("Failed to delete your post.", {
+        id: "post delete failed",
+      });
     } finally {
       setMenuOpen(false);
       setDeletePostLoading(false);
