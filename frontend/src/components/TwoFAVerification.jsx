@@ -14,7 +14,7 @@ const TwoFAVerification = ({ onVerifySuccess, onResetSuccess }) => {
       toast.success("Valid OTP.", { id: "otp success" });
     } catch (error) {
       setOtp("");
-      console.log("The error is: ", error.message);
+      //console.log("The error is: ", error.message);
       setError("Invalid OTP");
       toast.error("Invalid OTP!", { id: "otp failed" });
     }
@@ -29,7 +29,7 @@ const TwoFAVerification = ({ onVerifySuccess, onResetSuccess }) => {
         id: "reset success",
       });
     } catch (error) {
-      console.log("The error is: ", error.message);
+      //console.log("The error is: ", error.message);
       setError("Reset failed. Try again.");
       toast.error("Two-factor Authentication reset failed!", {
         id: "reset failed",
