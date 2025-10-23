@@ -17,67 +17,79 @@ export default function CodeforcesCard({ codeforcesData }) {
           alt="Codeforces"
           className="w-9 h-9 mr-2"
         />
-        <span className="text-white text-2xl text-border">
-          {codeforcesData.handle}
-        </span>
+        {codeforcesData.handle && (
+          <span className="text-white text-2xl text-border">
+            {codeforcesData.handle}
+          </span>
+        )}
       </div>
       <hr className="w-full text-gray-500 my-4" />
       <div className="grid grid-cols-2 gap-4 mb-6">
-        <div className="p-2 shadow shadow-amber-50 rounded-md">
-          <p className="text-sm text-gray-100">Rating</p>
-          <p className="text-xl font-bold text-green-600">
-            {codeforcesData.rating}
-          </p>
-        </div>
-        <div className="p-2 shadow shadow-amber-50 rounded-md">
-          <p className="text-sm text-gray-100">Max Rating</p>
-          <p className="text-xl font-bold text-purple-600">
-            {codeforcesData.maxRating}
-          </p>
-        </div>
-        <div className="p-2 shadow shadow-amber-50 rounded-md">
-          <p className="text-sm text-gray-100">Rank</p>
-          <p className="capitalize text-xl font-bold text-orange-500">
-            {codeforcesData.rank}
-          </p>
-        </div>
-        <div className="p-2 shadow shadow-amber-50 rounded-md">
-          <p className="text-sm text-gray-100">Max Rank</p>
-          <p className="capitalize text-xl font-semibold text-orange-600">
-            {codeforcesData.maxRank}
-          </p>
-        </div>
-        <div className="p-2 py-4 shadow shadow-amber-50 rounded-md col-span-2 text-center">
-          <p className="text-sm text-gray-100">Total Problems Solved</p>
-          <p className="text-3xl font-bold text-border">
-            {codeforcesData.totalProblemsSolved}
-          </p>
-        </div>
+        {codeforcesData.rating && (
+          <div className="p-2 shadow shadow-amber-50 rounded-md">
+            <p className="text-sm text-gray-100">Rating</p>
+            <p className="text-xl font-bold text-green-600">
+              {codeforcesData.rating}
+            </p>
+          </div>
+        )}
+        {codeforcesData.maxRating && (
+          <div className="p-2 shadow shadow-amber-50 rounded-md">
+            <p className="text-sm text-gray-100">Max Rating</p>
+            <p className="text-xl font-bold text-purple-600">
+              {codeforcesData.maxRating}
+            </p>
+          </div>
+        )}
+        {codeforcesData.rank && (
+          <div className="p-2 shadow shadow-amber-50 rounded-md">
+            <p className="text-sm text-gray-100">Rank</p>
+            <p className="capitalize text-xl font-bold text-orange-500">
+              {codeforcesData.rank}
+            </p>
+          </div>
+        )}
+        {codeforcesData.maxRank && (
+          <div className="p-2 shadow shadow-amber-50 rounded-md">
+            <p className="text-sm text-gray-100">Max Rank</p>
+            <p className="capitalize text-xl font-semibold text-orange-600">
+              {codeforcesData.maxRank}
+            </p>
+          </div>
+        )}
+        {codeforcesData.totalProblemsSolved && (
+          <div className="p-2 py-4 shadow shadow-amber-50 rounded-md col-span-2 text-center">
+            <p className="text-sm text-gray-100">Total Problems Solved</p>
+            <p className="text-3xl font-bold text-border">
+              {codeforcesData.totalProblemsSolved}
+            </p>
+          </div>
+        )}
       </div>
       <div className="text-gray-100 space-y-2">
         <p>
           <strong className="text-blue-100 italic">Contribution:</strong>{" "}
-          {codeforcesData.contribution}
+          {codeforcesData?.contribution}
         </p>
         <p>
           <strong className="text-blue-100 italic">Friends Count:</strong>{" "}
-          {codeforcesData.friendOfCount}
+          {codeforcesData?.friendOfCount}
         </p>
         <p>
           <strong className="text-blue-100 italic">Organization:</strong>{" "}
-          {codeforcesData.organization}
+          {codeforcesData?.organization}
         </p>
         <p>
           <strong className="text-blue-100 italic">Location:</strong>{" "}
-          {codeforcesData.city}, {codeforcesData.country}
+          {codeforcesData?.city}, {codeforcesData?.country}
         </p>
         <p>
           <strong className="text-blue-100 italic">Member Since:</strong>{" "}
-          {unixToDate(codeforcesData.registrationTimeSeconds)}
+          {unixToDate(codeforcesData?.registrationTimeSeconds)}
         </p>
         <p>
           <strong className="text-blue-100 italic">Last Online:</strong>{" "}
-          {unixToDate(codeforcesData.lastOnlineTimeSeconds)}
+          {unixToDate(codeforcesData?.lastOnlineTimeSeconds)}
         </p>
       </div>
     </div>

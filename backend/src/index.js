@@ -51,7 +51,7 @@ app.use(cookieParser());
 app.use(methodOverride("_method"));
 
 const corsOptions = {
-  origin: ["http://localhost:3001"],
+  origin: ["http://localhost:3000"],
   credentials: true,
   methods: ["GET", "POST", "PUT", "PATCH", "DELETE"],
   allowedHeaders: ["Content-Type", "Authorization", "Cookie"],
@@ -135,6 +135,11 @@ app.use("/api/notifications", notificationRoutes);
 app.use("/api/posts", postRoutes);
 app.use("/api/messages", messageRoutes);
 app.use("/api/rankings", rankingRoutes);
+
+//Index Route
+app.get("/", (req, res) => {
+  return res.send("Welcome to CodeElevate");
+});
 
 //Error handlers
 app.use((req, res, next) => {
