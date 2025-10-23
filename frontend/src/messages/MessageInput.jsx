@@ -12,7 +12,9 @@ const MessageInput = ({ onSend }) => {
     const file = e.target.files[0];
     if (!file.type.startsWith("image/")) {
       setImagePreview(null);
-      toast.error("Please select an image file.");
+      toast.error("Please select an image file.", {
+        id: "invalid message file",
+      });
       return;
     }
 
@@ -48,7 +50,7 @@ const MessageInput = ({ onSend }) => {
         fileInputRef.current.value = "";
       }
     } catch (err) {
-      toast.error("Failed to send message.");
+      toast.error("Failed to send message.", { id: "message send failed" });
     } finally {
       setIsMessageSendLoading(false);
     }

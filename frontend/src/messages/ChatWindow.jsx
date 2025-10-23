@@ -16,7 +16,7 @@ export default function ChatWindow({
   const messagesContainerRef = useRef(null);
 
   const loggedInUserId = user?.userId;
-  const selectedUserId = selectedUser.user._id;
+  const selectedUserId = selectedUser?.user?._id;
   const roomId = [loggedInUserId.toString(), selectedUserId.toString()]
     .sort()
     .join("_");

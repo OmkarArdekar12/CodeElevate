@@ -8,20 +8,20 @@ const ChatHeader = ({ selectedUser, closeChat }) => {
   return (
     <div className="px-4 py-7 border-b border-cyan-300 flex items-center justify-between transition-all duration-300 ease-in-out">
       <div
-        onClick={() => navigate(`/profiles/${selectedUser.user._id}`)}
+        onClick={() => navigate(`/profiles/${selectedUser?.user?._id}`)}
         className="flex items-center gap-2 cursor-pointer"
       >
         <img
-          src={selectedUser.profilePicture || "/images/defaultUserImage.png"}
+          src={selectedUser?.profilePicture || "/images/defaultUserImage.png"}
           alt="UserProfilePicture"
           className="size-14 rounded-full"
         />
         <div>
           <h2 className="font-semibold text-lg">
-            {selectedUser.fullName} .{" "}
-            <span className="text-md">@{selectedUser.user.username}</span>
+            {selectedUser?.fullName} .{" "}
+            <span className="text-md">@{selectedUser?.user?.username}</span>
           </h2>
-          <h2 className="font-normal text-sm">{selectedUser.headLine}</h2>
+          <h2 className="font-normal text-sm">{selectedUser?.headLine}</h2>
         </div>
       </div>
       <div
