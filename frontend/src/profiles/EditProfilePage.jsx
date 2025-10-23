@@ -589,7 +589,10 @@ const EditProfilePage = () => {
 
           <div className="m-1 mb-5">
             <h2 className="text-xl font-semibold">Profile Settings</h2>
-            <label htmlFor="showStats" className="block mb-2">
+            <label
+              htmlFor="showStats"
+              className="block mb-2 font-semibold text-xl"
+            >
               Show Stats
             </label>
             <select
