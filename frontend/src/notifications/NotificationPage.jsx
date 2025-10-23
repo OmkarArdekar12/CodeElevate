@@ -14,7 +14,7 @@ const NotificationPage = () => {
       const data = await getNotifications();
       setAllNotifications(data);
     } catch (err) {
-      console.log(err);
+      setAllNotifications([]);
     } finally {
       setLoading(false);
     }

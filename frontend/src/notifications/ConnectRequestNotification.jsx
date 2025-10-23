@@ -27,7 +27,12 @@ const ConnectRequestNotification = ({ notification, fetchNotifications }) => {
       const userData = await getUserData(id);
       setSenderData(userData);
     } catch (err) {
-      console.log(err);
+      setSenderData({
+        fullName: "",
+        username: "",
+        headLine: "",
+        profilePicture: "",
+      });
     }
   };
 
@@ -40,9 +45,11 @@ const ConnectRequestNotification = ({ notification, fetchNotifications }) => {
       const notificationId = notification._id;
       const response = await connectResponse(notificationId, action);
       await fetchNotifications();
-      toast.success(response.message);
+      toast.success(response?.message, { id: "connection response success" });
     } catch (err) {
-      console.log(err);
+      toast.error("Something went wrong!", {
+        id: "connection response failed",
+      });
     }
   };
 

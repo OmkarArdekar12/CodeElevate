@@ -27,7 +27,13 @@ const Notification = ({ notification, fetchNotifications }) => {
       const userData = await getUserData(id);
       setSenderData(userData);
     } catch (err) {
-      console.log(err);
+      //console.log(err);
+      setSenderData({
+        fullName: "",
+        username: "",
+        headLine: "",
+        profilePicture: "",
+      });
     }
   };
 
