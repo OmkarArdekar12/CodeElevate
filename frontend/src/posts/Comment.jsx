@@ -36,14 +36,17 @@ const Comment = ({ comment, postData, userId, onPostUpdate }) => {
     try {
       const postId = postData._id;
       const response = await deleteComment(postId, commentId);
-      toast.success(response.message);
+      toast.success("Comment deleted successfully!", { id: "comment deleted" });
       const comments = postData.comments.filter(
         (comment) => comment._id !== commentId
       );
       const updatedPost = { ...postData, comments };
       onPostUpdate(updatedPost);
     } catch (err) {
-      console.log("Error in deleting comment");
+      //console.log("Error in deleting comment");
+      toast.error("Failed to delete comment.", {
+        id: "comment deletion failed",
+      });
     } finally {
       setMenuOpen(false);
       setDeleteCommentLoading(false);

@@ -22,7 +22,8 @@ export default function PostPage() {
       const posts = await getAllPosts(); //fetch allPosts data
       setAllPosts(posts);
     } catch (err) {
-      console.log("Error in fetching posts");
+      //console.log("Error in fetching posts");
+      setAllPosts([]);
     } finally {
       setLoading(false);
     }

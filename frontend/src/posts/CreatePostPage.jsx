@@ -20,7 +20,9 @@ const CreatePostPage = () => {
   const handleImageChange = (e) => {
     const file = e.target.files[0];
     if (!file.type.startsWith("image/")) {
-      toast.error("Please select an image file");
+      toast.error("Please select an image file.", {
+        id: "invalid file for post",
+      });
       return;
     }
     setImage(file);
@@ -36,7 +38,7 @@ const CreatePostPage = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (!title.trim()) {
-      toast.error("Please add a Title to a Post!");
+      toast.error("Please add a Title to a Post!", { id: "invalid post data" });
       return;
     }
 
@@ -49,14 +51,17 @@ const CreatePostPage = () => {
         formData.append("image", image);
       }
       const response = await createPost(formData);
-      toast.success("Post created successfully");
+      toast.success("Post created successfully.", {
+        id: "post create success",
+      });
       setImage(null);
       setPreview("");
       setTitle("");
       setDescription("");
       navigate(previousUrl);
     } catch (err) {
-      console.log(err);
+      //console.log(err);
+      toast.error("Failed to create post.", { id: "post create failed" });
     } finally {
       setLoading(false);
     }

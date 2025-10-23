@@ -33,7 +33,8 @@ const EditPostPage = () => {
       const post = await getPost(id);
       setPostData(post);
     } catch (err) {
-      console.log("Error in fetching Post data.");
+      //console.log("Error in fetching Post data.");
+      setPostData({});
     } finally {
       setLoading(false);
     }
@@ -67,7 +68,7 @@ const EditPostPage = () => {
   const handleEdit = async (e) => {
     e.preventDefault();
     if (!postData.title.trim()) {
-      toast.error("Post title is required!");
+      toast.error("Post title is required!", { id: "invalid post title edit" });
       return;
     }
 
@@ -76,10 +77,13 @@ const EditPostPage = () => {
       const postId = postData._id;
       const post = { title: postData.title, description: postData.description };
       const response = await editPost(postId, post);
-      toast.success("Post updated successfully");
+      toast.success("Post updated successfully.", {
+        id: "post update success",
+      });
       navigate(previousUrl);
     } catch (err) {
-      console.log(err);
+      //console.log(err);
+      toast.error("Failed to update post.", { id: "post update fail" });
     } finally {
       setEditLoading(false);
     }
