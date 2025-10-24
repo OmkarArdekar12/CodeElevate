@@ -63,7 +63,9 @@ const sessionOptions = {
   store: MongoStore.create({
     mongoUrl: process.env.MONGODB_URL,
     ttl: 7 * 24 * 60 * 60,
-  }),
+  })
+    .on("error", (err) => console.log("MongoStore error:", err))
+    .on("connect", () => console.log("MongoSessionStore connected")),
   cookie: {
     httpOnly: true,
     secure: isProduction,
