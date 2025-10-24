@@ -5,10 +5,11 @@ import cookieParser from "cookie-parser";
 import mongoose from "mongoose";
 import path from "path";
 import methodOverride from "method-override";
-import localStrategy from "passport-local";
+import LocalStrategy from "passport-local";
 import { ExpressError } from "./utils/ExpressError.js";
 import axios from "axios";
 import passport from "passport";
+import User from "./models/user.js";
 import multer from "multer";
 import dotenv from "dotenv";
 import cors from "cors";
@@ -98,8 +99,8 @@ store.on("error", () => {
 const sessionOptions = {
   store,
   secret: SESSION_SECRET,
-  resave: isProduction ? true : false,
-  saveUninitialized: false,
+  resave: false,
+  saveUninitialized: true,
   proxy: true,
   cookie: {
     httpOnly: true,
@@ -110,9 +111,9 @@ const sessionOptions = {
   },
 };
 app.use(session(sessionOptions));
-
-app.use(passport.initialize());
-app.use(passport.session());
+passport.use(new LocalStrategy(User.authenticate()));
+passport.serializeUser(User.serializeUser());
+passport.deserializeUser(User.deserializeUser());
 
 //Socket.IO
 const io = new Server(server, { cors: corsOptions });
