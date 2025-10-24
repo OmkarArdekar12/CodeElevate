@@ -63,10 +63,9 @@ const corsOptions = {
   allowedHeaders: ["Content-Type", "Authorization", "Cookie"],
 };
 app.use(cors(corsOptions));
-app.options("*", cors(corsOptions));
 
 const sessionOptions = {
-  secret: process.env.SESSION_SECRET || "secret",
+  secret: process.env.SESSION_SECRET || "codeelevate-secret",
   resave: false,
   saveUninitialized: false,
   store: MongoStore.create({
@@ -78,7 +77,6 @@ const sessionOptions = {
     secure: isProduction,
     sameSite: isProduction ? "none" : "lax",
     maxAge: 7 * 24 * 60 * 60 * 1000,
-    expires: Date.now() + 7 * 24 * 60 * 60 * 1000,
   },
 };
 app.use(session(sessionOptions));
