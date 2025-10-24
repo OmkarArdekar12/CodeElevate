@@ -66,7 +66,10 @@ const ProfileSettings = () => {
       navigate("/login");
       toast.success("You've been logged out. See you soon!", { id: "logout" });
     } catch (err) {
-      console.log("Error: ", err.message);
+      //console.log("Error: ", err.message);
+      toast.error("Failed to logout!, Please try again.", {
+        id: "logout failed",
+      });
     } finally {
       setLogoutLoading(false);
     }
@@ -171,7 +174,7 @@ const ProfileSettings = () => {
               : "bg-red-500 hover:bg-red-700 cursor-pointer"
           }`}
           onClick={handleLogout}
-          disabled={logoutLoading}
+          disabled={logoutLoading || deleteLoading}
         >
           {logoutLoading ? (
             <Loading2 text="Logging out..." />
@@ -191,7 +194,7 @@ const ProfileSettings = () => {
               : "bg-red-500 hover:bg-red-700 cursor-pointer"
           }`}
           onClick={() => setShowDeletePopup(true)}
-          disabled={deleteLoading}
+          disabled={deleteLoading || logoutLoading}
         >
           {deleteLoading ? (
             <Loading2 text="Deleting account..." />

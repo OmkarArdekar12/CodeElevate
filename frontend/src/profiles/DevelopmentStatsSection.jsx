@@ -16,7 +16,7 @@ const DevelopmentStatsSection = ({ github }) => {
         setUserGitHubData(gitHubData);
       }
     } catch (err) {
-      console.log("Invalid GitHub Username");
+      //console.log("Invalid GitHub Username");
       setUserGitHubData({});
     }
   };

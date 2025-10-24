@@ -27,7 +27,10 @@ const ConnectionPage = () => {
       setFollowing(connections.following);
       setConnections(connections.connections);
     } catch (err) {
-      console.log(err);
+      setFollowers([]);
+      setFollowing([]);
+      setConnections([]);
+      //console.log(err);
     } finally {
       setLoading(false);
     }

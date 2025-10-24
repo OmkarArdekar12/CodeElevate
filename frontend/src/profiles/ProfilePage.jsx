@@ -100,6 +100,53 @@ const ProfilePage = () => {
       toast.error("User Profile not found.", {
         id: "Profile not found or does exist",
       });
+      setUserData({
+        fullName: "",
+        user: {
+          _id: userId,
+          username: "",
+        },
+        profilePicture: "",
+        backgroundBanner: "",
+        headLine: "",
+        role: "",
+        domain: "",
+        tags: ["", "", "", "", ""],
+        about: "",
+        developmentProfiles: {
+          github: "",
+          gitlab: "",
+          portfolio: "",
+        },
+        competitiveProfiles: {
+          leetCode: "",
+          codeforces: "",
+          atCoder: "",
+          codechef: "",
+          geeksforgeeks: "",
+          hackerrank: "",
+        },
+        socials: {
+          linkedin: "",
+          email: "",
+          youtube: "",
+          discord: "",
+          stackoverflow: "",
+          facebook: "",
+          instagram: "",
+          twitterx: "",
+          telegram: "",
+          others: "",
+        },
+        showStats: false,
+        education: {
+          degree: "",
+          cgpa: null,
+          institution: "",
+        },
+        followers: [],
+        following: [],
+      });
     } finally {
       setLoading(false);
     }

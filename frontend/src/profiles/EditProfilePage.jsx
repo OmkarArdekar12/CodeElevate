@@ -97,7 +97,54 @@ const EditProfilePage = () => {
         },
       }));
     } catch (err) {
-      console.error("Failed to fetch profile", err);
+      //console.error("Failed to fetch profile", err);
+      setProfile({
+        fullName: "",
+        user: {
+          _id: user.userId,
+          username: "",
+        },
+        profilePicture: "",
+        backgroundBanner: "",
+        headLine: "",
+        role: "",
+        domain: "",
+        tags: ["", "", "", "", ""],
+        about: "",
+        developmentProfiles: {
+          github: "",
+          gitlab: "",
+          portfolio: "",
+        },
+        competitiveProfiles: {
+          leetCode: "",
+          codeforces: "",
+          atCoder: "",
+          codechef: "",
+          geeksforgeeks: "",
+          hackerrank: "",
+        },
+        socials: {
+          linkedin: "",
+          email: "",
+          youtube: "",
+          discord: "",
+          stackoverflow: "",
+          facebook: "",
+          instagram: "",
+          twitterx: "",
+          telegram: "",
+          others: "",
+        },
+        showStats: false,
+        education: {
+          degree: "",
+          cgpa: null,
+          institution: "",
+        },
+        followers: [],
+        following: [],
+      });
     } finally {
       setLoading(false);
     }
@@ -160,7 +207,9 @@ const EditProfilePage = () => {
     const { name, files } = e.target;
     if (files && files[0]) {
       if (!files[0].type.startsWith("image/")) {
-        toast.error("Please select an image file");
+        toast.error("Please select an image file.", {
+          id: "invalid file for profile update",
+        });
         return;
       }
       const previewURL = URL.createObjectURL(files[0]);
@@ -180,7 +229,7 @@ const EditProfilePage = () => {
     try {
       const formData = new FormData();
 
-      // Append simple fields
+      //append simple fields
       formData.append("fullName", profile.fullName || "");
       formData.append("headLine", profile.headLine || "");
       formData.append("role", profile.role || "");
@@ -244,7 +293,7 @@ const EditProfilePage = () => {
         id: "profile update success",
       });
     } catch (err) {
-      console.error("Failed to update profile", err);
+      //console.error("Failed to update profile", err);
       toast.error("Failed to update profile.", {
         id: "profile update failed",
       });
@@ -824,8 +873,10 @@ const EditProfilePage = () => {
           <button
             type="submit"
             disabled={saving}
-            className={`hover:bg-green-700 px-6 py-2 rounded-full ${
-              saving ? "bg-gray-700" : "bg-green-600"
+            className={`px-6 py-2 rounded-full ${
+              saving
+                ? "bg-gray-700 cursor-not-allowed"
+                : "bg-green-600 hover:bg-green-700 cursor-pointer"
             }`}
           >
             {saving ? <Loading2 text="Saving..." /> : "Save Changes"}

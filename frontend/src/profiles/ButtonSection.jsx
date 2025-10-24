@@ -84,17 +84,24 @@ const ButtonSection = ({
         //follow
         const response = await followUser(profileUserId);
         setIsFollowing(true);
-        toast.success(`You started following ${profileUserFullName}.`);
+        toast.success(`You started following ${profileUserFullName}.`, {
+          id: "follow success",
+        });
       } else {
         //unfollow
         const response = await unfollowUser(profileUserId);
         setIsFollowing(false);
-        toast.success(`You unfollowed ${profileUserFullName}.`);
+        toast.success(`You unfollowed ${profileUserFullName}.`, {
+          id: "unfollow success",
+        });
       }
       fetchStatus(); //updating status
     } catch (err) {
-      console.error(err.response?.data?.message || err.message);
-      toast.error(err.response?.data?.message);
+      //console.error(err.response?.data?.message || err.message);
+      //toast.error(err.response?.data?.message);
+      toast.error(!isFollowing ? "Failed to follow!" : "Failed to unfollow!", {
+        id: "follow/unfollow failed",
+      });
     } finally {
       setLoadingFollow(false);
     }
@@ -106,23 +113,34 @@ const ButtonSection = ({
       if (connectStatus === "none" || connectStatus === "not_connected") {
         //send connection request
         const response = await connectRequest(profileUserId);
-        toast.success(`Connection request send to ${profileUserFullName}.`);
+        toast.success(`Connection request send to ${profileUserFullName}.`, {
+          id: "connection success",
+        });
         setConnectStatus("pending");
       } else if (connectStatus === "pending") {
         //connection request already send - toast message
-        toast("Connection request already send!");
+        toast.success("Connection request already send!", {
+          id: "connection pending",
+        });
       } else if (connectStatus === "connected") {
         //unconnect connection
         const response = await unconnectUser(profileUserId);
-        toast.success(`You disconnected from ${profileUserFullName}.`);
+        toast.success(`You disconnected from ${profileUserFullName}.`, {
+          id: "connection unconnect",
+        });
         setConnectStatus("not_connected");
       } else {
-        toast.error("Invalid connected state");
+        toast.error("Invalid connected state", {
+          id: "invalid connection state",
+        });
       }
       fetchStatus(); //refreshing status
     } catch (err) {
-      console.error(err.response?.data?.message || err.message);
-      toast.error(err.response?.data?.message);
+      // console.error(err.response?.data?.message || err.message);
+      // toast.error(err.response?.data?.message);
+      toast.error("Something went wrong! Please try again or later.", {
+        id: "connection failed",
+      });
     } finally {
       setLoadingConnect(false);
     }

@@ -24,7 +24,7 @@ const CompetitiveProgrammingStatsSection = ({ leetcode, codeforces }) => {
         setUserLeetCodeData(leetcodeData);
       }
     } catch (err) {
-      console.log("Invalid LeetCode Username");
+      //console.log("Invalid LeetCode Username");
       setUserLeetCodeData({});
     }
     try {
@@ -33,7 +33,7 @@ const CompetitiveProgrammingStatsSection = ({ leetcode, codeforces }) => {
         setUserCodeforcesData(codeforcesData);
       }
     } catch (err) {
-      console.log("Invalid Codeforces Username");
+      //console.log("Invalid Codeforces Username");
       setUserCodeforcesData({});
     }
     // console.log(leetcodeData);

@@ -19,7 +19,8 @@ const PostsSection = ({ profileUserId, isLoggedIn, isVerified, userId }) => {
       const userPosts = await getUserPosts(profileUserId);
       setAllUserPosts(userPosts);
     } catch (err) {
-      console.log("Error in fetching user posts: ", err);
+      //console.log("Error in fetching user posts: ", err);
+      setAllUserPosts([]);
     } finally {
       setLoading(false);
     }
