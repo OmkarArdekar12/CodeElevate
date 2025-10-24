@@ -42,7 +42,7 @@ const MONGODB_URL = process.env.MONGODB_URL;
 const SESSION_SECRET = process.env.SESSION_SECRET || "codelevate-secret";
 const isProduction = process.env.NODE_ENV === "production";
 
-app.set("trust proxy", 1);
+app.set("trust proxy", true);
 
 //HTTP Server for Socket.IO
 const server = http.createServer(app);
@@ -100,8 +100,8 @@ store.on("error", () => {
 const sessionOptions = {
   store,
   secret: SESSION_SECRET,
-  resave: false,
-  saveUninitialized: false,
+  resave: isProduction ? true : false,
+  saveUninitialized: isProduction ? true : false,
   proxy: true,
   cookie: {
     httpOnly: true,
