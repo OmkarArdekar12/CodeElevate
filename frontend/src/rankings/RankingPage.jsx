@@ -28,7 +28,8 @@ export default function RankingPage() {
       const allRankingsData = await getAllRankings();
       setAllRankings(allRankingsData);
     } catch (err) {
-      console.log("Error in fetching all rankings data", err);
+      setAllRankings({});
+      //console.log("Error in fetching all rankings data", err);
     } finally {
       setLoading(false);
     }
@@ -92,40 +93,6 @@ export default function RankingPage() {
 // import React from "react";
 // import { motion } from "framer-motion";
 // import { FaCrown } from "react-icons/fa";
-
-// const rankers = [
-//   {
-//     id: 1,
-//     name: "Omkar Patil",
-//     image: "/images/defaultUserImage.png",
-//     rank: 1,
-//   },
-//   {
-//     id: 2,
-//     name: "Aarav Sharma",
-//     image: "/images/defaultUserImage.png",
-//     rank: 2,
-//   },
-//   {
-//     id: 3,
-//     name: "Priya Mehta",
-//     image: "/images/defaultUserImage.png",
-//     rank: 3,
-//   },
-//   {
-//     id: 4,
-//     name: "Rohan Gupta",
-//     image: "/images/defaultUserImage.png",
-//     rank: 4,
-//   },
-//   {
-//     id: 5,
-//     name: "Ananya Verma",
-//     image: "/images/defaultUserImage.png",
-//     rank: 5,
-//   },
-// ];
-
 // const getRankStyle = (rank) => {
 //   switch (rank) {
 //     case 1:
@@ -138,7 +105,6 @@ export default function RankingPage() {
 //       return "bg-gradient-to-tr from-slate-600 to-slate-800 text-white";
 //   }
 // };
-
 // const Rankings = () => {
 //   return (
 //     <div className="min-h-screen w-full bg-slate-950 flex flex-col items-center py-14 px-5">
@@ -150,7 +116,6 @@ export default function RankingPage() {
 //       >
 //         <span className="text-blue-400">Top </span>Performers
 //       </motion.h1>
-
 //       <div className="w-full flex flex-col gap-5">
 //         {rankers.map((ranker) => (
 //           <motion.div
@@ -193,7 +158,6 @@ export default function RankingPage() {
 //                 <p className="text-sm text-slate-400">Software Engineer</p>
 //               </div>
 //             </div>
-
 //             {/* Right Section */}
 //             <div className="text-right">
 //               <p className="text-blue-400 font-semibold">
@@ -207,5 +171,4 @@ export default function RankingPage() {
 //     </div>
 //   );
 // };
-
 // export default Rankings;
