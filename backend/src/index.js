@@ -37,6 +37,8 @@ if (process.env.NODE_ENV !== "production") {
 //Express App
 const app = express();
 const PORT = process.env.PORT || 8080;
+const FRONTEND_URL =
+  process.env.FRONTEND_URL || "https://codeelevate-community.vercel.app";
 
 //HTTP Server for Socket.IO
 const server = http.createServer(app);
@@ -51,7 +53,7 @@ app.use(cookieParser());
 app.use(methodOverride("_method"));
 
 const corsOptions = {
-  origin: ["http://localhost:3000"],
+  origin: [FRONTEND_URL],
   credentials: true,
   methods: ["GET", "POST", "PUT", "PATCH", "DELETE"],
   allowedHeaders: ["Content-Type", "Authorization", "Cookie"],
