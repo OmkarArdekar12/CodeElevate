@@ -100,7 +100,7 @@ const sessionOptions = {
   store,
   secret: SESSION_SECRET,
   resave: false,
-  saveUninitialized: true,
+  saveUninitialized: false,
   proxy: true,
   cookie: {
     httpOnly: true,
@@ -111,7 +111,10 @@ const sessionOptions = {
   },
 };
 app.use(session(sessionOptions));
-passport.use(new LocalStrategy(User.authenticate()));
+
+app.use(passport.initialize());
+app.use(passport.session());
+passport.use(User.createStrategy());
 passport.serializeUser(User.serializeUser());
 passport.deserializeUser(User.deserializeUser());
 

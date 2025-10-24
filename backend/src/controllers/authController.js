@@ -29,21 +29,32 @@ export const register = async (req, res) => {
       });
     }
 
-    const user = new User({ username, isMfaActive: false });
-    const registeredUser = await User.register(user, password);
+    const registeredUser = await User.register(
+      new User({ username, isMfaActive: false }),
+      password
+    );
 
     const profile = await Profile.create({
-      user: user._id,
+      user: registeredUser._id,
       fullName: username,
     });
 
-    return res.status(201).json({
-      username: user.username,
-      userId: user._id,
-      profile,
-      message: "User registered successfully",
+    req.login(registeredUser, (err) => {
+      if (err) {
+        return res.status(500).json({
+          message: "Registration successful but auto-login failed",
+        });
+      }
+
+      return res.status(201).json({
+        message: "User registered successfully",
+        username: registeredUser.username,
+        userId: registeredUser._id,
+        isMfaActive: registeredUser.isMfaActive,
+      });
     });
   } catch (err) {
+    console.log(err);
     return res.status(500).json({
       message: "Error: User Registration Failed!",
       error: err,
@@ -60,30 +71,37 @@ export const login = async (req, res) => {
     return res.status(401).json({ message: "Invalid credentials" });
   }
 
-  try {
-    req.login(user, (err) => {
-      if (err) {
-        return res.status(500).json({ message: "Login failed", error: err });
-      }
+  return res.status(200).json({
+    message: "User logged in successfully",
+    username: req.user.username,
+    userId: req.user._id,
+    isMfaActive: req.user.isMfaActive,
+  });
 
-      req.session.save((err) => {
-        if (err) {
-          return res
-            .status(500)
-            .json({ message: "Session save failed", error: err });
-        }
+  // try {
+  //   req.login(user, (err) => {
+  //     if (err) {
+  //       return res.status(500).json({ message: "Login failed", error: err });
+  //     }
 
-        return res.status(200).json({
-          message: "User logged in successfully",
-          username: req.user.username,
-          userId: req.user._id,
-          isMfaActive: req.user.isMfaActive,
-        });
-      });
-    });
-  } catch (err) {
-    return res.status(500).json({ message: "Login failed", error: err });
-  }
+  //     req.session.save((err) => {
+  //       if (err) {
+  //         return res
+  //           .status(500)
+  //           .json({ message: "Session save failed", error: err });
+  //       }
+
+  //       return res.status(200).json({
+  //         message: "User logged in successfully",
+  //         username: req.user.username,
+  //         userId: req.user._id,
+  //         isMfaActive: req.user.isMfaActive,
+  //       });
+  //     });
+  //   });
+  // } catch (err) {
+  //   return res.status(500).json({ message: "Login failed", error: err });
+  // }
 };
 
 //AuthStatus Controller

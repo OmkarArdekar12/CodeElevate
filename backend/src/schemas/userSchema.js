@@ -10,10 +10,6 @@ const userSchema = new Schema(
       required: true,
       unique: true,
     },
-    password: {
-      type: String,
-      required: true,
-    },
 
     isMfaActive: {
       type: Boolean,
@@ -97,3 +93,28 @@ export default userSchema;
 // userSchema.plugin(passportLocalMongoose);
 
 // export default userSchema;
+
+// const userSchema = new Schema(
+//   {
+//     username: {
+//       type: String,
+//       required: true,
+//       unique: true,
+//     },
+//     password: {
+//       type: String,
+//       required: true,
+//     },
+
+//     isMfaActive: {
+//       type: Boolean,
+//       default: false,
+//     },
+//     twoFactorSecret: {
+//       type: String,
+//     },
+//   },
+//   {
+//     timestamps: true,
+//   }
+// );
