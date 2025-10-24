@@ -90,7 +90,7 @@ const store = MongoStore.create({
   crypto: {
     secret: SESSION_SECRET,
   },
-  touchAfter: 7 * 24 * 60 * 60,
+  ttl: 7 * 24 * 60 * 60,
 });
 store.on("error", () => {
   console.log("Error in Mongo Session Store", err);
@@ -99,7 +99,7 @@ store.on("error", () => {
 const sessionOptions = {
   store,
   secret: SESSION_SECRET,
-  resave: false,
+  resave: isProduction ? true : false,
   saveUninitialized: false,
   proxy: true,
   cookie: {
@@ -114,9 +114,20 @@ app.use(session(sessionOptions));
 
 app.use(passport.initialize());
 app.use(passport.session());
+
 passport.use(User.createStrategy());
 passport.serializeUser(User.serializeUser());
 passport.deserializeUser(User.deserializeUser());
+
+app.use((req, res, next) => {
+  console.log("=== SESSION DEBUG ===");
+  console.log("Path:", req.path);
+  console.log("Session ID:", req.sessionID);
+  console.log("Authenticated:", req.isAuthenticated());
+  console.log("User:", req.user ? req.user.username : "No user");
+  console.log("=== END DEBUG ===");
+  next();
+});
 
 //Socket.IO
 const io = new Server(server, { cors: corsOptions });
