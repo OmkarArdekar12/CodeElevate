@@ -71,37 +71,30 @@ export const login = async (req, res) => {
     return res.status(401).json({ message: "Invalid credentials" });
   }
 
-  return res.status(200).json({
-    message: "User logged in successfully",
-    username: req.user.username,
-    userId: req.user._id,
-    isMfaActive: req.user.isMfaActive,
-  });
+  try {
+    req.login(user, (err) => {
+      if (err) {
+        return res.status(500).json({ message: "Login failed", error: err });
+      }
 
-  // try {
-  //   req.login(user, (err) => {
-  //     if (err) {
-  //       return res.status(500).json({ message: "Login failed", error: err });
-  //     }
+      req.session.save((err) => {
+        if (err) {
+          return res
+            .status(500)
+            .json({ message: "Session save failed", error: err });
+        }
 
-  //     req.session.save((err) => {
-  //       if (err) {
-  //         return res
-  //           .status(500)
-  //           .json({ message: "Session save failed", error: err });
-  //       }
-
-  //       return res.status(200).json({
-  //         message: "User logged in successfully",
-  //         username: req.user.username,
-  //         userId: req.user._id,
-  //         isMfaActive: req.user.isMfaActive,
-  //       });
-  //     });
-  //   });
-  // } catch (err) {
-  //   return res.status(500).json({ message: "Login failed", error: err });
-  // }
+        return res.status(200).json({
+          message: "User logged in successfully",
+          username: req.user.username,
+          userId: req.user._id,
+          isMfaActive: req.user.isMfaActive,
+        });
+      });
+    });
+  } catch (err) {
+    return res.status(500).json({ message: "Login failed", error: err });
+  }
 };
 
 //AuthStatus Controller

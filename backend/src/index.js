@@ -91,6 +91,7 @@ const store = MongoStore.create({
     secret: SESSION_SECRET,
   },
   ttl: 7 * 24 * 60 * 60,
+  autoRemove: "native",
 });
 store.on("error", () => {
   console.log("Error in Mongo Session Store", err);
@@ -99,7 +100,7 @@ store.on("error", () => {
 const sessionOptions = {
   store,
   secret: SESSION_SECRET,
-  resave: isProduction ? true : false,
+  resave: false,
   saveUninitialized: false,
   proxy: true,
   cookie: {
@@ -107,7 +108,6 @@ const sessionOptions = {
     secure: isProduction ? true : false,
     sameSite: isProduction ? "none" : "lax",
     maxAge: 7 * 24 * 60 * 60 * 1000,
-    domain: isProduction ? ".onrender.com" : undefined,
   },
 };
 app.use(session(sessionOptions));
