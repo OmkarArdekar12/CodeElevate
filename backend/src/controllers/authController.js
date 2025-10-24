@@ -135,16 +135,19 @@ export const setup2FA = async (req, res) => {
   try {
     // console.log("The req.user is: ", req.user);
     const user = req.user;
-    var secret = speakeasy.generateSecret();
+    if (!user) {
+      return res.status(401).json({ message: "Invalid credentials" });
+    }
+    const secret = speakeasy.generateSecret();
     // console.log("The secret object is: ", secret); //secret object
     user.twoFactorSecret = secret.base32;
     user.isMfaActive = true;
     await user.save();
     const url = speakeasy.otpauthURL({
       secret: secret.base32,
-      label: `${req.user.username}`,
+      label: user.username,
       // issuer: "www.omkarardekar.com", //issuerName: projectLink
-      issuer: "codeelevate",
+      issuer: "CodeElevate",
       encoding: "base32",
     });
     const qrImageUrl = await qrCode.toDataURL(url);
