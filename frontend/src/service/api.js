@@ -1,6 +1,6 @@
 import axios from "axios";
 
-export default axios.create({
+const api = axios.create({
   baseURL: import.meta.env.VITE_BACKEND_URL
     ? `${import.meta.env.VITE_BACKEND_URL}/api`
     : "https://codeelevate.onrender.com/api", //live backend url
@@ -8,7 +8,27 @@ export default axios.create({
   withCredentials: true,
   headers: {
     "Content-Type": "application/json",
-    Accept: "application/json",
-    "X-Requested-With": "XMLHttpRequest",
   },
 });
+
+// api.interceptors.request.use(
+//   (config) => {
+//     config.withCredentials = true;
+//     return config;
+//   },
+//   (error) => {
+//     return Promise.reject(error);
+//   }
+// );
+
+// api.interceptors.response.use(
+//   (response) => response,
+//   (error) => {
+//     if (error.response?.status === 401) {
+//       console.log("Authentication required");
+//     }
+//     return Promise.reject(error);
+//   }
+// );
+
+export default api;

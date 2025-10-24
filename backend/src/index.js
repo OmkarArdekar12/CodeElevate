@@ -50,16 +50,19 @@ const server = http.createServer(app);
 dbConnect();
 
 const corsOptions = {
-  origin: [FRONTEND_URL, "http://localhost:3000"],
+  origin: [
+    FRONTEND_URL,
+    "http://localhost:3000",
+    "https://codeelevate-community.vercel.app",
+  ],
   credentials: true,
-  methods: ["GET", "POST", "PUT", "PATCH", "DELETE"],
+  methods: ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"],
   allowedHeaders: [
     "Content-Type",
     "Authorization",
+    "Cookie",
     "X-Requested-With",
     "Accept",
-    "Origin",
-    "X-XSRF-TOKEN",
   ],
   exposedHeaders: ["set-cookie"],
 };
@@ -86,13 +89,12 @@ const sessionOptions = {
   store,
   secret: SESSION_SECRET,
   resave: false,
-  saveUninitialized: false,
+  saveUninitialized: true,
   cookie: {
     httpOnly: true,
     secure: isProduction,
     sameSite: isProduction ? "none" : "lax",
     maxAge: 7 * 24 * 60 * 60 * 1000,
-    path: "/",
   },
 };
 app.use(session(sessionOptions));
