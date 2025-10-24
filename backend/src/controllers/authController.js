@@ -65,12 +65,28 @@ export const register = async (req, res) => {
 //Login Controller
 export const login = async (req, res) => {
   // console.log("The authenticate user is: ", req.user);
-  return res.status(200).json({
-    message: "User logged in successfully",
-    username: req.user.username,
-    userId: req.user._id,
-    isMfaActive: req.user.isMfaActive,
-  });
+  const user = req.user;
+
+  if (!user) {
+    return res.status(401).json({ message: "Invalid credentials" });
+  }
+
+  try {
+    req.login(user, (err) => {
+      if (err) {
+        return res.status(500).json({ message: "Login failed", error: err });
+      }
+
+      return res.status(200).json({
+        message: "User logged in successfully",
+        username: req.user.username,
+        userId: req.user._id,
+        isMfaActive: req.user.isMfaActive,
+      });
+    });
+  } catch (err) {
+    return res.status(500).json({ message: "Login failed", error: err });
+  }
 };
 
 //AuthStatus Controller
@@ -151,6 +167,10 @@ export const verify2FA = async (req, res) => {
     // console.log(token);
     const user = req.user;
 
+    if (!user) {
+      return res.status(401).json({ message: "Invalid credentials" });
+    }
+
     const verified = speakeasy.totp.verify({
       secret: user.twoFactorSecret,
       encoding: "base32",
@@ -158,28 +178,18 @@ export const verify2FA = async (req, res) => {
     });
 
     if (verified) {
-      req.login(user, (err) => {
-        if (err) {
-          return res.status(500).json({ message: "Login failed", error: err });
-        }
+      req.session.isVerified = true;
 
-        req.session.isVerified = true;
+      const token2FA = jwt.sign({ userId: user._id }, process.env.JWT_SECRET, {
+        expiresIn: "7d",
+      });
 
-        const token2FA = jwt.sign(
-          { userId: user._id },
-          process.env.JWT_SECRET,
-          {
-            expiresIn: "7d",
-          }
-        );
-
-        return res.status(200).json({
-          message: "two-factor-authentication-(2FA) successful",
-          username: user.username,
-          userId: user._id,
-          isVerfied: true,
-          token2FA: token2FA,
-        });
+      return res.status(200).json({
+        message: "two-factor-authentication-(2FA) successful",
+        username: user.username,
+        userId: user._id,
+        isVerfied: true,
+        token2FA: token2FA,
       });
     } else {
       return res
