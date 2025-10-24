@@ -53,7 +53,15 @@ const corsOptions = {
   origin: [FRONTEND_URL, "http://localhost:3000"],
   credentials: true,
   methods: ["GET", "POST", "PUT", "PATCH", "DELETE"],
-  // allowedHeaders: ["Content-Type", "Authorization", "Cookie"],
+  allowedHeaders: [
+    "Content-Type",
+    "Authorization",
+    "X-Requested-With",
+    "Accept",
+    "Origin",
+    "X-XSRF-TOKEN",
+  ],
+  exposedHeaders: ["set-cookie"],
 };
 app.use(cors(corsOptions));
 
