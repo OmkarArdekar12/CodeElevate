@@ -11,24 +11,24 @@ const api = axios.create({
   },
 });
 
-// api.interceptors.request.use(
-//   (config) => {
-//     config.withCredentials = true;
-//     return config;
-//   },
-//   (error) => {
-//     return Promise.reject(error);
-//   }
-// );
+api.interceptors.request.use(
+  (config) => {
+    config.withCredentials = true;
+    return config;
+  },
+  (error) => {
+    return Promise.reject(error);
+  }
+);
 
-// api.interceptors.response.use(
-//   (response) => response,
-//   (error) => {
-//     if (error.response?.status === 401) {
-//       console.log("Authentication required");
-//     }
-//     return Promise.reject(error);
-//   }
-// );
+api.interceptors.response.use(
+  (response) => response,
+  (error) => {
+    if (error.response?.status === 401) {
+      console.log("Authentication required");
+    }
+    return Promise.reject(error);
+  }
+);
 
 export default api;
