@@ -51,18 +51,10 @@ const server = http.createServer(app);
 dbConnect();
 
 //Middlewares
+app.use(cookieParser());
 app.use(express.json({ limit: "100mb" }));
 app.use(express.urlencoded({ limit: "100mb", extended: true }));
-app.use(cookieParser());
 app.use(methodOverride("_method"));
-
-const corsOptions = {
-  origin: FRONTEND_URL,
-  credentials: true,
-  methods: ["GET", "POST", "PUT", "PATCH", "DELETE"],
-  allowedHeaders: ["Content-Type", "Authorization", "Cookie"],
-};
-app.use(cors(corsOptions));
 
 const sessionOptions = {
   secret: process.env.SESSION_SECRET || "codeelevate-secret",
@@ -83,6 +75,14 @@ app.use(session(sessionOptions));
 
 app.use(passport.initialize());
 app.use(passport.session());
+
+const corsOptions = {
+  origin: FRONTEND_URL,
+  credentials: true,
+  methods: ["GET", "POST", "PUT", "PATCH", "DELETE"],
+  allowedHeaders: ["Content-Type", "Authorization", "Cookie"],
+};
+app.use(cors(corsOptions));
 
 //Socket.IO
 const io = new Server(server, { cors: corsOptions });
