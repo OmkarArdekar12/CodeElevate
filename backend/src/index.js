@@ -36,6 +36,10 @@ if (process.env.NODE_ENV !== "production") {
 
 //Express App
 const app = express();
+const isProduction = process.env.NODE_ENV === "production";
+if (isProduction) {
+  app.set("trust proxy", 1);
+}
 const PORT = process.env.PORT || 8080;
 const FRONTEND_URL =
   process.env.FRONTEND_URL || "https://codeelevate-community.vercel.app";
@@ -53,12 +57,13 @@ app.use(cookieParser());
 app.use(methodOverride("_method"));
 
 const corsOptions = {
-  origin: [FRONTEND_URL],
+  origin: FRONTEND_URL,
   credentials: true,
   methods: ["GET", "POST", "PUT", "PATCH", "DELETE"],
   allowedHeaders: ["Content-Type", "Authorization", "Cookie"],
 };
 app.use(cors(corsOptions));
+app.options("*", cors(corsOptions));
 
 const sessionOptions = {
   secret: process.env.SESSION_SECRET || "secret",
@@ -69,11 +74,11 @@ const sessionOptions = {
     ttl: 7 * 24 * 60 * 60,
   }),
   cookie: {
-    expires: Date.now() + 7 * 24 * 60 * 60 * 1000,
-    maxAge: 7 * 24 * 60 * 60 * 1000,
     httpOnly: true,
-    sameSite: "none",
-    secure: process.env.NODE_ENV === "production" ? true : false,
+    secure: isProduction,
+    sameSite: isProduction ? "none" : "lax",
+    maxAge: 7 * 24 * 60 * 60 * 1000,
+    expires: Date.now() + 7 * 24 * 60 * 60 * 1000,
   },
 };
 app.use(session(sessionOptions));
