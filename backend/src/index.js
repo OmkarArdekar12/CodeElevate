@@ -56,16 +56,23 @@ app.use(express.json({ limit: "100mb" }));
 app.use(express.urlencoded({ limit: "100mb", extended: true }));
 app.use(methodOverride("_method"));
 
+const store = MongoStore.create({
+  mongoUrl: process.env.MONGODB_URL,
+  crypto: {
+    secret: process.env.SESSION_SECRET || "codeelevate-secret",
+  },
+  touchAfter: 7 * 24 * 60 * 60,
+});
+
+store.on("error", () => {
+  console.log("Error in Mongo Session Store", err);
+});
+
 const sessionOptions = {
+  store,
   secret: process.env.SESSION_SECRET || "codeelevate-secret",
   resave: false,
   saveUninitialized: false,
-  store: MongoStore.create({
-    mongoUrl: process.env.MONGODB_URL,
-    ttl: 7 * 24 * 60 * 60,
-  })
-    .on("error", (err) => console.log("MongoStore error:", err))
-    .on("connect", () => console.log("MongoSessionStore connected")),
   cookie: {
     httpOnly: true,
     secure: isProduction,
@@ -79,7 +86,7 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 const corsOptions = {
-  origin: FRONTEND_URL,
+  origin: [FRONTEND_URL, "http://localhost:3000"],
   credentials: true,
   methods: ["GET", "POST", "PUT", "PATCH", "DELETE"],
   allowedHeaders: ["Content-Type", "Authorization", "Cookie"],
