@@ -30,25 +30,32 @@ import {
   errorHandlerMiddleware,
 } from "./middlewares/errorHandlers.js";
 
-if (process.env.NODE_ENV !== "production") {
-  dotenv.config();
-}
+dotenv.config();
 
 //Express App
 const app = express();
-const isProduction = process.env.NODE_ENV === "production";
-
-app.set("trust proxy", 1);
-
 const PORT = process.env.PORT || 8080;
 const FRONTEND_URL =
   process.env.FRONTEND_URL || "https://codeelevate-community.vercel.app";
+const MONGODB_URL = process.env.MONGODB_URL;
+const SESSION_SECRET = process.env.SESSION_SECRET || "codelevate-secret";
+const isProduction = process.env.NODE_ENV === "production";
+
+app.set("trust proxy", 1);
 
 //HTTP Server for Socket.IO
 const server = http.createServer(app);
 
 //Database Connection
 dbConnect();
+
+const corsOptions = {
+  origin: [FRONTEND_URL, "http://localhost:3000"],
+  credentials: true,
+  methods: ["GET", "POST", "PUT", "PATCH", "DELETE"],
+  allowedHeaders: ["Content-Type", "Authorization"],
+};
+app.use(cors(corsOptions));
 
 //Middlewares
 app.use(cookieParser());
@@ -57,9 +64,9 @@ app.use(express.urlencoded({ limit: "100mb", extended: true }));
 app.use(methodOverride("_method"));
 
 const store = MongoStore.create({
-  mongoUrl: process.env.MONGODB_URL,
+  mongoUrl: MONGODB_URL,
   crypto: {
-    secret: process.env.SESSION_SECRET || "codeelevate-secret",
+    secret: SESSION_SECRET,
   },
   touchAfter: 7 * 24 * 60 * 60,
 });
@@ -69,28 +76,21 @@ store.on("error", () => {
 
 const sessionOptions = {
   store,
-  secret: process.env.SESSION_SECRET || "codeelevate-secret",
+  secret: SESSION_SECRET,
   resave: false,
   saveUninitialized: false,
   cookie: {
     httpOnly: true,
     secure: isProduction,
-    sameSite: "none",
+    sameSite: isProduction ? "none" : "lax",
     maxAge: 7 * 24 * 60 * 60 * 1000,
+    path: "/",
   },
 };
 app.use(session(sessionOptions));
 
 app.use(passport.initialize());
 app.use(passport.session());
-
-const corsOptions = {
-  origin: [FRONTEND_URL, "http://localhost:3000"],
-  credentials: true,
-  methods: ["GET", "POST", "PUT", "PATCH", "DELETE"],
-  allowedHeaders: ["Content-Type", "Authorization"],
-};
-app.use(cors(corsOptions));
 
 //Socket.IO
 const io = new Server(server, { cors: corsOptions });
