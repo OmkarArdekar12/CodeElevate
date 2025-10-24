@@ -88,13 +88,15 @@ store.on("error", () => {
 const sessionOptions = {
   store,
   secret: SESSION_SECRET,
-  resave: false,
-  saveUninitialized: true,
+  resave: isProduction ? true : false,
+  saveUninitialized: false,
+  proxy: true,
   cookie: {
     httpOnly: true,
-    secure: isProduction,
+    secure: isProduction ? true : false,
     sameSite: isProduction ? "none" : "lax",
     maxAge: 7 * 24 * 60 * 60 * 1000,
+    domain: isProduction ? ".onrender.com" : undefined,
   },
 };
 app.use(session(sessionOptions));

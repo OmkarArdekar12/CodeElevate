@@ -77,11 +77,19 @@ export const login = async (req, res) => {
         return res.status(500).json({ message: "Login failed", error: err });
       }
 
-      return res.status(200).json({
-        message: "User logged in successfully",
-        username: req.user.username,
-        userId: req.user._id,
-        isMfaActive: req.user.isMfaActive,
+      req.session.save((err) => {
+        if (err) {
+          return res
+            .status(500)
+            .json({ message: "Session save failed", error: err });
+        }
+
+        return res.status(200).json({
+          message: "User logged in successfully",
+          username: req.user.username,
+          userId: req.user._id,
+          isMfaActive: req.user.isMfaActive,
+        });
       });
     });
   } catch (err) {
