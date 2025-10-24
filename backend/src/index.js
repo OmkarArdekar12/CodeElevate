@@ -37,9 +37,9 @@ if (process.env.NODE_ENV !== "production") {
 //Express App
 const app = express();
 const isProduction = process.env.NODE_ENV === "production";
-if (isProduction) {
-  app.set("trust proxy", 1);
-}
+
+app.set("trust proxy", 1);
+
 const PORT = process.env.PORT || 8080;
 const FRONTEND_URL =
   process.env.FRONTEND_URL || "https://codeelevate-community.vercel.app";
@@ -63,7 +63,6 @@ const store = MongoStore.create({
   },
   touchAfter: 7 * 24 * 60 * 60,
 });
-
 store.on("error", () => {
   console.log("Error in Mongo Session Store", err);
 });
@@ -76,7 +75,7 @@ const sessionOptions = {
   cookie: {
     httpOnly: true,
     secure: isProduction,
-    sameSite: isProduction ? "none" : "lax",
+    sameSite: "none",
     maxAge: 7 * 24 * 60 * 60 * 1000,
   },
 };
