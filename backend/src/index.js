@@ -73,6 +73,9 @@ const store = MongoStore.create({
   },
   ttl: 7 * 24 * 60 * 60,
 });
+store.on("connected", () => {
+  console.log("Mongo Session store connected");
+});
 store.on("error", (err) => {
   console.log("Error in Mongo Session Store", err);
 });
