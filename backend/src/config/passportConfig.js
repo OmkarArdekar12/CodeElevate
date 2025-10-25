@@ -27,15 +27,18 @@ passport.use(
 );
 
 passport.serializeUser((user, done) => {
-  done(null, user._id);
+  done(null, user._id.toString());
 });
 
 passport.deserializeUser(async (_id, done) => {
   try {
-    const user = await User.findById(_id).select("-password");
+    const user = await User.findById(_id);
+    if (!user) {
+      return done(null, false);
+    }
     done(null, user);
   } catch (err) {
-    done(err, null);
+    done(err);
   }
 });
 

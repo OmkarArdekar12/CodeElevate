@@ -68,11 +68,20 @@ export const login = async (req, res) => {
         return res.status(500).json({ message: "Login failed", error: err });
       }
 
-      return res.status(200).json({
-        message: "User logged in successfully",
-        username: req.user.username,
-        userId: req.user._id,
-        isMfaActive: req.user.isMfaActive,
+      req.session.save((saveErr) => {
+        if (saveErr) {
+          return res.status(500).json({
+            message: "Session save failed in login.",
+            error: saveErr,
+          });
+        }
+
+        return res.status(200).json({
+          message: "User logged in successfully",
+          username: req.user.username,
+          userId: req.user._id,
+          isMfaActive: req.user.isMfaActive,
+        });
       });
     });
   } catch (err) {
@@ -174,16 +183,28 @@ export const verify2FA = async (req, res) => {
     if (verified) {
       req.session.isVerified = true;
 
-      const token2FA = jwt.sign({ userId: user._id }, process.env.JWT_SECRET, {
-        expiresIn: "7d",
-      });
+      req.session.save((err) => {
+        if (err) {
+          return res
+            .statue(500)
+            .json({ message: "Session save failed in verify2FA", error: err });
+        }
 
-      return res.status(200).json({
-        message: "two-factor-authentication-(2FA) successful",
-        username: user.username,
-        userId: user._id,
-        isVerfied: true,
-        token2FA: token2FA,
+        const token2FA = jwt.sign(
+          { userId: user._id },
+          process.env.JWT_SECRET,
+          {
+            expiresIn: "7d",
+          }
+        );
+
+        return res.status(200).json({
+          message: "two-factor-authentication-(2FA) successful",
+          username: user.username,
+          userId: user._id,
+          isVerfied: true,
+          token2FA: token2FA,
+        });
       });
     } else {
       return res

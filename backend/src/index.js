@@ -41,8 +41,7 @@ const app = express();
 const server = http.createServer(app);
 
 const PORT = process.env.PORT || 8080;
-const FRONTEND_URL =
-  process.env.FRONTEND_URL || "https://codeelevate-community.vercel.app";
+const FRONTEND_URL = process.env.FRONTEND_URL;
 const MONGODB_URL = process.env.MONGODB_URL;
 const SESSION_SECRET = process.env.SESSION_SECRET || "codelevate-secret";
 const isProduction = process.env.NODE_ENV === "production";
@@ -56,8 +55,8 @@ dbConnect();
 
 const corsOptions = {
   origin: [FRONTEND_URL, "http://localhost:5173"],
-  credentials: true,
   methods: ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"],
+  credentials: true,
   allowedHeaders: [
     "Origin",
     "Content-Type",
@@ -92,27 +91,18 @@ const sessionOptions = {
   name: "codeelevate.sid",
   secret: SESSION_SECRET,
   resave: false,
-  saveUninitialized: true,
-  proxy: isProduction ? true : false,
+  saveUninitialized: false,
   cookie: {
     httpOnly: true,
     secure: isProduction ? true : false,
     sameSite: isProduction ? "none" : "lax",
     maxAge: 7 * 24 * 60 * 60 * 1000,
-    domain: isProduction ? ".onrender.com" : undefined,
   },
 };
 app.use(session(sessionOptions));
 
 app.use(passport.initialize());
 app.use(passport.session());
-
-app.use((req, res, next) => {
-  console.log("Session ID:", req.sessionID);
-  console.log("User authenticated:", req.isAuthenticated());
-  console.log("User:", req.user ? req.user.username : "None");
-  next();
-});
 
 //Socket.IO
 const io = new Server(server, { cors: corsOptions });
