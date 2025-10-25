@@ -54,7 +54,8 @@ const server = http.createServer(app);
 dbConnect();
 
 const corsOptions = {
-  origin: [FRONTEND_URL, "http://localhost:3000"],
+  origin: ["*"],
+  // origin: [FRONTEND_URL, "http://localhost:3000"],
   credentials: true,
   methods: ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"],
   allowedHeaders: [
@@ -104,11 +105,6 @@ app.use(session(sessionOptions));
 app.use(passport.initialize());
 app.use(passport.session());
 
-app.use((req, res, next) => {
-  req.user = req.session.user;
-  next();
-});
-
 //Socket.IO
 const io = new Server(server, { cors: corsOptions });
 
@@ -149,14 +145,6 @@ io.on("connection", (socket) => {
 
 app.use((req, res, next) => {
   req.io = io;
-  next();
-});
-
-app.use((req, res, next) => {
-  console.log();
-  console.log("===============================");
-  console.log("Current User: ", req.user);
-  console.log("===============================");
   next();
 });
 
