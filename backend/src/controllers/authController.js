@@ -68,8 +68,6 @@ export const login = async (req, res) => {
         return res.status(500).json({ message: "Login failed", error: err });
       }
 
-      req.session.user = user;
-
       return res.status(200).json({
         message: "User logged in successfully",
         username: req.user.username,

@@ -9,14 +9,13 @@ import methodOverride from "method-override";
 import LocalStrategy from "passport-local";
 import { ExpressError } from "./utils/ExpressError.js";
 import axios from "axios";
-import passport from "passport";
 import multer from "multer";
 import dotenv from "dotenv";
 import cors from "cors";
 import http from "http";
 import { Server } from "socket.io";
+import passport from "./config/passportConfig.js";
 import dbConnect from "./config/dbConnect.js";
-import "./config/passportConfig.js";
 import authRoutes from "./routes/authRoutes.js";
 import profileRoutes from "./routes/profileRoutes.js";
 import competitiveProgrammingStatsRoutes from "./routes/competitiveProgrammingStatsRoutes.js";
@@ -37,6 +36,10 @@ if (process.env.NODE_ENV !== "production") {
 
 //Express App
 const app = express();
+
+//HTTP Server for Socket.IO
+const server = http.createServer(app);
+
 const PORT = process.env.PORT || 8080;
 const FRONTEND_URL =
   process.env.FRONTEND_URL || "https://codeelevate-community.vercel.app";
@@ -44,12 +47,9 @@ const MONGODB_URL = process.env.MONGODB_URL;
 const SESSION_SECRET = process.env.SESSION_SECRET || "codelevate-secret";
 const isProduction = process.env.NODE_ENV === "production";
 
-if (process.env.NODE_ENV === "production") {
+if (isProduction) {
   app.set("trust proxy", 1);
 }
-
-//HTTP Server for Socket.IO
-const server = http.createServer(app);
 
 //Database Connection
 dbConnect();
@@ -69,17 +69,18 @@ const corsOptions = {
 app.use(cors(corsOptions));
 
 //Middlewares
-// app.use(express.json({ limit: "100mb" }));
-// app.use(express.urlencoded({ limit: "100mb", extended: true }));
+app.use(cookieParser());
+app.use(express.json({ limit: "100mb" }));
+app.use(express.urlencoded({ limit: "100mb", extended: true }));
 app.use(bodyParser.json({ limit: "100mb" }));
 app.use(bodyParser.urlencoded({ limit: "100mb", extended: true }));
 app.use(methodOverride("_method"));
 
-app.use(cookieParser(SESSION_SECRET));
-
 const store = MongoStore.create({
   mongoUrl: MONGODB_URL,
-  secret: SESSION_SECRET,
+  crypto: {
+    secret: SESSION_SECRET,
+  },
   ttl: 7 * 24 * 60 * 60,
 });
 store.on("error", () => {
@@ -98,6 +99,7 @@ const sessionOptions = {
     secure: isProduction ? true : false,
     sameSite: isProduction ? "none" : "lax",
     maxAge: 7 * 24 * 60 * 60 * 1000,
+    domain: isProduction ? ".onrender.com" : undefined,
   },
 };
 app.use(session(sessionOptions));
