@@ -152,6 +152,14 @@ app.use((req, res, next) => {
   next();
 });
 
+app.use((req, res, next) => {
+  console.log();
+  console.log("===============================");
+  console.log("Current User: ", req.user);
+  console.log("===============================");
+  next();
+});
+
 //Routes
 app.use("/api/auth", authRoutes);
 app.use("/api/profiles", profileRoutes);
