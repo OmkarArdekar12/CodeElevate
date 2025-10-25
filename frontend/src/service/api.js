@@ -3,9 +3,14 @@ import axios from "axios";
 const api = axios.create({
   baseURL: import.meta.env.VITE_BACKEND_URL
     ? `${import.meta.env.VITE_BACKEND_URL}/api`
-    : "https://codeelevate.onrender.com/api", //live backend url
-  // baseURL: `http://localhost:8080/api`, //backend url
+    : "https://codeelevate.onrender.com/api",
   withCredentials: true,
 });
 
-export default api;
+// export default api;
+// import axios from "axios";
+// const api = axios.create({
+//   baseURL: `http://localhost:8080/api`, //backend url
+//   withCredentials: true,
+// });
+// export default api;

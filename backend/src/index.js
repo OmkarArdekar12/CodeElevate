@@ -2,6 +2,7 @@ import express from "express";
 import session from "express-session";
 import MongoStore from "connect-mongo";
 import cookieParser from "cookie-parser";
+import bodyParser from "body-parser";
 import mongoose from "mongoose";
 import path from "path";
 import methodOverride from "method-override";
@@ -43,7 +44,7 @@ const MONGODB_URL = process.env.MONGODB_URL;
 const SESSION_SECRET = process.env.SESSION_SECRET || "codelevate-secret";
 const isProduction = process.env.NODE_ENV === "production";
 
-if (process.env.NODE_ENV !== "production") {
+if (process.env.NODE_ENV === "production") {
   app.set("trust proxy", 1);
 }
 
@@ -68,17 +69,17 @@ const corsOptions = {
 app.use(cors(corsOptions));
 
 //Middlewares
-app.use(express.json({ limit: "100mb" }));
-app.use(express.urlencoded({ limit: "100mb", extended: true }));
+// app.use(express.json({ limit: "100mb" }));
+// app.use(express.urlencoded({ limit: "100mb", extended: true }));
+app.use(bodyParser.json({ limit: "100mb" }));
+app.use(bodyParser.urlencoded({ limit: "100mb", extended: true }));
 app.use(methodOverride("_method"));
 
 app.use(cookieParser(SESSION_SECRET));
 
 const store = MongoStore.create({
   mongoUrl: MONGODB_URL,
-  crypto: {
-    secret: SESSION_SECRET,
-  },
+  secret: SESSION_SECRET,
   ttl: 7 * 24 * 60 * 60,
 });
 store.on("error", () => {
