@@ -41,7 +41,7 @@ const MONGODB_URL = process.env.MONGODB_URL;
 const SESSION_SECRET = process.env.SESSION_SECRET || "codelevate-secret";
 const isProduction = process.env.NODE_ENV === "production";
 
-app.set("trust proxy", true);
+app.set("trust proxy", 1);
 
 //HTTP Server for Socket.IO
 const server = http.createServer(app);
@@ -50,17 +50,14 @@ const server = http.createServer(app);
 dbConnect();
 
 const corsOptions = {
-  origin: ["https://codeelevate-community.vercel.app", "http://localhost:3000"],
-  credentials: true,
-  methods: ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"],
-  allowedHeaders: [
-    "Content-Type",
-    "Authorization",
-    "Cookie",
-    "X-Requested-With",
-    "Accept",
+  origin: [
+    FRONTEND_URL,
+    "https://codeelevate-community.vercel.app",
+    "http://localhost:3000",
   ],
-  exposedHeaders: ["set-cookie"],
+  credentials: true,
+  methods: ["GET", "POST", "PUT", "PATCH", "DELETE"],
+  allowedHeaders: ["Content-Type", "Authorization", "Cookie"],
 };
 app.use(cors(corsOptions));
 
@@ -68,6 +65,7 @@ app.use(cors(corsOptions));
 app.use(express.json({ limit: "100mb" }));
 app.use(express.urlencoded({ limit: "100mb", extended: true }));
 app.use(methodOverride("_method"));
+
 app.use(cookieParser(SESSION_SECRET));
 
 const store = MongoStore.create({
@@ -100,13 +98,6 @@ app.use(session(sessionOptions));
 
 app.use(passport.initialize());
 app.use(passport.session());
-
-app.use((req, res, next) => {
-  console.log("DEBUG START");
-  console.log("Request user: ", req.user);
-  console.log("Sessions:", req.session);
-  console.log("DEBUG END");
-});
 
 //Socket.IO
 const io = new Server(server, { cors: corsOptions });
