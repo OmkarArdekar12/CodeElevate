@@ -6,17 +6,16 @@ import bodyParser from "body-parser";
 import mongoose from "mongoose";
 import path from "path";
 import methodOverride from "method-override";
+import passport from "passport";
 import LocalStrategy from "passport-local";
-import { ExpressError } from "./utils/ExpressError.js";
 import axios from "axios";
+import { Server } from "socket.io";
+import http from "http";
 import multer from "multer";
 import dotenv from "dotenv";
 import cors from "cors";
-import http from "http";
-import { Server } from "socket.io";
-import passport from "passport";
-import "./config/passportConfig.js";
 import dbConnect from "./config/dbConnect.js";
+import "./config/passportConfig.js";
 import authRoutes from "./routes/authRoutes.js";
 import profileRoutes from "./routes/profileRoutes.js";
 import competitiveProgrammingStatsRoutes from "./routes/competitiveProgrammingStatsRoutes.js";
@@ -30,6 +29,7 @@ import {
   pageNotFoundMiddleware,
   errorHandlerMiddleware,
 } from "./middlewares/errorHandlers.js";
+import { ExpressError } from "./utils/ExpressError.js";
 
 if (process.env.NODE_ENV !== "production") {
   dotenv.config();
@@ -41,17 +41,19 @@ const app = express();
 //HTTP Server for Socket.IO
 const server = http.createServer(app);
 
-const PORT = process.env.PORT || 8080;
-const FRONTEND_URL = process.env.FRONTEND_URL;
-const MONGODB_URL = process.env.MONGODB_URL;
-const SESSION_SECRET = process.env.SESSION_SECRET || "codelevate-secret";
-const isProduction = process.env.NODE_ENV === "production";
+//Socket.IO
+const io = new Server(server, {
+  cors: {
+    origin: [process.env.FRONTEND_URL, "http://localhost:5173"],
+    credentials: true,
+  },
+});
 
 //Database Connection
 dbConnect();
 
 const corsOptions = {
-  origin: [FRONTEND_URL, "http://localhost:5173"],
+  origin: [process.env.FRONTEND_URL, "http://localhost:5173"],
   methods: ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"],
   credentials: true,
   allowedHeaders: [
@@ -65,34 +67,34 @@ const corsOptions = {
 app.use(cors(corsOptions));
 
 //Middlewares
-app.use(cookieParser());
 app.use(express.json({ limit: "100mb" }));
 app.use(express.urlencoded({ limit: "100mb", extended: true }));
 app.use(bodyParser.json({ limit: "100mb" }));
 app.use(bodyParser.urlencoded({ limit: "100mb", extended: true }));
+app.use(cookieParser());
 app.use(methodOverride("_method"));
 
 const store = MongoStore.create({
-  mongoUrl: MONGODB_URL,
+  mongoUrl: process.env.MONGODB_URL,
   crypto: {
-    secret: SESSION_SECRET,
+    secret: process.env.SESSION_SECRET,
   },
   ttl: 7 * 24 * 60 * 60,
 });
-store.on("error", () => {
+store.on("error", (err) => {
   console.log("Error in Mongo Session Store", err);
 });
 
 const sessionOptions = {
   store,
   name: "codeelevate.sid",
-  secret: SESSION_SECRET,
+  secret: process.env.SESSION_SECRET,
   resave: false,
   saveUninitialized: false,
   cookie: {
     httpOnly: true,
-    secure: isProduction ? true : false,
-    sameSite: isProduction ? "none" : "lax",
+    secure: process.env.NODE_ENV === "production" ? true : false,
+    sameSite: process.env.NODE_ENV === "production" ? "none" : "lax",
     maxAge: 7 * 24 * 60 * 60 * 1000,
   },
 };
@@ -100,9 +102,6 @@ app.use(session(sessionOptions));
 
 app.use(passport.initialize());
 app.use(passport.session());
-
-//Socket.IO
-const io = new Server(server, { cors: corsOptions });
 
 let activeUsers = new Map();
 
@@ -169,6 +168,7 @@ app.use((req, res, next) => {
 });
 app.use(errorHandlerMiddleware);
 
+const PORT = process.env.PORT || 8080;
 //Listen App
 server.listen(PORT, () => {
   console.log(`Server is listening to port ${PORT}`);
