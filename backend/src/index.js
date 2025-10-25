@@ -2,6 +2,14 @@ import express from "express";
 import session from "express-session";
 import MongoStore from "connect-mongo";
 import cookieParser from "cookie-parser";
+import bodyParser from "body-parser";
+import mongoose from "mongoose";
+import path from "path";
+import methodOverride from "method-override";
+import LocalStrategy from "passport-local";
+import { ExpressError } from "./utils/ExpressError.js";
+import axios from "axios";
+import multer from "multer";
 import dotenv from "dotenv";
 import cors from "cors";
 import http from "http";
@@ -42,18 +50,27 @@ const isProduction = process.env.NODE_ENV === "production";
 //Database Connection
 dbConnect();
 
-//Middlewares
-app.use(express.json({ limit: "100mb" }));
-app.use(express.urlencoded({ limit: "100mb", extended: true }));
-app.use(cookieParser());
-
 const corsOptions = {
-  origin: FRONTEND_URL,
-  credentials: true,
+  origin: [FRONTEND_URL, "http://localhost:5173"],
   methods: ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"],
-  allowedHeaders: ["Content-Type", "Authorization"],
+  credentials: true,
+  allowedHeaders: [
+    "Origin",
+    "Content-Type",
+    "Accept",
+    "Authorization",
+    "X-Request-With",
+  ],
 };
 app.use(cors(corsOptions));
+
+//Middlewares
+app.use(cookieParser());
+app.use(express.json({ limit: "100mb" }));
+app.use(express.urlencoded({ limit: "100mb", extended: true }));
+app.use(bodyParser.json({ limit: "100mb" }));
+app.use(bodyParser.urlencoded({ limit: "100mb", extended: true }));
+app.use(methodOverride("_method"));
 
 const store = MongoStore.create({
   mongoUrl: MONGODB_URL,
@@ -61,7 +78,6 @@ const store = MongoStore.create({
     secret: SESSION_SECRET,
   },
   ttl: 7 * 24 * 60 * 60,
-  autoRemove: "native",
 });
 store.on("error", () => {
   console.log("Error in Mongo Session Store", err);
