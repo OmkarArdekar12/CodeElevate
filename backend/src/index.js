@@ -45,6 +45,7 @@ const server = http.createServer(app);
 const io = new Server(server, {
   cors: {
     origin: [process.env.FRONTEND_URL, "http://localhost:5173"],
+    methods: ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"],
     credentials: true,
   },
 });
@@ -56,13 +57,6 @@ const corsOptions = {
   origin: [process.env.FRONTEND_URL, "http://localhost:5173"],
   methods: ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"],
   credentials: true,
-  allowedHeaders: [
-    "Origin",
-    "Content-Type",
-    "Accept",
-    "Authorization",
-    "X-Request-With",
-  ],
 };
 app.use(cors(corsOptions));
 
