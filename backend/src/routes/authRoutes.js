@@ -17,28 +17,7 @@ const router = Router();
 router.post("/register", register);
 
 //Login Route
-router.post("/login", (req, res, next) => {
-  passport.authenticate("local", (err, user, info) => {
-    if (err) return next(err);
-    if (!user)
-      return res
-        .status(401)
-        .json({ message: info.message || "Invalid credentials" });
-
-    req.login(user, (err) => {
-      if (err)
-        return res.status(500).json({ message: "Login failed", error: err });
-      return res.status(200).json({
-        message: "User logged in successfully",
-        username: user.username,
-        userId: user._id,
-        isMfaActive: user.isMfaActive,
-      });
-    });
-  })(req, res, next);
-});
-//Login Route
-// router.post("/login", passport.authenticate("local"), login);
+router.post("/login", passport.authenticate("local"), login);
 
 //Authentication Route
 router.get("/status", authStatus);

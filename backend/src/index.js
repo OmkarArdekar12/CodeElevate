@@ -55,7 +55,7 @@ if (isProduction) {
 dbConnect();
 
 const corsOptions = {
-  origin: [FRONTEND_URL],
+  origin: [FRONTEND_URL, "http://localhost:5173"],
   credentials: true,
   methods: ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"],
   allowedHeaders: [
