@@ -27,7 +27,7 @@ passport.use(
 );
 
 passport.serializeUser((user, done) => {
-  done(null, user._id.toString());
+  done(null, user._id);
 });
 
 passport.deserializeUser(async (_id, done) => {
@@ -41,8 +41,6 @@ passport.deserializeUser(async (_id, done) => {
     done(err);
   }
 });
-
-export default passport;
 
 // import passport from "passport";
 // import { Strategy as LocalStrategy } from "passport-local";
