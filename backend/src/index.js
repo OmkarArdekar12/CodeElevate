@@ -3,8 +3,8 @@ import session from "express-session";
 import MongoStore from "connect-mongo";
 import cookieParser from "cookie-parser";
 import bodyParser from "body-parser";
-import mongoose from "mongoose";
-import path from "path";
+// import mongoose from "mongoose";
+// import path from "path";
 import methodOverride from "method-override";
 import passport from "passport";
 import LocalStrategy from "passport-local";
@@ -69,12 +69,9 @@ app.use(methodOverride("_method"));
 const store = MongoStore.create({
   mongoUrl: process.env.MONGODB_URL,
   crypto: {
-    secret: process.env.SESSION_SECRET,
+    secret: "secret",
   },
   ttl: 7 * 24 * 60 * 60,
-});
-store.on("connected", () => {
-  console.log("Mongo Session store connected");
 });
 store.on("error", (err) => {
   console.log("Error in Mongo Session Store", err);
@@ -88,8 +85,8 @@ const sessionOptions = {
   saveUninitialized: false,
   cookie: {
     httpOnly: true,
-    secure: true,
-    sameSite: "none",
+    secure: process.env.NODE_ENV === "production" ? true : false,
+    sameSite: process.env.NODE_ENV === "production" ? "none" : "lax",
     maxAge: 7 * 24 * 60 * 60 * 1000,
   },
 };

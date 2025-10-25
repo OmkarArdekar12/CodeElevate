@@ -1,5 +1,6 @@
 import { Router } from "express";
 import passport from "passport";
+import LocalStrategy from "passport-local";
 import "../config/passportConfig.js";
 import {
   register,
