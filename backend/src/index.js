@@ -52,15 +52,15 @@ dbConnect();
 const corsOptions = {
   origin: ["https://codeelevate-community.vercel.app", "http://localhost:3000"],
   credentials: true,
-  // methods: ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"],
-  // allowedHeaders: [
-  //   "Content-Type",
-  //   "Authorization",
-  //   "Cookie",
-  //   "X-Requested-With",
-  //   "Accept",
-  // ],
-  // exposedHeaders: ["set-cookie"],
+  methods: ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"],
+  allowedHeaders: [
+    "Content-Type",
+    "Authorization",
+    "Cookie",
+    "X-Requested-With",
+    "Accept",
+  ],
+  exposedHeaders: ["set-cookie"],
 };
 app.use(cors(corsOptions));
 
@@ -83,9 +83,11 @@ store.on("error", () => {
 
 const sessionOptions = {
   store,
+  name: "codeelevate.sid",
   secret: SESSION_SECRET,
   resave: false,
   saveUninitialized: false,
+  proxy: isProduction ? true : false,
   cookie: {
     httpOnly: true,
     secure: isProduction ? true : false,

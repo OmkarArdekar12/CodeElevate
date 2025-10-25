@@ -25,7 +25,7 @@ passport.use(
 
 passport.serializeUser((user, done) => {
   //console.log("We are inside serializeUser");
-  done(null, user._id); //only userID saved in session
+  done(null, user._id.toString()); //only userID saved in session
 });
 
 passport.deserializeUser(async (_id, done) => {

@@ -63,9 +63,13 @@ export const login = async (req, res) => {
   }
 
   try {
-    req.login(user, (err) => {
+    req.session.save((err) => {
       if (err) {
-        return res.status(500).json({ message: "Login failed", error: err });
+        console.error("Session save error:", err);
+        return res.status(500).json({
+          success: false,
+          message: "Session save failed",
+        });
       }
 
       return res.status(200).json({
@@ -75,6 +79,19 @@ export const login = async (req, res) => {
         isMfaActive: req.user.isMfaActive,
       });
     });
+
+    // req.login(user, (err) => {
+    //   if (err) {
+    //     return res.status(500).json({ message: "Login failed", error: err });
+    //   }
+
+    //   return res.status(200).json({
+    //     message: "User logged in successfully",
+    //     username: req.user.username,
+    //     userId: req.user._id,
+    //     isMfaActive: req.user.isMfaActive,
+    //   });
+    // });
   } catch (err) {
     return res.status(500).json({ message: "Login failed", error: err });
   }
@@ -109,7 +126,7 @@ export const logout = async (req, res, next) => {
           return next(err);
         }
         //Clear cookie
-        res.clearCookie("connect.sid"); //default sessionId
+        res.clearCookie("codeelevate.sid"); //sessionId
         return res.status(200).json({ message: "Logged out successfully" });
       });
     });
