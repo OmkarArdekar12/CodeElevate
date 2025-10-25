@@ -3,8 +3,8 @@ import session from "express-session";
 import MongoStore from "connect-mongo";
 import cookieParser from "cookie-parser";
 import bodyParser from "body-parser";
-// import mongoose from "mongoose";
-// import path from "path";
+import mongoose from "mongoose";
+import path from "path";
 import methodOverride from "method-override";
 import passport from "passport";
 import LocalStrategy from "passport-local";
@@ -69,7 +69,7 @@ app.use(methodOverride("_method"));
 const store = MongoStore.create({
   mongoUrl: process.env.MONGODB_URL,
   crypto: {
-    secret: "secret",
+    secret: process.env.SESSION_SECRET,
   },
   ttl: 7 * 24 * 60 * 60,
 });
