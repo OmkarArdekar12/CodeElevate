@@ -30,7 +30,9 @@ import {
   errorHandlerMiddleware,
 } from "./middlewares/errorHandlers.js";
 
-dotenv.config();
+if (process.env.NODE_ENV !== "production") {
+  dotenv.config();
+}
 
 //Express App
 const app = express();
@@ -41,7 +43,9 @@ const MONGODB_URL = process.env.MONGODB_URL;
 const SESSION_SECRET = process.env.SESSION_SECRET || "codelevate-secret";
 const isProduction = process.env.NODE_ENV === "production";
 
-app.set("trust proxy", 1);
+if (process.env.NODE_ENV !== "production") {
+  app.set("trust proxy", 1);
+}
 
 //HTTP Server for Socket.IO
 const server = http.createServer(app);
@@ -73,7 +77,6 @@ const store = MongoStore.create({
   crypto: {
     secret: SESSION_SECRET,
   },
-  touchAfter: 3600 * 24,
   ttl: 7 * 24 * 60 * 60,
 });
 store.on("error", () => {
