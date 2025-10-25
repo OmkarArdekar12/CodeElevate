@@ -76,9 +76,6 @@ app.use(bodyParser.json({ limit: "100mb" }));
 app.use(bodyParser.urlencoded({ limit: "100mb", extended: true }));
 app.use(methodOverride("_method"));
 
-app.use(passport.initialize());
-app.use(passport.session());
-
 const store = MongoStore.create({
   mongoUrl: MONGODB_URL,
   crypto: {
@@ -95,7 +92,7 @@ const sessionOptions = {
   name: "codeelevate.sid",
   secret: SESSION_SECRET,
   resave: false,
-  saveUninitialized: false,
+  saveUninitialized: true,
   proxy: isProduction ? true : false,
   cookie: {
     httpOnly: true,
@@ -106,6 +103,9 @@ const sessionOptions = {
   },
 };
 app.use(session(sessionOptions));
+
+app.use(passport.initialize());
+app.use(passport.session());
 
 app.use((req, res, next) => {
   console.log("Session ID:", req.sessionID);
