@@ -104,6 +104,11 @@ app.use(session(sessionOptions));
 app.use(passport.initialize());
 app.use(passport.session());
 
+app.use((req, res, next) => {
+  req.user = req.session.user;
+  next();
+});
+
 //Socket.IO
 const io = new Server(server, { cors: corsOptions });
 
