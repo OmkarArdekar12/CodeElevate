@@ -65,7 +65,6 @@ const corsOptions = {
 app.use(cors(corsOptions));
 
 //Middlewares
-app.use(cookieParser());
 app.use(express.json({ limit: "100mb" }));
 app.use(express.urlencoded({ limit: "100mb", extended: true }));
 app.use(methodOverride("_method"));
@@ -86,7 +85,7 @@ const sessionOptions = {
   store,
   secret: SESSION_SECRET,
   resave: false,
-  saveUninitialized: true,
+  saveUninitialized: false,
   cookie: {
     httpOnly: true,
     secure: isProduction ? true : false,
@@ -95,9 +94,16 @@ const sessionOptions = {
   },
 };
 app.use(session(sessionOptions));
-
+app.use(cookieParser());
 app.use(passport.initialize());
 app.use(passport.session());
+
+app.use((req, res, next) => {
+  console.log("DEBUG START");
+  console.log("Request user: ", req.user);
+  console.log("Session user:", req.session);
+  console.log("DEBUG END");
+});
 
 //Socket.IO
 const io = new Server(server, { cors: corsOptions });

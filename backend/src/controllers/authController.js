@@ -56,10 +56,6 @@ export const register = async (req, res) => {
 
 //Login Controller
 export const login = async (req, res) => {
-  console.log("Login debug start");
-  console.log("The authenticate user is: ", req.user);
-  console.log("The authenticate user is: ", req.session);
-  console.log("Login debug end");
   const user = req.user;
 
   if (!user) {
@@ -71,6 +67,8 @@ export const login = async (req, res) => {
       if (err) {
         return res.status(500).json({ message: "Login failed", error: err });
       }
+
+      req.session.user = user;
 
       return res.status(200).json({
         message: "User logged in successfully",
