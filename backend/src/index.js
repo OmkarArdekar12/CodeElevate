@@ -9,7 +9,6 @@ import LocalStrategy from "passport-local";
 import { ExpressError } from "./utils/ExpressError.js";
 import axios from "axios";
 import passport from "passport";
-import User from "./models/user.js";
 import multer from "multer";
 import dotenv from "dotenv";
 import cors from "cors";
@@ -51,31 +50,17 @@ const server = http.createServer(app);
 dbConnect();
 
 const corsOptions = {
-  origin: function (origin, callback) {
-    const allowedOrigins = [
-      "https://codeelevate-community.vercel.app",
-      "http://localhost:3000",
-    ];
-
-    if (!origin) return callback(null, true);
-
-    if (allowedOrigins.indexOf(origin) !== -1) {
-      callback(null, true);
-    } else {
-      console.log("Blocked by CORS:", origin);
-      callback(new Error("Not allowed by CORS"));
-    }
-  },
+  origin: ["https://codeelevate-community.vercel.app", "http://localhost:3000"],
   credentials: true,
-  methods: ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"],
-  allowedHeaders: [
-    "Content-Type",
-    "Authorization",
-    "Cookie",
-    "X-Requested-With",
-    "Accept",
-  ],
-  exposedHeaders: ["set-cookie"],
+  // methods: ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"],
+  // allowedHeaders: [
+  //   "Content-Type",
+  //   "Authorization",
+  //   "Cookie",
+  //   "X-Requested-With",
+  //   "Accept",
+  // ],
+  // exposedHeaders: ["set-cookie"],
 };
 app.use(cors(corsOptions));
 
@@ -90,8 +75,8 @@ const store = MongoStore.create({
   crypto: {
     secret: SESSION_SECRET,
   },
+  touchAfter: 3600 * 24,
   ttl: 7 * 24 * 60 * 60,
-  autoRemove: "native",
 });
 store.on("error", () => {
   console.log("Error in Mongo Session Store", err);
@@ -100,9 +85,8 @@ store.on("error", () => {
 const sessionOptions = {
   store,
   secret: SESSION_SECRET,
-  resave: isProduction ? true : false,
-  saveUninitialized: isProduction ? true : false,
-  proxy: true,
+  resave: false,
+  saveUninitialized: true,
   cookie: {
     httpOnly: true,
     secure: isProduction ? true : false,
@@ -114,20 +98,6 @@ app.use(session(sessionOptions));
 
 app.use(passport.initialize());
 app.use(passport.session());
-
-passport.use(User.createStrategy());
-passport.serializeUser(User.serializeUser());
-passport.deserializeUser(User.deserializeUser());
-
-app.use((req, res, next) => {
-  console.log("=== SESSION DEBUG ===");
-  console.log("Path:", req.path);
-  console.log("Session ID:", req.sessionID);
-  console.log("Authenticated:", req.isAuthenticated());
-  console.log("User:", req.user ? req.user.username : "No user");
-  console.log("=== END DEBUG ===");
-  next();
-});
 
 //Socket.IO
 const io = new Server(server, { cors: corsOptions });

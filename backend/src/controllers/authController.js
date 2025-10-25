@@ -29,32 +29,24 @@ export const register = async (req, res) => {
       });
     }
 
-    const registeredUser = await User.register(
-      new User({ username, isMfaActive: false }),
-      password
-    );
-
+    const hashedPassword = await bcrypt.hash(password, 10);
+    const user = await User.create({
+      username,
+      password: hashedPassword,
+      isMfaActive: false,
+    });
     const profile = await Profile.create({
-      user: registeredUser._id,
+      user: user._id,
       fullName: username,
     });
 
-    req.login(registeredUser, (err) => {
-      if (err) {
-        return res.status(500).json({
-          message: "Registration successful but auto-login failed",
-        });
-      }
-
-      return res.status(201).json({
-        message: "User registered successfully",
-        username: registeredUser.username,
-        userId: registeredUser._id,
-        isMfaActive: registeredUser.isMfaActive,
-      });
+    return res.status(201).json({
+      username: user.username,
+      userId: user._id,
+      profile,
+      message: "User registered successfully",
     });
   } catch (err) {
-    console.log(err);
     return res.status(500).json({
       message: "Error: User Registration Failed!",
       error: err,
@@ -64,7 +56,10 @@ export const register = async (req, res) => {
 
 //Login Controller
 export const login = async (req, res) => {
-  // console.log("The authenticate user is: ", req.user);
+  console.log("Login debug start");
+  console.log("The authenticate user is: ", req.user);
+  console.log("The authenticate user is: ", req.session);
+  console.log("Login debug end");
   const user = req.user;
 
   if (!user) {
@@ -77,19 +72,11 @@ export const login = async (req, res) => {
         return res.status(500).json({ message: "Login failed", error: err });
       }
 
-      req.session.save((err) => {
-        if (err) {
-          return res
-            .status(500)
-            .json({ message: "Session save failed", error: err });
-        }
-
-        return res.status(200).json({
-          message: "User logged in successfully",
-          username: req.user.username,
-          userId: req.user._id,
-          isMfaActive: req.user.isMfaActive,
-        });
+      return res.status(200).json({
+        message: "User logged in successfully",
+        username: req.user.username,
+        userId: req.user._id,
+        isMfaActive: req.user.isMfaActive,
       });
     });
   } catch (err) {
@@ -283,6 +270,56 @@ export const reset2FA = async (req, res) => {
 //     // await user.save();
 //     // console.log("New User: ", user);
 //   } catch (err) {
+//     return res.status(500).json({
+//       message: "Error: User Registration Failed!",
+//       error: err,
+//     });
+//   }
+// };
+// //Register Controller
+// export const register = async (req, res) => {
+//   try {
+//     const { username, password } = req.body;
+//     if (!username || !password) {
+//       return res
+//         .status(400)
+//         .json({ message: "Username and Password fields must be Required" });
+//     }
+//     let isUserExist = await User.findOne({ username });
+//     if (isUserExist) {
+//       return res.status(400).json({ message: "User already exists." });
+//     }
+//     const passwordRegex = /^(?=.*[0-9])(?=.*[A-Z]).{6,}$/;
+//     if (!passwordRegex.test(password)) {
+//       return res.status(400).json({
+//         message:
+//           "Password must be at least 6 characters, contain 1 number and 1 uppercase letter",
+//       });
+//     }
+//     const registeredUser = await User.register(
+//       new User({ username, isMfaActive: false }),
+//       password
+//     );
+//     const profile = await Profile.create({
+//       user: registeredUser._id,
+//       fullName: username,
+//     });
+//     req.login(registeredUser, (err) => {
+//       if (err) {
+//         return res.status(500).json({
+//           message: "Registration successful but auto-login failed",
+//         });
+//       }
+
+//       return res.status(201).json({
+//         message: "User registered successfully",
+//         username: registeredUser.username,
+//         userId: registeredUser._id,
+//         isMfaActive: registeredUser.isMfaActive,
+//       });
+//     });
+//   } catch (err) {
+//     console.log(err);
 //     return res.status(500).json({
 //       message: "Error: User Registration Failed!",
 //       error: err,
