@@ -68,6 +68,7 @@ app.use(cors(corsOptions));
 app.use(express.json({ limit: "100mb" }));
 app.use(express.urlencoded({ limit: "100mb", extended: true }));
 app.use(methodOverride("_method"));
+app.use(cookieParser(SESSION_SECRET));
 
 const store = MongoStore.create({
   mongoUrl: MONGODB_URL,
@@ -96,14 +97,14 @@ const sessionOptions = {
   },
 };
 app.use(session(sessionOptions));
-app.use(cookieParser());
+
 app.use(passport.initialize());
 app.use(passport.session());
 
 app.use((req, res, next) => {
   console.log("DEBUG START");
   console.log("Request user: ", req.user);
-  console.log("Session user:", req.session);
+  console.log("Sessions:", req.session);
   console.log("DEBUG END");
 });
 
