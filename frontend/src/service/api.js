@@ -6,9 +6,6 @@ const api = axios.create({
     : "https://codeelevate.onrender.com/api", //live backend url
   // baseURL: `http://localhost:8080/api`, //backend url
   withCredentials: true,
-  headers: {
-    "Content-Type": "application/json",
-  },
 });
 
 export default api;
