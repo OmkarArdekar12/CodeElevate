@@ -54,14 +54,16 @@ const server = http.createServer(app);
 dbConnect();
 
 const corsOptions = {
-  origin: [
-    FRONTEND_URL,
-    "https://codeelevate-community.vercel.app",
-    "http://localhost:3000",
-  ],
+  origin: [FRONTEND_URL, "http://localhost:3000"],
   credentials: true,
-  methods: ["GET", "POST", "PUT", "PATCH", "DELETE"],
-  allowedHeaders: ["Content-Type", "Authorization", "Cookie"],
+  methods: ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"],
+  allowedHeaders: [
+    "Origin",
+    "Content-Type",
+    "Accept",
+    "Authorization",
+    "X-Request-With",
+  ],
 };
 app.use(cors(corsOptions));
 
