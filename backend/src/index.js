@@ -76,6 +76,9 @@ app.use(bodyParser.json({ limit: "100mb" }));
 app.use(bodyParser.urlencoded({ limit: "100mb", extended: true }));
 app.use(methodOverride("_method"));
 
+app.use(passport.initialize());
+app.use(passport.session());
+
 const store = MongoStore.create({
   mongoUrl: MONGODB_URL,
   crypto: {
@@ -103,9 +106,6 @@ const sessionOptions = {
   },
 };
 app.use(session(sessionOptions));
-
-app.use(passport.initialize());
-app.use(passport.session());
 
 app.use((req, res, next) => {
   console.log("Session ID:", req.sessionID);
