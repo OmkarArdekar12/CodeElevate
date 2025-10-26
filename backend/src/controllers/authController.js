@@ -65,6 +65,8 @@ export const login = async (req, res) => {
   try {
     const userId = user._id;
 
+    const expiresAt = new Date(Date.now() + 7 * 24 * 60 * 60 * 1000);
+
     res.cookie("user_session", userId.toString(), {
       httpOnly: true,
       secure: true,
@@ -84,7 +86,6 @@ export const login = async (req, res) => {
             error: saveErr,
           });
         }
-
         return res.status(200).json({
           message: "User logged in successfully",
           username: req.user.username,
