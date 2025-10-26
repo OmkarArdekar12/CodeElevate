@@ -1,4 +1,5 @@
 import axios from "axios";
+import { getSessionUserId } from "./utils/getSessionUserId";
 
 const api = axios.create({
   baseURL: import.meta.env.VITE_BACKEND_URL
@@ -8,10 +9,9 @@ const api = axios.create({
 });
 
 api.interceptors.request.use((config) => {
-  const user = localStorage.getItem("user");
-  const userId = user ? user.userId : "";
-  if (userId) {
-    config.headers["user-session"] = userId;
+  const sessionUserId = getSessionUserId();
+  if (sessionUserId) {
+    config.headers["user-session"] = sessionUserId;
   }
   return config;
 });

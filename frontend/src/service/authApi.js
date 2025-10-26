@@ -1,4 +1,5 @@
 import api from "./api";
+import { getSessionUserId } from "./utils/getSessionUserId";
 
 export const register = async (username, password) => {
   return await api.post("/auth/register", {
@@ -37,14 +38,10 @@ export const logoutUser = async () => {
 };
 
 export const setup2FA = async () => {
-  const v = "user-session";
   return await api.post(
     "/auth/2fa/setup",
     {},
     {
-      headers: {
-        v: "Yes",
-      },
       withCredentials: true,
     }
   );

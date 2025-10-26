@@ -25,7 +25,7 @@ router.post("/login", passport.authenticate("local"), login);
 router.get("/status", authStatus);
 
 //Logout Route
-router.post("/logout", logout);
+router.post("/logout", auth, logout);
 
 //2FA Setup Route
 router.post("/2fa/setup", auth, setup2FA);
