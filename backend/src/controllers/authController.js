@@ -118,7 +118,7 @@ export const logout = async (req, res, next) => {
           return next(err);
         }
         //Clear cookie
-        res.clearCookie("connect.sid"); //default sessionId
+        res.clearCookie("codeelevate.sid"); //sessionId
         return res.status(200).json({ message: "Logged out successfully" });
       });
     });
@@ -133,7 +133,7 @@ export const logout = async (req, res, next) => {
 //Setup2FA Controller
 export const setup2FA = async (req, res) => {
   try {
-    // console.log("The req.user is: ", req.user);
+    console.log("The req.user is: ", req.user);
     const user = req.user;
     if (!user) {
       return res.status(401).json({ message: "Invalid credentials" });
@@ -377,7 +377,32 @@ export const reset2FA = async (req, res) => {
 //     });
 //   }
 // };
-
+// //Logout Controller
+// export const logout = async (req, res, next) => {
+//   try {
+//     if (!req.user) {
+//       return res.status(401).json({ message: "Unauthorized user!" });
+//     }
+//     req.logout((err) => {
+//       if (err) {
+//         return next(err);
+//       }
+//       req.session.destroy((err) => {
+//         if (err) {
+//           return next(err);
+//         }
+//         //Clear cookie
+//         res.clearCookie("connect.sid"); //default sessionId
+//         return res.status(200).json({ message: "Logged out successfully" });
+//       });
+//     });
+//   } catch (err) {
+//     return res.status(500).json({
+//       error: "Error in logging-out",
+//       message: err,
+//     });
+//   }
+// };
 // //Verify2FA Controller
 // //-JWT Auth verify
 // export const verify2FA = async (req, res) => {
