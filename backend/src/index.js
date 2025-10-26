@@ -71,7 +71,6 @@ const store = MongoStore.create({
   crypto: {
     secret: process.env.SESSION_SECRET,
   },
-  touchAfter: 24 * 3600,
   ttl: 7 * 24 * 60 * 60,
 });
 store.on("error", (err) => {
@@ -86,6 +85,7 @@ const sessionOptions = {
   secret: process.env.SESSION_SECRET,
   resave: false,
   saveUninitialized: false,
+  proxy: true,
   cookie: {
     httpOnly: true,
     secure: process.env.NODE_ENV === "production" ? true : false,
