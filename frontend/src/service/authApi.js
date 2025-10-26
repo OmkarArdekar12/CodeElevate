@@ -39,7 +39,7 @@ export const logoutUser = async () => {
 export const setup2FA = async () => {
   return await api.post(
     "/auth/2fa/setup",
-    { user: "Yes" },
+    {},
     {
       withCredentials: true,
     }

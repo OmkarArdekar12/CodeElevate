@@ -54,7 +54,9 @@ const io = new Server(server, {
       "Authorization",
       "X-Request-With",
       "Cookie",
+      "user-session",
     ],
+    exposedHeaders: ["user-session"],
   },
 });
 
@@ -72,11 +74,11 @@ const corsOptions = {
     "Authorization",
     "X-Request-With",
     "Cookie",
+    "user-session",
   ],
+  exposedHeaders: ["user-session"],
 };
 app.use(cors(corsOptions));
-
-app.set("trust proxy", 1);
 
 //Middlewares
 app.use(cookieParser());

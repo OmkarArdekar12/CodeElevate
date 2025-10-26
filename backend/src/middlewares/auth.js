@@ -5,7 +5,7 @@ const auth = async (req, res, next) => {
     return next();
   }
 
-  const userId = req.headers["logged-in-user"];
+  const userId = req.headers["user-session"];
   if (!userId) {
     return res
       .status(401)
