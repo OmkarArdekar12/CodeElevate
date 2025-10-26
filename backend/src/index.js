@@ -156,9 +156,7 @@ app.get("/", (req, res) => {
 });
 
 //Error handlers
-app.use((req, res, next) => {
-  pageNotFoundMiddleware(req, res, next);
-});
+app.all("*", pageNotFoundMiddleware);
 app.use(errorHandlerMiddleware);
 
 const PORT = process.env.PORT || 8080;
