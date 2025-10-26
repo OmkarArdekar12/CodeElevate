@@ -259,7 +259,7 @@ export const destroyProfile = async (req, res) => {
         if (err) {
           return next(err);
         }
-        res.clearCookie("codeelevate.sid");
+        res.clearCookie("connect.sid");
         return res
           .status(200)
           .json({ message: "User Profile and all associated data deleted." });

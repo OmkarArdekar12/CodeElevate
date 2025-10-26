@@ -118,7 +118,7 @@ export const logout = async (req, res, next) => {
           return next(err);
         }
         //Clear cookie
-        res.clearCookie("codeelevate.sid"); //sessionId
+        res.clearCookie("connect.sid"); //default sessionId
         return res.status(200).json({ message: "Logged out successfully" });
       });
     });
