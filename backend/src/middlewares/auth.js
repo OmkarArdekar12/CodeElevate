@@ -7,7 +7,9 @@ const auth = async (req, res, next) => {
 
   const userId = req.headers["logged-in-user"];
   if (!userId) {
-    return res.status(401).json({ message: "Not authenticated!" });
+    return res
+      .status(401)
+      .json({ message: "Not authenticated!", headers: req.headers });
   }
 
   const user = await User.findById(userId);

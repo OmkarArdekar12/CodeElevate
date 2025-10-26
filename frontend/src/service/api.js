@@ -1,12 +1,19 @@
 import axios from "axios";
 
-axios.defaults.withCredentials = true;
-
 const api = axios.create({
   baseURL: import.meta.env.VITE_BACKEND_URL
     ? `${import.meta.env.VITE_BACKEND_URL}/api`
     : "https://codeelevate.onrender.com/api",
   withCredentials: true,
+});
+
+api.interceptors.request.use((config) => {
+  const user = localStorage.getItem("user");
+  const userId = user ? user.userId : "";
+  if (userId) {
+    config.headers["logged-in-user"] = userId;
+  }
+  return config;
 });
 
 export default api;
