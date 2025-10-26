@@ -5,9 +5,9 @@ const auth = async (req, res, next) => {
     return next();
   }
 
-  const userId = req.cookies.user_session;
+  const userId = req.headers["logged-in-user"];
   if (!userId) {
-    return res.status(401).json({ message: "Not authenticated" });
+    return res.status(401).json({ message: "Not authenticated!" });
   }
 
   const user = await User.findById(userId);
