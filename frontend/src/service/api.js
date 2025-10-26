@@ -11,7 +11,7 @@ api.interceptors.request.use((config) => {
   const user = localStorage.getItem("user");
   const userId = user ? user.userId : "";
   if (userId) {
-    config.headers["logged-in-user"] = userId;
+    config.headers["user-session"] = userId;
   }
   return config;
 });

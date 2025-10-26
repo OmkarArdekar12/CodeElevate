@@ -37,10 +37,14 @@ export const logoutUser = async () => {
 };
 
 export const setup2FA = async () => {
+  const v = "user-session";
   return await api.post(
     "/auth/2fa/setup",
     {},
     {
+      headers: {
+        v: "Yes",
+      },
       withCredentials: true,
     }
   );
