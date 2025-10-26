@@ -133,7 +133,7 @@ export const logout = async (req, res, next) => {
 //Setup2FA Controller
 export const setup2FA = async (req, res) => {
   try {
-    console.log("The req.user is: ", req.user);
+    //console.log("The req.user is: ", req.user);
     const user = req.user;
     if (!user) {
       return res.status(401).json({ message: "Invalid credentials" });
