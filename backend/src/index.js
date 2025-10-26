@@ -71,7 +71,7 @@ const store = MongoStore.create({
   crypto: {
     secret: process.env.SESSION_SECRET,
   },
-  ttl: 7 * 24 * 60 * 60,
+  touchAfter: 24 * 3600,
 });
 store.on("error", (err) => {
   console.log("Error in Mongo Session Store", err);
@@ -81,11 +81,13 @@ const sessionOptions = {
   store,
   secret: process.env.SESSION_SECRET,
   resave: false,
-  saveUninitialized: true,
+  saveUninitialized: false,
   cookie: {
+    httpOnly: true,
+    secure: process.env.NODE_ENV === "production" ? true : false,
+    sameSite: process.env.NODE_ENV === "production" ? "none" : "lax",
     expires: Date.now() + 7 * 24 * 60 * 60 * 1000,
     maxAge: 7 * 24 * 60 * 60 * 1000,
-    httpOnly: true,
   },
 };
 app.use(session(sessionOptions));
