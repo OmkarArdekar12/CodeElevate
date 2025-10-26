@@ -3,7 +3,7 @@ const verifyAuth = (req, res, next) => {
     return next();
   }
   if (req.user) {
-    next();
+    return next();
   }
   return res.status(403).json({
     message: "Access denied: Two-Factor-Authentication-(2FA) not verified",
