@@ -77,15 +77,12 @@ store.on("error", (err) => {
   console.log("Error in Mongo Session Store", err);
 });
 
-app.set("trust proxy", 1);
-
 const sessionOptions = {
   store,
   name: "codeelevate.sid",
   secret: process.env.SESSION_SECRET,
   resave: false,
   saveUninitialized: false,
-  proxy: true,
   cookie: {
     httpOnly: true,
     secure: process.env.NODE_ENV === "production" ? true : false,
