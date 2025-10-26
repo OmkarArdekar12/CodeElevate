@@ -30,7 +30,11 @@ export const isOwner = async (req, res, next) => {
     if (profile.user.toString() !== clientUserId.toString()) {
       return res
         .status(403)
-        .json({ message: "You are not authorized to edit this profile" });
+        .json({
+          message: "You are not authorized to edit this profile",
+          profileUserId,
+          clientUserId,
+        });
     }
 
     next();
