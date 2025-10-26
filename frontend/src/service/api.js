@@ -2,9 +2,7 @@ import axios from "axios";
 import { getSessionUserId } from "./utils/getSessionUserId";
 
 const api = axios.create({
-  baseURL: import.meta.env.VITE_BACKEND_URL
-    ? `${import.meta.env.VITE_BACKEND_URL}/api`
-    : "https://codeelevate.onrender.com/api",
+  baseURL: `${import.meta.env.VITE_BACKEND_URL}/api`,
   withCredentials: true,
 });
 

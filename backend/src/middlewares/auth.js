@@ -7,9 +7,7 @@ const auth = async (req, res, next) => {
 
   const userId = req.headers["user-session"];
   if (!userId) {
-    return res
-      .status(401)
-      .json({ message: "Not authenticated!", headers: req.headers });
+    return res.status(401).json({ message: "Not authenticated!" });
   }
 
   const user = await User.findById(userId);
@@ -17,8 +15,12 @@ const auth = async (req, res, next) => {
     return res.status(404).json({ message: "User not found" });
   }
 
-  req.user = user;
-  return next();
+  if (user) {
+    req.user = user;
+    return next();
+  }
+
+  return res.status(401).json({ message: "Unauthorized User!" });
 };
 
 export default auth;
