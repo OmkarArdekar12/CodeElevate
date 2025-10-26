@@ -96,15 +96,6 @@ app.use(session(sessionOptions));
 app.use(passport.initialize());
 app.use(passport.session());
 
-app.use((req, res, next) => {
-  console.log("===============================");
-  console.log("Req.user", req.user);
-  console.log("Session", req.session);
-  console.log("Session user", req.session.user);
-  console.log("===============================");
-  next();
-});
-
 let activeUsers = new Map();
 
 io.on("connection", (socket) => {
