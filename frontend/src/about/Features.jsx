@@ -1,16 +1,16 @@
 import React from "react";
 import ImageSection from "./ImageSection.jsx";
 import ContentSection from "./ContentSection.jsx";
+import AuthenticationFeature from "./AuthenticationFeature.jsx";
 
 const Features = () => {
   return (
     <div className="w-full flex flex-col mt-2 justify-center items-center transition-all duration-300 ease-in-out">
-      <h1 className="text-md md:text-3xl">Features</h1>
+      <h1 className="w-full text-center text-xl md:text-5xl border-y py-5">
+        Features
+      </h1>
       <div className="w-full flex flex-col justify-center items-center">
-        <div className="w-full flex items-center">
-          <ImageSection />
-          <ContentSection />
-        </div>
+        <AuthenticationFeature />
       </div>
     </div>
   );
