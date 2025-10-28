@@ -2,6 +2,7 @@ import React from "react";
 import ImageSection from "./ImageSection.jsx";
 import ContentSection from "./ContentSection.jsx";
 import AuthenticationFeature from "./AuthenticationFeature.jsx";
+import UserCentricDesgin from "./UserCentricDesgin.jsx";
 
 const Features = () => {
   return (
@@ -11,6 +12,7 @@ const Features = () => {
       </h1>
       <div className="w-full flex flex-col justify-center items-center">
         <AuthenticationFeature />
+        <UserCentricDesgin />
       </div>
     </div>
   );
