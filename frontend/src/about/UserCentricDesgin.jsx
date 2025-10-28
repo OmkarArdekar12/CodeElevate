@@ -6,7 +6,7 @@ const UserCentricDesgin = () => {
       <div className="flex items-center justify-center w-full md:w-1/2">
         <img
           src="/about/accessibility.png"
-          alt="Authentication Image"
+          alt="Features Image"
           className="w-full"
         />
       </div>
