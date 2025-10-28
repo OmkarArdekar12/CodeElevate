@@ -17,8 +17,8 @@ const UserCentricDesgin = () => {
         <p>
           CodeElevate prioritizes accessibility and user-centric design,
           ensuring all features are both visually engaging and easily usable.
-          For profile displays, the UI introduces a vibrant touch — when users
-          hover over any profile, an animated rainbow border appears, providing
+          For profile displays, the UI introduces a vibrant touch, when users
+          hover over any profile, an animated border appears, providing
           immediate visual feedback while maintaining clarity for all users.
         </p>
       </div>

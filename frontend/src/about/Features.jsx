@@ -4,6 +4,7 @@ import ContentSection from "./ContentSection.jsx";
 import AuthenticationFeature from "./AuthenticationFeature.jsx";
 import UserCentricDesgin from "./UserCentricDesgin.jsx";
 import SearchAndFilterSearchFunctionalityFeature from "./SearchAndFilterSearchFunctionalityFeature.jsx";
+import ProfileOptions from "./ProfileOptions.jsx";
 
 const Features = () => {
   return (
@@ -15,6 +16,7 @@ const Features = () => {
         <AuthenticationFeature />
         <UserCentricDesgin />
         <SearchAndFilterSearchFunctionalityFeature />
+        <ProfileOptions />
       </div>
     </div>
   );
