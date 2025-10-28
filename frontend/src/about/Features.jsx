@@ -3,6 +3,7 @@ import ImageSection from "./ImageSection.jsx";
 import ContentSection from "./ContentSection.jsx";
 import AuthenticationFeature from "./AuthenticationFeature.jsx";
 import UserCentricDesgin from "./UserCentricDesgin.jsx";
+import SearchAndFilterSearchFunctionalityFeature from "./SearchAndFilterSearchFunctionalityFeature.jsx";
 
 const Features = () => {
   return (
@@ -10,9 +11,10 @@ const Features = () => {
       <h1 className="w-full text-center text-xl md:text-5xl border-y py-5 text-gray-100">
         Features
       </h1>
-      <div className="w-full flex flex-col justify-center items-center">
+      <div className="w-full flex flex-col justify-center items-center gap-1">
         <AuthenticationFeature />
         <UserCentricDesgin />
+        <SearchAndFilterSearchFunctionalityFeature />
       </div>
     </div>
   );
