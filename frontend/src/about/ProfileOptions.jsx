@@ -6,7 +6,7 @@ const ProfileOptions = () => {
       <div className="flex items-center justify-center w-full md:w-1/2">
         <img
           src="/about/profileOptions.png"
-          alt="Authentication Image"
+          alt="Profile Options"
           className="w-full"
         />
       </div>
