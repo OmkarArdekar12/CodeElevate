@@ -2,7 +2,7 @@ import React from "react";
 
 const AuthenticationFeature = () => {
   return (
-    <div className="w-full flex flex-col md:flex-row items-center px-4 gap-2 py-10">
+    <div className="w-full flex flex-col md:flex-row items-center px-4 gap-2 py-10 text-gray-200">
       <div className="flex items-center justify-center w-full md:w-1/2">
         <img
           src="/about/authentication.png"
@@ -11,7 +11,9 @@ const AuthenticationFeature = () => {
         />
       </div>
       <div className="flex flex-col items-center justify-center w-full md:w-1/2 text-xl px-2 md:px-14 gap-3">
-        <h2 className="text-3xl font-semibold">Two-Factor Authentication</h2>
+        <h2 className="text-3xl font-semibold text-center">
+          Two-Factor Authentication
+        </h2>
         <p>
           CodeElevate uses a secure two-factor authentication (2FA) login
           process to keep user accounts highly secure, even if standard

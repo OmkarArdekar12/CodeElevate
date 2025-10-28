@@ -5,8 +5,8 @@ import AuthenticationFeature from "./AuthenticationFeature.jsx";
 
 const Features = () => {
   return (
-    <div className="w-full flex flex-col mt-2 justify-center items-center transition-all duration-300 ease-in-out">
-      <h1 className="w-full text-center text-xl md:text-5xl border-y py-5">
+    <div className="w-full flex flex-col mt-6 justify-center items-center transition-all duration-300 ease-in-out">
+      <h1 className="w-full text-center text-xl md:text-5xl border-y py-5 text-gray-100">
         Features
       </h1>
       <div className="w-full flex flex-col justify-center items-center">
