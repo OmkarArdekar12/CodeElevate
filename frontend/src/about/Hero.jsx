@@ -67,13 +67,14 @@ const Hero = () => {
           <h2 className="my-1 about-font">
             CodeElevate empowers users to showcase their coding and development
             profiles all in one place. It provides a unified platform where
-            learners and developers can analyze, track, and elevate their
-            progress in both competitive programming and software development.
+            learners, competitive programmers, coders and developers can
+            analyze, track, and elevate their progress in both competitive
+            programming and software development.
           </h2>
           <h2 className="my-1 about-font">
             Users can compete, connect, and grow together by earning ranks
             across multiple categories, building meaningful connections, and
-            engaging through messaging features.
+            engaging through connection and messaging features.
           </h2>
           <h2 className="my-1 about-font">
             At CodeElevate, our goal is to inspire growth, celebrate
