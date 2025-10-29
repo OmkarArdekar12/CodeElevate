@@ -7,6 +7,7 @@ import SearchAndFilterSearchFunctionalityFeature from "./SearchAndFilterSearchFu
 import ProfileOptions from "./ProfileOptions.jsx";
 import PostingFeature from "./PostingFeature.jsx";
 import StatsFeature from "./StatsFeature.jsx";
+import ConnectionSystem from "./ConnectionSystem.jsx";
 
 const Features = () => {
   return (
@@ -21,6 +22,7 @@ const Features = () => {
         <ProfileOptions />
         <PostingFeature />
         <StatsFeature />
+        <ConnectionSystem />
       </div>
     </div>
   );
