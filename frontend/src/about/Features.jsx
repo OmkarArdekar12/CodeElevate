@@ -8,6 +8,7 @@ import ProfileOptions from "./ProfileOptions.jsx";
 import PostingFeature from "./PostingFeature.jsx";
 import StatsFeature from "./StatsFeature.jsx";
 import ConnectionSystem from "./ConnectionSystem.jsx";
+import NotificationsFeature from "./NotificationsFeature.jsx";
 
 const Features = () => {
   return (
@@ -23,6 +24,7 @@ const Features = () => {
         <PostingFeature />
         <StatsFeature />
         <ConnectionSystem />
+        <NotificationsFeature />
       </div>
     </div>
   );

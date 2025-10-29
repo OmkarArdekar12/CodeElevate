@@ -19,7 +19,7 @@ const NotificationsFeature = () => {
           important social interactions by sending notifications when someone
           follows or unfollows them, likes their posts, or sends a connection
           request. Notifications appear seamlessly, and users can manage them
-          easily —by hovering over a notification, a delete button appears,
+          easily — by hovering over a notification, a delete button appears,
           allowing users to remove unwanted notifications and keep their
           notification feed organized. This system promotes engagement and
           ensures users never miss key updates within their network.
