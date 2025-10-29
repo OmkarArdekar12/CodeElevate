@@ -3,8 +3,10 @@ import React from "react";
 const PostingFeature = () => {
   return (
     <div className="w-full flex flex-col items-center px-4 gap-2 py-10 text-gray-200">
-      <div className="flex flex-col items-center justify-center w-full text-xl px-2 md:px-14 gap-3">
-        <h2 className="text-3xl font-semibold text-center">Post Feature</h2>
+      <div className="flex flex-col items-center justify-center w-full text-md md:text-xl px-2 md:px-14 gap-3">
+        <h2 className="text-xl md:text-3xl font-semibold text-center">
+          Post Feature
+        </h2>
         <p>
           The post feature in CodeElevate enables users to actively engage and
           contribute within the coders community. Users can create new posts to
