@@ -11,7 +11,7 @@ const ImageSection = () => {
         whileInView={{ opacity: 1, rotateY: 1080 }}
         viewport={{ once: true, amount: 0.5 }}
         transition={{ duration: 2, ease: "easeOut" }}
-        className="size-75 rounded-full"
+        className="size-55 sm:size-75 rounded-full"
         style={{ transformStyle: "preserve-3d" }}
       />
     </div>
