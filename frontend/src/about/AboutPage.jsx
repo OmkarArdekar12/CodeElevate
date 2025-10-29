@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Hero from "./Hero.jsx";
 import Features from "./Features.jsx";
+import Creator from "./Creator.jsx";
 
 export default function AboutPage() {
   return (
@@ -8,8 +9,9 @@ export default function AboutPage() {
       <div className="w-full text-2xl sm:text-3xl md:text-5xl flex items-center justify-center hover-text-border text-gray-100 border-b py-5">
         About CodeElevate
       </div>
-      <Hero />
-      <Features />
+      {/* <Hero /> */}
+      {/* <Features /> */}
+      <Creator />
     </div>
   );
 }

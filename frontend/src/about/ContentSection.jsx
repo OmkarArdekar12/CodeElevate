@@ -1,7 +1,7 @@
 import React from "react";
 
 const ContentSection = () => {
-  return <div>Content</div>;
+  return <div>Omkar Ardekar</div>;
 };
 
 export default ContentSection;
