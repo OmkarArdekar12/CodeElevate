@@ -50,7 +50,7 @@ const Hero = () => {
         </AnimatePresence>
       </div>
       <div className="text-cyan-100 flex gap-1 items-center justify-center flex-col px-4 md:px-10 selection:bg-yellow-300 selection:text-black">
-        <h1 className="text-xl sm:text-3xl lg:text-5xl py-4 hover-text-border">
+        <h1 className="text-2xl sm:text-3xl lg:text-5xl py-4 hover-text-border">
           Our Vision
         </h1>
         <motion.div
@@ -67,13 +67,14 @@ const Hero = () => {
           <h2 className="my-1 about-font">
             CodeElevate empowers users to showcase their coding and development
             profiles all in one place. It provides a unified platform where
-            learners and developers can analyze, track, and elevate their
-            progress in both competitive programming and software development.
+            learners, competitive programmers, coders and developers can
+            analyze, track, and elevate their progress in both competitive
+            programming and software development.
           </h2>
           <h2 className="my-1 about-font">
             Users can compete, connect, and grow together by earning ranks
             across multiple categories, building meaningful connections, and
-            engaging through messaging features.
+            engaging through connection and messaging features.
           </h2>
           <h2 className="my-1 about-font">
             At CodeElevate, our goal is to inspire growth, celebrate
