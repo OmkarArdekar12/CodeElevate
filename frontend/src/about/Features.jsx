@@ -1,6 +1,4 @@
 import React from "react";
-import ImageSection from "./ImageSection.jsx";
-import ContentSection from "./ContentSection.jsx";
 import AuthenticationFeature from "./AuthenticationFeature.jsx";
 import UserCentricDesgin from "./UserCentricDesgin.jsx";
 import SearchAndFilterSearchFunctionalityFeature from "./SearchAndFilterSearchFunctionalityFeature.jsx";
