@@ -20,7 +20,7 @@ const Features = () => {
       <h1 className="w-full text-center text-xl md:text-5xl border-y py-5 text-gray-100">
         Features
       </h1>
-      <div className="w-full flex flex-col justify-center items-center gap-1">
+      <div className="w-full flex flex-col justify-center items-center gap-5">
         <AuthenticationFeature />
         <UserCentricDesgin />
         <SearchAndFilterSearchFunctionalityFeature />
