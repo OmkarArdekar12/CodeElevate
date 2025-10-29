@@ -8,7 +8,7 @@ export default function AboutPage() {
       <div className="text-xl sm:text-3xl md:text-5xl flex items-center justify-center hover-text-border text-gray-100">
         About CodeElevate
       </div>
-      <Hero />
+      {/* <Hero /> */}
       <Features />
     </div>
   );
