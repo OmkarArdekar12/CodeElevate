@@ -9,6 +9,7 @@ import PostingFeature from "./PostingFeature.jsx";
 import StatsFeature from "./StatsFeature.jsx";
 import ConnectionSystem from "./ConnectionSystem.jsx";
 import NotificationsFeature from "./NotificationsFeature.jsx";
+import RealTimeMessagingSystemFeature from "./RealTimeMessagingSystemFeature.jsx";
 
 const Features = () => {
   return (
@@ -25,6 +26,7 @@ const Features = () => {
         <StatsFeature />
         <ConnectionSystem />
         <NotificationsFeature />
+        <RealTimeMessagingSystemFeature />
       </div>
     </div>
   );
