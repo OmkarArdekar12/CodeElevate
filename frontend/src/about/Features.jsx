@@ -12,6 +12,7 @@ import NotificationsFeature from "./NotificationsFeature.jsx";
 import RealTimeMessagingSystemFeature from "./RealTimeMessagingSystemFeature.jsx";
 import RankingSystemFeature from "./RankingSystemFeature.jsx";
 import ProfileSystem from "./ProfileSystem.jsx";
+import ResponsiveDesignFeature from "./ResponsiveDesignFeature.jsx";
 
 const Features = () => {
   return (
@@ -31,6 +32,7 @@ const Features = () => {
         <RealTimeMessagingSystemFeature />
         <RankingSystemFeature />
         <ProfileSystem />
+        <ResponsiveDesignFeature />
       </div>
     </div>
   );
