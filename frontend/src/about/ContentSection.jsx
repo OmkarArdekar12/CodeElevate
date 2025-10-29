@@ -22,7 +22,7 @@ const ContentSection = () => {
           GitHub
         </a>
         <a
-          href="https://linkedin.com/in/omkarardekar09"
+          href="https://www.linkedin.com/in/omkarardekar09"
           target="_blank"
           rel="noopener noreferrer"
           className="flex items-center gap-1 hover:text-red-500 transition-colors duration-100"
