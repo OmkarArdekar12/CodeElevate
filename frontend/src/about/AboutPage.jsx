@@ -9,8 +9,8 @@ export default function AboutPage() {
       <div className="w-full text-2xl sm:text-3xl md:text-5xl flex items-center justify-center hover-text-border text-gray-100 border-b py-5">
         About CodeElevate
       </div>
-      {/* <Hero /> */}
-      {/* <Features /> */}
+      <Hero />
+      <Features />
       <Creator />
     </div>
   );
