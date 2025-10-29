@@ -12,7 +12,7 @@ const UserCentricDesgin = () => {
       </div>
       <div className="flex flex-col items-center justify-center w-full md:w-1/2 text-md md:text-xl px-2 md:px-14 gap-3">
         <h2 className="text-xl md:text-3xl font-semibold text-center">
-          User Centric UI Design
+          User Centric UI Design & Multi-functionality
         </h2>
         <p>
           CodeElevate prioritizes accessibility and user-centric design,
