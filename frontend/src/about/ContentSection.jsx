@@ -7,9 +7,9 @@ const ContentSection = () => {
       <h1 className="text-2xl md:text-4xl font-bold text-orange-500">
         Omkar Ardekar
       </h1>
-      <h2 className="text-xl md:text-2xl font-bold text-white mt-3">
+      <h2 className="text-xl md:text-2xl font-semibold text-white mt-3">
         Creator & Full-Stack Developer of{" "}
-        <span className="text-blue-600 font-semibold">CodeElevate</span>
+        <span className="text-blue-600">CodeElevate</span>
       </h2>
       <div className="flex justify-center gap-6 mt-6">
         <a
