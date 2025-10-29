@@ -58,7 +58,7 @@ const SocialsSection = ({ socials }) => {
               )}
               {emailLink && (
                 <a
-                  href={emailLink}
+                  href={`mailto:${emailLink}`}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="p-2 m-1"
