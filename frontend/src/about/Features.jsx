@@ -24,14 +24,14 @@ const Features = () => {
         <AuthenticationFeature />
         <UserCentricDesgin />
         <SearchAndFilterSearchFunctionalityFeature />
+        <ProfileSystem />
         <ProfileOptions />
         <PostingFeature />
-        <StatsFeature />
         <ConnectionSystem />
         <NotificationsFeature />
         <RealTimeMessagingSystemFeature />
+        <StatsFeature />
         <RankingSystemFeature />
-        <ProfileSystem />
         <ResponsiveDesignFeature />
       </div>
     </div>
