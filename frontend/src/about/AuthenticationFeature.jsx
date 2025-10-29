@@ -8,7 +8,7 @@ const AuthenticationFeature = () => {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, amount: 0.3 }}
       transition={{ duration: 0.6, ease: "easeOut" }}
-      className="w-full flex flex-col md:flex-row items-center px-4 gap-2 py-10 text-gray-200"
+      className="w-full flex flex-col md:flex-row items-center px-4 gap-2 py-10 text-gray-200 transition-all duration-300 ease-in-out"
     >
       <div className="flex items-center justify-center w-full md:w-1/2">
         <img
