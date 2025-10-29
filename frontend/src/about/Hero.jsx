@@ -50,7 +50,7 @@ const Hero = () => {
         </AnimatePresence>
       </div>
       <div className="text-cyan-100 flex gap-1 items-center justify-center flex-col px-4 md:px-10 selection:bg-yellow-300 selection:text-black">
-        <h1 className="text-xl sm:text-3xl lg:text-5xl py-4 hover-text-border">
+        <h1 className="text-2xl sm:text-3xl lg:text-5xl py-4 hover-text-border">
           Our Vision
         </h1>
         <motion.div
