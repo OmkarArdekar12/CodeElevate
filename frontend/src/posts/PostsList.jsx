@@ -33,7 +33,7 @@ const PostsList = ({
               viewport={{ once: true, amount: 0.3 }}
               transition={{
                 duration: 0.7,
-                delay: index * 0.1,
+                delay: index * 0.05,
                 ease: "easeOut",
               }}
               className="inline-flex justify-center"
