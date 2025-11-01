@@ -165,3 +165,16 @@ const PORT = process.env.PORT || 8080;
 server.listen(PORT, () => {
   console.log(`Server is listening to port ${PORT}`);
 });
+
+//Backend Reload
+const reloadBackend = () => {
+  setInterval(async () => {
+    try {
+      await axios.get(process.env.BACKEND_URL);
+      console.log("Deployed Backend Reloaded");
+    } catch (err) {
+      console.log("Deployed Backend Failed Reloaded", err);
+    }
+  }, 14 * 60 * 1000);
+};
+reloadBackend();
