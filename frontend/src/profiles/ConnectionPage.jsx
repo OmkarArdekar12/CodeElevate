@@ -66,7 +66,7 @@ const ConnectionPage = () => {
               key={tab.key}
               onClick={() => setActiveTab(tab.key)}
               disabled={loading}
-              className={`px-4 py-2 font-semibold rounded-t-md border-b-2 transition-colors duration-200 ${
+              className={`px-4 py-2 font-semibold rounded-t-md border-b-2 transition-colors duration-200 cursor-pointer ${
                 activeTab === tab.key
                   ? "border-blue-500 text-blue-400"
                   : "border-transparent text-gray-400 hover:text-blue-400"
