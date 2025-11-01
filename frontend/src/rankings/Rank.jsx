@@ -67,7 +67,7 @@ const Rank = ({ ranker, score, index }) => {
       </div>
       <div className="text-right">
         <p className="text-blue-400 font-semibold text-md sm:text-lg">
-          Score: {ranker[score]}
+          Score: {ranker[score].toFixed(3)}
         </p>
         <p className="text-slate-500 text-xs rank-number-font">
           Rank #{index + 1}
