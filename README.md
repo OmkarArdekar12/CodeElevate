@@ -94,17 +94,55 @@
 
 <h2>Technologies Used</h2>
 <h3>
-  <ul>
-    <li>Frontend: <h4>React.js, Vite, Tailwind CSS, Socket.io Client, Framer Motion, Axios, Three.js, React Router DOM, React Hot Toast, React Slick, Slick Carousel, Lucide React, React Icons, FontAwesome</h4></li>
-    <li>Backend: <h4>Node.js, Express.js, MongoDB, Mongoose, Socket.io, Passport.js, Passport-Local, Cloudinary, Multer, Multer-Storage-Cloudinary, Joi, CORS (Cross-Origin Resource Sharing), Axios</h4></li>
-    <li>Authentication & Security: <h4>Passport.js, Passport-Local-Strategy, Connect-Mongo (for Passport Session Store), JWT (Json Web Token), bcrypt.js, Express-Session, Cookie-Parser, Body-Parser, Speakeasy (2FA), QRCode (2FA), Joi Validations</h4></li>
-    <li>APIs Integrated: <h4>LeetCode API, Codeforces API, GitHub API (for Displaying Competitive Programming or Coding Profiles Stats and Development Profiles Stats)</h4></li>
-    <li>Development Tools: <h4>Nodemon, Vite Build, dotenv</h4></li>
-    <li>Deployment: <h4>Frontend on Vercel, Backend on Render</h4></li>
-  </ul>
+  <table border="1">
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Category</th>
+        <th>Technologies / Tools</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>&#10148;</td>
+        <td>Frontend</td>
+        <td>React.js, Vite, Tailwind CSS, Socket.io Client, Framer Motion, Axios, React Router DOM, React Context API (for Session Management), Three.js, React Hot Toast, React Slick, Slick Carousel, Lucide React, React Icons, FontAwesome</td>
+      </tr>
+      <tr>
+        <td>&#10148;</td>
+        <td>Backend</td>
+        <td>Node.js, Express.js, MongoDB, Mongoose, Socket.io, Passport.js, Passport-Local, Cloudinary, Multer, Multer-Storage-Cloudinary, Joi, CORS (Cross-Origin Resource Sharing), Axios</td>
+      </tr>
+      <tr>
+        <td>&#10148;</td>
+        <td>Database</td>
+        <td>MongoDB, Cloudinary</td>
+      </tr>
+      <tr>
+        <td>&#10148;</td>
+        <td>Authentication & Security</td>
+        <td>Passport.js, Passport-Local-Strategy, Connect-Mongo (for Session Store), JWT (JSON Web Token), bcrypt.js, Express-Session, Cookie-Parser, Body-Parser, Speakeasy (2FA), QRCode (2FA), Joi Validations</td>
+      </tr>
+      <tr>
+        <td>&#10148;</td>
+        <td>APIs Integrated</td>
+        <td>LeetCode GraphQL API, Codeforces REST API, GitHub REST API (for Displaying Competitive Programming or Coding Profiles Stats and Development Profiles Stats)</td>
+      </tr>
+      <tr>
+        <td>&#10148;</td>
+        <td>Development Tools & Libraries</td>
+        <td>Nodemon, Vite Build, dotenv, Postman, Hoppscotch, Thunder Client, VS Code, Git, GitHub</td>
+      </tr>
+      <tr>
+        <td>&#10148;</td>
+        <td>Deployment</td>
+        <td>Vercel (Frontend), Render (Backend), MongoDB Atlas (Database), Cloudinary (Cloud Storage)</td>
+      </tr>
+    </tbody>
+  </table>
 </h3>
 
 <h2>MongoDB Database Structure</h2>
 <div width="90%" align="center">
-  <img src="./backend/src/lib/docs/mongodbDatabaseStructure.png" alt="Database Structure Diagram" width="100%"/>
+  <img src="./backend/src/lib/docs/mongodbDatabaseStructure.png" alt="Database Structure Diagram" width="100%" align="center" />
 </div>
