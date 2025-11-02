@@ -1,12 +1,12 @@
 <h1>CodeElevate</h1>
 
 <h2>CodeElevate - Elevate Your Coding Journey</h2>
-<h3>CodeElevate is a dynamic coder community built to empower competitive programmers, software developers, students, and professionals. The platform provides an all-in-one ecosystem featuring integrated coding statistics, development statistics, a real-time messaging system, user connection system, post sharing and engagement, personalized profiles, a profile management system, a community-driven and category-based ranking system, a notification system, search and filter functionality and a responsive UI design - fostering growth, collaboration, and innovation among coders worldwide.</h3>
+<h3>CodeElevate is a dynamic coder community built to empower competitive programmers, software developers, students, and professionals. The platform provides an all-in-one ecosystem featuring integrated coding statistics, development statistics, a real-time messaging system, user connection system, post sharing and engagement, personalized profiles, a profile management system, a community-driven and category-based ranking system, a notification system, search and filter functionality, and a responsive UI design - fostering growth, collaboration, and innovation among coders worldwide.</h3>
 
 <h2><a href="https://codeelevate-community.vercel.app/">Live: https://codeelevate-community.vercel.app</a></h2>
 
 <h2>Description</h2>
-<h3> CodeElevate empowers users to showcase their coding and development profiles all in one place. It provides a unified platform where learners, competitive programmers, professionals, coders and developers can analyze, track, and elevate their progress in both competitive programming and software development. Users can compete, connect, and grow together by earning ranks across multiple categories, building meaningful connections, and engaging through connection and real-time messaging features. At CodeElevate, our goal is to inspire growth, celebrate achievement, and create a community where every coder can rise to their full potential.</h3>
+<h3> CodeElevate is a MERN Stack-based web-application that empowers users to showcase their coding and development profiles all in one place. It provides a unified platform where learners, competitive programmers, professionals, coders and developers can analyze, track, and elevate their progress in both competitive programming and software development. Users can compete, connect, and grow together by earning ranks across multiple categories, building meaningful connections, and engaging through posts, connections, and real-time messaging features. At CodeElevate, our goal is to inspire growth, celebrate achievement, and create a community where every coder can rise to their full potential.</h3>
 
 <h2>Features</h2>
 <table border="1">
