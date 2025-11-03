@@ -153,6 +153,9 @@
 </div>
 
 <h2>System Architecture of CodeElevate</h2>
+<div width="90%" align="center">
+  <img src="./backend/src/lib/docs/codeElevateArchitecture.png" alt="System  Architecture Diagram" width="100%" align="center" />
+</div>
 
 <h2>CodeElevate Database Design (MongoDB)</h2>
 <div width="90%" align="center">
