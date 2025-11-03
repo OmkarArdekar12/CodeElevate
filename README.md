@@ -106,17 +106,17 @@
       <tr>
         <td>&#10148;</td>
         <td>Frontend</td>
-        <td>React.js, Vite, Tailwind CSS, Socket.io Client, Framer Motion, Axios, React Router DOM, React Context API (for Session Management), Three.js, React Hot Toast, React Slick, Slick Carousel, Lucide React, React Icons, FontAwesome</td>
+        <td>React.js, Vite, Tailwind CSS, Socket.io Client, Framer Motion, Axios, React Router DOM, React Context API (for Global Session State Management), Three.js, React Hot Toast, React Slick, Slick Carousel, JavaScript, CSS3, HTML5, Lucide React, React Icons, FontAwesome</td>
       </tr>
       <tr>
         <td>&#10148;</td>
         <td>Backend</td>
-        <td>Node.js, Express.js, MongoDB, Mongoose, Socket.io, Passport.js, Passport-Local, Cloudinary, Multer, Multer-Storage-Cloudinary, Joi, CORS (Cross-Origin Resource Sharing), Axios</td>
+        <td>Node.js, Express.js, MongoDB, Mongoose, Socket.io, RESTful APIs (Representational State Transfer Application Programming Interface), MVC (Model–View–Controller) Architecture / Design Pattern / Framework, RESTful web service, Passport.js, Passport-Local, Cloudinary, Multer, Multer-Storage-Cloudinary, Joi, CORS (Cross-Origin Resource Sharing), Axios</td>
       </tr>
       <tr>
         <td>&#10148;</td>
         <td>Database</td>
-        <td>MongoDB, Cloudinary</td>
+        <td>MongoDB (MongoDB Atlas), Cloudinary (Cloud Storage for Media Files)</td>
       </tr>
       <tr>
         <td>&#10148;</td>
@@ -126,7 +126,7 @@
       <tr>
         <td>&#10148;</td>
         <td>APIs Integrated</td>
-        <td>LeetCode GraphQL API, Codeforces REST API, GitHub REST API (for Displaying Competitive Programming or Coding Profiles Stats and Development Profiles Stats)</td>
+        <td>LeetCode GraphQL API, Codeforces REST API, GitHub REST API (for Displaying Competitive Programming or Coding Profiles Statistics and Development Profiles Statistics)</td>
       </tr>
       <tr>
         <td>&#10148;</td>
