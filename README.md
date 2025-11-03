@@ -26,7 +26,7 @@
     <tr>
       <td>2.</td>
       <td><b>User Profile System & User Profile Management System</b></td>
-      <td>Comprehensive profiles with editable details, skills, education, social links, user details, coding profiles, and customizable profile images and banners.</td>
+      <td>Comprehensive profiles with editable details, skills, education, social links, user details, coding and development profiles, customizable profile images and banners and show stats feature to control the visibility of CP and Development statistics.</td>
     </tr>
     <tr>
       <td>3.</td>
@@ -36,7 +36,7 @@
     <tr>
       <td>4.</td>
       <td><b>Search & Filter Search Functionality</b></td>
-      <td>Smart, responsive search by name, role, domain, or tags, with advanced filters for Trending, CP, Devs, Experience, and Professionals.</td>
+      <td>Smart, responsive search by names, roles, domains, or tags, with advanced filters for Trending, CP, Devs, Experience, and Professionals.</td>
     </tr>
     <tr>
       <td>5.</td>
@@ -71,7 +71,7 @@
     <tr>
       <td>11.</td>
       <td><b>Architecture & Security</b></td>
-      <td>Developed using the MERN Stack, Socket.IO, and Cloudinary for cloud storage management, with Two-Factor Authentication, authorization, and validation layers implemented for robust performance and security.</td>
+      <td>Developed using the MERN Stack, Socket.IO, MVC Design Pattern, RESTful APIs and Cloudinary for cloud storage management, with Two-Factor Authentication, Authorization, and Validation layers implemented for Robust Performance and Security.</td>
     </tr>
     <tr>
       <td>12.</td>
@@ -106,7 +106,7 @@
       <tr>
         <td>&#10148;</td>
         <td>Frontend</td>
-        <td>React.js, Vite, Tailwind CSS, Socket.io Client, Framer Motion, Optimistic UI Updates (State-based Incremental Rendering), Axios, React Router DOM, React Context API (for Global Session State Management), Three.js, React Hot Toast, React Slick, Slick Carousel, Custom 3D Logo Components, Responsive UI/UX, JavaScript, CSS3, HTML5, Lucide React, React Icons, FontAwesome, Google Fonts</td>
+        <td>React.js, Vite, Tailwind CSS, Socket.io Client, Framer Motion, Optimistic UI Updates (State-based Incremental Rendering), Axios, React Router DOM, React Context API (Global Session State Management), Three.js, React Hot Toast, React Slick, Slick Carousel, Custom 3D Logo Components, Responsive UI/UX, JavaScript, CSS3, HTML5, Lucide React, React Icons, FontAwesome, Google Fonts</td>
       </tr>
       <tr>
         <td>&#10148;</td>
@@ -126,17 +126,17 @@
       <tr>
         <td>&#10148;</td>
         <td>Architecture & Design</td>
-        <td>MERN Stack Architecture (MongoDB, Express, React, Node), MVC Design Pattern, RESTful API Structure, SessionContext for Global State Management, Real-time Communication using Socket.io, Robust, Modular and Scalable Codebase, Environment Variables using dotenv, Optimized Folder Structure, Responsive and Component-Based Frontend Design, Client-side State Management with Incremental Update</td>
+        <td>MERN Stack Architecture (MongoDB, Express, React, Node), MVC Design Pattern, RESTful API Structure, SessionContext for Global State Management, Real-time Communication using Socket.io, Robust, Modular and Scalable Codebase, Environment Configuration using dotenv, Optimized Folder Structure, Responsive and Component-Based Frontend Design, Client-side State Management with Incremental Update</td>
       </tr>
       <tr>
         <td>&#10148;</td>
         <td>APIs Integrated</td>
-        <td>Custom REST APIs (CodeElevate): Authentication, Profiles, Messages, Posts, Rankings, Connections, Notifications, Competitive Programming Stats, Development Stats.<br><hr>External APIs: LeetCode GraphQL API, Codeforces REST API, GitHub REST API (for Displaying Competitive Programming or Coding Profiles Statistics and Development Profiles Statistics)</td>
+        <td>Custom REST APIs (CodeElevate): Authentication, Profiles, Messages, Posts, Rankings, Connections, Notifications, Competitive Programming Stats, Development Stats.<br><hr>External APIs: LeetCode GraphQL API, Codeforces REST API, GitHub REST API (for Displaying Competitive Programming Profiles / Coding Profiles Statistics and Development Profiles Statistics)</td>
       </tr>
       <tr>
         <td>&#10148;</td>
         <td>SEO (Search Engine Optimization) & Website Optimization</td>
-        <td>Google Search Console (for Indexing & Performance tracking), SEO-friendly Meta Tags (Title, Description, Keywords, Canonical URL, Author, Language), Open Graph (OG) Tags (for Facebook and Linkedin sharing), Twitter Card Meta Tags, Schema.org JSON-LD Structured Data (Organization & Author Info), Robots.txt (for Crawler Directives), Sitemap.xml (for Site Indexing), Manifest.json (for Web App Metadata & Theme Color), Mobile Viewport Meta Tag, Apple Touch Configuration (PWA (Progressive Web Application) readiness), Theme Color for Browser UI, Fast build using Vite, TailwindCSS for Lightweight CSS, Responsive Design for all Devices, Preconnect & Prefetch tags, Optimistic UI Updates, HTTPS-secured URLs (via Vercel & Render), Asset Optimization & Preloading (using Vite and optimized static resources for faster load times)</td>
+        <td>Google Search Console (for Indexing & Performance Tracking), SEO-friendly Meta Tags (Title, Description, Keywords, Canonical URL, Author, Language), Open Graph (OG) Tags (for Facebook and Linkedin sharing), Twitter Card Meta Tags, Schema.org JSON-LD Structured Data (Organization & Author Info), Robots.txt (for Crawler Directives), Sitemap.xml (for Site Indexing), Manifest.json (for Web App Metadata & Theme Color), Mobile Viewport Meta Tag, Apple Touch Configuration (PWA (Progressive Web Application) readiness), Theme Color for Browser UI, Fast build using Vite, TailwindCSS for Lightweight CSS, Responsive Design for all Devices, Preconnect & Prefetch tags, Optimistic UI Updates, HTTPS-secured URLs (via Vercel & Render)</td>
       </tr>
       <tr>
         <td>&#10148;</td>
