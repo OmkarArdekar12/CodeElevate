@@ -89,13 +89,14 @@ export default function Footer() {
 
       <div className="mt-10 flex items-center justify-center text-center text-xs text-slate-300 hover:underline cursor-pointer">
         <a
-          href="https://www.linkedin.com/in/omkarardekar09"
+          href="https://github.com/OmkarArdekar12/CodeElevate/blob/main/LICENSE"
           target="_blank"
           rel="noopener noreferrer"
           className="flex items-center"
         >
-          <AiOutlineCopyright className="size-3 mr-1" /> CodeElevate. All rights
-          reserved.
+          <span>Copyright</span>
+          <AiOutlineCopyright className="size-3 mx-1" />
+          <span>2025 CodeElevate. All rights reserved.</span>
         </a>
       </div>
     </footer>
