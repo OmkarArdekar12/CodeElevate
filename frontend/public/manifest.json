@@ -1,0 +1,12 @@
+{
+  "name": "CodeElevate - Elevate Your Coding Journey",
+  "short_name": "CodeElevate",
+  "description": "CodeElevate is a dynamic coder community built to empower competitive programmers, software developers, students, and professionals. The platform provides an all-in-one ecosystem with integrated coding statistics, real-time messaging, user connections, post sharing, personalized profiles, community-driven ranking, fostering growth, collaboration, and innovation among coders worldwide.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#000000",
+  "theme_color": "#000000",
+  "orientation": "portrait",
+  "lang": "en"
+}
