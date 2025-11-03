@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset 
+  xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+  <!-- Main Pages -->
+  <url>
+    <loc>https://codeelevate-community.vercel.app/</loc>
+    <priority>1.0</priority>
+    <changefreq>daily</changefreq>
+  </url>
+
+  <url>
+    <loc>https://codeelevate-community.vercel.app/login</loc>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://codeelevate-community.vercel.app/setup-2fa</loc>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://codeelevate-community.vercel.app/verify-2fa</loc>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://codeelevate-community.vercel.app/posts</loc>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://codeelevate-community.vercel.app/posts/create</loc>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://codeelevate-community.vercel.app/rankings</loc>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://codeelevate-community.vercel.app/notifications</loc>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://codeelevate-community.vercel.app/messages</loc>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://codeelevate-community.vercel.app/about</loc>
+    <priority>0.6</priority>
+  </url>
+
+  <!-- Profile Pages (Generic Pattern) -->
+  <url>
+    <loc>https://codeelevate-community.vercel.app/profiles/USER_ID</loc>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://codeelevate-community.vercel.app/profiles/USER_ID/edit</loc>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://codeelevate-community.vercel.app/profiles/USER_ID/settings</loc>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://codeelevate-community.vercel.app/profiles/USER_ID/connections</loc>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Post Pages (Generic Pattern) -->
+  <url>
+    <loc>https://codeelevate-community.vercel.app/posts/POST_ID/edit</loc>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Error / Not Found -->
+  <url>
+    <loc>https://codeelevate-community.vercel.app/404</loc>
+    <priority>0.2</priority>
+  </url>
+
+</urlset>

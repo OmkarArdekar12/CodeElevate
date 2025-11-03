@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://codeelevate-community.vercel.app/sitemap.xml
