@@ -1,7 +1,7 @@
 <h1>CodeElevate</h1>
 
 <h2>CodeElevate - Elevate Your Coding Journey.</h2>
-<h3>CodeElevate is a dynamic coder community built to empower competitive programmers, software developers, students, and professionals. The platform provides an all-in-one ecosystem featuring integrated coding statistics, development statistics, a real-time messaging system, user connection system, post sharing and engagement, personalized profiles, a profile management system, a community-driven and category-based ranking system, a notification system, search and filter functionality, and a responsive UI design - fostering growth, collaboration, and innovation among coders worldwide.</h3>
+<h3>CodeElevate is a dynamic coder community built to empower competitive programmers, software developers, students, learners, and professionals. The platform provides an all-in-one ecosystem featuring integrated coding statistics, development statistics, a real-time messaging system, user connection system, post sharing and engagement, personalized profiles, a profile management system, a community-driven and category-based ranking system, a notification system, search and filter functionality, and a responsive UI design - fostering growth, collaboration, and innovation among coders worldwide.</h3>
 
 <h2><a href="https://codeelevate-community.vercel.app/">Live: https://codeelevate-community.vercel.app</a></h2>
 
@@ -93,7 +93,7 @@
 </table>
 
 <h2>Technologies Used</h2>
-<h3>
+<div>
   <table border="1">
     <thead>
       <tr>
@@ -106,41 +106,51 @@
       <tr>
         <td>&#10148;</td>
         <td>Frontend</td>
-        <td>React.js, Vite, Tailwind CSS, Socket.io Client, Framer Motion, Axios, React Router DOM, React Context API (for Global Session State Management), Three.js, React Hot Toast, React Slick, Slick Carousel, JavaScript, CSS3, HTML5, Lucide React, React Icons, FontAwesome</td>
+        <td>React.js, Vite, Tailwind CSS, Socket.io Client, Framer Motion, Optimistic UI Updates (State-based Incremental Rendering), Axios, React Router DOM, React Context API (for Global Session State Management), Three.js, React Hot Toast, React Slick, Slick Carousel, Custom 3D Logo Components, Responsive UI/UX, JavaScript, CSS3, HTML5, Lucide React, React Icons, FontAwesome, Google Fonts</td>
       </tr>
       <tr>
         <td>&#10148;</td>
         <td>Backend</td>
-        <td>Node.js, Express.js, MongoDB, Mongoose, Socket.io, RESTful APIs (Representational State Transfer Application Programming Interface), MVC (Model–View–Controller) Architecture / Design Pattern / Framework, RESTful web service, Passport.js, Passport-Local, Cloudinary, Multer, Multer-Storage-Cloudinary, Joi, CORS (Cross-Origin Resource Sharing), Axios</td>
+        <td>Node.js, Express.js, MongoDB, Mongoose, Socket.io (Real-time Communication), RESTful APIs (Representational State Transfer Application Programming Interface), MVC (Model–View–Controller) Architecture / Design Pattern / Framework, RESTful web-service, Passport.js, Passport-Local, Cloudinary, Multer, Multer-Storage-Cloudinary, Joi, CORS (Cross-Origin Resource Sharing), Axios</td>
       </tr>
       <tr>
         <td>&#10148;</td>
         <td>Database</td>
-        <td>MongoDB (MongoDB Atlas), Cloudinary (Cloud Storage for Media Files)</td>
+        <td>MongoDB (MongoDB Atlas), Mongoose (Object Document Mapper (ODM) for MongoDB), Cloudinary (Cloud Storage for Media Files)</td>
       </tr>
       <tr>
         <td>&#10148;</td>
         <td>Authentication & Security</td>
-        <td>Passport.js, Passport-Local-Strategy, Connect-Mongo (for Session Store), JWT (JSON Web Token), bcrypt.js, Express-Session, Cookie-Parser, Body-Parser, Speakeasy (2FA), QRCode (2FA), Joi Validations</td>
+        <td>Passport.js, Passport-Local-Strategy, Connect-Mongo (for Session Store), JWT (JSON Web Token), bcrypt.js, Express-Session, Cookie-Parser, Body-Parser, Speakeasy (Two-Factor Authentication (2FA)), QRCode (2FA), Joi Validations</td>
+      </tr>
+      <tr>
+        <td>&#10148;</td>
+        <td>Architecture & Design</td>
+        <td>MERN Stack Architecture (MongoDB, Express, React, Node), MVC Design Pattern, RESTful API Structure, SessionContext for Global State Management, Real-time Communication using Socket.io, Robust, Modular and Scalable Codebase, Environment Variables using dotenv, Optimized Folder Structure, Responsive and Component-Based Frontend Design, Client-side State Management with Incremental Update</td>
       </tr>
       <tr>
         <td>&#10148;</td>
         <td>APIs Integrated</td>
-        <td>LeetCode GraphQL API, Codeforces REST API, GitHub REST API (for Displaying Competitive Programming or Coding Profiles Statistics and Development Profiles Statistics)</td>
+        <td>Custom REST APIs (CodeElevate): Authentication, Profiles, Messages, Posts, Rankings, Connections, Notifications, Competitive Programming Stats, Development Stats.<br><hr>External APIs: LeetCode GraphQL API, Codeforces REST API, GitHub REST API (for Displaying Competitive Programming or Coding Profiles Statistics and Development Profiles Statistics)</td>
+      </tr>
+      <tr>
+        <td>&#10148;</td>
+        <td>SEO (Search Engine Optimization) & Website Optimization</td>
+        <td>Google Search Console (for Indexing & Performance tracking), SEO-friendly Meta Tags (Title, Description, Keywords, Canonical URL, Author, Language), Open Graph (OG) Tags (for Facebook and Linkedin sharing), Twitter Card Meta Tags, Schema.org JSON-LD Structured Data (Organization & Author Info), Robots.txt (for Crawler Directives), Sitemap.xml (for Site Indexing), Manifest.json (for Web App Metadata & Theme Color), Mobile Viewport Meta Tag, Apple Touch Configuration (PWA (Progressive Web Application) readiness), Theme Color for Browser UI, Fast build using Vite, TailwindCSS for Lightweight CSS, Responsive Design for all Devices, Preconnect & Prefetch tags, Optimistic UI Updates, HTTPS-secured URLs (via Vercel & Render), Asset Optimization & Preloading (using Vite and optimized static resources for faster load times)</td>
       </tr>
       <tr>
         <td>&#10148;</td>
         <td>Development Tools & Libraries</td>
-        <td>Nodemon, Vite Build, dotenv, Postman, Hoppscotch, Thunder Client, VS Code, Git, GitHub</td>
+        <td>Nodemon, Vite Build, dotenv, Postman, Hoppscotch, Thunder Client, VS Code, Git, GitHub, Google Search Console, Canva (for UI Assets)</td>
       </tr>
       <tr>
         <td>&#10148;</td>
-        <td>Deployment</td>
-        <td>Vercel (Frontend), Render (Backend), MongoDB Atlas (Database), Cloudinary (Cloud Storage)</td>
+        <td>Deployment & Hosting</td>
+        <td>Vercel (Frontend Hosting), Render (Backend Hosting), MongoDB Atlas (Database Hosting), Cloudinary (Cloud Storage)</td>
       </tr>
     </tbody>
   </table>
-</h3>
+</div>
 
 <h2>MongoDB Database Structure</h2>
 <div width="90%" align="center">
