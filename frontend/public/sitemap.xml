@@ -16,12 +16,12 @@
 
   <url>
     <loc>https://codeelevate-community.vercel.app/setup-2fa</loc>
-    <priority>0.7</priority>
+    <priority>0.8</priority>
   </url>
 
   <url>
     <loc>https://codeelevate-community.vercel.app/verify-2fa</loc>
-    <priority>0.7</priority>
+    <priority>0.8</priority>
   </url>
 
   <url>
@@ -51,7 +51,7 @@
 
   <url>
     <loc>https://codeelevate-community.vercel.app/about</loc>
-    <priority>0.8</priority>
+    <priority>0.6</priority>
   </url>
 
   <!-- Profile Pages (Generic Pattern) -->
