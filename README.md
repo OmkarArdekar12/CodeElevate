@@ -31,7 +31,7 @@
     <li><a href="#installation">Installation</a></li>
     <li><a href="#environment-variables">Environment Variables Configuration</a></li>
     <li><a href="#preview-diagram">Diagrams </a></li>
-    <li><a href="#preview-diagram">Preview and Diagrams </a></li>
+    <li><a href="#preview-diagram">Preview </a></li>
     <li><a href="#license">License</a></li>
     <li><a href="#author">Author</a></li>
   </ol>
