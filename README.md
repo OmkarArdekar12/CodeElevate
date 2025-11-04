@@ -28,7 +28,7 @@
 ![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
 ![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
 ![Lucide React](https://img.shields.io/badge/Lucide%20React-000?style=for-the-badge)
-![Cloudinary (Media Storage)](https://img.shields.io/badge/Cloudinary-FF5A5F?style=for-the-badge&logo=cloudinary&logoColor=white)
+![Cloudinary (Media Storage)](https://img.shields.io/badge/Cloudinary-FF5A5F?style=for-the-badge&logo=cloudinary&logoColor=white) <br/>
 ![Passport.js](https://img.shields.io/badge/Passport.js-000000?style=for-the-badge&logo=passport&logoColor=white)
 ![Passport-Local Strategy](https://img.shields.io/badge/Passport-Local%20Strategy-000000?style=for-the-badge)
 ![Connect-Mongo](https://img.shields.io/badge/Connect-Mongo-0F5132?style=for-the-badge)
