@@ -1,95 +1,36 @@
 <h1><img src="./frontend/public/images/LogoCodeElevate.png" width="39px"/> CodeElevate</h1>
 
 <p>
-
-![Node.js](https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white)
-![Express.js](https://img.shields.io/badge/Express.js-000000?style=for-the-badge&logo=express&logoColor=white)
-![MongoDB](https://img.shields.io/badge/MongoDB-47A248?style=for-the-badge&logo=mongodb&logoColor=white)
-![Mongoose](https://img.shields.io/badge/Mongoose-880000?style=for-the-badge)
-![Socket.io](https://img.shields.io/badge/Socket.io-010101?style=for-the-badge&logo=socket.io&logoColor=white)
-![RESTful APIs](https://img.shields.io/badge/RESTful%20APIs-blue?style=for-the-badge)
-![MVC Architecture](https://img.shields.io/badge/MVC%20Architecture-teal?style=for-the-badge)
-![RESTful web-service](https://img.shields.io/badge/RESTful%20web-service-green?style=for-the-badge)
-![Cloudinary](https://img.shields.io/badge/Cloudinary-FF5A5F?style=for-the-badge&logo=cloudinary&logoColor=white)
-![Axios](https://img.shields.io/badge/Axios-5A29E4?style=for-the-badge&logo=axios&logoColor=white) <br/>
-![React.js](https://img.shields.io/badge/React.js-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
-![Vite](https://img.shields.io/badge/Vite-646CFF?style=for-the-badge&logo=vite&logoColor=white)
-![Tailwind CSS](https://img.shields.io/badge/Tailwind%20CSS-06B6D4?style=for-the-badge&logo=tailwind-css&logoColor=white)
-![Framer Motion](https://img.shields.io/badge/Framer%20Motion-0055FF?style=for-the-badge&logo=framer&logoColor=white)
-![Axios](https://img.shields.io/badge/Axios-5A29E4?style=for-the-badge&logo=axios&logoColor=white)
-![React Router DOM](https://img.shields.io/badge/React%20Router%20DOM-CA4245?style=for-the-badge&logo=reactrouter&logoColor=white)
-![React Context API](https://img.shields.io/badge/React%20Context%20API-61DAFB?style=for-the-badge&logo=react&logoColor=black)
-![Three.js](https://img.shields.io/badge/Three.js-000000?style=for-the-badge&logo=three.js&logoColor=white)
-![React Hot Toast](https://img.shields.io/badge/React%20Hot%20Toast-F7B500?style=for-the-badge&logo=react&logoColor=black)
-![React Slick](https://img.shields.io/badge/React%20Slick-1F1F1F?style=for-the-badge)
-![Custom 3D Logo Components](https://img.shields.io/badge/Custom%203D%20Logo%20Components-lightgrey?style=for-the-badge)
-![Responsive UI/UX](https://img.shields.io/badge/Responsive%20UI%2FUX-blue?style=for-the-badge)
-![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
-![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
-![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
-![Lucide React](https://img.shields.io/badge/Lucide%20React-000?style=for-the-badge)
-![Cloudinary (Media Storage)](https://img.shields.io/badge/Cloudinary-FF5A5F?style=for-the-badge&logo=cloudinary&logoColor=white)
-![Passport.js](https://img.shields.io/badge/Passport.js-000000?style=for-the-badge&logo=passport&logoColor=white)
-![Passport-Local Strategy](https://img.shields.io/badge/Passport-Local%20Strategy-000000?style=for-the-badge)
-![Connect-Mongo](https://img.shields.io/badge/Connect-Mongo-0F5132?style=for-the-badge)
-![JWT](https://img.shields.io/badge/JWT-32329F?style=for-the-badge&logo=jsonwebtokens&=white)  
-![bcrypt.js](https://img.shields.io/badge/bcrypt.js-463A3A?style=for-the-badge)
-![Express-Session](https://img.shields.io/badge/Express%20Session-DB0A47?style=for-the-badge)
-![Cookie-Parser](https://img.shields.io/badge/Cookie-Parser-007ACC?style=for-the-badge)
-![Body-Parser](https://img.shields.io/badge/Body-Parser-3B∆?style=for-the-badge)
-![Speakeasy (2FA)](https://img.shields.io/badge/Speakeasy-2FA-FF6F00?style=for-the-badge)
-![QRCode (2FA)](https://img.shields.io/badge/QRCode-2FA-009688?style=for-the-badge)
-![Joi Validations](https://img.shields.io/badge/Joi%20Validations-0088CC?style=for-the-badge) <br/>
-![MERN Stack Architecture](https://img.shields.io/badge/MERN%20Stack%20Architecture-red?style=for-the-badge)
-![MVC Design Pattern](https://img.shields.io/badge/MVC%20Design%20Pattern-orange?style=for-the-badge)
-![RESTful API Structure](https://img.shields.io/badge/RESTful%20API%20Structure-green?style=for-the-badge)
-![SessionContext (Global State Management)](https://img.shields.io/badge/SessionContext-Global%20State%20Management-blue?style=for-the-badge)
-![Real-time Communication using Socket.io](https://img.shields.io/badge/Real-time%20Communication%20using%20Socket.io-black?style=for-the-badge&logo=socket.io&logoColor=white)
-![Robust, Modular and Scalable Codebase](https://img.shields.io/badge/Robust%2C%20Modular%20and%20Scalable%20Codebase-purple?style=for-the-badge)
-![Environment Configuration using dotenv](https://img.shields.io/badge/Environment%20Configuration%20using%20dotenv-yellow?style=for-the-badge&logo=dotenv&logoColor=black)
-![Optimized Folder Structure](https://img.shields.io/badge/Optimized%20Folder%20Structure-grey?style=for-the-badge)
-![Responsive and Component-Based Frontend Design](https://img.shields.io/badge/Responsive%20and%20Component-Based%20Frontend%20Design-teal?style=for-the-badge)
-![Client-side State Management with Incremental Update](https://img.shields.io/badge/Client-side%20State%20Management%20with%20Incremental%20Update-lightgreen?style=for-the-badge) <br/>
-![Custom REST APIs (CodeElevate)](https://img.shields.io/badge/Custom%20REST%20APIs%20%28CodeElevate%29-brown?style=for-the-badge)
-![LeetCode GraphQL API](https://img.shields.io/badge/LeetCode%20GraphQL%20API-red?style=for-the-badge)
-![Codeforces REST API](https://img.shields.io/badge/Codeforces%20REST%20API-blue?style=for-the-badge)
-![GitHub REST API](https://img.shields.io/badge/GitHub%20REST%20API-black?style=for-the-badge&logo=github&logoColor=white) <br/>
-![Google Search Console](https://img.shields.io/badge/Google%20Search%20Console-4285F4?style=for-the-badge&logo=google&logoColor=white)
-![SEO-friendly Meta Tags](https://img.shields.io/badge/SEO-friendly%20Meta%20Tags-orange?style=for-the-badge)
-![Open Graph (OG) Tags](<https://img.shields.io/badge/Open%20Graph%20(OG)%20Tags-blue?style=for-the-badge>)
-![Twitter Card Meta Tags](https://img.shields.io/badge/Twitter%20Card%20Meta%20Tags-cyan?style=for-the-badge)
-![Schema.org JSON-LD Structured Data](https://img.shields.io/badge/Schema.org%20JSON-LD%20Structured%20Data-green?style=for-the-badge)
-![Robots.txt](https://img.shields.io/badge/Robots.txt-black?style=for-the-badge)
-![Sitemap.xml](https://img.shields.io/badge/Sitemap.xml-red?style=for-the-badge)
-![Manifest.json (Web App Metadata & Theme Colour)](https://img.shields.io/badge/Manifest.json-yellow?style=for-the-badge)
-![Mobile Viewport Meta Tag](https://img.shields.io/badge/Mobile%20Viewport%20Meta%20Tag-lightblue?style=for-the-badge)
-![Apple Touch Configuration (PWA readiness)](<https://img.shields.io/badge/Apple%20Touch%20Configuration%20(PWA%20readiness)-grey?style=for-the-badge>)
-![Theme Colour for Browser UI](https://img.shields.io/badge/Theme%20Colour%20for%20Browser%20UI-pink?style=for-the-badge)
-![Fast build using Vite](https://img.shields.io/badge/Fast%20build%20using%20Vite-646CFF?style=for-the-badge&logo=vite&logoColor=white)
-![TailwindCSS for Lightweight CSS](https://img.shields.io/badge/TailwindCSS%20for%20Lightweight%20CSS-06B6D4?style=for-the-badge&logo=tailwind-css&logoColor=white)
-![Responsive Design for all Devices](https://img.shields.io/badge/Responsive%20Design%20for%20all%20Devices-blue?style=for-the-badge)
-![Preconnect & Prefetch tags](https://img.shields.io/badge/Preconnect%20%26%20Prefetch%20tags-purple?style=for-the-badge)
-![Optimistic UI Updates](https://img.shields.io/badge/Optimistic%20UI%20Updates-yellow?style=for-the-badge)
-![HTTPS-secured URLs (via Vercel & Render)](https://img.shields.io/badge/HTTPS-secured%20URLs%20%28via%20Vercel%20%26%20Render%29-teal?style=for-the-badge) <br/>
-![Nodemon](https://img.shields.io/badge/Nodemon-76D04B?style=for-the-badge)
-![Vite Build](https://img.shields.io/badge/Vite%20Build-646CFF?style=for-the-badge&logo=vite&logoColor=white)
-![dotenv](https://img.shields.io/badge/dotenv-000000?style=for-the-badge&logo=docker&logoColor=white)
-![Postman](https://img.shields.io/badge/Postman-FF6C37?style=for-the-badge&logo=postman&logoColor=white)
-![Hoppscotch](https://img.shields.io/badge/Hoppscotch-00A8A8?style=for-the-badge)
-![Thunder Client](https://img.shields.io/badge/Thunder%20Client-3B82F6?style=for-the-badge)
-![VS Code](https://img.shields.io/badge/VS%20Code-007ACC?style=for-the-badge&logo=visualstudiocode&logoColor=white)
-![Git](https://img.shields.io/badge/Git-F05033?style=for-the-badge&logo=git&logoColor=white)
-![GitHub](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white)
-![Google Search Console](https://img.shields.io/badge/Google%20Search%20Console-4285F4?style=for-the-badge&logo=google&logoColor=white)
-![Canva](https://img.shields.io/badge/Canva-20A4F3?style=for-the-badge&logo=canva&logoColor=white) <br/>
-![Vercel](https://img.shields.io/badge/Vercel-000000?style=for-the-badge&logo=vercel&logoColor=white)
-![Render](https://img.shields.io/badge/Render-00D1FF?style=for-the-badge)
-![MongoDB Atlas](https://img.shields.io/badge/MongoDB%20Atlas-47A248?style=for-the-badge&logo=mongodb&logoColor=white)
-![Cloudinary](https://img.shields.io/badge/Cloudinay-FF5A5F?style=for-the-badge&logo=cloudinary&logoColor=white)
-
+  <img src="https://img.shields.io/badge/MERN%20Stack-3C873A?style=for-the-badge&logo=mern&logoColor=white"/>
+  <img src="https://img.shields.io/badge/MongoDB-47A248?style=for-the-badge&logo=mongodb&logoColor=white"/>
+  <img src="https://img.shields.io/badge/Express.js-000000?style=for-the-badge&logo=express&logoColor=white"/>
+  <img src="https://img.shields.io/badge/React.js-20232A?style=for-the-badge&logo=react&logoColor=61DAFB"/>
+  <img src="https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white"/>
+  <img src="https://img.shields.io/badge/MVC%20Architecture-teal?style=for-the-badge"/>
+  <img src="https://img.shields.io/badge/RESTful%20APIs-blue?style=for-the-badge"/>
+  <img src="https://img.shields.io/badge/SEO%20Optimized-orange?style=for-the-badge"/>
+  <img src="https://img.shields.io/badge/Socket.io-010101?style=for-the-badge&logo=socket.io&logoColor=white"/>
+  <img src="https://img.shields.io/badge/Mongoose-880000?style=for-the-badge"/>
+  <img src="https://img.shields.io/badge/Cloudinary-FF5A5F?style=for-the-badge&logo=cloudinary&logoColor=white"/>
+  <img src="https://img.shields.io/badge/Passport.js-000000?style=for-the-badge&logo=passport&logoColor=white"/>
+  <img src="https://img.shields.io/badge/JWT%20Authentication-32329F?style=for-the-badge&logo=jsonwebtokens&logoColor=white"/>
+  <img src="https://img.shields.io/badge/2FA%20Authentication-FF6F00?style=for-the-badge"/>
+  <img src="https://img.shields.io/badge/Validations-0088CC?style=for-the-badge"/>
+  <img src="https://img.shields.io/badge/Axios-5A29E4?style=for-the-badge&logo=axios&logoColor=white"/>
+  <img src="https://img.shields.io/badge/Framer%20Motion-0055FF?style=for-the-badge&logo=framer&logoColor=white"/>
+  <img src="https://img.shields.io/badge/React%20Context%20API-61DAFB?style=for-the-badge&logo=react&logoColor=black"/>
+  <img src="https://img.shields.io/badge/Tailwind%20CSS-06B6D4?style=for-the-badge&logo=tailwind-css&logoColor=white"/>
+  <img src="https://img.shields.io/badge/Three.js-000000?style=for-the-badge&logo=three.js&logoColor=white"/>
+  <img src="https://img.shields.io/badge/Custom%203D%20Logo-lightgrey?style=for-the-badge"/>
+  <img src="https://img.shields.io/badge/Responsive%20UI%2FUX-blue?style=for-the-badge"/>
+  <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black"/>
+  <img src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white"/>
+  <img src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white"/>
+  <img src="https://img.shields.io/badge/Vercel-000000?style=for-the-badge&logo=vercel&logoColor=white"/>
+  <img src="https://img.shields.io/badge/Render-00D1FF?style=for-the-badge"/>
+  <br/>
+  <a href="./LICENSE"><img src="https://img.shields.io/github/license/OmkarArdekar12/CodeElevate?color=brightgreen&style=for-the-badge"/></a>
 </p>
-
-![License](https://img.shields.io/github/license/OmkarArdekar12/CodeElevate?color=brightgreen&style=for-the-badge)
 
 <h2>CodeElevate - Elevate Your Coding Journey.</h2>
 
