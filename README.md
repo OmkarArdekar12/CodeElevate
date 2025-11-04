@@ -142,7 +142,7 @@
 ![Passport-Local](https://img.shields.io/badge/Passport-Local-000000?style=for-the-badge)
 ![Cloudinary](https://img.shields.io/badge/Cloudinary-FF5A5F?style=for-the-badge&logo=cloudinary&logoColor=white)
 ![Multer](https://img.shields.io/badge/Multer-1D1D1D?style=for-the-badge)
-![Multer-Storage-Cloudinary](https://img.shields.io/badge/Multer-Storage-Cloudinary-grey?style=for-the-badge)
+![Multer-Storage-Cloudinary](https://img.shields.io/badge/Multer%20Storage-Cloudinary-grey?style=for-the-badge)
 ![Joi](https://img.shields.io/badge/Joi-0088CC?style=for-the-badge)
 ![CORS](https://img.shields.io/badge/CORS-4287f5?style=for-the-badge)
 ![Axios](https://img.shields.io/badge/Axios-5A29E4?style=for-the-badge&logo=axios&logoColor=white) <br/>
