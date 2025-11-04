@@ -1,14 +1,17 @@
 <h1>CodeElevate</h1>
 
 <h2>CodeElevate - Elevate Your Coding Journey.</h2>
+
 <h3>CodeElevate is a dynamic coder community built to empower competitive programmers, software developers, students, learners, and professionals. The platform provides an all-in-one ecosystem featuring integrated coding statistics, development statistics, a real-time messaging system, user connection system, post sharing and engagement, personalized profiles, a profile management system, a community-driven and category-based ranking system, a notification system, search and filter functionality, and a responsive UI design - fostering growth, collaboration, and innovation among coders worldwide.</h3>
 
 <h2><a href="https://codeelevate-community.vercel.app/">Live: https://codeelevate-community.vercel.app</a></h2>
 
 <h2>Description</h2>
+
 <h3> CodeElevate is a MERN Stack-based web-application that empowers users to showcase their coding and development profiles all in one place. It provides a unified platform where learners, competitive programmers, professionals, coders and developers can analyze, track, and elevate their progress in both competitive programming and software development. Users can compete, connect, and grow together by earning ranks across multiple categories, building meaningful connections, and engaging through posts, connections, and real-time messaging features. At CodeElevate, our goal is to inspire growth, celebrate achievement, and create a community where every coder can rise to their full potential.</h3>
 
 <h2>Features</h2>
+
 <table border="1">
   <thead>
     <tr>
@@ -93,6 +96,7 @@
 </table>
 
 <h2>Technologies Used</h2>
+
 <div>
   <table border="1">
     <thead>
@@ -153,6 +157,7 @@
 </div>
 
 <h2>System Architecture of CodeElevate</h2>
+
 <div width="90%" align="center">
   <img src="./backend/src/lib/docs/codeElevateArchitecture.png" alt="System  Architecture Diagram" width="100%" align="center" />
 </div>
@@ -162,4 +167,253 @@
   <img src="./backend/src/lib/docs/mongodbDatabaseStructure.png" alt="Database Structure Diagram" width="100%" align="center" />
 </div>
 
-<h2>Folders & Files Structure (in detail)</h2>
+<h2>Folders & Files Structure</h2>
+
+<h3>Overview of Folders & Files Structure</h3>
+
+```bash
+📂 CODEELEVATE
+├── 📁 backend
+│   ├── 📁 src
+│   ├── .env
+│   ├── .gitignore
+│   ├── package.json
+│   ├── package-lock.json
+│   └── 📁 node_modules
+├── 📁 frontend
+│   ├── 📁 src
+│   ├── .env
+│   ├── .gitignore
+│   ├── eslint.config.js
+│   ├── index.html
+│   ├── package-lock.json
+│   ├── package.json
+│   ├── vercel.json
+│   ├── vite.config.js
+│   └── 📁 node_modules
+├── .gitignore
+├── LICENSE
+└── README.md
+```
+
+<h3>Detail Folders & Files Structure</h3>
+
+```bash
+📂 CODEELEVATE
+├── 📁 backend
+│   ├── 📁 src
+│   │   ├── 📁 controllers
+│   │   │   ├── authController.js
+│   │   │   ├── profileController.js
+│   │   │   ├── rankingController.js
+│   │   │   ├── messageController.js
+│   │   │   ├── connectionController.js
+│   │   │   ├── postController.js
+│   │   │   ├── notificationController.js
+│   │   │   ├── competitiveProgrammingStatsController.js
+│   │   │   └── developmentProfilesStatsController.js
+│   │   ├── 📁 middlewares
+│   │   │   ├── auth.js
+│   │   │   ├── auth2FA.js
+│   │   │   ├── verifyAuth.js
+│   │   │   ├── userValidations.js
+│   │   │   ├── profileValidations.js
+│   │   │   ├── postValidations.js
+│   │   │   ├── messageValidations.js
+│   │   │   ├── notificationValidations.js
+│   │   │   └── errorHandlers.js
+│   │   ├── 📁 routes
+│   │   │   ├── authRoutes.js
+│   │   │   ├── profileRoutes.js
+│   │   │   ├── rankingRoutes.js
+│   │   │   ├── messageRoutes.js
+│   │   │   ├── postRoutes.js
+│   │   │   ├── connectionRoutes.js
+│   │   │   ├── notificationRoutes.js
+│   │   │   ├── competitiveProgrammingStatsRoutes.js
+│   │   │   └── developmentProfilesStatsRoutes.js
+│   │   ├── 📁 utils
+│   │   │   ├── ExpressError.js
+│   │   │   └── wrapAsync.js
+│   │   ├── 📁 validations
+│   │   │   ├── userValidations.js
+│   │   │   ├── profileValidations.js
+│   │   │   ├── postValidations.js
+│   │   │   ├── messageValidations.js
+│   │   │   └── notificationValidations.js
+│   │   ├── 📁 models
+│   │   │   ├── user.js
+│   │   │   ├── profile.js
+│   │   │   ├── rankingCache.js
+│   │   │   ├── post.js
+│   │   │   ├── message.js
+│   │   │   └── notification.js
+│   │   ├── 📁 schemas
+│   │   │   ├── userSchema.js
+│   │   │   ├── profileSchema.js
+│   │   │   ├── rankingCacheSchema.js
+│   │   │   ├── postSchema.js
+│   │   │   ├── messageSchema.js
+│   │   │   └── notificationSchema.js
+│   │   ├── 📁 lib
+│   │   │   ├── 📁 diagrams
+│   │   │   │   ├── codeElevateArchitecture.png
+│   │   │   │   └── mongodbDatabaseStructure.png
+│   │   │   └── 📁 docs
+│   │   │       ├── codeElevateArchitecture.png
+│   │   │       └── mongodbDatabaseStructure.png
+│   │   ├── 📁 config
+│   │   │   ├── cloudConfig.js
+│   │   │   ├── dbConnect.js
+│   │   │   └── passportConfig.js
+│   │   └── index.js
+│   ├── .env
+│   ├── .gitignore
+│   ├── package.json
+│   └── package-lock.json
+│
+├── 📁 frontend
+│   ├── 📁 public
+│   │   ├── 📁 about
+│   │   ├── 📁 icons
+│   │   ├── 📁 images
+│   │   ├── sitemap.xml
+│   │   ├── manifest.json
+│   │   └── robots.txt
+│   ├── 📁 src
+│   │   ├── 📁 service
+│   │   │   ├── api.js
+│   │   │   ├── socketService.js
+│   │   │   ├── authApi.js
+│   │   │   ├── profilesApi.js
+│   │   │   ├── rankingsApi.js
+│   │   │   ├── messagesApi.js
+│   │   │   ├── connectionApi.js
+│   │   │   ├── postsApi.js
+│   │   │   ├── competitiveProgrammingStatsApi.js
+│   │   │   ├── developmentProfilesStatsApi.js
+│   │   │   ├── notificationsApi.js
+│   │   │   └── 📁 utils
+│   │   │       └── getToken2FA.js
+│   │   ├── 📁 context
+│   │   │   └── SessionContext.jsx
+│   │   ├── 📁 assets
+│   │   │   ├── CodeElevateLogo.gif
+│   │   │   └── CodeElevateLogo.png
+│   │   ├── 📁 components
+│   │   │   ├── ProtectedRoute.jsx
+│   │   │   ├── PrivateRoute.jsx
+│   │   │   ├── Logo3D.jsx
+│   │   │   ├── Logo3DGold.jsx
+│   │   │   ├── Navbar.jsx
+│   │   │   ├── Footer.jsx
+│   │   │   ├── LoginForm.jsx
+│   │   │   ├── TwoFASetup.jsx
+│   │   │   ├── TwoFAVerification.jsx
+│   │   │   ├── LeetCodeCardStats.jsx
+│   │   │   ├── CodeforcesCardStats.jsx
+│   │   │   ├── GitHubCardStats.jsx
+│   │   │   ├── Loading.jsx
+│   │   │   ├── Loading2.jsx
+│   │   │   ├── PostCard.jsx
+│   │   │   ├── Comment.jsx
+│   │   │   ├── PostsList.jsx
+│   │   │   ├── NotFound.jsx
+│   │   │   └── Error.jsx
+│   │   ├── 📁 pages
+│   │   │   ├── HomePage.jsx
+│   │   │   ├── LoginPage.jsx
+│   │   │   ├── Setup2FA.jsx
+│   │   │   └── Verify2FA.jsx
+│   │   ├── 📁 home
+│   │   │   ├── Home.jsx
+│   │   │   ├── Hero.jsx
+│   │   │   ├── TopCard.jsx
+│   │   │   ├── Profile.jsx
+│   │   │   ├── ProfileSection.jsx
+│   │   │   ├── SearchSection.jsx
+│   │   │   ├── Search.jsx
+│   │   │   ├── FilterSection.jsx
+│   │   │   └── Filter.jsx
+│   │   ├── 📁 profiles
+│   │   │   ├── ProfilePage.jsx
+│   │   │   ├── EditProfilePage.jsx
+│   │   │   ├── UserProfileSection.jsx
+│   │   │   ├── ButtonSection.jsx
+│   │   │   ├── ProfileSettings.jsx
+│   │   │   ├── ConnectionPage.jsx
+│   │   │   ├── AboutSection.jsx
+│   │   │   ├── CompetitiveProgrammingSection.jsx
+│   │   │   ├── DevelopmentSection.jsx
+│   │   │   ├── CompetitiveProgrammingStatsSection.jsx
+│   │   │   ├── DevelopmentStatsSection.jsx
+│   │   │   ├── PostsSection.jsx
+│   │   │   ├── DomainRoleSection.jsx
+│   │   │   ├── TagsSection.jsx
+│   │   │   ├── EducationSection.jsx
+│   │   │   └── SocialsSection.jsx
+│   │   ├── 📁 messages
+│   │   │   ├── 📁 skeletons
+│   │   │   │   ├── ChatSkeleton.jsx
+│   │   │   │   └── SidebarSkeleton.jsx
+│   │   │   ├── MessagePage.jsx
+│   │   │   ├── Sidebar.jsx
+│   │   │   ├── ChatWindow.jsx
+│   │   │   ├── ChatHeader.jsx
+│   │   │   ├── MessageBubble.jsx
+│   │   │   ├── MessageInput.jsx
+│   │   │   └── NoChatSelected.jsx
+│   │   ├── 📁 posts
+│   │   │   ├── CreatePostPage.jsx
+│   │   │   ├── EditPostPage.jsx
+│   │   │   ├── PostPage.jsx
+│   │   │   ├── PostsList.jsx
+│   │   │   ├── PostCard.jsx
+│   │   │   └── Comment.jsx
+│   │   ├── 📁 rankings
+│   │   │   ├── RankingPage.jsx
+│   │   │   ├── SelectRank.jsx
+│   │   │   ├── Rank.jsx
+│   │   │   └── RankingList.jsx
+│   │   ├── 📁 notifications
+│   │   │   ├── NotificationPage.jsx
+│   │   │   ├── ConnectRequestNotification.jsx
+│   │   │   └── Notification.jsx
+│   │   ├── 📁 about
+│   │   │   ├── AboutPage.jsx
+│   │   │   ├── Hero.jsx
+│   │   │   ├── Features.jsx
+│   │   │   ├── AuthenticationFeature.jsx
+│   │   │   ├── ProfileSystem.jsx
+│   │   │   ├── ProfileOptions.jsx
+│   │   │   ├── RankingSystemFeature.jsx
+│   │   │   ├── StatsFeature.jsx
+│   │   │   ├── PostingFeature.jsx
+│   │   │   ├── RealTimeMessagingSystemFeature.jsx
+│   │   │   ├── ConnectionSystem.jsx
+│   │   │   ├── SearchAndFilterSearchFunctionalityFeature.jsx
+│   │   │   ├── NotificationFeature.jsx
+│   │   │   ├── UserCentricDesign.jsx
+│   │   │   ├── ResponsiveDesignFeature.jsx
+│   │   │   ├── ImageSection.jsx
+│   │   │   ├── ContentSection.jsx
+│   │   │   └── Creator.jsx
+│   │   ├── routes.jsx
+│   │   ├── main.jsx
+│   │   ├── socket.js
+│   │   ├── App.jsx
+│   │   ├── App.css
+│   │   └── index.css
+│   ├── .env
+│   ├── .gitignore
+│   ├── eslint.config.js
+│   ├── index.html
+│   ├── package-lock.json
+│   ├── package.json
+│   ├── vercel.json
+│   └── vite.config.js
+│
+├── .gitignore
+├── LICENSE
+└── README.md
+```
