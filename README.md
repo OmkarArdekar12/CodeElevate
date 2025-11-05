@@ -61,8 +61,8 @@
         <li><a href="#detail-folder-file-structure">Detail Folders and Files Structure</a></li>
       </ul>
       </li>
-      <li><a href="#installation">Installation</a></li>
       <li><a href="#environment-variables">Environment Variables Configuration</a></li>
+      <li><a href="#installation">Installation</a></li>
       <li><a href="#diagrams">Diagrams</a></li>
       <li><a href="#preview">Preview</a></li>
       <li><a href="#license">License</a></li>
@@ -595,31 +595,280 @@
 </div>
 
 <div>
-  <h2 id="installation">Installation</h2>
-  <div></div>
+  <h2 id="environment-variables">Environment Variables Configuration</h2>
+  <div>
+
+To run **CodeElevate** successfully, you must configure the required environment variables for both **backend** and **frontend** parts of the project.
+
+### 1. Backend Configuration
+
+Create a `.env` file inside the **backend** directory:
+
+```bash
+cd backend
+touch .env
+```
+
+`.env`
+
+```bash
+NODE_ENV=development  # or 'production' during deployment
+PORT=8080
+MONGODB_URL=your_mongodb_connection_string
+SESSION_SECRET=your_session_secret_key
+JWT_SECRET=your_jwt_secret_key
+CLOUD_NAME=your_cloudinary_cloud_name
+CLOUD_API_KEY=your_cloudinary_api_key
+CLOUD_API_SECRET=your_cloudinary_api_secret
+BACKEND_URL=http://localhost:8080
+FRONTEND_URL=http://localhost:5173
+```
+
+### 2. Frontend Configuration
+
+Create a `.env` file inside the **frontend** directory:
+
+```bash
+cd frontend
+touch .env
+```
+
+`.env`
+
+```bash
+VITE_BACKEND_UR=http://localhost:8080
+```
+
+  </div>
 </div>
 
 <div>
-  <h2 id="environment-variables">Environment Variables Configuration</h2>
-  <div></div>
+  <h2 id="installation">Installation</h2>
+  <div>
+
+### 1. Clone the Repository
+
+```bash
+git clone https://github.com/OmkarArdekar12/CodeElevate.git
+cd CodeElevate
+```
+
+### 2. Backend Installation
+
+#### 2.1. Backend Setup
+
+```bash
+cd backend
+npm install
+```
+
+#### 2.2. Run the Backend Server
+
+```bash
+npm start
+```
+
+<p align="center">or</p>
+
+```bash
+node src/index.js
+```
+
+### 3. Frontend Installation
+
+#### 3.1. Frontend Setup
+
+```bash
+cd frontend
+npm install
+```
+
+#### 3.2. Run the Frontend Server
+
+```bash
+npm start
+```
+
+<p align="center">or</p>
+
+```bash
+npm run dev
+```
+
+  </div>
 </div>
 
 <div>
   <h2 id="diagrams">Diagrams</h2>
-  <div></div>
+  <div width="100%">
+    <table width="95%" align="center" border="0">
+      <tr>
+        <td width="45%">
+          <h3 align="center">Two Factor Authentication</h3>
+          <img src="./backend/src/lib/diagrams/authenticationDiagram.png" width="100%">
+        </td>
+        <td width="45%">
+          <h3 align="center">Two Factor Authorization</h3>
+          <img src="./backend/src/lib/diagrams/authorizationDiagram.png" width="100%">
+        </td>
+      </tr>
+      <tr>
+        <td width="45%">
+          <h3 align="center">Profile Management System</h3>
+          <img src="./backend/src/lib/diagrams/profileSystemDiagram.png" width="100%">
+        </td>
+        <td width="45%">
+          <h3 align="center">Ranking System</h3>
+          <img src="./backend/src/lib/diagrams/rankingSystemDiagram.png" width="100%">
+        </td>
+      </tr>
+      <tr>
+        <td width="45%">
+          <h3 align="center">Real-time Messaging System</h3>
+          <img src="./backend/src/lib/diagrams/messagingSystemDiagram.png" width="100%">
+        </td>
+        <td width="45%">
+          <h3 align="center">Post Management and Engagement System</h3>
+          <img src="./backend/src/lib/diagrams/postSystemDiagram.png" width="100%">
+        </td>
+      </tr>
+      <tr>
+        <td width="45%">
+          <h3 align="center">Connection System</h3>
+          <img src="./backend/src/lib/diagrams/connectionSystemDiagram.png" width="100%">
+        </td>
+        <td width="45%">
+          <h3 align="center">Notification System</h3>
+          <img src="./backend/src/lib/diagrams/notificationSystemDiagram.png" width="100%">
+        </td>
+      </tr>
+      <tr>
+        <td width="45%">
+          <h3 align="center">Competitive Programming Stats System</h3>
+          <img src="./backend/src/lib/diagrams/cpStatsSystemDiagram.png" width="100%">
+        </td>
+        <td width="45%">
+          <h3 align="center">Development Stats System</h3>
+          <img src="./backend/src/lib/diagrams/devsStatsSystemDiagram.png" width="100%">
+        </td>
+      </tr>
+    </table>
+  </div>
 </div>
 
 <div>
   <h2 id="preview">Preview</h2>
-  <div></div>
+  <div width="100%" align="center">
+    <table width="95%" align="center" border="0">
+      <tr>
+        <td width="45%">
+          <h3 align="center">Two Factor Authentication using TOTP</h3>
+          <img src="./frontend/public/about/authentication.png" width="100%">
+        </td>
+        <td width="45%">
+          <h3 align="center">User Centric UI Design & Multi-functionality</h3>
+          <img src="./frontend/public/about/accessibility.png" width="100%">
+        </td>
+      </tr>
+      <tr>
+        <td width="45%">
+          <h3 align="center">Search and Filter Search Functionality</h3>
+          <img src="./frontend/public/about/searchFunctionality.png" width="100%">
+        </td>
+        <td width="45%">
+          <h3 align="center">User Profile Stats</h3>
+          <img src="./frontend/public/about/profileStatsPreview.png" width="100%">
+        </td>
+      </tr>
+      <tr>
+        <td width="45%">
+          <h3 align="center">User Profile</h3>
+          <img src="./frontend/public/about/profilePreview.png" width="100%">
+        </td>
+        <td width="45%">
+          <h3 align="center">User Profile Options</h3>
+          <img src="./frontend/public/about/profileOptions.png" width="100%">
+        </td>
+      </tr>
+      <tr>
+        <td width="45%">
+          <h3 align="center">Post Feature</h3>
+          <img src="./frontend/public/about/postFeature.png" width="100%">
+        </td>
+        <td width="45%">
+          <h3 align="center">Post Options</h3>
+          <img src="./frontend/public/about/postOptions.png" width="100%">
+        </td>
+      </tr>
+      <tr>
+        <td width="45%">
+          <h3 align="center">Connection System and Connection Process</h3>
+          <img src="./frontend/public/about/connectionProcess.png" width="100%">
+        </td>
+        <td width="45%">
+          <h3 align="center">Messaging System</h3>
+          <img src="./frontend/public/about/messagingSystem.png" width="100%">
+        </td>
+      </tr>
+      <tr>
+        <td width="45%">
+          <h3 align="center">Messaging Process</h3>
+          <img src="./frontend/public/about/messagingProcess.png" width="100%">
+        </td>
+        <td width="45%">
+          <h3 align="center">Messaging System Responsiveness</h3>
+          <img src="./frontend/public/about/messagingSystemResponsiveness.png" width="100%">
+        </td>
+      </tr>
+      <tr>
+        <td width="45%">
+          <h3 align="center">Ranking Categories</h3>
+          <img src="./frontend/public/about/rankingFilters.png" width="100%">
+        </td>
+        <td width="45%">
+          <h3 align="center">Ranking System</h3>
+          <img src="./frontend/public/about/rankingSystem.png" width="100%">
+        </td>
+      </tr>
+      <tr>
+        <td width="45%">
+          <h3 align="center">Notification System</h3>
+          <img src="./frontend/public/about/notificationSystem.png" width="100%">
+        </td>
+        <td width="45%">
+          <h3 align="center">Stats Feature</h3>
+          <img src="./frontend/public/about/statsSystem.png" width="100%">
+        </td>
+      </tr>
+      <tr align="center">
+        <td width="90%" colspan="2" align="center">
+          <h3 align="center">Responsive UI Design</h3>
+          <img src="./frontend/public/about/responsiveness.png" width="100%">
+        </td>
+      </tr>
+    </table>
+  </div>
 </div>
 
 <div>
   <h2 id="license">License</h2>
-  <div></div>
+  <div>
+
+### This project is licensed under the terms of the **_MIT License_**.
+
+### See the [LICENSE](./LICENSE) file for more information.
+
+  </div>
 </div>
 
 <div>
   <h2 id="author">Author</h2>
-  <div></div>
+  <div>
+  
+### Omkar Ardekar 💻
+
+[![GitHub](https://img.shields.io/badge/GitHub-000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/OmkarArdekar12)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=circuitverse&logoColor=white)](https://www.linkedin.com/in/omkarardekar09)
+
+  </div>
 </div>
