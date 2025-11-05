@@ -46,6 +46,15 @@
   </h2>
 </div>
 
+<div>
+  <h2>
+    <a href="https://youtu.be/4-Udx0xvsO0?si=yM7TH8HG2ut4Edfx" target="_blank" rel="noopener noreferrer">
+      <p><img src="./frontend/public/images/LogoCodeElevate.png" width="23px"/> CodeElevate Demo / Preview Video</p>
+      <p>🎥 Watch the full demo on YouTube</p>
+    </a>
+  </h2>
+</div>
+
 ---
 
 <div>
