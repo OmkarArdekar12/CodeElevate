@@ -1,6 +1,6 @@
 <h1><img src="./frontend/public/images/LogoCodeElevate.png" width="39px"/> CodeElevate</h1>
 
-<p>
+<div>
   <img src="https://img.shields.io/badge/MERN%20Stack-3C873A?style=for-the-badge&logo=mern&logoColor=white"/>
   <img src="https://img.shields.io/badge/MongoDB-47A248?style=for-the-badge&logo=mongodb&logoColor=white"/>
   <img src="https://img.shields.io/badge/Express.js-000000?style=for-the-badge&logo=express&logoColor=white"/>
@@ -30,135 +30,141 @@
   <img src="https://img.shields.io/badge/Render-00D1FF?style=for-the-badge"/>
   <br/>
   <a href="./LICENSE"><img src="https://img.shields.io/github/license/OmkarArdekar12/CodeElevate?color=brightgreen&style=for-the-badge"/></a>
-</p>
+</div>
 
-<h2>CodeElevate - Elevate Your Coding Journey.</h2>
+<div>
+  <h2>CodeElevate - Elevate Your Coding Journey.</h2>
+  <h3>CodeElevate is a dynamic coder community built to empower competitive programmers, software developers, students, learners, and professionals. The platform provides an all-in-one ecosystem featuring integrated coding statistics, development statistics, a real-time messaging system, user connection system, post sharing and engagement, personalized profiles, a profile management system, a community-driven and category-based ranking system, a notification system, search and filter functionality, and a responsive UI design - fostering growth, collaboration, and innovation among coders worldwide.</h3>
+</div>
 
-<h3>CodeElevate is a dynamic coder community built to empower competitive programmers, software developers, students, learners, and professionals. The platform provides an all-in-one ecosystem featuring integrated coding statistics, development statistics, a real-time messaging system, user connection system, post sharing and engagement, personalized profiles, a profile management system, a community-driven and category-based ranking system, a notification system, search and filter functionality, and a responsive UI design - fostering growth, collaboration, and innovation among coders worldwide.</h3>
+<div>
+  <h2>
+    <a href="https://codeelevate-community.vercel.app/" target="_blank" rel="noopener noreferrer">
+      <p>CodeElevate <img src="./frontend/public/images/LogoCodeElevate.png" width="30px"/></p>
+      <p>🌐 Live URL: https://codeelevate-community.vercel.app</p>
+    </a>
+  </h2>
+</div>
 
-<h2>
-  <a href="https://codeelevate-community.vercel.app/">
-    <p>CodeElevate <img src="./frontend/public/images/LogoCodeElevate.png" width="30px"/></p>
-    <p>🌐 Live URL: https://codeelevate-community.vercel.app</p>
-  </a>
-</h2>
+<div>
+  <h2>Table of Contents</h2>
+  <h3>
+    <ol>
+      <li><a href="#overview">Overview</a></li>
+      <li><a href="#features">Features</a></li>
+      <li><a href="#technologies-used">Tech Stack / Technologies Used</a></li>
+      <li><a href="#system-architecture">System Architecture of CodeElevate</a></li>
+      <li><a href="#database-design">CodeElevate Database Design</a></li>
+      <li><a href="#folder-file-structure">Folders and Files Structure</a>
+      <ul type="disc">
+        <li><a href="#overview-folder-file-structure">Overview Folders and Files Structure</a></li>
+        <li><a href="#detail-folder-file-structure">Detail Folders and Files Structure</a></li>
+      </ul>
+      </li>
+      <li><a href="#installation">Installation</a></li>
+      <li><a href="#environment-variables">Environment Variables Configuration</a></li>
+      <li><a href="#diagrams">Diagrams</a></li>
+      <li><a href="#preview">Preview</a></li>
+      <li><a href="#license">License</a></li>
+      <li><a href="#author">Author</a></li>
+    </ol>
+  </h3>
+</div>
 
-<h2>Table of Contents</h2>
+<div>
+  <h2 id="overview">Overview</h2>
+  <h3>CodeElevate is a MERN Stack-based web-application that empowers users to showcase their coding and development profiles all in one place. It provides a unified platform where learners, competitive programmers, professionals, coders and developers can analyze, track, and elevate their progress in both competitive programming and software development. Users can compete, connect, and grow together by earning ranks across multiple categories, building meaningful connections, and engaging through posts, connections, and real-time messaging features. At CodeElevate, our goal is to inspire growth, celebrate achievement, and create a community where every coder can rise to their full potential.</h3>
+</div>
 
-<h3>
-  <ol>
-    <li><a href="#overview">Overview</a></li>
-    <li><a href="#features">Features</a></li>
-    <li><a href="#technologies-used">Tech Stack / Technologies Used</a></li>
-    <li><a href="#system-architecture">System Architecture of CodeElevate</a></li>
-    <li><a href="#database-design">CodeElevate Database Design</a></li>
-    <li><a href="#folder-file-structure">Folders and Files Structure</a>
-     <ul type="disc">
-      <li><a href="#overview-folder-file-structure">Overview Folders and Files Structure</a></li>
-      <li><a href="#detail-folder-file-structure">Detail Folders and Files Structure</a></li>
-     </ul>
-    </li>
-    <li><a href="#installation">Installation</a></li>
-    <li><a href="#environment-variables">Environment Variables Configuration</a></li>
-    <li><a href="#preview-diagram">Diagrams</a></li>
-    <li><a href="#preview-diagram">Preview</a></li>
-    <li><a href="#license">License</a></li>
-    <li><a href="#author">Author</a></li>
-  </ol>
-</h3>
+<div>
+  <h2 id="features">Features</h2>
+  <table border="1">
+    <thead>
+      <tr>
+        <th>S.No.</th>
+        <th>Feature</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>1.</td>
+        <td><b>User Authentication & Authorization - Two-Factor Authentication (2FA) using TOTP (Time Time-based One-Time Password)</b></td>
+        <td>Robust and Secure authentication using Passport, Passport-Local-Strategy, Sessions, JWT, and Two-Factor Authentication (2FA) via TOTP and QR code for enhanced account protection.</td>
+      </tr>
+      <tr>
+        <td>2.</td>
+        <td><b>User Profile System & User Profile Management System</b></td>
+        <td>Comprehensive profiles with editable details, skills, education, social links, user details, coding and development profiles, customizable profile images and banners and show stats feature to control the visibility of CP and Development statistics.</td>
+      </tr>
+      <tr>
+        <td>3.</td>
+        <td><b>Competitive Programming and Development Profiles Stats</b></td>
+        <td>Users can add their Competitive Programming or Coding profiles (LeetCode, Codeforces, AtCoder, CodeChef, GeeksforGeeks, HackerRank) and development profiles (GitHub, GitLab). After enabling the Stats feature, real-time data from LeetCode, Codeforces, and GitHub APIs are displayed.</td>
+      </tr>
+      <tr>
+        <td>4.</td>
+        <td><b>Search & Filter Search Functionality</b></td>
+        <td>Smart, responsive search by names, roles, domains, or tags, with advanced filters for Trending, CP, Devs, Experience, and Professionals.</td>
+      </tr>
+      <tr>
+        <td>5.</td>
+        <td><b>Real-Time Messaging</b></td>
+        <td>Instant one-on-one text and image chat built using Socket.IO and Socket.IO Client, featuring real-time communication, online user detection, responsive UI and smooth UI animations.</td>
+      </tr>
+      <tr>
+        <td>6.</td>
+        <td><b>Connection System</b></td>
+        <td>Follow, unfollow, connect, disconnect, and message users seamlessly with real-time messaging system, connection status tracking and notifications.</td>
+      </tr>
+      <tr>
+        <td>7.</td>
+        <td><b>Ranking System</b></td>
+        <td>Dynamic leaderboards across five categories — Competitive Programmers, Developers, Rankers, Contributors, and All-Rounders — using live API data. Rankings automatically updated every 24 hours.</td>
+      </tr>
+      <tr>
+        <td>8.</td>
+        <td><b>Post Feature</b></td>
+        <td>Create, edit, and delete posts with image uploads to share updates and achievements. Add or delete comments, and like or unlike posts seamlessly.</td>
+      </tr>
+      <tr>
+        <td>9.</td>
+        <td><b>Notification System</b></td>
+        <td>Notifications for follows, unfollows, likes, and connection requests (including accept or reject responses), with robust management and auto-expiry.</td>
+      </tr>
+      <tr>
+        <td>10.</td>
+        <td><b>API (Application Programming Interface) Routes</b></td>
+        <td>Modular, secure REST API with layered authentication, authorization, Two-Factor Authentication (2FA), and validation middleware for scalability and maintainability.</td>
+      </tr>
+      <tr>
+        <td>11.</td>
+        <td><b>Architecture & Security</b></td>
+        <td>Developed using the MERN Stack, Socket.IO, MVC Design Pattern, RESTful APIs and Cloudinary for cloud storage management, with Two-Factor Authentication, Authorization, and Validation layers implemented for Robust Performance and Security.</td>
+      </tr>
+      <tr>
+        <td>12.</td>
+        <td><b>3D Interactive Logo</b></td>
+        <td>An immersive 3D CodeElevate logo showcased on the About page with multiple camera angles and styling variations, built with dynamic animations for a captivating visual experience.</td>
+      </tr>
+      <tr>
+        <td>13.</td>
+        <td><b>Animations & Transitions</b></td>
+        <td>Smooth, visually appealing animations and transitions across pages and components using Framer Motion, enhancing interactivity and user engagement throughout the platform.
+        </td>
+      </tr>
+      <tr>
+        <td>14.</td>
+        <td><b>Responsive UI/UX (User Interface and User Experience)</b></td>
+        <td>Modern, mobile-first, fully responsive interface built with React, Tailwind CSS, and Framer Motion, featuring smooth animations and visually rich, accessible experiences across all screen sizes.</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
 
-<h2 id="overview">Overview</h2>
-
-<h3>CodeElevate is a MERN Stack-based web-application that empowers users to showcase their coding and development profiles all in one place. It provides a unified platform where learners, competitive programmers, professionals, coders and developers can analyze, track, and elevate their progress in both competitive programming and software development. Users can compete, connect, and grow together by earning ranks across multiple categories, building meaningful connections, and engaging through posts, connections, and real-time messaging features. At CodeElevate, our goal is to inspire growth, celebrate achievement, and create a community where every coder can rise to their full potential.</h3>
-
-<h2 id="features">Features</h2>
-
-<table border="1">
-  <thead>
-    <tr>
-      <th>S.No.</th>
-      <th>Feature</th>
-      <th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>1.</td>
-      <td><b>User Authentication & Authorization - Two-Factor Authentication (2FA) using TOTP (Time Time-based One-Time Password)</b></td>
-      <td>Robust and Secure authentication using Passport, Passport-Local-Strategy, Sessions, JWT, and Two-Factor Authentication (2FA) via TOTP and QR code for enhanced account protection.</td>
-    </tr>
-    <tr>
-      <td>2.</td>
-      <td><b>User Profile System & User Profile Management System</b></td>
-      <td>Comprehensive profiles with editable details, skills, education, social links, user details, coding and development profiles, customizable profile images and banners and show stats feature to control the visibility of CP and Development statistics.</td>
-    </tr>
-    <tr>
-      <td>3.</td>
-      <td><b>Competitive Programming and Development Profiles Stats</b></td>
-      <td>Users can add their Competitive Programming or Coding profiles (LeetCode, Codeforces, AtCoder, CodeChef, GeeksforGeeks, HackerRank) and development profiles (GitHub, GitLab). After enabling the Stats feature, real-time data from LeetCode, Codeforces, and GitHub APIs are displayed.</td>
-    </tr>
-    <tr>
-      <td>4.</td>
-      <td><b>Search & Filter Search Functionality</b></td>
-      <td>Smart, responsive search by names, roles, domains, or tags, with advanced filters for Trending, CP, Devs, Experience, and Professionals.</td>
-    </tr>
-    <tr>
-      <td>5.</td>
-      <td><b>Real-Time Messaging</b></td>
-      <td>Instant one-on-one text and image chat built using Socket.IO and Socket.IO Client, featuring real-time communication, online user detection, responsive UI and smooth UI animations.</td>
-    </tr>
-    <tr>
-      <td>6.</td>
-      <td><b>Connection System</b></td>
-      <td>Follow, unfollow, connect, disconnect, and message users seamlessly with real-time messaging system, connection status tracking and notifications.</td>
-    </tr>
-    <tr>
-      <td>7.</td>
-      <td><b>Ranking System</b></td>
-      <td>Dynamic leaderboards across five categories — Competitive Programmers, Developers, Rankers, Contributors, and All-Rounders — using live API data. Rankings automatically updated every 24 hours.</td>
-    </tr>
-    <tr>
-      <td>8.</td>
-      <td><b>Post Feature</b></td>
-      <td>Create, edit, and delete posts with image uploads to share updates and achievements. Add or delete comments, and like or unlike posts seamlessly.</td>
-    </tr>
-    <tr>
-      <td>9.</td>
-      <td><b>Notification System</b></td>
-      <td>Notifications for follows, unfollows, likes, and connection requests (including accept or reject responses), with robust management and auto-expiry.</td>
-    </tr>
-    <tr>
-      <td>10.</td>
-      <td><b>API (Application Programming Interface) Routes</b></td>
-      <td>Modular, secure REST API with layered authentication, authorization, Two-Factor Authentication (2FA), and validation middleware for scalability and maintainability.</td>
-    </tr>
-    <tr>
-      <td>11.</td>
-      <td><b>Architecture & Security</b></td>
-      <td>Developed using the MERN Stack, Socket.IO, MVC Design Pattern, RESTful APIs and Cloudinary for cloud storage management, with Two-Factor Authentication, Authorization, and Validation layers implemented for Robust Performance and Security.</td>
-    </tr>
-    <tr>
-      <td>12.</td>
-      <td><b>3D Interactive Logo</b></td>
-      <td>An immersive 3D CodeElevate logo showcased on the About page with multiple camera angles and styling variations, built with dynamic animations for a captivating visual experience.</td>
-    </tr>
-    <tr>
-      <td>13.</td>
-      <td><b>Animations & Transitions</b></td>
-      <td>Smooth, visually appealing animations and transitions across pages and components using Framer Motion, enhancing interactivity and user engagement throughout the platform.
-      </td>
-    </tr>
-    <tr>
-      <td>14.</td>
-      <td><b>Responsive UI/UX (User Interface and User Experience)</b></td>
-      <td>Modern, mobile-first, fully responsive interface built with React, Tailwind CSS, and Framer Motion, featuring smooth animations and visually rich, accessible experiences across all screen sizes.</td>
-    </tr>
-  </tbody>
-</table>
-
-<h2 id="technologies-used">Technologies Used</h2>
-
-<p>
+<div>
+  <h2 id="technologies-used">Technologies Used</h2>
+  <p>
 
 ![Node.js](https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white)
 ![Express.js](https://img.shields.io/badge/Express.js-000000?style=for-the-badge&logo=express&logoColor=white)
@@ -205,7 +211,7 @@
 ![Passport-Local Strategy](https://img.shields.io/badge/Passport-Local%20Strategy-000000?style=for-the-badge)
 ![Connect-Mongo](https://img.shields.io/badge/Connect-Mongo-0F5132?style=for-the-badge)
 ![JWT](https://img.shields.io/badge/JWT-32329F?style=for-the-badge&logo=jsonwebtokens&=white)  
-![bcrypt.js](https://img.shields.io/badge/bcrypt.js-463A3A?style=for-the-badge)
+ ![bcrypt.js](https://img.shields.io/badge/bcrypt.js-463A3A?style=for-the-badge)
 ![Express-Session](https://img.shields.io/badge/Express%20Session-DB0A47?style=for-the-badge)
 ![Cookie-Parser](https://img.shields.io/badge/Cookie-Parser-007ACC?style=for-the-badge)
 ![Body-Parser](https://img.shields.io/badge/Body-Parser-3B∆?style=for-the-badge)
@@ -259,81 +265,85 @@
 ![MongoDB Atlas](https://img.shields.io/badge/MongoDB%20Atlas-47A248?style=for-the-badge&logo=mongodb&logoColor=white)
 ![Cloudinary](https://img.shields.io/badge/Cloudinay-FF5A5F?style=for-the-badge&logo=cloudinary&logoColor=white)
 
-</p>
+  </p>
+
+  <div>
+    <table border="1">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Category</th>
+          <th>Technologies / Tools</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>&#10148;</td>
+          <td>Frontend</td>
+          <td>React.js, Vite, Tailwind CSS, Socket.io Client, Framer Motion, Optimistic UI Updates (State-based Incremental Rendering), Axios, React Router DOM, React Context API (Global Session State Management), Three.js, React Hot Toast, React Slick, Slick Carousel, Custom 3D Logo Components, Responsive UI/UX, JavaScript, CSS3, HTML5, Lucide React, React Icons, FontAwesome, Google Fonts</td>
+        </tr>
+        <tr>
+          <td>&#10148;</td>
+          <td>Backend</td>
+          <td>Node.js, Express.js, MongoDB, Mongoose, Socket.io (Real-time Communication), RESTful APIs (Representational State Transfer Application Programming Interface), MVC (Model–View–Controller) Architecture / Design Pattern / Framework, RESTful web-service, Passport.js, Passport-Local, Cloudinary, Multer, Multer-Storage-Cloudinary, Joi, CORS (Cross-Origin Resource Sharing), Axios</td>
+        </tr>
+        <tr>
+          <td>&#10148;</td>
+          <td>Database</td>
+          <td>MongoDB (MongoDB Atlas), Mongoose (Object Document Mapper (ODM) for MongoDB), Cloudinary (Cloud Storage for Media Files)</td>
+        </tr>
+        <tr>
+          <td>&#10148;</td>
+          <td>Authentication & Security</td>
+          <td>Passport.js, Passport-Local-Strategy, Connect-Mongo (for Session Store), JWT (JSON Web Token), bcrypt.js, Express-Session, Cookie-Parser, Body-Parser, Speakeasy (Two-Factor Authentication (2FA)), QRCode (2FA), Joi Validations</td>
+        </tr>
+        <tr>
+          <td>&#10148;</td>
+          <td>Architecture & Design</td>
+          <td>MERN Stack Architecture (MongoDB, Express, React, Node), MVC Design Pattern, RESTful API Structure, SessionContext for Global State Management, Real-time Communication using Socket.io, Robust, Modular and Scalable Codebase, Environment Configuration using dotenv, Optimized Folder Structure, Responsive and Component-Based Frontend Design, Client-side State Management with Incremental Update</td>
+        </tr>
+        <tr>
+          <td>&#10148;</td>
+          <td>APIs Integrated</td>
+          <td>Custom REST APIs (CodeElevate): Authentication, Profiles, Messages, Posts, Rankings, Connections, Notifications, Competitive Programming Stats, Development Stats.<br><hr>External APIs: LeetCode GraphQL API, Codeforces REST API, GitHub REST API (for Displaying Competitive Programming Profiles / Coding Profiles Statistics and Development Profiles Statistics)</td>
+        </tr>
+        <tr>
+          <td>&#10148;</td>
+          <td>SEO (Search Engine Optimization) & Website Optimization</td>
+          <td>Google Search Console (for Indexing & Performance Tracking), SEO-friendly Meta Tags (Title, Description, Keywords, Canonical URL, Author, Language), Open Graph (OG) Tags (for Facebook and Linkedin sharing), Twitter Card Meta Tags, Schema.org JSON-LD Structured Data (Organization & Author Info), Robots.txt (for Crawler Directives), Sitemap.xml (for Site Indexing), Manifest.json (for Web App Metadata & Theme Color), Mobile Viewport Meta Tag, Apple Touch Configuration (PWA (Progressive Web Application) readiness), Theme Color for Browser UI, Fast build using Vite, TailwindCSS for Lightweight CSS, Responsive Design for all Devices, Preconnect & Prefetch tags, Optimistic UI Updates, HTTPS-secured URLs (via Vercel & Render)</td>
+        </tr>
+        <tr>
+          <td>&#10148;</td>
+          <td>Development Tools & Libraries</td>
+          <td>Nodemon, Vite Build, dotenv, Postman, Hoppscotch, Thunder Client, VS Code, Git, GitHub, Google Search Console, Canva (for UI Assets)</td>
+        </tr>
+        <tr>
+          <td>&#10148;</td>
+          <td>Deployment & Hosting</td>
+          <td>Vercel (Frontend Hosting), Render (Backend Hosting), MongoDB Atlas (Database Hosting), Cloudinary (Cloud Storage)</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
 
 <div>
-  <table border="1">
-    <thead>
-      <tr>
-        <th>#</th>
-        <th>Category</th>
-        <th>Technologies / Tools</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>&#10148;</td>
-        <td>Frontend</td>
-        <td>React.js, Vite, Tailwind CSS, Socket.io Client, Framer Motion, Optimistic UI Updates (State-based Incremental Rendering), Axios, React Router DOM, React Context API (Global Session State Management), Three.js, React Hot Toast, React Slick, Slick Carousel, Custom 3D Logo Components, Responsive UI/UX, JavaScript, CSS3, HTML5, Lucide React, React Icons, FontAwesome, Google Fonts</td>
-      </tr>
-      <tr>
-        <td>&#10148;</td>
-        <td>Backend</td>
-        <td>Node.js, Express.js, MongoDB, Mongoose, Socket.io (Real-time Communication), RESTful APIs (Representational State Transfer Application Programming Interface), MVC (Model–View–Controller) Architecture / Design Pattern / Framework, RESTful web-service, Passport.js, Passport-Local, Cloudinary, Multer, Multer-Storage-Cloudinary, Joi, CORS (Cross-Origin Resource Sharing), Axios</td>
-      </tr>
-      <tr>
-        <td>&#10148;</td>
-        <td>Database</td>
-        <td>MongoDB (MongoDB Atlas), Mongoose (Object Document Mapper (ODM) for MongoDB), Cloudinary (Cloud Storage for Media Files)</td>
-      </tr>
-      <tr>
-        <td>&#10148;</td>
-        <td>Authentication & Security</td>
-        <td>Passport.js, Passport-Local-Strategy, Connect-Mongo (for Session Store), JWT (JSON Web Token), bcrypt.js, Express-Session, Cookie-Parser, Body-Parser, Speakeasy (Two-Factor Authentication (2FA)), QRCode (2FA), Joi Validations</td>
-      </tr>
-      <tr>
-        <td>&#10148;</td>
-        <td>Architecture & Design</td>
-        <td>MERN Stack Architecture (MongoDB, Express, React, Node), MVC Design Pattern, RESTful API Structure, SessionContext for Global State Management, Real-time Communication using Socket.io, Robust, Modular and Scalable Codebase, Environment Configuration using dotenv, Optimized Folder Structure, Responsive and Component-Based Frontend Design, Client-side State Management with Incremental Update</td>
-      </tr>
-      <tr>
-        <td>&#10148;</td>
-        <td>APIs Integrated</td>
-        <td>Custom REST APIs (CodeElevate): Authentication, Profiles, Messages, Posts, Rankings, Connections, Notifications, Competitive Programming Stats, Development Stats.<br><hr>External APIs: LeetCode GraphQL API, Codeforces REST API, GitHub REST API (for Displaying Competitive Programming Profiles / Coding Profiles Statistics and Development Profiles Statistics)</td>
-      </tr>
-      <tr>
-        <td>&#10148;</td>
-        <td>SEO (Search Engine Optimization) & Website Optimization</td>
-        <td>Google Search Console (for Indexing & Performance Tracking), SEO-friendly Meta Tags (Title, Description, Keywords, Canonical URL, Author, Language), Open Graph (OG) Tags (for Facebook and Linkedin sharing), Twitter Card Meta Tags, Schema.org JSON-LD Structured Data (Organization & Author Info), Robots.txt (for Crawler Directives), Sitemap.xml (for Site Indexing), Manifest.json (for Web App Metadata & Theme Color), Mobile Viewport Meta Tag, Apple Touch Configuration (PWA (Progressive Web Application) readiness), Theme Color for Browser UI, Fast build using Vite, TailwindCSS for Lightweight CSS, Responsive Design for all Devices, Preconnect & Prefetch tags, Optimistic UI Updates, HTTPS-secured URLs (via Vercel & Render)</td>
-      </tr>
-      <tr>
-        <td>&#10148;</td>
-        <td>Development Tools & Libraries</td>
-        <td>Nodemon, Vite Build, dotenv, Postman, Hoppscotch, Thunder Client, VS Code, Git, GitHub, Google Search Console, Canva (for UI Assets)</td>
-      </tr>
-      <tr>
-        <td>&#10148;</td>
-        <td>Deployment & Hosting</td>
-        <td>Vercel (Frontend Hosting), Render (Backend Hosting), MongoDB Atlas (Database Hosting), Cloudinary (Cloud Storage)</td>
-      </tr>
-    </tbody>
-  </table>
+  <h2 id="system-architecture">System Architecture of CodeElevate</h2>
+  <div width="90%" align="center">
+    <img src="./backend/src/lib/docs/codeElevateArchitecture.png" alt="System  Architecture Diagram" width="100%" align="center" />
+  </div>
 </div>
 
-<h2 id="system-architecture">System Architecture of CodeElevate</h2>
-
-<div width="90%" align="center">
-  <img src="./backend/src/lib/docs/codeElevateArchitecture.png" alt="System  Architecture Diagram" width="100%" align="center" />
+<div>
+  <h2 id="database-design">CodeElevate Database Design</h2>
+  <div width="90%" align="center">
+    <img src="./backend/src/lib/docs/mongodbDatabaseStructure.png" alt="Database Structure Diagram" width="100%" align="center" />
+  </div>
 </div>
 
-<h2 id="database-design">CodeElevate Database Design</h2>
-<div width="90%" align="center">
-  <img src="./backend/src/lib/docs/mongodbDatabaseStructure.png" alt="Database Structure Diagram" width="100%" align="center" />
-</div>
-
-<h2 id="folder-file-structure">Folders & Files Structure</h2>
-
-<h3 id="overview-folder-file-structure">Overview of Folders & Files Structure</h3>
+<div>
+  <h2 id="folder-file-structure">Folders & Files Structure</h2>
+  <h3 id="overview-folder-file-structure">Overview of Folders & Files Structure</h3>
 
 ```bash
 📂 CODEELEVATE
@@ -360,7 +370,7 @@
 └── README.md
 ```
 
-<h3 id="detail-folder-file-structure">Detail Folders & Files Structure</h3>
+  <h3 id="detail-folder-file-structure">Detail Folders & Files Structure</h3>
 
 ```bash
 📂 CODEELEVATE
@@ -581,3 +591,35 @@
 ├── LICENSE
 └── README.md
 ```
+
+</div>
+
+<div>
+  <h2 id="installation">Installation</h2>
+  <div></div>
+</div>
+
+<div>
+  <h2 id="environment-variables">Environment Variables Configuration</h2>
+  <div></div>
+</div>
+
+<div>
+  <h2 id="diagrams">Diagrams</h2>
+  <div></div>
+</div>
+
+<div>
+  <h2 id="preview">Preview</h2>
+  <div></div>
+</div>
+
+<div>
+  <h2 id="license">License</h2>
+  <div></div>
+</div>
+
+<div>
+  <h2 id="author">Author</h2>
+  <div></div>
+</div>
