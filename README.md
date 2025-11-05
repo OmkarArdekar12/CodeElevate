@@ -49,7 +49,7 @@
 ---
 
 <div>
-  <h2 id="readme-index">Table of Contents</h2>
+  <h2 id="readme-index">Table of Content 📑</h2>
   <h3>
     <ol>
       <li><a href="#overview">Overview</a></li>
@@ -76,14 +76,14 @@
 ---
 
 <div>
-  <h2 id="overview"><a href="#readme-index">Overview</a></h2>
+  <h2 id="overview"><a href="#readme-index">Overview 🖥️</a></h2>
   <h3>CodeElevate is a MERN Stack-based web-application that empowers users to showcase their coding and development profiles all in one place. It provides a unified platform where learners, competitive programmers, professionals, coders and developers can analyze, track, and elevate their progress in both competitive programming and software development. Users can compete, connect, and grow together by earning ranks across multiple categories, building meaningful connections, and engaging through posts, connections, and real-time messaging features. At CodeElevate, our goal is to inspire growth, celebrate achievement, and create a community where every coder can rise to their full potential.</h3>
 </div>
 
 ---
 
 <div>
-  <h2 id="features"><a href="#readme-index">Features</a></h2>
+  <h2 id="features"><a href="#readme-index">Features ✨</a></h2>
   <table border="1">
     <thead>
       <tr>
@@ -171,7 +171,7 @@
 ---
 
 <div>
-  <h2 id="technologies-used"><a href="#readme-index">Technologies Used</a></h2>
+  <h2 id="technologies-used"><a href="#readme-index">Technologies Used 💻🛠️</a></h2>
   <p>
 
 ![Node.js](https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white)
@@ -338,7 +338,7 @@
 ---
 
 <div>
-  <h2 id="system-architecture"><a href="#readme-index">System Architecture of CodeElevate</a></h2>
+  <h2 id="system-architecture"><a href="#readme-index">System Architecture of CodeElevate ⌨️🏗️</a></h2>
   <div width="90%" align="center">
     <img src="./backend/src/lib/docs/codeElevateArchitecture.png" alt="System  Architecture Diagram" width="100%" align="center" />
   </div>
@@ -347,7 +347,7 @@
 ---
 
 <div>
-  <h2 id="database-design"><a href="#readme-index">CodeElevate Database Design</a></h2>
+  <h2 id="database-design"><a href="#readme-index">CodeElevate Database Design 💾🗃️</a></h2>
   <div width="90%" align="center">
     <img src="./backend/src/lib/docs/mongodbDatabaseStructure.png" alt="Database Structure Diagram" width="100%" align="center" />
   </div>
@@ -356,7 +356,7 @@
 ---
 
 <div>
-  <h2 id="folder-file-structure"><a href="#readme-index">Folders & Files Structure</a></h2>
+  <h2 id="folder-file-structure"><a href="#readme-index">Folders & Files Structure 📂🗄️</a></h2>
   <h3 id="overview-folder-file-structure">Overview of Folders & Files Structure</h3>
 
 ```bash
@@ -664,7 +664,7 @@
 ---
 
 <div>
-  <h2 id="environment-variables"><a href="#readme-index">Environment Variables Configuration</a></h2>
+  <h2 id="environment-variables"><a href="#readme-index">Environment Variables Configuration ⚙️</a></h2>
   <div>
 
 To run **CodeElevate** successfully, you must configure the required environment variables for both **backend** and **frontend** parts of the project.
@@ -714,7 +714,7 @@ VITE_BACKEND_UR=http://localhost:8080
 ---
 
 <div>
-  <h2 id="installation"><a href="#readme-index">Installation</a></h2>
+  <h2 id="installation"><a href="#readme-index">Installation 💽📩</a></h2>
   <div>
 
 ### 1. Clone the Repository
@@ -766,13 +766,56 @@ npm start
 npm run dev
 ```
 
+### 4. Contribution Guide
+
+#### 4.1. Fork the Repository
+
+- Click the Fork button on the top-right corner of this repository page.
+
+#### 4.2. Clone Your Fork
+
+```bash
+git clone https://github.com/<your-username>/CodeElevate.git
+cd CodeElevate
+```
+
+#### 4.3. Create a New Branch
+
+```bash
+git checkout -b feature/your-feature-name
+```
+
+#### 4.4. Make Your Changes
+
+- Implement your changes.
+
+#### 4.5. Commit Your Changes
+
+```bash
+git add .
+git commit -m "Add: description of your change"
+```
+
+#### 4.6. Push the Changes
+
+```bash
+git push origin feature/your-feature-name
+```
+
+#### 4.7. Create a Pull Request (PR)
+
+- Go to your forked repository on GitHub.
+- Click “Compare & Pull Request”.
+- Provide a clear description of your changes.
+- Submit your PR for review.
+
   </div>
 </div>
 
 ---
 
 <div>
-  <h2 id="diagrams"><a href="#readme-index">Diagrams</a></h2>
+  <h2 id="diagrams"><a href="#readme-index">Diagrams 📊</a></h2>
   <div width="100%">
     <table width="95%" align="center" border="0">
       <tr>
@@ -832,7 +875,7 @@ npm run dev
 ---
 
 <div>
-  <h2 id="preview"><a href="#readme-index">Preview</a></h2>
+  <h2 id="preview"><a href="#readme-index">Preview 🎨🪟</a></h2>
   <div width="100%" align="center">
     <table width="95%" align="center" border="0">
       <tr>
@@ -928,7 +971,7 @@ npm run dev
 ---
 
 <div>
-  <h2 id="license"><a href="#readme-index">License</a></h2>
+  <h2 id="license"><a href="#readme-index">License 📄</a></h2>
   <div>
 
 ### This project is licensed under the terms of the **_MIT License_**.
@@ -941,7 +984,7 @@ npm run dev
 ---
 
 <div>
-  <h2 id="author"><a href="#readme-index">Author</a></h2>
+  <h2 id="author"><a href="#readme-index">Author 👨‍💻</a></h2>
   <div>
   
 ### Omkar Ardekar 💻
