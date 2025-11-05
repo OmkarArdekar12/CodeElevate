@@ -615,7 +615,8 @@
 │   │   │   ├── responsiveness.png
 │   │   │   └── creator.png
 │   │   ├── 📁 icons
-│   │   │   └── LogoCodeElevate.png
+│   │   │   ├── LogoCodeElevate.png
+│   │   │   └── LogoCodeElevate-share.png
 │   │   ├── 📁 images
 │   │   │   ├── CodeElevate3DLogo.stl
 │   │   │   ├── CodeElevateLogo.png
