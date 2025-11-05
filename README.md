@@ -448,8 +448,16 @@
 │   │   │   │   ├── codeElevateArchitecture.png
 │   │   │   │   └── mongodbDatabaseStructure.png
 │   │   │   └── 📁 docs
-│   │   │       ├── codeElevateArchitecture.png
-│   │   │       └── mongodbDatabaseStructure.png
+│   │   │       ├── authenticationDiagram.png
+│   │   │       ├── authorizationDiagram.png
+│   │   │       ├── profileSystemDiagram.png
+│   │   │       ├── rankingSystemDiagram.png
+│   │   │       ├── messagingSystemDiagram.png
+│   │   │       ├── postSystemDiagram.png
+│   │   │       ├── connectionSystemDiagram.png
+│   │   │       ├── notificationSystemDiagram.png
+│   │   │       ├── cpStatsSystemDiagram.png
+│   │   │       └── devsStatsSystemDiagram.png
 │   │   ├── 📁 config
 │   │   │   ├── cloudConfig.js
 │   │   │   ├── dbConnect.js
@@ -458,16 +466,10 @@
 │   ├── .env
 │   ├── .gitignore
 │   ├── package.json
-│   └── package-lock.json
+│   ├── package-lock.json
+│   └── 📁 node_modules
 │
 ├── 📁 frontend
-│   ├── 📁 public
-│   │   ├── 📁 about
-│   │   ├── 📁 icons
-│   │   ├── 📁 images
-│   │   ├── sitemap.xml
-│   │   ├── manifest.json
-│   │   └── robots.txt
 │   ├── 📁 src
 │   │   ├── 📁 service
 │   │   │   ├── api.js
@@ -592,6 +594,55 @@
 │   │   ├── App.jsx
 │   │   ├── App.css
 │   │   └── index.css
+│   ├── 📁 public
+│   │   ├── 📁 about
+│   │   │   ├── authentication.png
+│   │   │   ├── accessibility.png
+│   │   │   ├── searchFunctionality.png
+│   │   │   ├── profilePreview.png
+│   │   │   ├── profileStatsPreview.png
+│   │   │   ├── profileOptions.png
+│   │   │   ├── rankingSystem.png
+│   │   │   ├── rankingFilters.png
+│   │   │   ├── statsSystem.png
+│   │   │   ├── postFeature.png
+│   │   │   ├── postOptions.png
+│   │   │   ├── messagingSystem.png
+│   │   │   ├── messagingProcess.png
+│   │   │   ├── messagingSystemResponsiveness.png
+│   │   │   ├── connectionProcess.png
+│   │   │   ├── notificationSystem.png
+│   │   │   ├── responsiveness.png
+│   │   │   └── creator.png
+│   │   ├── 📁 icons
+│   │   │   └── LogoCodeElevate.png
+│   │   ├── 📁 images
+│   │   │   ├── CodeElevate3DLogo.stl
+│   │   │   ├── CodeElevateLogo.png
+│   │   │   ├── CodeElevateLogo.gif
+│   │   │   ├── LogoCodeElevate.png
+│   │   │   ├── defaultBgBannerImage.png
+│   │   │   ├── defaultUserImage.png
+│   │   │   ├── userImage.png
+│   │   │   ├── bgBannerImage.png
+│   │   │   ├── rank.png
+│   │   │   ├── trophy.png
+│   │   │   ├── computer.png
+│   │   │   ├── laptop.png
+│   │   │   ├── laptopTrophy.png
+│   │   │   ├── CodeforcesLogo.png
+│   │   │   ├── LeetCodeLogo.png
+│   │   │   ├── LeetCodeGuardianBadge.png
+│   │   │   ├── LeetCodeKnightBadge.png
+│   │   │   ├── logo.gif
+│   │   │   ├── CodeElevate.gif
+│   │   │   ├── CodeElevateLogoGIF.gif
+│   │   │   ├── gifLogo.png
+│   │   │   ├── logo.png
+│   │   │   └──CodeElevate.png
+│   │   ├── sitemap.xml
+│   │   ├── manifest.json
+│   │   └── robots.txt
 │   ├── .env
 │   ├── .gitignore
 │   ├── eslint.config.js
@@ -599,7 +650,8 @@
 │   ├── package-lock.json
 │   ├── package.json
 │   ├── vercel.json
-│   └── vite.config.js
+│   ├── vite.config.js
+│   └── 📁 node_modules
 │
 ├── .gitignore
 ├── LICENSE
@@ -898,3 +950,6 @@ npm run dev
 
   </div>
 </div>
+
+<br/>
+<hr/>
