@@ -45,7 +45,6 @@ const server = http.createServer(app);
 const io = new Server(server, {
   cors: {
     origin: [process.env.FRONTEND_URL],
-    credentials: true,
     methods: ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"],
     credentials: true,
     allowedHeaders: [
@@ -64,7 +63,6 @@ dbConnect();
 
 const corsOptions = {
   origin: [process.env.FRONTEND_URL],
-  credentials: true,
   methods: ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"],
   credentials: true,
   allowedHeaders: [
