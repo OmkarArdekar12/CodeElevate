@@ -44,5 +44,6 @@ dist-ssr
 /.env
 .json
 .js
+# Testing Data files
 /sampleData.js
 /testingData.js
