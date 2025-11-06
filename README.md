@@ -1004,6 +1004,6 @@ git push origin feature/your-feature-name
   </div>
 </div>
 
-<hr>
-<br>
-<hr>
+<br/>
+<hr/>
+<hr/>
