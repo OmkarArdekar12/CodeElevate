@@ -704,7 +704,7 @@ touch .env
 
 ```bash
 NODE_ENV=development  # or 'production' during deployment
-PORT=8080
+PORT=8080 or your_port_number
 MONGODB_URL=your_mongodb_connection_string
 SESSION_SECRET=your_session_secret_key
 JWT_SECRET=your_jwt_secret_key
