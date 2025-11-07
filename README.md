@@ -463,10 +463,13 @@
 │   │   │   ├── messageSchema.js
 │   │   │   └── notificationSchema.js
 │   │   ├── 📁 lib
-│   │   │   ├── 📁 diagrams
+│   │   │   ├── 📁 docs
 │   │   │   │   ├── codeElevateArchitecture.png
 │   │   │   │   └── mongodbDatabaseStructure.png
-│   │   │   └── 📁 docs
+│   │   │   ├── 📁 seo
+│   │   │   │   ├── seoResult.png
+│   │   │   │   └── seoSiteResult.png
+│   │   │   └── 📁 diagrams
 │   │   │       ├── authenticationDiagram.png
 │   │   │       ├── authorizationDiagram.png
 │   │   │       ├── profileSystemDiagram.png
