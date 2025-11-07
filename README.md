@@ -48,9 +48,19 @@
 
 <div>
   <h2>
-    <a href="https://youtu.be/4-Udx0xvsO0?si=yM7TH8HG2ut4Edfx" target="_blank" rel="noopener noreferrer">
+    <a href="https://www.youtube.com/watch?v=<4-Udx0xvsO0" target="_blank" rel="noopener noreferrer">
       <p><img src="./frontend/public/images/LogoCodeElevate.png" width="23px"/> CodeElevate Demo / Preview Video</p>
-      <p>🎥 Watch the full demo on YouTube</p>
+      <p><img src="https://img.youtube.com/vi/4-Udx0xvsO0/default.jpg"  alt="CodeElevate Demo Video" height="55px" valign="middle" border="1"/> 🎥 Watch the full demo on YouTube</p>
+    </a>
+  </h2>
+</div>
+
+<div>
+  <h2>
+    <a href="https://www.google.com/search?q=codeelevate-community.vercel.app" target="_blank" rel="noopener noreferrer">
+      <p>CodeElevate SEO Visibility <img src="./frontend/public/images/LogoCodeElevate.png" width="30px"/></p>
+      <img src="./backend/src/lib/seo/seoResult.png" width="90%">
+      <img src="./backend/src/lib/seo/seoSiteResult.png" width="90%">
     </a>
   </h2>
 </div>
@@ -74,7 +84,7 @@
       </li>
       <li><a href="#environment-variables">Environment Variables Configuration</a></li>
       <li><a href="#installation">Installation</a></li>
-      <li><a href="#diagrams">Diagrams</a></li>
+      <li><a href="#diagrams">Diagrams and SEO Visibility</a></li>
       <li><a href="#preview">Preview</a></li>
       <li><a href="#license">License</a></li>
       <li><a href="#author">Author</a></li>
@@ -824,7 +834,7 @@ git push origin feature/your-feature-name
 ---
 
 <div>
-  <h2 id="diagrams"><a href="#readme-index">Diagrams 📊</a></h2>
+  <h2 id="diagrams"><a href="#readme-index">Diagrams 📊 and SEO Visibility 🌐</a></h2>
   <div width="100%">
     <table width="95%" align="center" border="0">
       <tr>
@@ -875,6 +885,16 @@ git push origin feature/your-feature-name
         <td width="45%">
           <h3 align="center">Development Stats System</h3>
           <img src="./backend/src/lib/diagrams/devsStatsSystemDiagram.png" width="100%">
+        </td>
+      </tr>
+      <tr>
+        <td width="45%">
+          <h3 align="center">SEO Google Search Visibility</h3>
+          <img src="./backend/src/lib/seo/seoResult.png" width="100%">
+        </td>
+        <td width="45%">
+          <h3 align="center">SEO Google Search Visibility</h3>
+          <img src="./backend/src/lib/seo/seoSiteResult.png" width="100%">
         </td>
       </tr>
     </table>
