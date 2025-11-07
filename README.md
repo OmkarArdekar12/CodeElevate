@@ -711,8 +711,8 @@ JWT_SECRET=your_jwt_secret_key
 CLOUD_NAME=your_cloudinary_cloud_name
 CLOUD_API_KEY=your_cloudinary_api_key
 CLOUD_API_SECRET=your_cloudinary_api_secret
-BACKEND_URL=http://localhost:8080
-FRONTEND_URL=http://localhost:5173
+BACKEND_URL=http://localhost:8080 or your_backend_url
+FRONTEND_URL=http://localhost:5173 or your_frontend_url
 ```
 
 ### 2. Frontend Configuration
@@ -727,7 +727,7 @@ touch .env
 `.env`
 
 ```bash
-VITE_BACKEND_UR=http://localhost:8080
+VITE_BACKEND_UR=http://localhost:8080 or your_backend_url
 ```
 
   </div>
