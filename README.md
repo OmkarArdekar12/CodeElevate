@@ -332,7 +332,7 @@
         <tr>
           <td>&#10148;</td>
           <td>APIs Integrated</td>
-          <td>Custom REST APIs (CodeElevate): Authentication, Profiles, Messages, Posts, Rankings, Connections, Notifications, Competitive Programming Stats, Development Stats.<br><hr>External APIs: LeetCode GraphQL API, Codeforces REST API, GitHub REST API (for Displaying Competitive Programming Profiles / Coding Profiles Statistics and Development Profiles Statistics)</td>
+          <td>Custom REST APIs (CodeElevate): Authentication, Profiles, Messages, Posts, Rankings, Connections, Notifications, Competitive Programming Stats, Development Stats.<hr>External APIs: LeetCode GraphQL API, Codeforces REST API, GitHub REST API (for Displaying Competitive Programming Profiles / Coding Profiles Statistics and Development Profiles Statistics)</td>
         </tr>
         <tr>
           <td>&#10148;</td>
