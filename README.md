@@ -59,6 +59,7 @@
   <h2>
     <a href="https://www.google.com/search?q=codeelevate-community.vercel.app" target="_blank" rel="noopener noreferrer">
       <p>CodeElevate SEO Visibility <img src="./frontend/public/images/LogoCodeElevate.png" width="30px"/></p>
+      <img src="./backend/src/lib/seo/seoSearchResult.png" width="90%">
       <img src="./backend/src/lib/seo/seoResult.png" width="90%">
       <img src="./backend/src/lib/seo/seoSiteResult.png" width="90%">
     </a>
@@ -468,6 +469,7 @@
 │   │   │   │   └── mongodbDatabaseStructure.png
 │   │   │   ├── 📁 seo
 │   │   │   │   ├── seoResult.png
+│   │   │   │   └── seoSearchResult.png
 │   │   │   │   └── seoSiteResult.png
 │   │   │   └── 📁 diagrams
 │   │   │       ├── authenticationDiagram.png
@@ -634,6 +636,8 @@
 │   │   │   ├── messagingSystemResponsiveness.png
 │   │   │   ├── connectionProcess.png
 │   │   │   ├── notificationSystem.png
+│   │   │   ├── custom3DSilverLogo.png
+│   │   │   ├── custom3DGoldLogo.png
 │   │   │   ├── responsiveness.png
 │   │   │   └── creator.png
 │   │   ├── 📁 icons
@@ -900,6 +904,12 @@ git push origin feature/your-feature-name
           <img src="./backend/src/lib/seo/seoSiteResult.png" width="100%">
         </td>
       </tr>
+      <tr>
+        <td width="90%" colspan="2" align="center">
+          <h3 align="center">SEO Google Search Visibility</h3>
+          <img src="./backend/src/lib/seo/seoSearchResult.png" width="100%">
+        </td>
+      </tr>
     </table>
   </div>
 </div>
@@ -988,6 +998,16 @@ git push origin feature/your-feature-name
         <td width="45%">
           <h3 align="center">Stats Feature</h3>
           <img src="./frontend/public/about/statsSystem.png" width="100%">
+        </td>
+      </tr>
+      <tr>
+        <td width="45%">
+          <h3 align="center">Custom 3D Logo</h3>
+          <img src="./frontend/public/about/custom3DSilverLogo.png" width="100%">
+        </td>
+        <td width="45%">
+          <h3 align="center">Custom 3D Logo</h3>
+          <img src="./frontend/public/about/custom3DGoldLogo.png" width="100%">
         </td>
       </tr>
       <tr align="center">
