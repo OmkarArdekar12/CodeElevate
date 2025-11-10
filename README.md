@@ -37,7 +37,7 @@
   <h3>CodeElevate is a dynamic coder community built to empower competitive programmers, software developers, students, learners, and professionals. The platform provides an all-in-one ecosystem featuring integrated coding statistics, development statistics, a real-time messaging system, user connection system, post sharing and engagement, personalized profiles, a profile management system, a community-driven and category-based ranking system, a notification system, search and filter functionality, and a responsive UI design - fostering growth, collaboration, and innovation among coders worldwide.</h3>
 </div>
 
-<div>
+<div id="codeelevate-live">
   <h2>
     <a href="https://codeelevate-community.vercel.app/" target="_blank" rel="noopener noreferrer">
       <p>CodeElevate <img src="./frontend/public/images/LogoCodeElevate.png" width="30px"/></p>
@@ -46,7 +46,7 @@
   </h2>
 </div>
 
-<div>
+<div id="youtube-codeelevate-preview-video">
   <h2>
     <a href="https://www.youtube.com/watch?v=4-Udx0xvsO0" target="_blank" rel="noopener noreferrer">
       <p><img src="./frontend/public/images/LogoCodeElevate.png" width="23px"/> CodeElevate Demo / Preview Video</p>
@@ -55,7 +55,7 @@
   </h2>
 </div>
 
-<div>
+<div id="seo-result">
   <h2>
     <a href="https://www.google.com/search?q=codeelevate-community.vercel.app" target="_blank" rel="noopener noreferrer">
       <p>CodeElevate SEO Visibility <img src="./frontend/public/images/LogoCodeElevate.png" width="30px"/></p>
