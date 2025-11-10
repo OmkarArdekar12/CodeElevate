@@ -50,7 +50,7 @@
   <h2>
     <a href="https://www.youtube.com/watch?v=4-Udx0xvsO0" target="_blank" rel="noopener noreferrer">
       <p><img src="./frontend/public/images/LogoCodeElevate.png" width="23px"/> CodeElevate Demo / Preview Video</p>
-      <p><img src="https://img.youtube.com/vi/4-Udx0xvsO0/default.jpg"  alt="CodeElevate Demo Video" height="55px" valign="middle" /> 🎥 Watch the full demo on YouTube</p>
+      <p><img src="https://img.youtube.com/vi/4-Udx0xvsO0/default.jpg"  alt="CodeElevate Demo Video" height="55px" valign="middle" border="1" /> 🎥 Watch the full demo on YouTube</p>
     </a>
   </h2>
 </div>
@@ -59,6 +59,7 @@
   <h2>
     <a href="https://www.google.com/search?q=codeelevate-community.vercel.app" target="_blank" rel="noopener noreferrer">
       <p>CodeElevate SEO Visibility <img src="./frontend/public/images/LogoCodeElevate.png" width="30px"/></p>
+      <img src="./backend/src/lib/seo/seoSearchResult.png" width="90%">
       <img src="./backend/src/lib/seo/seoResult.png" width="90%">
       <img src="./backend/src/lib/seo/seoSiteResult.png" width="90%">
     </a>
@@ -332,7 +333,7 @@
         <tr>
           <td>&#10148;</td>
           <td>APIs Integrated</td>
-          <td>Custom REST APIs (CodeElevate): Authentication, Profiles, Messages, Posts, Rankings, Connections, Notifications, Competitive Programming Stats, Development Stats.<br><hr>External APIs: LeetCode GraphQL API, Codeforces REST API, GitHub REST API (for Displaying Competitive Programming Profiles / Coding Profiles Statistics and Development Profiles Statistics)</td>
+          <td>Custom REST APIs (CodeElevate): Authentication, Profiles, Messages, Posts, Rankings, Connections, Notifications, Competitive Programming Stats, Development Stats.<br/>External APIs: LeetCode GraphQL API, Codeforces REST API, GitHub REST API (for Displaying Competitive Programming Profiles / Coding Profiles Statistics and Development Profiles Statistics).</td>
         </tr>
         <tr>
           <td>&#10148;</td>
@@ -468,6 +469,7 @@
 │   │   │   │   └── mongodbDatabaseStructure.png
 │   │   │   ├── 📁 seo
 │   │   │   │   ├── seoResult.png
+│   │   │   │   └── seoSearchResult.png
 │   │   │   │   └── seoSiteResult.png
 │   │   │   └── 📁 diagrams
 │   │   │       ├── authenticationDiagram.png
@@ -634,6 +636,8 @@
 │   │   │   ├── messagingSystemResponsiveness.png
 │   │   │   ├── connectionProcess.png
 │   │   │   ├── notificationSystem.png
+│   │   │   ├── custom3DSilverLogo.png
+│   │   │   ├── custom3DGoldLogo.png
 │   │   │   ├── responsiveness.png
 │   │   │   └── creator.png
 │   │   ├── 📁 icons
@@ -704,15 +708,15 @@ touch .env
 
 ```bash
 NODE_ENV=development  # or 'production' during deployment
-PORT=8080
+PORT=8080 or your_port_number
 MONGODB_URL=your_mongodb_connection_string
 SESSION_SECRET=your_session_secret_key
 JWT_SECRET=your_jwt_secret_key
 CLOUD_NAME=your_cloudinary_cloud_name
 CLOUD_API_KEY=your_cloudinary_api_key
 CLOUD_API_SECRET=your_cloudinary_api_secret
-BACKEND_URL=http://localhost:8080
-FRONTEND_URL=http://localhost:5173
+BACKEND_URL=http://localhost:8080 or your_backend_url
+FRONTEND_URL=http://localhost:5173 or your_frontend_url
 ```
 
 ### 2. Frontend Configuration
@@ -727,7 +731,7 @@ touch .env
 `.env`
 
 ```bash
-VITE_BACKEND_UR=http://localhost:8080
+VITE_BACKEND_UR=http://localhost:8080 or your_backend_url
 ```
 
   </div>
@@ -900,6 +904,12 @@ git push origin feature/your-feature-name
           <img src="./backend/src/lib/seo/seoSiteResult.png" width="100%">
         </td>
       </tr>
+      <tr>
+        <td width="90%" colspan="2" align="center">
+          <h3 align="center">SEO Google Search Visibility</h3>
+          <img src="./backend/src/lib/seo/seoSearchResult.png" width="100%">
+        </td>
+      </tr>
     </table>
   </div>
 </div>
@@ -988,6 +998,16 @@ git push origin feature/your-feature-name
         <td width="45%">
           <h3 align="center">Stats Feature</h3>
           <img src="./frontend/public/about/statsSystem.png" width="100%">
+        </td>
+      </tr>
+      <tr>
+        <td width="45%">
+          <h3 align="center">Custom 3D Logo</h3>
+          <img src="./frontend/public/about/custom3DSilverLogo.png" width="100%">
+        </td>
+        <td width="45%">
+          <h3 align="center">Custom 3D Logo</h3>
+          <img src="./frontend/public/about/custom3DGoldLogo.png" width="100%">
         </td>
       </tr>
       <tr align="center">
