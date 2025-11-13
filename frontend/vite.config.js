@@ -30,12 +30,12 @@ export default defineConfig({
 //   },
 // });
 
-// vercel.json
+//vercel.json
 // {
 //   "rewrites": [{ "source": "/(.*)", "destination": "/index.html" }]
 // }
 
-// vercel.json
+//vercel.json
 // {
 //   "headers": [
 //     {
@@ -54,6 +54,7 @@ export default defineConfig({
 //   ]
 // }
 
+//index.html
 // <!DOCTYPE html>
 // <html lang="en">
 //   <head>
@@ -215,6 +216,7 @@ export default defineConfig({
 //   </body>
 // </html>
 
+//index.html
 // <!DOCTYPE html>
 // <html lang="en">
 //   <head>
