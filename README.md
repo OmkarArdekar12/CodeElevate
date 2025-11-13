@@ -1,4 +1,4 @@
-<h1><img src="./frontend/public/images/LogoCodeElevate.png" width="39px"/> CodeElevate</h1>
+<h1><img src="./frontend/public/images/CodeElevateLogo.gif" width="55px" valign="bottom"/><img src="./frontend/public/images/CodeElevateText.gif" width="275px" valign="bottom"/></h1>
 
 <div>
   <img src="https://img.shields.io/badge/MERN%20Stack-3C873A?style=for-the-badge&logo=mern&logoColor=white"/>
