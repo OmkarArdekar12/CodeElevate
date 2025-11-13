@@ -648,6 +648,7 @@
 │   │   │   ├── CodeElevateLogo.png
 │   │   │   ├── CodeElevateLogo.gif
 │   │   │   ├── LogoCodeElevate.png
+│   │   │   ├── CodeElevateText.gif
 │   │   │   ├── defaultBgBannerImage.png
 │   │   │   ├── defaultUserImage.png
 │   │   │   ├── userImage.png
