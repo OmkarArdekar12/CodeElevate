@@ -643,6 +643,7 @@
 │   │   ├── 📁 icons
 │   │   │   ├── LogoCodeElevate.png
 │   │   │   └── LogoCodeElevate-share.png
+│   │   │   └── LogoCodeElevate-logo.png
 │   │   ├── 📁 images
 │   │   │   ├── CodeElevate3DLogo.stl
 │   │   │   ├── CodeElevateLogo.png
