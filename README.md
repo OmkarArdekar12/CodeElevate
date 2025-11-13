@@ -644,7 +644,7 @@
 │   │   │   ├── LogoCodeElevate.png
 │   │   │   └── LogoCodeElevate-share.png
 │   │   │   └── LogoCodeElevate-192.png
-│   │   │   └── LogoCodeElevate-share.png
+│   │   │   └── LogoCodeElevate-512.png
 │   │   │   └── LogoCodeElevate-logo.png
 │   │   ├── 📁 images
 │   │   │   ├── CodeElevate3DLogo.stl
