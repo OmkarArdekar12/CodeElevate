@@ -671,6 +671,7 @@
 │   │   │   ├── gifLogo.png
 │   │   │   ├── logo.png
 │   │   │   └──CodeElevate.png
+│   │   ├── favicon.ico
 │   │   ├── sitemap.xml
 │   │   ├── manifest.json
 │   │   └── robots.txt
