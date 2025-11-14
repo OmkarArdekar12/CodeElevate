@@ -776,3 +776,356 @@ export default defineConfig({
 //     <script type="module" src="/src/main.jsx"></script>
 //   </body>
 // </html>
+
+// <?xml version="1.0" encoding="UTF-8"?>
+// <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+//   <!-- Public pages only -->
+//   <url>
+//     <loc>https://codeelevate-community.vercel.app/</loc>
+//     <priority>1.0</priority>
+//     <changefreq>daily</changefreq>
+//   </url>
+
+//   <url>
+//     <loc>https://codeelevate-community.vercel.app/login</loc>
+//     <priority>0.9</priority>
+//   </url>
+
+//   <url>
+//     <loc>https://codeelevate-community.vercel.app/posts</loc>
+//     <priority>0.9</priority>
+//     <changefreq>daily</changefreq>
+//   </url>
+
+//   <url>
+//     <loc>https://codeelevate-community.vercel.app/rankings</loc>
+//     <priority>0.9</priority>
+//     <changefreq>weekly</changefreq>
+//   </url>
+
+//   <url>
+//     <loc>https://codeelevate-community.vercel.app/about</loc>
+//     <priority>0.7</priority>
+//   </url>
+
+// </urlset>
+
+// <!-- Public pages included, Private pages excluded (correct), Dynamic pages excluded (correct) -->
+
+// <?xml version="1.0" encoding="UTF-8"?>
+// <urlset
+//   xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+//   <!-- Main Pages -->
+//   <url>
+//     <loc>https://codeelevate-community.vercel.app/</loc>
+//     <priority>1.0</priority>
+//     <changefreq>daily</changefreq>
+//   </url>
+
+//   <url>
+//     <loc>https://codeelevate-community.vercel.app/login</loc>
+//     <priority>0.9</priority>
+//   </url>
+
+//   <url>
+//     <loc>https://codeelevate-community.vercel.app/setup-2fa</loc>
+//     <priority>0.8</priority>
+//   </url>
+
+//   <url>
+//     <loc>https://codeelevate-community.vercel.app/verify-2fa</loc>
+//     <priority>0.8</priority>
+//   </url>
+
+//   <url>
+//     <loc>https://codeelevate-community.vercel.app/posts</loc>
+//     <priority>0.9</priority>
+//   </url>
+
+//   <url>
+//     <loc>https://codeelevate-community.vercel.app/posts/create</loc>
+//     <priority>0.8</priority>
+//   </url>
+
+//   <url>
+//     <loc>https://codeelevate-community.vercel.app/rankings</loc>
+//     <priority>0.9</priority>
+//   </url>
+
+//   <url>
+//     <loc>https://codeelevate-community.vercel.app/notifications</loc>
+//     <priority>0.8</priority>
+//   </url>
+
+//   <url>
+//     <loc>https://codeelevate-community.vercel.app/messages</loc>
+//     <priority>0.9</priority>
+//   </url>
+
+//   <url>
+//     <loc>https://codeelevate-community.vercel.app/about</loc>
+//     <priority>0.6</priority>
+//   </url>
+
+//   <!-- Profile Pages (Generic Pattern) -->
+//   <url>
+//     <loc>https://codeelevate-community.vercel.app/profiles/USER_ID</loc>
+//     <priority>0.9</priority>
+//   </url>
+
+//   <url>
+//     <loc>https://codeelevate-community.vercel.app/profiles/USER_ID/edit</loc>
+//     <priority>0.7</priority>
+//   </url>
+
+//   <url>
+//     <loc>https://codeelevate-community.vercel.app/profiles/USER_ID/settings</loc>
+//     <priority>0.7</priority>
+//   </url>
+
+//   <url>
+//     <loc>https://codeelevate-community.vercel.app/profiles/USER_ID/connections</loc>
+//     <priority>0.8</priority>
+//   </url>
+
+//   <!-- Post Pages (Generic Pattern) -->
+//   <url>
+//     <loc>https://codeelevate-community.vercel.app/posts/POST_ID/edit</loc>
+//     <priority>0.7</priority>
+//   </url>
+
+//   <!-- Error / Not Found -->
+//   <url>
+//     <loc>https://codeelevate-community.vercel.app/404</loc>
+//     <priority>0.2</priority>
+//   </url>
+
+// </urlset>
+
+//manifest.json file
+// {
+//   "name": "CodeElevate - Elevate Your Coding Journey",
+//   "short_name": "CodeElevate",
+//   "description": "CodeElevate is a dynamic coder community built to empower competitive programmers, software developers, students, and professionals. The platform provides an all-in-one ecosystem with integrated coding statistics, real-time messaging, user connections, post sharing, personalized profiles, community-driven ranking, fostering growth, collaboration, and innovation among coders worldwide.",
+//   "start_url": "/",
+//   "scope": "/",
+//   "display": "standalone",
+//   "background_color": "#000000",
+//   "theme_color": "#000000",
+//   "orientation": "portrait",
+//   "lang": "en",
+//   "icons": [
+//     {
+//       "src": "/icons/LogoCodeElevate-512.png",
+//       "sizes": "512x512",
+//       "type": "image/png"
+//     },
+//     {
+//       "src": "/icons/LogoCodeElevate-192.png",
+//       "sizes": "192x192",
+//       "type": "image/png"
+//     }
+//   ]
+// }
+
+// {
+//   "name": "CodeElevate - Elevate Your Coding Journey",
+//   "short_name": "CodeElevate",
+//   "description": "CodeElevate is a dynamic coder community built to empower competitive programmers, software developers, students, and professionals. The platform provides an all-in-one ecosystem with integrated coding statistics, real-time messaging, user connections, post sharing, personalized profiles, community-driven ranking, fostering growth, collaboration, and innovation among coders worldwide.",
+//   "start_url": "/",
+//   "scope": "/",
+//   "display": "standalone",
+//   "background_color": "#0f172a",
+//   "theme_color": "#0f172a",
+//   "orientation": "portrait",
+//   "lang": "en",
+//   "icons": [
+//     {
+//       "src": "/icons/LogoCodeElevate-512.png",
+//       "sizes": "512x512",
+//       "type": "image/png"
+//     },
+//     {
+//       "src": "/icons/LogoCodeElevate-192.png",
+//       "sizes": "192x192",
+//       "type": "image/png"
+//     }
+//   ]
+// }
+
+// {
+//   "name": "CodeElevate - Elevate Your Coding Journey",
+//   "short_name": "CodeElevate",
+//   "description": "CodeElevate is a dynamic coder community built to empower competitive programmers, software developers, students, and professionals. The platform provides an all-in-one ecosystem with integrated coding statistics, real-time messaging, user connections, post sharing, personalized profiles, community-driven ranking, fostering growth, collaboration, and innovation among coders worldwide.",
+//   "start_url": "/",
+//   "scope": "/",
+//   "display": "standalone",
+//   "background_color": "#000000",
+//   "theme_color": "#000000",
+//   "orientation": "portrait",
+//   "lang": "en"
+// } -->
+
+// index.html file
+// <!DOCTYPE html>
+// <html lang="en">
+//   <head>
+//     <meta charset="UTF-8" />
+//     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+//     <meta
+//       name="google-site-verification"
+//       content="cIpfNdHkzMpM_Wpuo6JXHOkMH_wEpHyrgBe_f46e5Ig"
+//     />
+//     <title>CodeElevate - Elevate Your Coding Journey</title>
+//     <meta name="title" content="CodeElevate - Elevate Your Coding Journey" />
+//     <meta
+//       name="description"
+//       content="CodeElevate empowers users to showcase their coding and development profiles all in one place. It provides a unified platform where learners, competitive programmers, coders and developers can analyze, track, and elevate their progress in both competitive programming and software development. Users can compete, connect, and grow together by earning ranks across multiple categories, building meaningful connections, and engaging through connection and real-time messaging features. At CodeElevate, our goal is to inspire growth, celebrate achievement, and create a community where every coder can rise to their full potential."
+//     />
+//     <meta
+//       name="keywords"
+//       content="CodeElevate, codeelevate, codeelevate vercel, codeelevate community vercel, codeelevate omkar, codeelevate omkar vercel, codeelevate omkar ardekar, codeelevate omkar ardekar vercel, CodeElevate Community, CodeElevate-Community, codelevate community, codelevate-community Omkar Ardekar, coding, projects, coding platform, coding profile showcasing platform, coding stats showcasing platform, coding ranking showcasing platform, development profile showcasing platform, software development, competitive programming profile showcasing platform, project showcasing platform, cp, devs, competitive programming, development, portfolio, coding portfolio LeetCode, GitHub projects, developer community, coding progress, software engineering, leetcode, codeforces, geeksforgeeks, codechef, hackerrank, github, atcoder, gitlab, software development progress, codeelevate platform"
+//     />
+//     <meta name="author" content="Omkar Ardekar" />
+//     <meta name="robots" content="index, follow" />
+//     <meta name="language" content="English" />
+//     <meta name="application-name" content="CodeElevate" />
+//     <meta property="og:type" content="website" />
+//     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+//     <meta property="og:site_name" content="CodeElevate" />
+//     <meta
+//       property="og:url"
+//       content="https://codeelevate-community.vercel.app/"
+//     />
+//     <meta
+//       property="og:title"
+//       content="CodeElevate - Elevate Your Coding Journey"
+//     />
+//     <meta
+//       property="og:description"
+//       content="CodeElevate is a dynamic coder community built to empower competitive programmers, software developers, students, and professionals. The platform provides an all-in-one ecosystem with integrated coding statistics, real-time messaging, user connections, post sharing, personalized profiles, community-driven ranking, fostering growth, collaboration, and innovation among coders worldwide."
+//     />
+//     <meta
+//       property="twitter:url"
+//       content="https://codeelevate-community.vercel.app/"
+//     />
+//     <meta
+//       property="twitter:title"
+//       content="CodeElevate - Elevate Your Coding Journey"
+//     />
+//     <meta
+//       property="twitter:description"
+//       content="CodeElevate is a dynamic coder community built to empower competitive programmers, software developers, students, and professionals. The platform provides an all-in-one ecosystem with integrated coding statistics, real-time messaging, user connections, post sharing, personalized profiles, community-driven ranking, fostering growth, collaboration, and innovation among coders worldwide."
+//     />
+//     <meta
+//       property="og:image"
+//       content="https://codeelevate-community.vercel.app/icons/LogoCodeElevate-share.png"
+//     />
+//     <meta
+//       property="twitter:image"
+//       content="https://codeelevate-community.vercel.app/icons/LogoCodeElevate-share.png"
+//     />
+//     <meta
+//       property="og:image:alt"
+//       content="CodeElevate - Elevate Your Coding Journey"
+//     />
+//     <meta name="twitter:card" content="summary_large_image" />
+//     <meta name="apple-mobile-web-app-capable" content="yes" />
+//     <meta
+//       name="apple-mobile-web-app-status-bar-style"
+//       content="black-translucent"
+//     />
+//     <meta name="apple-mobile-web-app-title" content="CodeElevate" />
+//     <meta name="theme-color" content="#000000" />
+//     <link rel="manifest" href="/manifest.json" />
+//     <link rel="icon" href="/icons/LogoCodeElevate.png" />
+//     <link rel="apple-touch-icon" href="/icons/LogoCodeElevate-share.png" />
+//     <link rel="canonical" href="https://codeelevate-community.vercel.app/" />
+//     <link rel="preload" href="/icons/LogoCodeElevate.png" as="image" />
+//     <script type="application/ld+json">
+//       {
+//         "@context": "https://schema.org",
+//         "@type": "Organization",
+//         "name": "CodeElevate",
+//         "url": "https://codeelevate-community.vercel.app/",
+//         "logo": "https://codeelevate-community.vercel.app/icons/LogoCodeElevate-share.png",
+//         "author": {
+//           "@type": "Person",
+//           "name": "Omkar Ardekar"
+//         },
+//         "sameAs": [
+//           "https://github.com/OmkarArdekar12",
+//           "https://www.linkedin.com/in/omkarardekar09"
+//         ],
+//         "description": "CodeElevate is a dynamic coder community built to empower competitive programmers, software developers, students, and professionals. The platform provides an all-in-one ecosystem with integrated coding statistics, real-time messaging, user connections, post sharing, personalized profiles, community-driven ranking, fostering growth, collaboration, and innovation among coders worldwide.",
+//         "applicationCategory": "Education",
+//         "operatingSystem": "All",
+//         "keywords": [
+//           "CodeElevate",
+//           "codeelevate omkar",
+//           "codeelevate community omkar",
+//           "codeelevate omkar ardekar",
+//           "codeelevate community omkar ardekar",
+//           "codeelevate omkar vercel",
+//           "codeelevate community omkar vercel",
+//           "codeelevate omkar ardekar vercel",
+//           "codeelevate community omkar ardekar vercel",
+//           "codeelevate",
+//           "CodeElevate Community",
+//           "CodeElevate-Community",
+//           "codelevate community",
+//           "codelevate-community Omkar Ardekar",
+//           "coding",
+//           "projects",
+//           "coding platform",
+//           "coding profile showcasing platform",
+//           "coding stats showcasing platform",
+//           "coding ranking showcasing platform",
+//           "development profile showcasing platform",
+//           "software development",
+//           "competitive programming profile showcasing platform",
+//           "project showcasing platform",
+//           "cp",
+//           "devs",
+//           "competitive programming",
+//           "development",
+//           "portfolio",
+//           "coding portfolio LeetCode",
+//           "GitHub projects",
+//           "developer community",
+//           "coding progress",
+//           "software engineering",
+//           "leetcode",
+//           "codeforces",
+//           "geeksforgeeks",
+//           "codechef",
+//           "hackerrank",
+//           "github",
+//           "atcoder",
+//           "gitlab",
+//           "software development progress",
+//           "codeelevate platform"
+//         ]
+//       }
+//     </script>
+//     <link
+//       rel="stylesheet"
+//       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+//       integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+//       crossorigin="anonymous"
+//       referrerpolicy="no-referrer"
+//     />
+//     <link rel="preconnect" href="https://fonts.googleapis.com" />
+//     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+//     <link
+//       href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700&family=Poppins:wght@300;400;500;600;700&family=Roboto+Condensed:wght@300;400;700&&family=Michroma&family=Schibsted+Grotesk:wght@300;400;500;600;700&family=Oxygen:wght@300;400;700&display=swap"
+//       rel="stylesheet"
+//     />
+//   </head>
+//   <body>
+//     <div id="root"></div>
+//     <script type="module" src="/src/main.jsx"></script>
+//   </body>
+// </html>
