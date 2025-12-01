@@ -1053,5 +1053,4 @@ git push origin feature/your-feature-name
 </div>
 
 <br/>
-<hr/>
-<hr/>
+<hr/><hr/>
