@@ -1,4 +1,10 @@
-import { FaGithub, FaLinkedin, FaTwitter, FaEnvelope } from "react-icons/fa";
+import {
+  FaGithub,
+  FaLinkedin,
+  FaTwitter,
+  FaEnvelope,
+  FaYoutube,
+} from "react-icons/fa";
 import { AiOutlineCopyright } from "react-icons/ai";
 import { Link, useNavigate } from "react-router-dom";
 
@@ -52,7 +58,7 @@ export default function Footer() {
           </h2>
           <div className="flex space-x-4 text-xl">
             <a
-              href="https://www.linkedin.com/in/omkarardekar09"
+              href="https://github.com/OmkarArdekar12/CodeElevate"
               target="_blank"
               rel="noopener noreferrer"
               className="hover:text-white"
@@ -68,7 +74,15 @@ export default function Footer() {
               <FaLinkedin />
             </a>
             <a
-              href="https://www.linkedin.com/in/omkarardekar09"
+              href="https://www.youtube.com/watch?v=4-Udx0xvsO0"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-white"
+            >
+              <FaYoutube />
+            </a>
+            <a
+              href="https://github.com/OmkarArdekar12"
               target="_blank"
               rel="noopener noreferrer"
               className="hover:text-white"
@@ -76,7 +90,7 @@ export default function Footer() {
               <FaTwitter />
             </a>
             <a
-              href="https://www.linkedin.com/in/omkarardekar09"
+              href="https://www.youtube.com/@OmkarArdekar012"
               target="_blank"
               rel="noopener noreferrer"
               className="hover:text-white"
