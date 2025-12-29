@@ -55,13 +55,56 @@
   </h2>
 </div>
 
-<div id="seo-result">
-  <h2>
+<div id="seo-result" width="100%">
+  <h2 width="100%">
     <a href="https://www.google.com/search?q=codeelevate-community.vercel.app" target="_blank" rel="noopener noreferrer">
       <p>CodeElevate SEO Visibility <img src="./frontend/public/images/LogoCodeElevate.png" width="30px"/></p>
-      <img src="./backend/src/lib/seo/seoSearchResult.png" width="90%">
-      <img src="./backend/src/lib/seo/seoResult.png" width="90%">
-      <img src="./backend/src/lib/seo/seoSiteResult.png" width="90%">
+      <div width="100%">
+        <table width="100%" align="center" border="0">
+          <tr width="100%">
+            <td width="100%" colspan="2" align="center">
+              <img src="./backend/src/lib/seo/seoSearchUpdated1.png" width="95%">
+            </td>
+          </tr>
+          <tr width="100%">
+            <td width="50%">
+              <img src="./backend/src/lib/seo/seoSearchUpdated2.png" width="100%">
+            </td>
+            <td width="50%">
+              <img src="./backend/src/lib/seo/seoSearchResult.png" width="100%">
+            </td>
+          </tr>
+          <tr width="100%">
+            <td width="50%">
+              <img src="./backend/src/lib/seo/seoPerformance1.png" width="100%">
+            </td>
+            <td width="50%">
+              <img src="./backend/src/lib/seo/seoPerformance2.png" width="100%">
+            </td>
+          </tr>
+          <tr width="100%">
+            <td width="100%" colspan="2" align="center">
+              <img src="./backend/src/lib/seo/seoStats.png" width="95%">
+            </td>
+          </tr>
+          <tr width="100%">
+            <td width="50%">
+              <img src="./backend/src/lib/seo/seoSitemaps1.png" width="100%">
+            </td>
+            <td width="50%">
+              <img src="./backend/src/lib/seo/seoSitemaps2.png" width="100%">
+            </td>
+          </tr>
+          <tr width="100%">
+            <td width="50%">
+              <img src="./backend/src/lib/seo/seoResult.png" width="100%">
+            </td>
+            <td width="50%">
+              <img src="./backend/src/lib/seo/seoSiteResult.png" width="100%">
+            </td>
+          </tr>
+        </table>
+      </div>
     </a>
   </h2>
 </div>
@@ -468,9 +511,16 @@
 │   │   │   │   ├── codeElevateArchitecture.png
 │   │   │   │   └── mongodbDatabaseStructure.png
 │   │   │   ├── 📁 seo
+│   │   │   │   ├── seoPerformance1.png
+│   │   │   │   ├── seoPerformance2.png
 │   │   │   │   ├── seoResult.png
-│   │   │   │   └── seoSearchResult.png
-│   │   │   │   └── seoSiteResult.png
+│   │   │   │   ├── seoSearchResult.png
+│   │   │   │   ├── seoSearchUpdated1.png
+│   │   │   │   ├── seoSearchUpdated2.png
+│   │   │   │   ├── seoSitemaps1.png
+│   │   │   │   ├── seoSitemaps2.png
+│   │   │   │   ├── seoSiteResult.png
+│   │   │   │   └── seoStats.png
 │   │   │   └── 📁 diagrams
 │   │   │       ├── authenticationDiagram.png
 │   │   │       ├── authorizationDiagram.png
