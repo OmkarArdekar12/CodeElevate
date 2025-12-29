@@ -55,15 +55,15 @@
   </h2>
 </div>
 
-<div id="seo-result" width="100%">
-  <h2 width="100%">
+<div id="seo-result">
+  <h2>
     <a href="https://www.google.com/search?q=codeelevate-community.vercel.app" target="_blank" rel="noopener noreferrer">
       <p>CodeElevate SEO Visibility <img src="./frontend/public/images/LogoCodeElevate.png" width="30px"/></p>
       <div width="100%">
-        <table width="100%" align="center" border="0">
+        <table width="95%" align="center" border="0">
           <tr width="100%">
             <td width="100%" colspan="2" align="center">
-              <img src="./backend/src/lib/seo/seoSearchUpdated1.png" width="95%">
+              <img src="./backend/src/lib/seo/seoSearchUpdated1.png" width="100%">
             </td>
           </tr>
           <tr width="100%">
@@ -84,7 +84,7 @@
           </tr>
           <tr width="100%">
             <td width="100%" colspan="2" align="center">
-              <img src="./backend/src/lib/seo/seoStats.png" width="95%">
+              <img src="./backend/src/lib/seo/seoStats.png" width="100%">
             </td>
           </tr>
           <tr width="100%">
