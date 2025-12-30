@@ -950,19 +950,55 @@ git push origin feature/your-feature-name
         </td>
       </tr>
       <tr>
-        <td width="45%">
+        <td width="90%" colspan="2" align="center">
           <h3 align="center">SEO Google Search Visibility</h3>
-          <img src="./backend/src/lib/seo/seoResult.png" width="100%">
+          <img src="./backend/src/lib/seo/seoSearchUpdated1.png" width="100%">
+        </td>
+      </tr>
+      <tr>
+        <td width="45%">
+          <h3 align="center">Google Search Visibility</h3>
+          <img src="./backend/src/lib/seo/seoSearchUpdated2.png" width="100%">
         </td>
         <td width="45%">
-          <h3 align="center">SEO Google Search Visibility</h3>
-          <img src="./backend/src/lib/seo/seoSiteResult.png" width="100%">
+          <h3 align="center">Google Search Visibility with Different Logo Icon</h3>
+          <img src="./backend/src/lib/seo/seoSearchResult.png" width="100%">
+        </td>
+      </tr>
+      <tr>
+        <td width="45%">
+          <h3 align="center">SEO Performance</h3>
+          <img src="./backend/src/lib/seo/seoPerformance1.png" width="100%">
+        </td>
+        <td width="45%">
+          <h3 align="center">SEO Detail Performance</h3>
+          <img src="./backend/src/lib/seo/seoPerformance2.png" width="100%">
         </td>
       </tr>
       <tr>
         <td width="90%" colspan="2" align="center">
-          <h3 align="center">SEO Google Search Visibility</h3>
-          <img src="./backend/src/lib/seo/seoSearchResult.png" width="100%">
+          <h3 align="center">SEO Achievement Stats</h3>
+          <img src="./backend/src/lib/seo/seoStats.png" width="100%">
+        </td>
+      </tr>
+      <tr>
+        <td width="45%">
+          <h3 align="center">SEO Sitemaps Success</h3>
+          <img src="./backend/src/lib/seo/seoSitemaps1.png" width="100%">
+        </td>
+        <td width="45%">
+          <h3 align="center">Sitemaps Accepted Successfully</h3>
+          <img src="./backend/src/lib/seo/seoSitemaps2.png" width="100%">
+        </td>
+      </tr>
+      <tr>
+        <td width="45%">
+          <h3 align="center">Search Visibility</h3>
+          <img src="./backend/src/lib/seo/seoResult.png" width="100%">
+        </td>
+        <td width="45%">
+          <h3 align="center">Browser Search Visibility</h3>
+          <img src="./backend/src/lib/seo/seoSiteResult.png" width="100%">
         </td>
       </tr>
     </table>
