@@ -1132,8 +1132,8 @@ git push origin feature/your-feature-name
   
 ### Omkar Ardekar 💻
 
-[![GitHub](https://img.shields.io/badge/GitHub-000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/OmkarArdekar12)
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=circuitverse&logoColor=white)](https://www.linkedin.com/in/omkarardekar09)
+[![GitHub](https://img.shields.io/badge/GitHub-000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/OmkarArdekar12)
 
   </div>
 </div>
