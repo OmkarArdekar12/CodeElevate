@@ -50,7 +50,8 @@
   <h2>
     <a href="https://www.youtube.com/watch?v=4-Udx0xvsO0" target="_blank" rel="noopener noreferrer">
       <p><img src="./frontend/public/images/LogoCodeElevate.png" width="23px"/> CodeElevate Demo / Preview Video</p>
-      <p><img src="https://img.youtube.com/vi/4-Udx0xvsO0/default.jpg"  alt="CodeElevate Demo Video" height="55px" valign="middle" border="1" /> 🎥 Watch the full demo on YouTube</p>
+      <p>🎥Click here to watch full video on YouTube</p>
+      <img src="./frontend/public/videos/codeelevateGIF.gif"  alt="CodeElevate Video" width="95%"/> 
     </a>
   </h2>
 </div>
@@ -720,7 +721,9 @@
 │   │   │   ├── CodeElevateLogoGIF.gif
 │   │   │   ├── gifLogo.png
 │   │   │   ├── logo.png
-│   │   │   └──CodeElevate.png
+│   │   │   └── CodeElevate.png
+│   │   ├── 📁 videos
+│   │   │   └── codeelevateGIF.gif
 │   │   ├── favicon.ico
 │   │   ├── sitemap.xml
 │   │   ├── manifest.json
