@@ -3,7 +3,7 @@ import Profile from "../models/profile.js";
 import RankingCache from "../models/rankingCache.js";
 
 const dayInMS = 24 * 60 * 60 * 1000;
-const baseURL = process.env.BASE_URL || "http://localhost:8080";
+const baseURL = process.env.BACKEND_URL;
 
 const safeNumber = (val) =>
   isNaN(val) || val === null || val === "" ? 0 : Number(val);
