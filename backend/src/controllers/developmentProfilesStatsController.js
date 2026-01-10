@@ -9,7 +9,12 @@ const githubApi = axios.create({
 export const githubStats = async (req, res) => {
   const { username } = req.params;
   try {
-    if (!username || typeof username !== "string" || username.trim() === "") {
+    if (
+      !username ||
+      typeof username !== "string" ||
+      username.trim() === "" ||
+      username === "/"
+    ) {
       return res.status(400).json({ message: "Invalid gitHub username" });
     }
 

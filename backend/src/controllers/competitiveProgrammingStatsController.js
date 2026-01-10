@@ -9,7 +9,12 @@ const cfApi = axios.create({
 export const codeforcesStats = async (req, res) => {
   const { username } = req.params;
   try {
-    if (!username || typeof username !== "string" || username.trim() === "") {
+    if (
+      !username ||
+      typeof username !== "string" ||
+      username.trim() === "" ||
+      username === "/"
+    ) {
       return res.status(400).json({ message: "Invalid codeforces username" });
     }
 
@@ -78,7 +83,12 @@ const lcApi = axios.create({
 export const leetCodeStats = async (req, res) => {
   const { username } = req.params;
   try {
-    if (!username || typeof username !== "string" || username.trim() === "") {
+    if (
+      !username ||
+      typeof username !== "string" ||
+      username.trim() === "" ||
+      username === "/"
+    ) {
       return res.status(400).json({ message: "Invalid leetCode username" });
     }
 
