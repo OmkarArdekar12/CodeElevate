@@ -58,7 +58,7 @@
 
 <div id="seo-result">
   <h2>
-    <a href="https://www.google.com/search?q=codeelevate-community.vercel.app" target="_blank" rel="noopener noreferrer">
+    <a href="https://www.google.com/search?q=site:codeelevate-community.vercel.app" target="_blank" rel="noopener noreferrer">
       <p>CodeElevate SEO Visibility <img src="./frontend/public/images/LogoCodeElevate.png" width="30px"/></p>
     </a>
     <div width="100%">
