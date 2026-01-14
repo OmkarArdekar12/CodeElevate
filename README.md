@@ -60,6 +60,7 @@
   <h2>
     <a href="https://www.google.com/search?q=site:codeelevate-community.vercel.app" target="_blank" rel="noopener noreferrer">
       <p>CodeElevate SEO Visibility <img src="./frontend/public/images/LogoCodeElevate.png" width="30px"/></p>
+      <p>Click here to see the SEO Visibility/Result</p>
     </a>
     <div width="100%">
       <table width="95%" align="center" border="0">
@@ -103,6 +104,11 @@
           </td>
           <td width="50%">
             <img src="./backend/src/lib/seo/seoSiteResult.png" width="100%">
+          </td>
+        </tr>
+        <tr width="100%">
+          <td width="100%" colspan="2" align="center">
+            <img src="./backend/src/lib/seo/urlInspection.png" width="100%">
           </td>
         </tr>
       </table>
@@ -521,7 +527,8 @@
 │   │   │   │   ├── seoSitemaps1.png
 │   │   │   │   ├── seoSitemaps2.png
 │   │   │   │   ├── seoSiteResult.png
-│   │   │   │   └── seoStats.png
+│   │   │   │   ├── seoStats.png
+│   │   │   │   └── urlInspection.png
 │   │   │   └── 📁 diagrams
 │   │   │       ├── authenticationDiagram.png
 │   │   │       ├── authorizationDiagram.png
@@ -1002,6 +1009,12 @@ git push origin feature/your-feature-name
         <td width="45%">
           <h3 align="center">Browser Search Visibility</h3>
           <img src="./backend/src/lib/seo/seoSiteResult.png" width="100%">
+        </td>
+      </tr>
+      <tr>
+        <td width="90%" colspan="2" align="center">
+          <h3 align="center">URL Inspection</h3>
+          <img src="./backend/src/lib/seo/urlInspection.png" width="100%">
         </td>
       </tr>
     </table>
