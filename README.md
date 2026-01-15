@@ -575,6 +575,7 @@
 │   │   ├── 📁 components
 │   │   │   ├── ProtectedRoute.jsx
 │   │   │   ├── PrivateRoute.jsx
+│   │   │   ├── CodeElevate3DLogo.jsx
 │   │   │   ├── Logo3D.jsx
 │   │   │   ├── Logo3DGold.jsx
 │   │   │   ├── Navbar.jsx
