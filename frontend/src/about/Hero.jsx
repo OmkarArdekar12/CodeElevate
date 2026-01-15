@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
+import CodeElevate3DLogo from "../components/CodeElevate3DLogo.jsx";
 import Logo3D from "../components/Logo3D.jsx";
 import Logo3DGold from "../components/Logo3DGold.jsx";
-import CodeElevate3DLogo from "../components/CodeElevate3DLogo.jsx";
 import { AnimatePresence, motion } from "framer-motion";
 
 const Hero = () => {
