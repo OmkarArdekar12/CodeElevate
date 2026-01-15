@@ -82,6 +82,27 @@ const useLogoTiltControls = (groupRef, meshRef) => {
   };
 };
 
+import { useEffect } from "react";
+import { useThree } from "@react-three/fiber";
+
+const VisibilityFix = () => {
+  const { invalidate } = useThree();
+
+  useEffect(() => {
+    const onVisibilityChange = () => {
+      if (document.visibilityState === "visible") {
+        invalidate();
+      }
+    };
+
+    document.addEventListener("visibilitychange", onVisibilityChange);
+    return () =>
+      document.removeEventListener("visibilitychange", onVisibilityChange);
+  }, [invalidate]);
+
+  return null;
+};
+
 const LogoMeshGold = () => {
   const groupRef = useRef();
   const meshRef = useRef();
@@ -165,7 +186,16 @@ const LogoMeshSilver = () => {
 const CodeElevate3DLogo = ({ cameraPosition = [0, 0, 39], showGold }) => {
   return (
     <div className="w-[200px] h-[250px] sm:w-[500px] sm:h-[500px] md:w-[648px] md:h-[700px] flex justify-center items-center cursor-grab active:cursor-grabbing">
-      <Canvas camera={{ position: [0, 0, 39], fov: 45 }}>
+      <Canvas
+        gl={{
+          preserveDrawingBuffer: true,
+          powerPreference: "high-performance",
+        }}
+        dpr={[1, 1.5]}
+        frameloop="always"
+        camera={{ position: [0, 0, 39], fov: 45 }}
+      >
+        <VisibilityFix />
         <CameraController targetPosition={cameraPosition} />
         <ambientLight intensity={0.25} />
         <spotLight
