@@ -26,7 +26,7 @@ const Hero = () => {
   return (
     <div className="w-full flex flex-col lg:flex-row items-center transition-all duration-300 ease-in-out">
       <div className="p-0 m-0">
-        <AnimatePresence mode="wait" initial={false}>
+        <AnimatePresence mode="sync" initial={false}>
           <motion.div
             key="logo3d"
             initial={{ opacity: 0 }}
