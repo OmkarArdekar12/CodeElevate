@@ -21,7 +21,7 @@
   <img src="https://img.shields.io/badge/React%20Context%20API-61DAFB?style=for-the-badge&logo=react&logoColor=black"/>
   <img src="https://img.shields.io/badge/Tailwind%20CSS-06B6D4?style=for-the-badge&logo=tailwind-css&logoColor=white"/>
   <img src="https://img.shields.io/badge/Three.js-000000?style=for-the-badge&logo=three.js&logoColor=white"/>
-  <img src="https://img.shields.io/badge/Custom%203D%20Logo-lightgrey?style=for-the-badge"/>
+  <img src="https://img.shields.io/badge/Interactive%20Custom%203D%20Logo-lightgrey?style=for-the-badge"/>
   <img src="https://img.shields.io/badge/Responsive%20UI%2FUX-blue?style=for-the-badge"/>
   <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black"/>
   <img src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white"/>
@@ -34,7 +34,7 @@
 
 <div>
   <h2>CodeElevate - Elevate Your Coding Journey.</h2>
-  <h3>CodeElevate is a dynamic coder community built to empower competitive programmers, software developers, students, learners, and professionals. The platform provides an all-in-one ecosystem featuring integrated coding statistics, development statistics, a real-time messaging system, user connection system, post sharing and engagement, personalized profiles, a profile management system, a community-driven and category-based ranking system, a notification system, search and filter functionality, and a responsive UI design - fostering growth, collaboration, and innovation among coders worldwide.</h3>
+  <h3>CodeElevate is a dynamic coder community built to empower competitive programmers, software developers, students, learners, and professionals. The platform provides an all-in-one ecosystem featuring integrated coding and development statistics across multiple platforms, a real-time messaging system, a user connection system, post sharing and engagement, personalized profiles with an advanced profile management system, a community-driven and category-based ranking system, a notification system, search and filter functionality, interactive custom 3D models, and a modern, fully responsive UI/UX design. The goal is to foster growth, collaboration, and innovation among coders worldwide.</h3>
 </div>
 
 <div id="codeelevate-live">
@@ -273,7 +273,7 @@
 ![React Hot Toast](https://img.shields.io/badge/React%20Hot%20Toast-F7B500?style=for-the-badge&logo=react&logoColor=black)
 ![React Slick](https://img.shields.io/badge/React%20Slick-1F1F1F?style=for-the-badge)
 ![Slick Carousel](https://img.shields.io/badge/Slick%20Carousel-FF5500?style=for-the-badge)
-![Custom 3D Logo Components](https://img.shields.io/badge/Custom%203D%20Logo%20Components-lightgrey?style=for-the-badge)
+![Custom 3D Logo Components](https://img.shields.io/badge/Interactive%20Custom%203D%20Components-lightgrey?style=for-the-badge)
 ![Responsive UI/UX](https://img.shields.io/badge/Responsive%20UI%2FUX-blue?style=for-the-badge)
 ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
 ![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
@@ -358,7 +358,7 @@
         <tr>
           <td>&#10148;</td>
           <td>Frontend</td>
-          <td>React.js, Vite, Tailwind CSS, Socket.io Client, Framer Motion, Optimistic UI Updates (State-based Incremental Rendering), Axios, React Router DOM, React Context API (Global Session State Management), Three.js, React Hot Toast, React Slick, Slick Carousel, Custom 3D Logo Components, Responsive UI/UX, JavaScript, CSS3, HTML5, Lucide React, React Icons, FontAwesome, Google Fonts</td>
+          <td>React.js, Vite, Tailwind CSS, Socket.io Client, Framer Motion, Optimistic UI Updates (State-based Incremental Rendering), Axios, React Router DOM, React Context API (Global Session State Management), Three.js, React Hot Toast, React Slick, Slick Carousel, Interactive Custom 3D Logo Components, Responsive UI/UX, JavaScript, CSS3, HTML5, Lucide React, React Icons, FontAwesome, Google Fonts</td>
         </tr>
         <tr>
           <td>&#10148;</td>
@@ -575,6 +575,7 @@
 │   │   ├── 📁 components
 │   │   │   ├── ProtectedRoute.jsx
 │   │   │   ├── PrivateRoute.jsx
+│   │   │   ├── CodeElevate3DLogo.jsx
 │   │   │   ├── Logo3D.jsx
 │   │   │   ├── Logo3DGold.jsx
 │   │   │   ├── Navbar.jsx
