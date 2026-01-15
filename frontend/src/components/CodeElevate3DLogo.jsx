@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { useRef, useEffect } from "react";
 import { Canvas, useFrame, useLoader, useThree } from "@react-three/fiber";
 import { STLLoader } from "three/examples/jsm/loaders/STLLoader";
 import { Environment } from "@react-three/drei";
@@ -81,9 +81,6 @@ const useLogoTiltControls = (groupRef, meshRef) => {
     },
   };
 };
-
-import { useEffect } from "react";
-import { useThree } from "@react-three/fiber";
 
 const VisibilityFix = () => {
   const { invalidate } = useThree();
