@@ -21,7 +21,7 @@
   <img src="https://img.shields.io/badge/React%20Context%20API-61DAFB?style=for-the-badge&logo=react&logoColor=black"/>
   <img src="https://img.shields.io/badge/Tailwind%20CSS-06B6D4?style=for-the-badge&logo=tailwind-css&logoColor=white"/>
   <img src="https://img.shields.io/badge/Three.js-000000?style=for-the-badge&logo=three.js&logoColor=white"/>
-  <img src="https://img.shields.io/badge/Custom%203D%20Logo-lightgrey?style=for-the-badge"/>
+  <img src="https://img.shields.io/badge/Interactive%20Custom%203D%20Logo-lightgrey?style=for-the-badge"/>
   <img src="https://img.shields.io/badge/Responsive%20UI%2FUX-blue?style=for-the-badge"/>
   <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black"/>
   <img src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white"/>
@@ -32,9 +32,9 @@
   <a href="./LICENSE"><img src="https://img.shields.io/github/license/OmkarArdekar12/CodeElevate?color=brightgreen&style=for-the-badge"/></a>
 </div>
 
-<div>
+<div id="codeelevate-description">
   <h2>CodeElevate - Elevate Your Coding Journey.</h2>
-  <h3>CodeElevate is a dynamic coder community built to empower competitive programmers, software developers, students, learners, and professionals. The platform provides an all-in-one ecosystem featuring integrated coding statistics, development statistics, a real-time messaging system, user connection system, post sharing and engagement, personalized profiles, a profile management system, a community-driven and category-based ranking system, a notification system, search and filter functionality, and a responsive UI design - fostering growth, collaboration, and innovation among coders worldwide.</h3>
+  <h3>CodeElevate is a robust, scalable, and dynamic coder community built to empower competitive programmers, software developers, students, learners, and professionals. The platform provides an all-in-one ecosystem featuring integrated coding and development statistics across multiple platforms, a real-time messaging system, a user connection system, post sharing and engagement, personalized profiles with an advanced profile management system, a community-driven and category-based ranking system, a notification system, search and filter functionality, secure multi-factor authentication (2FA with TOTP) and authorization mechanisms, an SEO-optimized structure, an MVC architecture for a modular codebase, interactive custom 3D models, and a modern, fully responsive UI/UX design. The goal is to foster growth, collaboration, and innovation among coders worldwide.</h3>
 </div>
 
 <div id="codeelevate-live">
@@ -122,6 +122,10 @@
   <h2 id="readme-index">Table of Content 📑</h2>
   <h3>
     <ol>
+      <li><a href="#codeelevate-description">Description</a></li>
+      <li><a href="#codeelevate-live">Live Application</a></li>
+      <li><a href="#youtube-codeelevate-preview-video">Demo / Preview Video</a></li>
+      <li><a href="#seo-result">SEO Visibility & Indexing</a></li>
       <li><a href="#overview">Overview</a></li>
       <li><a href="#features">Features</a></li>
       <li><a href="#technologies-used">Tech Stack / Technologies Used</a></li>
@@ -129,14 +133,14 @@
       <li><a href="#database-design">CodeElevate Database Design</a></li>
       <li><a href="#folder-file-structure">Folders and Files Structure</a>
       <ul type="disc">
-        <li><a href="#overview-folder-file-structure">Overview Folders and Files Structure</a></li>
-        <li><a href="#detail-folder-file-structure">Detail Folders and Files Structure</a></li>
+        <li><a href="#overview-folder-file-structure">Overview of Folders and Files Structure</a></li>
+        <li><a href="#detail-folder-file-structure">Detailed Folders and Files Structure</a></li>
       </ul>
       </li>
       <li><a href="#environment-variables">Environment Variables Configuration</a></li>
       <li><a href="#installation">Installation</a></li>
-      <li><a href="#diagrams">Diagrams and SEO Visibility</a></li>
-      <li><a href="#preview">Preview</a></li>
+      <li><a href="#diagrams">Structure Flow Diagrams and SEO Visibility</a></li>
+      <li><a href="#preview">Features Preview</a></li>
       <li><a href="#license">License</a></li>
       <li><a href="#author">Author</a></li>
     </ol>
@@ -147,7 +151,7 @@
 
 <div>
   <h2 id="overview"><a href="#readme-index">Overview 🖥️</a></h2>
-  <h3>CodeElevate is a MERN Stack-based web-application that empowers users to showcase their coding and development profiles all in one place. It provides a unified platform where learners, competitive programmers, professionals, coders and developers can analyze, track, and elevate their progress in both competitive programming and software development. Users can compete, connect, and grow together by earning ranks across multiple categories, building meaningful connections, and engaging through posts, connections, and real-time messaging features. At CodeElevate, our goal is to inspire growth, celebrate achievement, and create a community where every coder can rise to their full potential.</h3>
+  <h3>CodeElevate is a MERN stack-based web application that empowers users to showcase their coding and development profiles in one unified platform. It enables learners, competitive programmers, professionals, coders, and developers to analyze, track, and elevate their progress in both competitive programming and software development. Users can compete, connect, and grow together by earning ranks across multiple categories, building meaningful connections, and engaging through posts, connections, and real-time messaging features. At CodeElevate, our goal is to inspire growth, celebrate achievement, and build a community where every coder can rise to their full potential.</h3>
 </div>
 
 ---
@@ -273,7 +277,7 @@
 ![React Hot Toast](https://img.shields.io/badge/React%20Hot%20Toast-F7B500?style=for-the-badge&logo=react&logoColor=black)
 ![React Slick](https://img.shields.io/badge/React%20Slick-1F1F1F?style=for-the-badge)
 ![Slick Carousel](https://img.shields.io/badge/Slick%20Carousel-FF5500?style=for-the-badge)
-![Custom 3D Logo Components](https://img.shields.io/badge/Custom%203D%20Logo%20Components-lightgrey?style=for-the-badge)
+![Custom 3D Logo Components](https://img.shields.io/badge/Interactive%20Custom%203D%20Components-lightgrey?style=for-the-badge)
 ![Responsive UI/UX](https://img.shields.io/badge/Responsive%20UI%2FUX-blue?style=for-the-badge)
 ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
 ![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
@@ -358,7 +362,7 @@
         <tr>
           <td>&#10148;</td>
           <td>Frontend</td>
-          <td>React.js, Vite, Tailwind CSS, Socket.io Client, Framer Motion, Optimistic UI Updates (State-based Incremental Rendering), Axios, React Router DOM, React Context API (Global Session State Management), Three.js, React Hot Toast, React Slick, Slick Carousel, Custom 3D Logo Components, Responsive UI/UX, JavaScript, CSS3, HTML5, Lucide React, React Icons, FontAwesome, Google Fonts</td>
+          <td>React.js, Vite, Tailwind CSS, Socket.io Client, Framer Motion, Optimistic UI Updates (State-based Incremental Rendering), Axios, React Router DOM, React Context API (Global Session State Management), Three.js, React Hot Toast, React Slick, Slick Carousel, Interactive Custom 3D Logo Components, Responsive UI/UX, JavaScript, CSS3, HTML5, Lucide React, React Icons, FontAwesome, Google Fonts</td>
         </tr>
         <tr>
           <td>&#10148;</td>
@@ -454,7 +458,7 @@
 └── README.md
 ```
 
-  <h3 id="detail-folder-file-structure">Detail Folders & Files Structure</h3>
+<h3 id="detail-folder-file-structure">Detailed Folders & Files Structure</h3>
 
 ```bash
 📂 CODEELEVATE
@@ -566,6 +570,7 @@
 │   │   │   ├── developmentProfilesStatsApi.js
 │   │   │   ├── notificationsApi.js
 │   │   │   └── 📁 utils
+│   │   │       ├── getSessionUserId.js
 │   │   │       └── getToken2FA.js
 │   │   ├── 📁 context
 │   │   │   └── SessionContext.jsx
@@ -907,7 +912,7 @@ git push origin feature/your-feature-name
 ---
 
 <div>
-  <h2 id="diagrams"><a href="#readme-index">Diagrams 📊 and SEO Visibility 🌐</a></h2>
+  <h2 id="diagrams"><a href="#readme-index">Structure Flow Diagrams 📊 and SEO Visibility 🌐</a></h2>
   <div width="100%">
     <table width="95%" align="center" border="0">
       <tr>
@@ -1025,7 +1030,7 @@ git push origin feature/your-feature-name
 ---
 
 <div>
-  <h2 id="preview"><a href="#readme-index">Preview 🎨🪟</a></h2>
+  <h2 id="preview"><a href="#readme-index">Features Preview 🎨🪟</a></h2>
   <div width="100%" align="center">
     <table width="95%" align="center" border="0">
       <tr>
