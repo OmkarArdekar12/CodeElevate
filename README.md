@@ -458,7 +458,7 @@
 └── README.md
 ```
 
-  <h3 id="detail-folder-file-structure">Detail Folders & Files Structure</h3>
+<h3 id="detail-folder-file-structure">Detailed Folders & Files Structure</h3>
 
 ```bash
 📂 CODEELEVATE
