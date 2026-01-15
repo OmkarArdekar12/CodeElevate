@@ -1,6 +1,7 @@
-import React, { useRef, useEffect } from "react";
+import React, { useRef, useState, useEffect } from "react";
 import { Canvas, useFrame, useLoader, useThree } from "@react-three/fiber";
 import { STLLoader } from "three/examples/jsm/loaders/STLLoader";
+import { ContactShadows } from "@react-three/drei";
 import { Environment } from "@react-three/drei";
 import * as THREE from "three";
 
@@ -117,6 +118,20 @@ const useLogoTiltControls = (groupRef, meshRef) => {
   };
 };
 
+const LightSweep = ({ lightRef }) => {
+  useFrame(({ clock }) => {
+    if (!lightRef.current) {
+      return;
+    }
+
+    const t = clock.getElapsedTime();
+    lightRef.current.position.x = Math.sin(t * 0.35) * 14;
+    lightRef.current.position.z = Math.cos(t * 0.25) * 6;
+  });
+
+  return null;
+};
+
 const Logo = ({ color, materialProps }) => {
   const groupRef = useRef();
   const meshRef = useRef();
@@ -145,13 +160,71 @@ const Logo = ({ color, materialProps }) => {
   );
 };
 
+const ENV_PRESETS = [
+  "city",
+  "warehouse",
+  "studio",
+  "forest",
+  "dawn",
+  "lobby",
+  "night",
+  "apartment",
+  "sunset",
+  "park",
+];
+
+const EnvironmentController = () => {
+  const envIndex = useRef(0);
+  const intensity = useRef(1);
+  const phase = useRef("idle");
+  const lastSwitch = useRef(0);
+
+  useFrame(({ clock }) => {
+    const time = clock.getElapsedTime();
+
+    if (time - lastSwitch.current > 2.5 && phase.current === "idle") {
+      phase.current = "fadeOut";
+      lastSwitch.current = time;
+    }
+
+    if (phase.current === "fadeOut") {
+      intensity.current = THREE.MathUtils.lerp(intensity.current, 0, 0.08);
+
+      if (intensity.current < 0.02) {
+        envIndex.current = (envIndex.current + 1) % ENV_PRESETS.length;
+        phase.current = "fadeIn";
+      }
+    }
+
+    if (phase.current === "fadeIn") {
+      intensity.current = THREE.MathUtils.lerp(intensity.current, 1, 0.08);
+
+      if (intensity.current > 0.98) {
+        intensity.current = 1;
+        phase.current = "idle";
+      }
+    }
+  });
+
+  return (
+    <Environment
+      preset={ENV_PRESETS[envIndex.current]}
+      intensity={intensity.current}
+    />
+  );
+};
+
 const CodeElevate3DLogo = ({ cameraPosition = [0, 0, 39], showGold }) => {
+  const sweepLight = useRef();
+
   return (
     <div
-      className="w-[200px] h-[250px] sm:w-[500px] sm:h-[500px] md:w-[648px] md:h-[700px] flex justify-center items-center cursor-grab active:cursor-grabbing"
-      style={{ minHeight: "250px" }}
+      className="w-[200px] h-[250px] sm:w-[500px] sm:h-[500px] md:w-[648px] md:h-[700px] flex justify-center items-center cursor-grab active:cursor-grabbing transition-all duration-300 ease-out"
+      style={{ minWidth: "200px", minHeight: "250px" }}
     >
       <Canvas
+        className="w-[200px] h-[250px] sm:w-[500px] sm:h-[500px] md:w-[648px] md:h-[700px] flex justify-center items-center cursor-grab active:cursor-grabbing transition-all duration-300 ease-out"
+        style={{ minWidth: "200px", minHeight: "250px" }}
         frameloop="always"
         dpr={[1, 1.5]}
         gl={{
@@ -164,40 +237,63 @@ const CodeElevate3DLogo = ({ cameraPosition = [0, 0, 39], showGold }) => {
         <ResizeFix />
         <CameraController targetPosition={cameraPosition} />
 
-        <ambientLight intensity={0.25} />
-        <spotLight
-          position={[0, 30, 0]}
-          angle={0.35}
-          penumbra={1}
-          intensity={2.2}
-        />
-        <directionalLight position={[10, 15, 10]} intensity={1.2} />
-        <pointLight position={[-10, -10, -10]} intensity={0.6} />
-        <Environment preset="warehouse" />
+        <ambientLight intensity={0.21} />
 
-        {showGold ? (
-          <Logo
-            color="#d4af37"
-            materialProps={{
-              metalness: 1,
-              roughness: 0.12,
-              clearcoat: 1,
-              envMapIntensity: 2.4,
-              sheen: 0.4,
-            }}
-          />
-        ) : (
-          <Logo
-            color="#e6e6e6"
-            materialProps={{
-              metalness: 1,
-              roughness: 0.08,
-              clearcoat: 1,
-              envMapIntensity: 2.1,
-              sheen: 0.25,
-            }}
-          />
-        )}
+        <spotLight
+          ref={sweepLight}
+          position={[0, 43, 0]}
+          angle={0.75}
+          penumbra={1}
+          intensity={4.2}
+          distance={150}
+          decay={2}
+          color="#ffffff"
+        />
+
+        <directionalLight position={[18, 10, 12]} intensity={1.1} />
+        <directionalLight
+          position={[-18, 14, -19]}
+          intensity={0.9}
+          color="#e6e6ff"
+        />
+        <directionalLight
+          position={[0, 10, -30]}
+          intensity={0.9}
+          color="#ffffff"
+        />
+
+        <pointLight position={[-10, -10, -10]} intensity={0.6} />
+        <pointLight position={[0, -15, 10]} intensity={0.45} color="#ffffff" />
+        <pointLight
+          position={[25, 5, 15]}
+          intensity={0.35}
+          color={showGold ? "#ffd27d" : "#cfe8ff"}
+        />
+
+        <LightSweep lightRef={sweepLight} />
+
+        <EnvironmentController />
+
+        <Logo
+          color={showGold ? "#d4af37" : "#e6e6e6"}
+          materialProps={{
+            metalness: 1,
+            roughness: 0.1,
+            clearcoat: 1,
+            clearcoatRoughness: 0.05,
+            envMapIntensity: 2.9,
+            reflectivity: 1,
+            sheen: 0.45,
+            sheenColor: "#ffffff",
+            sheenRoughness: 0.23,
+            specularIntensity: 1,
+            specularColor: "#ffffff",
+            ior: 1.5,
+            thickness: 0.7,
+            transmission: 0,
+            toneMapped: true,
+          }}
+        />
       </Canvas>
     </div>
   );
