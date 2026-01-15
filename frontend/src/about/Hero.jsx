@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import Logo3D from "../components/Logo3D.jsx";
 import Logo3DGold from "../components/Logo3DGold.jsx";
 import { AnimatePresence, motion } from "framer-motion";
+import CodeElevate3DLogo from "../components/CodeElevate3DLogo.jsx";
 
 const Hero = () => {
   const [showGold, setShowGold] = useState(false);
@@ -26,27 +27,18 @@ const Hero = () => {
     <div className="w-full flex flex-col lg:flex-row items-center transition-all duration-300 ease-in-out">
       <div className="p-0 m-0">
         <AnimatePresence mode="wait" initial={false}>
-          {showGold ? (
-            <motion.div
-              key="logo3d"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              transition={{ duration: 0.9, ease: "easeInOut" }}
-            >
-              <CodeElevate3dLogo cameraPosition={currCameraPosition} />
-            </motion.div>
-          ) : (
-            <motion.div
-              key="silver"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              transition={{ duration: 0.9, ease: "easeInOut" }}
-            >
-              <Logo3D cameraPosition={currCameraPosition} />
-            </motion.div>
-          )}
+          <motion.div
+            key="logo3d"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.9, ease: "easeInOut" }}
+          >
+            <CodeElevate3DLogo
+              cameraPosition={currCameraPosition}
+              showGold={showGold}
+            />
+          </motion.div>
         </AnimatePresence>
       </div>
       <div className="text-cyan-100 flex gap-1 items-center justify-center flex-col px-4 md:px-10 selection:bg-yellow-300 selection:text-black">
