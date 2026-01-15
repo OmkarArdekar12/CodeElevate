@@ -77,7 +77,7 @@ const LogoMeshSilver = () => {
   );
 };
 
-const Logo3DGold = ({ cameraPosition = [0, 0, 39], showGold }) => {
+const CodeElevate3DLogo = ({ cameraPosition = [0, 0, 39], showGold }) => {
   return (
     <div className="w-[200px] h-[250px] sm:w-[500px] sm:h-[500px] md:w-[648px] md:h-[700px] flex justify-center items-center">
       <Canvas
@@ -99,4 +99,4 @@ const Logo3DGold = ({ cameraPosition = [0, 0, 39], showGold }) => {
   );
 };
 
-export default Logo3DGold;
+export default CodeElevate3DLogo;

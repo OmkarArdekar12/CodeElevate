@@ -28,13 +28,13 @@ const Hero = () => {
         <AnimatePresence mode="wait" initial={false}>
           {showGold ? (
             <motion.div
-              key="gold"
+              key="logo3d"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               transition={{ duration: 0.9, ease: "easeInOut" }}
             >
-              <Logo3DGold cameraPosition={currCameraPosition} />
+              <CodeElevate3dLogo cameraPosition={currCameraPosition} />
             </motion.div>
           ) : (
             <motion.div
