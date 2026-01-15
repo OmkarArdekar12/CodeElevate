@@ -161,19 +161,19 @@ const Logo = ({ color, materialProps }) => {
 };
 
 const ENV_PRESETS = [
-  "city",
-  "warehouse",
   "studio",
-  "forest",
-  "dawn",
-  "lobby",
-  "night",
-  "apartment",
+  "warehouse",
   "sunset",
+  "city",
+  "lobby",
+  "apartment",
+  "dawn",
+  "night",
   "park",
+  "forest",
 ];
 
-const EnvironmentController = () => {
+const EnvironmentController = ({ switchInterval = 3.8, fadeSpeed = 0.05 }) => {
   const envIndex = useRef(0);
   const intensity = useRef(1);
   const phase = useRef("idle");
@@ -182,13 +182,16 @@ const EnvironmentController = () => {
   useFrame(({ clock }) => {
     const time = clock.getElapsedTime();
 
-    if (time - lastSwitch.current > 2.5 && phase.current === "idle") {
+    if (
+      phase.current === "idle" &&
+      time - lastSwitch.current > switchInterval
+    ) {
       phase.current = "fadeOut";
       lastSwitch.current = time;
     }
 
     if (phase.current === "fadeOut") {
-      intensity.current = THREE.MathUtils.lerp(intensity.current, 0, 0.08);
+      intensity.current = THREE.MathUtils.lerp(intensity.current, 0, fadeSpeed);
 
       if (intensity.current < 0.02) {
         envIndex.current = (envIndex.current + 1) % ENV_PRESETS.length;
@@ -197,7 +200,7 @@ const EnvironmentController = () => {
     }
 
     if (phase.current === "fadeIn") {
-      intensity.current = THREE.MathUtils.lerp(intensity.current, 1, 0.08);
+      intensity.current = THREE.MathUtils.lerp(intensity.current, 1, fadeSpeed);
 
       if (intensity.current > 0.98) {
         intensity.current = 1;
@@ -272,7 +275,7 @@ const CodeElevate3DLogo = ({ cameraPosition = [0, 0, 39], showGold }) => {
 
         <LightSweep lightRef={sweepLight} />
 
-        <EnvironmentController />
+        <EnvironmentController switchInterval={3} fadeSpeed={0.025} />
 
         <Logo
           color={showGold ? "#d4af37" : "#e6e6e6"}
