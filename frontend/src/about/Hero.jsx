@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
-import Logo3D from "../components/Logo3D.jsx";
-import Logo3DGold from "../components/Logo3DGold.jsx";
 import CodeElevate3DLogo from "../components/CodeElevate3DLogo.jsx";
 import { AnimatePresence, motion } from "framer-motion";
+import Logo3D from "../components/Logo3D.jsx";
+import Logo3DGold from "../components/Logo3DGold.jsx";
 
 const Hero = () => {
   const [showGold, setShowGold] = useState(false);
