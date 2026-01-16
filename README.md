@@ -1,4 +1,4 @@
-<h1><img src="./frontend/public/images/CodeElevateLogo.gif" width="55px" valign="bottom"/><img src="./frontend/public/images/CodeElevateText.gif" width="275px" valign="bottom"/></h1>
+<h1 id="codeelevate-title"><img src="./frontend/public/images/CodeElevateLogo.gif" width="55px" valign="bottom"/><img src="./frontend/public/images/CodeElevateText.gif" width="275px" valign="bottom"/></h1>
 
 <div>
   <img src="https://img.shields.io/badge/MERN%20Stack-3C873A?style=for-the-badge&logo=mern&logoColor=white"/>
@@ -119,7 +119,7 @@
 ---
 
 <div>
-  <h2 id="readme-index">Table of Content 📑</h2>
+  <h2 id="readme-index"><a href="#codeelevate-title">Table of Content 📑</a></h2>
   <h3>
     <ol>
       <li><a href="#codeelevate-description">Description</a></li>
