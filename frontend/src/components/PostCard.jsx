@@ -57,7 +57,7 @@ const PostCard = ({
       const response = await likeOrUnlikePost(postId);
       toast.success(
         isLiked ? "You unliked this post." : "You liked this post.",
-        { id: "post like/unlike success" }
+        { id: "post like/unlike success" },
       );
       const updatedPost = {
         ...postData,
@@ -69,7 +69,7 @@ const PostCard = ({
     } catch (err) {
       toast.error(
         isLiked ? "Failed to unlike this post." : "Failed to like this post.",
-        { id: "post like/unlike failed" }
+        { id: "post like/unlike failed" },
       );
     }
   };
@@ -328,7 +328,7 @@ const PostCard = ({
       {showCommentBox && (
         <div className="px-4 py-3 border-t border-slate-800">
           {postComments && postComments.length > 0 && (
-            <div className="max-h-40 overflow-y-auto mb-3 pr-2">
+            <div className="max-h-40 overflow-y-auto mb-3 pr-2 comment-scrollbar">
               {postComments.map((comment, idx) => (
                 <Comment
                   comment={comment}

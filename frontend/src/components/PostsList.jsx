@@ -13,8 +13,8 @@ const PostsList = ({
   const onPostUpdate = (updatedPost) => {
     setAllUserPosts((prevPosts) =>
       prevPosts.map((post) =>
-        post._id === updatedPost._id ? updatedPost : post
-      )
+        post._id === updatedPost._id ? updatedPost : post,
+      ),
     );
   };
 
