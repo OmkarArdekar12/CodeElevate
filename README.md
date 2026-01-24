@@ -973,6 +973,12 @@ git push origin feature/your-feature-name
       </tr>
       <tr>
         <td width="90%" colspan="2" align="center">
+          <h3 align="center">Ranked #1 on Google Search with fully indexed routes and strong SEO visibility.</h3>
+          <img src="./backend/src/lib/seo/seoSearchUpdated.png" width="100%">
+        </td>
+      </tr>
+      <tr>
+        <td width="90%" colspan="2" align="center">
           <h3 align="center">SEO Google Search Visibility</h3>
           <img src="./backend/src/lib/seo/seoSearchUpdated1.png" width="100%">
         </td>
