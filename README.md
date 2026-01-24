@@ -66,6 +66,11 @@
       <table width="95%" align="center" border="0">
         <tr width="100%">
           <td width="100%" colspan="2" align="center">
+            <img src="./backend/src/lib/seo/seoSearchUpdated.png" width="100%">
+          </td>
+        </tr>
+        <tr width="100%">
+          <td width="100%" colspan="2" align="center">
             <img src="./backend/src/lib/seo/seoSearchUpdated1.png" width="100%">
           </td>
         </tr>
@@ -526,6 +531,7 @@
 │   │   │   │   ├── seoPerformance2.png
 │   │   │   │   ├── seoResult.png
 │   │   │   │   ├── seoSearchResult.png
+│   │   │   │   ├── seoSearchUpdated.png
 │   │   │   │   ├── seoSearchUpdated1.png
 │   │   │   │   ├── seoSearchUpdated2.png
 │   │   │   │   ├── seoSitemaps1.png
