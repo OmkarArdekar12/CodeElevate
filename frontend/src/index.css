@@ -8,7 +8,8 @@
     height: 100vh;
     /* background: linear-gradient(45deg, #1a1a1b, #1e1e1e); */
     background-color: var(--color-slate-950);
-    font-family: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji",
+    font-family:
+      ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji",
       "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   }
 }
@@ -221,7 +222,9 @@ main {
     #b102b7,
     #fd004c
   );
-  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
   mask-composite: exclude;
   -webkit-mask-composite: destination-out;
   opacity: 0;
@@ -243,7 +246,8 @@ main {
 /* Stats Card */
 .stats-card-leetcode {
   transform-style: preserve-3d;
-  transition: transform 0.6s cubic-bezier(0.4, 0.2, 0.2, 1),
+  transition:
+    transform 0.6s cubic-bezier(0.4, 0.2, 0.2, 1),
     box-shadow 0.6s ease-in-out;
   perspective: 1000px;
 }
@@ -253,7 +257,8 @@ main {
 }
 .stats-card-codeforces {
   transform-style: preserve-3d;
-  transition: transform 0.6s cubic-bezier(0.4, 0.2, 0.2, 1),
+  transition:
+    transform 0.6s cubic-bezier(0.4, 0.2, 0.2, 1),
     box-shadow 0.6s ease-in-out;
   perspective: 1000px;
 }
@@ -263,7 +268,8 @@ main {
 }
 .stats-card-github {
   transform-style: preserve-3d;
-  transition: transform 0.6s cubic-bezier(0.4, 0.2, 0.2, 1),
+  transition:
+    transform 0.6s cubic-bezier(0.4, 0.2, 0.2, 1),
     box-shadow 0.6s ease-in-out;
   perspective: 1000px;
 }
@@ -286,6 +292,25 @@ main {
   font-family: "Oxygen", sans-serif;
   font-weight: 400;
   font-style: normal;
+}
+
+/* Profile Post Card Custom Scrollbar Styling for Comments */
+.comment-scrollbar::-webkit-scrollbar {
+  width: 6px;
+}
+.comment-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+.comment-scrollbar::-webkit-scrollbar-thumb {
+  background-color: #475569;
+  border-radius: 10px;
+}
+.comment-scrollbar::-webkit-scrollbar-thumb:hover {
+  background-color: #64748b;
+}
+.comment-scrollbar {
+  scrollbar-width: thin;
+  scrollbar-color: #475569 transparent;
 }
 
 /* Scrollbar Styling */
