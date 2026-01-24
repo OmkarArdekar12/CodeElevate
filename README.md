@@ -66,7 +66,7 @@
       <table width="95%" align="center" border="0">
         <tr width="100%">
           <td width="100%" colspan="2" align="center">
-            <h3>Production-Grade SEO & Web Performance Implementation with Verified #1 Google Search Visibility</h3>
+            <h5>Production-Grade SEO & Web Performance Implementation with Verified #1 Google Search Visibility</h5>
             <img src="./backend/src/lib/seo/seoSearchUpdated.png" width="100%">
           </td>
         </tr>
