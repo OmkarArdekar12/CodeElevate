@@ -66,7 +66,7 @@
       <table width="95%" align="center" border="0">
         <tr width="100%">
           <td width="100%" colspan="2" align="center">
-            <h4>Production-Grade SEO & Web Performance Implementation with Verified #1 Google Search Visibility.</h4>
+            <h3>Production-Grade SEO & Web Performance Implementation with Verified #1 Google Search Visibility</h3>
             <img src="./backend/src/lib/seo/seoSearchUpdated.png" width="100%">
           </td>
         </tr>
@@ -974,7 +974,7 @@ git push origin feature/your-feature-name
       </tr>
       <tr>
         <td width="90%" colspan="2" align="center">
-          <h3 align="center">Ranked #1 on Google Search with fully indexed routes and strong SEO visibility.</h3>
+          <h3 align="center">Ranked #1 on Google Search with fully indexed routes and strong SEO visibility</h3>
           <img src="./backend/src/lib/seo/seoSearchUpdated.png" width="100%">
         </td>
       </tr>
