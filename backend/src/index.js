@@ -44,7 +44,7 @@ const server = http.createServer(app);
 //Socket.IO
 const io = new Server(server, {
   cors: {
-    origin: [process.env.FRONTEND_URL],
+    origin: [process.env.FRONTEND_URL, process.env.BACKEND_URL],
     methods: ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"],
     credentials: true,
     allowedHeaders: [
@@ -62,7 +62,7 @@ const io = new Server(server, {
 dbConnect();
 
 const corsOptions = {
-  origin: [process.env.FRONTEND_URL],
+  origin: [process.env.FRONTEND_URL, process.env.BACKEND_URL],
   methods: ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"],
   credentials: true,
   allowedHeaders: [
@@ -159,7 +159,7 @@ app.use("/api/auth", authRoutes);
 app.use("/api/profiles", profileRoutes);
 app.use(
   "/api/stats/competitive-programming",
-  competitiveProgrammingStatsRoutes
+  competitiveProgrammingStatsRoutes,
 );
 app.use("/api/stats/development-profiles", developmentProfilesStatsRoutes);
 app.use("/api/users", connectionRoutes);
