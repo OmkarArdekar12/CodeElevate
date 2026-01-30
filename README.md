@@ -1,6 +1,6 @@
 <h1 id="codeelevate-title" align="center" width="100%"><img src="./frontend/public/images/CodeElevateLogo.gif" width="19%" valign="bottom" align="center"/><br/><img src="./frontend/public/images/CodeElevateText.gif" width="45%" valign="bottom" align="center" /></h1>
 
-<div width="100%" align="center">
+<h2 width="100%" align="center">
   <img src="https://img.shields.io/badge/MERN%20Stack-3C873A?style=for-the-badge&logo=devbox&logoColor=white"/>
   <img src="https://img.shields.io/badge/MongoDB-47A248?style=for-the-badge&logo=mongodb&logoColor=white"/>
   <img src="https://img.shields.io/badge/Express.js-000000?style=for-the-badge&logo=express&logoColor=white"/>
@@ -30,7 +30,7 @@
   <img src="https://img.shields.io/badge/Render-00D1FF?style=for-the-badge&logo=render&logoColor=white"/>
   <br/>
   <a href="./LICENSE"><img src="https://img.shields.io/github/license/OmkarArdekar12/CodeElevate?color=brightgreen&style=for-the-badge"/></a>
-</div>
+</h2>
 
 <div id="codeelevate-description">
   <h2>CodeElevate - Elevate Your Coding Journey.</h2>
