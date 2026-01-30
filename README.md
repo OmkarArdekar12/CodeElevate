@@ -1,7 +1,7 @@
-<h1 id="codeelevate-title"><img src="./frontend/public/images/CodeElevateLogo.gif" width="55px" valign="bottom"/><img src="./frontend/public/images/CodeElevateText.gif" width="275px" valign="bottom"/></h1>
+<h1 id="codeelevate-title" align="center" width="100%"><img src="./frontend/public/images/CodeElevateLogo.gif" width="19%" valign="bottom" align="center"/><br/><img src="./frontend/public/images/CodeElevateText.gif" width="45%" valign="bottom" align="center" /></h1>
 
-<div>
-  <img src="https://img.shields.io/badge/MERN%20Stack-3C873A?style=for-the-badge&logo=mern&logoColor=white"/>
+<div width="100%" align="center">
+  <img src="https://img.shields.io/badge/MERN%20Stack-3C873A?style=for-the-badge&logo=devbox&logoColor=white"/>
   <img src="https://img.shields.io/badge/MongoDB-47A248?style=for-the-badge&logo=mongodb&logoColor=white"/>
   <img src="https://img.shields.io/badge/Express.js-000000?style=for-the-badge&logo=express&logoColor=white"/>
   <img src="https://img.shields.io/badge/React.js-20232A?style=for-the-badge&logo=react&logoColor=61DAFB"/>
