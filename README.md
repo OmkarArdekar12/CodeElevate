@@ -1,7 +1,7 @@
-<h1 id="codeelevate-title"><img src="./frontend/public/images/CodeElevateLogo.gif" width="55px" valign="bottom"/><img src="./frontend/public/images/CodeElevateText.gif" width="275px" valign="bottom"/></h1>
+<h1 id="codeelevate-title" align="center" width="100%"><img src="./frontend/public/images/CodeElevateLogo.gif" width="19%" valign="bottom" align="center"/><br/><img src="./frontend/public/images/CodeElevateText.gif" width="45%" valign="bottom" align="center" /></h1>
 
-<div>
-  <img src="https://img.shields.io/badge/MERN%20Stack-3C873A?style=for-the-badge&logo=mern&logoColor=white"/>
+<h2 width="100rem" align="center">
+  <img src="https://img.shields.io/badge/MERN%20Stack-3C873A?style=for-the-badge&logo=devbox&logoColor=white"/>
   <img src="https://img.shields.io/badge/MongoDB-47A248?style=for-the-badge&logo=mongodb&logoColor=white"/>
   <img src="https://img.shields.io/badge/Express.js-000000?style=for-the-badge&logo=express&logoColor=white"/>
   <img src="https://img.shields.io/badge/React.js-20232A?style=for-the-badge&logo=react&logoColor=61DAFB"/>
@@ -30,7 +30,7 @@
   <img src="https://img.shields.io/badge/Render-00D1FF?style=for-the-badge&logo=render&logoColor=white"/>
   <br/>
   <a href="./LICENSE"><img src="https://img.shields.io/github/license/OmkarArdekar12/CodeElevate?color=brightgreen&style=for-the-badge"/></a>
-</div>
+</h2>
 
 <div id="codeelevate-description">
   <h2>CodeElevate - Elevate Your Coding Journey.</h2>
@@ -1175,3 +1175,36 @@ git push origin feature/your-feature-name
 <br/>
 <hr/>
 <hr/>
+
+<!-- <h1 id="codeelevate-title"><img src="./frontend/public/images/CodeElevateLogo.gif" width="55px" valign="bottom"/><img src="./frontend/public/images/CodeElevateText.gif" width="275px" valign="bottom"/></h1>
+<div>
+  <img src="https://img.shields.io/badge/MERN%20Stack-3C873A?style=for-the-badge&logo=mern&logoColor=white"/>
+  <img src="https://img.shields.io/badge/MongoDB-47A248?style=for-the-badge&logo=mongodb&logoColor=white"/>
+  <img src="https://img.shields.io/badge/Express.js-000000?style=for-the-badge&logo=express&logoColor=white"/>
+  <img src="https://img.shields.io/badge/React.js-20232A?style=for-the-badge&logo=react&logoColor=61DAFB"/>
+  <img src="https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white"/>
+  <img src="https://img.shields.io/badge/MVC%20Architecture-teal?style=for-the-badge"/>
+  <img src="https://img.shields.io/badge/RESTful%20APIs-blue?style=for-the-badge"/>
+  <img src="https://img.shields.io/badge/SEO%20Optimized-orange?style=for-the-badge"/>
+  <img src="https://img.shields.io/badge/Socket.io-010101?style=for-the-badge&logo=socket.io&logoColor=white"/>
+  <img src="https://img.shields.io/badge/Mongoose-880000?style=for-the-badge"/>
+  <img src="https://img.shields.io/badge/Cloudinary-FF5A5F?style=for-the-badge&logo=cloudinary&logoColor=white"/>
+  <img src="https://img.shields.io/badge/Passport.js-000000?style=for-the-badge&logo=passport&logoColor=white"/>
+  <img src="https://img.shields.io/badge/JWT%20Authentication-32329F?style=for-the-badge&logo=jsonwebtokens&logoColor=white"/>
+  <img src="https://img.shields.io/badge/2FA%20Authentication-FF6F00?style=for-the-badge"/>
+  <img src="https://img.shields.io/badge/Validations-0088CC?style=for-the-badge"/>
+  <img src="https://img.shields.io/badge/Axios-5A29E4?style=for-the-badge&logo=axios&logoColor=white"/>
+  <img src="https://img.shields.io/badge/Framer%20Motion-0055FF?style=for-the-badge&logo=framer&logoColor=white"/>
+  <img src="https://img.shields.io/badge/React%20Context%20API-61DAFB?style=for-the-badge&logo=react&logoColor=black"/>
+  <img src="https://img.shields.io/badge/Tailwind%20CSS-06B6D4?style=for-the-badge&logo=tailwind-css&logoColor=white"/>
+  <img src="https://img.shields.io/badge/Three.js-000000?style=for-the-badge&logo=three.js&logoColor=white"/>
+  <img src="https://img.shields.io/badge/Interactive%20Custom%203D%20Logo-lightgrey?style=for-the-badge"/>
+  <img src="https://img.shields.io/badge/Responsive%20UI%2FUX-blue?style=for-the-badge"/>
+  <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black"/>
+  <img src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white"/>
+  <img src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white"/>
+  <img src="https://img.shields.io/badge/Vercel-000000?style=for-the-badge&logo=vercel&logoColor=white"/>
+  <img src="https://img.shields.io/badge/Render-00D1FF?style=for-the-badge&logo=render&logoColor=white"/>
+  <br/>
+  <a href="./LICENSE"><img src="https://img.shields.io/github/license/OmkarArdekar12/CodeElevate?color=brightgreen&style=for-the-badge"/></a>
+</div> -->
