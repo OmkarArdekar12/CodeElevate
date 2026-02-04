@@ -529,7 +529,9 @@
 │   │   │   │   └── mongodbDatabaseStructure.png
 │   │   │   ├── 📁 seo
 │   │   │   │   ├── seoPerformance1.png
+│   │   │   │   ├── seoPerformance1prev.png
 │   │   │   │   ├── seoPerformance2.png
+│   │   │   │   ├── seoPerformance2prev.png
 │   │   │   │   ├── seoResult.png
 │   │   │   │   ├── seoSearchResult.png
 │   │   │   │   ├── seoSearchUpdated.png
