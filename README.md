@@ -302,7 +302,7 @@
 ![bcrypt.js](https://img.shields.io/badge/bcrypt.js-463A3A?style=for-the-badge)
 ![Express-Session](https://img.shields.io/badge/Express%20Session-DB0A47?style=for-the-badge)
 ![Cookie-Parser](https://img.shields.io/badge/Cookie-Parser-007ACC?style=for-the-badge)
-![Body-Parser](https://img.shields.io/badge/Body-Parser-3B∆?style=for-the-badge)
+![Body-Parser](https://img.shields.io/badge/Body--Parser-3B3B3B?style=for-the-badge)
 ![Speakeasy (2FA)](https://img.shields.io/badge/Speakeasy-2FA-FF6F00?style=for-the-badge)
 ![QRCode (2FA)](https://img.shields.io/badge/QRCode-2FA-009688?style=for-the-badge)
 ![Joi Validations](https://img.shields.io/badge/Joi%20Validations-0088CC?style=for-the-badge) <br/>
