@@ -1000,7 +1000,7 @@ git push origin feature/your-feature-name
           <img src="./backend/src/lib/seo/seoPerformance1.png" width="100%">
         </td>
         <td width="45%">
-          <h3 align="center">SEO Detail Performance</h3>
+          <h3 align="center">SEO Detailed Performance</h3>
           <img src="./backend/src/lib/seo/seoPerformance2.png" width="100%">
         </td>
       </tr>
