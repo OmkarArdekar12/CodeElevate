@@ -60,7 +60,7 @@
 
       .section h2 {
         margin-bottom: 0.8rem;
-        color: #22c55e;
+        color: #66e996;
         font-size: 1.25rem;
       }
 
@@ -87,6 +87,102 @@
         text-align: center;
         font-size: 0.9rem;
         color: #94a3b8;
+      }
+
+      ::selection {
+        background-color: #facc15;
+        color: #000000;
+      }
+
+      ::-moz-selection {
+        background-color: #facc15;
+        color: #000000;
+      }
+
+      img {
+        max-width: 100%;
+        height: auto;
+      }
+
+      #hero p {
+        text-align: center;
+        font-size: 1rem;
+        color: #94a3b8;
+      }
+
+      @media (min-width: 640px) {
+        body {
+          padding: 3.5rem 2.5rem;
+        }
+
+        .section {
+          padding: 2.2rem;
+        }
+
+        .section h2 {
+          font-size: 1.4rem;
+        }
+
+        #hero img:first-child {
+          width: 100px;
+        }
+
+        #hero img:last-child {
+          width: 260px;
+        }
+      }
+
+      @media (min-width: 1024px) {
+        body {
+          padding: 4rem;
+        }
+
+        .section {
+          max-width: 1000px;
+        }
+
+        .section h2 {
+          font-size: 1.5rem;
+        }
+
+        .section p,
+        .section li {
+          font-size: 1.02rem;
+        }
+      }
+
+      @media (min-width: 1280px) {
+        .section {
+          max-width: 1100px;
+        }
+      }
+
+      /* Mobile optimizations (≤480px) */
+      @media (max-width: 480px) {
+        body {
+          padding: 2rem 1rem;
+        }
+
+        #hero img:first-child {
+          width: 70px;
+        }
+
+        #hero img:last-child {
+          width: 180px;
+        }
+
+        .section {
+          padding: 1.4rem;
+        }
+
+        .section h2 {
+          font-size: 1.15rem;
+        }
+
+        .section p,
+        .section li {
+          font-size: 0.95rem;
+        }
       }
     </style>
   </head>
