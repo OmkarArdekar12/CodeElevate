@@ -929,7 +929,7 @@ touch .env
 `.env`
 
 ```bash
-VITE_BACKEND_UR=http://localhost:8080 or your_backend_url
+VITE_BACKEND_URL=http://localhost:8080 or your_backend_url
 ```
 
   </div>
