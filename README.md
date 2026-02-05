@@ -150,7 +150,7 @@
 
 <div id="performance">
   <h2>
-    <a href="./backend/src/lib/reports/lighthouse-report/index.html" target="_blank" rel="noopener noreferrer">
+    <a href="https://omkarardekar12.github.io/CodeElevate/reports/lighthouse-report/" target="_blank" rel="noopener noreferrer">
       <p><img src="./frontend/public/images/LogoCodeElevate.png" width="30px"/> CodeElevate Performance</p>
       <p>📊 Click here to see the Lighthouse Detailed Performance Report</p>
     </a>
