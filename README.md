@@ -59,7 +59,7 @@
 <div id="seo-result">
   <h2>
     <a href="https://www.google.com/search?q=site:codeelevate-community.vercel.app" target="_blank" rel="noopener noreferrer">
-      <p>CodeElevate SEO Visibility <img src="./frontend/public/images/LogoCodeElevate.png" width="30px"/></p>
+      <p>CodeElevate SEO Visibility and Web Performance <img src="./frontend/public/images/LogoCodeElevate.png" width="30px"/></p>
       <p>Click here to see the SEO Visibility/Result</p>
     </a>
     <div width="100%">
@@ -167,7 +167,7 @@
       <li><a href="#codeelevate-description">Description</a></li>
       <li><a href="#codeelevate-live">Live Application</a></li>
       <li><a href="#youtube-codeelevate-preview-video">Demo / Preview Video</a></li>
-      <li><a href="#seo-result">SEO Visibility & Indexing</a></li>
+      <li><a href="#seo-result">SEO Visibility, Indexing and Web Performance</a></li>
       <li><a href="#overview">Overview</a></li>
       <li><a href="#features">Features</a></li>
       <li><a href="#technologies-used">Tech Stack / Technologies Used</a></li>
