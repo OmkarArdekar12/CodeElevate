@@ -196,9 +196,9 @@
       </li>
       <li><a href="#environment-variables">Environment Variables Configuration</a></li>
       <li><a href="#installation">Installation</a></li>
-      <li><a href="#diagrams">Structure Flow Diagrams, Web Performance and SEO Visibility</a></li>
+      <li><a href="#diagrams">Structure Flow Diagrams, Web Performance & SEO Visibility</a></li>
       <li><a href="#preview">Features Preview</a></li>
-      <li><a href="#reports">Reports</a></li>
+      <li><a href="#reports">Audit & Performance Reports</a></li>
       <li><a href="#github-pages">GitHub Pages</a></li>
       <li><a href="#license">License</a></li>
       <li><a href="#author">Author</a></li>
@@ -1307,6 +1307,34 @@ git push origin feature/your-feature-name
         </td>
       </tr>
     </table>
+  </div>
+</div>
+
+---
+
+<div>
+  <h2 id="reports"><a href="#readme-index">Audit and Performance Reports 🧾</a></h2>
+  <div>
+
+### Verified and production-grade audit reports generated using industry-standard tools to evaluate web performance, accessibility, best practices, and SEO on the live CodeElevate application.
+
+- ### [CodeElevate Application Live Production Level Lighthouse Performance Report](https://omkarardekar12.github.io/CodeElevate/reports/lighthouse-report/)
+
+- ### [Lighthouse Performance Report (PDF)](https://omkarardekar12.github.io/CodeElevate/reports/lighthouse-report/LighthouseReport.pdf)
+
+  </div>
+</div>
+
+---
+
+<div>
+  <h2 id="github-pages"><a href="#readme-index">GitHub Pages 📘</a></h2>
+  <div>
+
+### Publicly hosted documentation and reports for CodeElevate, served via GitHub Pages. This portal consolidates performance audits, SEO validation, and system documentation in a single, accessible location.
+
+- ### [CodeElevate Documentation & Reports Portal](https://omkarardekar12.github.io/CodeElevate/)
+
   </div>
 </div>
 
