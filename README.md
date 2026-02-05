@@ -839,6 +839,7 @@
 │   ├── 📁 reports
 │   │   ├── 📁 lighthouse-report
 │   │   │   └── index.html
+│   │   ├── CodeElevateLighthouseReport.txt
 │   │   ├── lighthouseAuditSummary.png
 │   │   ├── lighthousePerformanceMetrics.png
 │   │   └── LighthouseReport.pdf
