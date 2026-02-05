@@ -1318,7 +1318,7 @@ git push origin feature/your-feature-name
 
 - ### [CodeElevate Application Live Production Level Lighthouse Performance Report](https://omkarardekar12.github.io/CodeElevate/reports/lighthouse-report/)
 
-- ### [Lighthouse Performance Report (PDF)](https://omkarardekar12.github.io/CodeElevate/reports/lighthouse-report/LighthouseReport.pdf)
+- ### [Lighthouse Performance Report (PDF)](https://omkarardekar12.github.io/CodeElevate/reports/LighthouseReport.pdf)
 
   </div>
 </div>
