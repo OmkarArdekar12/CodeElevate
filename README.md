@@ -564,11 +564,12 @@
 │   │   │   │   ├── codeElevateArchitecture.png
 │   │   │   │   └── mongodbDatabaseStructure.png
 │   │   │   ├── 📁 reports
-│   │   │   │   ├── 📁 reports
-│   │   │   │   │   ├── seoStats.png
-│   │   │   │   │   └── urlInspection.png
-│   │   │   │   ├── seoStats.png
-│   │   │   │   └── urlInspection.png
+│   │   │   │   ├── 📁 lighthouse-report
+│   │   │   │   │   └── index.html
+│   │   │   │   ├── CodeElevateLighthouseReport.html
+│   │   │   │   ├── lighthouseAuditSummary.png
+│   │   │   │   ├── lighthousePerformanceMetrics.png
+│   │   │   │   └── LighthouseReport.pdf
 │   │   │   ├── 📁 seo
 │   │   │   │   ├── seoPerformance1.png
 │   │   │   │   ├── seoPerformance1prev.png
