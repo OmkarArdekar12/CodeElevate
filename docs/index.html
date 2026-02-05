@@ -83,6 +83,11 @@
       }
 
       footer {
+        width: 100%;
+        max-width: 900px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
         margin-top: 3rem;
         text-align: center;
         font-size: 0.9rem;
@@ -157,7 +162,6 @@
         }
       }
 
-      /* Mobile optimizations (≤480px) */
       @media (max-width: 480px) {
         body {
           padding: 2rem 1rem;
@@ -182,6 +186,12 @@
         .section p,
         .section li {
           font-size: 0.95rem;
+        }
+
+        footer {
+          flex-direction: column;
+          align-items: start;
+          gap: 1rem;
         }
       }
     </style>
@@ -338,11 +348,12 @@
     </div>
 
     <footer>
-      <p>
-        <a href="https://github.com/OmkarArdekar12/CodeElevate" target="_blank">
-          &larr; Back to CodeElevate GitHub Repository
-        </a>
-      </p>
+      <a href="https://github.com/OmkarArdekar12/CodeElevate" target="_blank">
+        Go to CodeElevate GitHub Repository
+      </a>
+      <a href="https://codeelevate-community.vercel.app" target="_blank">
+        Go to CodeElevate Live Application
+      </a>
     </footer>
   </body>
 </html>
