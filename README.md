@@ -585,7 +585,6 @@
 │   │   │   ├── 📁 reports
 │   │   │   │   ├── 📁 lighthouse-report
 │   │   │   │   │   └── index.html
-│   │   │   │   ├── CodeElevateLighthouseReport.html
 │   │   │   │   ├── lighthouseAuditSummary.png
 │   │   │   │   ├── lighthousePerformanceMetrics.png
 │   │   │   │   └── LighthouseReport.pdf
@@ -840,7 +839,6 @@
 │   ├── 📁 reports
 │   │   ├── 📁 lighthouse-report
 │   │   │   └── index.html
-│   │   ├── CodeElevateLighthouseReport.html
 │   │   ├── lighthouseAuditSummary.png
 │   │   ├── lighthousePerformanceMetrics.png
 │   │   └── LighthouseReport.pdf
