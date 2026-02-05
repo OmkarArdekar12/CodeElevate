@@ -1040,38 +1040,82 @@ git push origin feature/your-feature-name
       </tr>
       <tr>
         <td width="45%">
+          <h3 align="center">SEO Crawl Stats</h3>
+          <img src="./backend/src/lib/seo/crawlStats1.png" width="100%">
+        </td>
+        <td width="45%">
+          <h3 align="center">SEO Detailed Crawl Stats</h3>
+          <img src="./backend/src/lib/seo/crawlStats2.png" width="100%">
+        </td>
+      </tr>
+      <tr>
+        <td width="45%">
           <h3 align="center">SEO Performance</h3>
           <img src="./backend/src/lib/seo/seoPerformance1.png" width="100%">
         </td>
         <td width="45%">
-          <h3 align="center">SEO Detail Performance</h3>
+          <h3 align="center">SEO Detailed Performance</h3>
           <img src="./backend/src/lib/seo/seoPerformance2.png" width="100%">
+        </td>
+      </tr>
+      <tr>
+        <td width="45%">
+          <h3 align="center">Page indexing</h3>
+          <img src="./backend/src/lib/seo/indexedPages1.png" width="100%">
+        </td>
+        <td width="45%">
+          <h3 align="center">Indexed pages</h3>
+          <img src="./backend/src/lib/seo/indexedPages2.png" width="100%">
+        </td>
+      </tr>
+      <tr>
+        <td width="45%">
+          <h3 align="center">HTTPS</h3>
+          <img src="./backend/src/lib/seo/httpsReport.png" width="100%">
+        </td>
+        <td width="45%">
+          <h3 align="center">Browser Search Visibility</h3>
+          <img src="./backend/src/lib/seo/seoSiteResult.png" width="100%">
+        </td>
+      </tr>
+      <tr>
+        <td width="45%">
+          <h3 align="center">SEO Sitemaps Success</h3>
+          <img src="./backend/src/lib/seo/seoSitemaps2.png" width="100%">
+        </td>
+        <td width="45%">
+          <h3 align="center">Search Visibility</h3>
+          <img src="./backend/src/lib/seo/seoResult.png" width="100%">
+        </td>
+      </tr>
+      <tr>
+        <td width="90%" colspan="2" align="center">
+          <h3 align="center">sitemap.xml Accepted Successfully</h3>
+          <img src="./backend/src/lib/seo/seoSitemaps1.png" width="100%">
+        </td>
+      </tr>
+      <tr>
+        <td width="90%" colspan="2" align="center">
+          <h3 align="center">robots.txt Accepted Successfully</h3>
+          <img src="./backend/src/lib/seo/robotsStats.png" width="100%">
+        </td>
+      </tr>
+      <tr>
+        <td width="90%" colspan="2" align="center">
+          <h3 align="center">Lighthouse Audit Summary (Production)</h3>
+          <img src="./backend/src/lib/reports/lighthouseAuditSummary.png" width="100%">
+        </td>
+      </tr>
+      <tr>
+        <td width="90%" colspan="2" align="center">
+          <h3 align="center">Lighthouse Performance Metrics (Core Web Vitals)</h3>
+          <img src="./backend/src/lib/reports/lighthousePerformanceMetrics.png" width="100%">
         </td>
       </tr>
       <tr>
         <td width="90%" colspan="2" align="center">
           <h3 align="center">SEO Achievement Stats</h3>
           <img src="./backend/src/lib/seo/seoStats.png" width="100%">
-        </td>
-      </tr>
-      <tr>
-        <td width="45%">
-          <h3 align="center">SEO Sitemaps Success</h3>
-          <img src="./backend/src/lib/seo/seoSitemaps1.png" width="100%">
-        </td>
-        <td width="45%">
-          <h3 align="center">Sitemaps Accepted Successfully</h3>
-          <img src="./backend/src/lib/seo/seoSitemaps2.png" width="100%">
-        </td>
-      </tr>
-      <tr>
-        <td width="45%">
-          <h3 align="center">Search Visibility</h3>
-          <img src="./backend/src/lib/seo/seoResult.png" width="100%">
-        </td>
-        <td width="45%">
-          <h3 align="center">Browser Search Visibility</h3>
-          <img src="./backend/src/lib/seo/seoSiteResult.png" width="100%">
         </td>
       </tr>
       <tr>
