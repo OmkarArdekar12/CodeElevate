@@ -1,4 +1,7 @@
-./docs/** linguist-documentation
-./docs/** linguist-vendored
-./docs/** linguist-generated
-./docs/**/*.html linguist-detectable=false
+*.html linguist-detectable=false
+
+frontend/index.html linguist-detectable=true
+
+docs/** linguist-documentation
+docs/** linguist-generated
+docs/** linguist-vendored
