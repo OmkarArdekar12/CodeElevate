@@ -50,7 +50,7 @@
   <h2>
     <a href="https://www.youtube.com/watch?v=4-Udx0xvsO0" target="_blank" rel="noopener noreferrer">
       <p><img src="./frontend/public/images/LogoCodeElevate.png" width="23px"/> CodeElevate Demo / Preview Video</p>
-      <p>🎥Click here to watch full video on YouTube</p>
+      <p>🎥 Click here to watch full video on YouTube</p>
     </a>
     <img src="./frontend/public/videos/codeelevateGIF.gif"  alt="CodeElevate Video" width="95%"/> 
   </h2>
@@ -59,14 +59,14 @@
 <div id="seo-result">
   <h2>
     <a href="https://www.google.com/search?q=site:codeelevate-community.vercel.app" target="_blank" rel="noopener noreferrer">
-      <p>CodeElevate SEO Visibility and Web Performance <img src="./frontend/public/images/LogoCodeElevate.png" width="30px"/></p>
-      <p>Click here to see the SEO Visibility/Result</p>
+      <p>CodeElevate SEO Visibility <img src="./frontend/public/images/LogoCodeElevate.png" width="30px"/></p>
+      <p>📈 Click here to see the SEO Visibility/Result</p>
     </a>
     <div width="100%">
       <table width="95%" align="center" border="0">
         <tr width="100%">
           <td width="100%" colspan="2" align="center">
-            <h5>Production-Grade SEO & Web Performance Implementation with Verified <br/>Top Google Search Visibility</h5>
+            <h5>Production-Grade SEO, Indexing & Web Performance Implementation with Verified <br/>Top Google Search Visibility</h5>
             <img src="./backend/src/lib/seo/seoSearchUpdated.png" width="100%">
           </td>
         </tr>
@@ -135,22 +135,36 @@
         </tr>
         <tr width="100%">
           <td width="100%" colspan="2" align="center">
-            <img src="./backend/src/lib/reports/lighthouseAuditSummary.png" width="100%">
-          </td>
-        </tr>
-        <tr width="100%">
-          <td width="100%" colspan="2" align="center">
-            <img src="./backend/src/lib/reports/lighthousePerformanceMetrics.png" width="100%">
-          </td>
-        </tr>
-        <tr width="100%">
-          <td width="100%" colspan="2" align="center">
             <img src="./backend/src/lib/seo/seoStats.png" width="100%">
           </td>
         </tr>
         <tr width="100%">
           <td width="100%" colspan="2" align="center">
             <img src="./backend/src/lib/seo/urlInspection.png" width="100%">
+          </td>
+        </tr>
+      </table>
+    </div>
+  </h2>
+</div>
+
+<div id="performance">
+  <h2>
+    <a href="./backend/src/lib/reports/lighthouse-report/index.html" target="_blank" rel="noopener noreferrer">
+      <p><img src="./frontend/public/images/LogoCodeElevate.png" width="30px"/> CodeElevate Performance</p>
+      <p>📊 Click here to see the Lighthouse Detailed Performance Report</p>
+    </a>
+    <div width="100%">
+      <table width="95%" align="center" border="0">
+        <tr width="100%">
+          <td width="100%" colspan="2" align="center">
+            <h5>Production-Grade, Live-Measured Web Performance & SEO Validation</h5>
+            <img src="./backend/src/lib/reports/lighthouseAuditSummary.png" width="100%">
+          </td>
+        </tr>
+        <tr width="100%">
+          <td width="100%" colspan="2" align="center">
+            <img src="./backend/src/lib/reports/lighthousePerformanceMetrics.png" width="100%">
           </td>
         </tr>
       </table>
@@ -167,7 +181,8 @@
       <li><a href="#codeelevate-description">Description</a></li>
       <li><a href="#codeelevate-live">Live Application</a></li>
       <li><a href="#youtube-codeelevate-preview-video">Demo / Preview Video</a></li>
-      <li><a href="#seo-result">SEO Visibility, Indexing and Web Performance</a></li>
+      <li><a href="#seo-result">SEO Visibility & Indexing</a></li>
+      <li><a href="#performance">Live-Measured Web Performance & SEO Validation</a></li>
       <li><a href="#overview">Overview</a></li>
       <li><a href="#features">Features</a></li>
       <li><a href="#technologies-used">Tech Stack / Technologies Used</a></li>
