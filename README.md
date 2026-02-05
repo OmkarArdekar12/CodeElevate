@@ -876,7 +876,9 @@
 │   │   └── devsStatsSystemDiagram.png
 │   └── index.html
 │
+├── .gitattributes
 ├── .gitignore
+│
 ├── LICENSE
 └── README.md
 ```
