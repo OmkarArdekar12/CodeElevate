@@ -33,7 +33,7 @@
 </h2>
 
 <div id="codeelevate-description">
-  <h2>CodeElevate - Elevate Your Coding Journey.</h2>
+  <h2><a href="#readme-index">CodeElevate - Elevate Your Coding Journey.</a></h2>
   <h3>CodeElevate is a robust, scalable, and dynamic coder community built to empower competitive programmers, software developers, students, learners, and professionals. The platform provides an all-in-one ecosystem featuring integrated coding and development statistics across multiple platforms, a real-time messaging system, a user connection system, post sharing and engagement, personalized profiles with an advanced profile management system, a community-driven and category-based ranking system, a notification system, search and filter functionality, secure multi-factor authentication (2FA with TOTP) and authorization mechanisms, an SEO-optimized architecture resulting in top Google search visibility, an MVC architecture for a modular codebase, interactive custom 3D models, and a modern, fully responsive UI/UX design. The goal is to foster growth, collaboration, and innovation among coders worldwide.</h3>
 </div>
 
@@ -185,7 +185,7 @@
       <li><a href="#performance">Live-Measured Web Performance & SEO Validation</a></li>
       <li><a href="#overview">Overview</a></li>
       <li><a href="#features">Features</a></li>
-      <li><a href="#technologies-used">Tech Stack / Technologies Used</a></li>
+      <li><a href="#technologies-used">Technologies Used / Tech Stack</a></li>
       <li><a href="#system-architecture">System Architecture of CodeElevate</a></li>
       <li><a href="#database-design">CodeElevate Database Design</a></li>
       <li><a href="#folder-file-structure">Folders and Files Structure</a>
@@ -198,6 +198,8 @@
       <li><a href="#installation">Installation</a></li>
       <li><a href="#diagrams">Structure Flow Diagrams, Web Performance and SEO Visibility</a></li>
       <li><a href="#preview">Features Preview</a></li>
+      <li><a href="#reports">Reports</a></li>
+      <li><a href="#github-pages">GitHub Pages</a></li>
       <li><a href="#license">License</a></li>
       <li><a href="#author">Author</a></li>
     </ol>
@@ -510,6 +512,8 @@
 │   ├── vercel.json
 │   ├── vite.config.js
 │   └── 📁 node_modules
+├── 📁 docs
+│   └── index.html
 ├── .gitignore
 ├── LICENSE
 └── README.md
@@ -586,6 +590,12 @@
 │   │   │   │   ├── lighthousePerformanceMetrics.png
 │   │   │   │   └── LighthouseReport.pdf
 │   │   │   ├── 📁 seo
+│   │   │   │   ├── crawlStats1.png
+│   │   │   │   ├── crawlStats2.png
+│   │   │   │   ├── httpReport.png
+│   │   │   │   ├── indexedPages1.png
+│   │   │   │   ├── indexedPages2.png
+│   │   │   │   ├── robotsStats.png
 │   │   │   │   ├── seoPerformance1.png
 │   │   │   │   ├── seoPerformance1prev.png
 │   │   │   │   ├── seoPerformance2.png
@@ -816,6 +826,57 @@
 │   ├── vercel.json
 │   ├── vite.config.js
 │   └── 📁 node_modules
+│
+├── 📁 docs
+│   ├── 📁 assets
+│   │   ├── codeelevateGIF.gif
+│   │   ├── CodeElevateLogo.gif
+│   │   ├── CodeElevateText.gif
+│   │   ├── favicon.ico
+│   │   └── logo.png
+│   ├── 📁 docs
+│   │   ├── codeElevateArchitecture.png
+│   │   └── mongodbDatabaseStructure.png
+│   ├── 📁 reports
+│   │   ├── 📁 lighthouse-report
+│   │   │   └── index.html
+│   │   ├── CodeElevateLighthouseReport.html
+│   │   ├── lighthouseAuditSummary.png
+│   │   ├── lighthousePerformanceMetrics.png
+│   │   └── LighthouseReport.pdf
+│   ├── 📁 seo
+│   │   ├── crawlStats1.png
+│   │   ├── crawlStats2.png
+│   │   ├── httpReport.png
+│   │   ├── indexedPages1.png
+│   │   ├── indexedPages2.png
+│   │   ├── robotsStats.png
+│   │   ├── seoPerformance1.png
+│   │   ├── seoPerformance1prev.png
+│   │   ├── seoPerformance2.png
+│   │   ├── seoPerformance2prev.png
+│   │   ├── seoResult.png
+│   │   ├── seoSearchResult.png
+│   │   ├── seoSearchUpdated.png
+│   │   ├── seoSearchUpdated1.png
+│   │   ├── seoSearchUpdated2.png
+│   │   ├── seoSitemaps1.png
+│   │   ├── seoSitemaps2.png
+│   │   ├── seoSiteResult.png
+│   │   ├── seoStats.png
+│   │   └── urlInspection.png
+│   ├── 📁 diagrams
+│   │   ├── authenticationDiagram.png
+│   │   ├── authorizationDiagram.png
+│   │   ├── profileSystemDiagram.png
+│   │   ├── rankingSystemDiagram.png
+│   │   ├── messagingSystemDiagram.png
+│   │   ├── postSystemDiagram.png
+│   │   ├── connectionSystemDiagram.png
+│   │   ├── notificationSystemDiagram.png
+│   │   ├── cpStatsSystemDiagram.png
+│   │   └── devsStatsSystemDiagram.png
+│   └── index.html
 │
 ├── .gitignore
 ├── LICENSE
