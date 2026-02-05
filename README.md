@@ -515,6 +515,7 @@
 ├── 📁 docs
 │   └── index.html
 ├── .gitignore
+├── .gitattributes
 ├── LICENSE
 └── README.md
 ```
@@ -876,8 +877,8 @@
 │   │   └── devsStatsSystemDiagram.png
 │   └── index.html
 │
-├── .gitattributes
 ├── .gitignore
+├── .gitattributes
 │
 ├── LICENSE
 └── README.md
