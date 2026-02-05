@@ -563,6 +563,12 @@
 │   │   │   ├── 📁 docs
 │   │   │   │   ├── codeElevateArchitecture.png
 │   │   │   │   └── mongodbDatabaseStructure.png
+│   │   │   ├── 📁 reports
+│   │   │   │   ├── 📁 reports
+│   │   │   │   │   ├── seoStats.png
+│   │   │   │   │   └── urlInspection.png
+│   │   │   │   ├── seoStats.png
+│   │   │   │   └── urlInspection.png
 │   │   │   ├── 📁 seo
 │   │   │   │   ├── seoPerformance1.png
 │   │   │   │   ├── seoPerformance1prev.png
