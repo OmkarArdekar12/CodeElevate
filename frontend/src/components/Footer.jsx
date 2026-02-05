@@ -4,6 +4,7 @@ import {
   FaTwitter,
   FaEnvelope,
   FaYoutube,
+  FaExternalLinkAlt,
 } from "react-icons/fa";
 import { AiOutlineCopyright } from "react-icons/ai";
 import { Link, useNavigate } from "react-router-dom";
@@ -27,7 +28,15 @@ export default function Footer() {
           <p className="text-sm">
             Elevate your coding journey. Connect with Developers and CP
             enthusiasts. Showcase Competitive Programming and Development
-            Progress, and Grow together.
+            Progress, and Grow together.{" "}
+            <a
+              href="https://omkarardekar12.github.io/CodeElevate/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-1 hover:text-white hover:underline"
+            >
+              Learn more <FaExternalLinkAlt className="size-3 inline" />
+            </a>
           </p>
         </div>
 
@@ -101,7 +110,7 @@ export default function Footer() {
         </div>
       </div>
 
-      <div className="mt-10 flex items-center justify-center text-center text-xs text-slate-300 hover:underline cursor-pointer">
+      <div className="mt-10 flex items-center justify-center text-center text-xs text-slate-300 hover:underline cursor-pointer hover:text-white">
         <a
           href="https://github.com/OmkarArdekar12/CodeElevate/blob/main/LICENSE"
           target="_blank"
