@@ -2,5 +2,5 @@ docs/** linguist-documentation
 docs/** linguist-vendored
 docs/** linguist-generated
 
-*.html linguist-detectable=false
+# *.html linguist-detectable=false
 docs/**/*.html linguist-detectable=false
