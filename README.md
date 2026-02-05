@@ -85,6 +85,14 @@
         </tr>
         <tr width="100%">
           <td width="50%">
+            <img src="./backend/src/lib/seo/crawlStats1.png" width="100%">
+          </td>
+          <td width="50%">
+            <img src="./backend/src/lib/seo/crawlStats2.png" width="100%">
+          </td>
+        </tr>
+        <tr width="100%">
+          <td width="50%">
             <img src="./backend/src/lib/seo/seoPerformance1.png" width="100%">
           </td>
           <td width="50%">
@@ -92,16 +100,19 @@
           </td>
         </tr>
         <tr width="100%">
-          <td width="100%" colspan="2" align="center">
-            <img src="./backend/src/lib/seo/seoStats.png" width="100%">
+          <td width="50%">
+            <img src="./backend/src/lib/seo/indexedPages1.png" width="100%">
+          </td>
+          <td width="50%">
+            <img src="./backend/src/lib/seo/indexedPages2.png" width="100%">
           </td>
         </tr>
         <tr width="100%">
           <td width="50%">
-            <img src="./backend/src/lib/seo/seoSitemaps1.png" width="100%">
+            <img src="./backend/src/lib/seo/httpsReport.png" width="100%">
           </td>
           <td width="50%">
-            <img src="./backend/src/lib/seo/seoSitemaps2.png" width="100%">
+            <img src="./backend/src/lib/seo/seoSiteResult.png" width="100%">
           </td>
         </tr>
         <tr width="100%">
@@ -109,7 +120,32 @@
             <img src="./backend/src/lib/seo/seoResult.png" width="100%">
           </td>
           <td width="50%">
-            <img src="./backend/src/lib/seo/seoSiteResult.png" width="100%">
+            <img src="./backend/src/lib/seo/seoSitemaps2.png" width="100%">
+          </td>
+        </tr>
+        <tr width="100%">
+          <td width="100%" colspan="2" align="center">
+            <img src="./backend/src/lib/seo/robotsStats.png" width="100%">
+          </td>
+        </tr>
+        <tr width="100%">
+          <td width="100%" colspan="2" align="center">
+            <img src="./backend/src/lib/seo/seoSitemaps1.png" width="100%">
+          </td>
+        </tr>
+        <tr width="100%">
+          <td width="100%" colspan="2" align="center">
+            <img src="./backend/src/lib/reports/lighthouseAuditSummary.png" width="100%">
+          </td>
+        </tr>
+        <tr width="100%">
+          <td width="100%" colspan="2" align="center">
+            <img src="./backend/src/lib/reports/lighthousePerformanceMetrics.png" width="100%">
+          </td>
+        </tr>
+        <tr width="100%">
+          <td width="100%" colspan="2" align="center">
+            <img src="./backend/src/lib/seo/seoStats.png" width="100%">
           </td>
         </tr>
         <tr width="100%">
@@ -145,7 +181,7 @@
       </li>
       <li><a href="#environment-variables">Environment Variables Configuration</a></li>
       <li><a href="#installation">Installation</a></li>
-      <li><a href="#diagrams">Structure Flow Diagrams and SEO Visibility</a></li>
+      <li><a href="#diagrams">Structure Flow Diagrams, Web Performance and SEO Visibility</a></li>
       <li><a href="#preview">Features Preview</a></li>
       <li><a href="#license">License</a></li>
       <li><a href="#author">Author</a></li>
@@ -920,7 +956,7 @@ git push origin feature/your-feature-name
 ---
 
 <div>
-  <h2 id="diagrams"><a href="#readme-index">Structure Flow Diagrams 📊 and SEO Visibility 🌐</a></h2>
+  <h2 id="diagrams"><a href="#readme-index">Structure Flow Diagrams 📊, Web Performance ⚡, and SEO Visibility 🌐</a></h2>
   <div width="100%">
     <table width="95%" align="center" border="0">
       <tr>
