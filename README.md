@@ -210,7 +210,7 @@
       <li><a href="#diagrams">Structure Flow Diagrams, Web Performance & SEO Visibility</a></li>
       <li><a href="#preview">Features Preview</a></li>
       <li><a href="#reports">Audit & Performance Reports</a></li>
-      <li><a href="#github-pages">Guide Portal</a></li>
+      <li><a href="#github-pages">Project Portal</a></li>
       <li><a href="#license">License</a></li>
       <li><a href="#author">Author</a></li>
     </ol>
@@ -1357,7 +1357,7 @@ git push origin feature/your-feature-name
 ---
 
 <div>
-  <h2 id="github-pages"><a href="#readme-index">Guide Portal 📘</a></h2>
+  <h2 id="github-pages"><a href="#readme-index">Project Portal 📘</a></h2>
   <div>
 
 ### Publicly hosted documentation and reports for CodeElevate, served via GitHub Pages. This portal consolidates performance audits, SEO validation, and system documentation in a single, accessible location.
