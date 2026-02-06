@@ -40,7 +40,7 @@
 <img src="https://img.shields.io/badge/Vercel-000000?style=for-the-badge&logo=vercel&logoColor=white"/>
 <img src="https://img.shields.io/badge/Render-00D1FF?style=for-the-badge&logo=render&logoColor=white"/>
 </a>
-<a href="https://omkarardekar12.github.io/CodeElevate"><img src="https://img.shields.io/badge/GitHub%20Pages-181717?style=for-the-badge&logo=github&logoColor=white"/></a>
+<a href="https://omkarardekar12.github.io/CodeElevate"><img src="https://img.shields.io/badge/GitHub%20Pages-222222?style=for-the-badge&logo=githubpages&logoColor=white"/></a>
 <br/>
 <a href="./LICENSE"><img src="https://img.shields.io/github/license/OmkarArdekar12/CodeElevate?color=brightgreen&style=for-the-badge"/></a>
 </h2>
