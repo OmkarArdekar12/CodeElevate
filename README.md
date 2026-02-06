@@ -45,7 +45,7 @@
 
 <div id="codeelevate-description">
   <h2><a href="#readme-index">CodeElevate - Elevate Your Coding Journey.</a></h2>
-  <h3>CodeElevate is a robust, scalable, and dynamic coder community built to empower competitive programmers, software developers, students, learners, and professionals. The platform provides an all-in-one ecosystem featuring integrated coding and development statistics across multiple platforms, a real-time messaging system, a user connection system, post sharing and engagement, personalized profiles with an advanced profile management system, a community-driven and category-based ranking system, a notification system, search and filter functionality, secure multi-factor authentication (2FA with TOTP) and authorization mechanisms, an SEO-optimized architecture resulting in top Google search visibility, an MVC architecture for a modular codebase, interactive custom 3D models, and a modern, fully responsive UI/UX design. The goal is to foster growth, collaboration, and innovation among coders worldwide.</h3>
+  <h3>CodeElevate is a robust, scalable, and dynamic coder community built to empower competitive programmers, software developers, students, learners, and professionals. The platform provides an all-in-one ecosystem featuring integrated coding and development statistics across multiple platforms, a real-time messaging system, a user connection system, post sharing and engagement, personalized profiles with an advanced profile management system, a community-driven and category-based ranking system, a notification system, search and filter functionality, secure multi-factor authentication (MFA) and authorization mechanisms, including two-factor authentication (2FA) using Time-based One-Time Password (TOTP), an SEO-optimized architecture resulting in top Google search visibility, an MVC architecture for a modular codebase, interactive custom 3D models, and a modern, fully responsive UI/UX design. The goal is to foster growth, collaboration, and innovation among coders worldwide.</h3>
 </div>
 
 <div id="codeelevate-live">
@@ -210,7 +210,7 @@
       <li><a href="#diagrams">Structure Flow Diagrams, Web Performance & SEO Visibility</a></li>
       <li><a href="#preview">Features Preview</a></li>
       <li><a href="#reports">Audit & Performance Reports</a></li>
-      <li><a href="#github-pages">GitHub Pages</a></li>
+      <li><a href="#github-pages">Guide Portal</a></li>
       <li><a href="#license">License</a></li>
       <li><a href="#author">Author</a></li>
     </ol>
@@ -354,7 +354,7 @@
 ![Slick Carousel](https://img.shields.io/badge/Slick%20Carousel-FF5500?style=for-the-badge)
 ![Custom 3D Logo Components](https://img.shields.io/badge/Interactive%20Custom%203D%20Components-lightgrey?style=for-the-badge)
 ![Performance Optimization](https://img.shields.io/badge/Performance%20Optimization-16A34A?style=for-the-badge)
-![SEO Optimzation](https://img.shields.io/badge/SEO%20Optimization-orange?style=for-the-badge)
+![SEO Optimization](https://img.shields.io/badge/SEO%20Optimization-orange?style=for-the-badge)
 ![3D Animations](https://img.shields.io/badge/3D%20Animations-000000?style=for-the-badge&logo=three.js&logoColor=white)
 ![Smooth & Seamless Transitions and Animations](https://img.shields.io/badge/Smooth%20%26%20Seamless%20Transitions%20%26%20Animations-0055FF?style=for-the-badge&logo=framer&logoColor=white)
 ![Fully Responsive UI/UX](https://img.shields.io/badge/Fully%20Responsive%20UI%2FUX-blue?style=for-the-badge)
@@ -373,7 +373,7 @@
 ![Passport.js](https://img.shields.io/badge/Passport.js-000000?style=for-the-badge&logo=passport&logoColor=white)
 ![Passport-Local Strategy](https://img.shields.io/badge/Passport-Local%20Strategy-000000?style=for-the-badge)
 ![Connect-Mongo](https://img.shields.io/badge/Connect-Mongo-0F5132?style=for-the-badge&logo=mongoosedotws&logoColor=white)
-![JWT](https://img.shields.io/badge/JWT-32329F?style=for-the-badge&logo=jsonwebtokens&=white)  
+![JWT](https://img.shields.io/badge/JWT-32329F?style=for-the-badge&logo=jsonwebtokens&logoColor=white)  
 ![bcrypt.js](https://img.shields.io/badge/bcrypt.js-463A3A?style=for-the-badge)
 ![Express-Session](https://img.shields.io/badge/Express%20Session-DB0A47?style=for-the-badge)
 ![Cookie-Parser](https://img.shields.io/badge/Cookie-Parser-007ACC?style=for-the-badge)
@@ -400,14 +400,14 @@
 
 ![Google Search Console](https://img.shields.io/badge/Google%20Search%20Console-4285F4?style=for-the-badge&logo=google&logoColor=white)
 ![SEO-friendly Meta Tags](https://img.shields.io/badge/SEO-friendly%20Meta%20Tags-orange?style=for-the-badge)
-![Open Graph (OG) Tags](<https://img.shields.io/badge/Open%20Graph%20(OG)%20Tags-blue?style=for-the-badge>)
+![Open Graph (OG) Tags](https://img.shields.io/badge/Open%20Graph%20(OG)%20Tags-blue?style=for-the-badge)
 ![Twitter Card Meta Tags](https://img.shields.io/badge/Twitter%20Card%20Meta%20Tags-cyan?style=for-the-badge)
 ![Schema.org JSON-LD Structured Data](https://img.shields.io/badge/Schema.org%20JSON-LD%20Structured%20Data-green?style=for-the-badge)
 ![Robots.txt](https://img.shields.io/badge/Robots.txt-black?style=for-the-badge)
 ![Sitemap.xml](https://img.shields.io/badge/Sitemap.xml-red?style=for-the-badge)
 ![Manifest.json (Web App Metadata & Theme Colour)](https://img.shields.io/badge/Manifest.json-yellow?style=for-the-badge)
 ![Mobile Viewport Meta Tag](https://img.shields.io/badge/Mobile%20Viewport%20Meta%20Tag-lightblue?style=for-the-badge)
-![Apple Touch Configuration (PWA readiness)](<https://img.shields.io/badge/Apple%20Touch%20Configuration%20(PWA%20readiness)-grey?style=for-the-badge>)
+![Apple Touch Configuration (PWA readiness)](https://img.shields.io/badge/Apple%20Touch%20Configuration%20(PWA%20readiness)-grey?style=for-the-badge)
 ![Theme Colour for Browser UI](https://img.shields.io/badge/Theme%20Colour%20for%20Browser%20UI-pink?style=for-the-badge)
 ![Fast build using Vite](https://img.shields.io/badge/Fast%20build%20using%20Vite-646CFF?style=for-the-badge&logo=vite&logoColor=white)
 ![TailwindCSS for Lightweight CSS](https://img.shields.io/badge/TailwindCSS%20for%20Lightweight%20CSS-06B6D4?style=for-the-badge&logo=tailwind-css&logoColor=white)
@@ -431,7 +431,7 @@
 ![Vercel](https://img.shields.io/badge/Vercel-000000?style=for-the-badge&logo=vercel&logoColor=white)
 ![Render](https://img.shields.io/badge/Render-00D1FF?style=for-the-badge&logo=render&logoColor=white)
 ![MongoDB Atlas](https://img.shields.io/badge/MongoDB%20Atlas-47A248?style=for-the-badge&logo=mongodb&logoColor=white)
-![Cloudinary](https://img.shields.io/badge/Cloudinay-FF5A5F?style=for-the-badge&logo=cloudinary&logoColor=white)
+![Cloudinary](https://img.shields.io/badge/Cloudinary-FF5A5F?style=for-the-badge&logo=cloudinary&logoColor=white)
 ![GitHub Pages](https://img.shields.io/badge/GitHub%20Pages-222222?style=for-the-badge&logo=githubpages&logoColor=white)
 
   </p>
@@ -1195,13 +1195,13 @@ git push origin feature/your-feature-name
       </tr>
       <tr>
         <td width="90%" colspan="2" align="center">
-          <h3 align="center">sitemap.xml Accepted Successfully</h3>
+          <h3 align="center">sitemap.xml Accepted and Successfully Indexed</h3>
           <img src="./backend/src/lib/seo/seoSitemaps1.png" width="100%">
         </td>
       </tr>
       <tr>
         <td width="90%" colspan="2" align="center">
-          <h3 align="center">robots.txt Accepted Successfully</h3>
+          <h3 align="center">robots.txt Accepted and Successfully Validated</h3>
           <img src="./backend/src/lib/seo/robotsStats.png" width="100%">
         </td>
       </tr>
@@ -1357,7 +1357,7 @@ git push origin feature/your-feature-name
 ---
 
 <div>
-  <h2 id="github-pages"><a href="#readme-index">GitHub Pages 📘</a></h2>
+  <h2 id="github-pages"><a href="#readme-index">Guide Portal 📘</a></h2>
   <div>
 
 ### Publicly hosted documentation and reports for CodeElevate, served via GitHub Pages. This portal consolidates performance audits, SEO validation, and system documentation in a single, accessible location.
