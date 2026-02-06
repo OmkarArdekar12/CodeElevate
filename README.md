@@ -10,8 +10,9 @@
   <img src="https://img.shields.io/badge/RESTful%20APIs-blue?style=for-the-badge"/>
   <img src="https://img.shields.io/badge/SEO%20Optimized-orange?style=for-the-badge"/>
   <img src="https://img.shields.io/badge/Socket.io-010101?style=for-the-badge&logo=socket.io&logoColor=white"/>
-  <img src="https://img.shields.io/badge/Mongoose-880000?style=for-the-badge"/>
+  <img src="https://img.shields.io/badge/Mongoose-880000?style=for-the-badge&logo=mongoose&logoColor=white"/>
   <img src="https://img.shields.io/badge/Cloudinary-FF5A5F?style=for-the-badge&logo=cloudinary&logoColor=white"/>
+  <img src="https://img.shields.io/badge/MFA%20Authentication-FF6F00?style=for-the-badge&logo=authy&logoColor=white"/>
   <img src="https://img.shields.io/badge/Passport.js-000000?style=for-the-badge&logo=passport&logoColor=white"/>
   <img src="https://img.shields.io/badge/JWT%20Authentication-32329F?style=for-the-badge&logo=jsonwebtokens&logoColor=white"/>
   <img src="https://img.shields.io/badge/2FA%20Authentication-FF6F00?style=for-the-badge"/>
@@ -21,15 +22,21 @@
   <img src="https://img.shields.io/badge/React%20Context%20API-61DAFB?style=for-the-badge&logo=react&logoColor=black"/>
   <img src="https://img.shields.io/badge/Tailwind%20CSS-06B6D4?style=for-the-badge&logo=tailwind-css&logoColor=white"/>
   <img src="https://img.shields.io/badge/Three.js-000000?style=for-the-badge&logo=three.js&logoColor=white"/>
-  <img src="https://img.shields.io/badge/Interactive%20Custom%203D%20Logo-lightgrey?style=for-the-badge"/>
-  <img src="https://img.shields.io/badge/Responsive%20UI%2FUX-blue?style=for-the-badge"/>
+  <img src="https://img.shields.io/badge/Interactive%20Custom%203D%20Models-lightgrey?style=for-the-badge"/>
+  <img src="https://img.shields.io/badge/Fully%20Responsive%20UI%2FUX-blue?style=for-the-badge"/>
   <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black"/>
-  <img src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white"/>
+  <img src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css&logoColor=white"/>
   <img src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white"/>
+  <img src="https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white"/>
+  <img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white"/>
+  <img src="https://img.shields.io/badge/Google%20Search%20Console-4285F4?style=for-the-badge&logo=google&logoColor=white"/>
   <img src="https://img.shields.io/badge/Vercel-000000?style=for-the-badge&logo=vercel&logoColor=white"/>
   <img src="https://img.shields.io/badge/Render-00D1FF?style=for-the-badge&logo=render&logoColor=white"/>
+  <img src="https://img.shields.io/badge/GitHub%20Pages-181717?style=for-the-badge&logo=github&logoColor=white"/>
   <br/>
-  <a href="./LICENSE"><img src="https://img.shields.io/github/license/OmkarArdekar12/CodeElevate?color=brightgreen&style=for-the-badge"/></a>
+
+<a href="./LICENSE"><img src="https://img.shields.io/github/license/OmkarArdekar12/CodeElevate?color=brightgreen&style=for-the-badge"/></a>
+
 </h2>
 
 <div id="codeelevate-description">
@@ -228,7 +235,7 @@
     <tbody>
       <tr>
         <td>1.</td>
-        <td><b>User Authentication & Authorization - Two-Factor Authentication (2FA) using TOTP (Time Time-based One-Time Password)</b></td>
+        <td><b>User Authentication & Authorization - Multi-Factor Authentication (MFA) with Two-Factor Authentication (2FA) using TOTP (Time-Based One-Time Password)</b></td>
         <td>Robust and Secure authentication using Passport, Passport-Local-Strategy, Sessions, JWT, and Two-Factor Authentication (2FA) via TOTP and QR code for enhanced account protection.</td>
       </tr>
       <tr>
@@ -283,8 +290,8 @@
       </tr>
       <tr>
         <td>12.</td>
-        <td><b>3D Interactive Logo</b></td>
-        <td>An immersive 3D CodeElevate logo showcased on the About page with multiple camera angles and styling variations, built with dynamic animations for a captivating visual experience.</td>
+        <td><b>Interactive 3D Models, 3D Animations & Real-Time 3D Interactions</b></td>
+        <td>An immersive 3D CodeElevate logo showcased on the About page, featuring views from multiple camera angles, fluid animations, and styling variations. Built with dynamic transitions for a captivating visual experience, users can seamlessly rotate the models through intuitive interactive controls.</td>
       </tr>
       <tr>
         <td>13.</td>
@@ -339,7 +346,7 @@
 ![Custom 3D Logo Components](https://img.shields.io/badge/Interactive%20Custom%203D%20Components-lightgrey?style=for-the-badge)
 ![Responsive UI/UX](https://img.shields.io/badge/Responsive%20UI%2FUX-blue?style=for-the-badge)
 ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
-![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
+![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css&logoColor=white)
 ![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
 ![Lucide React](https://img.shields.io/badge/Lucide%20React-000?style=for-the-badge&logo=lucide&logoColor=white)
 ![React Icons](https://img.shields.io/badge/React%20Icons-61DAFB?style=for-the-badge&logo=react&logoColor=black)
@@ -405,6 +412,7 @@
 ![Render](https://img.shields.io/badge/Render-00D1FF?style=for-the-badge&logo=render&logoColor=white)
 ![MongoDB Atlas](https://img.shields.io/badge/MongoDB%20Atlas-47A248?style=for-the-badge&logo=mongodb&logoColor=white)
 ![Cloudinary](https://img.shields.io/badge/Cloudinay-FF5A5F?style=for-the-badge&logo=cloudinary&logoColor=white)
+![GitHub Pages](https://img.shields.io/badge/GitHub%20Pages-222222?style=for-the-badge&logo=githubpages&logoColor=white)
 
   </p>
 
@@ -461,7 +469,7 @@
         <tr>
           <td>&#10148;</td>
           <td>Deployment & Hosting</td>
-          <td>Vercel (Frontend Hosting), Render (Backend Hosting), MongoDB Atlas (Database Hosting), Cloudinary (Cloud Storage)</td>
+          <td>Vercel (Frontend Hosting), Render (Backend Hosting), MongoDB Atlas (Database Hosting), Cloudinary (Cloud Storage), GitHub Pages (Portal Hosting)</td>
         </tr>
       </tbody>
     </table>
