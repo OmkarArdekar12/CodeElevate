@@ -1362,7 +1362,7 @@ git push origin feature/your-feature-name
 
 ### Publicly hosted documentation and reports for CodeElevate, served via GitHub Pages. This portal consolidates performance audits, SEO validation, and system documentation in a single, accessible location.
 
-- ### [CodeElevate Documentation & Reports Portal](https://omkarardekar12.github.io/CodeElevate/)
+- ### [CodeElevate Project Portal](https://omkarardekar12.github.io/CodeElevate/)
 
   </div>
 </div>
