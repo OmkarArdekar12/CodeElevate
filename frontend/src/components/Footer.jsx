@@ -39,7 +39,8 @@ export default function Footer() {
               rel="noopener noreferrer"
               className="inline-flex items-center gap-1 hover:text-white hover:underline"
             >
-              Learn more <FaExternalLinkAlt className="size-3 inline" />
+              Visit CodeElevate Portal{" "}
+              <FaExternalLinkAlt className="size-3 inline" />
             </a>
           </p>
         </div>
