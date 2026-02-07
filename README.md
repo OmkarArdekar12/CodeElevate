@@ -610,6 +610,9 @@
 │   │   │   │   │   └── index.html
 │   │   │   │   ├── lighthouseAuditSummary.png
 │   │   │   │   ├── lighthousePerformanceMetrics.png
+│   │   │   │   ├── prevLighthouseAuditSummary.png
+│   │   │   │   ├── prevLighthousePerformanceMetrics.png
+│   │   │   │   ├── prevLighthouseReport.pdf
 │   │   │   │   └── LighthouseReport.pdf
 │   │   │   ├── 📁 seo
 │   │   │   │   ├── crawlStats1.png
