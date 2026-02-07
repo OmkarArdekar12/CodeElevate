@@ -613,6 +613,7 @@
 │   │   │   │   ├── prevLighthouseAuditSummary.png
 │   │   │   │   ├── prevLighthousePerformanceMetrics.png
 │   │   │   │   ├── prevLighthouseReport.pdf
+│   │   │   │   ├── currLighthouseReport.pdf
 │   │   │   │   └── LighthouseReport.pdf
 │   │   │   ├── 📁 seo
 │   │   │   │   ├── crawlStats1.png
