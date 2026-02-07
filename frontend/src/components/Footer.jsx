@@ -37,7 +37,7 @@ export default function Footer() {
               href="https://omkarardekar12.github.io/CodeElevate/"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-1 hover:text-white hover:underline"
+              className="inline-flex flex-wrap items-center gap-1 hover:text-white hover:underline"
             >
               Visit CodeElevate Portal{" "}
               <FaExternalLinkAlt className="size-3 inline" />
