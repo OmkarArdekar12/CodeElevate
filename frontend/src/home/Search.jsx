@@ -50,7 +50,7 @@ export default function Search({ searchTerm, setSearchTerm }) {
       },
       typingForward && charIndex === placeholders[placeholderIdx].length
         ? pauseTime
-        : typingSpeed
+        : typingSpeed,
     );
 
     return () => clearInterval(interval);
@@ -80,6 +80,7 @@ export default function Search({ searchTerm, setSearchTerm }) {
         <button
           type="submit"
           className="text-xl text-cyan-300 hover:text-3xl hover:text-[#00c4cc] cursor-pointer ml-1"
+          aria-label="Search"
         >
           <FaSearch />
         </button>
