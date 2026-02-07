@@ -143,6 +143,9 @@ export default function Navbar({ isLoggedIn, isVerified, userData }) {
                   onClick={() => setIsOpen(!isOpen)}
                   className="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none transition duration-150 cursor-pointer"
                   aria-expanded={isOpen}
+                  aria-label={
+                    isOpen ? "Close navigation menu" : "Open navigation menu"
+                  }
                 >
                   {!isOpen ? (
                     <IoMenu className="size-7" />
