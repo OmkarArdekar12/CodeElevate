@@ -1,40 +1,53 @@
 <h1 id="codeelevate-title" align="center" width="100%"><img src="./frontend/public/images/CodeElevateLogo.gif" width="19%" valign="bottom" align="center"/><br/><img src="./frontend/public/images/CodeElevateText.gif" width="45%" valign="bottom" align="center" /></h1>
 
 <h2 width="100%" align="center">
-  <img src="https://img.shields.io/badge/MERN%20Stack-3C873A?style=for-the-badge&logo=devbox&logoColor=white"/>
-  <img src="https://img.shields.io/badge/MongoDB-47A248?style=for-the-badge&logo=mongodb&logoColor=white"/>
-  <img src="https://img.shields.io/badge/Express.js-000000?style=for-the-badge&logo=express&logoColor=white"/>
-  <img src="https://img.shields.io/badge/React.js-20232A?style=for-the-badge&logo=react&logoColor=61DAFB"/>
-  <img src="https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white"/>
-  <img src="https://img.shields.io/badge/MVC%20Architecture-teal?style=for-the-badge"/>
-  <img src="https://img.shields.io/badge/RESTful%20APIs-blue?style=for-the-badge"/>
-  <img src="https://img.shields.io/badge/SEO%20Optimized-orange?style=for-the-badge"/>
-  <img src="https://img.shields.io/badge/Socket.io-010101?style=for-the-badge&logo=socket.io&logoColor=white"/>
-  <img src="https://img.shields.io/badge/Mongoose-880000?style=for-the-badge"/>
-  <img src="https://img.shields.io/badge/Cloudinary-FF5A5F?style=for-the-badge&logo=cloudinary&logoColor=white"/>
-  <img src="https://img.shields.io/badge/Passport.js-000000?style=for-the-badge&logo=passport&logoColor=white"/>
-  <img src="https://img.shields.io/badge/JWT%20Authentication-32329F?style=for-the-badge&logo=jsonwebtokens&logoColor=white"/>
-  <img src="https://img.shields.io/badge/2FA%20Authentication-FF6F00?style=for-the-badge"/>
-  <img src="https://img.shields.io/badge/Validations-0088CC?style=for-the-badge"/>
-  <img src="https://img.shields.io/badge/Axios-5A29E4?style=for-the-badge&logo=axios&logoColor=white"/>
-  <img src="https://img.shields.io/badge/Framer%20Motion-0055FF?style=for-the-badge&logo=framer&logoColor=white"/>
-  <img src="https://img.shields.io/badge/React%20Context%20API-61DAFB?style=for-the-badge&logo=react&logoColor=black"/>
-  <img src="https://img.shields.io/badge/Tailwind%20CSS-06B6D4?style=for-the-badge&logo=tailwind-css&logoColor=white"/>
-  <img src="https://img.shields.io/badge/Three.js-000000?style=for-the-badge&logo=three.js&logoColor=white"/>
-  <img src="https://img.shields.io/badge/Interactive%20Custom%203D%20Logo-lightgrey?style=for-the-badge"/>
-  <img src="https://img.shields.io/badge/Responsive%20UI%2FUX-blue?style=for-the-badge"/>
-  <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black"/>
-  <img src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white"/>
-  <img src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white"/>
-  <img src="https://img.shields.io/badge/Vercel-000000?style=for-the-badge&logo=vercel&logoColor=white"/>
-  <img src="https://img.shields.io/badge/Render-00D1FF?style=for-the-badge&logo=render&logoColor=white"/>
-  <br/>
-  <a href="./LICENSE"><img src="https://img.shields.io/github/license/OmkarArdekar12/CodeElevate?color=brightgreen&style=for-the-badge"/></a>
+<a href="https://codeelevate-community.vercel.app">
+<img src="https://img.shields.io/badge/MERN%20Stack-3C873A?style=for-the-badge&logo=devbox&logoColor=white"/>
+<img src="https://img.shields.io/badge/MongoDB-47A248?style=for-the-badge&logo=mongodb&logoColor=white"/>
+<img src="https://img.shields.io/badge/Express.js-000000?style=for-the-badge&logo=express&logoColor=white"/>
+<img src="https://img.shields.io/badge/React.js-20232A?style=for-the-badge&logo=react&logoColor=61DAFB"/>
+<img src="https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white"/>
+<img src="https://img.shields.io/badge/MVC%20Architecture-teal?style=for-the-badge"/>
+<img src="https://img.shields.io/badge/RESTful%20APIs-blue?style=for-the-badge"/>
+<img src="https://img.shields.io/badge/Performance%20Optimized-16A34A?style=for-the-badge"/>
+<img src="https://img.shields.io/badge/SEO%20Optimized-orange?style=for-the-badge"/>
+<img src="https://img.shields.io/badge/Socket.io-010101?style=for-the-badge&logo=socket.io&logoColor=white"/>
+<img src="https://img.shields.io/badge/Mongoose-880000?style=for-the-badge&logo=mongoose&logoColor=white"/>
+<img src="https://img.shields.io/badge/Cloudinary-FF5A5F?style=for-the-badge&logo=cloudinary&logoColor=white"/>
+<img src="https://img.shields.io/badge/MFA%20Authentication-FF6F00?style=for-the-badge&logo=authy&logoColor=white"/>
+<img src="https://img.shields.io/badge/Passport.js-000000?style=for-the-badge&logo=passport&logoColor=white"/>
+<img src="https://img.shields.io/badge/JWT%20Authentication-32329F?style=for-the-badge&logo=jsonwebtokens&logoColor=white"/>
+<img src="https://img.shields.io/badge/2FA%20Authentication-FF6F00?style=for-the-badge"/>
+<img src="https://img.shields.io/badge/GraphQL-E10098?style=for-the-badge&logo=graphql&logoColor=white"/>
+<img src="https://img.shields.io/badge/Validations-0088CC?style=for-the-badge"/>
+<img src="https://img.shields.io/badge/Axios-5A29E4?style=for-the-badge&logo=axios&logoColor=white"/>
+<img src="https://img.shields.io/badge/Framer%20Motion-0055FF?style=for-the-badge&logo=framer&logoColor=white"/>
+<img src="https://img.shields.io/badge/React%20Context%20API-61DAFB?style=for-the-badge&logo=react&logoColor=black"/>
+<img src="https://img.shields.io/badge/Tailwind%20CSS-06B6D4?style=for-the-badge&logo=tailwind-css&logoColor=white"/>
+<img src="https://img.shields.io/badge/Three.js-000000?style=for-the-badge&logo=three.js&logoColor=white"/>
+<img src="https://img.shields.io/badge/Interactive%20Custom%203D%20Models-lightgrey?style=for-the-badge"/>
+<img src="https://img.shields.io/badge/3D%20Animations-000000?style=for-the-badge"/>
+<img src="https://img.shields.io/badge/Smooth%20%26%20Seamless%20Transitions-9333EA?style=for-the-badge"/>
+<img src="https://img.shields.io/badge/Fully%20Responsive%20UI%2FUX-blue?style=for-the-badge"/>
+<img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black"/>
+<img src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css&logoColor=white"/>
+<img src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white"/>
+<img src="https://img.shields.io/badge/Visual%20Studio%20Code-007ACC?style=for-the-badge&logo=devbox&logoColor=white"/>
+<img src="https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white"/>
+<img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white"/>
+<img src="https://img.shields.io/badge/Postman-FF6C37?style=for-the-badge&logo=postman&logoColor=white"/>
+<img src="https://img.shields.io/badge/Google%20Search%20Console-4285F4?style=for-the-badge&logo=google&logoColor=white"/>
+<img src="https://img.shields.io/badge/Vercel-000000?style=for-the-badge&logo=vercel&logoColor=white"/>
+<img src="https://img.shields.io/badge/Render-00D1FF?style=for-the-badge&logo=render&logoColor=white"/>
+</a>
+<a href="https://omkarardekar12.github.io/CodeElevate"><img src="https://img.shields.io/badge/GitHub%20Pages-222222?style=for-the-badge&logo=githubpages&logoColor=white"/></a>
+<br/>
+<a href="./LICENSE"><img src="https://img.shields.io/github/license/OmkarArdekar12/CodeElevate?color=brightgreen&style=for-the-badge"/></a>
 </h2>
 
 <div id="codeelevate-description">
-  <h2>CodeElevate - Elevate Your Coding Journey.</h2>
-  <h3>CodeElevate is a robust, scalable, and dynamic coder community built to empower competitive programmers, software developers, students, learners, and professionals. The platform provides an all-in-one ecosystem featuring integrated coding and development statistics across multiple platforms, a real-time messaging system, a user connection system, post sharing and engagement, personalized profiles with an advanced profile management system, a community-driven and category-based ranking system, a notification system, search and filter functionality, secure multi-factor authentication (2FA with TOTP) and authorization mechanisms, an SEO-optimized architecture resulting in top Google search visibility, an MVC architecture for a modular codebase, interactive custom 3D models, and a modern, fully responsive UI/UX design. The goal is to foster growth, collaboration, and innovation among coders worldwide.</h3>
+  <h2><a href="#readme-index">CodeElevate - Elevate Your Coding Journey.</a></h2>
+  <h3>CodeElevate is a robust, scalable, and dynamic coder community built to empower competitive programmers, software developers, students, learners, and professionals. The platform provides an all-in-one ecosystem featuring integrated coding and development statistics across multiple platforms, a real-time messaging system, a user connection system, post sharing and engagement, personalized profiles with an advanced profile management system, a community-driven and category-based ranking system, a notification system, search and filter functionality, secure multi-factor authentication (MFA) and authorization mechanisms, including two-factor authentication (2FA) using Time-based One-Time Password (TOTP), an SEO-optimized architecture resulting in top Google search visibility, an MVC architecture for a modular codebase, interactive custom 3D models, and a modern, fully responsive UI/UX design. The goal is to foster growth, collaboration, and innovation among coders worldwide.</h3>
 </div>
 
 <div id="codeelevate-live">
@@ -50,7 +63,7 @@
   <h2>
     <a href="https://www.youtube.com/watch?v=4-Udx0xvsO0" target="_blank" rel="noopener noreferrer">
       <p><img src="./frontend/public/images/LogoCodeElevate.png" width="23px"/> CodeElevate Demo / Preview Video</p>
-      <p>🎥Click here to watch full video on YouTube</p>
+      <p>🎥 Click here to watch full video on YouTube</p>
     </a>
     <img src="./frontend/public/videos/codeelevateGIF.gif"  alt="CodeElevate Video" width="95%"/> 
   </h2>
@@ -60,13 +73,13 @@
   <h2>
     <a href="https://www.google.com/search?q=site:codeelevate-community.vercel.app" target="_blank" rel="noopener noreferrer">
       <p>CodeElevate SEO Visibility <img src="./frontend/public/images/LogoCodeElevate.png" width="30px"/></p>
-      <p>Click here to see the SEO Visibility/Result</p>
+      <p>📈 Click here to see the SEO Visibility/Result</p>
     </a>
     <div width="100%">
       <table width="95%" align="center" border="0">
         <tr width="100%">
           <td width="100%" colspan="2" align="center">
-            <h5>Production-Grade SEO & Web Performance Implementation with Verified <br/>Top Google Search Visibility</h5>
+            <h5>Production-Grade SEO, Indexing & Web Performance Implementation with Verified <br/>Top Google Search Visibility</h5>
             <img src="./backend/src/lib/seo/seoSearchUpdated.png" width="100%">
           </td>
         </tr>
@@ -85,10 +98,52 @@
         </tr>
         <tr width="100%">
           <td width="50%">
+            <img src="./backend/src/lib/seo/crawlStats1.png" width="100%">
+          </td>
+          <td width="50%">
+            <img src="./backend/src/lib/seo/crawlStats2.png" width="100%">
+          </td>
+        </tr>
+        <tr width="100%">
+          <td width="50%">
             <img src="./backend/src/lib/seo/seoPerformance1.png" width="100%">
           </td>
           <td width="50%">
             <img src="./backend/src/lib/seo/seoPerformance2.png" width="100%">
+          </td>
+        </tr>
+        <tr width="100%">
+          <td width="50%">
+            <img src="./backend/src/lib/seo/indexedPages1.png" width="100%">
+          </td>
+          <td width="50%">
+            <img src="./backend/src/lib/seo/indexedPages2.png" width="100%">
+          </td>
+        </tr>
+        <tr width="100%">
+          <td width="50%">
+            <img src="./backend/src/lib/seo/httpsReport.png" width="100%">
+          </td>
+          <td width="50%">
+            <img src="./backend/src/lib/seo/seoSiteResult.png" width="100%">
+          </td>
+        </tr>
+        <tr width="100%">
+          <td width="50%">
+            <img src="./backend/src/lib/seo/seoResult.png" width="100%">
+          </td>
+          <td width="50%">
+            <img src="./backend/src/lib/seo/seoSitemaps2.png" width="100%">
+          </td>
+        </tr>
+        <tr width="100%">
+          <td width="100%" colspan="2" align="center">
+            <img src="./backend/src/lib/seo/robotsStats.png" width="100%">
+          </td>
+        </tr>
+        <tr width="100%">
+          <td width="100%" colspan="2" align="center">
+            <img src="./backend/src/lib/seo/seoSitemaps1.png" width="100%">
           </td>
         </tr>
         <tr width="100%">
@@ -97,24 +152,32 @@
           </td>
         </tr>
         <tr width="100%">
-          <td width="50%">
-            <img src="./backend/src/lib/seo/seoSitemaps1.png" width="100%">
-          </td>
-          <td width="50%">
-            <img src="./backend/src/lib/seo/seoSitemaps2.png" width="100%">
+          <td width="100%" colspan="2" align="center">
+            <img src="./backend/src/lib/seo/urlInspection.png" width="100%">
           </td>
         </tr>
+      </table>
+    </div>
+  </h2>
+</div>
+
+<div id="performance">
+  <h2>
+    <a href="https://omkarardekar12.github.io/CodeElevate/reports/lighthouse-report/" target="_blank" rel="noopener noreferrer">
+      <p><img src="./frontend/public/images/LogoCodeElevate.png" width="30px"/> CodeElevate Performance</p>
+      <p>📊 Click here to see the Lighthouse Detailed Performance Report</p>
+    </a>
+    <div width="100%">
+      <table width="95%" align="center" border="0">
         <tr width="100%">
-          <td width="50%">
-            <img src="./backend/src/lib/seo/seoResult.png" width="100%">
-          </td>
-          <td width="50%">
-            <img src="./backend/src/lib/seo/seoSiteResult.png" width="100%">
+          <td width="100%" colspan="2" align="center">
+            <h5>Production-Grade, Live-Measured Web Performance & SEO Validation</h5>
+            <img src="./backend/src/lib/reports/lighthouseAuditSummary.png" width="100%">
           </td>
         </tr>
         <tr width="100%">
           <td width="100%" colspan="2" align="center">
-            <img src="./backend/src/lib/seo/urlInspection.png" width="100%">
+            <img src="./backend/src/lib/reports/lighthousePerformanceMetrics.png" width="100%">
           </td>
         </tr>
       </table>
@@ -132,9 +195,10 @@
       <li><a href="#codeelevate-live">Live Application</a></li>
       <li><a href="#youtube-codeelevate-preview-video">Demo / Preview Video</a></li>
       <li><a href="#seo-result">SEO Visibility & Indexing</a></li>
+      <li><a href="#performance">Live-Measured Web Performance & SEO Validation</a></li>
       <li><a href="#overview">Overview</a></li>
       <li><a href="#features">Features</a></li>
-      <li><a href="#technologies-used">Tech Stack / Technologies Used</a></li>
+      <li><a href="#technologies-used">Technologies Used / Tech Stack</a></li>
       <li><a href="#system-architecture">System Architecture of CodeElevate</a></li>
       <li><a href="#database-design">CodeElevate Database Design</a></li>
       <li><a href="#folder-file-structure">Folders and Files Structure</a>
@@ -145,8 +209,10 @@
       </li>
       <li><a href="#environment-variables">Environment Variables Configuration</a></li>
       <li><a href="#installation">Installation</a></li>
-      <li><a href="#diagrams">Structure Flow Diagrams and SEO Visibility</a></li>
+      <li><a href="#diagrams">Structure Flow Diagrams, Web Performance & SEO Visibility</a></li>
       <li><a href="#preview">Features Preview</a></li>
+      <li><a href="#reports">Audit & Performance Reports</a></li>
+      <li><a href="#github-pages">Project Portal</a></li>
       <li><a href="#license">License</a></li>
       <li><a href="#author">Author</a></li>
     </ol>
@@ -175,7 +241,7 @@
     <tbody>
       <tr>
         <td>1.</td>
-        <td><b>User Authentication & Authorization - Two-Factor Authentication (2FA) using TOTP (Time Time-based One-Time Password)</b></td>
+        <td><b>User Authentication & Authorization - Multi-Factor Authentication (MFA) with Two-Factor Authentication (2FA) using TOTP (Time-Based One-Time Password)</b></td>
         <td>Robust and Secure authentication using Passport, Passport-Local-Strategy, Sessions, JWT, and Two-Factor Authentication (2FA) via TOTP and QR code for enhanced account protection.</td>
       </tr>
       <tr>
@@ -230,8 +296,8 @@
       </tr>
       <tr>
         <td>12.</td>
-        <td><b>3D Interactive Logo</b></td>
-        <td>An immersive 3D CodeElevate logo showcased on the About page with multiple camera angles and styling variations, built with dynamic animations for a captivating visual experience.</td>
+        <td><b>Interactive 3D Models, 3D Animations & Real-Time 3D Interactions</b></td>
+        <td>An immersive 3D CodeElevate logo showcased on the About page, featuring views from multiple camera angles, fluid animations, and styling variations. Built with dynamic transitions for a captivating visual experience, users can seamlessly rotate the models through intuitive interactive controls.</td>
       </tr>
       <tr>
         <td>13.</td>
@@ -262,11 +328,13 @@
 ![RESTful APIs](https://img.shields.io/badge/RESTful%20APIs-blue?style=for-the-badge)
 ![MVC Architecture](https://img.shields.io/badge/MVC%20Architecture-teal?style=for-the-badge)
 ![RESTful web-service](https://img.shields.io/badge/RESTful%20web-service-green?style=for-the-badge)
+![Performance Optimization](https://img.shields.io/badge/Performance%20Optimization-16A34A?style=for-the-badge)
 ![Passport.js](https://img.shields.io/badge/Passport.js-000000?style=for-the-badge&logo=passport&logoColor=white)
 ![Passport-Local](https://img.shields.io/badge/Passport-Local-000000?style=for-the-badge&logo=passport&logoColor=black)
 ![Cloudinary](https://img.shields.io/badge/Cloudinary-FF5A5F?style=for-the-badge&logo=cloudinary&logoColor=white)
 ![Multer](https://img.shields.io/badge/Multer-1D1D1D?style=for-the-badge)
 ![Multer-Storage-Cloudinary](https://img.shields.io/badge/Multer%20Storage-Cloudinary-grey?style=for-the-badge)
+![GraphQL](https://img.shields.io/badge/GraphQL-E10098?style=for-the-badge&logo=graphql&logoColor=white)
 ![Joi](https://img.shields.io/badge/Joi-0088CC?style=for-the-badge)
 ![CORS](https://img.shields.io/badge/CORS-4287f5?style=for-the-badge)
 ![Axios](https://img.shields.io/badge/Axios-5A29E4?style=for-the-badge&logo=axios&logoColor=white) <br/>
@@ -280,13 +348,19 @@
 ![React Router DOM](https://img.shields.io/badge/React%20Router%20DOM-CA4245?style=for-the-badge&logo=reactrouter&logoColor=white)
 ![React Context API](https://img.shields.io/badge/React%20Context%20API-61DAFB?style=for-the-badge&logo=react&logoColor=black)
 ![Three.js](https://img.shields.io/badge/Three.js-000000?style=for-the-badge&logo=three.js&logoColor=white)
+![3D Rendering](https://img.shields.io/badge/3D%20Rendering-111111?style=for-the-badge&logo=three.js&logoColor=white)
+![3D Interactions](https://img.shields.io/badge/3D%20Interactions-222222?style=for-the-badge&logo=three.js&logoColor=white)
 ![React Hot Toast](https://img.shields.io/badge/React%20Hot%20Toast-F7B500?style=for-the-badge&logo=react&logoColor=black)
 ![React Slick](https://img.shields.io/badge/React%20Slick-1F1F1F?style=for-the-badge)
 ![Slick Carousel](https://img.shields.io/badge/Slick%20Carousel-FF5500?style=for-the-badge)
 ![Custom 3D Logo Components](https://img.shields.io/badge/Interactive%20Custom%203D%20Components-lightgrey?style=for-the-badge)
-![Responsive UI/UX](https://img.shields.io/badge/Responsive%20UI%2FUX-blue?style=for-the-badge)
+![Performance Optimization](https://img.shields.io/badge/Performance%20Optimization-16A34A?style=for-the-badge)
+![SEO Optimization](https://img.shields.io/badge/SEO%20Optimization-orange?style=for-the-badge)
+![3D Animations](https://img.shields.io/badge/3D%20Animations-000000?style=for-the-badge&logo=three.js&logoColor=white)
+![Smooth & Seamless Transitions and Animations](https://img.shields.io/badge/Smooth%20%26%20Seamless%20Transitions%20%26%20Animations-0055FF?style=for-the-badge&logo=framer&logoColor=white)
+![Fully Responsive UI/UX](https://img.shields.io/badge/Fully%20Responsive%20UI%2FUX-blue?style=for-the-badge)
 ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
-![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
+![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css&logoColor=white)
 ![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
 ![Lucide React](https://img.shields.io/badge/Lucide%20React-000?style=for-the-badge&logo=lucide&logoColor=white)
 ![React Icons](https://img.shields.io/badge/React%20Icons-61DAFB?style=for-the-badge&logo=react&logoColor=black)
@@ -298,7 +372,7 @@
 ![Passport.js](https://img.shields.io/badge/Passport.js-000000?style=for-the-badge&logo=passport&logoColor=white)
 ![Passport-Local Strategy](https://img.shields.io/badge/Passport-Local%20Strategy-000000?style=for-the-badge)
 ![Connect-Mongo](https://img.shields.io/badge/Connect-Mongo-0F5132?style=for-the-badge&logo=mongoosedotws&logoColor=white)
-![JWT](https://img.shields.io/badge/JWT-32329F?style=for-the-badge&logo=jsonwebtokens&=white)  
+![JWT](https://img.shields.io/badge/JWT-32329F?style=for-the-badge&logo=jsonwebtokens&logoColor=white)  
 ![bcrypt.js](https://img.shields.io/badge/bcrypt.js-463A3A?style=for-the-badge)
 ![Express-Session](https://img.shields.io/badge/Express%20Session-DB0A47?style=for-the-badge)
 ![Cookie-Parser](https://img.shields.io/badge/Cookie-Parser-007ACC?style=for-the-badge)
@@ -322,14 +396,14 @@
 ![GitHub REST API](https://img.shields.io/badge/GitHub%20REST%20API-black?style=for-the-badge&logo=github&logoColor=white) <br/>
 ![Google Search Console](https://img.shields.io/badge/Google%20Search%20Console-4285F4?style=for-the-badge&logo=google&logoColor=white)
 ![SEO-friendly Meta Tags](https://img.shields.io/badge/SEO-friendly%20Meta%20Tags-orange?style=for-the-badge)
-![Open Graph (OG) Tags](<https://img.shields.io/badge/Open%20Graph%20(OG)%20Tags-blue?style=for-the-badge>)
+![Open Graph (OG) Tags](https://img.shields.io/badge/Open%20Graph%20(OG)%20Tags-blue?style=for-the-badge)
 ![Twitter Card Meta Tags](https://img.shields.io/badge/Twitter%20Card%20Meta%20Tags-cyan?style=for-the-badge)
 ![Schema.org JSON-LD Structured Data](https://img.shields.io/badge/Schema.org%20JSON-LD%20Structured%20Data-green?style=for-the-badge)
 ![Robots.txt](https://img.shields.io/badge/Robots.txt-black?style=for-the-badge)
 ![Sitemap.xml](https://img.shields.io/badge/Sitemap.xml-red?style=for-the-badge)
 ![Manifest.json (Web App Metadata & Theme Colour)](https://img.shields.io/badge/Manifest.json-yellow?style=for-the-badge)
 ![Mobile Viewport Meta Tag](https://img.shields.io/badge/Mobile%20Viewport%20Meta%20Tag-lightblue?style=for-the-badge)
-![Apple Touch Configuration (PWA readiness)](<https://img.shields.io/badge/Apple%20Touch%20Configuration%20(PWA%20readiness)-grey?style=for-the-badge>)
+![Apple Touch Configuration (PWA readiness)](https://img.shields.io/badge/Apple%20Touch%20Configuration%20(PWA%20readiness)-grey?style=for-the-badge)
 ![Theme Colour for Browser UI](https://img.shields.io/badge/Theme%20Colour%20for%20Browser%20UI-pink?style=for-the-badge)
 ![Fast build using Vite](https://img.shields.io/badge/Fast%20build%20using%20Vite-646CFF?style=for-the-badge&logo=vite&logoColor=white)
 ![TailwindCSS for Lightweight CSS](https://img.shields.io/badge/TailwindCSS%20for%20Lightweight%20CSS-06B6D4?style=for-the-badge&logo=tailwind-css&logoColor=white)
@@ -351,7 +425,8 @@
 ![Vercel](https://img.shields.io/badge/Vercel-000000?style=for-the-badge&logo=vercel&logoColor=white)
 ![Render](https://img.shields.io/badge/Render-00D1FF?style=for-the-badge&logo=render&logoColor=white)
 ![MongoDB Atlas](https://img.shields.io/badge/MongoDB%20Atlas-47A248?style=for-the-badge&logo=mongodb&logoColor=white)
-![Cloudinary](https://img.shields.io/badge/Cloudinay-FF5A5F?style=for-the-badge&logo=cloudinary&logoColor=white)
+![Cloudinary](https://img.shields.io/badge/Cloudinary-FF5A5F?style=for-the-badge&logo=cloudinary&logoColor=white)
+![GitHub Pages](https://img.shields.io/badge/GitHub%20Pages-222222?style=for-the-badge&logo=githubpages&logoColor=white)
 
   </p>
 
@@ -368,12 +443,12 @@
         <tr>
           <td>&#10148;</td>
           <td>Frontend</td>
-          <td>React.js, Vite, Tailwind CSS, Socket.io Client, Framer Motion, Optimistic UI Updates (State-based Incremental Rendering), Axios, React Router DOM, React Context API (Global Session State Management), Three.js, React Hot Toast, React Slick, Slick Carousel, Interactive Custom 3D Logo Components, Responsive UI/UX, JavaScript, CSS3, HTML5, Lucide React, React Icons, FontAwesome, Google Fonts</td>
+          <td>React.js, Vite, Tailwind CSS, Socket.io Client, Framer Motion, Optimistic UI Updates (State-based Incremental Rendering), Axios, React Router DOM, React Context API (Global Session State Management), Three.js (3D Rendering & Real-Time 3D Interactions), React Hot Toast, React Slick, Slick Carousel, 3D Animations, Smooth & Seamless UI Transitions and Animations, Interactive Custom 3D Logo Components, Performance Optimization, SEO Optimization, Fully Responsive UI/UX, JavaScript, CSS3, HTML5, Lucide React, React Icons, FontAwesome, Google Fonts</td>
         </tr>
         <tr>
           <td>&#10148;</td>
           <td>Backend</td>
-          <td>Node.js, Express.js, MongoDB, Mongoose, Socket.io (Real-time Communication), RESTful APIs (Representational State Transfer Application Programming Interface), MVC (Model–View–Controller) Architecture / Design Pattern / Framework, RESTful web-service, Passport.js, Passport-Local, Cloudinary, Multer, Multer-Storage-Cloudinary, Joi, CORS (Cross-Origin Resource Sharing), Axios</td>
+          <td>Node.js, Express.js, MongoDB, Mongoose, Socket.io (Real-time Communication), RESTful APIs (Representational State Transfer Application Programming Interface), MVC (Model–View–Controller) Architecture / Design Pattern / Framework, RESTful web-service, Performance Optimization, Passport.js, Passport-Local, Cloudinary, Multer, Multer-Storage-Cloudinary, GraphQL, Joi, CORS (Cross-Origin Resource Sharing), Axios</td>
         </tr>
         <tr>
           <td>&#10148;</td>
@@ -408,7 +483,7 @@
         <tr>
           <td>&#10148;</td>
           <td>Deployment & Hosting</td>
-          <td>Vercel (Frontend Hosting), Render (Backend Hosting), MongoDB Atlas (Database Hosting), Cloudinary (Cloud Storage)</td>
+          <td>Vercel (Frontend Hosting), Render (Backend Hosting), MongoDB Atlas (Database Hosting), Cloudinary (Cloud Storage), GitHub Pages (Portal Hosting)</td>
         </tr>
       </tbody>
     </table>
@@ -459,7 +534,10 @@
 │   ├── vercel.json
 │   ├── vite.config.js
 │   └── 📁 node_modules
+├── 📁 docs
+│   └── index.html
 ├── .gitignore
+├── .gitattributes
 ├── LICENSE
 └── README.md
 ```
@@ -527,9 +605,29 @@
 │   │   │   ├── 📁 docs
 │   │   │   │   ├── codeElevateArchitecture.png
 │   │   │   │   └── mongodbDatabaseStructure.png
+│   │   │   ├── 📁 reports
+│   │   │   │   ├── 📁 lighthouse-report
+│   │   │   │   │   └── index.html
+│   │   │   │   ├── lighthouseAuditSummary.png
+│   │   │   │   ├── lighthousePerformanceMetrics.png
+│   │   │   │   ├── prevLighthouseAuditSummary.png
+│   │   │   │   ├── prevLighthousePerformanceMetrics.png
+│   │   │   │   ├── prevLighthouseReport.pdf
+│   │   │   │   ├── currLighthouseReport.pdf
+│   │   │   │   ├── CodeElevateLighthouseReport.html
+│   │   │   │   ├── CodeElevateLighthouseReport.json
+│   │   │   │   └── LighthouseReport.pdf
 │   │   │   ├── 📁 seo
+│   │   │   │   ├── crawlStats1.png
+│   │   │   │   ├── crawlStats2.png
+│   │   │   │   ├── httpReport.png
+│   │   │   │   ├── indexedPages1.png
+│   │   │   │   ├── indexedPages2.png
+│   │   │   │   ├── robotsStats.png
 │   │   │   │   ├── seoPerformance1.png
+│   │   │   │   ├── seoPerformance1prev.png
 │   │   │   │   ├── seoPerformance2.png
+│   │   │   │   ├── seoPerformance2prev.png
 │   │   │   │   ├── seoResult.png
 │   │   │   │   ├── seoSearchResult.png
 │   │   │   │   ├── seoSearchUpdated.png
@@ -577,7 +675,6 @@
 │   │   │   ├── developmentProfilesStatsApi.js
 │   │   │   ├── notificationsApi.js
 │   │   │   └── 📁 utils
-│   │   │       ├── getSessionUserId.js
 │   │   │       └── getToken2FA.js
 │   │   ├── 📁 context
 │   │   │   └── SessionContext.jsx
@@ -758,7 +855,59 @@
 │   ├── vite.config.js
 │   └── 📁 node_modules
 │
+├── 📁 docs
+│   ├── 📁 assets
+│   │   ├── codeelevateGIF.gif
+│   │   ├── CodeElevateLogo.gif
+│   │   ├── CodeElevateText.gif
+│   │   ├── favicon.ico
+│   │   └── logo.png
+│   ├── 📁 docs
+│   │   ├── codeElevateArchitecture.png
+│   │   └── mongodbDatabaseStructure.png
+│   ├── 📁 reports
+│   │   ├── 📁 lighthouse-report
+│   │   │   └── index.html
+│   │   ├── lighthouseAuditSummary.png
+│   │   ├── lighthousePerformanceMetrics.png
+│   │   └── LighthouseReport.pdf
+│   ├── 📁 seo
+│   │   ├── crawlStats1.png
+│   │   ├── crawlStats2.png
+│   │   ├── httpReport.png
+│   │   ├── indexedPages1.png
+│   │   ├── indexedPages2.png
+│   │   ├── robotsStats.png
+│   │   ├── seoPerformance1.png
+│   │   ├── seoPerformance1prev.png
+│   │   ├── seoPerformance2.png
+│   │   ├── seoPerformance2prev.png
+│   │   ├── seoResult.png
+│   │   ├── seoSearchResult.png
+│   │   ├── seoSearchUpdated.png
+│   │   ├── seoSearchUpdated1.png
+│   │   ├── seoSearchUpdated2.png
+│   │   ├── seoSitemaps1.png
+│   │   ├── seoSitemaps2.png
+│   │   ├── seoSiteResult.png
+│   │   ├── seoStats.png
+│   │   └── urlInspection.png
+│   ├── 📁 diagrams
+│   │   ├── authenticationDiagram.png
+│   │   ├── authorizationDiagram.png
+│   │   ├── profileSystemDiagram.png
+│   │   ├── rankingSystemDiagram.png
+│   │   ├── messagingSystemDiagram.png
+│   │   ├── postSystemDiagram.png
+│   │   ├── connectionSystemDiagram.png
+│   │   ├── notificationSystemDiagram.png
+│   │   ├── cpStatsSystemDiagram.png
+│   │   └── devsStatsSystemDiagram.png
+│   └── index.html
+│
 ├── .gitignore
+├── .gitattributes
+│
 ├── LICENSE
 └── README.md
 ```
@@ -919,7 +1068,7 @@ git push origin feature/your-feature-name
 ---
 
 <div>
-  <h2 id="diagrams"><a href="#readme-index">Structure Flow Diagrams 📊 and SEO Visibility 🌐</a></h2>
+  <h2 id="diagrams"><a href="#readme-index">Structure Flow Diagrams 📊, Web Performance ⚡, and SEO Visibility 🌐</a></h2>
   <div width="100%">
     <table width="95%" align="center" border="0">
       <tr>
@@ -996,6 +1145,16 @@ git push origin feature/your-feature-name
       </tr>
       <tr>
         <td width="45%">
+          <h3 align="center">SEO Crawl Stats</h3>
+          <img src="./backend/src/lib/seo/crawlStats1.png" width="100%">
+        </td>
+        <td width="45%">
+          <h3 align="center">SEO Detailed Crawl Stats</h3>
+          <img src="./backend/src/lib/seo/crawlStats2.png" width="100%">
+        </td>
+      </tr>
+      <tr>
+        <td width="45%">
           <h3 align="center">SEO Performance</h3>
           <img src="./backend/src/lib/seo/seoPerformance1.png" width="100%">
         </td>
@@ -1005,29 +1164,63 @@ git push origin feature/your-feature-name
         </td>
       </tr>
       <tr>
-        <td width="90%" colspan="2" align="center">
-          <h3 align="center">SEO Achievement Stats</h3>
-          <img src="./backend/src/lib/seo/seoStats.png" width="100%">
+        <td width="45%">
+          <h3 align="center">Page indexing</h3>
+          <img src="./backend/src/lib/seo/indexedPages1.png" width="100%">
+        </td>
+        <td width="45%">
+          <h3 align="center">Indexed pages</h3>
+          <img src="./backend/src/lib/seo/indexedPages2.png" width="100%">
+        </td>
+      </tr>
+      <tr>
+        <td width="45%">
+          <h3 align="center">HTTPS</h3>
+          <img src="./backend/src/lib/seo/httpsReport.png" width="100%">
+        </td>
+        <td width="45%">
+          <h3 align="center">Browser Search Visibility</h3>
+          <img src="./backend/src/lib/seo/seoSiteResult.png" width="100%">
         </td>
       </tr>
       <tr>
         <td width="45%">
           <h3 align="center">SEO Sitemaps Success</h3>
-          <img src="./backend/src/lib/seo/seoSitemaps1.png" width="100%">
-        </td>
-        <td width="45%">
-          <h3 align="center">Sitemaps Accepted Successfully</h3>
           <img src="./backend/src/lib/seo/seoSitemaps2.png" width="100%">
         </td>
-      </tr>
-      <tr>
         <td width="45%">
           <h3 align="center">Search Visibility</h3>
           <img src="./backend/src/lib/seo/seoResult.png" width="100%">
         </td>
-        <td width="45%">
-          <h3 align="center">Browser Search Visibility</h3>
-          <img src="./backend/src/lib/seo/seoSiteResult.png" width="100%">
+      </tr>
+      <tr>
+        <td width="90%" colspan="2" align="center">
+          <h3 align="center">sitemap.xml Accepted and Successfully Indexed</h3>
+          <img src="./backend/src/lib/seo/seoSitemaps1.png" width="100%">
+        </td>
+      </tr>
+      <tr>
+        <td width="90%" colspan="2" align="center">
+          <h3 align="center">robots.txt Accepted and Successfully Validated</h3>
+          <img src="./backend/src/lib/seo/robotsStats.png" width="100%">
+        </td>
+      </tr>
+      <tr>
+        <td width="90%" colspan="2" align="center">
+          <h3 align="center">Lighthouse Audit Summary (Production)</h3>
+          <img src="./backend/src/lib/reports/lighthouseAuditSummary.png" width="100%">
+        </td>
+      </tr>
+      <tr>
+        <td width="90%" colspan="2" align="center">
+          <h3 align="center">Lighthouse Performance Metrics (Core Web Vitals)</h3>
+          <img src="./backend/src/lib/reports/lighthousePerformanceMetrics.png" width="100%">
+        </td>
+      </tr>
+      <tr>
+        <td width="90%" colspan="2" align="center">
+          <h3 align="center">SEO Achievement Stats</h3>
+          <img src="./backend/src/lib/seo/seoStats.png" width="100%">
         </td>
       </tr>
       <tr>
@@ -1149,6 +1342,34 @@ git push origin feature/your-feature-name
 ---
 
 <div>
+  <h2 id="reports"><a href="#readme-index">Audit and Performance Reports 🧾</a></h2>
+  <div>
+
+### Verified and production-grade audit reports generated using industry-standard tools to evaluate web performance, accessibility, best practices, and SEO on the live CodeElevate application.
+
+- ### [CodeElevate Application Live Production Level Lighthouse Performance Report](https://omkarardekar12.github.io/CodeElevate/reports/lighthouse-report/)
+
+- ### [Lighthouse Performance Report (PDF)](https://omkarardekar12.github.io/CodeElevate/reports/LighthouseReport.pdf)
+
+  </div>
+</div>
+
+---
+
+<div>
+  <h2 id="github-pages"><a href="#readme-index">Project Portal 📘</a></h2>
+  <div>
+
+### Publicly hosted documentation and reports for CodeElevate, served via GitHub Pages. This portal consolidates performance audits, SEO validation, and system documentation in a single, accessible location.
+
+- ### [CodeElevate Project Portal](https://omkarardekar12.github.io/CodeElevate/)
+
+  </div>
+</div>
+
+---
+
+<div>
   <h2 id="license"><a href="#readme-index">License 📄</a></h2>
   <div>
 
@@ -1172,7 +1393,37 @@ git push origin feature/your-feature-name
 
   </div>
 </div>
-
 <br/>
-<hr/>
-<hr/>
+<hr/><hr/>
+<!-- <h1 id="codeelevate-title"><img src="./frontend/public/images/CodeElevateLogo.gif" width="55px" valign="bottom"/><img src="./frontend/public/images/CodeElevateText.gif" width="275px" valign="bottom"/></h1>
+<div>
+  <img src="https://img.shields.io/badge/MERN%20Stack-3C873A?style=for-the-badge&logo=mern&logoColor=white"/>
+  <img src="https://img.shields.io/badge/MongoDB-47A248?style=for-the-badge&logo=mongodb&logoColor=white"/>
+  <img src="https://img.shields.io/badge/Express.js-000000?style=for-the-badge&logo=express&logoColor=white"/>
+  <img src="https://img.shields.io/badge/React.js-20232A?style=for-the-badge&logo=react&logoColor=61DAFB"/>
+  <img src="https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white"/>
+  <img src="https://img.shields.io/badge/MVC%20Architecture-teal?style=for-the-badge"/>
+  <img src="https://img.shields.io/badge/RESTful%20APIs-blue?style=for-the-badge"/>
+  <img src="https://img.shields.io/badge/SEO%20Optimized-orange?style=for-the-badge"/>
+  <img src="https://img.shields.io/badge/Socket.io-010101?style=for-the-badge&logo=socket.io&logoColor=white"/>
+  <img src="https://img.shields.io/badge/Mongoose-880000?style=for-the-badge"/>
+  <img src="https://img.shields.io/badge/Cloudinary-FF5A5F?style=for-the-badge&logo=cloudinary&logoColor=white"/>
+  <img src="https://img.shields.io/badge/Passport.js-000000?style=for-the-badge&logo=passport&logoColor=white"/>
+  <img src="https://img.shields.io/badge/JWT%20Authentication-32329F?style=for-the-badge&logo=jsonwebtokens&logoColor=white"/>
+  <img src="https://img.shields.io/badge/2FA%20Authentication-FF6F00?style=for-the-badge"/>
+  <img src="https://img.shields.io/badge/Validations-0088CC?style=for-the-badge"/>
+  <img src="https://img.shields.io/badge/Axios-5A29E4?style=for-the-badge&logo=axios&logoColor=white"/>
+  <img src="https://img.shields.io/badge/Framer%20Motion-0055FF?style=for-the-badge&logo=framer&logoColor=white"/>
+  <img src="https://img.shields.io/badge/React%20Context%20API-61DAFB?style=for-the-badge&logo=react&logoColor=black"/>
+  <img src="https://img.shields.io/badge/Tailwind%20CSS-06B6D4?style=for-the-badge&logo=tailwind-css&logoColor=white"/>
+  <img src="https://img.shields.io/badge/Three.js-000000?style=for-the-badge&logo=three.js&logoColor=white"/>
+  <img src="https://img.shields.io/badge/Interactive%20Custom%203D%20Logo-lightgrey?style=for-the-badge"/>
+  <img src="https://img.shields.io/badge/Responsive%20UI%2FUX-blue?style=for-the-badge"/>
+  <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black"/>
+  <img src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white"/>
+  <img src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white"/>
+  <img src="https://img.shields.io/badge/Vercel-000000?style=for-the-badge&logo=vercel&logoColor=white"/>
+  <img src="https://img.shields.io/badge/Render-00D1FF?style=for-the-badge&logo=render&logoColor=white"/>
+  <br/>
+  <a href="./LICENSE"><img src="https://img.shields.io/github/license/OmkarArdekar12/CodeElevate?color=brightgreen&style=for-the-badge"/></a>
+</div> -->
