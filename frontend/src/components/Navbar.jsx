@@ -42,7 +42,7 @@ export default function Navbar({ isLoggedIn, isVerified, userData }) {
               <div className="flex-shrink-0 flex items-center">
                 <img
                   src="/images/CodeElevateLogo.gif"
-                  alt="CodeElevate"
+                  alt="CodeElevate Logo Image"
                   className="h-18 mr-1"
                 />
                 <h1 className="LogoText logo-text ml-1 text-white text-3xl hover-logo-text-border">
@@ -128,7 +128,7 @@ export default function Navbar({ isLoggedIn, isVerified, userData }) {
                     className="hidden md:flex items-center text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-md font-medium transition duration-150"
                   >
                     <div className="hidden md:block">
-                      <button className="flex items-center text-white bg-green-700 hover:bg-green-600 p-2 rounded-md cursor-pointer hover-text-border">
+                      <button className="flex items-center text-white bg-green-700 hover:bg-green-600 px-4 py-2 rounded-md cursor-pointer hover-text-border">
                         <LoginIcon className="inline mr-2" />
                         Login / SignUp
                       </button>

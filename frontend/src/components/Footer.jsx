@@ -15,10 +15,14 @@ export default function Footer() {
     <footer className="w-[100%] bg-black z-1 text-gray-400 py-10 border-t border-cyan-700 transition-all duration-200 ease-in-out">
       <div className="max-w-[95%] mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-3 gap-8">
         <div>
-          <div onDoubleClick={() => navigate("/")} className="logo-container">
+          <div
+            onDoubleClick={() => navigate("/")}
+            className="logo-container"
+            aria-label="Double click to go homepage"
+          >
             <img
               src="/images/CodeElevateLogo.png"
-              alt="CodeElevate"
+              alt="CodeElevate Logo Image"
               className="logo h-19"
             />
             <h1 className="logo-text text-white text-2xl font-semibold mb-4">
@@ -34,6 +38,7 @@ export default function Footer() {
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-1 hover:text-white hover:underline"
+              aria-label="Visit CodeElevate Portal (opens in new tab)"
             >
               Learn more <FaExternalLinkAlt className="size-3 inline" />
             </a>
@@ -71,6 +76,7 @@ export default function Footer() {
               target="_blank"
               rel="noopener noreferrer"
               className="hover:text-white"
+              aria-label="View CodeElevate GitHub repository (opens in new tab)"
             >
               <FaGithub />
             </a>
@@ -79,6 +85,7 @@ export default function Footer() {
               target="_blank"
               rel="noopener noreferrer"
               className="hover:text-white"
+              aria-label="Visit LinkedIn profile (opens in new tab)"
             >
               <FaLinkedin />
             </a>
@@ -87,6 +94,7 @@ export default function Footer() {
               target="_blank"
               rel="noopener noreferrer"
               className="hover:text-white"
+              aria-label="Watch CodeElevate demo video (opens in new tab)"
             >
               <FaYoutube />
             </a>
@@ -95,6 +103,7 @@ export default function Footer() {
               target="_blank"
               rel="noopener noreferrer"
               className="hover:text-white"
+              aria-label="Visit GitHub profile (opens in new tab)"
             >
               <FaTwitter />
             </a>
@@ -103,6 +112,7 @@ export default function Footer() {
               target="_blank"
               rel="noopener noreferrer"
               className="hover:text-white"
+              aria-label="Contact via email or YouTube channel (opens in new tab)"
             >
               <FaEnvelope />
             </a>
@@ -116,6 +126,7 @@ export default function Footer() {
           target="_blank"
           rel="noopener noreferrer"
           className="flex items-center"
+          aria-label="View License (opens in new tab)"
         >
           <span>Copyright</span>
           <AiOutlineCopyright className="size-3 mx-1" />
