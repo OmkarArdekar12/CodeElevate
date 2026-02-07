@@ -37,10 +37,10 @@ export default function Footer() {
               href="https://omkarardekar12.github.io/CodeElevate/"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-1 hover:text-white hover:underline"
-              aria-label="Visit CodeElevate Portal (opens in new tab)"
+              className="inline-flex flex-wrap items-center gap-1 hover:text-white hover:underline"
             >
-              Learn more <FaExternalLinkAlt className="size-3 inline" />
+              Visit CodeElevate Portal{" "}
+              <FaExternalLinkAlt className="size-3 inline" />
             </a>
           </p>
         </div>
