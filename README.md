@@ -396,14 +396,14 @@
 ![GitHub REST API](https://img.shields.io/badge/GitHub%20REST%20API-black?style=for-the-badge&logo=github&logoColor=white) <br/>
 ![Google Search Console](https://img.shields.io/badge/Google%20Search%20Console-4285F4?style=for-the-badge&logo=google&logoColor=white)
 ![SEO-friendly Meta Tags](https://img.shields.io/badge/SEO-friendly%20Meta%20Tags-orange?style=for-the-badge)
-![Open Graph (OG) Tags](https://img.shields.io/badge/Open%20Graph%20(OG)%20Tags-blue?style=for-the-badge)
+![Open Graph (OG) Tags](<https://img.shields.io/badge/Open%20Graph%20(OG)%20Tags-blue?style=for-the-badge>)
 ![Twitter Card Meta Tags](https://img.shields.io/badge/Twitter%20Card%20Meta%20Tags-cyan?style=for-the-badge)
 ![Schema.org JSON-LD Structured Data](https://img.shields.io/badge/Schema.org%20JSON-LD%20Structured%20Data-green?style=for-the-badge)
 ![Robots.txt](https://img.shields.io/badge/Robots.txt-black?style=for-the-badge)
 ![Sitemap.xml](https://img.shields.io/badge/Sitemap.xml-red?style=for-the-badge)
 ![Manifest.json (Web App Metadata & Theme Colour)](https://img.shields.io/badge/Manifest.json-yellow?style=for-the-badge)
 ![Mobile Viewport Meta Tag](https://img.shields.io/badge/Mobile%20Viewport%20Meta%20Tag-lightblue?style=for-the-badge)
-![Apple Touch Configuration (PWA readiness)](https://img.shields.io/badge/Apple%20Touch%20Configuration%20(PWA%20readiness)-grey?style=for-the-badge)
+![Apple Touch Configuration (PWA readiness)](<https://img.shields.io/badge/Apple%20Touch%20Configuration%20(PWA%20readiness)-grey?style=for-the-badge>)
 ![Theme Colour for Browser UI](https://img.shields.io/badge/Theme%20Colour%20for%20Browser%20UI-pink?style=for-the-badge)
 ![Fast build using Vite](https://img.shields.io/badge/Fast%20build%20using%20Vite-646CFF?style=for-the-badge&logo=vite&logoColor=white)
 ![TailwindCSS for Lightweight CSS](https://img.shields.io/badge/TailwindCSS%20for%20Lightweight%20CSS-06B6D4?style=for-the-badge&logo=tailwind-css&logoColor=white)
@@ -1393,8 +1393,10 @@ git push origin feature/your-feature-name
 
   </div>
 </div>
+
 <br/>
 <hr/><hr/>
+
 <!-- <h1 id="codeelevate-title"><img src="./frontend/public/images/CodeElevateLogo.gif" width="55px" valign="bottom"/><img src="./frontend/public/images/CodeElevateText.gif" width="275px" valign="bottom"/></h1>
 <div>
   <img src="https://img.shields.io/badge/MERN%20Stack-3C873A?style=for-the-badge&logo=mern&logoColor=white"/>
