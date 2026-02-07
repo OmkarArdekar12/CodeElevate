@@ -38,7 +38,6 @@ export default function Footer() {
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-1 hover:text-white hover:underline"
-              aria-label="Visit CodeElevate Portal (opens in new tab)"
             >
               Learn more <FaExternalLinkAlt className="size-3 inline" />
             </a>
