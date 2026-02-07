@@ -614,6 +614,8 @@
 │   │   │   │   ├── prevLighthousePerformanceMetrics.png
 │   │   │   │   ├── prevLighthouseReport.pdf
 │   │   │   │   ├── currLighthouseReport.pdf
+│   │   │   │   ├── CodeElevateLighthouseReport.html
+│   │   │   │   ├── CodeElevateLighthouseReport.json
 │   │   │   │   └── LighthouseReport.pdf
 │   │   │   ├── 📁 seo
 │   │   │   │   ├── crawlStats1.png
