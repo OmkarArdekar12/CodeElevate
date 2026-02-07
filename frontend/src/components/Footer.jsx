@@ -22,7 +22,7 @@ export default function Footer() {
           >
             <img
               src="/images/CodeElevateLogo.png"
-              alt="CodeElevate Logo Image"
+              alt="CodeElevate - Competitive Programming and Developer Showcase Platform"
               className="logo h-19"
             />
             <h1 className="logo-text text-white text-2xl font-semibold mb-4">
@@ -120,17 +120,31 @@ export default function Footer() {
         </div>
       </div>
 
-      <div className="mt-10 flex items-center justify-center text-center text-xs text-slate-300 hover:underline cursor-pointer hover:text-white">
+      <div className="mt-10 flex flex-col gap-2 items-center justify-center text-center text-xs text-slate-300">
         <a
           href="https://github.com/OmkarArdekar12/CodeElevate/blob/main/LICENSE"
           target="_blank"
           rel="noopener noreferrer"
-          className="flex items-center"
+          className="flex flex-wrap items-center justify-center hover:underline hover:text-white cursor-pointer"
           aria-label="View License (opens in new tab)"
         >
           <span>Copyright</span>
           <AiOutlineCopyright className="size-3 mx-1" />
-          <span>2025 CodeElevate. All rights reserved.</span>
+          <span>
+            {new Date().getFullYear()} CodeElevate. All rights reserved.
+          </span>
+        </a>
+        <a
+          href="https://www.linkedin.com/in/omkarardekar09"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="group mt-4 text-xs text-slate-400"
+          aria-label="Visit Omkar Ardekar LinkedIn profile (opens in new tab)"
+        >
+          Created by{" "}
+          <span className="text-white group-hover:underline group-hover:text-orange-500">
+            Omkar Ardekar
+          </span>
         </a>
       </div>
     </footer>
