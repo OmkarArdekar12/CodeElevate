@@ -625,8 +625,10 @@
 │   │   │   │   ├── indexedPages2.png
 │   │   │   │   ├── robotsStats.png
 │   │   │   │   ├── seoPerformance1.png
+│   │   │   │   ├── seoPerformance1curr.png
 │   │   │   │   ├── seoPerformance1prev.png
 │   │   │   │   ├── seoPerformance2.png
+│   │   │   │   ├── seoPerformance2curr.png
 │   │   │   │   ├── seoPerformance2prev.png
 │   │   │   │   ├── seoResult.png
 │   │   │   │   ├── seoSearchResult.png
@@ -637,6 +639,7 @@
 │   │   │   │   ├── seoSitemaps2.png
 │   │   │   │   ├── seoSiteResult.png
 │   │   │   │   ├── seoStats.png
+│   │   │   │   ├── seoStatsprev.png
 │   │   │   │   └── urlInspection.png
 │   │   │   └── 📁 diagrams
 │   │   │       ├── authenticationDiagram.png
@@ -879,8 +882,10 @@
 │   │   ├── indexedPages2.png
 │   │   ├── robotsStats.png
 │   │   ├── seoPerformance1.png
+│   │   ├── seoPerformance1curr.png
 │   │   ├── seoPerformance1prev.png
 │   │   ├── seoPerformance2.png
+│   │   ├── seoPerformance2curr.png
 │   │   ├── seoPerformance2prev.png
 │   │   ├── seoResult.png
 │   │   ├── seoSearchResult.png
@@ -891,6 +896,7 @@
 │   │   ├── seoSitemaps2.png
 │   │   ├── seoSiteResult.png
 │   │   ├── seoStats.png
+│   │   ├── seoStatsprev.png
 │   │   └── urlInspection.png
 │   ├── 📁 diagrams
 │   │   ├── authenticationDiagram.png
