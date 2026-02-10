@@ -47,7 +47,13 @@
 
 <div id="codeelevate-description">
   <h2><a href="#readme-index">CodeElevate - Elevate Your Coding Journey.</a></h2>
-  <h3>CodeElevate is a robust, scalable, and dynamic coder community built to empower competitive programmers, software developers, students, learners, and professionals. The platform provides an all-in-one ecosystem featuring integrated coding and development statistics across multiple platforms, a real-time messaging system, a user connection system, post sharing and engagement, personalized profiles with an advanced profile management system, a community-driven and category-based ranking system, a notification system, search and filter functionality, secure multi-factor authentication (MFA) and authorization mechanisms, including two-factor authentication (2FA) using Time-based One-Time Password (TOTP), an SEO-optimized architecture resulting in top Google search visibility, an MVC architecture for a modular codebase, interactive custom 3D models, and a modern, fully responsive UI/UX design. The goal is to foster growth, collaboration, and innovation among coders worldwide.</h3>
+  <h3>CodeElevate is a robust, scalable, and dynamic coder community platform built to empower competitive programmers, software developers, students, learners, and professionals. <br/>
+  The platform provides an all-in-one ecosystem featuring integrated coding and development statistics across multiple platforms, a community-driven and category-based ranking system, a real-time messaging system, a user connection system, post sharing and engagement, personalized profiles with an advanced profile management system, a notification system, and search and filter functionality. <br/>
+  It incorporates secure multi-factor authentication (MFA) and authorization mechanisms, including two-factor authentication (2FA) using Time-Based One-Time Password (TOTP). <br/>
+  The system is powered by seamless and optimized backend and frontend pipelines with structured database and cloud storage integration, along with performance and SEO optimization. Built using an MVC architecture for a modular, scalable, and maintainable codebase, the platform ensures production-grade, performance-driven reliability and achieves top Google search visibility through its SEO-optimized architecture. <br/>
+  It also features interactive custom 3D models, smooth animations, interactive 3D animations, and a modern, fully responsive UI/UX design. <br/>
+  The goal is to foster growth, collaboration, and innovation among coders worldwide.
+  </h3>
 </div>
 
 <div id="codeelevate-live">
