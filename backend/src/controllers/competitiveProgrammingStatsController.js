@@ -101,22 +101,6 @@ export const codeforcesStats = async (req, res) => {
     return res
       .status(500)
       .json({ message: "Failed to fetch Codeforces data", error: err });
-    // if (err.response && err.response.status === 404) {
-    //   return res
-    //     .status(404)
-    //     .json({ message: "Codeforces user not found", error: err });
-    // } else if (err.code === "ECONNABORTED") {
-    //   return res.status(504).json({
-    //     message: "Codeforces API timeout. Try again later.",
-    //     error: err,
-    //   });
-    // } else {
-    //   // console.error("Codeforces API Error:", err.message);
-    //   return res.status(500).json({
-    //     message: "Failed to fetch Codeforces data",
-    //     error: err,
-    //   });
-    // }
   }
 };
 
@@ -277,18 +261,6 @@ export const leetCodeStats = async (req, res) => {
     return res
       .status(500)
       .json({ message: "Failed to fetch LeetCode data", error: err });
-    // if (err.code === "ECONNABORTED") {
-    //   return res.status(504).json({
-    //     message: "LeetCode API timeout. Try again later.",
-    //     error: err,
-    //   });
-    // } else {
-    //   // console.error("LeetCode API Error:", err.message);
-    //   return res.status(500).json({
-    //     message: "Failed to fetch LeetCode data",
-    //     error: err,
-    //   });
-    // }
   }
 };
 
