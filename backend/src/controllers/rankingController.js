@@ -1,8 +1,9 @@
 import axios from "axios";
 import Profile from "../models/profile.js";
 import RankingCache from "../models/rankingCache.js";
+import { cacheTTL } from "../config/cacheConfig.js";
 
-const dayInMS = 24 * 60 * 60 * 1000;
+const dayInMS = cacheTTL.ranking;
 const baseURL = process.env.BACKEND_URL;
 
 const safeNumber = (val) =>
@@ -48,7 +49,7 @@ export const getRankings = async (req, res) => {
         if (leetCode) {
           leetCodeData = (
             await axios.get(
-              `${baseURL}/api/stats/competitive-programming/leetcode/${leetCode}`
+              `${baseURL}/api/stats/competitive-programming/leetcode/${leetCode}`,
             )
           ).data;
         }
@@ -60,7 +61,7 @@ export const getRankings = async (req, res) => {
         if (codeforces) {
           codeforcesData = (
             await axios.get(
-              `${baseURL}/api/stats/competitive-programming/codeforces/${codeforces}`
+              `${baseURL}/api/stats/competitive-programming/codeforces/${codeforces}`,
             )
           ).data;
         }
@@ -72,7 +73,7 @@ export const getRankings = async (req, res) => {
         if (github) {
           githubData = (
             await axios.get(
-              `${baseURL}/api/stats/development-profiles/github/${github}`
+              `${baseURL}/api/stats/development-profiles/github/${github}`,
             )
           ).data;
         }
