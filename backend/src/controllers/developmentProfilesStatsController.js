@@ -17,7 +17,7 @@ export const githubStats = async (req, res) => {
 
     const cacheKey = `github_${username.toLowerCase()}`;
     const cached = await StatsCache.findOne({ key: cacheKey });
-    if (cached) {
+    if (cached && cached.expiresAt > new Date()) {
       return res.status(200).json({ ...cached.data, fromCache: true });
     }
 

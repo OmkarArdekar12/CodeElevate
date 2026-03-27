@@ -17,7 +17,7 @@ export const codeforcesStats = async (req, res) => {
 
     const cacheKey = `codeforces_${username.toLowerCase()}`;
     const cached = await StatsCache.findOne({ key: cacheKey });
-    if (cached) {
+    if (cached && cached.expiresAt > new Date()) {
       return res.status(200).json({ ...cached.data, fromCache: true });
     }
 
@@ -131,7 +131,7 @@ export const leetCodeStats = async (req, res) => {
 
     const cacheKey = `leetcode_${username.toLowerCase()}`;
     const cached = await StatsCache.findOne({ key: cacheKey });
-    if (cached) {
+    if (cached && cached.expiresAt > new Date()) {
       return res.status(200).json({ ...cached.data, fromCache: true });
     }
 
@@ -259,12 +259,10 @@ export const leetCodeStats = async (req, res) => {
         .json({ message: "LeetCode API rate limit reached. Try again later." });
     }
     if (err.code === "ECONNABORTED") {
-      return res
-        .status(504)
-        .json({
-          message: "LeetCode API timeout. Try again later.",
-          error: err,
-        });
+      return res.status(504).json({
+        message: "LeetCode API timeout. Try again later.",
+        error: err,
+      });
     }
     return res
       .status(500)
