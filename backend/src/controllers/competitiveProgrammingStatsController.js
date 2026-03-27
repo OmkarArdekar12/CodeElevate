@@ -1,4 +1,6 @@
 import axios from "axios";
+import StatsCache from "../models/statsCache.js";
+import { cacheTTL } from "../config/cacheConfig.js";
 
 const cfApi = axios.create({
   baseURL: "https://codeforces.com/api",
@@ -11,6 +13,12 @@ export const codeforcesStats = async (req, res) => {
   try {
     if (!username || typeof username !== "string" || username.trim() === "") {
       return res.status(400).json({ message: "Invalid codeforces username" });
+    }
+
+    const cacheKey = `codeforces_${username.toLowerCase()}`;
+    const cached = await StatsCache.findOne({ key: cacheKey });
+    if (cached) {
+      return res.status(200).json({ ...cached.data, fromCache: true });
     }
 
     const userInfo = await cfApi.get(`/user.info?handles=${username}`);
@@ -47,24 +55,63 @@ export const codeforcesStats = async (req, res) => {
       totalProblemsSolved: problemSolvedSet.size,
     };
     // console.log(codeforcesData);
+
+    await StatsCache.findOneAndUpdate(
+      { key: cacheKey },
+      {
+        key: cacheKey,
+        data: codeforcesData,
+        cachedAt: new Date(),
+        expiresAt: new Date(Date.now() + cacheTTL.codeforces),
+      },
+      { upsert: true, new: true },
+    );
+
     return res.status(200).json(codeforcesData);
   } catch (err) {
-    if (err.response && err.response.status === 404) {
+    if (err.response?.status === 429) {
+      const stale = await StatsCache.findOne({
+        key: `codeforces_${username.toLowerCase()}`,
+      });
+      if (stale) {
+        return res
+          .status(200)
+          .json({ ...stale.data, fromCache: true, stale: true });
+      }
+      return res.status(429).json({
+        message: "Codeforces API rate limit reached. Try again later.",
+      });
+    }
+    if (err.response?.status === 404) {
       return res
         .status(404)
         .json({ message: "Codeforces user not found", error: err });
-    } else if (err.code === "ECONNABORTED") {
+    }
+    if (err.code === "ECONNABORTED") {
       return res.status(504).json({
         message: "Codeforces API timeout. Try again later.",
         error: err,
       });
-    } else {
-      // console.error("Codeforces API Error:", err.message);
-      return res.status(500).json({
-        message: "Failed to fetch Codeforces data",
-        error: err,
-      });
     }
+    return res
+      .status(500)
+      .json({ message: "Failed to fetch Codeforces data", error: err });
+    // if (err.response && err.response.status === 404) {
+    //   return res
+    //     .status(404)
+    //     .json({ message: "Codeforces user not found", error: err });
+    // } else if (err.code === "ECONNABORTED") {
+    //   return res.status(504).json({
+    //     message: "Codeforces API timeout. Try again later.",
+    //     error: err,
+    //   });
+    // } else {
+    //   // console.error("Codeforces API Error:", err.message);
+    //   return res.status(500).json({
+    //     message: "Failed to fetch Codeforces data",
+    //     error: err,
+    //   });
+    // }
   }
 };
 
@@ -80,6 +127,12 @@ export const leetCodeStats = async (req, res) => {
   try {
     if (!username || typeof username !== "string" || username.trim() === "") {
       return res.status(400).json({ message: "Invalid leetCode username" });
+    }
+
+    const cacheKey = `leetcode_${username.toLowerCase()}`;
+    const cached = await StatsCache.findOne({ key: cacheKey });
+    if (cached) {
+      return res.status(200).json({ ...cached.data, fromCache: true });
     }
 
     const statsQuery = `
@@ -178,20 +231,56 @@ export const leetCodeStats = async (req, res) => {
       contestsAttended: contest?.attendedContestsCount || 0,
     };
     // console.log(leetCodeData);
+
+    await StatsCache.findOneAndUpdate(
+      { key: cacheKey },
+      {
+        key: cacheKey,
+        data: leetCodeData,
+        cachedAt: new Date(),
+        expiresAt: new Date(Date.now() + cacheTTL.leetcode),
+      },
+      { upsert: true, new: true },
+    );
+
     return res.status(200).json(leetCodeData);
   } catch (err) {
-    if (err.code === "ECONNABORTED") {
-      return res.status(504).json({
-        message: "LeetCode API timeout. Try again later.",
-        error: err,
+    if (err.response?.status === 429 || err.response?.status === 403) {
+      const stale = await StatsCache.findOne({
+        key: `leetcode_${username.toLowerCase()}`,
       });
-    } else {
-      // console.error("LeetCode API Error:", err.message);
-      return res.status(500).json({
-        message: "Failed to fetch LeetCode data",
-        error: err,
-      });
+      if (stale) {
+        return res
+          .status(200)
+          .json({ ...stale.data, fromCache: true, stale: true });
+      }
+      return res
+        .status(429)
+        .json({ message: "LeetCode API rate limit reached. Try again later." });
     }
+    if (err.code === "ECONNABORTED") {
+      return res
+        .status(504)
+        .json({
+          message: "LeetCode API timeout. Try again later.",
+          error: err,
+        });
+    }
+    return res
+      .status(500)
+      .json({ message: "Failed to fetch LeetCode data", error: err });
+    // if (err.code === "ECONNABORTED") {
+    //   return res.status(504).json({
+    //     message: "LeetCode API timeout. Try again later.",
+    //     error: err,
+    //   });
+    // } else {
+    //   // console.error("LeetCode API Error:", err.message);
+    //   return res.status(500).json({
+    //     message: "Failed to fetch LeetCode data",
+    //     error: err,
+    //   });
+    // }
   }
 };
 
