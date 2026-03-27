@@ -830,6 +830,7 @@
 │   │   │   ├── CodeElevate3DLogo.stl
 │   │   │   ├── CodeElevateLogo.png
 │   │   │   ├── CodeElevateLogo.gif
+│   │   │   ├── CodeElevateLoader.gif
 │   │   │   ├── LogoCodeElevate.png
 │   │   │   ├── CodeElevateText.gif
 │   │   │   ├── defaultBgBannerImage.png
