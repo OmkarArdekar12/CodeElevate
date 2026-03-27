@@ -594,6 +594,7 @@
 │   │   │   ├── user.js
 │   │   │   ├── profile.js
 │   │   │   ├── rankingCache.js
+│   │   │   ├── statsCache.js
 │   │   │   ├── post.js
 │   │   │   ├── message.js
 │   │   │   └── notification.js
@@ -601,6 +602,7 @@
 │   │   │   ├── userSchema.js
 │   │   │   ├── profileSchema.js
 │   │   │   ├── rankingCacheSchema.js
+│   │   │   ├── statsCacheSchema.js
 │   │   │   ├── postSchema.js
 │   │   │   ├── messageSchema.js
 │   │   │   └── notificationSchema.js
@@ -642,6 +644,7 @@
 │   │   │       ├── cpStatsSystemDiagram.png
 │   │   │       └── devsStatsSystemDiagram.png
 │   │   ├── 📁 config
+│   │   │   ├── cacheConfig.js
 │   │   │   ├── cloudConfig.js
 │   │   │   ├── dbConnect.js
 │   │   │   └── passportConfig.js
