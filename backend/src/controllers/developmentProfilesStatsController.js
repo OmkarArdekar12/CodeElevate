@@ -1,4 +1,6 @@
 import axios from "axios";
+import StatsCache from "../models/statsCache.js";
+import { cacheTTL } from "../config/cacheConfig.js";
 
 const githubApi = axios.create({
   baseURL: "https://api.github.com",
@@ -11,6 +13,12 @@ export const githubStats = async (req, res) => {
   try {
     if (!username || typeof username !== "string" || username.trim() === "") {
       return res.status(400).json({ message: "Invalid gitHub username" });
+    }
+
+    const cacheKey = `github_${username.toLowerCase()}`;
+    const cached = await StatsCache.findOne({ key: cacheKey });
+    if (cached) {
+      return res.status(200).json({ ...cached.data, fromCache: true });
     }
 
     const [userResponse, reposResponse] = await Promise.all([
@@ -29,7 +37,7 @@ export const githubStats = async (req, res) => {
 
     const totalStars = repos.reduce(
       (sum, repo) => sum + (repo.stargazers_count || 0),
-      0
+      0,
     );
 
     const githubData = {
@@ -43,22 +51,60 @@ export const githubStats = async (req, res) => {
       totalStars,
     };
     // console.log(githubData);
+
+    await StatsCache.findOneAndUpdate(
+      { key: cacheKey },
+      {
+        key: cacheKey,
+        data: githubData,
+        cachedAt: new Date(),
+        expiresAt: new Date(Date.now() + cacheTTL.github),
+      },
+      { upsert: true, new: true },
+    );
+
     return res.status(200).json(githubData);
   } catch (err) {
-    if (err.response && err.response.status === 404) {
+    if (err.response?.status === 403) {
+      const stale = await StatsCache.findOne({
+        key: `github_${username.toLowerCase()}`,
+      });
+      if (stale) {
+        return res
+          .status(200)
+          .json({ ...stale.data, fromCache: true, stale: true });
+      }
+      return res
+        .status(429)
+        .json({ message: "GitHub API rate limit reached. Try again later." });
+    }
+    if (err.response?.status === 404) {
       return res
         .status(404)
         .json({ message: "GitHub user not found", error: err });
-    } else if (err.code === "ECONNABORTED") {
+    }
+    if (err.code === "ECONNABORTED") {
       return res
         .status(504)
         .json({ message: "GitHub API timeout. Try again later.", error: err });
-    } else {
-      // console.error("GitHub API Error:", err.message);
-      return res.status(500).json({
-        message: "Failed to fetch GitHub data",
-        error: err,
-      });
     }
+    return res
+      .status(500)
+      .json({ message: "Failed to fetch GitHub data", error: err });
+    // if (err.response && err.response.status === 404) {
+    //   return res
+    //     .status(404)
+    //     .json({ message: "GitHub user not found", error: err });
+    // } else if (err.code === "ECONNABORTED") {
+    //   return res
+    //     .status(504)
+    //     .json({ message: "GitHub API timeout. Try again later.", error: err });
+    // } else {
+    //   // console.error("GitHub API Error:", err.message);
+    //   return res.status(500).json({
+    //     message: "Failed to fetch GitHub data",
+    //     error: err,
+    //   });
+    // }
   }
 };
