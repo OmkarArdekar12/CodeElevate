@@ -1,3 +1,4 @@
+//cache
 export const cacheTTL = {
   github: 60 * 60 * 1000, //1 hour
   codeforces: 30 * 60 * 1000, //30 minutes
