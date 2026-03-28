@@ -612,7 +612,9 @@
 │   │   ├── 📁 lib
 │   │   │   ├── 📁 docs
 │   │   │   │   ├── codeElevateArchitecture.png
-│   │   │   │   └── mongodbDatabaseStructure.png
+│   │   │   │   ├── mongodbDatabaseStructure.png
+│   │   │   │   ├── databaseDesign.drawio
+│   │   │   │   └── prevMongodbDatabaseStructure.png
 │   │   │   ├── 📁 reports
 │   │   │   │   ├── 📁 lighthouse-report
 │   │   │   │   │   └── index.html
