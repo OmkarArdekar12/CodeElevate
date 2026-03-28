@@ -609,7 +609,8 @@
 │   │   ├── 📁 lib
 │   │   │   ├── 📁 docs
 │   │   │   │   ├── codeElevateArchitecture.png
-│   │   │   │   └── mongodbDatabaseStructure.png
+│   │   │   │   ├── mongodbDatabaseStructure.png
+│   │   │   │   └── prevMongodbDatabaseStructure.png
 │   │   │   ├── 📁 seo
 │   │   │   │   ├── crawlStats1.png
 │   │   │   │   ├── crawlStats2.png
