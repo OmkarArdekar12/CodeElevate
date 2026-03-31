@@ -45,6 +45,7 @@ dist-ssr
 .json
 .js
 
-# Testing Data files
+#Testing files
 /sampleData.js
 /testingData.js
+/testing.js
