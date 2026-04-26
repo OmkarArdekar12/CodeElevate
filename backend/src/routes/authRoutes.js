@@ -10,6 +10,9 @@ import {
   setup2FA,
   verify2FA,
   reset2FA,
+  sendEmailOtp,
+  verifyEmailOtp,
+  sendResetOtp,
 } from "../controllers/authController.js";
 import auth from "../middlewares/auth.js";
 
@@ -35,5 +38,14 @@ router.post("/2fa/verify", auth, verify2FA);
 
 //2FA Reset Route
 router.post("/2fa/reset", auth, reset2FA);
+
+//2FA SendEmailOtp Route
+router.post("/2fa/send-email-otp", auth, sendEmailOtp);
+
+//2FA VerifyEmailOtp Route
+router.post("/2fa/verify-email-otp", auth, verifyEmailOtp);
+
+//2FA SendRestOtp Route
+router.post("/2fa/send-reset-otp", auth, sendResetOtp);
 
 export default router;

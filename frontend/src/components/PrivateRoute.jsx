@@ -5,35 +5,21 @@ import Loading from "./Loading.jsx";
 import toast from "react-hot-toast";
 
 const PrivateRoute = () => {
-  const { isLoggedIn, isVerified, loading } = useSession();
-
-  // useEffect(() => {
-  //   if (!loading) {
-  //     if (!isLoggedIn) {
-  //       toast.error("You need to be logged in to access that!", {
-  //         id: "private route login",
-  //       });
-  //     } else if (!isVerified) {
-  //       toast.error("You need to verify your account to continue!", {
-  //         id: "private route verify",
-  //       });
-  //     }
-  //   }
-  // }, [loading, isLoggedIn, isVerified]);
+  const { isLoggedIn, isVerified, isMfaActive, loading } = useSession();
 
   if (loading) {
     return <Loading />;
   }
 
-  if (isLoggedIn && !isVerified) {
+  if (!isLoggedIn) {
+    return <Navigate to="/login" replace />;
+  }
+
+  if (isMfaActive && !isVerified) {
     return <Navigate to="/verify-2fa" replace />;
   }
 
-  return isLoggedIn && isVerified ? (
-    <Outlet />
-  ) : (
-    <Navigate to="/login" replace />
-  );
+  return <Outlet />;
 };
 
 export default PrivateRoute;

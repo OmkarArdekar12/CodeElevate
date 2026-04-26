@@ -4,6 +4,8 @@ import qrCode from "qrcode";
 import jwt from "jsonwebtoken";
 import User from "../models/user.js";
 import Profile from "../models/profile.js";
+import { sendOtpEmail } from "../utils/sendEmail.js";
+import crypto from "crypto";
 
 //Register Controller
 export const register = async (req, res) => {
@@ -141,7 +143,7 @@ export const setup2FA = async (req, res) => {
     const secret = speakeasy.generateSecret();
     // console.log("The secret object is: ", secret); //secret object
     user.twoFactorSecret = secret.base32;
-    user.isMfaActive = true;
+    // user.isMfaActive = true;
     await user.save();
     const url = speakeasy.otpauthURL({
       secret: secret.base32,
@@ -181,6 +183,8 @@ export const verify2FA = async (req, res) => {
     });
 
     if (verified) {
+      user.isMfaActive = true;
+      await user.save();
       req.session.isVerified = true;
 
       req.session.save((err) => {
@@ -195,7 +199,7 @@ export const verify2FA = async (req, res) => {
           process.env.JWT_SECRET,
           {
             expiresIn: "7d",
-          }
+          },
         );
 
         return res.status(200).json({
@@ -222,20 +226,136 @@ export const verify2FA = async (req, res) => {
 //Reset2FA Controller
 export const reset2FA = async (req, res) => {
   try {
+    const { otp } = req.body;
     const user = req.user;
+
+    if (!otp) {
+      return res.status(400).json({ message: "OTP is required" });
+    }
+    if (
+      !user.emailOtp ||
+      user.emailOtp !== otp ||
+      !user.emailOtpExpiry ||
+      Date.now() > new Date(user.emailOtpExpiry).getTime()
+    ) {
+      return res.status(400).json({ message: "Invalid or expired OTP" });
+    }
+
     user.twoFactorSecret = "";
     user.isMfaActive = false;
+    user.isEmailVerified = false;
+    user.emailOtp = "";
+    user.emailOtpExpiry = null;
     await user.save();
-    return res
-      .status(200)
-      .json({ message: "two-factor-authentication-(2FA) reset successful" });
+    return res.status(200).json({ message: "2FA reset successfully" });
   } catch (err) {
-    return res.status(500).json({
-      message: "Error resetting two-factor-authentication-(2FA)",
-      error: err,
-    });
+    return res.status(500).json({ message: "Error resetting 2FA", error: err });
   }
 };
+
+//SendEmailOtp Controller
+export const sendEmailOtp = async (req, res) => {
+  try {
+    const { email } = req.body;
+    const user = req.user;
+    if (!user) return res.status(401).json({ message: "Unauthorized" });
+    if (!email) return res.status(400).json({ message: "Email is required" });
+
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email)) {
+      return res.status(400).json({ message: "Invalid email address" });
+    }
+
+    const otp = crypto.randomInt(100000, 999999).toString();
+    user.emailOtp = otp;
+    user.emailOtpExpiry = new Date(Date.now() + 10 * 60 * 1000); // 10 min
+    user.isEmailVerified = false;
+    await user.save();
+
+    await sendOtpEmail(email, otp);
+    return res.status(200).json({ message: "OTP sent to email" });
+  } catch (err) {
+    return res.status(500).json({ message: "Failed to send OTP", error: err });
+  }
+};
+
+//VerifyEmailOtp Controller
+export const verifyEmailOtp = async (req, res) => {
+  try {
+    const { otp } = req.body;
+    const user = req.user;
+    if (!user) return res.status(401).json({ message: "Unauthorized" });
+
+    if (
+      !user.emailOtp ||
+      user.emailOtp !== otp ||
+      !user.emailOtpExpiry ||
+      Date.now() > new Date(user.emailOtpExpiry).getTime()
+    ) {
+      return res.status(400).json({ message: "Invalid or expired OTP" });
+    }
+
+    user.isEmailVerified = true;
+    user.emailOtp = "";
+    user.emailOtpExpiry = null;
+    await user.save();
+    return res.status(200).json({ message: "Email verified successfully" });
+  } catch (err) {
+    return res
+      .status(500)
+      .json({ message: "Email verification failed", error: err });
+  }
+};
+
+//SendResetOtp Controller
+export const sendResetOtp = async (req, res) => {
+  try {
+    const user = req.user;
+    if (!user) return res.status(401).json({ message: "Unauthorized" });
+
+    const profile = await Profile.findOne({ user: user._id });
+    const email = profile?.socials?.email;
+
+    if (!email) {
+      return res.status(400).json({
+        message:
+          "No email found in your profile. Please add one in Profile Settings.",
+      });
+    }
+
+    const otp = crypto.randomInt(100000, 999999).toString();
+    user.emailOtp = otp;
+    user.emailOtpExpiry = new Date(Date.now() + 10 * 60 * 1000);
+    await user.save();
+
+    await sendOtpEmail(email, otp);
+    return res
+      .status(200)
+      .json({ message: "OTP sent to your registered email" });
+  } catch (err) {
+    return res
+      .status(500)
+      .json({ message: "Failed to send reset OTP", error: err });
+  }
+};
+
+// //Reset2FA Controller
+// export const reset2FA = async (req, res) => {
+//   try {
+//     const user = req.user;
+//     user.twoFactorSecret = "";
+//     user.isMfaActive = false;
+//     await user.save();
+//     return res
+//       .status(200)
+//       .json({ message: "two-factor-authentication-(2FA) reset successful" });
+//   } catch (err) {
+//     return res.status(500).json({
+//       message: "Error resetting two-factor-authentication-(2FA)",
+//       error: err,
+//     });
+//   }
+// };
 
 // //Register Controller
 // export const register = async (req, res) => {

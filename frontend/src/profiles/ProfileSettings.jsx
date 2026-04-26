@@ -13,6 +13,7 @@ import toast from "react-hot-toast";
 import Loading2 from "../components/Loading2.jsx";
 import Loading from "../components/Loading.jsx";
 import { deleteProfile, getUserData } from "../service/profileApi.js";
+import { sendEmailOtp, verifyEmailOtp } from "../service/authApi.js";
 
 const ProfileSettings = () => {
   const { id: profileId } = useParams();
@@ -22,13 +23,18 @@ const ProfileSettings = () => {
   const [showDeletePopup, setShowDeletePopup] = useState(false);
   const [userProfileData, setUserProfileData] = useState(null);
   const [loading, setLoading] = useState(true);
-  const { isLoggedIn, isVerified, user, logout } = useSession();
+  const { isLoggedIn, isVerified, isMfaActive, user, logout, updateMfaStatus } =
+    useSession();
   const userId = user && user.userId ? user.userId : "";
   const isOwner = profileId === userId;
   const isAuthorized = isLoggedIn && isVerified && isOwner;
-  // const { state } = useLocation();
-  // const userId = state?.profileUserId ?? profileUserId;
-  // const isAuthorized = state?.isAuthorized;
+
+  const [mfaStep, setMfaStep] = useState(0); // 0=idle, 1=email input, 2=otp input
+  const [mfaEmail, setMfaEmail] = useState("");
+  const [mfaOtp, setMfaOtp] = useState("");
+  const [mfaLoading, setMfaLoading] = useState(false);
+  const [mfaError, setMfaError] = useState("");
+  const [mfaMessage, setMfaMessage] = useState("");
 
   const notAuth = !isAuthorized;
 
@@ -94,6 +100,66 @@ const ProfileSettings = () => {
     }
   };
 
+  const handleEnableMfa = () => {
+    setMfaError("");
+    setMfaMessage("");
+    const existingEmail = userProfileData?.socials?.email || "";
+    setMfaEmail(existingEmail);
+    setMfaStep(1);
+  };
+
+  const handleSendMfaOtp = async () => {
+    if (!mfaEmail) {
+      setMfaError("Please enter your email.");
+      return;
+    }
+    setMfaLoading(true);
+    setMfaError("");
+    try {
+      await sendEmailOtp(mfaEmail);
+      setMfaStep(2);
+      setMfaMessage("OTP sent to your email.");
+      toast.success("OTP sent!", { id: "mfa otp sent" });
+    } catch (err) {
+      setMfaError(err?.response?.data?.message || "Failed to send OTP.");
+      toast.error("Failed to send OTP!", { id: "mfa otp failed" });
+    } finally {
+      setMfaLoading(false);
+    }
+  };
+
+  const handleVerifyMfaOtp = async () => {
+    if (!mfaOtp) {
+      setMfaError("Please enter the OTP.");
+      return;
+    }
+    setMfaLoading(true);
+    setMfaError("");
+    try {
+      await verifyEmailOtp(mfaOtp);
+      setMfaStep(0);
+      setMfaOtp("");
+      toast.success("Email verified! Setting up 2FA...", {
+        id: "mfa email verified",
+      });
+      navigate("/setup-2fa");
+    } catch (err) {
+      setMfaOtp("");
+      setMfaError(err?.response?.data?.message || "Invalid or expired OTP.");
+      toast.error("OTP verification failed!", { id: "mfa otp verify failed" });
+    } finally {
+      setMfaLoading(false);
+    }
+  };
+
+  const handleCancelMfa = () => {
+    setMfaStep(0);
+    setMfaEmail("");
+    setMfaOtp("");
+    setMfaError("");
+    setMfaMessage("");
+  };
+
   if (loading) {
     return <Loading />;
   }
@@ -138,7 +204,7 @@ const ProfileSettings = () => {
                     day: "2-digit",
                     month: "2-digit",
                     year: "numeric",
-                  }
+                  },
                 )}{" "}
                 {new Date(userProfileData.updatedAt).toLocaleTimeString(
                   "en-US",
@@ -146,7 +212,7 @@ const ProfileSettings = () => {
                     hour: "2-digit",
                     minute: "2-digit",
                     hour12: true,
-                  }
+                  },
                 )}
               </span>
             </div>
@@ -159,11 +225,98 @@ const ProfileSettings = () => {
                     day: "2-digit",
                     month: "2-digit",
                     year: "numeric",
-                  }
+                  },
                 )}
               </span>
             </div>
           </div>
+
+          <div className="flex flex-wrap justify-between items-center">
+            <span className="text-left">Two-Factor Auth (2FA):</span>
+            <span
+              className={
+                isMfaActive
+                  ? "text-green-500 text-right"
+                  : "text-gray-400 text-right"
+              }
+            >
+              {isMfaActive ? "● Enabled" : "○ Disabled"}
+            </span>
+          </div>
+
+          {!isMfaActive && mfaStep === 0 && (
+            <button
+              onClick={handleEnableMfa}
+              className="mt-2 w-full bg-blue-500 text-white py-2 rounded-md hover:bg-blue-600 cursor-pointer text-base"
+            >
+              Enable 2FA
+            </button>
+          )}
+          {!isMfaActive && mfaStep === 1 && (
+            <div className="mt-2 flex flex-col gap-2">
+              <label className="text-sm text-gray-300">
+                {userProfileData?.socials?.email
+                  ? "Verify your email to continue:"
+                  : "Enter your email to set up 2FA:"}
+              </label>
+              <input
+                type="email"
+                value={mfaEmail}
+                onChange={(e) => setMfaEmail(e.target.value)}
+                className="w-full p-2 border rounded text-black"
+                placeholder="Enter your email"
+              />
+              {mfaError && <p className="text-red-400 text-sm">{mfaError}</p>}
+              <div className="flex gap-2">
+                <button
+                  onClick={handleSendMfaOtp}
+                  disabled={mfaLoading}
+                  className="flex-1 bg-blue-500 text-white py-2 rounded-md hover:bg-blue-600 cursor-pointer disabled:opacity-60"
+                >
+                  {mfaLoading ? "Sending..." : "Send OTP"}
+                </button>
+                <button
+                  onClick={handleCancelMfa}
+                  className="flex-1 bg-slate-600 text-white py-2 rounded-md hover:bg-slate-700 cursor-pointer"
+                >
+                  Cancel
+                </button>
+              </div>
+            </div>
+          )}
+          {!isMfaActive && mfaStep === 2 && (
+            <div className="mt-2 flex flex-col gap-2">
+              {mfaMessage && (
+                <p className="text-green-400 text-sm">{mfaMessage}</p>
+              )}
+              <label className="text-sm text-gray-300">
+                Enter OTP from your email:
+              </label>
+              <input
+                type="text"
+                value={mfaOtp}
+                onChange={(e) => setMfaOtp(e.target.value)}
+                className="w-full p-2 border rounded text-black"
+                placeholder="6-digit OTP"
+              />
+              {mfaError && <p className="text-red-400 text-sm">{mfaError}</p>}
+              <div className="flex gap-2">
+                <button
+                  onClick={handleVerifyMfaOtp}
+                  disabled={mfaLoading}
+                  className="flex-1 bg-green-600 text-white py-2 rounded-md hover:bg-green-700 cursor-pointer disabled:opacity-60"
+                >
+                  {mfaLoading ? "Verifying..." : "Verify & Enable 2FA"}
+                </button>
+                <button
+                  onClick={handleCancelMfa}
+                  className="flex-1 bg-slate-600 text-white py-2 rounded-md hover:bg-slate-700 cursor-pointer"
+                >
+                  Cancel
+                </button>
+              </div>
+            </div>
+          )}
         </div>
       )}
       {isAuthorized && (

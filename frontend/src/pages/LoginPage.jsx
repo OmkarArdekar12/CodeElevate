@@ -17,11 +17,17 @@ const LoginPage = () => {
 
   const handleLoginSuccess = (userData) => {
     // console.log("The logged in userData: ", userData);
+    // login(userData);
+    // if (!userData.isMfaActive) {
+    //   navigate("/setup-2fa");
+    // } else {
+    //   navigate("/verify-2fa");
+    // }
     login(userData);
-    if (!userData.isMfaActive) {
-      navigate("/setup-2fa");
-    } else {
+    if (userData.isMfaActive) {
       navigate("/verify-2fa");
+    } else {
+      navigate("/");
     }
   };
 

@@ -21,10 +21,22 @@ const userSchema = new Schema(
     twoFactorSecret: {
       type: String,
     },
+    isEmailVerified: {
+      type: Boolean,
+      default: false,
+    },
+    emailOtp: {
+      type: String,
+      default: "",
+    },
+    emailOtpExpiry: {
+      type: Date,
+      default: null,
+    },
   },
   {
     timestamps: true,
-  }
+  },
 );
 
 export default userSchema;

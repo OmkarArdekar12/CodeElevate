@@ -9,6 +9,7 @@ export const useSession = () => useContext(SessionContext);
 export const SessionProvider = ({ children }) => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [isVerified, setIsVerified] = useState(false);
+  const [isMfaActive, setIsMfaActive] = useState(false);
   const [loading, setLoading] = useState(true);
   const [user, setUser] = useState(null);
   const [token2FA, setToken2FA] = useState(null);
@@ -26,6 +27,7 @@ export const SessionProvider = ({ children }) => {
       if (storedUser) {
         setUser(storedUser);
         setIsLoggedIn(true);
+        setIsMfaActive(storedUser.isMfaActive ?? false);
       }
       if (stored2FAToken && storedVerified) {
         setToken2FA(stored2FAToken);
@@ -65,6 +67,7 @@ export const SessionProvider = ({ children }) => {
     const expireCodeElevate = Date.now() + expiryTime;
     setIsLoggedIn(true);
     setUser(userData);
+    setIsMfaActive(userData.isMfaActive ?? false);
     localStorage.setItem("user", JSON.stringify(userData));
     localStorage.setItem("expireCodeElevate", expireCodeElevate);
   };
@@ -72,7 +75,11 @@ export const SessionProvider = ({ children }) => {
   const verify = (data) => {
     const token2fa = data?.token2FA;
     setIsVerified(true);
+    setIsMfaActive(true);
     setToken2FA(token2fa);
+    const updatedUser = { ...user, isMfaActive: true };
+    setUser(updatedUser);
+    localStorage.setItem("user", JSON.stringify(updatedUser));
     //connect socket and emit addUser after connection
     if (!socketService.connected) {
       socketService.connect();
@@ -95,6 +102,7 @@ export const SessionProvider = ({ children }) => {
       setSocket(null);
       setIsLoggedIn(false);
       setIsVerified(false);
+      setIsMfaActive(false);
       setUser(null);
       setToken2FA(null);
       localStorage.removeItem("user");
@@ -105,11 +113,19 @@ export const SessionProvider = ({ children }) => {
     }
   };
 
+  const updateMfaStatus = (active) => {
+    setIsMfaActive(active);
+    const updatedUser = { ...user, isMfaActive: active };
+    setUser(updatedUser);
+    localStorage.setItem("user", JSON.stringify(updatedUser));
+  };
+
   return (
     <SessionContext.Provider
       value={{
         isLoggedIn,
         isVerified,
+        isMfaActive,
         token2FA,
         loading,
         user,
@@ -117,6 +133,7 @@ export const SessionProvider = ({ children }) => {
         login,
         verify,
         logout,
+        updateMfaStatus,
       }}
     >
       {children}

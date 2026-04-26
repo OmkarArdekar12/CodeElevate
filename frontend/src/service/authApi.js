@@ -16,7 +16,7 @@ export const loginUser = async (username, password) => {
     },
     {
       withCredentials: true,
-    }
+    },
   );
 };
 
@@ -32,7 +32,7 @@ export const logoutUser = async () => {
     {},
     {
       withCredentials: true,
-    }
+    },
   );
 };
 
@@ -42,7 +42,7 @@ export const setup2FA = async () => {
     {},
     {
       withCredentials: true,
-    }
+    },
   );
 };
 
@@ -52,16 +52,34 @@ export const verify2FA = async (token) => {
     { token },
     {
       withCredentials: true,
-    }
+    },
   );
 };
 
 export const reset2FA = async () => {
+  return await api.post("/auth/2fa/reset", { otp }, { withCredentials: true });
+};
+
+export const sendEmailOtp = async (email) => {
   return await api.post(
-    "/auth/2fa/reset",
+    "/auth/2fa/send-email-otp",
+    { email },
+    { withCredentials: true },
+  );
+};
+
+export const verifyEmailOtp = async (otp) => {
+  return await api.post(
+    "/auth/2fa/verify-email-otp",
+    { otp },
+    { withCredentials: true },
+  );
+};
+
+export const sendResetOtp = async () => {
+  return await api.post(
+    "/auth/2fa/send-reset-otp",
     {},
-    {
-      withCredentials: true,
-    }
+    { withCredentials: true },
   );
 };
