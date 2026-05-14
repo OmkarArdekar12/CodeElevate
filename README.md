@@ -268,7 +268,7 @@
       <tr>
         <td>5.</td>
         <td><b>Real-Time Messaging</b></td>
-        <td>Instant one-on-one text and image chat built using Socket.IO and Socket.IO Client, featuring real-time communication, online user detection, responsive UI and smooth UI animations.</td>
+        <td>Instant one-on-one text and image chat built using Socket.IO and Socket.IO Client, featuring real-time communication, online user detection, responsive UI, Optimistic UI Updates, and smooth UI animations.</td>
       </tr>
       <tr>
         <td>6.</td>
@@ -278,12 +278,12 @@
       <tr>
         <td>7.</td>
         <td><b>Ranking System</b></td>
-        <td>Dynamic leaderboards across five categories — Competitive Programmers, Developers, Rankers, Contributors, and All-Rounders — using live API data. Rankings automatically updated every 24 hours.</td>
+        <td>Dynamic leaderboards across five categories, Competitive Programmers, Developers, Rankers, Contributors, and All-Rounders, using live API data. Rankings are automatically updated every 24 hours with an intelligent MongoDB-backed caching system for optimized performance, reduced API usage, faster response times, and a scalable and reliable backend.</td>
       </tr>
       <tr>
         <td>8.</td>
         <td><b>Post Feature</b></td>
-        <td>Create, edit, and delete posts with image uploads to share updates and achievements. Add or delete comments, and like or unlike posts seamlessly.</td>
+        <td>Create, edit, and delete posts with image uploads to share updates and achievements. Add or delete comments, and like or unlike posts seamlessly with Optimistic UI Updates for fast, smooth, and real-time user interactions.</td>
       </tr>
       <tr>
         <td>9.</td>
@@ -297,25 +297,35 @@
       </tr>
       <tr>
         <td>11.</td>
+        <td><b>Intelligent Stats Caching & Performance Optimization</b></td>
+        <td>Implemented a MongoDB-backed caching system using Mongoose with automatic TTL expiration for GitHub, LeetCode, Codeforces, and Ranking statistics. The system minimizes external API requests, improves response performance, handles API rate limits gracefully, supports stale-cache fallback responses, and enhances backend scalability and reliability.</td>
+      </tr>
+      <tr>
+        <td>12.</td>
         <td><b>Architecture & Security</b></td>
         <td>Developed using the MERN Stack, Socket.IO, MVC Design Pattern, RESTful APIs and Cloudinary for cloud storage management, with Two-Factor Authentication, Authorization, and Validation layers implemented for Robust Performance and Security.</td>
       </tr>
       <tr>
-        <td>12.</td>
+        <td>13.</td>
         <td><b>Interactive 3D Models, 3D Animations & Real-Time 3D Interactions</b></td>
         <td>An immersive 3D CodeElevate logo showcased on the About page, featuring views from multiple camera angles, fluid animations, and styling variations. Built with dynamic transitions for a captivating visual experience, users can seamlessly rotate the models through intuitive interactive controls.</td>
       </tr>
       <tr>
-        <td>13.</td>
+        <td>14.</td>
         <td><b>Animations & Transitions</b></td>
         <td>Smooth, visually appealing animations and transitions across pages and components using Framer Motion, enhancing interactivity and user engagement throughout the platform.
         </td>
       </tr>
       <tr>
-        <td>14.</td>
+        <td>15.</td>
         <td><b>Responsive UI/UX (User Interface and User Experience)</b></td>
         <td>Modern, mobile-first, fully responsive interface built with React, Tailwind CSS, and Framer Motion, featuring smooth animations and visually rich, accessible experiences across all screen sizes.</td>
       </tr>
+      <tr>
+      <td>16.</td>
+      <td><b>Production-Grade SEO, Web Optimization & Performance Engineering</b></td>
+      <td>Implemented production-grade SEO and website optimization with Google Search Console integration, SEO-friendly metadata, Open Graph tags, Twitter Card tags, canonical URLs, Schema.org JSON-LD structured data, robots.txt, sitemap.xml, manifest.json for web app metadata and theme configuration, mobile viewport optimization, Apple Touch configuration for PWA readiness, responsive rendering, preconnect & prefetch optimization, HTTPS-secured deployment, and Lighthouse-audited web performance validation for enhanced search visibility, accessibility, scalability, and user experience.</td>
+    </tr>
     </tbody>
   </table>
 </div>
