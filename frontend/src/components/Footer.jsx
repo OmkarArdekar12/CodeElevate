@@ -63,6 +63,16 @@ export default function Footer() {
                 Explore
               </Link>
             </li>
+            <li>
+              <Link to="/privacy-policy" className="hover:text-white">
+                Privacy Policy
+              </Link>
+            </li>
+            <li>
+              <Link to="/terms" className="hover:text-white">
+                Terms of Service
+              </Link>
+            </li>
           </ul>
         </div>
 
@@ -134,6 +144,17 @@ export default function Footer() {
             {new Date().getFullYear()} CodeElevate. All rights reserved.
           </span>
         </a>
+        <div className="flex gap-4">
+          <Link
+            to="/privacy-policy"
+            className="hover:text-white hover:underline"
+          >
+            Privacy Policy
+          </Link>
+          <Link to="/terms" className="hover:text-white hover:underline">
+            Terms of Service
+          </Link>
+        </div>
         <a
           href="https://www.linkedin.com/in/omkarardekar09"
           target="_blank"
