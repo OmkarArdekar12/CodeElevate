@@ -68,24 +68,20 @@ export default function Navbar({ isLoggedIn, isVerified, userData }) {
                   <PostsIcon className="text-xl" />
                   Posts
                 </Link>
-                {isLoggedIn && isVerified && (
-                  <Link
-                    to="/notifications"
-                    className="flex flex-col items-center text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-md font-medium transition duration-150"
-                  >
-                    <NotificationsIcon className="text-xl" />
-                    Notifications
-                  </Link>
-                )}
-                {isLoggedIn && isVerified && (
-                  <Link
-                    to="/messages"
-                    className="flex flex-col items-center text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-md font-medium transition duration-150"
-                  >
-                    <MessagesIcon className="text-xl" />
-                    Messages
-                  </Link>
-                )}
+                <Link
+                  to="/notifications"
+                  className="flex flex-col items-center text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-md font-medium transition duration-150"
+                >
+                  <NotificationsIcon className="text-xl" />
+                  Notifications
+                </Link>
+                <Link
+                  to="/messages"
+                  className="flex flex-col items-center text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-md font-medium transition duration-150"
+                >
+                  <MessagesIcon className="text-xl" />
+                  Messages
+                </Link>
                 <Link
                   to="/rankings"
                   className="flex flex-col items-center text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-md font-medium transition duration-150"
@@ -196,24 +192,20 @@ export default function Navbar({ isLoggedIn, isVerified, userData }) {
                 <PostsIcon className="mr-2" />
                 Posts
               </Link>
-              {isLoggedIn && isVerified && (
-                <Link
-                  to="/notifications"
-                  className="flex items-center px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-700 transition duration-150 hover:font-bold"
-                >
-                  <NotificationsIcon className="mr-2" />
-                  Notifications
-                </Link>
-              )}
-              {isLoggedIn && isVerified && (
-                <Link
-                  to="/messages"
-                  className="flex items-center px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-700 transition duration-150 hover:font-bold"
-                >
-                  <MessagesIcon className="mr-2" />
-                  Messages
-                </Link>
-              )}
+              <Link
+                to="/notifications"
+                className="flex items-center px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-700 transition duration-150 hover:font-bold"
+              >
+                <NotificationsIcon className="mr-2" />
+                Notifications
+              </Link>
+              <Link
+                to="/messages"
+                className="flex items-center px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-700 transition duration-150 hover:font-bold"
+              >
+                <MessagesIcon className="mr-2" />
+                Messages
+              </Link>
               <Link
                 to="/rankings"
                 className="flex items-center px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-700 transition duration-150 hover:font-bold"
