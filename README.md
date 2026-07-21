@@ -730,7 +730,9 @@
 │   │   │   ├── HomePage.jsx
 │   │   │   ├── LoginPage.jsx
 │   │   │   ├── Setup2FA.jsx
-│   │   │   └── Verify2FA.jsx
+│   │   │   ├── Verify2FA.jsx
+│   │   │   ├── TermsPage.jsx
+│   │   │   └── PrivacyPolicyPage.jsx
 │   │   ├── 📁 home
 │   │   │   ├── Home.jsx
 │   │   │   ├── Hero.jsx
