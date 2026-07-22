@@ -36,6 +36,7 @@
 <img src="https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white"/>
 <img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white"/>
 <img src="https://img.shields.io/badge/Postman-FF6C37?style=for-the-badge&logo=postman&logoColor=white"/>
+<img src="https://img.shields.io/badge/Google%20Analytics-E37400?style=for-the-badge&logo=googleanalytics&logoColor=white"/>
 <img src="https://img.shields.io/badge/Google%20Search%20Console-4285F4?style=for-the-badge&logo=google&logoColor=white"/>
 <img src="https://img.shields.io/badge/Vercel-000000?style=for-the-badge&logo=vercel&logoColor=white"/>
 <img src="https://img.shields.io/badge/Render-00D1FF?style=for-the-badge&logo=render&logoColor=white"/>
@@ -324,7 +325,7 @@
       <tr>
       <td>16.</td>
       <td><b>Production-Grade SEO, Web Optimization & Performance Engineering</b></td>
-      <td>Implemented production-grade SEO and website optimization with Google Search Console integration, SEO-friendly metadata, Open Graph tags, Twitter Card tags, canonical URLs, Schema.org JSON-LD structured data, robots.txt, sitemap.xml, manifest.json for web app metadata and theme configuration, mobile viewport optimization, Apple Touch configuration for PWA readiness, responsive rendering, preconnect & prefetch optimization, HTTPS-secured deployment, and Lighthouse-audited web performance validation for enhanced search visibility, accessibility, scalability, and user experience.</td>
+      <td>Implemented production-grade SEO and website optimization with Google Analytics 4 (GA4) and Google Search Console integration, SEO-friendly metadata, Open Graph tags, Twitter Card tags, canonical URLs, Schema.org JSON-LD structured data, robots.txt, sitemap.xml, manifest.json for web app metadata and theme configuration, mobile viewport optimization, Apple Touch configuration for PWA readiness, responsive rendering, preconnect & prefetch optimization, HTTPS-secured deployment, and Lighthouse-audited web performance validation for enhanced search visibility, accessibility, scalability, and user experience.</td>
     </tr>
     </tbody>
   </table>
@@ -436,6 +437,7 @@
 ![VS Code](https://img.shields.io/badge/VS%20Code-007ACC?style=for-the-badge&logo=visualstudiocode&logoColor=white)
 ![Git](https://img.shields.io/badge/Git-F05033?style=for-the-badge&logo=git&logoColor=white)
 ![GitHub](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white)
+![Google Analytics](https://img.shields.io/badge/Google%20Analytics%204%20(GA4)-E37400?style=for-the-badge&logo=googleanalytics&logoColor=white)
 ![Google Search Console](https://img.shields.io/badge/Google%20Search%20Console-4285F4?style=for-the-badge&logo=google&logoColor=white)
 ![Canva](https://img.shields.io/badge/Canva-20A4F3?style=for-the-badge&logo=canva&logoColor=white) <br/>
 ![Vercel](https://img.shields.io/badge/Vercel-000000?style=for-the-badge&logo=vercel&logoColor=white)
@@ -494,7 +496,7 @@
         <tr>
           <td>&#10148;</td>
           <td>Development Tools & Libraries</td>
-          <td>Nodemon, Vite Build, dotenv, Postman, Hoppscotch, Thunder Client, VS Code, Git, GitHub, Google Search Console, Canva (for UI Assets)</td>
+          <td>Nodemon, Vite Build, dotenv, Postman, Hoppscotch, Thunder Client, VS Code, Git, GitHub, Google Analytics 4 (GA4), Google Search Console, Canva (for UI Assets)</td>
         </tr>
         <tr>
           <td>&#10148;</td>
