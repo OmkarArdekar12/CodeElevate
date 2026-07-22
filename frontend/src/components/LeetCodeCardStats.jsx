@@ -131,7 +131,7 @@ export default function LeetCodeCardStats({ leetCodeData }) {
               Global Top Percentage
             </div>
             <div className="text-lg text-amber-300 font-bold">
-              {leetCodeData.topGlobalPercentage.toFixed(2)}%
+              {(leetCodeData.topGlobalPercentage * 100).toFixed(2)}%
             </div>
           </div>
         )}
