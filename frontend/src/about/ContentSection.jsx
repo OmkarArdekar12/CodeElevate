@@ -1,5 +1,5 @@
 import React from "react";
-import { FaLinkedin, FaGithub } from "react-icons/fa";
+import { FaLinkedin, FaGithub, FaYoutube } from "react-icons/fa";
 
 const ContentSection = () => {
   return (
@@ -8,7 +8,7 @@ const ContentSection = () => {
         Omkar Ardekar
       </h1>
       <h2 className="text-xl md:text-2xl font-semibold text-white mt-3">
-        Creator & Full-Stack Developer of{" "}
+        Creator &amp; Full-Stack Developer of{" "}
         <span className="text-blue-600">CodeElevate</span>
       </h2>
       <div className="flex justify-center gap-6 mt-6">
@@ -29,6 +29,15 @@ const ContentSection = () => {
         >
           <FaLinkedin className="size-5" />
           LinkedIn
+        </a>
+        <a
+          href="https://www.youtube.com/@OmkarArdekar012"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="flex items-center gap-1 hover:text-red-500 transition-colors duration-100"
+        >
+          <FaYoutube className="size-5" />
+          YouTube
         </a>
       </div>
     </div>
