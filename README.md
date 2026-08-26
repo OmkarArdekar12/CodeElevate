@@ -84,6 +84,11 @@
         <tr width="100%">
           <td width="100%" colspan="2" align="center">
             <h5>Production-Grade SEO, Indexing & Web Performance Implementation with Verified <br/>Top Google Search Visibility</h5>
+            <img src="./backend/src/lib/seo/seoAISearch.png" width="100%">
+          </td>
+        </tr>
+        <tr width="100%">
+          <td width="100%" colspan="2" align="center">
             <img src="./backend/src/lib/seo/seoSearchUpdated.png" width="100%">
           </td>
         </tr>
@@ -93,11 +98,13 @@
           </td>
         </tr>
         <tr width="100%">
-          <td width="50%">
-            <img src="./backend/src/lib/seo/seoSearchUpdated2.png" width="100%">
+          <td width="100%" colspan="2" align="center">
+            <img src="./backend/src/lib/seo/seoPerformance1.png" width="100%">
           </td>
-          <td width="50%">
-            <img src="./backend/src/lib/seo/seoSearchResult.png" width="100%">
+        </tr>
+        <tr width="100%">
+          <td width="100%" colspan="2" align="center">
+            <img src="./backend/src/lib/seo/googleAnalyticsCountry.png" width="100%">
           </td>
         </tr>
         <tr width="100%">
@@ -134,10 +141,42 @@
         </tr>
         <tr width="100%">
           <td width="50%">
-            <img src="./backend/src/lib/seo/seoResult.png" width="100%">
+            <img src="./backend/src/lib/seo/seoSearchUpdated2.png" width="100%">
           </td>
           <td width="50%">
-            <img src="./backend/src/lib/seo/seoSitemaps2.png" width="100%">
+            <img src="./backend/src/lib/seo/seoSearchUpdated3.png" width="100%">
+          </td>
+        </tr>
+        <tr width="100%">
+          <td width="50%">
+            <img src="./backend/src/lib/seo/seoSearchResult.png" width="100%">
+          </td>
+          <td width="50%">
+            <img src="./backend/src/lib/seo/seoResult.png" width="100%">
+          </td>
+        </tr>
+        <tr width="100%">
+          <td width="50%">
+            <img src="./backend/src/lib/seo/googleAnalytics.png" width="100%">
+          </td>
+          <td width="50%">
+            <img src="./backend/src/lib/seo/googleAnalyticsUsers.png" width="100%">
+          </td>
+        </tr>
+        <tr width="100%">
+          <td width="50%">
+            <img src="./backend/src/lib/seo/googleAnalyticsCountry.png" width="100%">
+          </td>
+          <td width="50%">
+            <img src="./backend/src/lib/seo/googleAnalyticsGraph.png" width="100%">
+          </td>
+        </tr>
+        <tr width="100%">
+          <td width="50%">
+            <img src="./backend/src/lib/seo/bingURLInspection.png" width="100%">
+          </td>
+          <td width="50%">
+            <img src="./backend/src/lib/seo/bingSitemap.png" width="100%">
           </td>
         </tr>
         <tr width="100%">
@@ -148,6 +187,11 @@
         <tr width="100%">
           <td width="100%" colspan="2" align="center">
             <img src="./backend/src/lib/seo/seoSitemaps1.png" width="100%">
+          </td>
+        </tr>
+        <tr width="100%">
+          <td width="100%" colspan="2" align="center">
+            <img src="./backend/src/lib/seo/seoSitemaps2.png" width="100%">
           </td>
         </tr>
         <tr width="100%">
