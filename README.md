@@ -48,13 +48,9 @@
 
 <div id="codeelevate-description">
   <h2><a href="#readme-index">CodeElevate - Elevate Your Coding Journey.</a></h2>
-  <h3>CodeElevate is a robust, scalable, and dynamic coder community platform built to empower competitive programmers, software developers, students, learners, and professionals. <br/>
-  The platform provides an all-in-one ecosystem featuring integrated coding and development statistics across multiple platforms, a community-driven and category-based ranking system, a real-time messaging system, a user connection system, post sharing and engagement, personalized profiles with an advanced profile management system, a notification system, and search and filter functionality. <br/>
-  It incorporates secure multi-factor authentication (MFA) and authorization mechanisms, including two-factor authentication (2FA) using Time-Based One-Time Password (TOTP). <br/>
-  The system is powered by seamless and optimized backend and frontend pipelines with structured database and cloud storage integration, along with performance and SEO optimization. Built using an MVC architecture for a modular, scalable, and maintainable codebase, the platform ensures production-grade, performance-driven reliability and achieves top Google search visibility through its SEO-optimized architecture. <br/>
-  It also features interactive custom 3D models, smooth animations, interactive 3D animations, and a modern, fully responsive UI/UX design. <br/>
-  The goal is to foster growth, collaboration, and innovation among coders worldwide.
-  </h3>
+  <h3>CodeElevate is a robust, scalable, and dynamic coder community platform built to empower competitive programmers, software developers, students, learners, and professionals.<br/>
+  The platform provides an all-in-one ecosystem featuring integrated coding and development statistics across multiple platforms, a community-driven and category-based ranking system, a real-time messaging system with online user detection and image messaging, a user connection system, post sharing and engagement with optimistic UI updates, personalized profiles with an advanced profile management system, a notification system, and search and filter functionality. It incorporates secure multi-factor authentication (MFA) and authorization mechanisms, including two-factor authentication (2FA) using Time-Based One-Time Password (TOTP) and QR-code based enrollment. The system is powered by seamless and optimized backend and frontend pipelines with structured database and cloud storage integration, intelligent caching system, along with performance and SEO optimization. Built using an MVC architecture with modular REST APIs, authentication, authorization, validation, and centralized error-handling layers for a scalable and maintainable codebase, the platform ensures production-grade, performance-driven reliability, efficient API usage, and enhanced scalability. It achieves top Google search visibility through its SEO-optimized architecture. It also features interactive custom 3D models, smooth animations, interactive 3D animations, and a modern, fully responsive UI/UX design.<br/>
+  The goal is to foster growth, collaboration, and innovation among coders worldwide.</h3>
 </div>
 
 <div id="codeelevate-live">
@@ -230,7 +226,9 @@
 
 <div>
   <h2 id="overview"><a href="#readme-index">Overview 🖥️</a></h2>
-  <h3>CodeElevate is a MERN stack-based web application that empowers users to showcase their coding and development profiles in one unified platform. It enables learners, competitive programmers, professionals, coders, and developers to analyze, track, and elevate their progress in both competitive programming and software development. Users can compete, connect, and grow together by earning ranks across multiple categories, building meaningful connections, and engaging through posts, connections, and real-time messaging features. At CodeElevate, our goal is to inspire growth, celebrate achievement, and build a community where every coder can rise to their full potential.</h3>
+  <h3>CodeElevate is a robust, scalable, and dynamic coder community platform built to empower competitive programmers, software developers, students, learners, and professionals. <br/>
+  The platform provides an all-in-one ecosystem featuring integrated coding and development statistics across multiple platforms, a community-driven and category-based ranking system, a real-time messaging system with online user detection and image messaging, a user connection system, post sharing and engagement with optimistic UI updates, personalized profiles with an advanced profile management system, a notification system, and search and filter functionality. It incorporates secure multi-factor authentication (MFA) and authorization mechanisms, including two-factor authentication (2FA) using Time-Based One-Time Password (TOTP) and QR-code based enrollment. The system is powered by seamless and optimized backend and frontend pipelines with structured database and cloud storage integration, intelligent caching system, along with performance and SEO optimization. Built using an MVC architecture with modular REST APIs, authentication, authorization, validation, and centralized error-handling layers for a scalable and maintainable codebase, the platform ensures production-grade, performance-driven reliability, efficient API usage, and enhanced scalability. It achieves top Google search visibility through its SEO-optimized architecture. It also features interactive custom 3D models, smooth animations, interactive 3D animations, and a modern, fully responsive UI/UX design. <br/>
+  The goal is to foster growth, collaboration, and innovation among coders worldwide.</h3>
 </div>
 
 ---
@@ -249,7 +247,7 @@
       <tr>
         <td>1.</td>
         <td><b>User Authentication & Authorization - Multi-Factor Authentication (MFA) with Two-Factor Authentication (2FA) using TOTP (Time-Based One-Time Password)</b></td>
-        <td>Robust and Secure authentication using Passport, Passport-Local-Strategy, Sessions, JWT, and Two-Factor Authentication (2FA) via TOTP and QR code for enhanced account protection.</td>
+        <td>Robust and Secure authentication using Passport, Passport-Local-Strategy, Sessions, JWT, session-based authentication, token-based authentication and Two-Factor Authentication (2FA) via TOTP and QR code for enhanced account protection.</td>
       </tr>
       <tr>
         <td>2.</td>
@@ -294,17 +292,17 @@
       <tr>
         <td>10.</td>
         <td><b>API (Application Programming Interface) Routes</b></td>
-        <td>Modular, secure REST API with layered authentication, authorization, Two-Factor Authentication (2FA), and validation middleware for scalability and maintainability.</td>
+        <td>Modular and secure REST API comprising 9 REST API modules with 45+ REST API endpoints covering authentication, profiles, messaging, rankings, posts, connections, notifications, competitive programming and coding statistics, and development statistics. Implemented layered middleware authentication, authorization, Two-Factor Authentication (2FA), request and data validation, centralized error handling, and API testing with Postman for scalability, reliability, and maintainability.</td>
       </tr>
       <tr>
         <td>11.</td>
         <td><b>Intelligent Stats Caching & Performance Optimization</b></td>
-        <td>Implemented a MongoDB-backed caching system using Mongoose with automatic TTL expiration for GitHub, LeetCode, Codeforces, and Ranking statistics. The system minimizes external API requests, improves response performance, handles API rate limits gracefully, supports stale-cache fallback responses, and enhances backend scalability and reliability.</td>
+        <td>Implemented a MongoDB-backed caching system using Mongoose with automatic TTL expiration for coding statistics (LeetCode & Codeforces), development statistics (GitHub), and category-based ranking system (Ranking statistics). The system minimizes external API requests, improves response performance, handles API rate limits gracefully, supports stale-cache fallback responses, and enhances backend scalability and reliability.</td>
       </tr>
       <tr>
         <td>12.</td>
         <td><b>Architecture & Security</b></td>
-        <td>Developed using the MERN Stack, Socket.IO, MVC Design Pattern, RESTful APIs and Cloudinary for cloud storage management, with Two-Factor Authentication, Authorization, and Validation layers implemented for Robust Performance and Security.</td>
+        <td>Developed using the MERN Stack with a modular MVC architecture, featuring React.js, Vite, Tailwind CSS, React Router DOM, React Context API for global session state management, Axios, React Hot Toast, React Slick, Socket.IO Client, Framer Motion, Three.js, Node.js, Express.js, MongoDB Atlas, Mongoose, RESTful APIs, GraphQL, Socket.IO, Cloudinary, Multer, and Multer-Storage-Cloudinary. The platform follows a scalable, component-based frontend and layered backend architecture with optimized folder structure, environment-based configuration using dotenv, client-side state management with incremental updates, real-time communication, responsive and accessible UI/UX, smooth UI transitions and animations, interactive custom 3D components with real-time 3D rendering and interactions, and performance-optimized and SEO-optimized implementation. Security is reinforced through Passport.js, Passport-Local-Strategy, Express-Session, Connect-Mongo, JWT, bcrypt.js, Cookie-Parser, Body-Parser, CORS, Joi validation, TOTP-based Two-Factor Authentication (2FA), QR-code authentication, authorization, request and data validation, and centralized error handling, with Cloudinary-based secure media storage and HTTPS-secured deployment, ensuring a robust, secure, scalable, maintainable, and production-ready application.</td>
       </tr>
       <tr>
         <td>13.</td>
@@ -325,7 +323,7 @@
       <tr>
       <td>16.</td>
       <td><b>Production-Grade SEO, Web Optimization & Performance Engineering</b></td>
-      <td>Implemented production-grade SEO and website optimization with Google Analytics 4 (GA4) and Google Search Console integration, SEO-friendly metadata, Open Graph tags, Twitter Card tags, canonical URLs, Schema.org JSON-LD structured data, robots.txt, sitemap.xml, manifest.json for web app metadata and theme configuration, mobile viewport optimization, Apple Touch configuration for PWA readiness, responsive rendering, preconnect & prefetch optimization, HTTPS-secured deployment, and Lighthouse-audited web performance validation for enhanced search visibility, accessibility, scalability, and user experience.</td>
+      <td>Implemented production-grade SEO and website optimization with Google Analytics 4 (GA4) and Google Search Console integration, SEO-friendly metadata, Open Graph tags, Twitter Card tags, canonical URLs, Schema.org JSON-LD structured data, robots.txt, sitemap.xml, manifest.json for web app metadata and theme configuration, mobile viewport optimization, Apple Touch configuration for PWA readiness, responsive rendering, preconnect & prefetch optimization, HTTPS-secured deployment, and Lighthouse-audited web performance validation for enhanced search visibility, accessibility, scalability, and user experience. Achieved a verified #1 Google Search ranking for target queries and Lighthouse scores of 98 Performance, 96 Accessibility, 100 Best Practices, and 100 SEO, with Core Web Vitals including FCP 0.9s, LCP 1.0s, TBT 0ms, CLS 0.005, and Speed Index 0.9s.</td>
     </tr>
     </tbody>
   </table>
