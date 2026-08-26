@@ -157,6 +157,14 @@
         </tr>
         <tr width="100%">
           <td width="50%">
+            <img src="./backend/src/lib/seo/bingURLInspection.png" width="100%">
+          </td>
+          <td width="50%">
+            <img src="./backend/src/lib/seo/bingSitemap.png" width="100%">
+          </td>
+        </tr>
+        <tr width="100%">
+          <td width="50%">
             <img src="./backend/src/lib/seo/googleAnalytics.png" width="100%">
           </td>
           <td width="50%">
@@ -169,14 +177,6 @@
           </td>
           <td width="50%">
             <img src="./backend/src/lib/seo/googleAnalyticsGraph.png" width="100%">
-          </td>
-        </tr>
-        <tr width="100%">
-          <td width="50%">
-            <img src="./backend/src/lib/seo/bingURLInspection.png" width="100%">
-          </td>
-          <td width="50%">
-            <img src="./backend/src/lib/seo/bingSitemap.png" width="100%">
           </td>
         </tr>
         <tr width="100%">
@@ -557,7 +557,7 @@
 <div>
   <h2 id="system-architecture"><a href="#readme-index">System Architecture of CodeElevate ⌨️🏗️</a></h2>
   <div width="90%" align="center">
-    <img src="./backend/src/lib/docs/codeElevateArchitecture.png" alt="System  Architecture Diagram" width="100%" align="center" />
+    <img src="./backend/src/lib/docs/codeElevateArchitecture.png" alt="System Architecture Diagram" width="100%" align="center" />
   </div>
 </div>
 
@@ -1189,12 +1189,30 @@ git push origin feature/your-feature-name
       </tr>
       <tr>
         <td width="45%">
-          <h3 align="center">Competitive Programming Stats System</h3>
+          <h3 align="center">Competitive Programming and Coding Statistics System</h3>
           <img src="./backend/src/lib/diagrams/cpStatsSystemDiagram.png" width="100%">
         </td>
         <td width="45%">
-          <h3 align="center">Development Stats System</h3>
+          <h3 align="center">Development Statistics System</h3>
           <img src="./backend/src/lib/diagrams/devsStatsSystemDiagram.png" width="100%">
+        </td>
+      </tr>
+      <tr>
+        <td width="90%" colspan="2" align="center">
+          <h3 align="center">System Architecture Design</h3>
+          <img src="./backend/src/lib/docs/codeElevateArchitecture.png" width="100%">
+        </td>
+      </tr>
+      <tr>
+        <td width="90%" colspan="2" align="center">
+          <h3 align="center">Database Structure Design</h3>
+          <img src="./backend/src/lib/docs/mongodbDatabaseStructure.png" width="100%">
+        </td>
+      </tr>
+      <tr>
+        <td width="90%" colspan="2" align="center">
+          <h3 align="center">Ranked #1 on Google Search with AI-Verified Detailed Information and strong SEO visibility</h3>
+          <img src="./backend/src/lib/seo/seoAISearch.png" width="100%">
         </td>
       </tr>
       <tr>
@@ -1210,13 +1228,15 @@ git push origin feature/your-feature-name
         </td>
       </tr>
       <tr>
-        <td width="45%">
-          <h3 align="center">Google Search Visibility</h3>
-          <img src="./backend/src/lib/seo/seoSearchUpdated2.png" width="100%">
+        <td width="90%" colspan="2" align="center">
+          <h3 align="center">SEO Google Search Console</h3>
+          <img src="./backend/src/lib/seo/seoPerformance1.png" width="100%">
         </td>
-        <td width="45%">
-          <h3 align="center">Google Search Visibility with Different Logo Icon</h3>
-          <img src="./backend/src/lib/seo/seoSearchResult.png" width="100%">
+      </tr>
+      <tr>
+        <td width="90%" colspan="2" align="center">
+          <h3 align="center">SEO Google Analytics</h3>
+          <img src="./backend/src/lib/seo/googleAnalyticsCountry.png" width="100%">
         </td>
       </tr>
       <tr>
@@ -1261,12 +1281,58 @@ git push origin feature/your-feature-name
       </tr>
       <tr>
         <td width="45%">
-          <h3 align="center">SEO Sitemaps Success</h3>
-          <img src="./backend/src/lib/seo/seoSitemaps2.png" width="100%">
+          <h3 align="center">Google Search Visibility</h3>
+          <img src="./backend/src/lib/seo/seoSearchUpdated2.png" width="100%">
         </td>
         <td width="45%">
+          <h3 align="center">Google Search Visibility with Different Query</h3>
+          <img src="./backend/src/lib/seo/seoSearchUpdated3.png" width="100%">
+        </td>
+      </tr>
+      <tr>
+        <td width="45%">
           <h3 align="center">Search Visibility</h3>
+          <img src="./backend/src/lib/seo/seoSearchResult.png" width="100%">
+        </td>
+        <td width="45%">
+          <h3 align="center">Search Visibility with Logo Icon</h3>
           <img src="./backend/src/lib/seo/seoResult.png" width="100%">
+        </td>
+      </tr>
+      <tr>
+        <td width="45%">
+          <h3 align="center">Bing URL Inspection</h3>
+          <img src="./backend/src/lib/seo/bingURLInspection.png" width="100%">
+        </td>
+        <td width="45%">
+          <h3 align="center">Bing Webmaster Tools SEO & Sitemap Success</h3>
+          <img src="./backend/src/lib/seo/bingSitemap.png" width="100%">
+        </td>
+      </tr>
+      <tr>
+        <td width="45%">
+          <h3 align="center">Google Analytics Audience</h3>
+          <img src="./backend/src/lib/seo/googleAnalytics.png" width="100%">
+        </td>
+        <td width="45%">
+          <h3 align="center">Google Analytics Report</h3>
+          <img src="./backend/src/lib/seo/googleAnalyticsUsers.png" width="100%">
+        </td>
+      </tr>
+      <tr>
+        <td width="45%">
+          <h3 align="center">Google Analytics User Overview</h3>
+          <img src="./backend/src/lib/seo/googleAnalyticsCountry.png" width="100%">
+        </td>
+        <td width="45%">
+          <h3 align="center">Google Analytics Demographic Details</h3>
+          <img src="./backend/src/lib/seo/googleAnalyticsGraph.png" width="100%">
+        </td>
+      </tr>
+      <tr>
+        <td width="90%" colspan="2" align="center">
+          <h3 align="center">robots.txt Accepted and Successfully Validated</h3>
+          <img src="./backend/src/lib/seo/robotsStats.png" width="100%">
         </td>
       </tr>
       <tr>
@@ -1277,8 +1343,8 @@ git push origin feature/your-feature-name
       </tr>
       <tr>
         <td width="90%" colspan="2" align="center">
-          <h3 align="center">robots.txt Accepted and Successfully Validated</h3>
-          <img src="./backend/src/lib/seo/robotsStats.png" width="100%">
+          <h3 align="center">SEO Sitemaps Success</h3>
+          <img src="./backend/src/lib/seo/seoSitemaps2.png" width="100%">
         </td>
       </tr>
       <tr>
@@ -1317,7 +1383,7 @@ git push origin feature/your-feature-name
     <table width="95%" align="center" border="0">
       <tr>
         <td width="45%">
-          <h3 align="center">Two Factor Authentication using TOTP</h3>
+          <h3 align="center">Two Factor Authentication using TOTP & QR Code Enrollment</h3>
           <img src="./frontend/public/about/authentication.png" width="100%">
         </td>
         <td width="45%">
@@ -1331,7 +1397,7 @@ git push origin feature/your-feature-name
           <img src="./frontend/public/about/searchFunctionality.png" width="100%">
         </td>
         <td width="45%">
-          <h3 align="center">User Profile Stats</h3>
+          <h3 align="center">User Profile Statistics</h3>
           <img src="./frontend/public/about/profileStatsPreview.png" width="100%">
         </td>
       </tr>
