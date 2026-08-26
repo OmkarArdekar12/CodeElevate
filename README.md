@@ -684,28 +684,41 @@
 │   │   │   │   ├── CodeElevateLighthouseReport.json
 │   │   │   │   └── LighthouseReport.pdf
 │   │   │   ├── 📁 seo
+│   │   │   │   ├── bingSitemap.png
+│   │   │   │   ├── bingURLInspection.png
 │   │   │   │   ├── crawlStats1.png
 │   │   │   │   ├── crawlStats2.png
+│   │   │   │   ├── googleAnalytics.png
+│   │   │   │   ├── googleAnalyticsCountry.png
+│   │   │   │   ├── googleAnalyticsGraph.png
+│   │   │   │   ├── googleAnalyticsUsers.png
 │   │   │   │   ├── httpReport.png
 │   │   │   │   ├── indexedPages1.png
 │   │   │   │   ├── indexedPages2.png
+│   │   │   │   ├── performance1.png
+│   │   │   │   ├── performance2.png
 │   │   │   │   ├── robotsStats.png
+│   │   │   │   ├── seoAISearch.png
 │   │   │   │   ├── seoPerformance1.png
 │   │   │   │   ├── seoPerformance1curr.png
+│   │   │   │   ├── seoPerformance1next.png
 │   │   │   │   ├── seoPerformance1prev.png
 │   │   │   │   ├── seoPerformance2.png
 │   │   │   │   ├── seoPerformance2curr.png
+│   │   │   │   ├── seoPerformance2next.png
 │   │   │   │   ├── seoPerformance2prev.png
 │   │   │   │   ├── seoResult.png
 │   │   │   │   ├── seoSearchResult.png
 │   │   │   │   ├── seoSearchUpdated.png
 │   │   │   │   ├── seoSearchUpdated1.png
 │   │   │   │   ├── seoSearchUpdated2.png
+│   │   │   │   ├── seoSearchUpdated3.png
 │   │   │   │   ├── seoSitemaps1.png
 │   │   │   │   ├── seoSitemaps2.png
 │   │   │   │   ├── seoSiteResult.png
 │   │   │   │   ├── seoStats.png
 │   │   │   │   ├── seoStatsprev.png
+│   │   │   │   ├── stats.png
 │   │   │   │   └── urlInspection.png
 │   │   │   └── 📁 diagrams
 │   │   │       ├── authenticationDiagram.png
@@ -937,7 +950,9 @@
 │   │   └── logo.png
 │   ├── 📁 docs
 │   │   ├── codeElevateArchitecture.png
-│   │   └── mongodbDatabaseStructure.png
+│   │   ├── databaseDesign.drawio
+│   │   ├── mongodbDatabaseStructure.png
+│   │   └── prevMongodbDatabaseStructure.png
 │   ├── 📁 reports
 │   │   ├── 📁 lighthouse-report
 │   │   │   └── index.html
@@ -945,23 +960,35 @@
 │   │   ├── lighthousePerformanceMetrics.png
 │   │   └── LighthouseReport.pdf
 │   ├── 📁 seo
+│   │   ├── bingSitemap.png
+│   │   ├── bingURLInspection.png
 │   │   ├── crawlStats1.png
 │   │   ├── crawlStats2.png
+│   │   ├── googleAnalytics.png
+│   │   ├── googleAnalyticsCountry.png
+│   │   ├── googleAnalyticsGraph.png
+│   │   ├── googleAnalyticsUsers.png
 │   │   ├── httpReport.png
 │   │   ├── indexedPages1.png
 │   │   ├── indexedPages2.png
 │   │   ├── robotsStats.png
+│   │   ├── seoAISearch.png
 │   │   ├── seoPerformance1.png
 │   │   ├── seoPerformance1curr.png
+│   │   ├── seoPerformance1next.png
 │   │   ├── seoPerformance1prev.png
+│   │   ├── seoPerformance1prevv.png
 │   │   ├── seoPerformance2.png
 │   │   ├── seoPerformance2curr.png
+│   │   ├── seoPerformance2next.png
 │   │   ├── seoPerformance2prev.png
+│   │   ├── seoPerformance2prevv.png
 │   │   ├── seoResult.png
 │   │   ├── seoSearchResult.png
 │   │   ├── seoSearchUpdated.png
 │   │   ├── seoSearchUpdated1.png
 │   │   ├── seoSearchUpdated2.png
+│   │   ├── seoSearchUpdated3.png
 │   │   ├── seoSitemaps1.png
 │   │   ├── seoSitemaps2.png
 │   │   ├── seoSiteResult.png
@@ -1530,8 +1557,9 @@ git push origin feature/your-feature-name
   
 ### Omkar Ardekar 💻
 
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=circuitverse&logoColor=white)](https://www.linkedin.com/in/omkarardekar09)
 [![GitHub](https://img.shields.io/badge/GitHub-000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/OmkarArdekar12)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=circuitverse&logoColor=white)](https://www.linkedin.com/in/omkarardekar09)
+[![Portfolio](https://img.shields.io/badge/Portfolio-FFA012?style=for-the-badge&logo=codementor)](https://omkarardekar.vercel.app)
 
   </div>
 </div>
