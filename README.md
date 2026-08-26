@@ -36,8 +36,9 @@
 <img src="https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white"/>
 <img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white"/>
 <img src="https://img.shields.io/badge/Postman-FF6C37?style=for-the-badge&logo=postman&logoColor=white"/>
-<img src="https://img.shields.io/badge/Google%20Analytics-E37400?style=for-the-badge&logo=googleanalytics&logoColor=white"/>
 <img src="https://img.shields.io/badge/Google%20Search%20Console-4285F4?style=for-the-badge&logo=google&logoColor=white"/>
+<img src="https://img.shields.io/badge/Bing%20Webmaster%20Tools-0078D4?style=for-the-badge&logo=searxng&logoColor=white"/>
+<img src="https://img.shields.io/badge/Google%20Analytics-E37400?style=for-the-badge&logo=googleanalytics&logoColor=white"/>
 <img src="https://img.shields.io/badge/Vercel-000000?style=for-the-badge&logo=vercel&logoColor=white"/>
 <img src="https://img.shields.io/badge/Render-00D1FF?style=for-the-badge&logo=render&logoColor=white"/>
 </a>
@@ -48,13 +49,9 @@
 
 <div id="codeelevate-description">
   <h2><a href="#readme-index">CodeElevate - Elevate Your Coding Journey.</a></h2>
-  <h3>CodeElevate is a robust, scalable, and dynamic coder community platform built to empower competitive programmers, software developers, students, learners, and professionals. <br/>
-  The platform provides an all-in-one ecosystem featuring integrated coding and development statistics across multiple platforms, a community-driven and category-based ranking system, a real-time messaging system, a user connection system, post sharing and engagement, personalized profiles with an advanced profile management system, a notification system, and search and filter functionality. <br/>
-  It incorporates secure multi-factor authentication (MFA) and authorization mechanisms, including two-factor authentication (2FA) using Time-Based One-Time Password (TOTP). <br/>
-  The system is powered by seamless and optimized backend and frontend pipelines with structured database and cloud storage integration, along with performance and SEO optimization. Built using an MVC architecture for a modular, scalable, and maintainable codebase, the platform ensures production-grade, performance-driven reliability and achieves top Google search visibility through its SEO-optimized architecture. <br/>
-  It also features interactive custom 3D models, smooth animations, interactive 3D animations, and a modern, fully responsive UI/UX design. <br/>
-  The goal is to foster growth, collaboration, and innovation among coders worldwide.
-  </h3>
+  <h3>CodeElevate is a robust, scalable, and dynamic coder community platform built to empower competitive programmers, software developers, students, learners, and professionals.<br/>
+  The platform provides an all-in-one ecosystem featuring integrated coding and development statistics across multiple platforms, a community-driven and category-based ranking system, a real-time messaging system with online user detection and image messaging, a user connection system, post sharing and engagement with optimistic UI updates, personalized profiles with an advanced profile management system, a notification system, and search and filter functionality. It incorporates secure multi-factor authentication (MFA) and authorization mechanisms, including two-factor authentication (2FA) using Time-Based One-Time Password (TOTP) and QR-code based enrollment. The system is powered by seamless and optimized backend and frontend pipelines with structured database and cloud storage integration, intelligent caching system, along with performance and SEO optimization. Built using an MVC architecture with modular REST APIs, authentication, authorization, validation, and centralized error-handling layers for a scalable and maintainable codebase, the platform ensures production-grade, performance-driven reliability, efficient API usage, and enhanced scalability. It achieves top Google search visibility through its SEO-optimized architecture. It also features interactive custom 3D models, smooth animations, interactive 3D animations, and a modern, fully responsive UI/UX design.<br/>
+  The goal is to foster growth, collaboration, and innovation among coders worldwide.</h3>
 </div>
 
 <div id="codeelevate-live">
@@ -87,6 +84,11 @@
         <tr width="100%">
           <td width="100%" colspan="2" align="center">
             <h5>Production-Grade SEO, Indexing & Web Performance Implementation with Verified <br/>Top Google Search Visibility</h5>
+            <img src="./backend/src/lib/seo/seoAISearch.png" width="100%">
+          </td>
+        </tr>
+        <tr width="100%">
+          <td width="100%" colspan="2" align="center">
             <img src="./backend/src/lib/seo/seoSearchUpdated.png" width="100%">
           </td>
         </tr>
@@ -96,11 +98,13 @@
           </td>
         </tr>
         <tr width="100%">
-          <td width="50%">
-            <img src="./backend/src/lib/seo/seoSearchUpdated2.png" width="100%">
+          <td width="100%" colspan="2" align="center">
+            <img src="./backend/src/lib/seo/seoPerformance1.png" width="100%">
           </td>
-          <td width="50%">
-            <img src="./backend/src/lib/seo/seoSearchResult.png" width="100%">
+        </tr>
+        <tr width="100%">
+          <td width="100%" colspan="2" align="center">
+            <img src="./backend/src/lib/seo/googleAnalyticsCountry.png" width="100%">
           </td>
         </tr>
         <tr width="100%">
@@ -137,10 +141,42 @@
         </tr>
         <tr width="100%">
           <td width="50%">
-            <img src="./backend/src/lib/seo/seoResult.png" width="100%">
+            <img src="./backend/src/lib/seo/seoSearchUpdated2.png" width="100%">
           </td>
           <td width="50%">
-            <img src="./backend/src/lib/seo/seoSitemaps2.png" width="100%">
+            <img src="./backend/src/lib/seo/seoSearchUpdated3.png" width="100%">
+          </td>
+        </tr>
+        <tr width="100%">
+          <td width="50%">
+            <img src="./backend/src/lib/seo/seoSearchResult.png" width="100%">
+          </td>
+          <td width="50%">
+            <img src="./backend/src/lib/seo/seoResult.png" width="100%">
+          </td>
+        </tr>
+        <tr width="100%">
+          <td width="50%">
+            <img src="./backend/src/lib/seo/bingURLInspection.png" width="100%">
+          </td>
+          <td width="50%">
+            <img src="./backend/src/lib/seo/bingSitemap.png" width="100%">
+          </td>
+        </tr>
+        <tr width="100%">
+          <td width="50%">
+            <img src="./backend/src/lib/seo/googleAnalytics.png" width="100%">
+          </td>
+          <td width="50%">
+            <img src="./backend/src/lib/seo/googleAnalyticsUsers.png" width="100%">
+          </td>
+        </tr>
+        <tr width="100%">
+          <td width="50%">
+            <img src="./backend/src/lib/seo/googleAnalyticsCountry.png" width="100%">
+          </td>
+          <td width="50%">
+            <img src="./backend/src/lib/seo/googleAnalyticsGraph.png" width="100%">
           </td>
         </tr>
         <tr width="100%">
@@ -151,6 +187,11 @@
         <tr width="100%">
           <td width="100%" colspan="2" align="center">
             <img src="./backend/src/lib/seo/seoSitemaps1.png" width="100%">
+          </td>
+        </tr>
+        <tr width="100%">
+          <td width="100%" colspan="2" align="center">
+            <img src="./backend/src/lib/seo/seoSitemaps2.png" width="100%">
           </td>
         </tr>
         <tr width="100%">
@@ -230,7 +271,9 @@
 
 <div>
   <h2 id="overview"><a href="#readme-index">Overview 🖥️</a></h2>
-  <h3>CodeElevate is a MERN stack-based web application that empowers users to showcase their coding and development profiles in one unified platform. It enables learners, competitive programmers, professionals, coders, and developers to analyze, track, and elevate their progress in both competitive programming and software development. Users can compete, connect, and grow together by earning ranks across multiple categories, building meaningful connections, and engaging through posts, connections, and real-time messaging features. At CodeElevate, our goal is to inspire growth, celebrate achievement, and build a community where every coder can rise to their full potential.</h3>
+  <h3>CodeElevate is a robust, scalable, and dynamic coder community platform built to empower competitive programmers, software developers, students, learners, and professionals. <br/>
+  The platform provides an all-in-one ecosystem featuring integrated coding and development statistics across multiple platforms, a community-driven and category-based ranking system, a real-time messaging system with online user detection and image messaging, a user connection system, post sharing and engagement with optimistic UI updates, personalized profiles with an advanced profile management system, a notification system, and search and filter functionality. It incorporates secure multi-factor authentication (MFA) and authorization mechanisms, including two-factor authentication (2FA) using Time-Based One-Time Password (TOTP) and QR-code based enrollment. The system is powered by seamless and optimized backend and frontend pipelines with structured database and cloud storage integration, intelligent caching system, along with performance and SEO optimization. Built using an MVC architecture with modular REST APIs, authentication, authorization, validation, and centralized error-handling layers for a scalable and maintainable codebase, the platform ensures production-grade, performance-driven reliability, efficient API usage, and enhanced scalability. It achieves top Google search visibility through its SEO-optimized architecture. It also features interactive custom 3D models, smooth animations, interactive 3D animations, and a modern, fully responsive UI/UX design. <br/>
+  The goal is to foster growth, collaboration, and innovation among coders worldwide.</h3>
 </div>
 
 ---
@@ -249,7 +292,7 @@
       <tr>
         <td>1.</td>
         <td><b>User Authentication & Authorization - Multi-Factor Authentication (MFA) with Two-Factor Authentication (2FA) using TOTP (Time-Based One-Time Password)</b></td>
-        <td>Robust and Secure authentication using Passport, Passport-Local-Strategy, Sessions, JWT, and Two-Factor Authentication (2FA) via TOTP and QR code for enhanced account protection.</td>
+        <td>Robust and Secure authentication using Passport, Passport-Local-Strategy, Sessions, JWT, session-based authentication, token-based authentication and Two-Factor Authentication (2FA) via TOTP and QR code for enhanced account protection.</td>
       </tr>
       <tr>
         <td>2.</td>
@@ -294,17 +337,17 @@
       <tr>
         <td>10.</td>
         <td><b>API (Application Programming Interface) Routes</b></td>
-        <td>Modular, secure REST API with layered authentication, authorization, Two-Factor Authentication (2FA), and validation middleware for scalability and maintainability.</td>
+        <td>Modular and secure REST API comprising 9 REST API modules with 45+ REST API endpoints covering authentication, profiles, messaging, rankings, posts, connections, notifications, competitive programming and coding statistics, and development statistics. Implemented layered middleware authentication, authorization, Two-Factor Authentication (2FA), request and data validation, centralized error handling, and API testing with Postman for scalability, reliability, and maintainability.</td>
       </tr>
       <tr>
         <td>11.</td>
         <td><b>Intelligent Stats Caching & Performance Optimization</b></td>
-        <td>Implemented a MongoDB-backed caching system using Mongoose with automatic TTL expiration for GitHub, LeetCode, Codeforces, and Ranking statistics. The system minimizes external API requests, improves response performance, handles API rate limits gracefully, supports stale-cache fallback responses, and enhances backend scalability and reliability.</td>
+        <td>Implemented a MongoDB-backed caching system using Mongoose with automatic TTL expiration for coding statistics (LeetCode & Codeforces), development statistics (GitHub), and category-based ranking system (Ranking statistics). The system minimizes external API requests, improves response performance, handles API rate limits gracefully, supports stale-cache fallback responses, and enhances backend scalability and reliability.</td>
       </tr>
       <tr>
         <td>12.</td>
         <td><b>Architecture & Security</b></td>
-        <td>Developed using the MERN Stack, Socket.IO, MVC Design Pattern, RESTful APIs and Cloudinary for cloud storage management, with Two-Factor Authentication, Authorization, and Validation layers implemented for Robust Performance and Security.</td>
+        <td>Developed using the MERN Stack with a modular MVC architecture, featuring React.js, Vite, Tailwind CSS, React Router DOM, React Context API for global session state management, Axios, React Hot Toast, React Slick, Socket.IO Client, Framer Motion, Three.js, Node.js, Express.js, MongoDB Atlas, Mongoose, RESTful APIs, GraphQL, Socket.IO, Cloudinary, Multer, and Multer-Storage-Cloudinary. The platform follows a scalable, component-based frontend and layered backend architecture with optimized folder structure, environment-based configuration using dotenv, client-side state management with incremental updates, real-time communication, responsive and accessible UI/UX, smooth UI transitions and animations, interactive custom 3D components with real-time 3D rendering and interactions, and performance-optimized and SEO-optimized implementation. Security is reinforced through Passport.js, Passport-Local-Strategy, Express-Session, Connect-Mongo, JWT, bcrypt.js, Cookie-Parser, Body-Parser, CORS, Joi validation, TOTP-based Two-Factor Authentication (2FA), QR-code authentication, authorization, request and data validation, and centralized error handling, with Cloudinary-based secure media storage and HTTPS-secured deployment, ensuring a robust, secure, scalable, maintainable, and production-ready application.</td>
       </tr>
       <tr>
         <td>13.</td>
@@ -325,7 +368,7 @@
       <tr>
       <td>16.</td>
       <td><b>Production-Grade SEO, Web Optimization & Performance Engineering</b></td>
-      <td>Implemented production-grade SEO and website optimization with Google Analytics 4 (GA4) and Google Search Console integration, SEO-friendly metadata, Open Graph tags, Twitter Card tags, canonical URLs, Schema.org JSON-LD structured data, robots.txt, sitemap.xml, manifest.json for web app metadata and theme configuration, mobile viewport optimization, Apple Touch configuration for PWA readiness, responsive rendering, preconnect & prefetch optimization, HTTPS-secured deployment, and Lighthouse-audited web performance validation for enhanced search visibility, accessibility, scalability, and user experience.</td>
+      <td>Implemented production-grade SEO and website optimization with Google Search Console, Bing Webmaster Tools, and Google Analytics 4 (GA4) integration, SEO-friendly metadata, Open Graph tags, Twitter Card tags, canonical URLs, Schema.org JSON-LD structured data, robots.txt, sitemap.xml, manifest.json for web app metadata and theme configuration, mobile viewport optimization, Apple Touch configuration for PWA readiness, responsive rendering, preconnect & prefetch optimization, HTTPS-secured deployment, and Lighthouse-audited web performance validation for enhanced search visibility, accessibility, scalability, and user experience. Achieved a verified #1 Google Search ranking for target queries and Lighthouse scores of 98 Performance, 96 Accessibility, 100 Best Practices, and 100 SEO, with Core Web Vitals including FCP 0.9s, LCP 1.0s, TBT 0ms, CLS 0.005, and Speed Index 0.9s.</td>
     </tr>
     </tbody>
   </table>
@@ -413,14 +456,14 @@
 ![GitHub REST API](https://img.shields.io/badge/GitHub%20REST%20API-black?style=for-the-badge&logo=github&logoColor=white) <br/>
 ![Google Search Console](https://img.shields.io/badge/Google%20Search%20Console-4285F4?style=for-the-badge&logo=google&logoColor=white)
 ![SEO-friendly Meta Tags](https://img.shields.io/badge/SEO-friendly%20Meta%20Tags-orange?style=for-the-badge)
-![Open Graph (OG) Tags](https://img.shields.io/badge/Open%20Graph%20(OG)%20Tags-blue?style=for-the-badge)
+![Open Graph (OG) Tags](<https://img.shields.io/badge/Open%20Graph%20(OG)%20Tags-blue?style=for-the-badge>)
 ![Twitter Card Meta Tags](https://img.shields.io/badge/Twitter%20Card%20Meta%20Tags-cyan?style=for-the-badge)
 ![Schema.org JSON-LD Structured Data](https://img.shields.io/badge/Schema.org%20JSON-LD%20Structured%20Data-green?style=for-the-badge)
 ![Robots.txt](https://img.shields.io/badge/Robots.txt-black?style=for-the-badge)
 ![Sitemap.xml](https://img.shields.io/badge/Sitemap.xml-red?style=for-the-badge)
 ![Manifest.json (Web App Metadata & Theme Colour)](https://img.shields.io/badge/Manifest.json-yellow?style=for-the-badge)
 ![Mobile Viewport Meta Tag](https://img.shields.io/badge/Mobile%20Viewport%20Meta%20Tag-lightblue?style=for-the-badge)
-![Apple Touch Configuration (PWA readiness)](https://img.shields.io/badge/Apple%20Touch%20Configuration%20(PWA%20readiness)-grey?style=for-the-badge)
+![Apple Touch Configuration (PWA readiness)](<https://img.shields.io/badge/Apple%20Touch%20Configuration%20(PWA%20readiness)-grey?style=for-the-badge>)
 ![Theme Colour for Browser UI](https://img.shields.io/badge/Theme%20Colour%20for%20Browser%20UI-pink?style=for-the-badge)
 ![Fast build using Vite](https://img.shields.io/badge/Fast%20build%20using%20Vite-646CFF?style=for-the-badge&logo=vite&logoColor=white)
 ![TailwindCSS for Lightweight CSS](https://img.shields.io/badge/TailwindCSS%20for%20Lightweight%20CSS-06B6D4?style=for-the-badge&logo=tailwind-css&logoColor=white)
@@ -437,8 +480,9 @@
 ![VS Code](https://img.shields.io/badge/VS%20Code-007ACC?style=for-the-badge&logo=visualstudiocode&logoColor=white)
 ![Git](https://img.shields.io/badge/Git-F05033?style=for-the-badge&logo=git&logoColor=white)
 ![GitHub](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white)
-![Google Analytics](https://img.shields.io/badge/Google%20Analytics%204%20(GA4)-E37400?style=for-the-badge&logo=googleanalytics&logoColor=white)
 ![Google Search Console](https://img.shields.io/badge/Google%20Search%20Console-4285F4?style=for-the-badge&logo=google&logoColor=white)
+![Bing Webmaster Tools](https://img.shields.io/badge/Bing%20Webmaster%20Tools-0078D4?style=for-the-badge&logo=searxng&logoColor=white)
+![Google Analytics](https://img.shields.io/badge/Google%20Analytics%204%20(GA4)-E37400?style=for-the-badge&logo=googleanalytics&logoColor=white)
 ![Canva](https://img.shields.io/badge/Canva-20A4F3?style=for-the-badge&logo=canva&logoColor=white) <br/>
 ![Vercel](https://img.shields.io/badge/Vercel-000000?style=for-the-badge&logo=vercel&logoColor=white)
 ![Render](https://img.shields.io/badge/Render-00D1FF?style=for-the-badge&logo=render&logoColor=white)
@@ -496,7 +540,7 @@
         <tr>
           <td>&#10148;</td>
           <td>Development Tools & Libraries</td>
-          <td>Nodemon, Vite Build, dotenv, Postman, Hoppscotch, Thunder Client, VS Code, Git, GitHub, Google Analytics 4 (GA4), Google Search Console, Canva (for UI Assets)</td>
+          <td>Nodemon, Vite Build, dotenv, Postman, Hoppscotch, Thunder Client, VS Code, Git, GitHub, Google Search Console, Bing Webmaster Tools, Google Analytics 4 (GA4), Canva (for UI Assets)</td>
         </tr>
         <tr>
           <td>&#10148;</td>
@@ -624,12 +668,18 @@
 │   │   │   │   ├── mongodbDatabaseStructure.png
 │   │   │   │   └── prevMongodbDatabaseStructure.png
 │   │   │   ├── 📁 seo
+│   │   │   │   ├── bingSitemap.png
+│   │   │   │   ├── bingURLInspection.png
 │   │   │   │   ├── crawlStats1.png
 │   │   │   │   ├── crawlStats2.png
+│   │   │   │   ├── googleAnalytics.png
+│   │   │   │   ├── googleAnalyticsCountry.png
+│   │   │   │   ├── googleAnalyticsGraph.png
+│   │   │   │   ├── googleAnalyticsUsers.png
 │   │   │   │   ├── httpsReport.png
 │   │   │   │   ├── indexedPages1.png
 │   │   │   │   ├── indexedPages2.png
-│   │   │   │   ├── robotsStats1.png
+│   │   │   │   ├── robotsStats.png
 │   │   │   │   ├── seoPerformance1.png
 │   │   │   │   ├── seoPerformance2.png
 │   │   │   │   ├── seoResult.png
@@ -1073,12 +1123,30 @@ git push origin feature/your-feature-name
       </tr>
       <tr>
         <td width="45%">
-          <h3 align="center">Competitive Programming Stats System</h3>
+          <h3 align="center">Competitive Programming and Coding Statistics System</h3>
           <img src="./backend/src/lib/diagrams/cpStatsSystemDiagram.png" width="100%">
         </td>
         <td width="45%">
-          <h3 align="center">Development Stats System</h3>
+          <h3 align="center">Development Statistics System</h3>
           <img src="./backend/src/lib/diagrams/devsStatsSystemDiagram.png" width="100%">
+        </td>
+      </tr>
+      <tr>
+        <td width="90%" colspan="2" align="center">
+          <h3 align="center">System Architecture Design</h3>
+          <img src="./backend/src/lib/docs/codeElevateArchitecture.png" width="100%">
+        </td>
+      </tr>
+      <tr>
+        <td width="90%" colspan="2" align="center">
+          <h3 align="center">Database Structure Design</h3>
+          <img src="./backend/src/lib/docs/mongodbDatabaseStructure.png" width="100%">
+        </td>
+      </tr>
+      <tr>
+        <td width="90%" colspan="2" align="center">
+          <h3 align="center">Ranked #1 on Google Search with AI-Verified Detailed Information and strong SEO visibility</h3>
+          <img src="./backend/src/lib/seo/seoAISearch.png" width="100%">
         </td>
       </tr>
       <tr>
@@ -1094,13 +1162,15 @@ git push origin feature/your-feature-name
         </td>
       </tr>
       <tr>
-        <td width="45%">
-          <h3 align="center">Google Search Visibility</h3>
-          <img src="./backend/src/lib/seo/seoSearchUpdated2.png" width="100%">
+        <td width="90%" colspan="2" align="center">
+          <h3 align="center">SEO Google Search Console</h3>
+          <img src="./backend/src/lib/seo/seoPerformance1.png" width="100%">
         </td>
-        <td width="45%">
-          <h3 align="center">Google Search Visibility with Different Logo Icon</h3>
-          <img src="./backend/src/lib/seo/seoSearchResult.png" width="100%">
+      </tr>
+      <tr>
+        <td width="90%" colspan="2" align="center">
+          <h3 align="center">SEO Google Analytics</h3>
+          <img src="./backend/src/lib/seo/googleAnalyticsCountry.png" width="100%">
         </td>
       </tr>
       <tr>
@@ -1145,12 +1215,58 @@ git push origin feature/your-feature-name
       </tr>
       <tr>
         <td width="45%">
-          <h3 align="center">SEO Sitemaps Success</h3>
-          <img src="./backend/src/lib/seo/seoSitemaps2.png" width="100%">
+          <h3 align="center">Google Search Visibility</h3>
+          <img src="./backend/src/lib/seo/seoSearchUpdated2.png" width="100%">
         </td>
         <td width="45%">
+          <h3 align="center">Google Search Visibility with Different Query</h3>
+          <img src="./backend/src/lib/seo/seoSearchUpdated3.png" width="100%">
+        </td>
+      </tr>
+      <tr>
+        <td width="45%">
           <h3 align="center">Search Visibility</h3>
+          <img src="./backend/src/lib/seo/seoSearchResult.png" width="100%">
+        </td>
+        <td width="45%">
+          <h3 align="center">Search Visibility with Logo Icon</h3>
           <img src="./backend/src/lib/seo/seoResult.png" width="100%">
+        </td>
+      </tr>
+      <tr>
+        <td width="45%">
+          <h3 align="center">Bing URL Inspection</h3>
+          <img src="./backend/src/lib/seo/bingURLInspection.png" width="100%">
+        </td>
+        <td width="45%">
+          <h3 align="center">Bing Webmaster Tools SEO & Sitemap Success</h3>
+          <img src="./backend/src/lib/seo/bingSitemap.png" width="100%">
+        </td>
+      </tr>
+      <tr>
+        <td width="45%">
+          <h3 align="center">Google Analytics Audience</h3>
+          <img src="./backend/src/lib/seo/googleAnalytics.png" width="100%">
+        </td>
+        <td width="45%">
+          <h3 align="center">Google Analytics Report</h3>
+          <img src="./backend/src/lib/seo/googleAnalyticsUsers.png" width="100%">
+        </td>
+      </tr>
+      <tr>
+        <td width="45%">
+          <h3 align="center">Google Analytics User Overview</h3>
+          <img src="./backend/src/lib/seo/googleAnalyticsCountry.png" width="100%">
+        </td>
+        <td width="45%">
+          <h3 align="center">Google Analytics Demographic Details</h3>
+          <img src="./backend/src/lib/seo/googleAnalyticsGraph.png" width="100%">
+        </td>
+      </tr>
+      <tr>
+        <td width="90%" colspan="2" align="center">
+          <h3 align="center">robots.txt Accepted and Successfully Validated</h3>
+          <img src="./backend/src/lib/seo/robotsStats.png" width="100%">
         </td>
       </tr>
       <tr>
@@ -1161,8 +1277,8 @@ git push origin feature/your-feature-name
       </tr>
       <tr>
         <td width="90%" colspan="2" align="center">
-          <h3 align="center">robots.txt Accepted and Successfully Validated</h3>
-          <img src="./backend/src/lib/seo/robotsStats.png" width="100%">
+          <h3 align="center">SEO Sitemaps Success</h3>
+          <img src="./backend/src/lib/seo/seoSitemaps2.png" width="100%">
         </td>
       </tr>
       <tr>
@@ -1201,7 +1317,7 @@ git push origin feature/your-feature-name
     <table width="95%" align="center" border="0">
       <tr>
         <td width="45%">
-          <h3 align="center">Two Factor Authentication using TOTP</h3>
+          <h3 align="center">Two Factor Authentication using TOTP & QR Code Enrollment</h3>
           <img src="./frontend/public/about/authentication.png" width="100%">
         </td>
         <td width="45%">
@@ -1215,7 +1331,7 @@ git push origin feature/your-feature-name
           <img src="./frontend/public/about/searchFunctionality.png" width="100%">
         </td>
         <td width="45%">
-          <h3 align="center">User Profile Stats</h3>
+          <h3 align="center">User Profile Statistics</h3>
           <img src="./frontend/public/about/profileStatsPreview.png" width="100%">
         </td>
       </tr>
@@ -1348,8 +1464,9 @@ git push origin feature/your-feature-name
   
 ### Omkar Ardekar 💻
 
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=circuitverse&logoColor=white)](https://www.linkedin.com/in/omkarardekar09)
 [![GitHub](https://img.shields.io/badge/GitHub-000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/OmkarArdekar12)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=circuitverse&logoColor=white)](https://www.linkedin.com/in/omkarardekar09)
+[![Portfolio](https://img.shields.io/badge/Portfolio-FFA012?style=for-the-badge&logo=codementor)](https://omkarardekar.vercel.app)
 
   </div>
 </div>
