@@ -680,6 +680,7 @@
 │   │   │   │   ├── indexedPages1.png
 │   │   │   │   ├── indexedPages2.png
 │   │   │   │   ├── robotsStats.png
+│   │   │   │   ├── seoAISearch.png
 │   │   │   │   ├── seoPerformance1.png
 │   │   │   │   ├── seoPerformance2.png
 │   │   │   │   ├── seoResult.png
@@ -687,6 +688,7 @@
 │   │   │   │   ├── seoSearchUpdated.png
 │   │   │   │   ├── seoSearchUpdated1.png
 │   │   │   │   ├── seoSearchUpdated2.png
+│   │   │   │   ├── seoSearchUpdated3.png
 │   │   │   │   ├── seoSitemaps1.png
 │   │   │   │   ├── seoSitemaps2.png
 │   │   │   │   ├── seoSiteResult.png
