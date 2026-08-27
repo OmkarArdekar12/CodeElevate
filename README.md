@@ -953,6 +953,7 @@
 │   │   ├── codeElevateArchitecture.png
 │   │   ├── databaseDesign.drawio
 │   │   ├── mongodbDatabaseStructure.png
+│   │   ├── prevCodeElevateArchitecture.png
 │   │   └── prevMongodbDatabaseStructure.png
 │   ├── 📁 reports
 │   │   ├── 📁 lighthouse-report
