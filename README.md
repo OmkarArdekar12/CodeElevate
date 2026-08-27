@@ -670,6 +670,7 @@
 │   │   │   │   ├── codeElevateArchitecture.png
 │   │   │   │   ├── mongodbDatabaseStructure.png
 │   │   │   │   ├── databaseDesign.drawio
+│   │   │   │   ├── prevCodeElevateArchitecture.drawio
 │   │   │   │   └── prevMongodbDatabaseStructure.png
 │   │   │   ├── 📁 reports
 │   │   │   │   ├── 📁 lighthouse-report
