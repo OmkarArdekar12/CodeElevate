@@ -666,6 +666,7 @@
 │   │   │   ├── 📁 docs
 │   │   │   │   ├── codeElevateArchitecture.png
 │   │   │   │   ├── mongodbDatabaseStructure.png
+│   │   │   │   ├── prevCodeElevateArchitecture.png
 │   │   │   │   └── prevMongodbDatabaseStructure.png
 │   │   │   ├── 📁 seo
 │   │   │   │   ├── bingSitemap.png
