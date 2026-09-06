@@ -40,6 +40,32 @@ const userSchema = new Schema(
 export default userSchema;
 
 // import mongoose from "mongoose";
+// const Schema = mongoose.Schema;
+// const userSchema = new Schema(
+//   {
+//     username: {
+//       type: String,
+//       required: true,
+//       unique: true,
+//     },
+//     password: {
+//       type: String,
+//       required: true,
+//     },
+//     isMfaActive: {
+//       type: Boolean,
+//       default: false,
+//     },
+//     twoFactorSecret: {
+//       type: String,
+//     },
+//   },
+//   {
+//     timestamps: true,
+//   }
+// );
+// export default userSchema;
+// import mongoose from "mongoose";
 // import passportLocalMongoose from "passport-local-mongoose";
 // const Schema = mongoose.Schema;
 // const userSchema = new Schema({
