@@ -14,6 +14,13 @@ const userSchema = new Schema(
       required: true,
     },
 
+    normalizedUsername: {
+      type: String,
+      trim: true,
+      lowercase: true,
+      select: false,
+    },
+
     isMfaActive: {
       type: Boolean,
       default: false,
@@ -24,7 +31,7 @@ const userSchema = new Schema(
   },
   {
     timestamps: true,
-  }
+  },
 );
 
 export default userSchema;
