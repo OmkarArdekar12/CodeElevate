@@ -17,8 +17,10 @@ const userSchema = new Schema(
 
     normalizedUsername: {
       type: String,
+      required: true,
       trim: true,
       lowercase: true,
+      unique: true,
       select: false,
     },
 
