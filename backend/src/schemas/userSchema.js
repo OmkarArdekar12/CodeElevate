@@ -8,10 +8,20 @@ const userSchema = new Schema(
       type: String,
       required: true,
       unique: true,
+      trim: true,
     },
     password: {
       type: String,
       required: true,
+    },
+
+    normalizedUsername: {
+      type: String,
+      required: true,
+      trim: true,
+      lowercase: true,
+      unique: true,
+      select: false,
     },
 
     isMfaActive: {
@@ -24,92 +34,7 @@ const userSchema = new Schema(
   },
   {
     timestamps: true,
-  }
+  },
 );
 
 export default userSchema;
-
-// import mongoose from "mongoose";
-// import passportLocalMongoose from "passport-local-mongoose";
-// const Schema = mongoose.Schema;
-// const userSchema = new Schema({
-//   email: {
-//     type: String,
-//     required: true,
-//   },
-//   profilePicture: {
-//     type: String,
-//     default: "",
-//   },
-//   backgroundBanner: {
-//     type: String,
-//     default: "",
-//   },
-//   headLine: {
-//     type: String,
-//     default: "",
-//   },
-//   tags: [String],
-//   about: {
-//     type: String,
-//     default: "",
-//   },
-//   developmentProfiles: {
-//     github: String,
-//     gitlab: String,
-//     portfolio: String,
-//   },
-//   competitiveProfile: {
-//     leetCode: String,
-//     codeforces: String,
-//     hackerrank: String,
-//     geekforgeeks: String,
-//     codeshef: String,
-//   },
-//   education: {
-//     degree: String,
-//     cgpa: Number,
-//     institution: String,
-//   },
-//   followers: {
-//     type: Schema.Types.ObjectId,
-//     ref: "User",
-//   },
-//   following: {
-//     type: Schema.Types.ObjectId,
-//     ref: "User",
-//   },
-
-//   createdAt: {
-//     type: Date,
-//     default: Date.now,
-//   },
-// });
-// userSchema.plugin(passportLocalMongoose);
-// export default userSchema;
-
-// import mongoose from "mongoose";
-// import passportLocalMongoose from "passport-local-mongoose";
-// const Schema = mongoose.Schema;
-// const userSchema = new Schema(
-//   {
-//     username: {
-//       type: String,
-//       required: true,
-//       unique: true,
-//     },
-
-//     isMfaActive: {
-//       type: Boolean,
-//       default: false,
-//     },
-//     twoFactorSecret: {
-//       type: String,
-//     },
-//   },
-//   {
-//     timestamps: true,
-//   }
-// );
-// userSchema.plugin(passportLocalMongoose);
-// export default userSchema;

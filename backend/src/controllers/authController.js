@@ -16,7 +16,9 @@ export const register = async (req, res) => {
         .json({ message: "Username and Password fields must be Required" });
     }
 
-    let isUserExist = await User.findOne({ username });
+    const cleanUsername = username.trim();
+    const normalizedUsername = cleanUsername.toLowerCase();
+    let isUserExist = await User.findOne({ normalizedUsername });
     if (isUserExist) {
       return res.status(400).json({ message: "User already exists." });
     }
@@ -30,11 +32,14 @@ export const register = async (req, res) => {
     }
 
     const hashedPassword = await bcrypt.hash(password, 10);
+
     const user = await User.create({
-      username,
+      username: cleanUsername,
+      normalizedUsername: normalizedUsername,
       password: hashedPassword,
       isMfaActive: false,
     });
+
     const profile = await Profile.create({
       user: user._id,
       fullName: username,
@@ -194,7 +199,7 @@ export const verify2FA = async (req, res) => {
           process.env.JWT_SECRET,
           {
             expiresIn: "7d",
-          }
+          },
         );
 
         return res.status(200).json({
