@@ -893,6 +893,7 @@
 │   │   │   ├── custom3DSilverLogo.png
 │   │   │   ├── custom3DGoldLogo.png
 │   │   │   ├── responsiveness.png
+│   │   │   ├── omkar.png
 │   │   │   ├── developer.png
 │   │   │   └── creator.png
 │   │   ├── 📁 icons
@@ -1026,6 +1027,7 @@
 │   │   ├── custom3DSilverLogo.png
 │   │   ├── custom3DGoldLogo.png
 │   │   ├── responsiveness.png
+│   │   ├── omkar.png
 │   │   ├── developer.png
 │   │   └── creator.png
 │   ├── 📁 icons
