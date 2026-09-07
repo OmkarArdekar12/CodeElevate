@@ -1,7 +1,5 @@
 import React, { useState, useEffect } from "react";
 import CodeElevate3DLogo from "../components/CodeElevate3DLogo.jsx";
-import Logo3D from "../components/Logo3D.jsx";
-import Logo3DGold from "../components/Logo3DGold.jsx";
 import { AnimatePresence, motion } from "framer-motion";
 
 const Hero = () => {
@@ -20,8 +18,8 @@ const Hero = () => {
     viewAngle === 0
       ? [0, 0, 39]
       : viewAngle === 1
-      ? [0, 19, 39]
-      : [10, -14, 39];
+        ? [0, 19, 39]
+        : [10, -14, 39];
 
   return (
     <div className="w-full flex flex-col lg:flex-row items-center transition-all duration-300 ease-in-out">
@@ -56,22 +54,34 @@ const Hero = () => {
           }}
           className="text-sm sm:text-md lg:text-lg tracking-widest about-font hover-text-border"
         >
-          <h2 className="my-1 about-font">
-            CodeElevate empowers users to showcase their coding and development
-            profiles all in one place. It provides a unified platform where
-            learners, competitive programmers, coders and developers can
-            analyze, track, and elevate their progress in both competitive
-            programming and software development.
+          <h2 className="my-1 about-font text-center">
+            One Place to Code, Connect &amp; Grow
           </h2>
-          <h2 className="my-1 about-font">
-            Users can compete, connect, and grow together by earning ranks
-            across multiple categories, building meaningful connections, and
-            engaging through connection and messaging features.
+          <h3 className="my-1 about-font">
+            CodeElevate empowers learners, competitive programmers, coders, and
+            developers to bring their coding and development journey together in
+            one place. Showcase your profiles, track your progress, and discover
+            insights across competitive programming and software development.
+          </h3>
+          <h2 className="my-1 about-font text-center">
+            Compete, Connect &amp; Collaborate
           </h2>
-          <h2 className="my-1 about-font">
-            At CodeElevate, our goal is to inspire growth, celebrate
-            achievement, and create a community where every coder can rise to
-            their full potential.
+          <h3 className="my-1 about-font">
+            Build your presence, earn ranks across multiple categories, and
+            connect with fellow coders. Share posts, engage with the community,
+            and communicate through messaging to learn, collaborate, and grow
+            together.
+          </h3>
+          <h2 className="my-1 about-font text-center">
+            Elevate Your Coding Journey
+          </h2>
+          <h3 className="my-1 about-font">
+            Our goal is to inspire growth, celebrate achievements, and build a
+            community where coders can learn from one another, showcase their
+            skills, and reach their full potential.
+          </h3>
+          <h2 className="my-1 about-font text-center">
+            CodeElevate - Connect. Code. Collaborate.
           </h2>
         </motion.div>
       </div>
