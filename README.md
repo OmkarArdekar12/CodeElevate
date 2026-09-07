@@ -341,7 +341,7 @@
       </tr>
       <tr>
         <td>11.</td>
-        <td><b>Intelligent Stats Caching & Performance Optimization</b></td>
+        <td><b>Intelligent Caching System & Performance Optimization</b></td>
         <td>Implemented a MongoDB-backed caching system using Mongoose with automatic TTL expiration for coding statistics (LeetCode & Codeforces), development statistics (GitHub), and category-based ranking system (Ranking statistics). The system minimizes external API requests, improves response performance, handles API rate limits gracefully, supports stale-cache fallback responses, and enhances backend scalability and reliability.</td>
       </tr>
       <tr>
@@ -540,7 +540,7 @@
         <tr>
           <td>&#10148;</td>
           <td>Development Tools & Libraries</td>
-          <td>Nodemon, Vite Build, dotenv, Postman, Hoppscotch, Thunder Client, VS Code, Git, GitHub, Google Search Console, Bing Webmaster Tools, Google Analytics 4 (GA4), Canva (for UI Assets)</td>
+          <td>Nodemon, Vite Build, dotenv, Postman, Hoppscotch, Thunder Client, Visual Studio Code (VS Code), Git, GitHub, Google Search Console, Bing Webmaster Tools, Google Analytics 4 (GA4), Canva (for UI Assets)</td>
         </tr>
         <tr>
           <td>&#10148;</td>
@@ -874,9 +874,9 @@
 │   │   │   └── creator.png
 │   │   ├── 📁 icons
 │   │   │   ├── LogoCodeElevate.png
-│   │   │   └── LogoCodeElevate-share.png
-│   │   │   └── LogoCodeElevate-192.png
-│   │   │   └── LogoCodeElevate-512.png
+│   │   │   ├── LogoCodeElevate-share.png
+│   │   │   ├── LogoCodeElevate-192.png
+│   │   │   ├── LogoCodeElevate-512.png
 │   │   │   └── LogoCodeElevate-logo.png
 │   │   ├── 📁 images
 │   │   │   ├── CodeElevate3DLogo.stl
@@ -1198,7 +1198,7 @@ git push origin feature/your-feature-name
       </tr>
       <tr>
         <td width="45%">
-          <h3 align="center">Page indexing</h3>
+          <h3 align="center">Page Indexing</h3>
           <img src="./backend/src/lib/seo/indexedPages1.png" width="100%">
         </td>
         <td width="45%">
