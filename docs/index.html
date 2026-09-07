@@ -3,363 +3,1957 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portal | CodeElevate - Elevate Your Coding Journey</title>
+    <meta
+      name="description"
+      content="CodeElevate is a MERN-stack coder community platform: live CP & dev stats, real-time messaging, category ranking, 2FA security, and production-grade SEO/performance."
+    />
     <link rel="icon" href="./assets/logo.png" />
-    <title>CodeElevate - Portal</title>
-
-    <style>
-      * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-      }
-
-      body {
-        min-height: 100vh;
-        background-color: oklch(12.9% 0.042 264.695);
-        color: #e5e7eb;
-        font-family:
-          system-ui,
-          -apple-system,
-          BlinkMacSystemFont,
-          "Segoe UI",
-          Roboto,
-          Ubuntu,
-          sans-serif;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        padding: 3rem 1.5rem;
-      }
-
-      a {
-        color: #38bdf8;
-        text-decoration: none;
-        font-weight: 500;
-      }
-
-      a:hover {
-        text-decoration: underline;
-      }
-
-      #hero {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 1rem;
-        margin-bottom: 3rem;
-      }
-
-      .section {
-        width: 100%;
-        max-width: 900px;
-        background: rgba(30, 41, 59, 0.5);
-        border-radius: 12px;
-        padding: 1.8rem;
-        margin-bottom: 1.5rem;
-      }
-
-      .section h2 {
-        margin-bottom: 0.8rem;
-        color: #66e996;
-        font-size: 1.25rem;
-      }
-
-      .section p,
-      .section ul,
-      .section li {
-        line-height: 1.7;
-        color: #cbd5f5;
-      }
-
-      ul {
-        padding-left: 1.5rem;
-      }
-
-      .links {
-        display: flex;
-        flex-direction: column;
-        gap: 0.6rem;
-        margin-top: 0.8rem;
-      }
-
-      footer {
-        width: 100%;
-        max-width: 900px;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        margin-top: 3rem;
-        text-align: center;
-        font-size: 0.9rem;
-        color: #94a3b8;
-      }
-
-      ::selection {
-        background-color: #facc15;
-        color: #000000;
-      }
-
-      ::-moz-selection {
-        background-color: #facc15;
-        color: #000000;
-      }
-
-      img {
-        max-width: 100%;
-        height: auto;
-      }
-
-      #hero p {
-        text-align: center;
-        font-size: 1rem;
-        color: #94a3b8;
-      }
-
-      @media (min-width: 640px) {
-        body {
-          padding: 3.5rem 2.5rem;
-        }
-
-        .section {
-          padding: 2.2rem;
-        }
-
-        .section h2 {
-          font-size: 1.4rem;
-        }
-
-        #hero img:first-child {
-          width: 100px;
-        }
-
-        #hero img:last-child {
-          width: 260px;
-        }
-      }
-
-      @media (min-width: 1024px) {
-        body {
-          padding: 4rem;
-        }
-
-        .section {
-          max-width: 1000px;
-        }
-
-        .section h2 {
-          font-size: 1.5rem;
-        }
-
-        .section p,
-        .section li {
-          font-size: 1.02rem;
-        }
-      }
-
-      @media (min-width: 1280px) {
-        .section {
-          max-width: 1100px;
-        }
-      }
-
-      @media (max-width: 480px) {
-        body {
-          padding: 2rem 1rem;
-        }
-
-        #hero img:first-child {
-          width: 70px;
-        }
-
-        #hero img:last-child {
-          width: 180px;
-        }
-
-        .section {
-          padding: 1.4rem;
-        }
-
-        .section h2 {
-          font-size: 1.15rem;
-        }
-
-        .section p,
-        .section li {
-          font-size: 0.95rem;
-        }
-
-        footer {
-          flex-direction: column;
-          align-items: start;
-          gap: 1rem;
-        }
-      }
-    </style>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./css/output.css" />
+    <link rel="stylesheet" href="./css/portal.css" />
+    <script src="./js/portal.js" defer></script>
   </head>
+  <body class="text-slate-200">
+    <div class="bg-atmo">
+      <div class="blob blob-a"></div>
+      <div class="blob blob-b"></div>
+      <div class="blob blob-c"></div>
+      <div class="grid-veil"></div>
+    </div>
 
-  <body>
-    <header id="hero">
+    <!-- Vertical Navbar -->
+    <nav class="rail" aria-label="Section navigation">
+      <div class="rail-line"></div>
+      <a href="#about" class="rail-dot" data-rail="about"
+        ><span class="tip">About</span></a
+      >
+      <a href="#features" class="rail-dot" data-rail="features"
+        ><span class="tip">Features</span></a
+      >
+      <a href="#stack" class="rail-dot" data-rail="stack"
+        ><span class="tip">Stack</span></a
+      >
+      <a href="#diagrams" class="rail-dot" data-rail="diagrams"
+        ><span class="tip">Architecture</span></a
+      >
+      <a href="#quality" class="rail-dot" data-rail="quality"
+        ><span class="tip">Performance</span></a
+      >
+      <a href="#install" class="rail-dot" data-rail="install"
+        ><span class="tip">Install</span></a
+      >
+    </nav>
+
+    <!-- left and right corner controls -->
+    <div class="corner-ui top-5 left-5 flex items-center gap-2">
       <img
-        src="./assets/CodeElevateLogo.gif"
-        alt="CodeElevate Logo"
-        width="90"
+        src="./assets/logo.png"
+        alt="CodeElevate"
+        class="h-9 shadow-lg shadow-black/40"
       />
-      <img src="./assets/CodeElevateText.gif" alt="CodeElevate" width="220" />
-      <p>CodeElevate - Elevate Your Coding Journey!</p>
-    </header>
-
-    <div class="section">
-      <p>
-        CodeElevate is a robust, scalable, and dynamic coder community designed
-        to empower competitive programmers, software developers, students,
-        learners, and professionals. It provides an all-in-one ecosystem to
-        showcase skills, track progress, and interact with the community through
-        a production-grade and performance-optimized platform. The goal is to
-        foster growth, collaboration, and innovation among coders worldwide.
-      </p>
+    </div>
+    <div class="corner-ui top-5 right-5 flex items-center gap-2">
+      <a
+        href="https://github.com/OmkarArdekar12/CodeElevate"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="text-xs font-mono px-3 py-2 rounded-lg border border-slate-700/70 bg-slate-950/70 backdrop-blur hover:border-blue-500/60 hover:text-blue-300 transition"
+        >GitHub</a
+      >
+      <a
+        href="https://codeelevate-community.vercel.app"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="text-xs font-mono px-3 py-2 rounded-lg bg-blue-700 hover:bg-blue-600 text-white shadow-lg shadow-blue-900/40 transition"
+        >CodeElevate &rarr;</a
+      >
     </div>
 
-    <div class="section">
-      <h2>Core Features</h2>
-      <ul style="list-style-type: disc">
-        <li>
-          Integrated coding and development statistics across multiple platforms
-        </li>
-        <li>
-          Personalized profiles with an advanced profile management system
-        </li>
-        <li>Real-time messaging system for seamless communication</li>
-        <li>User connection system with social-style interactions</li>
-        <li>Community-driven and category-based ranking system</li>
-        <li>
-          Post sharing and engagement to highlight projects and achievements
-        </li>
-        <li>Notification system for interactions and updates</li>
-        <li>Search and filter functionality</li>
-        <li>
-          Secure MFA (Multi-Factor Authentication) based authentication and
-          authorization mechanisms with TOTP (Time-based One-Time Password)
-          based 2FA (Two-Factor Authentication)
-        </li>
-        <li>
-          SEO-optimized architecture resulting in top Google search visibility
-        </li>
-        <li>
-          MVC-based modular architecture for scalability and maintainability
-        </li>
-        <li>Performance-optimized backend and frontend design</li>
-        <li>Interactive custom 3D models for enhanced user experience</li>
-        <li>Modern, fully responsive UI/UX design optimized for all devices</li>
-      </ul>
-    </div>
+    <main>
+      <!-- Hero -->
+      <section
+        id="hero"
+        class="min-h-screen flex flex-col items-center justify-center text-center px-6 pt-24 pb-16"
+      >
+        <img
+          src="./assets/CodeElevateLogo.gif"
+          alt="CodeElevate logo animation"
+          class="w-24 sm:w-28 mb-2 drop-shadow-[0_0_30px_rgba(59,130,246,0.35)]"
+        />
+        <img
+          src="./assets/CodeElevateText.gif"
+          alt="CodeElevate"
+          class="w-64 sm:w-80 mb-6"
+        />
 
-    <div class="section">
-      <h2>Live Application - Join CodeElevate!</h2>
-      <div class="links">
-        <a href="https://codeelevate-community.vercel.app" target="_blank"
-          >&rarr; Visit Live Application
-        </a>
-      </div>
-    </div>
-
-    <div class="section">
-      <h2>Project Walkthrough</h2>
-      <div class="links">
-        <a href="https://www.youtube.com/watch?v=4-Udx0xvsO0" target="_blank">
-          &rarr; Watch on YouTube
-        </a>
-      </div>
-    </div>
-
-    <div class="section">
-      <h2>SEO Visibility & Indexing</h2>
-      <p>
-        Production-Grade SEO, Indexing & Web Performance Implementation with
-        Verified Top Google Search Visibility
-      </p>
-      <div class="links">
-        <a
-          href="https://www.google.com/search?q=site:codeelevate-community.vercel.app"
-          target="_blank"
+        <h1
+          class="font-display font-bold text-4xl sm:text-6xl leading-[1.05] tracking-tight max-w-3xl mb-5 reveal in-view"
         >
-          &rarr; View SEO & Indexing Proof
-        </a>
-        <a
-          href="https://github.com/OmkarArdekar12/CodeElevate?tab=readme-ov-file#seo-result"
-          target="_blank"
+          Elevate your <span class="grad-text">coding journey</span>.
+        </h1>
+        <p
+          class="text-slate-400 text-base sm:text-lg max-w-xl mb-9 reveal in-view reveal-delay-1"
         >
-          &rarr; View SEO Validations & Results
-        </a>
-      </div>
-    </div>
+          One profile for every place you code - live stats, community rankings,
+          real-time chat and secure 2FA, built as a production-grade platform.
+        </p>
 
-    <div class="section">
-      <h2>Live-Measured Performance</h2>
-      <p>Production-Grade, Live-Measured Web Performance & SEO Validation</p>
-      <div class="links">
-        <a href="./reports/lighthouse-report/" target="_blank">
-          &rarr; View Lighthouse Performance Report (HTML)
-        </a>
-        <a href="./reports/LighthouseReport.pdf" target="_blank">
-          &rarr; Download Lighthouse Report (PDF)
-        </a>
-      </div>
-    </div>
-
-    <div class="section">
-      <h2>Project Details</h2>
-      <div class="links">
-        <a
-          href="https://github.com/OmkarArdekar12/CodeElevate?tab=readme-ov-file#readme-index"
-          target="_blank"
+        <div
+          class="flex flex-wrap items-center justify-center gap-3 mb-10 reveal in-view reveal-delay-2"
         >
-          &rarr; View Project Details
-        </a>
-      </div>
-    </div>
+          <a
+            href="#demo"
+            class="px-6 py-3 rounded-xl border border-slate-700 hover:border-blue-500/60 hover:bg-blue-950/30 text-sm font-semibold transition"
+            >Watch the Preview Video</a
+          >
+          <a
+            href="https://codeelevate-community.vercel.app"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="px-6 py-3 rounded-xl bg-blue-700 hover:bg-blue-600 hover:-translate-y-0.5 text-white font-semibold text-sm shadow-lg shadow-blue-950/60 transition"
+            >Open the Website / Application &rarr;</a
+          >
+          <a
+            href="https://github.com/OmkarArdekar12/CodeElevate"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="px-6 py-3 rounded-xl border border-slate-700 hover:border-blue-500/60 hover:bg-blue-950/30 text-sm font-semibold transition"
+            >View Source Code / GitHub Repository</a
+          >
+        </div>
 
-    <div class="section">
-      <h2>Project GitHub Repository</h2>
-      <div class="links">
-        <a href="https://github.com/OmkarArdekar12/CodeElevate" target="_blank">
-          &rarr; CodeElevate GitHub Repository
-        </a>
-      </div>
-    </div>
+        <div class="flex flex-wrap justify-center gap-3">
+          <span
+            class="floaty font-mono text-xs text-slate-300 border border-slate-700/70 bg-slate-900/60 px-3 py-1.5 rounded-full"
+            style="animation-delay: 0s"
+            >MERN Stack</span
+          >
+          <span
+            class="floaty font-mono text-xs text-slate-300 border border-slate-700/70 bg-slate-900/60 px-3 py-1.5 rounded-full"
+            style="animation-delay: 0.3s"
+            >MVC Architecture</span
+          >
+          <span
+            class="floaty font-mono text-xs text-slate-300 border border-slate-700/70 bg-slate-900/60 px-3 py-1.5 rounded-full"
+            style="animation-delay: 0.4s"
+            >9+ REST API Modules</span
+          >
+          <span
+            class="floaty font-mono text-xs text-slate-300 border border-slate-700/70 bg-slate-900/60 px-3 py-1.5 rounded-full"
+            style="animation-delay: 0.6s"
+            >45+ REST Endpoints</span
+          >
+          <span
+            class="floaty font-mono text-xs text-slate-300 border border-slate-700/70 bg-slate-900/60 px-3 py-1.5 rounded-full"
+            style="animation-delay: 0.9s"
+            >Performance 98/100</span
+          >
+          <span
+            class="floaty font-mono text-xs text-slate-300 border border-slate-700/70 bg-slate-900/60 px-3 py-1.5 rounded-full"
+            style="animation-delay: 1.2s"
+            >SEO 100/100</span
+          >
+        </div>
 
-    <div class="section">
-      <h2>License</h2>
-      <p>This project is licensed under the terms of the MIT License.</p>
-      <div class="links">
-        <a
-          href="https://github.com/OmkarArdekar12/CodeElevate/blob/main/LICENSE"
-          target="_blank"
+        <div
+          class="terminal-line font-mono text-sm sm:text-base text-blue-300/90 mt-5 mb-5"
+          aria-live="polite"
+          aria-label="CodeElevate tagline"
         >
-          &rarr; See the LICENSE file for more information.
-        </a>
-      </div>
-    </div>
+          <span class="terminal-prompt" aria-hidden="true">&gt;</span>
+          <span id="typeline"></span>
+          <span class="caret" aria-hidden="true"></span>
+        </div>
+      </section>
 
-    <div class="section">
-      <h2>Author</h2>
-      <p style="font-size: larger"><strong>Omkar Ardekar</strong></p>
-      <div class="links">
-        <a href="https://www.linkedin.com/in/omkarardekar09" target="_blank">
-          &rarr; LinkedIn
-        </a>
-        <a href="https://github.com/OmkarArdekar12" target="_blank">
-          &rarr; GitHub
-        </a>
-      </div>
-    </div>
+      <!-- About -->
+      <section id="about" class="max-w-6xl mx-auto px-6 py-10">
+        <div class="grid md:grid-cols-2 gap-12 items-start">
+          <div class="reveal">
+            <h2 class="font-display font-semibold text-3xl mb-6">About</h2>
+            <p class="text-slate-400 leading-relaxed mb-4">
+              CodeElevate is a robust, scalable, and dynamic coder community
+              platform built to empower competitive programmers, software
+              developers, students, learners, and professionals.
+            </p>
+            <p class="text-slate-400 leading-relaxed mb-4">
+              The platform provides an all-in-one ecosystem featuring integrated
+              coding and development statistics across multiple platforms, a
+              community-driven and category-based ranking system, a real-time
+              messaging system with online user detection and image messaging, a
+              user connection system, post sharing and engagement with
+              optimistic UI updates, personalized profiles with an advanced
+              profile management system, a notification system, and search and
+              filter functionality. It incorporates secure multi-factor
+              authentication (MFA) and authorization mechanisms, including
+              two-factor authentication (2FA) using Time-Based One-Time Password
+              (TOTP) and QR-code based enrollment. The system is powered by
+              seamless and optimized backend and frontend pipelines with
+              structured database and cloud storage integration, intelligent
+              caching system, along with performance and SEO optimization. Built
+              using an MVC architecture with modular REST APIs, authentication,
+              authorization, validation, and centralized error-handling layers
+              for a scalable and maintainable codebase, the platform ensures
+              production-grade, performance-driven reliability, efficient API
+              usage, and enhanced scalability. It achieves top Google search
+              visibility through its SEO-optimized architecture. It also
+              features interactive custom 3D models, smooth animations,
+              interactive 3D animations, and a modern, fully responsive UI/UX
+              design.
+            </p>
+            <p class="text-slate-400 leading-relaxed mb-4">
+              The goal is to foster growth, collaboration, and innovation among
+              coders worldwide.
+            </p>
+          </div>
 
-    <footer>
-      <a href="https://github.com/OmkarArdekar12/CodeElevate" target="_blank">
-        Go to CodeElevate GitHub Repository
-      </a>
-      <a href="https://codeelevate-community.vercel.app" target="_blank">
-        Go to CodeElevate Live Application
-      </a>
+          <div
+            id="demo"
+            class="p-2 reveal reveal-delay-1 h-full flex flex-col items-center justify-center"
+          >
+            <div class="p-1 reveal reveal-delay-1">
+              <div class="max-w-xl reveal mb-2">
+                <h4 class="font-display font-semibold text-xl mb-3">
+                  Watch it in action.
+                </h4>
+                <p class="text-slate-400">
+                  A full walkthrough of the live application, feature by
+                  feature.
+                </p>
+              </div>
+              <div class="video-shell reveal" id="videoShell">
+                <img
+                  src="https://img.youtube.com/vi/4-Udx0xvsO0/hqdefault.jpg"
+                  alt="CodeElevate demo video thumbnail"
+                />
+                <div class="play-btn">
+                  <div class="play-circle">
+                    <svg
+                      width="26"
+                      height="26"
+                      viewBox="0 0 24 24"
+                      fill="white"
+                    >
+                      <path d="M8 5v14l11-7z" />
+                    </svg>
+                  </div>
+                </div>
+              </div>
+              <p class="text-center font-mono text-xs text-slate-600 mt-3">
+                or
+                <a
+                  href="https://www.youtube.com/watch?v=4-Udx0xvsO0"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="text-blue-400 hover:underline"
+                  >watch directly on YouTube</a
+                >
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Features -->
+      <section id="features" class="max-w-6xl mx-auto px-6 py-24">
+        <div class="max-w-xl mb-14 reveal">
+          <h2 class="font-display font-semibold text-3xl mb-3">Features</h2>
+          <h4 class="font-display font-semibold text-xl mb-3">
+            Everything a coder profile needs, wired together.
+          </h4>
+          <p class="text-slate-400">
+            Sixteen production features spanning security, social, stats and
+            performance.
+          </p>
+        </div>
+
+        <div class="border-t border-slate-800">
+          <div
+            class="grid sm:grid-cols-[110px_1fr] gap-2 sm:gap-6 py-6 border-b border-slate-800 reveal"
+          >
+            <div class="font-mono text-xs text-blue-400 pt-1">SECURITY</div>
+            <div>
+              <h3 class="font-display font-semibold text-lg mb-1">
+                Multi-Factor Authentication &amp; Authorization
+              </h3>
+              <p class="text-slate-400 text-sm max-w-2xl">
+                Passport, JWT, session-based &amp; token-based authentication,
+                layered with two-factor authentication using TOTP and QR-code
+                enrollment to protect user accounts.
+              </p>
+            </div>
+          </div>
+          <div
+            class="grid sm:grid-cols-[110px_1fr] gap-2 sm:gap-6 py-6 border-b border-slate-800 reveal"
+          >
+            <div class="font-mono text-xs text-blue-400 pt-1">PROFILE</div>
+            <div>
+              <h3 class="font-display font-semibold text-lg mb-1">
+                Profile Management System
+              </h3>
+              <p class="text-slate-400 text-sm max-w-2xl">
+                Customizable profiles with editable details, skills, education,
+                social links, coding &amp; development profiles, profile images
+                and banners, plus visibility controls for statistics.
+              </p>
+            </div>
+          </div>
+          <div
+            class="grid sm:grid-cols-[110px_1fr] gap-2 sm:gap-6 py-6 border-b border-slate-800 reveal"
+          >
+            <div class="font-mono text-xs text-blue-400 pt-1">STATS</div>
+            <div>
+              <h3 class="font-display font-semibold text-lg mb-1">
+                Live CP/Coding &amp; Development Statistics
+              </h3>
+              <p class="text-slate-400 text-sm max-w-2xl">
+                Connect LeetCode, Codeforces, AtCoder, CodeChef, GeeksforGeeks,
+                HackerRank, GitHub and GitLab profiles, with live LeetCode,
+                Codeforces and GitHub API statistics.
+              </p>
+            </div>
+          </div>
+          <div
+            class="grid sm:grid-cols-[110px_1fr] gap-2 sm:gap-6 py-6 border-b border-slate-800 reveal"
+          >
+            <div class="font-mono text-xs text-blue-400 pt-1">SEARCH</div>
+            <div>
+              <h3 class="font-display font-semibold text-lg mb-1">
+                Search &amp; Filter Functionality
+              </h3>
+              <p class="text-slate-400 text-sm max-w-2xl">
+                Smart, responsive search by name, role, domain or tag, with
+                advanced filters for Trending, CP, Devs, Experience and
+                Professionals.
+              </p>
+            </div>
+          </div>
+          <div
+            class="grid sm:grid-cols-[110px_1fr] gap-2 sm:gap-6 py-6 border-b border-slate-800 reveal"
+          >
+            <div class="font-mono text-xs text-blue-400 pt-1">MESSAGING</div>
+            <div>
+              <h3 class="font-display font-semibold text-lg mb-1">
+                Real-Time Messaging
+              </h3>
+              <p class="text-slate-400 text-sm max-w-2xl">
+                Instant one-to-one text and image messaging with Socket.IO,
+                online-user detection, responsive UI, optimistic updates and
+                smooth animations.
+              </p>
+            </div>
+          </div>
+          <div
+            class="grid sm:grid-cols-[110px_1fr] gap-2 sm:gap-6 py-6 border-b border-slate-800 reveal"
+          >
+            <div class="font-mono text-xs text-blue-400 pt-1">SOCIAL</div>
+            <div>
+              <h3 class="font-display font-semibold text-lg mb-1">
+                Connection System
+              </h3>
+              <p class="text-slate-400 text-sm max-w-2xl">
+                Follow, unfollow, connect, disconnect and message users with
+                real-time communication, connection-status tracking and
+                notifications.
+              </p>
+            </div>
+          </div>
+          <div
+            class="grid sm:grid-cols-[110px_1fr] gap-2 sm:gap-6 py-6 border-b border-slate-800 reveal"
+          >
+            <div class="font-mono text-xs text-blue-400 pt-1">RANKING</div>
+            <div>
+              <h3 class="font-display font-semibold text-lg mb-1">
+                Category-Based Rankings
+              </h3>
+              <p class="text-slate-400 text-sm max-w-2xl">
+                Live leaderboards for Competitive Programmers, Developers,
+                Rankers, Contributors and All-Rounders, updated every 24 hours
+                with MongoDB-backed caching for faster, scalable and reliable
+                performance.
+              </p>
+            </div>
+          </div>
+          <div
+            class="grid sm:grid-cols-[110px_1fr] gap-2 sm:gap-6 py-6 border-b border-slate-800 reveal"
+          >
+            <div class="font-mono text-xs text-blue-400 pt-1">POSTS</div>
+            <div>
+              <h3 class="font-display font-semibold text-lg mb-1">
+                Posts &amp; Engagement
+              </h3>
+              <p class="text-slate-400 text-sm max-w-2xl">
+                Create, edit and delete image posts, manage comments, like or
+                unlike posts, and experience fast interactions through
+                optimistic UI updates.
+              </p>
+            </div>
+          </div>
+          <div
+            class="grid sm:grid-cols-[110px_1fr] gap-2 sm:gap-6 py-6 border-b border-slate-800 reveal"
+          >
+            <div class="font-mono text-xs text-blue-400 pt-1">NOTIFY</div>
+            <div>
+              <h3 class="font-display font-semibold text-lg mb-1">
+                Notification System
+              </h3>
+              <p class="text-slate-400 text-sm max-w-2xl">
+                Notifications for follows, unfollows, likes and connection
+                requests, including accept/reject responses, with robust
+                management and automatic expiry.
+              </p>
+            </div>
+          </div>
+          <div
+            class="grid sm:grid-cols-[110px_1fr] gap-2 sm:gap-6 py-6 border-b border-slate-800 reveal"
+          >
+            <div class="font-mono text-xs text-blue-400 pt-1">APIs</div>
+            <div>
+              <h3 class="font-display font-semibold text-lg mb-1">
+                REST API Infrastructure
+              </h3>
+              <p class="text-slate-400 text-sm max-w-2xl">
+                Modular REST APIs across 9 modules and 45+ endpoints covering
+                authentication, profiles, messaging, rankings, posts,
+                connections, notifications, coding statistics and development
+                statistics, with layered security, validation, error handling
+                and Postman testing.
+              </p>
+            </div>
+          </div>
+          <div
+            class="grid sm:grid-cols-[110px_1fr] gap-2 sm:gap-6 py-6 border-b border-slate-800 reveal"
+          >
+            <div class="font-mono text-xs text-blue-400 pt-1">CACHE</div>
+            <div>
+              <h3 class="font-display font-semibold text-lg mb-1">
+                Intelligent Caching &amp; Optimization
+              </h3>
+              <p class="text-slate-400 text-sm max-w-2xl">
+                MongoDB-backed TTL caching for LeetCode, Codeforces, GitHub and
+                ranking data, reducing API requests, improving response times,
+                handling rate limits and providing stale-cache fallbacks.
+              </p>
+            </div>
+          </div>
+          <div
+            class="grid sm:grid-cols-[110px_1fr] gap-2 sm:gap-6 py-6 border-b border-slate-800 reveal"
+          >
+            <div class="font-mono text-xs text-blue-400 pt-1">ARCHITECTURE</div>
+            <div>
+              <h3 class="font-display font-semibold text-lg mb-1">
+                MERN &amp; MVC Architecture
+              </h3>
+              <p class="text-slate-400 text-sm max-w-2xl">
+                Scalable MERN and MVC architecture with layered backend
+                services, component-based React frontend, REST and GraphQL APIs,
+                real-time communication, cloud media storage, environment
+                configuration, validation, centralized errors and
+                production-grade security.
+              </p>
+            </div>
+          </div>
+          <div
+            class="grid sm:grid-cols-[110px_1fr] gap-2 sm:gap-6 py-6 border-b border-slate-800 reveal"
+          >
+            <div class="font-mono text-xs text-blue-400 pt-1">3D</div>
+            <div>
+              <h3 class="font-display font-semibold text-lg mb-1">
+                Interactive 3D Experience
+              </h3>
+              <p class="text-slate-400 text-sm max-w-2xl">
+                Immersive Three.js CodeElevate models with multiple camera
+                views, fluid animations, styling variations and intuitive
+                real-time rotation controls.
+              </p>
+            </div>
+          </div>
+          <div
+            class="grid sm:grid-cols-[110px_1fr] gap-2 sm:gap-6 py-6 border-b border-slate-800 reveal"
+          >
+            <div class="font-mono text-xs text-blue-400 pt-1">MOTION</div>
+            <div>
+              <h3 class="font-display font-semibold text-lg mb-1">
+                Animations & Transitions
+              </h3>
+              <p class="text-slate-400 text-sm max-w-2xl">
+                Smooth Framer Motion animations and transitions across pages and
+                components for a more interactive and engaging user experience.
+              </p>
+            </div>
+          </div>
+          <div
+            class="grid sm:grid-cols-[110px_1fr] gap-2 sm:gap-6 py-6 border-b border-slate-800 reveal"
+          >
+            <div class="font-mono text-xs text-blue-400 pt-1">RESPONSIVE</div>
+            <div>
+              <h3 class="font-display font-semibold text-lg mb-1">
+                Responsive UI/UX
+              </h3>
+              <p class="text-slate-400 text-sm max-w-2xl">
+                Modern mobile-first interface built with React, Tailwind CSS and
+                Framer Motion, delivering responsive, accessible and visually
+                rich experiences across screen sizes.
+              </p>
+            </div>
+          </div>
+          <div
+            class="grid sm:grid-cols-[110px_1fr] gap-2 sm:gap-6 py-6 border-b border-slate-800 reveal"
+          >
+            <div class="font-mono text-xs text-blue-400 pt-1">SEO</div>
+            <div>
+              <h3 class="font-display font-semibold text-lg mb-1">
+                Production-grade SEO, Optimization &amp; Performance
+              </h3>
+              <p class="text-slate-400 text-sm max-w-2xl">
+                Production-grade SEO with Search Console, Bing Webmaster Tools,
+                GA4, structured data, Open Graph, Twitter Cards, canonical URLs,
+                sitemap, robots.txt, manifest/PWA configuration,
+                preconnect/prefetch and Lighthouse validation, achieving #1
+                Google visibility and scores of 98 Performance, 96
+                Accessibility, 100 Best Practices and 100 SEO.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Stack -->
+      <section id="stack" class="max-w-6xl mx-auto px-6 py-24">
+        <div class="max-w-xl mb-14 reveal">
+          <h2 class="font-display font-semibold text-3xl mb-3">Stack</h2>
+          <h4 class="font-display font-semibold text-xl mb-3">
+            Technologies Used / Tech Stack.
+          </h4>
+          <p class="text-slate-400">
+            Every technology used across the frontend, backend, database,
+            security, architecture, SEO, tooling and deployment layers.
+          </p>
+        </div>
+
+        <div
+          class="grid md:grid-cols-3 gap-px bg-slate-800/60 border border-slate-800/60 rounded-2xl overflow-hidden reveal"
+        >
+          <div class="bg-slate-950 p-6">
+            <h4 class="font-mono text-xs text-blue-300 mb-3">Frontend</h4>
+            <div class="flex flex-wrap gap-1.5">
+              <span class="chip">React.js</span><span class="chip">Vite</span
+              ><span class="chip">Tailwind CSS</span
+              ><span class="chip">Socket.io Client</span
+              ><span class="chip">Framer Motion</span
+              ><span class="chip">Optimistic UI Updates</span
+              ><span class="chip">Axios</span
+              ><span class="chip">React Router DOM</span
+              ><span class="chip">React Context API</span
+              ><span class="chip">Three.js</span
+              ><span class="chip">3D Rendering</span
+              ><span class="chip">3D Interactions</span
+              ><span class="chip">React Hot Toast</span
+              ><span class="chip">React Slick</span
+              ><span class="chip">Slick Carousel</span
+              ><span class="chip">3D Animations</span
+              ><span class="chip">Smooth UI Transitions</span
+              ><span class="chip">Interactive 3D Logo</span
+              ><span class="chip">SEO Optimization</span
+              ><span class="chip">Fully Responsive UI/UX</span
+              ><span class="chip">JavaScript</span><span class="chip">CSS3</span
+              ><span class="chip">HTML5</span
+              ><span class="chip">Lucide React</span
+              ><span class="chip">React Icons</span
+              ><span class="chip">FontAwesome</span
+              ><span class="chip">Google Fonts</span>
+            </div>
+          </div>
+
+          <div class="bg-slate-950 p-6">
+            <h4 class="font-mono text-xs text-blue-300 mb-3">Backend</h4>
+            <div class="flex flex-wrap gap-1.5">
+              <span class="chip">Node.js</span
+              ><span class="chip">Express.js</span
+              ><span class="chip">MongoDB</span
+              ><span class="chip">Mongoose</span
+              ><span class="chip">Socket.io</span
+              ><span class="chip">RESTful APIs</span
+              ><span class="chip">MVC Architecture</span
+              ><span class="chip">RESTful web-service</span
+              ><span class="chip">Performance Optimization</span
+              ><span class="chip">Passport.js</span
+              ><span class="chip">Passport-Local</span
+              ><span class="chip">Cloudinary</span
+              ><span class="chip">Multer</span
+              ><span class="chip">Multer-Storage-Cloudinary</span
+              ><span class="chip">GraphQL</span><span class="chip">Joi</span
+              ><span class="chip">CORS</span><span class="chip">Axios</span>
+            </div>
+          </div>
+
+          <div class="bg-slate-950 p-6">
+            <h4 class="font-mono text-xs text-blue-300 mb-3">
+              Database &amp; Storage
+            </h4>
+            <div class="flex flex-wrap gap-1.5">
+              <span class="chip">MongoDB Atlas</span
+              ><span class="chip">Mongoose ODM</span
+              ><span class="chip">Cloudinary (media storage)</span>
+            </div>
+          </div>
+
+          <div class="bg-slate-950 p-6">
+            <h4 class="font-mono text-xs text-blue-300 mb-3">
+              Authentication &amp; Security
+            </h4>
+            <div class="flex flex-wrap gap-1.5">
+              <span class="chip">Passport.js</span
+              ><span class="chip">Passport-Local Strategy</span
+              ><span class="chip">Connect-Mongo</span
+              ><span class="chip">JWT</span><span class="chip">bcrypt.js</span
+              ><span class="chip">Express-Session</span
+              ><span class="chip">Cookie-Parser</span
+              ><span class="chip">Body-Parser</span
+              ><span class="chip">Speakeasy (2FA)</span
+              ><span class="chip">QRCode (2FA)</span
+              ><span class="chip">Joi Validations</span>
+            </div>
+          </div>
+
+          <div class="bg-slate-950 p-6">
+            <h4 class="font-mono text-xs text-blue-300 mb-3">
+              Architecture &amp; Design
+            </h4>
+            <div class="flex flex-wrap gap-1.5">
+              <span class="chip">MERN Stack Architecture</span
+              ><span class="chip">MVC Design Pattern</span
+              ><span class="chip">RESTful API Structure</span
+              ><span class="chip">SessionContext (Global State)</span
+              ><span class="chip">Real-time Comms via Socket.io</span
+              ><span class="chip">Modular &amp; Scalable Codebase</span
+              ><span class="chip">dotenv Configuration</span
+              ><span class="chip">Optimized Folder Structure</span
+              ><span class="chip">Component-Based Frontend</span
+              ><span class="chip">Incremental State Updates</span>
+            </div>
+          </div>
+
+          <div class="bg-slate-950 p-6">
+            <h4 class="font-mono text-xs text-blue-300 mb-3">
+              APIs Integrated
+            </h4>
+            <div class="flex flex-wrap gap-1.5">
+              <span class="chip">Custom REST APIs (CodeElevate)</span
+              ><span class="chip">LeetCode GraphQL API</span
+              ><span class="chip">Codeforces REST API</span
+              ><span class="chip">GitHub REST API</span>
+            </div>
+          </div>
+
+          <div class="bg-slate-950 p-6">
+            <h4 class="font-mono text-xs text-blue-300 mb-3">
+              SEO &amp; Website Optimization
+            </h4>
+            <div class="flex flex-wrap gap-1.5">
+              <span class="chip">Google Search Console</span
+              ><span class="chip">SEO-friendly Meta Tags</span
+              ><span class="chip">Open Graph Tags</span
+              ><span class="chip">Twitter Card Tags</span
+              ><span class="chip">Schema.org JSON-LD</span
+              ><span class="chip">Robots.txt</span
+              ><span class="chip">Sitemap.xml</span
+              ><span class="chip">Manifest.json</span
+              ><span class="chip">Mobile Viewport Meta Tag</span
+              ><span class="chip">Apple Touch Config (PWA)</span
+              ><span class="chip">Theme Colour for Browser UI</span
+              ><span class="chip">Fast Build via Vite</span
+              ><span class="chip">Preconnect &amp; Prefetch</span
+              ><span class="chip">HTTPS-secured URLs</span>
+            </div>
+          </div>
+
+          <div class="bg-slate-950 p-6">
+            <h4 class="font-mono text-xs text-blue-300 mb-3">
+              Development Tools &amp; Libraries
+            </h4>
+            <div class="flex flex-wrap gap-1.5">
+              <span class="chip">Nodemon</span
+              ><span class="chip">Vite Build</span
+              ><span class="chip">dotenv</span><span class="chip">Postman</span
+              ><span class="chip">Hoppscotch</span
+              ><span class="chip">Thunder Client</span
+              ><span class="chip">VS Code</span><span class="chip">Git</span
+              ><span class="chip">GitHub</span
+              ><span class="chip">Bing Webmaster Tools</span
+              ><span class="chip">Google Analytics 4</span
+              ><span class="chip">Canva</span>
+            </div>
+          </div>
+
+          <div class="bg-slate-950 p-6">
+            <h4 class="font-mono text-xs text-blue-300 mb-3">
+              Deployment &amp; Hosting
+            </h4>
+            <div class="flex flex-wrap gap-1.5">
+              <span class="chip">Vercel (Frontend)</span
+              ><span class="chip">Render (Backend)</span
+              ><span class="chip">MongoDB Atlas (Database)</span
+              ><span class="chip">Cloudinary (Storage)</span
+              ><span class="chip">GitHub Pages (Portal)</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Architecture -->
+      <section id="diagrams" class="max-w-6xl mx-auto px-6 py-24">
+        <div class="max-w-xl mb-10 reveal">
+          <h2 class="font-display font-semibold text-3xl mb-3">Architecture</h2>
+          <h4 class="font-display font-semibold text-xl mb-3">
+            Architecture, database &amp; feature flows.
+          </h4>
+          <p class="text-slate-400">
+            Every core system is diagrammed end to end.
+          </p>
+        </div>
+
+        <div class="tabbar flex flex-wrap border-b border-slate-800 mb-6">
+          <button class="tab active" data-tab="arch">Architecture</button>
+          <button class="tab" data-tab="flows">Feature Flows</button>
+          <button class="tab" data-tab="works">Work Flows</button>
+        </div>
+
+        <div class="tabpanel active" data-panel="arch">
+          <div class="grid md:grid-cols-2 gap-5">
+            <figure
+              class="rounded-xl border border-slate-800 overflow-hidden bg-slate-950 reveal"
+            >
+              <div class="diagram-box">
+                <img
+                  src="./docs/codeElevateArchitecture.png"
+                  alt="CodeElevate system architecture diagram"
+                  loading="lazy"
+                />
+              </div>
+              <figcaption
+                class="px-4 py-3 text-xs font-mono text-center text-slate-500 border-t border-slate-800"
+              >
+                System Architecture Design
+              </figcaption>
+            </figure>
+            <figure
+              class="rounded-xl border border-slate-800 overflow-hidden bg-slate-950 reveal reveal-delay-1"
+            >
+              <div class="diagram-box">
+                <img
+                  src="./docs/mongodbDatabaseStructure.png"
+                  alt="CodeElevate MongoDB database structure diagram"
+                  loading="lazy"
+                />
+              </div>
+              <figcaption
+                class="px-4 py-3 text-xs font-mono text-center text-slate-500 border-t border-slate-800"
+              >
+                Database Structure Design
+              </figcaption>
+            </figure>
+          </div>
+        </div>
+
+        <div class="tabpanel" data-panel="flows">
+          <div class="grid md:grid-cols-2 gap-5">
+            <figure
+              class="rounded-xl border border-slate-800 overflow-hidden bg-slate-950 reveal"
+            >
+              <div class="diagram-box">
+                <img
+                  src="./diagrams/authenticationDiagram.png"
+                  alt="Two-factor authentication flow"
+                  loading="lazy"
+                />
+              </div>
+              <figcaption
+                class="px-4 py-3 text-xs font-mono text-center text-slate-500 border-t border-slate-800"
+              >
+                Two Factor Authentication
+              </figcaption>
+            </figure>
+            <figure
+              class="rounded-xl border border-slate-800 overflow-hidden bg-slate-950 reveal"
+            >
+              <div class="diagram-box">
+                <img
+                  src="./diagrams/authorizationDiagram.png"
+                  alt="Two-factor authorization flow"
+                  loading="lazy"
+                />
+              </div>
+              <figcaption
+                class="px-4 py-3 text-xs font-mono text-center text-slate-500 border-t border-slate-800"
+              >
+                Two Factor Authorization
+              </figcaption>
+            </figure>
+            <figure
+              class="rounded-xl border border-slate-800 overflow-hidden bg-slate-950 reveal"
+            >
+              <div class="diagram-box">
+                <img
+                  src="./diagrams/profileSystemDiagram.png"
+                  alt="Profile management system flow"
+                  loading="lazy"
+                />
+              </div>
+              <figcaption
+                class="px-4 py-3 text-xs font-mono text-center text-slate-500 border-t border-slate-800"
+              >
+                Profile Management System
+              </figcaption>
+            </figure>
+            <figure
+              class="rounded-xl border border-slate-800 overflow-hidden bg-slate-950 reveal"
+            >
+              <div class="diagram-box">
+                <img
+                  src="./diagrams/rankingSystemDiagram.png"
+                  alt="Ranking system flow"
+                  loading="lazy"
+                />
+              </div>
+              <figcaption
+                class="px-4 py-3 text-xs font-mono text-center text-slate-500 border-t border-slate-800"
+              >
+                Ranking System
+              </figcaption>
+            </figure>
+            <figure
+              class="rounded-xl border border-slate-800 overflow-hidden bg-slate-950 reveal"
+            >
+              <div class="diagram-box">
+                <img
+                  src="./diagrams/messagingSystemDiagram.png"
+                  alt="Real-time messaging system flow"
+                  loading="lazy"
+                />
+              </div>
+              <figcaption
+                class="px-4 py-3 text-xs font-mono text-center text-slate-500 border-t border-slate-800"
+              >
+                Real-time Messaging System
+              </figcaption>
+            </figure>
+            <figure
+              class="rounded-xl border border-slate-800 overflow-hidden bg-slate-950 reveal"
+            >
+              <div class="diagram-box">
+                <img
+                  src="./diagrams/postSystemDiagram.png"
+                  alt="Post management and engagement flow"
+                  loading="lazy"
+                />
+              </div>
+              <figcaption
+                class="px-4 py-3 text-xs font-mono text-center text-slate-500 border-t border-slate-800"
+              >
+                Post Management &amp; Engagement System
+              </figcaption>
+            </figure>
+            <figure
+              class="rounded-xl border border-slate-800 overflow-hidden bg-slate-950 reveal"
+            >
+              <div class="diagram-box">
+                <img
+                  src="./diagrams/connectionSystemDiagram.png"
+                  alt="Connection system flow"
+                  loading="lazy"
+                />
+              </div>
+              <figcaption
+                class="px-4 py-3 text-xs font-mono text-center text-slate-500 border-t border-slate-800"
+              >
+                Connection System
+              </figcaption>
+            </figure>
+            <figure
+              class="rounded-xl border border-slate-800 overflow-hidden bg-slate-950 reveal"
+            >
+              <div class="diagram-box">
+                <img
+                  src="./diagrams/notificationSystemDiagram.png"
+                  alt="Notification system flow"
+                  loading="lazy"
+                />
+              </div>
+              <figcaption
+                class="px-4 py-3 text-xs font-mono text-center text-slate-500 border-t border-slate-800"
+              >
+                Notification System
+              </figcaption>
+            </figure>
+            <figure
+              class="rounded-xl border border-slate-800 overflow-hidden bg-slate-950 reveal"
+            >
+              <div class="diagram-box">
+                <img
+                  src="./diagrams/cpStatsSystemDiagram.png"
+                  alt="Competitive programming stats system flow"
+                  loading="lazy"
+                />
+              </div>
+              <figcaption
+                class="px-4 py-3 text-xs font-mono text-center text-slate-500 border-t border-slate-800"
+              >
+                Competitive Programming and Coding Statistics System
+              </figcaption>
+            </figure>
+            <figure
+              class="rounded-xl border border-slate-800 overflow-hidden bg-slate-950 reveal"
+            >
+              <div class="diagram-box">
+                <img
+                  src="./diagrams/devsStatsSystemDiagram.png"
+                  alt="Development stats system flow"
+                  loading="lazy"
+                />
+              </div>
+              <figcaption
+                class="px-4 py-3 text-xs font-mono text-center text-slate-500 border-t border-slate-800"
+              >
+                Development Statistics System
+              </figcaption>
+            </figure>
+          </div>
+        </div>
+
+        <div class="tabpanel" data-panel="works">
+          <div class="grid md:grid-cols-2 gap-5">
+            <figure
+              class="rounded-xl border border-slate-800 overflow-hidden bg-slate-950 reveal"
+            >
+              <div class="diagram-box">
+                <img
+                  src="./about/authentication.png"
+                  alt="Two Factor Authentication using TOTP & QR Code Enrollment"
+                  loading="lazy"
+                />
+              </div>
+              <figcaption
+                class="px-4 py-3 text-xs font-mono text-center text-slate-500 border-t border-slate-800"
+              >
+                Two Factor Authentication using TOTP & QR Code Enrollment
+              </figcaption>
+            </figure>
+            <figure
+              class="rounded-xl border border-slate-800 overflow-hidden bg-slate-950 reveal"
+            >
+              <div class="diagram-box">
+                <img
+                  src="./about/accessibility.png"
+                  alt="User Centric UI Design & Multi-functionality"
+                  loading="lazy"
+                />
+              </div>
+              <figcaption
+                class="px-4 py-3 text-xs font-mono text-center text-slate-500 border-t border-slate-800"
+              >
+                User Centric UI Design & Multi-functionality
+              </figcaption>
+            </figure>
+            <figure
+              class="rounded-xl border border-slate-800 overflow-hidden bg-slate-950 reveal"
+            >
+              <div class="diagram-box">
+                <img
+                  src="./about/searchFunctionality.png"
+                  alt="Search and Filter Search Functionality"
+                  loading="lazy"
+                />
+              </div>
+              <figcaption
+                class="px-4 py-3 text-xs font-mono text-center text-slate-500 border-t border-slate-800"
+              >
+                Search and Filter Search Functionality
+              </figcaption>
+            </figure>
+            <figure
+              class="rounded-xl border border-slate-800 overflow-hidden bg-slate-950 reveal"
+            >
+              <div class="diagram-box">
+                <img
+                  src="./about/profileStatsPreview.png"
+                  alt="User Profile Statistics"
+                  loading="lazy"
+                />
+              </div>
+              <figcaption
+                class="px-4 py-3 text-xs font-mono text-center text-slate-500 border-t border-slate-800"
+              >
+                User Profile Statistics
+              </figcaption>
+            </figure>
+            <figure
+              class="rounded-xl border border-slate-800 overflow-hidden bg-slate-950 reveal"
+            >
+              <div class="diagram-box">
+                <img
+                  src="./about/profilePreview.png"
+                  alt="User Profile"
+                  loading="lazy"
+                />
+              </div>
+              <figcaption
+                class="px-4 py-3 text-xs font-mono text-center text-slate-500 border-t border-slate-800"
+              >
+                User Profile
+              </figcaption>
+            </figure>
+            <figure
+              class="rounded-xl border border-slate-800 overflow-hidden bg-slate-950 reveal"
+            >
+              <div class="diagram-box">
+                <img
+                  src="./about/profileOptions.png"
+                  alt="User Profile Options"
+                  loading="lazy"
+                />
+              </div>
+              <figcaption
+                class="px-4 py-3 text-xs font-mono text-center text-slate-500 border-t border-slate-800"
+              >
+                User Profile Options
+              </figcaption>
+            </figure>
+            <figure
+              class="rounded-xl border border-slate-800 overflow-hidden bg-slate-950 reveal"
+            >
+              <div class="diagram-box">
+                <img
+                  src="./about/postFeature.png"
+                  alt="Post Feature"
+                  loading="lazy"
+                />
+              </div>
+              <figcaption
+                class="px-4 py-3 text-xs font-mono text-center text-slate-500 border-t border-slate-800"
+              >
+                Post Feature
+              </figcaption>
+            </figure>
+            <figure
+              class="rounded-xl border border-slate-800 overflow-hidden bg-slate-950 reveal"
+            >
+              <div class="diagram-box">
+                <img
+                  src="./about/postOptions.png"
+                  alt="Post Options"
+                  loading="lazy"
+                />
+              </div>
+              <figcaption
+                class="px-4 py-3 text-xs font-mono text-center text-slate-500 border-t border-slate-800"
+              >
+                Post Options
+              </figcaption>
+            </figure>
+            <figure
+              class="rounded-xl border border-slate-800 overflow-hidden bg-slate-950 reveal"
+            >
+              <div class="diagram-box">
+                <img
+                  src="./about/connectionProcess.png"
+                  alt="Connection System and Connection Process"
+                  loading="lazy"
+                />
+              </div>
+              <figcaption
+                class="px-4 py-3 text-xs font-mono text-center text-slate-500 border-t border-slate-800"
+              >
+                Connection System and Connection Process
+              </figcaption>
+            </figure>
+            <figure
+              class="rounded-xl border border-slate-800 overflow-hidden bg-slate-950 reveal"
+            >
+              <div class="diagram-box">
+                <img
+                  src="./about/messagingSystem.png"
+                  alt="Messaging System"
+                  loading="lazy"
+                />
+              </div>
+              <figcaption
+                class="px-4 py-3 text-xs font-mono text-center text-slate-500 border-t border-slate-800"
+              >
+                Messaging System
+              </figcaption>
+            </figure>
+            <figure
+              class="rounded-xl border border-slate-800 overflow-hidden bg-slate-950 reveal"
+            >
+              <div class="diagram-box">
+                <img
+                  src="./about/messagingProcess.png"
+                  alt="Messaging Process"
+                  loading="lazy"
+                />
+              </div>
+              <figcaption
+                class="px-4 py-3 text-xs font-mono text-center text-slate-500 border-t border-slate-800"
+              >
+                Messaging Process
+              </figcaption>
+            </figure>
+            <figure
+              class="rounded-xl border border-slate-800 overflow-hidden bg-slate-950 reveal"
+            >
+              <div class="diagram-box">
+                <img
+                  src="./about/messagingSystemResponsiveness.png"
+                  alt="Messaging System Responsiveness"
+                  loading="lazy"
+                />
+              </div>
+              <figcaption
+                class="px-4 py-3 text-xs font-mono text-center text-slate-500 border-t border-slate-800"
+              >
+                Messaging System Responsiveness
+              </figcaption>
+            </figure>
+            <figure
+              class="rounded-xl border border-slate-800 overflow-hidden bg-slate-950 reveal"
+            >
+              <div class="diagram-box">
+                <img
+                  src="./about/rankingFilters.png"
+                  alt="Ranking Categories"
+                  loading="lazy"
+                />
+              </div>
+              <figcaption
+                class="px-4 py-3 text-xs font-mono text-center text-slate-500 border-t border-slate-800"
+              >
+                Ranking Categories
+              </figcaption>
+            </figure>
+            <figure
+              class="rounded-xl border border-slate-800 overflow-hidden bg-slate-950 reveal"
+            >
+              <div class="diagram-box">
+                <img
+                  src="./about/rankingSystem.png"
+                  alt="Ranking System"
+                  loading="lazy"
+                />
+              </div>
+              <figcaption
+                class="px-4 py-3 text-xs font-mono text-center text-slate-500 border-t border-slate-800"
+              >
+                Ranking System
+              </figcaption>
+            </figure>
+            <figure
+              class="rounded-xl border border-slate-800 overflow-hidden bg-slate-950 reveal"
+            >
+              <div class="diagram-box">
+                <img
+                  src="./about/notificationSystem.png"
+                  alt="Notification System"
+                  loading="lazy"
+                />
+              </div>
+              <figcaption
+                class="px-4 py-3 text-xs font-mono text-center text-slate-500 border-t border-slate-800"
+              >
+                Notification System
+              </figcaption>
+            </figure>
+            <figure
+              class="rounded-xl border border-slate-800 overflow-hidden bg-slate-950 reveal"
+            >
+              <div class="diagram-box">
+                <img
+                  src="./about/statsSystem.png"
+                  alt="Stats Feature"
+                  loading="lazy"
+                />
+              </div>
+              <figcaption
+                class="px-4 py-3 text-xs font-mono text-center text-slate-500 border-t border-slate-800"
+              >
+                Stats Feature
+              </figcaption>
+            </figure>
+            <figure
+              class="rounded-xl border border-slate-800 overflow-hidden bg-slate-950 reveal"
+            >
+              <div class="diagram-box">
+                <img
+                  src="./about/custom3DSilverLogo.png"
+                  alt="Custom 3D Logo View 1"
+                  loading="lazy"
+                />
+              </div>
+              <figcaption
+                class="px-4 py-3 text-xs font-mono text-center text-slate-500 border-t border-slate-800"
+              >
+                Custom 3D Logo
+              </figcaption>
+            </figure>
+            <figure
+              class="rounded-xl border border-slate-800 overflow-hidden bg-slate-950 reveal"
+            >
+              <div class="diagram-box">
+                <img
+                  src="./about/custom3DGoldLogo.png"
+                  alt="Custom 3D Logo View 2"
+                  loading="lazy"
+                />
+              </div>
+              <figcaption
+                class="px-4 py-3 text-xs font-mono text-center text-slate-500 border-t border-slate-800"
+              >
+                Custom 3D Logo
+              </figcaption>
+            </figure>
+            <figure
+              class="md:col-span-2 rounded-xl border border-slate-800 overflow-hidden bg-slate-950 reveal"
+            >
+              <div class="diagram-box">
+                <img
+                  src="./about/responsiveness.png"
+                  alt="Responsive UI Design"
+                  loading="lazy"
+                />
+              </div>
+              <figcaption
+                class="px-4 py-3 text-xs font-mono text-center text-slate-500 border-t border-slate-800"
+              >
+                Responsive UI Design
+              </figcaption>
+            </figure>
+          </div>
+        </div>
+      </section>
+
+      <!-- Performance -->
+      <section id="quality" class="max-w-6xl mx-auto px-6 py-24">
+        <div class="max-w-xl mb-10 reveal">
+          <h2 class="font-display font-semibold text-3xl mb-3">Performance</h2>
+          <h4 class="font-display font-semibold text-xl mb-3">
+            SEO visibility &amp; live-measured performance.
+          </h4>
+          <p class="text-slate-400">
+            Audited with Lighthouse on the live deployment, and indexed through
+            Google Search Console, Bing Webmaster Tools and Google Analytics 4
+            (GA4).
+          </p>
+        </div>
+
+        <div
+          class="grid grid-cols-2 md:grid-cols-4 gap-px bg-slate-800/60 border border-slate-800/60 rounded-2xl overflow-hidden mb-6 reveal"
+        >
+          <div class="bg-slate-950 p-6 text-center">
+            <div
+              class="font-mono text-3xl font-semibold text-blue-400"
+              data-count="98"
+            >
+              0
+            </div>
+            <div class="text-xs text-slate-500 mt-1">Performance: 98/100</div>
+          </div>
+          <div class="bg-slate-950 p-6 text-center">
+            <div
+              class="font-mono text-3xl font-semibold text-blue-400"
+              data-count="96"
+            >
+              0
+            </div>
+            <div class="text-xs text-slate-500 mt-1">Accessibility: 96/100</div>
+          </div>
+          <div class="bg-slate-950 p-6 text-center">
+            <div
+              class="font-mono text-3xl font-semibold text-blue-400"
+              data-count="100"
+            >
+              0
+            </div>
+            <div class="text-xs text-slate-500 mt-1">
+              Best Practices: 100/100
+            </div>
+          </div>
+          <div class="bg-slate-950 p-6 text-center">
+            <div
+              class="font-mono text-3xl font-semibold text-blue-400"
+              data-count="100"
+            >
+              0
+            </div>
+            <div class="text-xs text-slate-500 mt-1">SEO: 100/100</div>
+          </div>
+        </div>
+
+        <div class="flex flex-wrap gap-2.5 mb-10 reveal reveal-delay-1">
+          <span class="vital">FCP <b class="text-slate-200">0.9s</b></span>
+          <span class="vital">LCP <b class="text-slate-200">1.0s</b></span>
+          <span class="vital">TBT <b class="text-slate-200">0ms</b></span>
+          <span class="vital">CLS <b class="text-slate-200">0.005</b></span>
+          <span class="vital"
+            >Speed Index <b class="text-slate-200">0.9s</b></span
+          >
+          <span class="vital"
+            >Search rank <b class="text-slate-200">#1</b></span
+          >
+        </div>
+
+        <div class="tabbar flex flex-wrap border-b border-slate-800 mb-6">
+          <button class="tab active" data-tab="perf">Performance</button>
+          <button class="tab" data-tab="reports">Lighthouse</button>
+          <button class="tab" data-tab="seo">Search &amp; Indexing</button>
+          <button class="tab" data-tab="analytics">Analytics</button>
+        </div>
+
+        <div class="tabpanel active" data-panel="perf">
+          <div class="grid md:grid-cols-2 gap-5">
+            <figure
+              class="rounded-xl border border-slate-800 overflow-hidden bg-slate-950 reveal"
+            >
+              <div class="diagram-box">
+                <img
+                  src="./seo/seoAISearch.png"
+                  alt="AI-verified search visibility"
+                  loading="lazy"
+                />
+              </div>
+              <figcaption
+                class="px-4 py-3 text-xs font-mono text-center text-slate-500 border-t border-slate-800"
+              >
+                Ranked #1 on Google Search with AI-Verified Detailed Information
+                and strong SEO visibility
+              </figcaption>
+            </figure>
+            <figure
+              class="rounded-xl border border-slate-800 overflow-hidden bg-slate-950 reveal"
+            >
+              <div class="diagram-box">
+                <img
+                  src="./seo/seoSearchUpdated.png"
+                  alt="Indexed routes in Google Search"
+                  loading="lazy"
+                />
+              </div>
+              <figcaption
+                class="px-4 py-3 text-xs font-mono text-center text-slate-500 border-t border-slate-800"
+              >
+                Ranked #1 on Google Search with fully indexed routes and strong
+                SEO visibility
+              </figcaption>
+            </figure>
+            <figure
+              class="rounded-xl border border-slate-800 overflow-hidden bg-slate-950 reveal"
+            >
+              <div class="diagram-box" style="height: 22rem">
+                <img
+                  src="./reports/lighthouseAuditSummary.png"
+                  alt="Lighthouse audit summary"
+                  loading="lazy"
+                />
+              </div>
+              <figcaption
+                class="px-4 py-3 text-xs font-mono text-center text-slate-500 border-t border-slate-800"
+              >
+                Lighthouse Audit Summary (Production)
+              </figcaption>
+            </figure>
+            <figure
+              class="rounded-xl border border-slate-800 overflow-hidden bg-slate-950 reveal reveal-delay-1"
+            >
+              <div class="diagram-box" style="height: 22rem">
+                <img
+                  src="./reports/lighthousePerformanceMetrics.png"
+                  alt="Lighthouse Core Web Vitals"
+                  loading="lazy"
+                />
+              </div>
+              <figcaption
+                class="px-4 py-3 text-xs font-mono text-center text-slate-500 border-t border-slate-800"
+              >
+                Lighthouse Performance Metrics (Core Web Vitals)
+              </figcaption>
+            </figure>
+            <figure
+              class="rounded-xl border border-slate-800 overflow-hidden bg-slate-950 reveal"
+            >
+              <div class="diagram-box">
+                <img
+                  src="./seo/seoPerformance1.png"
+                  alt="SEO Google Search Console Performance Report"
+                  loading="lazy"
+                />
+              </div>
+              <figcaption
+                class="px-4 py-3 text-xs font-mono text-center text-slate-500 border-t border-slate-800"
+              >
+                SEO Google Search Console Performance Report
+              </figcaption>
+            </figure>
+            <figure
+              class="rounded-xl border border-slate-800 overflow-hidden bg-slate-950 reveal"
+            >
+              <div class="diagram-box">
+                <img
+                  src="./seo/googleAnalyticsCountry.png"
+                  alt="Google Analytics audience by country"
+                  loading="lazy"
+                />
+              </div>
+              <figcaption
+                class="px-4 py-3 text-xs font-mono text-center text-slate-500 border-t border-slate-800"
+              >
+                Google Analytics - Audience by Country
+              </figcaption>
+            </figure>
+          </div>
+        </div>
+
+        <div class="tabpanel" data-panel="reports">
+          <div class="grid md:grid-cols-2 gap-5">
+            <figure
+              class="rounded-xl border border-slate-800 overflow-hidden bg-slate-950 reveal"
+            >
+              <div class="diagram-box" style="height: 22rem">
+                <img
+                  src="./reports/lighthouseAuditSummary.png"
+                  alt="Lighthouse audit summary"
+                  loading="lazy"
+                />
+              </div>
+              <figcaption
+                class="px-4 py-3 text-xs font-mono text-center text-slate-500 border-t border-slate-800"
+              >
+                Lighthouse Audit Summary (Production)
+              </figcaption>
+            </figure>
+            <figure
+              class="rounded-xl border border-slate-800 overflow-hidden bg-slate-950 reveal reveal-delay-1"
+            >
+              <div class="diagram-box" style="height: 22rem">
+                <img
+                  src="./reports/lighthousePerformanceMetrics.png"
+                  alt="Lighthouse Core Web Vitals"
+                  loading="lazy"
+                />
+              </div>
+              <figcaption
+                class="px-4 py-3 text-xs font-mono text-center text-slate-500 border-t border-slate-800"
+              >
+                Lighthouse Performance Metrics (Core Web Vitals)
+              </figcaption>
+            </figure>
+          </div>
+        </div>
+
+        <div class="tabpanel" data-panel="seo">
+          <div class="grid md:grid-cols-2 gap-5">
+            <figure
+              class="rounded-xl border border-slate-800 overflow-hidden bg-slate-950 reveal"
+            >
+              <div class="diagram-box">
+                <img
+                  src="./seo/seoAISearch.png"
+                  alt="AI-verified search visibility"
+                  loading="lazy"
+                />
+              </div>
+              <figcaption
+                class="px-4 py-3 text-xs font-mono text-center text-slate-500 border-t border-slate-800"
+              >
+                Ranked #1 on Google Search with AI-Verified Detailed Information
+                and strong SEO visibility
+              </figcaption>
+            </figure>
+            <figure
+              class="rounded-xl border border-slate-800 overflow-hidden bg-slate-950 reveal"
+            >
+              <div class="diagram-box">
+                <img
+                  src="./seo/seoSearchUpdated.png"
+                  alt="Indexed routes in Google Search"
+                  loading="lazy"
+                />
+              </div>
+              <figcaption
+                class="px-4 py-3 text-xs font-mono text-center text-slate-500 border-t border-slate-800"
+              >
+                Ranked #1 on Google Search with fully indexed routes and strong
+                SEO visibility
+              </figcaption>
+            </figure>
+            <figure
+              class="rounded-xl border border-slate-800 overflow-hidden bg-slate-950 reveal"
+            >
+              <div class="diagram-box">
+                <img
+                  src="./seo/crawlStats1.png"
+                  alt="SEO Crawl Stats"
+                  loading="lazy"
+                />
+              </div>
+              <figcaption
+                class="px-4 py-3 text-xs font-mono text-center text-slate-500 border-t border-slate-800"
+              >
+                SEO Crawl Stats
+              </figcaption>
+            </figure>
+            <figure
+              class="rounded-xl border border-slate-800 overflow-hidden bg-slate-950 reveal"
+            >
+              <div class="diagram-box">
+                <img
+                  src="./seo/seoPerformance1.png"
+                  alt="SEO Google Search Console Performance Report"
+                  loading="lazy"
+                />
+              </div>
+              <figcaption
+                class="px-4 py-3 text-xs font-mono text-center text-slate-500 border-t border-slate-800"
+              >
+                SEO Google Search Console Performance Report
+              </figcaption>
+            </figure>
+            <figure
+              class="rounded-xl border border-slate-800 overflow-hidden bg-slate-950 reveal"
+            >
+              <div class="diagram-box">
+                <img
+                  src="./seo/indexedPages1.png"
+                  alt="Page Indexing Report"
+                  loading="lazy"
+                />
+              </div>
+              <figcaption
+                class="px-4 py-3 text-xs font-mono text-center text-slate-500 border-t border-slate-800"
+              >
+                Page Indexing Report
+              </figcaption>
+            </figure>
+            <figure
+              class="rounded-xl border border-slate-800 overflow-hidden bg-slate-950 reveal"
+            >
+              <div class="diagram-box">
+                <img
+                  src="./seo/httpsReport.png"
+                  alt="HTTPS Report"
+                  loading="lazy"
+                />
+              </div>
+              <figcaption
+                class="px-4 py-3 text-xs font-mono text-center text-slate-500 border-t border-slate-800"
+              >
+                HTTPS Report
+              </figcaption>
+            </figure>
+            <figure
+              class="rounded-xl border border-slate-800 overflow-hidden bg-slate-950 reveal"
+            >
+              <div class="diagram-box">
+                <img
+                  src="./seo/bingURLInspection.png"
+                  alt="Bing URL Inspection"
+                  loading="lazy"
+                />
+              </div>
+              <figcaption
+                class="px-4 py-3 text-xs font-mono text-center text-slate-500 border-t border-slate-800"
+              >
+                Bing URL Inspection & Site Successfully Indexed on Bing
+              </figcaption>
+            </figure>
+            <figure
+              class="rounded-xl border border-slate-800 overflow-hidden bg-slate-950 reveal"
+            >
+              <div class="diagram-box">
+                <img
+                  src="./seo/bingSitemap.png"
+                  alt="Bing Webmaster Tools SEO & Sitemap Success"
+                  loading="lazy"
+                />
+              </div>
+              <figcaption
+                class="px-4 py-3 text-xs font-mono text-center text-slate-500 border-t border-slate-800"
+              >
+                Bing Webmaster Tools SEO & Bing Sitemap Success
+              </figcaption>
+            </figure>
+            <figure
+              class="rounded-xl border border-slate-800 overflow-hidden bg-slate-950 reveal"
+            >
+              <div class="diagram-box">
+                <img
+                  src="./seo/robotsStats.png"
+                  alt="Google robots.txt Accepted and Successfully Validated"
+                  loading="lazy"
+                />
+              </div>
+              <figcaption
+                class="px-4 py-3 text-xs font-mono text-center text-slate-500 border-t border-slate-800"
+              >
+                Google robots.txt Accepted and Successfully Validated
+              </figcaption>
+            </figure>
+            <figure
+              class="rounded-xl border border-slate-800 overflow-hidden bg-slate-950 reveal"
+            >
+              <div class="diagram-box">
+                <img
+                  src="./seo/seoSitemaps1.png"
+                  alt="Google sitemap.xml Accepted and Successfully Indexed"
+                  loading="lazy"
+                />
+              </div>
+              <figcaption
+                class="px-4 py-3 text-xs font-mono text-center text-slate-500 border-t border-slate-800"
+              >
+                Google sitemap.xml Accepted and Successfully Indexed
+              </figcaption>
+            </figure>
+            <figure
+              class="rounded-xl border border-slate-800 overflow-hidden bg-slate-950 reveal"
+            >
+              <div class="diagram-box">
+                <img
+                  src="./seo/urlInspection.png"
+                  alt="Google Search Console URL Inspection & Site Successfully Indexed on Google"
+                  loading="lazy"
+                />
+              </div>
+              <figcaption
+                class="px-4 py-3 text-xs font-mono text-center text-slate-500 border-t border-slate-800"
+              >
+                Google Search Console URL Inspection & Site Successfully Indexed
+                on Google
+              </figcaption>
+            </figure>
+            <figure
+              class="rounded-xl border border-slate-800 overflow-hidden bg-slate-950 reveal"
+            >
+              <div class="diagram-box">
+                <img
+                  src="./seo/seoStats.png"
+                  alt="Google SEO Achievement Stats"
+                  loading="lazy"
+                />
+              </div>
+              <figcaption
+                class="px-4 py-3 text-xs font-mono text-center text-slate-500 border-t border-slate-800"
+              >
+                Google SEO Achievement Stats
+              </figcaption>
+            </figure>
+          </div>
+        </div>
+
+        <div class="tabpanel" data-panel="analytics">
+          <div class="grid md:grid-cols-2 gap-5">
+            <figure
+              class="rounded-xl border border-slate-800 overflow-hidden bg-slate-950 reveal"
+            >
+              <div class="diagram-box">
+                <img
+                  src="./seo/googleAnalyticsCountry.png"
+                  alt="Google Analytics audience by country"
+                  loading="lazy"
+                />
+              </div>
+              <figcaption
+                class="px-4 py-3 text-xs font-mono text-center text-slate-500 border-t border-slate-800"
+              >
+                Google Analytics - Audience by Country
+              </figcaption>
+            </figure>
+            <figure
+              class="rounded-xl border border-slate-800 overflow-hidden bg-slate-950 reveal"
+            >
+              <div class="diagram-box">
+                <img
+                  src="./seo/googleAnalytics.png"
+                  alt="Google Analytics overview"
+                  loading="lazy"
+                />
+              </div>
+              <figcaption
+                class="px-4 py-3 text-xs font-mono text-center text-slate-500 border-t border-slate-800"
+              >
+                Google Analytics Overview
+              </figcaption>
+            </figure>
+            <figure
+              class="rounded-xl border border-slate-800 overflow-hidden bg-slate-950 reveal"
+            >
+              <div class="diagram-box">
+                <img
+                  src="./seo/googleAnalyticsUsers.png"
+                  alt="Google Analytics user report"
+                  loading="lazy"
+                />
+              </div>
+              <figcaption
+                class="px-4 py-3 text-xs font-mono text-center text-slate-500 border-t border-slate-800"
+              >
+                Analytics User Report
+              </figcaption>
+            </figure>
+            <figure
+              class="rounded-xl border border-slate-800 overflow-hidden bg-slate-950 reveal"
+            >
+              <div class="diagram-box">
+                <img
+                  src="./seo/googleAnalyticsGraph.png"
+                  alt="Google Analytics demographic graph"
+                  loading="lazy"
+                />
+              </div>
+              <figcaption
+                class="px-4 py-3 text-xs font-mono text-center text-slate-500 border-t border-slate-800"
+              >
+                Demographic Details
+              </figcaption>
+            </figure>
+          </div>
+        </div>
+
+        <div class="mt-8 flex flex-wrap gap-3 reveal">
+          <a
+            class="px-5 py-2.5 rounded-lg bg-blue-700 hover:bg-blue-600 text-white text-sm font-semibold transition"
+            href="./reports/lighthouse-report/"
+            target="_blank"
+            rel="noopener noreferrer"
+            >View full Lighthouse report &rarr;</a
+          >
+          <a
+            class="px-5 py-2.5 rounded-lg border border-slate-700 hover:border-blue-500/60 text-sm font-semibold transition"
+            href="./reports/LighthouseReport.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            >Download report (PDF)</a
+          >
+        </div>
+      </section>
+
+      <!-- Install -->
+      <section id="install" class="max-w-6xl mx-auto px-6 py-24">
+        <div class="max-w-xl mb-8 reveal">
+          <h2 class="font-display font-semibold text-3xl mb-3">Install</h2>
+          <h4 class="font-display font-semibold text-xl mb-3">
+            Get CodeElevate running.
+          </h4>
+          <p class="text-slate-400">
+            Backend and frontend run as separate services, each with their own
+            environment file.
+          </p>
+        </div>
+
+        <pre class="code-block reveal">
+git clone https://github.com/OmkarArdekar12/CodeElevate.git
+cd CodeElevate
+        </pre>
+
+        <div class="grid md:grid-cols-2 gap-5 mt-5">
+          <div class="reveal">
+            <h4 class="font-mono text-xs text-blue-400 mb-2">backend/.env</h4>
+            <pre class="code-block">
+NODE_ENV=development
+PORT=8080
+MONGODB_URL=your_mongodb_connection_string
+SESSION_SECRET=your_session_secret_key
+JWT_SECRET=your_jwt_secret_key
+CLOUD_NAME=your_cloudinary_cloud_name
+CLOUD_API_KEY=your_cloudinary_api_key
+CLOUD_API_SECRET=your_cloudinary_api_secret
+BACKEND_URL=http://localhost:8080
+FRONTEND_URL=http://localhost:5173</pre
+            >
+          </div>
+          <div class="reveal reveal-delay-1">
+            <h4 class="font-mono text-xs text-blue-400 mb-2">frontend/.env</h4>
+            <pre class="code-block">VITE_BACKEND_URL=http://localhost:8080</pre>
+            <h4 class="font-mono text-xs text-blue-400 mb-2 mt-5">
+              Run both services
+            </h4>
+            <pre class="code-block">
+cd backend && npm install && npm start
+
+cd frontend && npm install && npm start
+            </pre>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="border-t border-slate-800 py-10">
+      <section id="links" class="max-w-6xl mx-auto px-6 py-24">
+        <div
+          class="grid sm:grid-cols-2 md:grid-cols-3 gap-px bg-slate-800/60 border border-slate-800/60 rounded-2xl overflow-hidden reveal"
+        >
+          <a
+            class="bg-slate-950 hover:bg-slate-900 p-6 transition block"
+            href="https://codeelevate-community.vercel.app"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <div class="font-mono text-xs text-slate-500 mb-2">
+              LIVE WEBSITE/APPLICATION
+            </div>
+            <div class="font-semibold">
+              Open CodeElevate<span class="text-blue-400"> &rarr;</span>
+            </div>
+          </a>
+          <a
+            class="bg-slate-950 hover:bg-slate-900 p-6 transition block"
+            href="https://github.com/OmkarArdekar12/CodeElevate"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <div class="font-mono text-xs text-slate-500 mb-2">SOURCE</div>
+            <div class="font-semibold">
+              GitHub Repository<span class="text-blue-400"> &rarr;</span>
+            </div>
+          </a>
+          <a
+            class="bg-slate-950 hover:bg-slate-900 p-6 transition block"
+            href="https://www.youtube.com/watch?v=4-Udx0xvsO0"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <div class="font-mono text-xs text-slate-500 mb-2">DEMO</div>
+            <div class="font-semibold">
+              Watch On YouTube<span class="text-blue-400"> &rarr;</span>
+            </div>
+          </a>
+          <a
+            class="bg-slate-950 hover:bg-slate-900 p-6 transition block"
+            href="https://github.com/OmkarArdekar12/CodeElevate?tab=readme-ov-file#performance"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <div class="font-mono text-xs text-slate-500 mb-2">PERFORMANCE</div>
+            <div class="font-semibold">
+              Production-Grade Live-Measured Web Performance
+              <span class="text-blue-400"> &rarr;</span>
+            </div>
+          </a>
+          <a
+            class="bg-slate-950 hover:bg-slate-900 p-6 transition block"
+            href="https://github.com/OmkarArdekar12/CodeElevate?tab=readme-ov-file#seo-result"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <div class="font-mono text-xs text-slate-500 mb-2">SEO</div>
+            <div class="font-semibold">
+              Production-Grade SEO & Indexing
+              <span class="text-blue-400"> &rarr;</span>
+            </div>
+          </a>
+          <a
+            class="bg-slate-950 hover:bg-slate-900 p-6 transition block"
+            href="https://www.google.com/search?q=site:codeelevate-community.vercel.app"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <div class="font-mono text-xs text-slate-500 mb-2">SEARCH</div>
+            <div class="font-semibold">
+              Google Search Proof
+              <span class="text-blue-400"> &rarr;</span>
+            </div>
+          </a>
+          <a
+            class="bg-slate-950 hover:bg-slate-900 p-6 transition block"
+            href="https://codeelevate-community.vercel.app/terms"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <div class="font-mono text-xs text-slate-500 mb-2">LEGAL</div>
+            <div class="font-semibold">
+              Terms &amp; Conditions <span class="text-blue-400">&rarr;</span>
+            </div>
+          </a>
+          <a
+            class="bg-slate-950 hover:bg-slate-900 p-6 transition block"
+            href="https://codeelevate-community.vercel.app/privacy-policy"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <div class="font-mono text-xs text-slate-500 mb-2">LEGAL</div>
+            <div class="font-semibold">
+              Privacy Policy <span class="text-blue-400">&rarr;</span>
+            </div>
+          </a>
+          <a
+            class="bg-slate-950 hover:bg-slate-900 p-6 transition block"
+            href="https://github.com/OmkarArdekar12/CodeElevate/blob/main/LICENSE"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <div class="font-mono text-xs text-slate-500 mb-2">LICENSE</div>
+            <div class="font-semibold">
+              MIT LICENSE
+              <span class="text-blue-400"> &rarr;</span>
+            </div>
+          </a>
+          <a
+            class="md:col-span-3 bg-slate-950 hover:bg-slate-900 p-6 transition block md:text-center"
+            href="https://codeelevate-community.vercel.app/about"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <div class="font-mono text-xs text-slate-500 mb-2">ABOUT</div>
+            <div class="font-semibold">
+              About CodeElevate
+              <span class="text-blue-400"> &rarr;</span>
+            </div>
+          </a>
+        </div>
+      </section>
+      <div
+        class="max-w-[90%] mx-auto px-6 flex flex-wrap justify-between items-start gap-6"
+      >
+        <div>
+          <div class="font-display font-semibold text-lg">CodeElevate</div>
+          <div class="text-sm text-slate-500 mt-1">
+            Created, Designed, and Developed by Omkar Ardekar
+          </div>
+        </div>
+        <div class="flex gap-6 text-sm text-slate-400">
+          <a
+            href="https://github.com/OmkarArdekar12"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="hover:text-blue-400"
+            >GitHub</a
+          >
+          <a
+            href="https://www.linkedin.com/in/omkarardekar09"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="hover:text-blue-400"
+            >LinkedIn</a
+          >
+          <a
+            href="https://omkarardekar.vercel.app"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="hover:text-blue-400"
+            >Portfolio</a
+          >
+        </div>
+      </div>
+      <div
+        class="max-w-[90%] mx-auto px-6 mt-8 pt-6 border-t border-slate-800/70 flex flex-wrap justify-between gap-2 text-xs font-mono text-slate-600"
+      >
+        <span>CodeElevate - Elevate Your Coding Journey</span>
+        <span>codeelevate-community.vercel.app</span>
+      </div>
     </footer>
   </body>
 </html>
