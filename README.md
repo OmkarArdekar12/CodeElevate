@@ -341,7 +341,7 @@
       </tr>
       <tr>
         <td>11.</td>
-        <td><b>Intelligent Stats Caching & Performance Optimization</b></td>
+        <td><b>Intelligent Caching System & Performance Optimization</b></td>
         <td>Implemented a MongoDB-backed caching system using Mongoose with automatic TTL expiration for coding statistics (LeetCode & Codeforces), development statistics (GitHub), and category-based ranking system (Ranking statistics). The system minimizes external API requests, improves response performance, handles API rate limits gracefully, supports stale-cache fallback responses, and enhances backend scalability and reliability.</td>
       </tr>
       <tr>
@@ -540,7 +540,7 @@
         <tr>
           <td>&#10148;</td>
           <td>Development Tools & Libraries</td>
-          <td>Nodemon, Vite Build, dotenv, Postman, Hoppscotch, Thunder Client, VS Code, Git, GitHub, Google Search Console, Bing Webmaster Tools, Google Analytics 4 (GA4), Canva (for UI Assets)</td>
+          <td>Nodemon, Vite Build, dotenv, Postman, Hoppscotch, Thunder Client, Visual Studio Code (VS Code), Git, GitHub, Google Search Console, Bing Webmaster Tools, Google Analytics 4 (GA4), Canva (for UI Assets)</td>
         </tr>
         <tr>
           <td>&#10148;</td>
@@ -896,9 +896,9 @@
 │   │   │   └── creator.png
 │   │   ├── 📁 icons
 │   │   │   ├── LogoCodeElevate.png
-│   │   │   └── LogoCodeElevate-share.png
-│   │   │   └── LogoCodeElevate-192.png
-│   │   │   └── LogoCodeElevate-512.png
+│   │   │   ├── LogoCodeElevate-share.png
+│   │   │   ├── LogoCodeElevate-192.png
+│   │   │   ├── LogoCodeElevate-512.png
 │   │   │   └── LogoCodeElevate-logo.png
 │   │   ├── 📁 images
 │   │   │   ├── CodeElevate3DLogo.stl
@@ -953,14 +953,11 @@
 │   │   ├── codeElevateArchitecture.png
 │   │   ├── databaseDesign.drawio
 │   │   ├── mongodbDatabaseStructure.png
+│   │   ├── mongodbDatabaseStructure.svg
 │   │   ├── prevCodeElevateArchitecture.png
-│   │   └── prevMongodbDatabaseStructure.png
-│   ├── 📁 reports
-│   │   ├── 📁 lighthouse-report
-│   │   │   └── index.html
-│   │   ├── lighthouseAuditSummary.png
-│   │   ├── lighthousePerformanceMetrics.png
-│   │   └── LighthouseReport.pdf
+│   │   ├── prevDatabaseDesign.drawio
+│   │   ├── prevMongodbDatabaseStructure.png
+│   │   └── prevPrevMongodbDatabaseStructure.png
 │   ├── 📁 seo
 │   │   ├── bingSitemap.png
 │   │   ├── bingURLInspection.png
@@ -1008,6 +1005,76 @@
 │   │   ├── notificationSystemDiagram.png
 │   │   ├── cpStatsSystemDiagram.png
 │   │   └── devsStatsSystemDiagram.png
+│   ├── 📁 about
+│   │   ├── authentication.png
+│   │   ├── accessibility.png
+│   │   ├── searchFunctionality.png
+│   │   ├── profilePreview.png
+│   │   ├── profileStatsPreview.png
+│   │   ├── profileOptions.png
+│   │   ├── rankingSystem.png
+│   │   ├── rankingFilters.png
+│   │   ├── statsSystem.png
+│   │   ├── postFeature.png
+│   │   ├── postOptions.png
+│   │   ├── messagingSystem.png
+│   │   ├── messagingProcess.png
+│   │   ├── messagingSystemResponsiveness.png
+│   │   ├── connectionProcess.png
+│   │   ├── notificationSystem.png
+│   │   ├── custom3DSilverLogo.png
+│   │   ├── custom3DGoldLogo.png
+│   │   ├── responsiveness.png
+│   │   └── creator.png
+│   ├── 📁 icons
+│   │   ├── LogoCodeElevate.png
+│   │   ├── LogoCodeElevate-share.png
+│   │   ├── LogoCodeElevate-192.png
+│   │   ├── LogoCodeElevate-512.png
+│   │   └── LogoCodeElevate-logo.png
+│   ├── 📁 images
+│   │   ├── CodeElevate3DLogo.stl
+│   │   ├── CodeElevateLogo.png
+│   │   ├── CodeElevateLogo.gif
+│   │   ├── CodeElevateLoader.gif
+│   │   ├── LogoCodeElevate.png
+│   │   ├── CodeElevateText.gif
+│   │   ├── defaultBgBannerImage.png
+│   │   ├── defaultUserImage.png
+│   │   ├── userImage.png
+│   │   ├── bgBannerImage.png
+│   │   ├── rank.png
+│   │   ├── trophy.png
+│   │   ├── computer.png
+│   │   ├── laptop.png
+│   │   ├── laptopTrophy.png
+│   │   ├── CodeforcesLogo.png
+│   │   ├── LeetCodeLogo.png
+│   │   ├── LeetCodeGuardianBadge.png
+│   │   ├── LeetCodeKnightBadge.png
+│   │   ├── logo.gif
+│   │   ├── CodeElevate.gif
+│   │   ├── CodeElevateLogoGIF.gif
+│   │   ├── gifLogo.png
+│   │   ├── logo.png
+│   │   └──CodeElevate.png
+│   ├── 📁 videos
+│   │   └── codeelevateGIF.gif
+│   ├── 📁 node_modules
+│   ├── 📁 reports
+│   │   ├── 📁 lighthouse-report
+│   │   │   └── index.html
+│   │   ├── lighthouseAuditSummary.png
+│   │   ├── lighthousePerformanceMetrics.png
+│   │   └── LighthouseReport.pdf
+│   ├── 📁 css
+│   │   ├── input.css
+│   │   ├── output.css
+│   │   └── portal.css
+│   ├── 📁 js
+│   │   └── portal.js
+│   ├── package-lock.json
+│   ├── package.json
 │   └── index.html
 │
 ├── .gitignore
@@ -1290,7 +1357,7 @@ git push origin feature/your-feature-name
       </tr>
       <tr>
         <td width="45%">
-          <h3 align="center">Page indexing</h3>
+          <h3 align="center">Page Indexing</h3>
           <img src="./backend/src/lib/seo/indexedPages1.png" width="100%">
         </td>
         <td width="45%">
