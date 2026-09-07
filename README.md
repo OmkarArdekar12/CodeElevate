@@ -893,6 +893,7 @@
 │   │   │   ├── custom3DSilverLogo.png
 │   │   │   ├── custom3DGoldLogo.png
 │   │   │   ├── responsiveness.png
+│   │   │   ├── developer.png
 │   │   │   └── creator.png
 │   │   ├── 📁 icons
 │   │   │   ├── LogoCodeElevate.png
@@ -1025,6 +1026,7 @@
 │   │   ├── custom3DSilverLogo.png
 │   │   ├── custom3DGoldLogo.png
 │   │   ├── responsiveness.png
+│   │   ├── developer.png
 │   │   └── creator.png
 │   ├── 📁 icons
 │   │   ├── LogoCodeElevate.png
