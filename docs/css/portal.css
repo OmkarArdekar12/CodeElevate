@@ -313,8 +313,9 @@ footer,
   font-family: "JetBrains Mono", monospace;
   font-size: 0.83rem;
   color: #94a3b8;
-  overflow-x: auto;
-  white-space: pre;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  overflow-x: hidden;
   margin: 0;
 }
 .terminal-line {
@@ -394,4 +395,212 @@ footer,
   border: 1px solid rgba(148, 163, 184, 0.25);
   border-radius: 999px;
   padding: 0.4rem 0.85rem;
+}
+
+.creator-section {
+  max-width: 72rem;
+  margin: 0 auto;
+  padding: 4.5rem 1.5rem;
+}
+.creator-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+.creator-portrait-wrap {
+  position: relative;
+  width: 176px;
+  height: 176px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.75rem;
+}
+.creator-glow {
+  position: absolute;
+  inset: -30px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(59, 130, 246, 0.4), transparent 70%);
+  filter: blur(26px);
+  animation: creator-pulse 4s ease-in-out infinite;
+  z-index: 0;
+}
+@keyframes creator-pulse {
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 0.6;
+  }
+  50% {
+    transform: scale(1.16);
+    opacity: 1;
+  }
+}
+.creator-ring {
+  position: absolute;
+  inset: -9px;
+  border-radius: 50%;
+  padding: 3px;
+  background: conic-gradient(from 0deg, #1d4ed8, #60a5fa, #1e3a8a, #1d4ed8);
+  -webkit-mask: radial-gradient(
+    farthest-side,
+    transparent calc(100% - 3px),
+    #000 calc(100% - 3px)
+  );
+  mask: radial-gradient(
+    farthest-side,
+    transparent calc(100% - 3px),
+    #000 calc(100% - 3px)
+  );
+  animation: spin-ring 6s linear infinite;
+  z-index: 1;
+}
+@keyframes spin-ring {
+  to {
+    transform: rotate(360deg);
+  }
+}
+.creator-photo {
+  position: relative;
+  z-index: 2;
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid #020617;
+  box-shadow: 0 20px 45px -18px rgba(0, 0, 0, 0.7);
+}
+.creator-name {
+  font-family: "Space Grotesk", sans-serif;
+  font-weight: 700;
+  font-size: clamp(1.6rem, 3vw, 2.1rem);
+  background: linear-gradient(90deg, #60a5fa, #93c5fd 45%, #3b82f6);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  margin: 0 0 0.5rem;
+}
+.creator-title {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 0.85rem;
+  letter-spacing: 0.02em;
+  color: #94a3b8;
+  margin: 0 0 2rem;
+}
+.creator-links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.85rem;
+}
+.creator-link {
+  position: relative;
+  overflow: hidden;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.7rem 1.6rem;
+  border-radius: 999px;
+  border: 1px solid rgba(148, 163, 184, 0.25);
+  background: #0f172a;
+  color: #e2e8f0;
+  font-family: "JetBrains Mono", monospace;
+  font-size: 0.82rem;
+  font-weight: 500;
+  text-decoration: none;
+  transition:
+    transform 0.25s ease,
+    border-color 0.25s ease,
+    box-shadow 0.25s ease,
+    color 0.25s ease;
+}
+.creator-link::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    120deg,
+    transparent 30%,
+    rgba(59, 130, 246, 0.35) 50%,
+    transparent 70%
+  );
+  transform: translateX(-120%);
+  transition: transform 0.6s ease;
+}
+.creator-link:hover {
+  transform: translateY(-3px);
+  border-color: rgba(59, 130, 246, 0.6);
+  color: #bfdbfe;
+  box-shadow: 0 12px 30px -14px rgba(59, 130, 246, 0.55);
+}
+.creator-link:hover::before {
+  transform: translateX(120%);
+}
+.creator-link span {
+  position: relative;
+  z-index: 1;
+}
+
+@media (max-width: 640px) {
+  .creator-section {
+    padding: 3rem 1.25rem;
+  }
+  .creator-portrait-wrap {
+    width: 140px;
+    height: 140px;
+    margin-bottom: 1.4rem;
+  }
+  .creator-glow {
+    inset: -22px;
+  }
+  .creator-ring {
+    inset: -7px;
+  }
+  .creator-photo {
+    width: 128px;
+    height: 128px;
+    border-width: 3px;
+  }
+  .creator-name {
+    font-size: 1.4rem;
+    margin-bottom: 0.4rem;
+  }
+  .creator-title {
+    font-size: 0.75rem;
+    margin-bottom: 1.5rem;
+  }
+  .creator-links {
+    flex-direction: column;
+    align-items: stretch;
+    width: 100%;
+    max-width: 260px;
+    gap: 0.65rem;
+  }
+  .creator-link {
+    width: 100%;
+    padding: 0.75rem 1.2rem;
+    font-size: 0.8rem;
+  }
+}
+
+@media (min-width: 641px) and (max-width: 900px) {
+  .creator-portrait-wrap {
+    width: 156px;
+    height: 156px;
+  }
+  .creator-photo {
+    width: 142px;
+    height: 142px;
+  }
+  .creator-name {
+    font-size: 1.8rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .creator-glow,
+  .creator-ring {
+    animation: none;
+  }
 }
