@@ -37,6 +37,7 @@ if (process.env.NODE_ENV !== "production") {
 
 //Express App
 const app = express();
+
 app.set("trust proxy", 1);
 
 //HTTP Server for Socket.IO
@@ -114,6 +115,24 @@ app.use(session(sessionOptions));
 
 app.use(passport.initialize());
 app.use(passport.session());
+
+app.use((req, res, next) => {
+  res.on("finish", () => {
+    if (req.originalUrl.startsWith("/api/auth")) {
+      console.log({
+        route: `${req.method} ${req.originalUrl}`,
+        NODE_ENV: process.env.NODE_ENV,
+        origin: req.headers.origin,
+        cookieReceived: !!req.headers.cookie,
+        sessionID: req.sessionID,
+        isAuthenticated: req.isAuthenticated(),
+        setCookieSent: !!res.getHeader("set-cookie"),
+        status: res.statusCode,
+      });
+    }
+  });
+  next();
+});
 
 let activeUsers = new Map();
 
