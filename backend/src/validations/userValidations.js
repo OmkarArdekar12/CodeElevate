@@ -6,3 +6,19 @@ export const userValidationSchema = Joi.object({
   isMfaActive: Joi.boolean().default(false),
   twoFactorSecret: Joi.string().allow(""),
 });
+
+export const emailSchema = Joi.string()
+  .trim()
+  .lowercase()
+  .email({ tlds: { allow: false } })
+  .max(254)
+  .required();
+
+// import Joi from "joi";
+
+// export const userValidationSchema = Joi.object({
+//   username: Joi.string().required(),
+//   password: Joi.string().min(6).max(128).required(),
+//   isMfaActive: Joi.boolean().default(false),
+//   twoFactorSecret: Joi.string().allow(""),
+// });
