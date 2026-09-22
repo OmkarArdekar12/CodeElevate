@@ -2,6 +2,7 @@ import { createBrowserRouter } from "react-router-dom";
 import LoginPage from "./pages/LoginPage.jsx";
 import Setup2FA from "./pages/Setup2FA.jsx";
 import Verify2FA from "./pages/Verify2FA.jsx";
+import Reset2FA from "./pages/Reset2FA.jsx";
 import Error from "./components/Error.jsx";
 import HomePage from "./pages/HomePage.jsx";
 import Home from "./home/Home.jsx";
@@ -40,6 +41,11 @@ const router = createBrowserRouter([
       {
         path: "/verify-2fa",
         element: <Verify2FA />,
+        errorElement: <Error />,
+      },
+      {
+        path: "/reset-2fa",
+        element: <Reset2FA />,
         errorElement: <Error />,
       },
       {
@@ -129,3 +135,135 @@ const router = createBrowserRouter([
 ]);
 
 export default router;
+
+// import { createBrowserRouter } from "react-router-dom";
+// import LoginPage from "./pages/LoginPage.jsx";
+// import Setup2FA from "./pages/Setup2FA.jsx";
+// import Verify2FA from "./pages/Verify2FA.jsx";
+// import Error from "./components/Error.jsx";
+// import HomePage from "./pages/HomePage.jsx";
+// import Home from "./home/Home.jsx";
+// import PostPage from "./posts/PostPage.jsx";
+// import ProfilePage from "./profiles/ProfilePage.jsx";
+// import ConnectionPage from "./profiles/ConnectionPage.jsx";
+// import EditProfilePage from "./profiles/EditProfilePage.jsx";
+// import ProfileSettings from "./profiles/ProfileSettings.jsx";
+// import NotificationPage from "./notifications/NotificationPage.jsx";
+// import MessagePage from "./messages/MessagePage.jsx";
+// import RankingPage from "./rankings/RankingPage.jsx";
+// import CreatePostPage from "./posts/CreatePostPage.jsx";
+// import EditPostPage from "./posts/EditPostPage.jsx";
+// import AboutPage from "./about/AboutPage.jsx";
+// import NotFound from "./components/NotFound.jsx";
+// import PrivateRoute from "./components/PrivateRoute.jsx";
+// import ProtectedRoute from "./components/ProtectedRoute.jsx";
+// import PrivacyPolicyPage from "./pages/PrivacyPolicyPage.jsx";
+// import TermsPage from "./pages/TermsPage.jsx";
+
+// const router = createBrowserRouter([
+//   {
+//     path: "/login",
+//     element: <LoginPage />,
+//     errorElement: <Error />,
+//   },
+
+//   {
+//     element: <ProtectedRoute />,
+//     children: [
+//       {
+//         path: "/setup-2fa",
+//         element: <Setup2FA />,
+//         errorElement: <Error />,
+//       },
+//       {
+//         path: "/verify-2fa",
+//         element: <Verify2FA />,
+//         errorElement: <Error />,
+//       },
+//       {
+//         path: "/logout",
+//         errorElement: <Error />,
+//       },
+//     ],
+//   },
+
+//   {
+//     path: "/",
+//     element: <HomePage />,
+//     errorElement: <Error />,
+//     children: [
+//       {
+//         index: true,
+//         element: <Home />, //defaultRoute "/"
+//       },
+//       {
+//         path: "/profiles/:id",
+//         element: <ProfilePage />,
+//       },
+//       {
+//         path: "/posts",
+//         element: <PostPage />,
+//       },
+//       {
+//         element: <PrivateRoute />,
+//         children: [
+//           {
+//             path: "/notifications",
+//             element: <NotificationPage />,
+//           },
+//           {
+//             path: "/messages",
+//             element: <MessagePage />,
+//           },
+//           {
+//             path: "/profiles/:id/edit",
+//             element: <EditProfilePage />,
+//           },
+//           {
+//             path: "/profiles/:id/settings",
+//             element: <ProfileSettings />,
+//           },
+//           {
+//             path: "/profiles/:id/connections",
+//             element: <ConnectionPage />,
+//           },
+//           {
+//             path: "/posts/create",
+//             element: <CreatePostPage />,
+//           },
+//           {
+//             path: "/posts/:id/edit",
+//             element: <EditPostPage />,
+//           },
+//         ],
+//       },
+//       {
+//         path: "/rankings",
+//         element: <RankingPage />,
+//       },
+//       {
+//         path: "/about",
+//         element: <AboutPage />,
+//       },
+//       {
+//         path: "/privacy-policy",
+//         element: <PrivacyPolicyPage />,
+//       },
+//       {
+//         path: "/terms",
+//         element: <TermsPage />,
+//       },
+//       {
+//         path: "*",
+//         element: <NotFound />,
+//       },
+//     ],
+//   },
+
+//   {
+//     path: "*",
+//     element: <NotFound />,
+//   },
+// ]);
+
+// export default router;
