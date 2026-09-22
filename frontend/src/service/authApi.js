@@ -80,6 +80,14 @@ export const verify2FA = async (token) => {
   );
 };
 
+export const disable2FA = async (token) => {
+  return await api.post(
+    "/auth/2fa/disable",
+    { token },
+    { withCredentials: true },
+  );
+};
+
 // import api from "./api";
 
 // export const register = async (username, password) => {
