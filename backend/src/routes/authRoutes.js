@@ -11,6 +11,7 @@ import {
   verify2FA,
   sendEmailOtp,
   verifyEmailOtp,
+  disable2FA,
 } from "../controllers/authController.js";
 import auth from "../middlewares/auth.js";
 
@@ -28,16 +29,23 @@ router.get("/status", authStatus);
 //Logout Route
 router.post("/logout", logout);
 
-//Email OTP (enable 2FA / link email / reset 2FA)
+//Send Email OTP Route
 router.post("/2fa/email/send-otp", auth, sendEmailOtp);
+
+//Verify Email OTP Route
 router.post("/2fa/email/verify-otp", auth, verifyEmailOtp);
 
-//2FA Setup (returns QR) and Confirm (activates)
+//2FA Setup Route
 router.post("/2fa/setup", auth, setup2FA);
+
+//2FA Setup Confirm Route
 router.post("/2fa/setup/confirm", auth, confirm2FASetup);
 
-//2FA Verify Route (login step when 2FA is on)
+//2FA Verify Route
 router.post("/2fa/verify", auth, verify2FA);
+
+//2FA Disable Route
+router.post("/2fa/disable", auth, disable2FA);
 
 export default router;
 

@@ -572,6 +572,58 @@ export const verify2FA = async (req, res) => {
   }
 };
 
+export const disable2FA = async (req, res) => {
+  try {
+    const user = req.user;
+
+    if (!user) {
+      return res.status(401).json({ message: "Invalid credentials" });
+    }
+    if (!user.isMfaActive) {
+      return res
+        .status(400)
+        .json({ message: "Two-factor authentication is already off." });
+    }
+    if (!req.session.isVerified) {
+      return res
+        .status(403)
+        .json({ message: "Please complete login verification first." });
+    }
+
+    const { token } = req.body;
+    if (!/^\d{6}$/.test(String(token || ""))) {
+      return res.status(400).json({ message: "Enter the 6-digit code." });
+    }
+
+    const verified = speakeasy.totp.verify({
+      secret: user.twoFactorSecret,
+      encoding: "base32",
+      token,
+      window: 1,
+    });
+    if (!verified) {
+      return res
+        .status(400)
+        .json({ message: "Invalid two-factor-authentication-(2FA) token" });
+    }
+
+    user.isMfaActive = false;
+    user.twoFactorSecret = undefined;
+    user.twoFactorTempSecret = undefined;
+    await user.save();
+
+    return res.status(200).json({
+      message: "Two-factor authentication has been turned off.",
+      isMfaActive: false,
+    });
+  } catch (err) {
+    return res.status(500).json({
+      error: "Error in disabling two-factor-authentication-(2FA)",
+      message: err.message,
+    });
+  }
+};
+
 // import bcrypt from "bcryptjs";
 // import speakeasy from "speakeasy";
 // import qrCode from "qrcode";
