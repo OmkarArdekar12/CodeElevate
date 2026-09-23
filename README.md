@@ -675,6 +675,9 @@
 │   │   │   │   ├── codeElevateArchitecture.png
 │   │   │   │   ├── mongodbDatabaseStructure.png
 │   │   │   │   ├── databaseDesign.drawio
+│   │   │   │   ├── oldCodeElevateArchitecture.png
+│   │   │   │   ├── oldMongodbDatabaseStructure.png
+│   │   │   │   ├── oldDatabaseDesign.drawio
 │   │   │   │   ├── prevCodeElevateSystemArchitecture.png
 │   │   │   │   └── prevMongodbDatabaseStructure.png
 │   │   │   ├── 📁 reports
@@ -729,6 +732,8 @@
 │   │   │   └── 📁 diagrams
 │   │   │       ├── authenticationDiagram.png
 │   │   │       ├── authorizationDiagram.png
+│   │   │       ├── oldAuthenticationDiagram.png
+│   │   │       ├── oldAuthorizationDiagram.png
 │   │   │       ├── profileSystemDiagram.png
 │   │   │       ├── rankingSystemDiagram.png
 │   │   │       ├── messagingSystemDiagram.png
@@ -964,6 +969,10 @@
 │   │   ├── databaseDesign.drawio
 │   │   ├── mongodbDatabaseStructure.png
 │   │   ├── mongodbDatabaseStructure.svg
+│   │   ├── oldCodeElevateArchitecture.png
+│   │   ├── oldDatabaseDesign.drawio
+│   │   ├── oldMongodbDatabaseStructure.png
+│   │   ├── oldMongodbDatabaseStructure.svg
 │   │   ├── prevCodeElevateArchitecture.png
 │   │   ├── prevDatabaseDesign.drawio
 │   │   ├── prevMongodbDatabaseStructure.png
@@ -1007,6 +1016,8 @@
 │   ├── 📁 diagrams
 │   │   ├── authenticationDiagram.png
 │   │   ├── authorizationDiagram.png
+│   │   ├── oldAuthenticationDiagram.png
+│   │   ├── oldAuthorizationDiagram.png
 │   │   ├── profileSystemDiagram.png
 │   │   ├── rankingSystemDiagram.png
 │   │   ├── messagingSystemDiagram.png
@@ -1131,6 +1142,7 @@ EMAIL_FROM=sender_verified_in_brevo@yourdomain.com
 EMAIL_FROM_NAME=CodeElevate
 BACKEND_URL=http://localhost:8080 or your_backend_url
 FRONTEND_URL=http://localhost:5173 or your_frontend_url
+PORTAL_URL=https://omkarardekar12.github.io/CodeElevate/
 ```
 
 ### 2. Frontend Configuration
