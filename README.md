@@ -18,6 +18,7 @@
 <img src="https://img.shields.io/badge/Passport.js-000000?style=for-the-badge&logo=passport&logoColor=white"/>
 <img src="https://img.shields.io/badge/JWT%20Authentication-32329F?style=for-the-badge&logo=jsonwebtokens&logoColor=white"/>
 <img src="https://img.shields.io/badge/2FA%20Authentication-FF6F00?style=for-the-badge"/>
+<img src="https://img.shields.io/badge/Email%20OTP%20Verification-FF6F00?style=for-the-badge&logo=maildotru&logoColor=white"/>
 <img src="https://img.shields.io/badge/GraphQL-E10098?style=for-the-badge&logo=graphql&logoColor=white"/>
 <img src="https://img.shields.io/badge/Validations-0088CC?style=for-the-badge"/>
 <img src="https://img.shields.io/badge/Axios-5A29E4?style=for-the-badge&logo=axios&logoColor=white"/>
@@ -50,7 +51,7 @@
 <div id="codeelevate-description">
   <h2><a href="#readme-index">CodeElevate - Elevate Your Coding Journey.</a></h2>
   <h3>CodeElevate is a robust, scalable, and dynamic coder community platform built to empower competitive programmers, software developers, students, learners, and professionals.<br/>
-  The platform provides an all-in-one ecosystem featuring integrated coding and development statistics across multiple platforms, a community-driven and category-based ranking system, a real-time messaging system with online user detection and image messaging, a user connection system, post sharing and engagement with optimistic UI updates, personalized profiles with an advanced profile management system, a notification system, and search and filter functionality. It incorporates secure multi-factor authentication (MFA) and authorization mechanisms, including two-factor authentication (2FA) using Time-Based One-Time Password (TOTP) and QR-code based enrollment. The system is powered by seamless and optimized backend and frontend pipelines with structured database and cloud storage integration, intelligent caching system, along with performance and SEO optimization. Built using an MVC architecture with modular REST APIs, authentication, authorization, validation, and centralized error-handling layers for a scalable and maintainable codebase, the platform ensures production-grade, performance-driven reliability, efficient API usage, and enhanced scalability. It achieves top Google search visibility through its SEO-optimized architecture. It also features interactive custom 3D models, smooth animations, interactive 3D animations, and a modern, fully responsive UI/UX design.<br/>
+  The platform provides an all-in-one ecosystem featuring integrated coding and development statistics across multiple platforms, a community-driven and category-based ranking system, a real-time messaging system with online user detection and image messaging, a user connection system, post sharing and engagement with optimistic UI updates, personalized profiles with an advanced profile management system, a notification system, and search and filter functionality. It incorporates secure multi-factor authentication (MFA) and authorization mechanisms, including two-factor authentication (2FA) using Time-Based One-Time Password (TOTP), QR-code based enrollment, and secure email OTP-based 2FA reset and recovery. The system is powered by seamless and optimized backend and frontend pipelines with structured database and cloud storage integration, intelligent caching system, along with performance and SEO optimization. Built using an MVC architecture with modular REST APIs, authentication, authorization, validation, and centralized error-handling layers for a scalable and maintainable codebase, the platform ensures production-grade, performance-driven reliability, efficient API usage, and enhanced scalability. It achieves top Google search visibility through its SEO-optimized architecture. It also features interactive custom 3D models, smooth animations, interactive 3D animations, and a modern, fully responsive UI/UX design.<br/>
   The goal is to foster growth, collaboration, and innovation among coders worldwide.</h3>
 </div>
 
@@ -272,7 +273,7 @@
 <div>
   <h2 id="overview"><a href="#readme-index">Overview 🖥️</a></h2>
   <h3>CodeElevate is a robust, scalable, and dynamic coder community platform built to empower competitive programmers, software developers, students, learners, and professionals. <br/>
-  The platform provides an all-in-one ecosystem featuring integrated coding and development statistics across multiple platforms, a community-driven and category-based ranking system, a real-time messaging system with online user detection and image messaging, a user connection system, post sharing and engagement with optimistic UI updates, personalized profiles with an advanced profile management system, a notification system, and search and filter functionality. It incorporates secure multi-factor authentication (MFA) and authorization mechanisms, including two-factor authentication (2FA) using Time-Based One-Time Password (TOTP) and QR-code based enrollment. The system is powered by seamless and optimized backend and frontend pipelines with structured database and cloud storage integration, intelligent caching system, along with performance and SEO optimization. Built using an MVC architecture with modular REST APIs, authentication, authorization, validation, and centralized error-handling layers for a scalable and maintainable codebase, the platform ensures production-grade, performance-driven reliability, efficient API usage, and enhanced scalability. It achieves top Google search visibility through its SEO-optimized architecture. It also features interactive custom 3D models, smooth animations, interactive 3D animations, and a modern, fully responsive UI/UX design. <br/>
+  The platform provides an all-in-one ecosystem featuring integrated coding and development statistics across multiple platforms, a community-driven and category-based ranking system, a real-time messaging system with online user detection and image messaging, a user connection system, post sharing and engagement with optimistic UI updates, personalized profiles with an advanced profile management system, a notification system, and search and filter functionality. It incorporates secure multi-factor authentication (MFA) and authorization mechanisms, including two-factor authentication (2FA) using Time-Based One-Time Password (TOTP), QR-code based enrollment, and secure email OTP-based 2FA reset and recovery. The system is powered by seamless and optimized backend and frontend pipelines with structured database and cloud storage integration, intelligent caching system, along with performance and SEO optimization. Built using an MVC architecture with modular REST APIs, authentication, authorization, validation, and centralized error-handling layers for a scalable and maintainable codebase, the platform ensures production-grade, performance-driven reliability, efficient API usage, and enhanced scalability. It achieves top Google search visibility through its SEO-optimized architecture. It also features interactive custom 3D models, smooth animations, interactive 3D animations, and a modern, fully responsive UI/UX design. <br/>
   The goal is to foster growth, collaboration, and innovation among coders worldwide.</h3>
 </div>
 
@@ -292,7 +293,7 @@
       <tr>
         <td>1.</td>
         <td><b>User Authentication & Authorization - Multi-Factor Authentication (MFA) with Two-Factor Authentication (2FA) using TOTP (Time-Based One-Time Password)</b></td>
-        <td>Robust and Secure authentication using Passport, Passport-Local-Strategy, Sessions, JWT, session-based authentication, token-based authentication and Two-Factor Authentication (2FA) via TOTP and QR code for enhanced account protection.</td>
+        <td>Robust and secure authentication using Passport, Passport-Local-Strategy, Sessions, JWT, and optional Two-Factor Authentication (2FA) via TOTP (Time-Based One-Time Password) with QR-code enrollment. Users may log in with a username or a verified email. Enabling 2FA requires verifying an email address via a one-time password (OTP). If the authenticator device is lost, users can securely reset their 2FA configuration by verifying an OTP sent to their previously verified email address, eliminating the need for manual support intervention. 2FA can be turned on or off at any time from Profile Settings.</td>
       </tr>
       <tr>
         <td>2.</td>
@@ -434,6 +435,7 @@
 ![Connect-Mongo](https://img.shields.io/badge/Connect-Mongo-0F5132?style=for-the-badge&logo=mongoosedotws&logoColor=white)
 ![JWT](https://img.shields.io/badge/JWT-32329F?style=for-the-badge&logo=jsonwebtokens&logoColor=white)  
 ![bcrypt.js](https://img.shields.io/badge/bcrypt.js-463A3A?style=for-the-badge)
+![Brevo Transactional Email API](https://img.shields.io/badge/Brevo%20Transactional%20Email%20OTP%20Verification-FF6F00?style=for-the-badge&logo=maildotru&logoColor=white)
 ![Express-Session](https://img.shields.io/badge/Express%20Session-DB0A47?style=for-the-badge)
 ![Cookie-Parser](https://img.shields.io/badge/Cookie-Parser-007ACC?style=for-the-badge)
 ![Body-Parser](https://img.shields.io/badge/Body--Parser-3B3B3B?style=for-the-badge)
@@ -520,7 +522,7 @@
         <tr>
           <td>&#10148;</td>
           <td>Authentication & Security</td>
-          <td>Passport.js, Passport-Local-Strategy, Connect-Mongo (for Session Store), JWT (JSON Web Token), bcrypt.js, Express-Session, Cookie-Parser, Body-Parser, Speakeasy (Two-Factor Authentication (2FA)), QRCode (2FA), Joi Validations</td>
+          <td>Passport.js, Passport-Local-Strategy, Connect-Mongo (for Session Store), JWT (JSON Web Token), bcrypt.js, Brevo Transactional Email API (Email OTP delivery for 2FA enable/reset), Express-Session, Cookie-Parser, Body-Parser, Speakeasy (Two-Factor Authentication (2FA)), QRCode (2FA), Joi Validations</td>
         </tr>
         <tr>
           <td>&#10148;</td>
@@ -641,6 +643,7 @@
 │   │   │   ├── competitiveProgrammingStatsRoutes.js
 │   │   │   └── developmentProfilesStatsRoutes.js
 │   │   ├── 📁 utils
+│   │   │   ├── sendEmail.js
 │   │   │   ├── ExpressError.js
 │   │   │   └── wrapAsync.js
 │   │   ├── 📁 validations
@@ -656,6 +659,7 @@
 │   │   │   ├── statsCache.js
 │   │   │   ├── post.js
 │   │   │   ├── message.js
+│   │   │   ├── otp.js
 │   │   │   └── notification.js
 │   │   ├── 📁 schemas
 │   │   │   ├── userSchema.js
@@ -664,6 +668,7 @@
 │   │   │   ├── statsCacheSchema.js
 │   │   │   ├── postSchema.js
 │   │   │   ├── messageSchema.js
+│   │   │   ├── otpSchema.js
 │   │   │   └── notificationSchema.js
 │   │   ├── 📁 lib
 │   │   │   ├── 📁 docs
@@ -774,6 +779,8 @@
 │   │   │   ├── Navbar.jsx
 │   │   │   ├── Footer.jsx
 │   │   │   ├── LoginForm.jsx
+│   │   │   ├── EmailOtpForm.jsx
+│   │   │   ├── TwoFASettings.jsx
 │   │   │   ├── TwoFASetup.jsx
 │   │   │   ├── TwoFAVerification.jsx
 │   │   │   ├── LeetCodeCardStats.jsx
@@ -791,6 +798,7 @@
 │   │   │   ├── LoginPage.jsx
 │   │   │   ├── Setup2FA.jsx
 │   │   │   ├── Verify2FA.jsx
+│   │   │   ├── Reset2FA.jsx
 │   │   │   ├── TermsPage.jsx
 │   │   │   └── PrivacyPolicyPage.jsx
 │   │   ├── 📁 home
@@ -1118,6 +1126,9 @@ JWT_SECRET=your_jwt_secret_key
 CLOUD_NAME=your_cloudinary_cloud_name
 CLOUD_API_KEY=your_cloudinary_api_key
 CLOUD_API_SECRET=your_cloudinary_api_secret
+BREVO_API_KEY=your_brevo_api_key
+EMAIL_FROM=sender_verified_in_brevo@yourdomain.com
+EMAIL_FROM_NAME=CodeElevate
 BACKEND_URL=http://localhost:8080 or your_backend_url
 FRONTEND_URL=http://localhost:5173 or your_frontend_url
 ```
