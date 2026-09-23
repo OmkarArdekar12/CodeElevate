@@ -192,11 +192,12 @@
               filter functionality. It incorporates secure multi-factor
               authentication (MFA) and authorization mechanisms, including
               two-factor authentication (2FA) using Time-Based One-Time Password
-              (TOTP) and QR-code based enrollment. The system is powered by
-              seamless and optimized backend and frontend pipelines with
-              structured database and cloud storage integration, intelligent
-              caching system, along with performance and SEO optimization. Built
-              using an MVC architecture with modular REST APIs, authentication,
+              (TOTP), QR-code based enrollment, and secure email OTP-based 2FA
+              reset and recovery. The system is powered by seamless and
+              optimized backend and frontend pipelines with structured database
+              and cloud storage integration, intelligent caching system, along
+              with performance and SEO optimization. Built using an MVC
+              architecture with modular REST APIs, authentication,
               authorization, validation, and centralized error-handling layers
               for a scalable and maintainable codebase, the platform ensures
               production-grade, performance-driven reliability, efficient API
@@ -282,9 +283,11 @@
                 Multi-Factor Authentication &amp; Authorization
               </h3>
               <p class="text-slate-400 text-sm max-w-2xl">
-                Passport, JWT, session-based &amp; token-based authentication,
+                Passport, JWT, session-based and token-based authentication
                 layered with two-factor authentication using TOTP and QR-code
-                enrollment to protect user accounts.
+                enrollment. Email OTP verification is used for 2FA enablement
+                and secure 2FA reset and recovery when the authenticator device
+                is unavailable.
               </p>
             </div>
           </div>
@@ -612,6 +615,7 @@
               ><span class="chip">Passport-Local Strategy</span
               ><span class="chip">Connect-Mongo</span
               ><span class="chip">JWT</span><span class="chip">bcrypt.js</span
+              ><span class="chip">Brevo Transactional Email API</span
               ><span class="chip">Express-Session</span
               ><span class="chip">Cookie-Parser</span
               ><span class="chip">Body-Parser</span
