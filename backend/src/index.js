@@ -38,6 +38,8 @@ if (process.env.NODE_ENV !== "production") {
 //Express App
 const app = express();
 
+app.set("trust proxy", 1);
+
 //HTTP Server for Socket.IO
 const server = http.createServer(app);
 
