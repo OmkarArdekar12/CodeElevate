@@ -28,7 +28,7 @@ export const sendEmail = async ({ to, subject, html, text }) => {
   );
 };
 
-const PURPOSE_COPY = {
+const PURPOSE_CONTENT = {
   enable: {
     heading: "Turn on Two-Factor Authentication",
     lead: "Enter this code to verify your email and finish turning on 2FA.",
@@ -43,38 +43,31 @@ const PURPOSE_COPY = {
   },
 };
 
-const buildCopyDataUri = (otp) => {
-  const page = `<!doctype html><html><head><meta charset="utf-8"><title>Copy code</title></head>
-<body style="margin:0;min-height:100vh;display:flex;align-items:center;justify-content:center;background:#020617;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;">
-  <div style="text-align:center;color:#FFFFFF;">
-    <div style="font-family:'Courier New',Courier,monospace;font-size:40px;font-weight:700;letter-spacing:8px;color:#16A34A;margin-bottom:16px;">${otp}</div>
-    <div id="msg" style="font-size:14px;color:#94A3B8;">Copying…</div>
-  </div>
-  <script>
-    navigator.clipboard.writeText("${otp}")
-      .then(function () { document.getElementById("msg").textContent = "Copied! Go back to CodeElevate and paste it."; })
-      .catch(function () { document.getElementById("msg").textContent = "Couldn't copy automatically - select the code above and copy it manually."; });
-  </script>
-</body></html>`;
-  return `data:text/html;charset=utf-8,${encodeURIComponent(page)}`;
-};
-
 const buildOtpEmailHtml = ({ otp, purpose, frontendUrl }) => {
-  const copy = PURPOSE_COPY[purpose] || PURPOSE_COPY.enable;
+  const mail = PURPOSE_CONTENT[purpose] || PURPOSE_CONTENT.enable;
   const logoUrl = `${frontendUrl}/icons/LogoCodeElevate-share.png`;
-  const copyHref = buildCopyDataUri(otp);
 
-  const digitBoxes = String(otp)
-    .split("")
-    .map(
-      (d) => `
-        <td style="padding:0 4px;">
-          <div style="width:40px;height:50px;background-color:#FFFFFF;border-radius:8px;border:1px solid #CBD5E1;">
-            <div style="text-align:center;line-height:50px;font-family:'Courier New',Courier,monospace;font-size:24px;font-weight:700;color:#16A34A;">${d}</div>
-          </div>
-        </td>`,
-    )
-    .join("");
+  const otpDisplay = `
+  <div
+    style="
+      display:inline-block;
+      padding:12px 20px;
+      background-color:#FFFFFF;
+      border-radius:8px;
+      border:1px solid #CBD5E1;
+      font-family:'Courier New',Courier,monospace;
+      font-size:30px;
+      line-height:40px;
+      font-weight:750;
+      letter-spacing:8px;
+      color:#16A34A;
+      text-align:center;
+      white-space:nowrap;
+    "
+  >
+    ${otp}
+  </div>
+`;
 
   return `<!doctype html>
 <html lang="en">
@@ -82,13 +75,13 @@ const buildOtpEmailHtml = ({ otp, purpose, frontendUrl }) => {
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="color-scheme" content="dark light">
-<title>${copy.heading}</title>
+<title>${mail.heading}</title>
 </head>
-<body style="margin:0;padding:0;background-color:#020617;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;">
-  <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background-color:#020617;padding:32px 16px;">
+<body style="margin:0;padding:0;background-color:transparent;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;">
+  <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background-color:transparent;padding:32px 16px;">
     <tr>
       <td align="center">
-        <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="max-width:480px;background-color:#1C2333;border:1px solid #2E3D5A;border-radius:12px;overflow:hidden;">
+        <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="max-width:480px;background-color:#1E2533;border:1px solid #2E3D5A;border-radius:12px;overflow:hidden;">
 
           <tr>
             <td align="center" style="padding:36px 32px 20px 32px;">
@@ -97,7 +90,7 @@ const buildOtpEmailHtml = ({ otp, purpose, frontendUrl }) => {
               <div style="margin-top:16px;font-size:22px;line-height:28px;font-weight:700;color:#FFFFFF;letter-spacing:0.2px;">
                 CodeElevate
               </div>
-              <div style="margin-top:4px;font-size:13px;line-height:18px;color:#94A3B8;text-transform:uppercase;letter-spacing:1.2px;">
+              <div style="margin-top:4px;font-size:13px;line-height:18px;color:#94A3B8;letter-spacing:1.2px;">
                 Elevate Your Coding Journey
               </div>
             </td>
@@ -108,31 +101,17 @@ const buildOtpEmailHtml = ({ otp, purpose, frontendUrl }) => {
           <tr>
             <td style="padding:28px 32px 8px 32px;">
               <div style="font-size:18px;line-height:26px;font-weight:600;color:#FFFFFF;text-align:center;">
-                ${copy.heading}
+                ${mail.heading}
               </div>
               <div style="margin-top:8px;font-size:14px;line-height:22px;color:#94A3B8;text-align:center;">
-                ${copy.lead}
+                ${mail.lead}
               </div>
             </td>
           </tr>
 
           <tr>
             <td align="center" style="padding:20px 32px 4px 32px;">
-              <table role="presentation" cellpadding="0" cellspacing="0" border="0">
-                <tr>${digitBoxes}</tr>
-              </table>
-            </td>
-          </tr>
-
-          <tr>
-            <td align="center" style="padding:18px 32px 0 32px;">
-              <a href="${copyHref}" target="_blank"
-                 style="display:inline-block;padding:10px 28px;background-color:#3B82F6;color:#FFFFFF;text-decoration:none;font-size:14px;font-weight:600;border-radius:8px;">
-                Copy Code
-              </a>
-              <div style="margin-top:10px;font-size:12px;line-height:16px;color:#64748B;">
-                If the button doesn't respond, tap and hold the digits above to copy them
-              </div>
+              ${otpDisplay}
             </td>
           </tr>
 
@@ -149,11 +128,28 @@ const buildOtpEmailHtml = ({ otp, purpose, frontendUrl }) => {
           <tr>
             <td style="padding:20px 32px 36px 32px;">
               <div style="font-size:12px;line-height:18px;color:#64748B;text-align:center;">
-                Didn't request this? You can safely ignore this email — your account is still secure.
+                Didn't request this? You can safely ignore this email - your account is still secure.
               </div>
               <div style="margin-top:16px;font-size:11px;line-height:16px;color:#475569;text-align:center;">
                 &copy; ${new Date().getFullYear()} CodeElevate. This is an automated message, please don't reply.
               </div>
+            </td>
+          </tr>
+
+          <tr>
+            <td align="center" style="padding: 3px">
+              <a
+                href="${frontendUrl}"
+                target="_blank"
+                style="
+                  color:#60A5FA;
+                  text-decoration:none;
+                  font-size:14px;
+                  font-weight:600;
+                "
+              >
+                Visit CodeElevate
+              </a>
             </td>
           </tr>
 
@@ -166,13 +162,13 @@ const buildOtpEmailHtml = ({ otp, purpose, frontendUrl }) => {
 };
 
 export const sendOtpEmail = async ({ to, otp, purpose }) => {
-  const copy = PURPOSE_COPY[purpose] || PURPOSE_COPY.enable;
+  const mail = PURPOSE_CONTENT[purpose] || PURPOSE_CONTENT.enable;
   const frontendUrl = (process.env.FRONTEND_URL || "").replace(/\/$/, "");
 
   await sendEmail({
     to,
     subject: `${otp} is your CodeElevate verification code`,
-    text: `${copy.heading}\n\nYour CodeElevate verification code is ${otp}. ${copy.lead}\nIt expires in 10 minutes. If you didn't request this, you can ignore this email.`,
+    text: `${mail.heading}\n\nYour CodeElevate verification code is ${otp}. ${mail.lead}\nIt expires in 10 minutes. If you didn't request this, you can ignore this email.`,
     html: buildOtpEmailHtml({ otp, purpose, frontendUrl }),
   });
 };
