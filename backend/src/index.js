@@ -172,8 +172,11 @@ app.use("/api/rankings", rankingRoutes);
 
 //Index Route
 app.get("/", (req, res) => {
-  return res.send("Welcome to CodeElevate");
+  return res.redirect(process.env.PORTAL_URL);
 });
+// app.get("/", (req, res) => {
+//   return res.send("Welcome to CodeElevate");
+// });
 
 //Error handlers
 app.all("*", pageNotFoundMiddleware);
