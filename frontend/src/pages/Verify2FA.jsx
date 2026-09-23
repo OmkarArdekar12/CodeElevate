@@ -19,10 +19,8 @@ const Verify2FA = () => {
     }
   };
 
-  const handle2FAReset = async (data) => {
-    if (data) {
-      navigate("/setup-2fa");
-    }
+  const handleResetClick = () => {
+    navigate("/reset-2fa");
   };
 
   return (
@@ -37,7 +35,7 @@ const Verify2FA = () => {
       </div>
       <TwoFAVerification
         onVerifySuccess={handleVerification}
-        onResetSuccess={handle2FAReset}
+        onResetClick={handleResetClick}
       />
     </div>
   );

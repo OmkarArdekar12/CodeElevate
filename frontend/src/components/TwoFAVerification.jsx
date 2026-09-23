@@ -1,8 +1,8 @@
 import React, { useState } from "react";
-import { verify2FA, reset2FA } from "../service/authApi.js";
+import { verify2FA } from "../service/authApi.js";
 import toast from "react-hot-toast";
 
-const TwoFAVerification = ({ onVerifySuccess, onResetSuccess }) => {
+const TwoFAVerification = ({ onVerifySuccess, onResetClick }) => {
   const [otp, setOtp] = useState("");
   const [error, setError] = useState("");
 
@@ -14,26 +14,8 @@ const TwoFAVerification = ({ onVerifySuccess, onResetSuccess }) => {
       toast.success("Valid OTP.", { id: "otp success" });
     } catch (error) {
       setOtp("");
-      //console.log("The error is: ", error.message);
       setError("Invalid OTP");
       toast.error("Invalid OTP!", { id: "otp failed" });
-    }
-  };
-
-  const handleReset = async (e) => {
-    e.preventDefault();
-    try {
-      const { data } = await reset2FA();
-      onResetSuccess(data);
-      toast.success("Two-factor Authentication reset successfully.", {
-        id: "reset success",
-      });
-    } catch (error) {
-      //console.log("The error is: ", error.message);
-      setError("Reset failed. Try again.");
-      toast.error("Two-factor Authentication reset failed!", {
-        id: "reset failed",
-      });
     }
   };
 
@@ -61,6 +43,8 @@ const TwoFAVerification = ({ onVerifySuccess, onResetSuccess }) => {
             id="totp"
             label="TOPT"
             type="text"
+            inputMode="numeric"
+            maxLength={6}
             value={otp}
             onChange={(e) => setOtp(e.target.value)}
             className="w-full p-2 border rounded mt-2"
@@ -78,9 +62,9 @@ const TwoFAVerification = ({ onVerifySuccess, onResetSuccess }) => {
         <button
           type="button"
           className="w-full mt-1 bg-slate-500 text-white py-2 rounded-md hover:bg-slate-600 hover-text-border cursor-pointer"
-          onClick={handleReset}
+          onClick={onResetClick}
         >
-          Reset 2FA
+          Lost your authenticator? Reset 2FA via email
         </button>
       </div>
     </form>

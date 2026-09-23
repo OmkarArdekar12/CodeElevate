@@ -3,6 +3,7 @@ import LoginForm from "../components/LoginForm.jsx";
 import { useLocation, useNavigate } from "react-router-dom";
 import { useSession } from "../context/SessionContext.jsx";
 import { motion } from "framer-motion";
+import toast from "react-hot-toast";
 
 const LoginPage = () => {
   const navigate = useNavigate();
@@ -16,12 +17,16 @@ const LoginPage = () => {
   }, [location.pathname]);
 
   const handleLoginSuccess = (userData) => {
-    // console.log("The logged in userData: ", userData);
     login(userData);
-    if (!userData.isMfaActive) {
-      navigate("/setup-2fa");
-    } else {
+
+    if (userData.isMfaActive) {
       navigate("/verify-2fa");
+    } else {
+      navigate("/");
+      setTimeout(() => {
+        toast.dismiss();
+        toast.success("You're now logged in.", { id: "login success" });
+      }, 500);
     }
   };
 

@@ -6,6 +6,7 @@ import {
   Navigate,
 } from "react-router-dom";
 import { logoutUser } from "../service/authApi.js";
+import TwoFASettings from "../components/TwoFASettings.jsx";
 import { useSession } from "../context/SessionContext.jsx";
 import { FaSignOutAlt as LogoutIcon } from "react-icons/fa";
 import { FaUserTimes as DeleteIcon } from "react-icons/fa";
@@ -26,9 +27,6 @@ const ProfileSettings = () => {
   const userId = user && user.userId ? user.userId : "";
   const isOwner = profileId === userId;
   const isAuthorized = isLoggedIn && isVerified && isOwner;
-  // const { state } = useLocation();
-  // const userId = state?.profileUserId ?? profileUserId;
-  // const isAuthorized = state?.isAuthorized;
 
   const notAuth = !isAuthorized;
 
@@ -66,7 +64,6 @@ const ProfileSettings = () => {
       navigate("/login");
       toast.success("You've been logged out. See you soon!", { id: "logout" });
     } catch (err) {
-      //console.log("Error: ", err.message);
       toast.error("Failed to logout!, Please try again.", {
         id: "logout failed",
       });
@@ -138,7 +135,7 @@ const ProfileSettings = () => {
                     day: "2-digit",
                     month: "2-digit",
                     year: "numeric",
-                  }
+                  },
                 )}{" "}
                 {new Date(userProfileData.updatedAt).toLocaleTimeString(
                   "en-US",
@@ -146,7 +143,7 @@ const ProfileSettings = () => {
                     hour: "2-digit",
                     minute: "2-digit",
                     hour12: true,
-                  }
+                  },
                 )}
               </span>
             </div>
@@ -159,13 +156,14 @@ const ProfileSettings = () => {
                     day: "2-digit",
                     month: "2-digit",
                     year: "numeric",
-                  }
+                  },
                 )}
               </span>
             </div>
           </div>
         </div>
       )}
+      {isAuthorized && <TwoFASettings />}
       {isAuthorized && (
         <button
           className={`flex items-center justify-center text-center rounded-md px-4 py-2 hover-text-border w-[90%] md:w-[50%] my-2 text-xl ${

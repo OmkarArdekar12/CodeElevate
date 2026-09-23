@@ -48,12 +48,14 @@ const LoginForm = ({ onLoginSuccess }) => {
     setRegisterLoading(true);
     try {
       if (!username || !password || !confirmPassword) {
-        // throw new Error("All fields are required");
         setError("All fields are required");
         return;
       }
+      if (username.includes("@")) {
+        setError("Username cannot contain the '@' character.");
+        return;
+      }
       if (password !== confirmPassword) {
-        // throw new Error("Password and Confirm Password do not match");
         setError("Password and Confirm Password do not match");
         return;
       }
@@ -61,7 +63,7 @@ const LoginForm = ({ onLoginSuccess }) => {
       const passwordRegex = /^(?=.*[0-9])(?=.*[A-Z]).{6,}$/;
       if (!passwordRegex.test(password)) {
         setError(
-          "Weak Password: Password must be at least 6 characters, contain 1 number and 1 uppercase letter"
+          "Weak Password: Password must be at least 6 characters, contain 1 number and 1 uppercase letter",
         );
         return;
       }
@@ -83,7 +85,7 @@ const LoginForm = ({ onLoginSuccess }) => {
       // console.log(error);
       setError(
         error?.response?.data?.message ||
-          "Something went wrong. Please try again."
+          "Something went wrong. Please try again.",
       );
       toast.error("Account creation failed! Please try again.", {
         id: "register failed",
@@ -108,7 +110,6 @@ const LoginForm = ({ onLoginSuccess }) => {
       onLoginSuccess(data);
       toast.success("Valid login credentials.", { id: "login success" });
     } catch (error) {
-      // console.log("The erros is: ", error);
       setUsername("");
       setPassword("");
       setMessage("");
@@ -140,16 +141,21 @@ const LoginForm = ({ onLoginSuccess }) => {
       <div className="p-6">
         <div className="mb-4">
           <label htmlFor="username" className="text-gray-600 text-sm">
-            Username
+            {isRegister ? "Username" : "Username or Email"}
           </label>
           <input
             id="username"
-            label="Username"
+            label={isRegister ? "Username" : "Username or Email"}
             type="text"
             value={username}
             onChange={(e) => setUsername(e.target.value)}
             className="w-full p-2 border rounded mt-2"
-            placeholder="Enter Your Username"
+            placeholder={
+              isRegister
+                ? "Enter Your Username"
+                : "Enter Your Username or Email"
+            }
+            autoComplete="username"
             required
           />
         </div>

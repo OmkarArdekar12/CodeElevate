@@ -14,6 +14,8 @@ export const SessionProvider = ({ children }) => {
   const [token2FA, setToken2FA] = useState(null);
   const [socket, setSocket] = useState(null);
 
+  const [setupToken, setSetupToken] = useState(null);
+
   const expiryTime = 7 * 24 * 60 * 60 * 1000;
 
   useEffect(() => {
@@ -21,7 +23,6 @@ export const SessionProvider = ({ children }) => {
     const storedUser = JSON.parse(localStorage.getItem("user"));
     const storedVerified = localStorage.getItem("isVerified") === "true";
     const stored2FAToken = localStorage.getItem("token2FA");
-    // console.log("The useEffect runs: ", storedUser);
     if (expireCodeElevate && Date.now() < +expireCodeElevate) {
       if (storedUser) {
         setUser(storedUser);
@@ -61,30 +62,44 @@ export const SessionProvider = ({ children }) => {
     };
   }, []);
 
-  const login = (userData) => {
-    const expireCodeElevate = Date.now() + expiryTime;
-    setIsLoggedIn(true);
-    setUser(userData);
-    localStorage.setItem("user", JSON.stringify(userData));
-    localStorage.setItem("expireCodeElevate", expireCodeElevate);
-  };
-
-  const verify = (data) => {
-    const token2fa = data?.token2FA;
+  const startVerifiedSession = (token, userId) => {
     setIsVerified(true);
-    setToken2FA(token2fa);
-    //connect socket and emit addUser after connection
+    setToken2FA(token);
     if (!socketService.connected) {
       socketService.connect();
       socketService.on("connect", () => {
-        socketService.emit("addUser", user.userId);
+        socketService.emit("addUser", userId);
       });
     } else {
-      socketService.emit("addUser", user.userId);
+      socketService.emit("addUser", userId);
     }
     setSocket(socketService);
     localStorage.setItem("isVerified", "true");
-    localStorage.setItem("token2FA", token2fa);
+    localStorage.setItem("token2FA", token);
+  };
+
+  const login = (userData) => {
+    const { token2FA: sessionToken, ...userInfo } = userData;
+    const expireCodeElevate = Date.now() + expiryTime;
+    setIsLoggedIn(true);
+    setUser(userInfo);
+    localStorage.setItem("user", JSON.stringify(userInfo));
+    localStorage.setItem("expireCodeElevate", expireCodeElevate);
+
+    if (sessionToken && !userInfo.isMfaActive) {
+      startVerifiedSession(sessionToken, userInfo.userId);
+    }
+  };
+
+  const verify = (data) => {
+    startVerifiedSession(data?.token2FA, user?.userId ?? data?.userId);
+    setSetupToken(null); // one-time use, done with it either way
+  };
+
+  const updateUser = (patch) => {
+    const next = { ...(user || {}), ...patch };
+    setUser(next);
+    localStorage.setItem("user", JSON.stringify(next));
   };
 
   const logout = (data) => {
@@ -97,6 +112,7 @@ export const SessionProvider = ({ children }) => {
       setIsVerified(false);
       setUser(null);
       setToken2FA(null);
+      setSetupToken(null);
       localStorage.removeItem("user");
       localStorage.removeItem("isVerified");
       localStorage.removeItem("token2FA");
@@ -111,11 +127,14 @@ export const SessionProvider = ({ children }) => {
         isLoggedIn,
         isVerified,
         token2FA,
+        setupToken,
+        setSetupToken,
         loading,
         user,
         socket,
         login,
         verify,
+        updateUser,
         logout,
       }}
     >
