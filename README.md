@@ -18,6 +18,7 @@
 <img src="https://img.shields.io/badge/Passport.js-000000?style=for-the-badge&logo=passport&logoColor=white"/>
 <img src="https://img.shields.io/badge/JWT%20Authentication-32329F?style=for-the-badge&logo=jsonwebtokens&logoColor=white"/>
 <img src="https://img.shields.io/badge/2FA%20Authentication-FF6F00?style=for-the-badge"/>
+<img src="https://img.shields.io/badge/Email%20OTP%20Verification-FF6F00?style=for-the-badge&logo=maildotru&logoColor=white"/>
 <img src="https://img.shields.io/badge/GraphQL-E10098?style=for-the-badge&logo=graphql&logoColor=white"/>
 <img src="https://img.shields.io/badge/Validations-0088CC?style=for-the-badge"/>
 <img src="https://img.shields.io/badge/Axios-5A29E4?style=for-the-badge&logo=axios&logoColor=white"/>
@@ -434,6 +435,7 @@
 ![Connect-Mongo](https://img.shields.io/badge/Connect-Mongo-0F5132?style=for-the-badge&logo=mongoosedotws&logoColor=white)
 ![JWT](https://img.shields.io/badge/JWT-32329F?style=for-the-badge&logo=jsonwebtokens&logoColor=white)  
 ![bcrypt.js](https://img.shields.io/badge/bcrypt.js-463A3A?style=for-the-badge)
+![Brevo Transactional Email API](https://img.shields.io/badge/Brevo%20Transactional%20Email%20OTP%20Verification-FF6F00?style=for-the-badge&logo=maildotru&logoColor=white)
 ![Express-Session](https://img.shields.io/badge/Express%20Session-DB0A47?style=for-the-badge)
 ![Cookie-Parser](https://img.shields.io/badge/Cookie-Parser-007ACC?style=for-the-badge)
 ![Body-Parser](https://img.shields.io/badge/Body--Parser-3B3B3B?style=for-the-badge)
@@ -620,6 +622,7 @@
 │   │   ├── 📁 middlewares
 │   │   │   ├── auth.js
 │   │   │   ├── auth2FA.js
+│   │   │   ├── auth2FASetup.js
 │   │   │   ├── verifyAuth.js
 │   │   │   ├── userValidations.js
 │   │   │   ├── profileValidations.js
@@ -638,6 +641,7 @@
 │   │   │   ├── competitiveProgrammingStatsRoutes.js
 │   │   │   └── developmentProfilesStatsRoutes.js
 │   │   ├── 📁 utils
+│   │   │   ├── sendEmail.js
 │   │   │   ├── ExpressError.js
 │   │   │   └── wrapAsync.js
 │   │   ├── 📁 validations
@@ -653,6 +657,7 @@
 │   │   │   ├── statsCache.js
 │   │   │   ├── post.js
 │   │   │   ├── message.js
+│   │   │   ├── otp.js
 │   │   │   └── notification.js
 │   │   ├── 📁 schemas
 │   │   │   ├── userSchema.js
@@ -661,6 +666,7 @@
 │   │   │   ├── statsCacheSchema.js
 │   │   │   ├── postSchema.js
 │   │   │   ├── messageSchema.js
+│   │   │   ├── otpSchema.js
 │   │   │   └── notificationSchema.js
 │   │   ├── 📁 lib
 │   │   │   ├── 📁 docs
@@ -752,6 +758,8 @@
 │   │   │   ├── Navbar.jsx
 │   │   │   ├── Footer.jsx
 │   │   │   ├── LoginForm.jsx
+│   │   │   ├── EmailOtpForm.jsx
+│   │   │   ├── TwoFASettings.jsx
 │   │   │   ├── TwoFASetup.jsx
 │   │   │   ├── TwoFAVerification.jsx
 │   │   │   ├── LeetCodeCardStats.jsx
@@ -769,6 +777,7 @@
 │   │   │   ├── LoginPage.jsx
 │   │   │   ├── Setup2FA.jsx
 │   │   │   ├── Verify2FA.jsx
+│   │   │   ├── Reset2FA.jsx
 │   │   │   ├── TermsPage.jsx
 │   │   │   └── PrivacyPolicyPage.jsx
 │   │   ├── 📁 home
