@@ -292,7 +292,7 @@
       <tr>
         <td>1.</td>
         <td><b>User Authentication & Authorization - Multi-Factor Authentication (MFA) with Two-Factor Authentication (2FA) using TOTP (Time-Based One-Time Password)</b></td>
-        <td>Robust and Secure authentication using Passport, Passport-Local-Strategy, Sessions, JWT, session-based authentication, token-based authentication and Two-Factor Authentication (2FA) via TOTP and QR code for enhanced account protection.</td>
+        <td>Robust and secure authentication using Passport, Passport-Local-Strategy, Sessions, JWT, and optional Two-Factor Authentication (2FA) via TOTP (Time-Based One-Time Password) with QR-code enrollment. Users may log in with a username or a verified email. Enabling 2FA requires verifying an email address via a one-time code (OTP), the same verified email is used to reset 2FA if the authenticator device is lost, removing the need for support intervention. 2FA can be turned on or off at any time from Profile Settings.</td>
       </tr>
       <tr>
         <td>2.</td>
@@ -520,7 +520,7 @@
         <tr>
           <td>&#10148;</td>
           <td>Authentication & Security</td>
-          <td>Passport.js, Passport-Local-Strategy, Connect-Mongo (for Session Store), JWT (JSON Web Token), bcrypt.js, Express-Session, Cookie-Parser, Body-Parser, Speakeasy (Two-Factor Authentication (2FA)), QRCode (2FA), Joi Validations</td>
+          <td>Passport.js, Passport-Local-Strategy, Connect-Mongo (for Session Store), JWT (JSON Web Token), bcrypt.js, Brevo Transactional Email API (Email OTP delivery for 2FA enable/reset), Express-Session, Cookie-Parser, Body-Parser, Speakeasy (Two-Factor Authentication (2FA)), QRCode (2FA), Joi Validations</td>
         </tr>
         <tr>
           <td>&#10148;</td>
@@ -955,6 +955,9 @@ JWT_SECRET=your_jwt_secret_key
 CLOUD_NAME=your_cloudinary_cloud_name
 CLOUD_API_KEY=your_cloudinary_api_key
 CLOUD_API_SECRET=your_cloudinary_api_secret
+BREVO_API_KEY=your_brevo_api_key
+EMAIL_FROM=sender_verified_in_brevo@yourdomain.com
+EMAIL_FROM_NAME=CodeElevate
 BACKEND_URL=http://localhost:8080 or your_backend_url
 FRONTEND_URL=http://localhost:5173 or your_frontend_url
 ```
