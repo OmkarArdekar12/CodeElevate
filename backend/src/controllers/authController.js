@@ -306,10 +306,6 @@ export const sendEmailOtp = async (req, res) => {
   }
 };
 
-/* ------------------------------------------------------------------ */
-/* NEW: verify email OTP   POST /auth/2fa/email/verify-otp             */
-/* body: { purpose, otp }                                              */
-/* ------------------------------------------------------------------ */
 export const verifyEmailOtp = async (req, res) => {
   try {
     const user = req.user;

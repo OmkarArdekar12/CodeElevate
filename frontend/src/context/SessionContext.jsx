@@ -93,7 +93,7 @@ export const SessionProvider = ({ children }) => {
 
   const verify = (data) => {
     startVerifiedSession(data?.token2FA, user?.userId ?? data?.userId);
-    setSetupToken(null); // one-time use, done with it either way
+    setSetupToken(null);
   };
 
   const updateUser = (patch) => {
