@@ -24,12 +24,25 @@ const userSchema = new Schema(
       select: false,
     },
 
+    email: {
+      type: String,
+      trim: true,
+      lowercase: true,
+      unique: true,
+      sparse: true,
+    },
+
     isMfaActive: {
       type: Boolean,
       default: false,
     },
     twoFactorSecret: {
       type: String,
+    },
+
+    twoFactorTempSecret: {
+      type: String,
+      select: false,
     },
   },
   {
