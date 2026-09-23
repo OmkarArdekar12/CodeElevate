@@ -969,6 +969,7 @@ EMAIL_FROM=sender_verified_in_brevo@yourdomain.com
 EMAIL_FROM_NAME=CodeElevate
 BACKEND_URL=http://localhost:8080 or your_backend_url
 FRONTEND_URL=http://localhost:5173 or your_frontend_url
+PORTAL_URL=https://omkarardekar12.github.io/CodeElevate/
 ```
 
 ### 2. Frontend Configuration
