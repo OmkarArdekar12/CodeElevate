@@ -2,9 +2,7 @@ import axios from "axios";
 
 export const sendEmail = async ({ to, subject, html, text }) => {
   if (!process.env.BREVO_API_KEY || !process.env.EMAIL_FROM) {
-    throw new Error(
-      "Email provider is not configured (BREVO_API_KEY / EMAIL_FROM)",
-    );
+    throw new Error("Email provider is not configured");
   }
 
   await axios.post(
@@ -118,7 +116,6 @@ const buildOtpEmailHtml = ({ otp, purpose, frontendUrl }) => {
             </td>
           </tr>
 
-          <!-- OTP digit boxes: white square, green digit -->
           <tr>
             <td align="center" style="padding:20px 32px 4px 32px;">
               <table role="presentation" cellpadding="0" cellspacing="0" border="0">
