@@ -1508,7 +1508,7 @@ git push origin feature/your-feature-name
     <table width="95%" align="center" border="0">
       <tr>
         <td width="45%">
-          <h3 align="center">Two Factor Authentication using TOTP & QR Code Enrollment</h3>
+          <h3 align="center">Two-Factor Authentication with TOTP, QR Enrollment & Email OTP Verification</h3>
           <img src="./frontend/public/about/authentication.png" width="100%">
         </td>
         <td width="45%">
