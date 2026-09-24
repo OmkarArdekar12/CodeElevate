@@ -888,6 +888,7 @@
 │   ├── 📁 public
 │   │   ├── 📁 about
 │   │   │   ├── authentication.png
+│   │   │   ├── oldAuthentication.png
 │   │   │   ├── accessibility.png
 │   │   │   ├── searchFunctionality.png
 │   │   │   ├── profilePreview.png
@@ -1028,6 +1029,7 @@
 │   │   └── devsStatsSystemDiagram.png
 │   ├── 📁 about
 │   │   ├── authentication.png
+│   │   ├── oldAuthentication.png
 │   │   ├── accessibility.png
 │   │   ├── searchFunctionality.png
 │   │   ├── profilePreview.png
