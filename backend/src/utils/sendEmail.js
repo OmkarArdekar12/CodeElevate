@@ -52,15 +52,15 @@ const buildOtpEmailHtml = ({ otp, purpose, frontendUrl }) => {
     style="
       display:inline-block;
       padding:12px 20px;
-      background-color:#FFFFFF;
+      background-color:#FFF7ED;
       border-radius:8px;
-      border:1px solid #CBD5E1;
+      border:1px solid #FED7AA;
       font-family:'Courier New',Courier,monospace;
       font-size:30px;
       line-height:40px;
-      font-weight:750;
+      font-weight:900;
       letter-spacing:8px;
-      color:#16A34A;
+      color:#EA580C;
       text-align:center;
       white-space:nowrap;
     "
@@ -74,36 +74,36 @@ const buildOtpEmailHtml = ({ otp, purpose, frontendUrl }) => {
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="color-scheme" content="dark light">
+<meta name="color-scheme" content="light">
 <title>${mail.heading}</title>
 </head>
-<body style="margin:0;padding:0;background-color:transparent;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;">
+<body style="margin:0;padding:0;background-color:#F8FAFC;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;color:#0F172A;">
   <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background-color:transparent;padding:32px 16px;">
     <tr>
       <td align="center">
-        <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="max-width:480px;background-color:#1E2533;border:1px solid #2E3D5A;border-radius:12px;overflow:hidden;">
+        <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="max-width:480px;background-color:#FFFFFF;border:1px solid #E2E8F0;border-radius:16px;overflow:hidden;box-shadow:0 4px 16px rgba(15,23,42,0.06);">
 
           <tr>
             <td align="center" style="padding:36px 32px 20px 32px;">
-              <img src="${logoUrl}" width="56" height="56" alt="CodeElevate"
-                   style="display:block;width:56px;height:56px;border-radius:50%;object-fit:cover;background-color:#0f172a;border:2px solid #FF932F;" />
-              <div style="margin-top:16px;font-size:22px;line-height:28px;font-weight:700;color:#FFFFFF;letter-spacing:0.2px;">
+              <img src="${logoUrl}" width="77" height="77" alt="CodeElevate"
+                   style="display:block;width:76px;height:76px;border-radius:50%;object-fit:cover;background-color:#FFFFFF;border:2px solid #FF932F;" />
+              <div style="margin-top:16px;font-size:22px;line-height:28px;font-weight:700;color:#0F172A;letter-spacing:0.2px;">
                 CodeElevate
               </div>
-              <div style="margin-top:4px;font-size:13px;line-height:18px;color:#94A3B8;letter-spacing:1.2px;">
+              <div style="margin-top:4px;font-size:13px;line-height:18px;color:#64748B;letter-spacing:1.2px;">
                 Elevate Your Coding Journey
               </div>
             </td>
           </tr>
 
-          <tr><td style="padding:0 32px;"><hr style="border:none;border-top:1px solid #2E3D5A;margin:0;"></td></tr>
+          <tr><td style="padding:0 32px;"><hr style="border:none;border-top:1px solid #E2E8F0;margin:0;"></td></tr>
 
           <tr>
             <td style="padding:28px 32px 8px 32px;">
-              <div style="font-size:18px;line-height:26px;font-weight:600;color:#FFFFFF;text-align:center;">
+              <div style="font-size:18px;line-height:26px;font-weight:600;color:#0F172A;text-align:center;">
                 ${mail.heading}
               </div>
-              <div style="margin-top:8px;font-size:14px;line-height:22px;color:#94A3B8;text-align:center;">
+              <div style="margin-top:8px;font-size:14px;line-height:22px;color:#64748B;text-align:center;">
                 ${mail.lead}
               </div>
             </td>
@@ -117,16 +117,14 @@ const buildOtpEmailHtml = ({ otp, purpose, frontendUrl }) => {
 
           <tr>
             <td align="center" style="padding:16px 32px 0 32px;">
-              <span style="display:inline-block;padding:6px 14px;background-color:#0f172a;border-radius:999px;font-size:12px;color:#FDBA74;">
+              <span style="display:inline-block;padding:6px 14px;background-color:#F1F5F9;border-radius:999px;font-size:12px;color:#475569;border:1px solid #E2E8F0;">
                 Expires in 10 minutes
               </span>
             </td>
           </tr>
 
-          <tr><td style="padding:28px 32px 0 32px;"><hr style="border:none;border-top:1px solid #2E3D5A;margin:0;"></td></tr>
-
           <tr>
-            <td style="padding:20px 32px 36px 32px;">
+            <td style="padding:36px 1px;">
               <div style="font-size:12px;line-height:18px;color:#64748B;text-align:center;">
                 Didn't request this? You can safely ignore this email - your account is still secure.
               </div>
@@ -136,20 +134,71 @@ const buildOtpEmailHtml = ({ otp, purpose, frontendUrl }) => {
             </td>
           </tr>
 
+          <tr><td style="padding:2px 28px;"><hr style="border:none;border-top:1px solid #E2E8F0;margin:0;"></td></tr>
+
           <tr>
-            <td align="center" style="padding: 3px">
-              <a
-                href="${frontendUrl}"
-                target="_blank"
-                style="
-                  color:#60A5FA;
-                  text-decoration:none;
-                  font-size:14px;
-                  font-weight:600;
-                "
-              >
-                Visit CodeElevate
-              </a>
+            <td style="padding:20px 32px 24px 32px;">
+              <div style="font-size:15px;line-height:22px;font-weight:600;color:#0F172A;text-align:center;">
+                Connect with Us
+              </div>
+              <div style="margin-top:14px;text-align:center;">
+                <a
+                  href="https://github.com/OmkarArdekar12/CodeElevate"
+                  target="_blank"
+                  style="display:inline-block;margin:0 6px;text-decoration:none;"
+                >
+                  <img
+                    src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg"
+                    width="20"
+                    height="20"
+                    alt="GitHub"
+                    style="display:block;width:20px;height:20px;"
+                  />
+                </a>
+                <a
+                  href="https://www.youtube.com/watch?v=4-Udx0xvsO0"
+                  target="_blank"
+                  style="display:inline-block;margin:0 6px;text-decoration:none;"
+                >
+                  <img
+                    src="https://cdn.simpleicons.org/youtube/FF0000"
+                    width="20"
+                    height="20"
+                    alt="YouTube"
+                    style="display:block;width:20px;height:20px;"
+                  />
+                </a>
+                <a
+                  href="https://www.linkedin.com/in/omkarardekar09"
+                  target="_blank"
+                  style="display:inline-block;margin:0 6px;text-decoration:none;"
+                >
+                  <img
+                    src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linkedin/linkedin-original.svg"
+                    width="20"
+                    height="20"
+                    alt="LinkedIn"
+                    style="display:block;width:20px;height:20px;"
+                  />
+                </a>
+              </div>
+              <div style="margin-top:14px;text-align:center;">
+                <a
+                  href="mailto:codeelevate.communtiy@gmail.com"
+                  style="font-size:12px;line-height:18px;color:#64748B;text-decoration:none;"
+                >
+                  codeelevate.communtiy@gmail.com
+                </a>
+              </div>
+              <div style="margin-top:14px;text-align:center;">
+                <a
+                  href="${frontendUrl}"
+                  target="_blank"
+                  style="color:#EA580C;text-decoration:none;font-size:14px;font-weight:600;"
+                >
+                  Visit CodeElevate
+                </a>
+              </div>
             </td>
           </tr>
 
@@ -172,6 +221,181 @@ export const sendOtpEmail = async ({ to, otp, purpose }) => {
     html: buildOtpEmailHtml({ otp, purpose, frontendUrl }),
   });
 };
+
+// import axios from "axios";
+
+// export const sendEmail = async ({ to, subject, html, text }) => {
+//   if (!process.env.BREVO_API_KEY || !process.env.EMAIL_FROM) {
+//     throw new Error("Email provider is not configured");
+//   }
+
+//   await axios.post(
+//     "https://api.brevo.com/v3/smtp/email",
+//     {
+//       sender: {
+//         name: process.env.EMAIL_FROM_NAME || "CodeElevate",
+//         email: process.env.EMAIL_FROM,
+//       },
+//       to: [{ email: to }],
+//       subject,
+//       htmlContent: html,
+//       textContent: text,
+//     },
+//     {
+//       headers: {
+//         "api-key": process.env.BREVO_API_KEY,
+//         "Content-Type": "application/json",
+//         Accept: "application/json",
+//       },
+//       timeout: 10000,
+//     },
+//   );
+// };
+
+// const PURPOSE_CONTENT = {
+//   enable: {
+//     heading: "Turn on Two-Factor Authentication",
+//     lead: "Enter this code to verify your email and finish turning on 2FA.",
+//   },
+//   "link-email": {
+//     heading: "Verify your email",
+//     lead: "Enter this code to verify this email address for your account.",
+//   },
+//   reset: {
+//     heading: "Reset Two-Factor Authentication",
+//     lead: "Enter this code to confirm it's you before resetting 2FA.",
+//   },
+// };
+
+// const buildOtpEmailHtml = ({ otp, purpose, frontendUrl }) => {
+//   const mail = PURPOSE_CONTENT[purpose] || PURPOSE_CONTENT.enable;
+//   const logoUrl = `${frontendUrl}/icons/LogoCodeElevate-share.png`;
+
+//   const otpDisplay = `
+//   <div
+//     style="
+//       display:inline-block;
+//       padding:12px 20px;
+//       background-color:#FFFFFF;
+//       border-radius:8px;
+//       border:1px solid #CBD5E1;
+//       font-family:'Courier New',Courier,monospace;
+//       font-size:30px;
+//       line-height:40px;
+//       font-weight:750;
+//       letter-spacing:8px;
+//       color:#16A34A;
+//       text-align:center;
+//       white-space:nowrap;
+//     "
+//   >
+//     ${otp}
+//   </div>
+// `;
+
+//   return `<!doctype html>
+// <html lang="en">
+// <head>
+// <meta charset="utf-8">
+// <meta name="viewport" content="width=device-width, initial-scale=1">
+// <meta name="color-scheme" content="dark light">
+// <title>${mail.heading}</title>
+// </head>
+// <body style="margin:0;padding:0;background-color:transparent;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;">
+//   <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background-color:transparent;padding:32px 16px;">
+//     <tr>
+//       <td align="center">
+//         <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="max-width:480px;background-color:#1E2533;border:1px solid #2E3D5A;border-radius:12px;overflow:hidden;">
+
+//           <tr>
+//             <td align="center" style="padding:36px 32px 20px 32px;">
+//               <img src="${logoUrl}" width="56" height="56" alt="CodeElevate"
+//                    style="display:block;width:56px;height:56px;border-radius:50%;object-fit:cover;background-color:#0f172a;border:2px solid #FF932F;" />
+//               <div style="margin-top:16px;font-size:22px;line-height:28px;font-weight:700;color:#FFFFFF;letter-spacing:0.2px;">
+//                 CodeElevate
+//               </div>
+//               <div style="margin-top:4px;font-size:13px;line-height:18px;color:#94A3B8;letter-spacing:1.2px;">
+//                 Elevate Your Coding Journey
+//               </div>
+//             </td>
+//           </tr>
+
+//           <tr><td style="padding:0 32px;"><hr style="border:none;border-top:1px solid #2E3D5A;margin:0;"></td></tr>
+
+//           <tr>
+//             <td style="padding:28px 32px 8px 32px;">
+//               <div style="font-size:18px;line-height:26px;font-weight:600;color:#FFFFFF;text-align:center;">
+//                 ${mail.heading}
+//               </div>
+//               <div style="margin-top:8px;font-size:14px;line-height:22px;color:#94A3B8;text-align:center;">
+//                 ${mail.lead}
+//               </div>
+//             </td>
+//           </tr>
+
+//           <tr>
+//             <td align="center" style="padding:20px 32px 4px 32px;">
+//               ${otpDisplay}
+//             </td>
+//           </tr>
+
+//           <tr>
+//             <td align="center" style="padding:16px 32px 0 32px;">
+//               <span style="display:inline-block;padding:6px 14px;background-color:#0f172a;border-radius:999px;font-size:12px;color:#FDBA74;">
+//                 Expires in 10 minutes
+//               </span>
+//             </td>
+//           </tr>
+
+//           <tr><td style="padding:28px 32px 0 32px;"><hr style="border:none;border-top:1px solid #2E3D5A;margin:0;"></td></tr>
+
+//           <tr>
+//             <td style="padding:20px 32px 36px 32px;">
+//               <div style="font-size:12px;line-height:18px;color:#64748B;text-align:center;">
+//                 Didn't request this? You can safely ignore this email - your account is still secure.
+//               </div>
+//               <div style="margin-top:16px;font-size:11px;line-height:16px;color:#475569;text-align:center;">
+//                 &copy; ${new Date().getFullYear()} CodeElevate. This is an automated message, please don't reply.
+//               </div>
+//             </td>
+//           </tr>
+
+//           <tr>
+//             <td align="center" style="padding: 3px">
+//               <a
+//                 href="${frontendUrl}"
+//                 target="_blank"
+//                 style="
+//                   color:#60A5FA;
+//                   text-decoration:none;
+//                   font-size:14px;
+//                   font-weight:600;
+//                 "
+//               >
+//                 Visit CodeElevate
+//               </a>
+//             </td>
+//           </tr>
+
+//         </table>
+//       </td>
+//     </tr>
+//   </table>
+// </body>
+// </html>`;
+// };
+
+// export const sendOtpEmail = async ({ to, otp, purpose }) => {
+//   const mail = PURPOSE_CONTENT[purpose] || PURPOSE_CONTENT.enable;
+//   const frontendUrl = (process.env.FRONTEND_URL || "").replace(/\/$/, "");
+
+//   await sendEmail({
+//     to,
+//     subject: `${otp} is your CodeElevate verification code`,
+//     text: `${mail.heading}\n\nYour CodeElevate verification code is ${otp}. ${mail.lead}\nIt expires in 10 minutes. If you didn't request this, you can ignore this email.`,
+//     html: buildOtpEmailHtml({ otp, purpose, frontendUrl }),
+//   });
+// };
 
 // import axios from "axios";
 
