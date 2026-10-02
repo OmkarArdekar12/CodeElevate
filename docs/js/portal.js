@@ -1,3 +1,14 @@
+document.querySelectorAll("#diagrams img, #quality img").forEach((img) => {
+  const link = document.createElement("a");
+
+  link.href = img.src;
+  link.target = "_blank";
+  link.rel = "noopener noreferrer";
+
+  img.parentNode.insertBefore(link, img);
+  link.appendChild(img);
+});
+
 var reduceMotion = window.matchMedia(
   "(prefers-reduced-motion: reduce)",
 ).matches;
