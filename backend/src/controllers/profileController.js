@@ -12,7 +12,9 @@ import RankingCache from "../models/rankingCache.js";
 //All Profile Controller
 export const getAllProfiles = async (req, res) => {
   try {
-    const profiles = await Profile.find().populate("user", "username");
+    const profiles = await Profile.find()
+      .sort({ createdAt: 1 })
+      .populate("user", "username");
     return res.status(200).json(profiles);
   } catch (err) {
     return res
@@ -27,7 +29,7 @@ export const showProfile = async (req, res) => {
     const userId = req.params.id;
     const profile = await Profile.findOne({ user: userId }).populate(
       "user",
-      "username"
+      "username",
     );
     if (!profile) {
       return res.status(404).json({ message: "Profile not found" });
@@ -59,7 +61,7 @@ export const updateProfile = async (req, res) => {
             folder: "CodeElevate_Project",
             public_id: `${id}-profile-picture`,
             overwrite: true,
-          }
+          },
         );
         profile.profilePicture = uploadProfilePictureResult.secure_url;
 
@@ -75,7 +77,7 @@ export const updateProfile = async (req, res) => {
             folder: "CodeElevate_Project",
             public_id: `${id}-bg-banner`,
             overwrite: true,
-          }
+          },
         );
         profile.backgroundBanner = uploadBgBannerResult.secure_url;
 
@@ -170,7 +172,7 @@ export const destroyProfile = async (req, res) => {
     }
 
     const profile = await Profile.findOne({ user: profileUserId }).session(
-      session
+      session,
     );
     if (!profile) {
       await session.abortTransaction();
@@ -199,13 +201,13 @@ export const destroyProfile = async (req, res) => {
       //remove likes by this user
       if (post.likes.includes(profileUserId)) {
         post.likes = post.likes.filter(
-          (like) => like.toString() !== profileUserId.toString()
+          (like) => like.toString() !== profileUserId.toString(),
         );
         await post.save({ session });
       }
       //remove comments by this user
       post.comments = post.comments.filter(
-        (comment) => comment.user.toString() !== profileUserId.toString()
+        (comment) => comment.user.toString() !== profileUserId.toString(),
       );
       await post.save({ session });
       //delete post belonging to the currUser
@@ -225,7 +227,7 @@ export const destroyProfile = async (req, res) => {
           followers: profileUserId,
           following: profileUserId,
         },
-      }
+      },
     ).session(session);
 
     //refreshing ranking cache
@@ -234,12 +236,12 @@ export const destroyProfile = async (req, res) => {
     //deleting profilePicture and backgroundBanner
     if (profile?.profilePicture !== "") {
       await cloudinary.uploader.destroy(
-        `CodeElevate_Project/${profileUserId}-profile-picture`
+        `CodeElevate_Project/${profileUserId}-profile-picture`,
       );
     }
     if (profile?.backgroundBanner !== "") {
       await cloudinary.uploader.destroy(
-        `CodeElevate_Project/${profileUserId}-bg-banner`
+        `CodeElevate_Project/${profileUserId}-bg-banner`,
       );
     }
 
@@ -295,7 +297,7 @@ export const getConnections = async (req, res) => {
     const followingIds = profile.following.map((following) => following._id);
 
     const mutualConnectionIds = followerIds.filter((followerId) =>
-      followingIds.some((followingId) => followingId.equals(followerId))
+      followingIds.some((followingId) => followingId.equals(followerId)),
     );
 
     const getUserDetails = async (userIds) => {
@@ -309,7 +311,7 @@ export const getConnections = async (req, res) => {
 
       return users.map((user) => {
         const userProfile = profiles.find(
-          (profile) => profile.user.toString() === user._id.toString()
+          (profile) => profile.user.toString() === user._id.toString(),
         );
 
         return {
@@ -349,7 +351,7 @@ export const getUserData = async (req, res) => {
     const userId = req.params.id;
     const profile = await Profile.findOne({ user: userId }).populate(
       "user",
-      "username"
+      "username",
     );
     if (!profile) {
       return res.status(404).json({ message: "User Profile not found" });
